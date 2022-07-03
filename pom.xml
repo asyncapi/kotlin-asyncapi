@@ -120,14 +120,14 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.3.2</version>
+                <groupId>org.jetbrains.dokka</groupId>
+                <artifactId>dokka-maven-plugin</artifactId>
+                <version>1.6.10</version>
                 <executions>
                     <execution>
-                        <id>attach-javadocs</id>
+                        <phase>package</phase>
                         <goals>
-                            <goal>jar</goal>
+                            <goal>javadocJar</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -152,7 +152,7 @@
             <id>sign-artifacts</id>
             <activation>
                 <property>
-                    <name>env.GPG_SECRET_KEY</name>
+                    <name>env.GPG_TRIGGER</name>
                 </property>
             </activation>
             <build>

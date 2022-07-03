@@ -1,5 +1,6 @@
 name: Deploy
 on:
+  pull_request:
   push:
     branches:
       - master
@@ -36,3 +37,4 @@ jobs:
         env:
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+          GPG_TRIGGER: true
