@@ -1,0 +1,15 @@
+{
+  "schemas" : { },
+  "servers" : { },
+  "channels" : { },
+  "messages" : { },
+  "securitySchemes" : { },
+  "parameters" : { },
+  "correlationIds" : { },
+  "operationTraits" : { },
+  "messageTraits" : { },
+  "serverBindings" : { },
+  "channelBindings" : { },
+  "operationBindings" : { },
+  "messageBindings" : { }
+}

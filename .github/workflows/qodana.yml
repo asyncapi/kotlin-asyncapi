@@ -1,0 +1,19 @@
+name: Qodana
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  qodana-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Qodana Scan
+        uses: JetBrains/qodana-action@v5.0.2
+        timeout-minutes: 30
+        with:
+          args: "--linter,jetbrains/qodana-jvm-community,--fail-threshold,100"
+          use-caches: false

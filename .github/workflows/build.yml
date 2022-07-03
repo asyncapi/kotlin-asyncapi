@@ -1,0 +1,30 @@
+name: Test & Build
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  cleanup-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Abort previous action run
+        uses: rokroskar/workflow-run-cleanup-action@v0.2.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Restore Cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+      - name: Maven Build
+        run: |
+          mvn --batch-mode clean install

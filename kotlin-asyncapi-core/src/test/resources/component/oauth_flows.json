@@ -1,0 +1,34 @@
+{
+  "implicit" : {
+    "authorizationUrl" : "authorizationUrlValue",
+    "tokenUrl" : "tokenUrlValue",
+    "scopes" : {
+      "scopesKey" : "scopesValue"
+    },
+    "refreshUrl" : "refreshUrlValue"
+  },
+  "password" : {
+    "authorizationUrl" : "authorizationUrlValue",
+    "tokenUrl" : "tokenUrlValue",
+    "scopes" : {
+      "scopesKey" : "scopesValue"
+    },
+    "refreshUrl" : "refreshUrlValue"
+  },
+  "clientCredentials" : {
+    "authorizationUrl" : "authorizationUrlValue",
+    "tokenUrl" : "tokenUrlValue",
+    "scopes" : {
+      "scopesKey" : "scopesValue"
+    },
+    "refreshUrl" : "refreshUrlValue"
+  },
+  "authorizationCode" : {
+    "authorizationUrl" : "authorizationUrlValue",
+    "tokenUrl" : "tokenUrlValue",
+    "scopes" : {
+      "scopesKey" : "scopesValue"
+    },
+    "refreshUrl" : "refreshUrlValue"
+  }
+}

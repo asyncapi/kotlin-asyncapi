@@ -1,0 +1,7 @@
+{
+  "name" : "nameValue",
+  "description" : "descriptionValue",
+  "externalDocs" : {
+    "url" : "mocked"
+  }
+}

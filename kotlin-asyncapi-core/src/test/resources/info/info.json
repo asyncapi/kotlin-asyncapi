@@ -1,0 +1,10 @@
+{
+  "title" : "titleValue",
+  "version" : "versionValue",
+  "description" : "descriptionValue",
+  "termsOfService" : "termsOfServiceValue",
+  "contact" : { },
+  "license" : {
+    "name" : "mocked"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "enum" : [ "enumValue" ],
+  "default" : "defaultValue",
+  "description" : "descriptionValue",
+  "examples" : [ "examplesValue" ]
+}

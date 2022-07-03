@@ -1,0 +1,19 @@
+{
+  "amqp" : {
+    "is" : "isValue",
+    "exchange" : {
+      "name" : "nameValue",
+      "type" : "typeValue",
+      "durable" : true,
+      "autoDelete" : true,
+      "vhost" : "vhostValue"
+    },
+    "queue" : {
+      "name" : "nameValue",
+      "durable" : true,
+      "exclusive" : true,
+      "autoDelete" : true,
+      "vhost" : "vhostValue"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "asyncapi": "2.3.0",
+  "id": "idValue",
+  "defaultContentType": "defaultContentTypeValue",
+  "info": {
+    "title": "mocked",
+    "version": "mocked"
+  },
+  "servers": { },
+  "channels": { },
+  "components": { },
+  "tags": [ ],
+  "externalDocs": {
+    "url": "mocked"
+  }
+}

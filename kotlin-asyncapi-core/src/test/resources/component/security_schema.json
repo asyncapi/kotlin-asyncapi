@@ -1,0 +1,10 @@
+{
+  "type" : "typeValue",
+  "name" : "nameValue",
+  "in" : "inValue",
+  "scheme" : "schemeValue",
+  "flows" : { },
+  "openIdConnectUrl" : "openIdConnectUrlValue",
+  "description" : "descriptionValue",
+  "bearerFormat" : "bearerFormatValue"
+}

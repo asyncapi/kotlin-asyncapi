@@ -1,0 +1,7 @@
+{
+  "mqtt" : {
+    "qos" : 1,
+    "retain" : true,
+    "bindingVersion" : "bindingVersionValue"
+  }
+}

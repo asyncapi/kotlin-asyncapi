@@ -1,0 +1,14 @@
+{
+  "mqtt" : {
+    "clientId" : "clientIdValue",
+    "cleanSession" : true,
+    "lastWill" : {
+      "topic" : "topicValue",
+      "qos" : 1,
+      "message" : "messageValue",
+      "retain" : true
+    },
+    "keepAlive" : 1,
+    "bindingVersion" : "bindingVersionValue"
+  }
+}

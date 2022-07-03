@@ -1,0 +1,9 @@
+{
+  "$ref" : "refValue",
+  "description" : "descriptionValue",
+  "servers" : [ "serversValue" ],
+  "subscribe" : { },
+  "publish" : { },
+  "parameters" : { },
+  "bindings" : { }
+}

@@ -1,0 +1,14 @@
+# Maven
+target/
+*/generated-javadoc-json
+
+# Eclipse
+.settings/
+.classpath
+.project
+.factorypath
+
+# Intellij
+.idea/
+*.iml
+*.iws

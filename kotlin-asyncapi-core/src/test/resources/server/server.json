@@ -1,0 +1,11 @@
+{
+  "url" : "urlValue",
+  "protocol" : "protocolValue",
+  "protocolVersion" : "protocolVersionValue",
+  "description" : "descriptionValue",
+  "variables" : { },
+  "security" : [ {
+    "requirementKey" : [ "requirementValue" ]
+  } ],
+  "bindings" : { }
+}

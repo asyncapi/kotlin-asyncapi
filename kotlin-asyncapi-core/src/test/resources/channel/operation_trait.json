@@ -1,0 +1,10 @@
+{
+  "operationId" : "operationIdValue",
+  "summary" : "summaryValue",
+  "description" : "descriptionValue",
+  "tags" : [ ],
+  "externalDocs" : {
+    "url" : "mocked"
+  },
+  "bindings" : { }
+}

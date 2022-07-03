@@ -1,0 +1,17 @@
+{
+  "asyncapi" : "2.3.0",
+  "info" : {
+    "title" : "Gitter Streaming API",
+    "version" : "1.0.0"
+  },
+  "channels" : {
+    "/rooms" : { }
+  },
+  "id" : "urn:com:gitter:streaming:api",
+  "servers" : {
+    "production" : {
+      "url" : "https://stream.gitter.im/v1",
+      "protocol" : "https"
+    }
+  }
+}

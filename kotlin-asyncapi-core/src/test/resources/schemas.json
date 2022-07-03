@@ -1,0 +1,56 @@
+{
+  "title" : "titleValue",
+  "description" : "descriptionValue",
+  "default" : {
+    "defaultKey" : "defaultValue"
+  },
+  "readOnly" : true,
+  "writeOnly" : true,
+  "examples" : [ {
+    "exampleKey" : "exampleValue"
+  } ],
+  "contentEncoding" : "contentEncodingValue",
+  "contentMediaType" : "contentMediaTypeValue",
+  "type" : "typeValue",
+  "enum" : [ "enumValue" ],
+  "const" : {
+    "constKey" : "constValue"
+  },
+  "multipleOf" : 1,
+  "maximum" : 1,
+  "exclusiveMaximum" : 1,
+  "minimum" : 1,
+  "exclusiveMinimum" : 1,
+  "maxLength" : 1,
+  "minLength" : 1,
+  "pattern" : "patternValue",
+  "items" : { },
+  "additionalItems" : { },
+  "maxItems" : 1,
+  "minItems" : 1,
+  "uniqueItems" : true,
+  "contains" : { },
+  "maxProperties" : 1,
+  "minProperties" : 1,
+  "required" : [ "requiredValue" ],
+  "properties" : { },
+  "patternProperties" : { },
+  "additionalProperties" : { },
+  "dependencies" : {
+    "dependenciesKey" : "dependenciesValue"
+  },
+  "propertyNames" : { },
+  "if" : { },
+  "then" : { },
+  "else" : { },
+  "allOf" : [ ],
+  "anyOf" : [ ],
+  "oneOf" : [ ],
+  "not" : { },
+  "format" : "formatValue",
+  "discriminator" : "discriminatorValue",
+  "externalDocs" : {
+    "url" : "mocked"
+  },
+  "deprecated" : true
+}

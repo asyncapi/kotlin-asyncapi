@@ -1,0 +1,20 @@
+{
+  "headers" : { },
+  "payload" : { },
+  "correlationId" : {
+    "location" : "mocked"
+  },
+  "schemaFormat" : "schemaFormatValue",
+  "contentType" : "contentTypeValue",
+  "name" : "nameValue",
+  "title" : "titleValue",
+  "summary" : "summaryValue",
+  "description" : "descriptionValue",
+  "tags" : [ ],
+  "externalDocs" : {
+    "url" : "mocked"
+  },
+  "bindings" : { },
+  "examples" : [ ],
+  "traits" : [ ]
+}
