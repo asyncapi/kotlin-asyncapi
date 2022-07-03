@@ -4,7 +4,7 @@
 
     <groupId>org.openfolder</groupId>
     <artifactId>kotlin-asyncapi-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Kotlin AsyncAPI Parent POM</name>
@@ -120,14 +120,14 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.3.2</version>
+                <groupId>org.jetbrains.dokka</groupId>
+                <artifactId>dokka-maven-plugin</artifactId>
+                <version>1.6.10</version>
                 <executions>
                     <execution>
-                        <id>attach-javadocs</id>
+                        <phase>package</phase>
                         <goals>
-                            <goal>jar</goal>
+                            <goal>javadocJar</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -152,7 +152,7 @@
             <id>sign-artifacts</id>
             <activation>
                 <property>
-                    <name>env.GPG_SECRET_KEY</name>
+                    <name>env.GPG_PASSPHRASE</name>
                 </property>
             </activation>
             <build>
@@ -170,6 +170,12 @@
                                 </goals>
                             </execution>
                         </executions>
+                        <configuration>
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
