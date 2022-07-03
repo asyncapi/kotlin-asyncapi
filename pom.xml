@@ -152,7 +152,7 @@
             <id>sign-artifacts</id>
             <activation>
                 <property>
-                    <name>env.GPG_TRIGGER</name>
+                    <name>env.GPG_PASSPHRASE</name>
                 </property>
             </activation>
             <build>
@@ -171,7 +171,6 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <passphrase/>
                             <gpgArguments>
                                 <arg>--pinentry-mode</arg>
                                 <arg>loopback</arg>
