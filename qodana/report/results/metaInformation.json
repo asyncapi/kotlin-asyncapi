@@ -4,6 +4,13 @@
     "Code Inspection": 0
   },
   "attributes": {
+    "vcs": {
+      "sarifIdea": {
+        "repositoryUri": "https://github.com/OpenFolder/kotlin-asyncapi",
+        "revisionId": "539a1240ea66a08ceb37724a86afa42b1786d204",
+        "branch": "master"
+      }
+    },
     "deviceId": "200820300000000-6c78-f715-3e70-2f0f4b680a20"
   }
 }
