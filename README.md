@@ -74,6 +74,12 @@ asyncApi {
         }
     }
     components {
+        securitySchemes {
+            schema("httpBearerToken") {
+                type("http")
+                scheme("bearer")
+            }
+        }
         messages {
             message("chatMessage") {
                 summary("A message represents an individual chat message sent to a room.")
