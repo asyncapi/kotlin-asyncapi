@@ -133,21 +133,21 @@
       ]
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.13.2.2",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.13.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.13.2.2/jackson-databind-2.13.2.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.13.3/jackson-databind-2.13.3.jar!/"
       ]
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.2",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.13.2/jackson-annotations-2.13.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.13.3/jackson-annotations-2.13.3.jar!/"
       ]
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.13.2",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.13.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.13.2/jackson-core-2.13.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.13.3/jackson-core-2.13.3.jar!/"
       ]
     },
     {
@@ -163,81 +163,81 @@
       ]
     },
     {
+      "name": "Maven: org.springframework:spring-web:5.3.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.3.21/spring-web-5.3.21.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.springframework:spring-beans:5.3.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.21/spring-beans-5.3.21.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.springframework:spring-core:5.3.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.3.21/spring-core-5.3.21.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.springframework:spring-jcl:5.3.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-jcl/5.3.21/spring-jcl-5.3.21.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.springframework:spring-context:5.3.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.3.21/spring-context-5.3.21.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.springframework:spring-aop:5.3.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.3.21/spring-aop-5.3.21.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.springframework:spring-expression:5.3.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/5.3.21/spring-expression-5.3.21.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:2.7.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.7.1/spring-boot-autoconfigure-2.7.1.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.springframework.boot:spring-boot:2.7.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.7.1/spring-boot-2.7.1.jar!/"
+      ]
+    },
+    {
       "name": "Maven: org.assertj:assertj-core:3.22.0",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/assertj/assertj-core/3.22.0/assertj-core-3.22.0.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-web:5.3.19",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-test:2.7.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.3.19/spring-web-5.3.19.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-test/2.7.1/spring-boot-starter-test-2.7.1.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-beans:5.3.19",
+      "name": "Maven: org.springframework.boot:spring-boot-starter:2.7.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.19/spring-beans-5.3.19.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter/2.7.1/spring-boot-starter-2.7.1.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-core:5.3.19",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-logging:2.7.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.3.19/spring-core-5.3.19.jar!/"
-      ]
-    },
-    {
-      "name": "Maven: org.springframework:spring-jcl:5.3.19",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-jcl/5.3.19/spring-jcl-5.3.19.jar!/"
-      ]
-    },
-    {
-      "name": "Maven: org.springframework:spring-context:5.3.19",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.3.19/spring-context-5.3.19.jar!/"
-      ]
-    },
-    {
-      "name": "Maven: org.springframework:spring-aop:5.3.19",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.3.19/spring-aop-5.3.19.jar!/"
-      ]
-    },
-    {
-      "name": "Maven: org.springframework:spring-expression:5.3.19",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/5.3.19/spring-expression-5.3.19.jar!/"
-      ]
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:2.6.6",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.6.6/spring-boot-autoconfigure-2.6.6.jar!/"
-      ]
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot:2.6.6",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.6.6/spring-boot-2.6.6.jar!/"
-      ]
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-test:2.6.6",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-test/2.6.6/spring-boot-starter-test-2.6.6.jar!/"
-      ]
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-starter:2.6.6",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter/2.6.6/spring-boot-starter-2.6.6.jar!/"
-      ]
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-logging:2.6.6",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-logging/2.6.6/spring-boot-starter-logging-2.6.6.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-logging/2.7.1/spring-boot-starter-logging-2.7.1.jar!/"
       ]
     },
     {
@@ -277,27 +277,27 @@
       ]
     },
     {
-      "name": "Maven: org.yaml:snakeyaml:1.29",
+      "name": "Maven: org.yaml:snakeyaml:1.30",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/yaml/snakeyaml/1.29/snakeyaml-1.29.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/yaml/snakeyaml/1.30/snakeyaml-1.30.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-test:2.6.6",
+      "name": "Maven: org.springframework.boot:spring-boot-test:2.7.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test/2.6.6/spring-boot-test-2.6.6.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test/2.7.1/spring-boot-test-2.7.1.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.6.6",
+      "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.7.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test-autoconfigure/2.6.6/spring-boot-test-autoconfigure-2.6.6.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test-autoconfigure/2.7.1/spring-boot-test-autoconfigure-2.7.1.jar!/"
       ]
     },
     {
-      "name": "Maven: com.jayway.jsonpath:json-path:2.6.0",
+      "name": "Maven: com.jayway.jsonpath:json-path:2.7.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/jayway/jsonpath/json-path/2.6.0/json-path-2.6.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/jayway/jsonpath/json-path/2.7.0/json-path-2.7.0.jar!/"
       ]
     },
     {
@@ -319,9 +319,9 @@
       ]
     },
     {
-      "name": "Maven: org.slf4j:slf4j-api:1.7.30",
+      "name": "Maven: org.slf4j:slf4j-api:1.7.33",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.33/slf4j-api-1.7.33.jar!/"
       ]
     },
     {
@@ -355,21 +355,21 @@
       ]
     },
     {
-      "name": "Maven: org.mockito:mockito-core:4.0.0",
+      "name": "Maven: org.mockito:mockito-core:4.5.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/mockito/mockito-core/4.0.0/mockito-core-4.0.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/mockito/mockito-core/4.5.1/mockito-core-4.5.1.jar!/"
       ]
     },
     {
-      "name": "Maven: net.bytebuddy:byte-buddy:1.11.19",
+      "name": "Maven: net.bytebuddy:byte-buddy:1.12.9",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.11.19/byte-buddy-1.11.19.jar!/"
+        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.12.9/byte-buddy-1.12.9.jar!/"
       ]
     },
     {
-      "name": "Maven: net.bytebuddy:byte-buddy-agent:1.11.19",
+      "name": "Maven: net.bytebuddy:byte-buddy-agent:1.12.9",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.11.19/byte-buddy-agent-1.11.19.jar!/"
+        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.12.9/byte-buddy-agent-1.12.9.jar!/"
       ]
     },
     {
@@ -379,81 +379,81 @@
       ]
     },
     {
-      "name": "Maven: org.mockito:mockito-junit-jupiter:4.0.0",
+      "name": "Maven: org.mockito:mockito-junit-jupiter:4.5.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/mockito/mockito-junit-jupiter/4.0.0/mockito-junit-jupiter-4.0.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/mockito/mockito-junit-jupiter/4.5.1/mockito-junit-jupiter-4.5.1.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-test:5.3.18",
+      "name": "Maven: org.springframework:spring-test:5.3.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.3.18/spring-test-5.3.18.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.3.21/spring-test-5.3.21.jar!/"
       ]
     },
     {
-      "name": "Maven: org.xmlunit:xmlunit-core:2.8.4",
+      "name": "Maven: org.xmlunit:xmlunit-core:2.9.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/xmlunit/xmlunit-core/2.8.4/xmlunit-core-2.8.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/xmlunit/xmlunit-core/2.9.0/xmlunit-core-2.9.0.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-web:2.6.6",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-web:2.7.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-web/2.6.6/spring-boot-starter-web-2.6.6.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-web/2.7.1/spring-boot-starter-web-2.7.1.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-json:2.6.6",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-json:2.7.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-json/2.6.6/spring-boot-starter-json-2.6.6.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-json/2.7.1/spring-boot-starter-json-2.7.1.jar!/"
       ]
     },
     {
-      "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.2",
+      "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.13.2/jackson-datatype-jdk8-2.13.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.13.3/jackson-datatype-jdk8-2.13.3.jar!/"
       ]
     },
     {
-      "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.2",
+      "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.13.2/jackson-datatype-jsr310-2.13.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.13.3/jackson-datatype-jsr310-2.13.3.jar!/"
       ]
     },
     {
-      "name": "Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.2",
+      "name": "Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-parameter-names/2.13.2/jackson-module-parameter-names-2.13.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-parameter-names/2.13.3/jackson-module-parameter-names-2.13.3.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:2.6.6",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:2.7.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-tomcat/2.6.6/spring-boot-starter-tomcat-2.6.6.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-tomcat/2.7.1/spring-boot-starter-tomcat-2.7.1.jar!/"
       ]
     },
     {
-      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.60",
+      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.64",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.60/tomcat-embed-core-9.0.60.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.64/tomcat-embed-core-9.0.64.jar!/"
       ]
     },
     {
-      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.60",
+      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.64",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-el/9.0.60/tomcat-embed-el-9.0.60.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-el/9.0.64/tomcat-embed-el-9.0.64.jar!/"
       ]
     },
     {
-      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.60",
+      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.64",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.60/tomcat-embed-websocket-9.0.60.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.64/tomcat-embed-websocket-9.0.64.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-webmvc:5.3.18",
+      "name": "Maven: org.springframework:spring-webmvc:5.3.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.3.18/spring-webmvc-5.3.18.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.3.21/spring-webmvc-5.3.21.jar!/"
       ]
     }
   ]

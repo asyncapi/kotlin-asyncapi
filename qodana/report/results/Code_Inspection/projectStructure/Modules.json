@@ -34,15 +34,15 @@
           "type": "Own sources"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.13.2.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.13.3",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.3",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.13.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.13.3",
           "type": "Library"
         },
         {
@@ -186,15 +186,51 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.13.2.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.13.3",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.3",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.13.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.13.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-web:5.3.21",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-beans:5.3.21",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-core:5.3.21",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-jcl:5.3.21",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-context:5.3.21",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-aop:5.3.21",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-expression:5.3.21",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:2.7.1",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework.boot:spring-boot:2.7.1",
           "type": "Library"
         },
         {
@@ -210,51 +246,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-web:5.3.19",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-test:2.7.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-beans:5.3.19",
+          "name": "Maven: org.springframework.boot:spring-boot-starter:2.7.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-core:5.3.19",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-jcl:5.3.19",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-context:5.3.19",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-aop:5.3.19",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-expression:5.3.19",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:2.6.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot:2.6.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-test:2.6.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-starter:2.6.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-logging:2.6.6",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-logging:2.7.1",
           "type": "Library"
         },
         {
@@ -282,19 +282,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.yaml:snakeyaml:1.29",
+          "name": "Maven: org.yaml:snakeyaml:1.30",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-test:2.6.6",
+          "name": "Maven: org.springframework.boot:spring-boot-test:2.7.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.6.6",
+          "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.7.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.jayway.jsonpath:json-path:2.6.0",
+          "name": "Maven: com.jayway.jsonpath:json-path:2.7.0",
           "type": "Library"
         },
         {
@@ -310,7 +310,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.slf4j:slf4j-api:1.7.30",
+          "name": "Maven: org.slf4j:slf4j-api:1.7.33",
           "type": "Library"
         },
         {
@@ -334,15 +334,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.mockito:mockito-core:4.0.0",
+          "name": "Maven: org.mockito:mockito-core:4.5.1",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.11.19",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.12.9",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.11.19",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.12.9",
           "type": "Library"
         },
         {
@@ -350,55 +350,55 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.mockito:mockito-junit-jupiter:4.0.0",
+          "name": "Maven: org.mockito:mockito-junit-jupiter:4.5.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-test:5.3.18",
+          "name": "Maven: org.springframework:spring-test:5.3.21",
           "type": "Library"
         },
         {
-          "name": "Maven: org.xmlunit:xmlunit-core:2.8.4",
+          "name": "Maven: org.xmlunit:xmlunit-core:2.9.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-web:2.6.6",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-web:2.7.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-json:2.6.6",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-json:2.7.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.2",
+          "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.3",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.2",
+          "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.3",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.2",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.3",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:2.6.6",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:2.7.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.60",
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.64",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.60",
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.64",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.60",
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.64",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-webmvc:5.3.18",
+          "name": "Maven: org.springframework:spring-webmvc:5.3.21",
           "type": "Library"
         },
         {
