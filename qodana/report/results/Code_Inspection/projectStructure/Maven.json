@@ -298,12 +298,12 @@
       "scope": "test"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:1.0.1",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:1.0.2-SNAPSHOT",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-core",
-      "version": "1.0.1",
-      "baseVersion": "1.0.1",
+      "version": "1.0.2-SNAPSHOT",
+      "baseVersion": "1.0.2-SNAPSHOT",
       "type": "jar",
       "optional": false,
       "scope": "compile"
