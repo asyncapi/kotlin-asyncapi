@@ -1,13 +1,13 @@
 package org.openfolder.kotlinasyncapi.model.channel
 
-import org.openfolder.kotlinasyncapi.model.ExternalDocumentation
-import org.openfolder.kotlinasyncapi.model.TestUtils.assertJsonEquals
-import org.openfolder.kotlinasyncapi.model.TestUtils.json
 import io.mockk.clearConstructorMockk
 import io.mockk.every
 import io.mockk.mockkConstructor
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
+import org.openfolder.kotlinasyncapi.model.ExternalDocumentation
+import org.openfolder.kotlinasyncapi.model.TestUtils.assertJsonEquals
+import org.openfolder.kotlinasyncapi.model.TestUtils.json
 
 internal class OperationTraitTest {
 

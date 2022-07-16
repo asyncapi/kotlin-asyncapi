@@ -1,9 +1,9 @@
 package org.openfolder.kotlinasyncapi.springweb.controller
 
+import org.junit.jupiter.api.Test
 import org.openfolder.kotlinasyncapi.springweb.EnableAsyncApi
 import org.openfolder.kotlinasyncapi.springweb.TestUtils
 import org.openfolder.kotlinasyncapi.springweb.service.AsyncApiExtension
-import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringBootConfiguration
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration

@@ -1,8 +1,8 @@
 package org.openfolder.kotlinasyncapi.springweb.service
 
+import org.junit.jupiter.api.Test
 import org.openfolder.kotlinasyncapi.model.AsyncApi
 import org.openfolder.kotlinasyncapi.springweb.TestUtils.json
-import org.junit.jupiter.api.Test
 import org.skyscreamer.jsonassert.JSONAssert
 import org.skyscreamer.jsonassert.JSONCompareMode
 

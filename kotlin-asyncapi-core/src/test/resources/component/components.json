@@ -1,6 +1,7 @@
 {
   "schemas" : { },
   "servers" : { },
+  "serverVariables" : { },
   "channels" : { },
   "messages" : { },
   "securitySchemes" : { },

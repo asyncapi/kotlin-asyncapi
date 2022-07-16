@@ -5,12 +5,6 @@ import org.openfolder.kotlinasyncapi.model.Reference
 import java.util.AbstractMap
 
 @AsyncApiComponent
-class ServersMap : LinkedHashMap<String, Server>() {
-    inline fun server(key: String, build: Server.() -> Unit): Server =
-        Server().apply(build).also { put(key, it) }
-}
-
-@AsyncApiComponent
 class ReferencableServersMap : LinkedHashMap<String, Any>() {
     inline fun server(key: String, build: Server.() -> Unit): Server =
         Server().apply(build).also { put(key, it) }
@@ -31,7 +25,7 @@ class Server {
     lateinit var protocol: String
     var protocolVersion: String? = null
     var description: String? = null
-    var variables: ServerVariablesMap? = null
+    var variables: ReferencableServerVariablesMap? = null
     var security: SecurityRequirementsList? = null
     var bindings: Any? = null
 
@@ -47,8 +41,8 @@ class Server {
     fun description(value: String): String =
         value.also { description = it }
 
-    inline fun variables(build: ServerVariablesMap.() -> Unit): ServerVariablesMap =
-        ServerVariablesMap().apply(build).also { variables = it }
+    inline fun variables(build: ReferencableServerVariablesMap.() -> Unit): ReferencableServerVariablesMap =
+        ReferencableServerVariablesMap().apply(build).also { variables = it }
 
     inline fun security(build: SecurityRequirementsList.() -> Unit): SecurityRequirementsList =
         SecurityRequirementsList().apply(build).also { security = it }

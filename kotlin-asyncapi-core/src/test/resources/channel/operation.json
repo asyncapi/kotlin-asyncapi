@@ -2,6 +2,7 @@
   "operationId" : "operationIdValue",
   "summary" : "summaryValue",
   "description" : "descriptionValue",
+  "security" : [ ],
   "tags" : [ ],
   "externalDocs" : {
     "url" : "mocked"

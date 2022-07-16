@@ -1,11 +1,15 @@
 package org.openfolder.kotlinasyncapi.model.server
 
 import org.openfolder.kotlinasyncapi.model.AsyncApiComponent
+import org.openfolder.kotlinasyncapi.model.Reference
 
 @AsyncApiComponent
-class ServerVariablesMap : LinkedHashMap<String, ServerVariable>() {
+class ReferencableServerVariablesMap : LinkedHashMap<String, Any>() {
     inline fun variable(key: String, build: ServerVariable.() -> Unit): ServerVariable =
         ServerVariable().apply(build).also { put(key, it) }
+
+    inline fun reference(key: String, build: Reference.() -> Unit): Reference =
+        Reference().apply(build).also { put(key, it) }
 }
 
 @AsyncApiComponent

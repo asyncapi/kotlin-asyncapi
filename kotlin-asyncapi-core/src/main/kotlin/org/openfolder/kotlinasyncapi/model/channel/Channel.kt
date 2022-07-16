@@ -4,9 +4,12 @@ import org.openfolder.kotlinasyncapi.model.AsyncApiComponent
 import org.openfolder.kotlinasyncapi.model.Reference
 
 @AsyncApiComponent
-class ChannelsMap : LinkedHashMap<String, Channel>() {
+class ReferencableChannelsMap : LinkedHashMap<String, Any>() {
     inline fun channel(key: String, build: Channel.() -> Unit): Channel =
         Channel().apply(build).also { put(key, it) }
+
+    inline fun reference(key: String, build: Reference.() -> Unit): Reference =
+        Reference().apply(build).also { put(key, it) }
 }
 
 @AsyncApiComponent
@@ -19,6 +22,7 @@ class Channel {
     var parameters: ReferencableParametersMap? = null
     var bindings: Any? = null
 
+    @Deprecated("Usage of the \$ref property has been deprecated")
     fun ref(value: String): String =
         value.also { `$ref` = it }
 

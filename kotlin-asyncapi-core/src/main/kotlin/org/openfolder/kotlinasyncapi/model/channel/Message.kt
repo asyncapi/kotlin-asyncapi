@@ -35,6 +35,7 @@ class OneOfReferencableMessages {
 
 @AsyncApiComponent
 class Message {
+    var messageId: String? = null
     var headers: Any? = null
     var payload: Any? = null
     var correlationId: Any? = null
@@ -49,6 +50,9 @@ class Message {
     var bindings: ReferencableMessageBindingsMap? = null
     var examples: MessageExamplesList? = null
     var traits: MessageTraitsList? = null
+
+    fun messageId(value: String): String =
+        value.also { messageId = it }
 
     inline fun headers(build: Schema.() -> Unit): Schema =
         Schema().apply(build).also { headers = it }
