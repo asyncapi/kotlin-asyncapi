@@ -46,7 +46,7 @@ class AsyncApi {
         ExternalDocumentation().apply(build).also { externalDocs = it }
 
     companion object {
-        const val VERSION = "2.3.0"
+        const val VERSION = "2.4.0"
 
         inline fun asyncApi(build: AsyncApi.() -> Unit): AsyncApi =
             AsyncApi().apply(build)
