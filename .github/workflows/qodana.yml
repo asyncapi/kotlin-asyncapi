@@ -6,6 +6,13 @@ on:
       - master
 
 jobs:
+  cleanup-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Abort previous action run
+        uses: rokroskar/workflow-run-cleanup-action@v0.2.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   qodana-scan:
     runs-on: ubuntu-latest
     steps:
