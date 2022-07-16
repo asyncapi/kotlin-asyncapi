@@ -1,6 +1,5 @@
 package org.openfolder.kotlinasyncapi.springweb.service
 
-import org.openfolder.kotlinasyncapi.model.AsyncApi
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.MockK
@@ -9,6 +8,7 @@ import io.mockk.slot
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
+import org.openfolder.kotlinasyncapi.model.AsyncApi
 
 @ExtendWith(MockKExtension::class)
 internal class DefaultAsyncApiServiceTest {

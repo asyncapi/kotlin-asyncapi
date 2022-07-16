@@ -1,8 +1,8 @@
 package org.openfolder.kotlinasyncapi.model.channel
 
+import org.junit.jupiter.api.Test
 import org.openfolder.kotlinasyncapi.model.TestUtils.assertJsonEquals
 import org.openfolder.kotlinasyncapi.model.TestUtils.json
-import org.junit.jupiter.api.Test
 
 internal class ChannelTest {
 

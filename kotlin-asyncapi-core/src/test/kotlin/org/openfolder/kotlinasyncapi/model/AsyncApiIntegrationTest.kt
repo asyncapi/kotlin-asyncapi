@@ -1,9 +1,9 @@
 package org.openfolder.kotlinasyncapi.model
 
+import org.junit.jupiter.api.Test
 import org.openfolder.kotlinasyncapi.model.AsyncApi.Companion.asyncApi
 import org.openfolder.kotlinasyncapi.model.TestUtils.assertJsonEquals
 import org.openfolder.kotlinasyncapi.model.TestUtils.json
-import org.junit.jupiter.api.Test
 
 internal class AsyncApiIntegrationTest {
 

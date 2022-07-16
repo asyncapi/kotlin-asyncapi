@@ -1,8 +1,8 @@
 package org.openfolder.kotlinasyncapi.model.component
 
+import org.junit.jupiter.api.Test
 import org.openfolder.kotlinasyncapi.model.TestUtils.assertJsonEquals
 import org.openfolder.kotlinasyncapi.model.TestUtils.json
-import org.junit.jupiter.api.Test
 
 internal class ComponentsTest {
 
@@ -11,6 +11,7 @@ internal class ComponentsTest {
         val components = Components().apply {
             schemas { }
             servers { }
+            serverVariables { }
             channels { }
             messages { }
             securitySchemes { }

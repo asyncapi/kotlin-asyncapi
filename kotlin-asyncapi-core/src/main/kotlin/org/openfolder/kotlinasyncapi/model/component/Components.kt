@@ -3,8 +3,8 @@ package org.openfolder.kotlinasyncapi.model.component
 import org.openfolder.kotlinasyncapi.model.AsyncApiComponent
 import org.openfolder.kotlinasyncapi.model.ReferencableCorrelationIDsMap
 import org.openfolder.kotlinasyncapi.model.ReferencableSchemasMap
-import org.openfolder.kotlinasyncapi.model.channel.ChannelsMap
 import org.openfolder.kotlinasyncapi.model.channel.ReferencableChannelBindingsMap
+import org.openfolder.kotlinasyncapi.model.channel.ReferencableChannelsMap
 import org.openfolder.kotlinasyncapi.model.channel.ReferencableMessageBindingsMap
 import org.openfolder.kotlinasyncapi.model.channel.ReferencableMessageTraitsMap
 import org.openfolder.kotlinasyncapi.model.channel.ReferencableMessagesMap
@@ -12,13 +12,15 @@ import org.openfolder.kotlinasyncapi.model.channel.ReferencableOperationBindings
 import org.openfolder.kotlinasyncapi.model.channel.ReferencableOperationTraitsMap
 import org.openfolder.kotlinasyncapi.model.channel.ReferencableParametersMap
 import org.openfolder.kotlinasyncapi.model.server.ReferencableServerBindingsMap
+import org.openfolder.kotlinasyncapi.model.server.ReferencableServerVariablesMap
 import org.openfolder.kotlinasyncapi.model.server.ReferencableServersMap
 
 @AsyncApiComponent
 class Components {
     var schemas: ReferencableSchemasMap? = null
     var servers: ReferencableServersMap? = null
-    var channels: ChannelsMap? = null
+    var serverVariables: ReferencableServerVariablesMap? = null
+    var channels: ReferencableChannelsMap? = null
     var messages: ReferencableMessagesMap? = null
     var securitySchemes: ReferencableSecuritySchemasMap? = null
     var parameters: ReferencableParametersMap? = null
@@ -36,8 +38,11 @@ class Components {
     inline fun servers(build: ReferencableServersMap.() -> Unit): ReferencableServersMap =
         ReferencableServersMap().apply(build).also { servers = it }
 
-    inline fun channels(build: ChannelsMap.() -> Unit): ChannelsMap =
-        ChannelsMap().apply(build).also { channels = it }
+    inline fun serverVariables(build: ReferencableServerVariablesMap.() -> Unit): ReferencableServerVariablesMap =
+        ReferencableServerVariablesMap().apply(build).also { serverVariables = it }
+
+    inline fun channels(build: ReferencableChannelsMap.() -> Unit): ReferencableChannelsMap =
+        ReferencableChannelsMap().apply(build).also { channels = it }
 
     inline fun messages(build: ReferencableMessagesMap.() -> Unit): ReferencableMessagesMap =
         ReferencableMessagesMap().apply(build).also { messages = it }

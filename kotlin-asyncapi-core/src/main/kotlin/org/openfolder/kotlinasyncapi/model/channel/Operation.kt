@@ -4,12 +4,14 @@ import org.openfolder.kotlinasyncapi.model.AsyncApiComponent
 import org.openfolder.kotlinasyncapi.model.ExternalDocumentation
 import org.openfolder.kotlinasyncapi.model.Reference
 import org.openfolder.kotlinasyncapi.model.TagsList
+import org.openfolder.kotlinasyncapi.model.server.SecurityRequirementsList
 
 @AsyncApiComponent
 class Operation {
     var operationId: String? = null
     var summary: String? = null
     var description: String? = null
+    var security: SecurityRequirementsList? = null
     var tags: TagsList? = null
     var externalDocs: ExternalDocumentation? = null
     var bindings: Any? = null
@@ -24,6 +26,9 @@ class Operation {
 
     fun description(value: String): String =
         value.also { description = it }
+
+    inline fun security(build: SecurityRequirementsList.() -> Unit): SecurityRequirementsList =
+        SecurityRequirementsList().apply(build).also { security = it }
 
     inline fun tags(build: TagsList.() -> Unit): TagsList =
         TagsList().apply(build).also { tags = it }
