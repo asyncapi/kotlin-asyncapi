@@ -1,9 +1,8 @@
 package org.openfolder.kotlinasyncapi.springweb.service
 
 import io.mockk.every
-import io.mockk.impl.annotations.InjectMockKs
-import io.mockk.impl.annotations.MockK
 import io.mockk.junit5.MockKExtension
+import io.mockk.mockk
 import io.mockk.slot
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
@@ -13,15 +12,12 @@ import org.openfolder.kotlinasyncapi.model.AsyncApi
 @ExtendWith(MockKExtension::class)
 internal class DefaultAsyncApiServiceTest {
 
-    @MockK
-    private lateinit var asyncApiExtension: AsyncApiExtension
-
-    @InjectMockKs
-    private lateinit var asyncApiService: DefaultAsyncApiService
-
     @Test
     fun `should extend AsyncApi document`() {
         val asyncApi = slot<AsyncApi>()
+        val asyncApiExtension = mockk<AsyncApiExtension>()
+        val asyncApiExtensions = listOf(asyncApiExtension)
+        val asyncApiService = DefaultAsyncApiService(asyncApiExtensions)
         every {
             asyncApiExtension.extend(capture(asyncApi))
         } answers {
