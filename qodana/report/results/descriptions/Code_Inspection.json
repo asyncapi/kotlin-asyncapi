@@ -1641,16 +1641,16 @@
           "description": "Reports method and constructor calls that implicitly use the platform default charset. These calls can produce different results on systems that use different default charsets. It might result in unexpected behaviour.\n\n**Example:**\n\n    void foo(byte[] bytes) {\n      String s = new String(bytes);\n    }\n\nYou can use a quick-fix that specifies the explicit UTF-8 charset if the corresponding overloaded method is available.\nAfter the quick-fix is applied:\n\n    void foo(byte[] bytes) {\n      String s = new String(bytes, StandardCharsets.UTF_8);\n    }\n"
         },
         {
-          "shortName": "UnnecessaryUnicodeEscape",
-          "displayName": "Unnecessary unicode escape sequence",
-          "enabled": false,
-          "description": "Reports unnecessary unicode escape sequences. For example, when the file encoding can handle the character without escaping it. Unicode control characters are not reported by this inspection (except for a line feed and a tab).\n\n**Example:**\n\n    String s = \"\\u0062\";\n"
-        },
-        {
           "shortName": "StringTokenizer",
           "displayName": "Use of 'StringTokenizer'",
           "enabled": false,
           "description": "Reports usages of the `StringTokenizer` class. Excessive use of `StringTokenizer` is incorrect in an internationalized environment."
+        },
+        {
+          "shortName": "UnnecessaryUnicodeEscape",
+          "displayName": "Unnecessary unicode escape sequence",
+          "enabled": false,
+          "description": "Reports unnecessary unicode escape sequences. For example, when the file encoding can handle the character without escaping it. Unicode control characters are not reported by this inspection (except for a line feed and a tab).\n\n**Example:**\n\n    String s = \"\\u0062\";\n"
         },
         {
           "shortName": "NumericToString",
@@ -2041,16 +2041,16 @@
           "description": "Reports methods that are declared `final`. Such methods can't be overridden and may indicate a lack of object-oriented design. Some coding standards discourage `final` methods."
         },
         {
-          "shortName": "NonFinalUtilityClass",
-          "displayName": "Utility class is not 'final'",
-          "enabled": false,
-          "description": "Reports utility classes that aren't `final`.\n\nUtility classes have all fields and methods declared as `static`.\nMaking them `final` prevents them from being accidentally subclassed."
-        },
-        {
           "shortName": "Singleton",
           "displayName": "Singleton",
           "enabled": false,
           "description": "Reports singleton classes.\n\nSingleton classes are declared in a way that only one instance of the class can ever be instantiated. Singleton classes complicate testing,\nand their presence may indicate a lack of object-oriented design.\n\n**Example:**\n\n\n      class Singleton {\n        private static final Singleton ourInstance = new Singleton();\n\n        private Singleton() {\n        }\n\n        public Singleton getInstance() {\n            return ourInstance;\n        }\n      }\n"
+        },
+        {
+          "shortName": "NonFinalUtilityClass",
+          "displayName": "Utility class is not 'final'",
+          "enabled": false,
+          "description": "Reports utility classes that aren't `final`.\n\nUtility classes have all fields and methods declared as `static`.\nMaking them `final` prevents them from being accidentally subclassed."
         },
         {
           "shortName": "StaticNonFinalField",
@@ -3059,16 +3059,16 @@
           "description": "Reports date format patterns that are likely used by mistake.\n\nThe following patterns are reported:\n\n* Uppercase \"Y\", unless \"w\" appears nearby. It stands for \"Week year\" that is almost always the same as normal \"Year\" (lowercase \"y\" pattern), but may point to the next year at the end of December.\n* Uppercase \"M\" (month) close to \"H\", \"K\", \"h\", or \"k\" (hour). It's likely that a lowercase \"m\" (minute) was intended.\n* Lowercase \"m\" (minute) close to \"y\" (year) or \"d\" (day in month). It's likely that an uppercase \"M\" (month) was intended.\n* Uppercase \"D\" (day in year) close to \"M\", or \"L\" (month). It's likely that a lowercase \"d\" (day in month) was intended.\n* Uppercase \"S\" (milliseconds) close to \"m\" (minutes). It's likely that a lowercase \"s\" (seconds) was intended.\n\n\nExamples:  \n\n`new SimpleDateFormat(\"YYYY-MM-dd\")`: likely `\"yyyy-MM-dd\"` was intended.  \n\n`new SimpleDateFormat(\"yyyy-MM-DD\")`: likely `\"yyyy-MM-dd\"` was intended.  \n\n`new SimpleDateFormat(\"HH:MM\")`: likely `\"HH:mm\"` was intended.\n\nNew in 2020.1"
         },
         {
-          "shortName": "MagicConstant",
-          "displayName": "Magic Constant",
-          "enabled": true,
-          "description": "Reports expressions that can be replaced with \"magic\" constants.\n\nExample 1:\n\n\n      // Bare literal \"2\" is used, warning:\n      Font font = new Font(\"Arial\", 2)\n\nExample 2:\n\n\n      // Predefined constant is used, good:\n      Font font = new Font(\"Arial\", Font.ITALIC)\n\n\nWhen possible, the quick-fix inserts an appropriate predefined constant.\n\n\nThe behavior of this inspection is controlled by `org.intellij.lang.annotations.MagicConstant` annotation.\nSome standard Java library methods are pre-annotated, but you can use this annotation in your code as well."
-        },
-        {
           "shortName": "ClassNewInstance",
           "displayName": "Unsafe call to 'Class.newInstance()'",
           "enabled": false,
           "description": "Reports calls to `java.lang.Class.newInstance()`.\n\n\nThis method propagates exceptions thrown by\nthe no-arguments constructor, including checked exceptions. Usages of this method\neffectively bypass the compile-time exception checking that would\notherwise be performed by the compiler.\n\n\nA quick-fix is suggested to replace the call with a call to the\n`java.lang.reflect.Constructor.newInstance()` method, which\navoids this problem by wrapping any exception thrown by the constructor in a\n(checked) `java.lang.reflect.InvocationTargetException`.\n\n**Example:**\n\n\n      clazz.newInstance()\n\nAfter the quick-fix is applied:\n\n\n      clazz.getConstructor().newInstance();\n"
+        },
+        {
+          "shortName": "MagicConstant",
+          "displayName": "Magic Constant",
+          "enabled": true,
+          "description": "Reports expressions that can be replaced with \"magic\" constants.\n\nExample 1:\n\n\n      // Bare literal \"2\" is used, warning:\n      Font font = new Font(\"Arial\", 2)\n\nExample 2:\n\n\n      // Predefined constant is used, good:\n      Font font = new Font(\"Arial\", Font.ITALIC)\n\n\nWhen possible, the quick-fix inserts an appropriate predefined constant.\n\n\nThe behavior of this inspection is controlled by `org.intellij.lang.annotations.MagicConstant` annotation.\nSome standard Java library methods are pre-annotated, but you can use this annotation in your code as well."
         },
         {
           "shortName": "ConstantConditions",
@@ -3221,16 +3221,16 @@
           "description": "Reports `instanceof` expressions where the compared type is an interface, and the compared expression has a class type that neither implements the compared interface, nor has any visible subclasses which implement the compared interface.\n\n\nAlthough that might be intended, normally such a construct is most likely an error, where\nthe resulting `instanceof` expression always evaluates to `false`.\n\n**Example:**\n\n\n      interface I1 {}\n\n      interface I2 {}\n\n      interface I3 extends I1 {}\n\n      static class Sub1 implements I1 {}\n\n      static class Sub2 extends Sub1 implements I2 {\n        void test(Sub1 sub1) {\n          if (sub1 instanceof I3) { // here 'I3' is incompatible interface\n          }\n        }\n      }\n"
         },
         {
-          "shortName": "NullArgumentToVariableArgMethod",
-          "displayName": "Confusing argument to varargs method",
-          "enabled": true,
-          "description": "Reports calls to variable arity methods that have a single argument in the vararg parameter position, which is either a `null` or an array of a subtype of the vararg parameter. Such an argument may be confusing as it is unclear if a varargs or non-varargs call is desired.\n\n**Example:**\n\n\n      String[] ss = new String[]{\"foo\", \"bar\"};\n      System.out.printf(\"%s\", ss);\n\nIn this example only the first element of the array will be printed, not the entire array."
-        },
-        {
           "shortName": "InfiniteRecursion",
           "displayName": "Infinite recursion",
           "enabled": true,
           "description": "Reports methods that call themselves infinitely unless an exception is thrown.\n\n\nMethods reported by this inspection cannot return normally.\nWhile such behavior may be intended, in many cases this is just an oversight.\n\n**Example:**\n\n      int baz() {\n          return baz();\n      }\n"
+        },
+        {
+          "shortName": "NullArgumentToVariableArgMethod",
+          "displayName": "Confusing argument to varargs method",
+          "enabled": true,
+          "description": "Reports calls to variable arity methods that have a single argument in the vararg parameter position, which is either a `null` or an array of a subtype of the vararg parameter. Such an argument may be confusing as it is unclear if a varargs or non-varargs call is desired.\n\n**Example:**\n\n\n      String[] ss = new String[]{\"foo\", \"bar\"};\n      System.out.printf(\"%s\", ss);\n\nIn this example only the first element of the array will be printed, not the entire array."
         },
         {
           "shortName": "VariableNotUsedInsideIf",
@@ -8781,16 +8781,16 @@
           "description": "Reports methods whose number of statements exceeds the specified maximum.\n\nMethods with too many statements may be confusing and are a good sign that refactoring is necessary.\n\nThe following statements are not counted:\n\n* empty statements (semicolons)\n* block statements\n* `for` loop initialization statements, that is, `int i = ...` within a `for(int i = ...;...)` statement\n* `for` loop update statements, that is, `i += 2` within a `for(int i = ...;...; i += 2)` statement\n\nUse the **Maximum statements per method** field to specify the maximum allowed number of statements in a method."
         },
         {
-          "shortName": "OverlyLongLambda",
-          "displayName": "Overly long lambda expression",
-          "enabled": false,
-          "description": "Reports lambda expressions whose number of statements exceeds the specified maximum.\n\nLambda expressions that are too long may be confusing, and it is often better to extract the statements into a separate method.\n\n\nThe following statements are not counted:\n\n* empty statements (semicolons)\n* block statements\n* `for` loop initialization statements, that is, `int i = ...` within a `for(int i = ...;...)` statement\n* `for` loop update statements, that is, `i += 2` within a `for(int i = ...;...; i += 2)` statement\n\nUse the **Non-comment source statements limit** field to specify the maximum allowed number of statements in a lambda expression."
-        },
-        {
           "shortName": "ParametersPerMethod",
           "displayName": "Method with too many parameters",
           "enabled": false,
           "description": "Reports methods whose number of parameters exceeds the specified maximum. Methods with too many parameters can be a good sign that a refactoring is necessary.\n\nMethods that have super methods are not reported.\n\nUse the **Parameter limit** field to specify the maximum allowed number of parameters for a method."
+        },
+        {
+          "shortName": "OverlyLongLambda",
+          "displayName": "Overly long lambda expression",
+          "enabled": false,
+          "description": "Reports lambda expressions whose number of statements exceeds the specified maximum.\n\nLambda expressions that are too long may be confusing, and it is often better to extract the statements into a separate method.\n\n\nThe following statements are not counted:\n\n* empty statements (semicolons)\n* block statements\n* `for` loop initialization statements, that is, `int i = ...` within a `for(int i = ...;...)` statement\n* `for` loop update statements, that is, `i += 2` within a `for(int i = ...;...; i += 2)` statement\n\nUse the **Non-comment source statements limit** field to specify the maximum allowed number of statements in a lambda expression."
         },
         {
           "shortName": "MethodCoupling",
