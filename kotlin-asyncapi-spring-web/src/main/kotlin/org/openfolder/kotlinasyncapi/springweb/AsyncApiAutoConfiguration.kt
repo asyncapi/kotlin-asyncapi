@@ -36,6 +36,12 @@ internal open class AsyncApiAutoConfiguration {
         }
 
     @Bean
+    open fun asyncApiDefaultChannelsExtension() =
+        AsyncApiExtension.builder(order = -1) {
+            channels { }
+        }
+
+    @Bean
     open fun asyncApiService(extensions: List<AsyncApiExtension>): AsyncApiService =
         DefaultAsyncApiService(extensions)
 
