@@ -116,7 +116,7 @@ To serve your AsyncAPI specification via Spring Web:
 
 The library registers a default `info` extension using the `Implementation-Title` and `Implementation-Version` of the `MANIFEST.md` file. Please note that this information is only available if the application was started from a JAR file. The default info will **not** work if you start the application from your IDE.
 
-You can register multiple extensions to extend and override AsyncAPI components. Extensions with a higher order override extensions with a lower order. Please note that currently you can only extend top-level components. like `info`, `channels` or `servers`. Subcomponents will always be overwritten.
+You can register multiple extensions to extend and override AsyncAPI components. Extensions with a higher order override extensions with a lower order. Please note that you can only extend top-level components for now (`info`, `channels`, `servers`...). Subcomponents will always be overwritten.
 
 **Example** (simplified version of [Gitter example](https://github.com/asyncapi/spec/blob/22c6f2c7a61846338bfbd43d81024cb12cf4ed5f/examples/gitter-streaming.yml))
 ```kotlin
