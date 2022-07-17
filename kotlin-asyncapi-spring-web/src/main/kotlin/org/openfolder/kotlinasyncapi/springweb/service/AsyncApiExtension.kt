@@ -2,7 +2,12 @@ package org.openfolder.kotlinasyncapi.springweb.service
 
 import org.openfolder.kotlinasyncapi.model.AsyncApi
 
-fun interface AsyncApiExtension {
+interface AsyncApiExtension {
+
+    /**
+     * Extensions with higher values overwrite extensions with lower values.
+     */
+    val order: Int
 
     /**
      * Extends the generated AsyncApi resource
@@ -10,7 +15,10 @@ fun interface AsyncApiExtension {
     fun extend(asyncApi: AsyncApi): AsyncApi
 
     companion object {
-        fun builder(build: AsyncApi.() -> Unit): AsyncApiExtension =
-            AsyncApiExtension { asyncApi -> asyncApi.apply(build) }
+        fun builder(order: Int = 0, build: AsyncApi.() -> Unit): AsyncApiExtension =
+            object : AsyncApiExtension {
+                override val order = order
+                override fun extend(asyncApi: AsyncApi) = asyncApi.apply(build)
+            }
     }
 }

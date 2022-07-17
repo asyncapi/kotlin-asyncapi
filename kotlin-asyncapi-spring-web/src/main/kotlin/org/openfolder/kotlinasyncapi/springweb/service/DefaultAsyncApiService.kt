@@ -5,10 +5,13 @@ import org.springframework.stereotype.Service
 
 @Service
 internal class DefaultAsyncApiService(
-    extension: AsyncApiExtension?
+    extensions: List<AsyncApiExtension>
 ) : AsyncApiService {
-
-    private val asyncApi by lazy { AsyncApi().apply { extension?.extend(this) } }
+    private val asyncApi by lazy {
+        AsyncApi().apply {
+            extensions.sortedBy { it.order }.forEach { it.extend(this) }
+        }
+    }
 
     override fun asyncApi() = asyncApi
 }

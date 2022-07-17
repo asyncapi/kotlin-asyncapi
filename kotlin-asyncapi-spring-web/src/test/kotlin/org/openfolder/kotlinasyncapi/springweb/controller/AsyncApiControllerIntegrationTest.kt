@@ -40,10 +40,6 @@ internal class AsyncApiControllerIntegrationTest {
         open fun asyncApiExtension() =
             AsyncApiExtension.builder {
                 id("urn:com:gitter:streaming:api")
-                info {
-                    title("Gitter Streaming API")
-                    version("1.0.0")
-                }
                 servers {
                     server("production") {
                         url("https://stream.gitter.im/v1")
@@ -147,6 +143,24 @@ internal class AsyncApiControllerIntegrationTest {
                             }
                         }
                     }
+                }
+            }
+
+        @Bean
+        open fun asyncApiExtension2() =
+            AsyncApiExtension.builder(order = 10) {
+                info {
+                    description("Gitter Streaming API Description")
+                }
+            }
+
+        @Bean
+        open fun asyncApiExtension3() =
+            AsyncApiExtension.builder(order = 20) {
+                info {
+                    title("Gitter Streaming API")
+                    version("1.0.0")
+                    description("Gitter Streaming API Final Description")
                 }
             }
     }

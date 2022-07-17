@@ -6,8 +6,10 @@ import org.openfolder.kotlinasyncapi.springweb.service.AsyncApiSerializer
 import org.openfolder.kotlinasyncapi.springweb.service.AsyncApiService
 import org.openfolder.kotlinasyncapi.springweb.service.DefaultAsyncApiSerializer
 import org.openfolder.kotlinasyncapi.springweb.service.DefaultAsyncApiService
+import org.openfolder.kotlinasyncapi.springweb.service.DefaultInfoProvider
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
+import org.springframework.context.ApplicationContext
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
@@ -21,8 +23,21 @@ internal open class AsyncApiAutoConfiguration {
         DefaultAsyncApiSerializer()
 
     @Bean
-    open fun asyncApiService(extension: AsyncApiExtension?): AsyncApiService =
-        DefaultAsyncApiService(extension)
+    open fun infoProvider(context: ApplicationContext) =
+        DefaultInfoProvider(context)
+
+    @Bean
+    open fun asyncApiDefaultInfoExtension(infoProvider: DefaultInfoProvider) =
+        AsyncApiExtension.builder(order = -1) {
+            info {
+                infoProvider.title?.let { title(it) }
+                infoProvider.version?.let { version(it) }
+            }
+        }
+
+    @Bean
+    open fun asyncApiService(extensions: List<AsyncApiExtension>): AsyncApiService =
+        DefaultAsyncApiService(extensions)
 
     @Bean
     open fun asyncApiController(service: AsyncApiService, serializer: AsyncApiSerializer): AsyncApiController =
