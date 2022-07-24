@@ -41,6 +41,7 @@
     <modules>
         <module>kotlin-asyncapi-core</module>
         <module>kotlin-asyncapi-spring-web</module>
+        <module>kotlin-asyncapi-script</module>
     </modules>
 
     <properties>
@@ -225,6 +226,11 @@
             <dependency>
                 <groupId>org.openfolder</groupId>
                 <artifactId>kotlin-asyncapi-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openfolder</groupId>
+                <artifactId>kotlin-asyncapi-script</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
