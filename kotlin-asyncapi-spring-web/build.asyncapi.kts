@@ -1,6 +1,0 @@
-info {
-    contact {
-
-    }
-    version
-}
