@@ -42,6 +42,7 @@
         <module>kotlin-asyncapi-core</module>
         <module>kotlin-asyncapi-spring-web</module>
         <module>kotlin-asyncapi-script</module>
+        <module>kotlin-asyncapi-maven-plugin</module>
     </modules>
 
     <properties>
