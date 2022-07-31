@@ -2,12 +2,13 @@ package org.openfolder.kotlinasyncapi.springweb.service
 
 import org.openfolder.kotlinasyncapi.springweb.EnableAsyncApi
 import org.springframework.context.ApplicationContext
-import org.springframework.stereotype.Service
+import org.springframework.stereotype.Component
 
-@Service
+@Component
 internal class DefaultInfoProvider(
     context: ApplicationContext
 ) {
+
     private val applicationPackage = context
         .getBeansWithAnnotation(EnableAsyncApi::class.java)
         .values
