@@ -14,7 +14,7 @@ internal class AsyncApiJsonWriter : AsyncApiFileWriter {
     private val objectMapper = ObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_NULL)
 
     override fun write(asyncApi: AsyncApi, file: File) {
-        file.parentFile.mkdirs()
+        file.parentFile?.mkdirs()
         file.createNewFile()
 
         objectMapper.writeValue(file, asyncApi)

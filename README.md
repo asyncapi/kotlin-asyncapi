@@ -7,9 +7,12 @@
 * [About](#about)
 * [Module Roadmap](#module-roadmap)
 * [Usage](#usage)
-    * [Kotlin DSL](#kotlin-dsl)
-    * [Spring Web](#spring-web)
-    * [Configuration](#configuration)
+    * [Kotlin DSL](#kotlin-dsl-usage)
+    * [Spring Web](#spring-web-usage)
+    * [Kotlin Script](#kotlin-script-usage)
+* [Configuration](#configuration)
+    * [Spring Web](#spring-web-configuration)
+    * [Maven Plugin](#maven-plugin-configuration)
 * [License](#license)
 
 ## About
@@ -19,15 +22,17 @@ The Kotlin AsyncAPI project aims to provide convenience tools for generating and
 The modules around that core build a framework for documenting asynchronous microservice APIs.
 
 ## Module Roadmap
-| Module                | Description                                                      | State              |
-|-----------------------|------------------------------------------------------------------|--------------------|
-| **core**              | Kotlin DSL for building AsyncAPI specifications                  | :white_check_mark: |
-| **spring&#x2011;web** | Spring Boot autoconfiguration for serving the generated document | :white_check_mark: |
-| **script**            | Kotlin scripting support for configuration as code               | :soon:             |
-| **template**          | Template engine for reusing similar AsyncAPI components          | :eyes:             |
+| Module                  | Description                                                                    | State              |
+|-------------------------|--------------------------------------------------------------------------------|--------------------|
+| **core**                | Kotlin DSL for building AsyncAPI specifications                                | :white_check_mark: |
+| **spring&#x2011;web**   | Spring Boot autoconfiguration for serving the generated document               | :white_check_mark: |
+| **script**              | Kotlin scripting support for configuration as code                             | :white_check_mark: |
+| **maven&#x2011;plugin** | Maven plugin for evaluating AsyncAPI scripts and packaging generated resources | :white_check_mark: |
+| **annotation**          | Technology agnostic annotations for meta-configuration                         | :soon:             |
+| **template**            | Template engine for reusing similar AsyncAPI components                        | :eyes:             |
 
 ## Usage
-### Kotlin DSL
+### <a name="kotlin-dsl-usage"></a>Kotlin DSL
 The `AsyncApi` class represents the root of the specification. It provides a static entry function `asyncApi` to the 
 build scope.
 
@@ -109,7 +114,7 @@ asyncApi {
 }
 ```
 
-### Spring Web
+### <a name="spring-web-usage"></a>Spring Web
 To serve your AsyncAPI specification via Spring Web:
 - enable the autoconfiguration by annotating a configuration class with `@EnableAsyncApi`
 - provide an `AsyncApiExtension` bean for the application context
@@ -139,15 +144,63 @@ class AsyncApiConfiguration {
 }
 ```
 
-### Configuration
-You can disable the autoconfiguration and configure the rest endpoint in the application properties.
+### <a name="kotlin-script-usage"></a>Kotlin Script
+[Kotlin Scripting](https://github.com/Kotlin/KEEP/blob/b0c8a37db684eaf74bb1305f3c180b5d2537d787/proposals/scripting-support.md) allows us to execute a piece of code in a specific context. The IDE can still provide features like autocompletion and syntax highlighting. Furthermore, it provides the following benefits:
+- separate AsyncAPI documentation from application source code
+- focus on AsyncAPI content and don't worry about the build context or spring web integration
+- use AsyncAPI Kotlin DSL in Java projects
 
-**Example**
-```yaml
-asyncapi:
-  enabled: false
-  path: /docs/asyncapi
+You can define your AsyncAPI specs in a file with the extension `asyncapi.kts` and place it anywhere in your project. The Maven plugin will run the script and put the generated JSON on the package classpath.
+
+By default, the plugin expects the script to be named `build.asyncapi.kts` and placed in the project root. The script path and resource target path can be changed in the plugin configuration.
+
+**Example** (simplified version of [Gitter example](https://github.com/asyncapi/spec/blob/22c6f2c7a61846338bfbd43d81024cb12cf4ed5f/examples/gitter-streaming.yml))
+```kotlin
+info {
+    title("Gitter Streaming API")
+    version("1.0.0")
+}
+
+servers {
+    // ...
+}
+
+// ...
 ```
+
+```xml
+<plugin>
+  <groupId>org.openfolder</groupId>
+  <artifactId>kotlin-asyncapi-maven-plugin</artifactId>
+  <version>${kotlin-asyncapi.version}</version>
+  <executions>
+    <execution>
+      <goals>
+        <goal>generateResources</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+```
+
+## Configuration
+### <a name="spring-web-configuration"></a>Spring Web
+You can configure the Spring Web integration in the application properties:
+
+| Property                  | Description                                                   | Default          |
+|---------------------------|---------------------------------------------------------------|------------------|
+| `asyncapi.enabled`        | Enables the autoconfiguration                                 | `true`           |
+| `asyncapi.path`           | The resource path for serving the generated AsyncAPI document | `/docs/asyncapi` |
+| `asyncapi.script.enabled` | Enables the Kotlin script support                             | `true`           |
+
+### <a name="maven-plugin-configuration"></a>Maven Plugin
+You can configure the plugin in the plugin configuration:
+
+| Parameter          | Description                                           | Default               |
+|--------------------|-------------------------------------------------------|-----------------------|
+| `sourcePath`       | The relative path to the Kotlin script                | `build.asyncapi.kts`  |
+| `targetPath`       | The relative path to the generated target resources   | `asyncapi/generated/` |
+| `packageResources` | Adds the generated resources to the package classpath | `true`                |
 
 ## License
 Kotlin AsyncAPI is Open Source software released under the
