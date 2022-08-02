@@ -1,4 +1,4 @@
-package org.openfolder.kotlinasyncapi.springweb.service
+package org.openfolder.kotlinasyncapi.springweb.context
 
 import org.openfolder.kotlinasyncapi.springweb.EnableAsyncApi
 import org.springframework.context.ApplicationContext

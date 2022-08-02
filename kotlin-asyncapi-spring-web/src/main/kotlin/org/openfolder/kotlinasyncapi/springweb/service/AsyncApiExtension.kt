@@ -2,6 +2,7 @@ package org.openfolder.kotlinasyncapi.springweb.service
 
 import org.openfolder.kotlinasyncapi.model.AsyncApi
 
+// TODO: Refactor cloning and context propagation
 interface AsyncApiExtension {
 
     /**
@@ -19,6 +20,22 @@ interface AsyncApiExtension {
             object : AsyncApiExtension {
                 override val order = order
                 override fun extend(asyncApi: AsyncApi) = asyncApi.apply(build)
+            }
+
+        fun from(order: Int = 0, resource: AsyncApi) =
+            object : AsyncApiExtension {
+                override val order = order
+                override fun extend(asyncApi: AsyncApi) =
+                    asyncApi.apply {
+                        info = resource.info
+                        channels = resource.channels
+                        resource.id?.let { id = it }
+                        resource.servers?.let { servers = it }
+                        resource.defaultContentType?.let { defaultContentType = it }
+                        resource.components?.let { components = it }
+                        resource.tags?.let { tags = it }
+                        resource.externalDocs?.let { externalDocs = it }
+                    }
             }
     }
 }
