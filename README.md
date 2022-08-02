@@ -145,7 +145,7 @@ class AsyncApiConfiguration {
 ```
 
 ### <a name="kotlin-script-usage"></a>Kotlin Script
-[Kotlin Scripting](https://github.com/Kotlin/KEEP/blob/b0c8a37db684eaf74bb1305f3c180b5d2537d787/proposals/scripting-support.md) allows us to execute a piece of code in a specific context. The IDE can still provide features like autocompletion and syntax highlighting. Furthermore, it provides the following benefits:
+[Kotlin Scripting](https://github.com/Kotlin/KEEP/blob/b0c8a37db684eaf74bb1305f3c180b5d2537d787/proposals/scripting-support.md) allows us to execute a piece of code in a provided context. The IDE can still provide features like autocompletion and syntax highlighting. Furthermore, it provides the following benefits:
 - separate AsyncAPI documentation from application source code
 - focus on AsyncAPI content and don't worry about the build context or spring web integration
 - use AsyncAPI Kotlin DSL in Java projects

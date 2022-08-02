@@ -20,22 +20,23 @@ internal class AsyncApiPlugin @Inject constructor(
 ) : AbstractMojo() {
 
     @Parameter(property = "sourcePath", defaultValue = "build.asyncapi.kts")
-    private lateinit var sourcePath: String
+    lateinit var sourcePath: String
 
     @Parameter(property = "targetPath", defaultValue = "asyncapi/generated/")
-    private lateinit var targetPath: String
+    lateinit var targetPath: String
 
     @Parameter(property = "packageResources", defaultValue = "true")
-    private var packageResources: Boolean = true
+    var packageResources: Boolean = true
 
     @Parameter(property = "project", defaultValue = "\${project}", readonly = true)
-    private lateinit var project: MavenProject
+    lateinit var project: MavenProject
 
     override fun execute() {
         val asyncApi = scriptRunner.run(File(sourcePath))
         val targetFileName = "asyncapi.json"
-        val fullTargetPath = "./target/$targetPath".apply {
-            if (last() != '/') plus('/')
+        val fullTargetPath = "./target/$targetPath".let {
+            if (it.last() != '/') it.plus('/')
+            else it
         }
 
         log.info("Writing $targetFileName to $fullTargetPath")
