@@ -1,6 +1,36 @@
 {
   "libraries": [
     {
+      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.13.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.13.3/jackson-databind-2.13.3.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.13.3/jackson-annotations-2.13.3.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.13.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.13.3/jackson-core-2.13.3.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.skyscreamer:jsonassert:1.5.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/"
+      ]
+    },
+    {
       "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.10",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.6.10/kotlin-stdlib-1.6.10.jar!/"
@@ -133,33 +163,285 @@
       ]
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.13.3",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.6.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.13.3/jackson-databind-2.13.3.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-common/1.6.10/kotlin-scripting-common-1.6.10.jar!/"
       ]
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.3",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.6.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.13.3/jackson-annotations-2.13.3.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm/1.6.10/kotlin-scripting-jvm-1.6.10.jar!/"
       ]
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.13.3",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.6.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.13.3/jackson-core-2.13.3.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-script-runtime/1.6.10/kotlin-script-runtime-1.6.10.jar!/"
       ]
     },
     {
-      "name": "Maven: org.skyscreamer:jsonassert:1.5.0",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.6.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/1.6.10/kotlin-scripting-jvm-host-1.6.10.jar!/"
       ]
     },
     {
-      "name": "Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.6.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/1.6.10/kotlin-compiler-embeddable-1.6.10.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:1.6.10",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/1.6.10/kotlin-daemon-embeddable-1.6.10.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.jetbrains.intellij.deps:trove4j:1.0.20181211",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/intellij/deps/trove4j/1.0.20181211/trove4j-1.0.20181211.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: net.java.dev.jna:jna:5.6.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/net/java/dev/jna/jna/5.6.0/jna-5.6.0.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.6.10",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/1.6.10/kotlin-scripting-compiler-embeddable-1.6.10.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.6.10",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/1.6.10/kotlin-scripting-compiler-impl-embeddable-1.6.10.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: javax.inject:javax.inject:1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/javax/inject/javax.inject/1/javax.inject-1.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-plugin-api:3.8.6",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-plugin-api/3.8.6/maven-plugin-api-3.8.6.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-model:3.8.6",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model/3.8.6/maven-model-3.8.6.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-artifact:3.8.6",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-artifact/3.8.6/maven-artifact-3.8.6.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.plexus:0.3.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.5/org.eclipse.sisu.plexus-0.3.5.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: javax.annotation:javax.annotation-api:1.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-utils:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-utils/3.3.1/plexus-utils-3.3.1.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-classworlds:2.6.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-classworlds/2.6.0/plexus-classworlds-2.6.0.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.6.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/plugin-tools/maven-plugin-annotations/3.6.4/maven-plugin-annotations-3.6.4.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-core:3.8.6",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-core/3.8.6/maven-core-3.8.6.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-settings:3.8.6",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings/3.8.6/maven-settings-3.8.6.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-settings-builder:3.8.6",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings-builder/3.8.6/maven-settings-builder-3.8.6.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-sec-dispatcher:2.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-sec-dispatcher/2.0/plexus-sec-dispatcher-2.0.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-cipher:2.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-cipher/2.0/plexus-cipher-2.0.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-builder-support:3.8.6",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-builder-support/3.8.6/maven-builder-support-3.8.6.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-repository-metadata:3.8.6",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-repository-metadata/3.8.6/maven-repository-metadata-3.8.6.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-model-builder:3.8.6",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model-builder/3.8.6/maven-model-builder-3.8.6.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-resolver-provider:3.8.6",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-resolver-provider/3.8.6/maven-resolver-provider-3.8.6.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.6.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-impl/1.6.3/maven-resolver-impl-1.6.3.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.6.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-api/1.6.3/maven-resolver-api-1.6.3.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.6.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-spi/1.6.3/maven-resolver-spi-1.6.3.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.6.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-util/1.6.3/maven-resolver-util-1.6.3.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.maven.shared:maven-shared-utils:3.3.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: commons-io:commons-io:2.6",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.6/commons-io-2.6.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.inject:0.3.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.5/org.eclipse.sisu.inject-0.3.5.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: com.google.inject:guice:no_aop:4.2.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/google/inject/guice/4.2.2/guice-4.2.2-no_aop.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: aopalliance:aopalliance:1.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: com.google.guava:guava:25.1-android",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/google/guava/guava/25.1-android/guava-25.1-android.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: com.google.code.findbugs:jsr305:3.0.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.checkerframework:checker-compat-qual:2.0.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: com.google.errorprone:error_prone_annotations:2.1.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: com.google.j2objc:j2objc-annotations:1.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.codehaus.mojo:animal-sniffer-annotations:1.14",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-interpolation:1.26",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-interpolation/1.26/plexus-interpolation-1.26.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-component-annotations:2.1.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-component-annotations/2.1.0/plexus-component-annotations-2.1.0.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.apache.commons:commons-lang3:3.8.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.slf4j:slf4j-api:1.7.36",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar!/"
       ]
     },
     {
