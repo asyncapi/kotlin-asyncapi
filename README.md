@@ -116,6 +116,7 @@ asyncApi {
 
 ### <a name="spring-web-usage"></a>Spring Web
 To serve your AsyncAPI specification via Spring Web:
+- add the `kotlin-asyncapi-spring-web` dependency
 - enable the autoconfiguration by annotating a configuration class with `@EnableAsyncApi`
 - [optional] provide `AsyncApiExtension` beans for the application context
 - [optional] add a Kotlin build script to the classpath -> see [Kotlin script usage](#kotlin-script-usage)
@@ -143,6 +144,13 @@ class AsyncApiConfiguration {
             // ...
         }
 }
+```
+```xml
+<dependency>
+  <groupId>org.openfolder</groupId>
+  <artifactId>kotlin-asyncapi-spring-web</artifactId>
+  <version>${kotlin-asyncapi.version}</version>
+</dependency>
 ```
 
 ### <a name="kotlin-script-usage"></a>Kotlin Script
