@@ -187,11 +187,13 @@ servers {
 ### <a name="spring-web-configuration"></a>Spring Web
 You can configure the Spring Web integration in the application properties:
 
-| Property                  | Description                                                   | Default          |
-|---------------------------|---------------------------------------------------------------|------------------|
-| `asyncapi.enabled`        | Enables the autoconfiguration                                 | `true`           |
-| `asyncapi.path`           | The resource path for serving the generated AsyncAPI document | `/docs/asyncapi` |
-| `asyncapi.script.enabled` | Enables the Kotlin script support                             | `true`           |
+| Property                        | Description                                                   | Default                                      |
+|---------------------------------|---------------------------------------------------------------|----------------------------------------------|
+| `asyncapi.enabled`              | Enables the autoconfiguration                                 | `true`                                       |
+| `asyncapi.path`                 | The resource path for serving the generated AsyncAPI document | `/docs/asyncapi`                             |
+| `asyncapi.script.enabled`       | Enables the Kotlin script support                             | `true`                                       |
+| `asyncapi.script.resource-path` | Path to the generated script resource file                    | `classpath:asyncapi/generated/asyncapi.json` |
+| `asyncapi.script.source-path`   | Path to the AsyncAPI Kotlin script file                       | `classpath:build.asyncapi.kts`               |
 
 ### <a name="maven-plugin-configuration"></a>Maven Plugin
 You can configure the plugin in the plugin configuration:

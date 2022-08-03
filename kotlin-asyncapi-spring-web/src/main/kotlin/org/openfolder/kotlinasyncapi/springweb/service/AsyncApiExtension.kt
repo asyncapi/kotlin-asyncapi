@@ -1,6 +1,10 @@
 package org.openfolder.kotlinasyncapi.springweb.service
 
 import org.openfolder.kotlinasyncapi.model.AsyncApi
+import org.openfolder.kotlinasyncapi.script.AsyncApiScript
+import kotlin.script.experimental.api.SourceCode
+import kotlin.script.experimental.api.implicitReceivers
+import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 
 // TODO: Refactor cloning and context propagation
 interface AsyncApiExtension {
@@ -35,6 +39,22 @@ interface AsyncApiExtension {
                         resource.components?.let { components = it }
                         resource.tags?.let { tags = it }
                         resource.externalDocs?.let { externalDocs = it }
+                    }
+            }
+
+        fun from(order: Int = 0, script: SourceCode) =
+            object : AsyncApiExtension {
+                private val jvmScriptingHost = BasicJvmScriptingHost()
+
+                override val order = order
+                override fun extend(asyncApi: AsyncApi) =
+                    asyncApi.apply {
+                        jvmScriptingHost.evalWithTemplate<AsyncApiScript>(
+                            script = script,
+                            evaluation = {
+                                implicitReceivers(asyncApi)
+                            }
+                        )
                     }
             }
     }
