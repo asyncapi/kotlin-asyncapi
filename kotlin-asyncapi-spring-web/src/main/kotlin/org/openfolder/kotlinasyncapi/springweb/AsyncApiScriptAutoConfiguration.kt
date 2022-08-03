@@ -30,6 +30,8 @@ internal open class AsyncApiScriptAutoConfiguration {
     @ConditionalOnClass(BasicJvmScriptingHost::class)
     open fun asyncApiScriptExtension(resourceProvider: ResourceProvider, asyncApiProperties: AsyncApiProperties) =
         resourceProvider.resource(asyncApiProperties.script.sourcePath)?.let {
-            AsyncApiExtension.from(script = it.file.toScriptSource())
+            AsyncApiExtension.from(
+                script = it.inputStream.bufferedReader().use { it.readText() }.toScriptSource()
+            )
         }
 }
