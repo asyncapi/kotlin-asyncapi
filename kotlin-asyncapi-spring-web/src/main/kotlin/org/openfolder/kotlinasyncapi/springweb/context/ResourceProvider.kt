@@ -22,7 +22,7 @@ internal class DefaultResourceProvider(
     private val objectMapper = ObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_NULL)
 
     override fun <T : Any> resource(path: String, clazz: KClass<T>): T? =
-        resource(path)?.let { objectMapper.readValue(it.file, clazz.java) }
+        resource(path)?.let { objectMapper.readValue(it.inputStream, clazz.java) }
 
     override fun resource(path: String): Resource? =
         context.getResource(path).takeIf { it.exists() }
