@@ -8,7 +8,7 @@ import kotlin.script.experimental.api.acceptedLocations
 import kotlin.script.experimental.api.defaultImports
 import kotlin.script.experimental.api.ide
 import kotlin.script.experimental.api.implicitReceivers
-import kotlin.script.experimental.jvm.dependenciesFromCurrentContext
+import kotlin.script.experimental.jvm.dependenciesFromClassloader
 import kotlin.script.experimental.jvm.jvm
 
 @KotlinScript(
@@ -25,7 +25,7 @@ internal object AsyncApiScriptCompilationConfiguration : ScriptCompilationConfig
         acceptedLocations(ScriptAcceptedLocation.Everywhere)
     }
     jvm {
-        dependenciesFromCurrentContext(
+        dependenciesFromClassloader(
             "kotlin-stdlib",
             "kotlin-asyncapi-core",
             "kotlin-asyncapi-script"
