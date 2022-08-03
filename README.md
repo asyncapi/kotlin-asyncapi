@@ -151,12 +151,12 @@ class AsyncApiConfiguration {
 - focus on AsyncAPI content and don't worry about the build context or spring web integration
 - use AsyncAPI Kotlin DSL in Java projects
 
-You have two options to use Kotlin scripting for your project:
+You have two options to use Kotlin scripting in your project:
 - let your Spring Boot application evaluate the script at runtime
 - let the Maven plugin evaluate the script during build time
 
 #### Embedded Scripting
-Your Spring Boot application can pick up your build script from the classpath and convert it to an AsyncApiExtension. You just have to place your script with the file extension `asyncapi.kts` in your `resources` folder. By default, the library expects the script to be named `build.asyncapi.kts` and placed in the root of the `resources` folder. This can be changed in the application properties.
+Your Spring Boot application can pick up your build script from the classpath and convert it to an `AsyncApiExtension`. You just have to place your script with the file extension `asyncapi.kts` in your `resources` folder. By default, the library expects the script to be named `build.asyncapi.kts` and placed in the root of the `resources` folder. This can be changed in the application properties.
 
 **Example** (simplified version of [Gitter example](https://github.com/asyncapi/spec/blob/22c6f2c7a61846338bfbd43d81024cb12cf4ed5f/examples/gitter-streaming.yml))
 ```kotlin
@@ -171,7 +171,9 @@ servers {
 
 // ...
 ```
-Embedded scripting is enabled by default for Spring Boot applications. If you don't want to include the Kotlin compiler in your build, you can also evaluate the script with the Maven plugin and use the packaged script resources in your Spring Boot application. You just need to exclude the `kotlin-scripting-jvm-host` dependency from the `kotlin-asyncapi-spring-web` artifact.
+Embedded scripting is enabled by default for Spring Boot applications. If you don't want to include the Kotlin compiler in your build, you can also evaluate the script with the Maven plugin and use the packaged script resources in your Spring Boot application. 
+
+You just need to exclude the `kotlin-scripting-jvm-host` dependency from the `kotlin-asyncapi-spring-web` artifact. The Spring Web integration automatically picks up the script resource from the `resource-path` and converts it to an `AsyncApiExtension`.
 
 #### Maven Plugin
 The Maven plugin will evaluate the script and put the generated AsyncAPI JSON on the package classpath. Your application can convert the resource to an AsyncApi model object. 
