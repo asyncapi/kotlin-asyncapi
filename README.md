@@ -133,7 +133,7 @@ class AsyncApiConfiguration {
     
     @Bean
     fun asyncApiExtension() =
-        AsyncApiExtension.builder {
+        AsyncApiExtension.builder(order = 10) {
             info {
                 title("Gitter Streaming API")
                 version("1.0.0")
