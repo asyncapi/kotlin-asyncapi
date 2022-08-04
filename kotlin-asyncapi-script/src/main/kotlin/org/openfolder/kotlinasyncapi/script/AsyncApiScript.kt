@@ -28,7 +28,8 @@ internal object AsyncApiScriptCompilationConfiguration : ScriptCompilationConfig
         dependenciesFromClassloader(
             "kotlin-stdlib",
             "kotlin-asyncapi-core",
-            "kotlin-asyncapi-script"
+            "kotlin-asyncapi-script",
+            unpackJarCollections = true
         )
     }
 })
