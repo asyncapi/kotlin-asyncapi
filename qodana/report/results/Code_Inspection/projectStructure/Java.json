@@ -1,15 +1,7 @@
 {
   "modules": [
     {
-      "name": "kotlin-asyncapi-script",
-      "languageLevel": 5
-    },
-    {
-      "name": "kotlin-asyncapi-maven-plugin",
-      "languageLevel": 5
-    },
-    {
-      "name": "kotlin-asyncapi-parent",
+      "name": "kotlin-asyncapi-core",
       "languageLevel": 5
     },
     {
@@ -17,7 +9,15 @@
       "languageLevel": 5
     },
     {
-      "name": "kotlin-asyncapi-core",
+      "name": "kotlin-asyncapi-parent",
+      "languageLevel": 5
+    },
+    {
+      "name": "kotlin-asyncapi-script",
+      "languageLevel": 5
+    },
+    {
+      "name": "kotlin-asyncapi-maven-plugin",
       "languageLevel": 5
     }
   ]
