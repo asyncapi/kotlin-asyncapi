@@ -8,8 +8,9 @@ import kotlin.script.experimental.api.acceptedLocations
 import kotlin.script.experimental.api.defaultImports
 import kotlin.script.experimental.api.ide
 import kotlin.script.experimental.api.implicitReceivers
-import kotlin.script.experimental.jvm.dependenciesFromClassContext
 import kotlin.script.experimental.jvm.jvm
+import kotlin.script.experimental.jvm.updateClasspath
+import kotlin.script.experimental.jvm.util.scriptCompilationClasspathFromContextOrNull
 
 @KotlinScript(
     displayName = "AsyncApi build script",
@@ -25,11 +26,13 @@ object AsyncApiScriptCompilationConfiguration : ScriptCompilationConfiguration({
         acceptedLocations(ScriptAcceptedLocation.Everywhere)
     }
     jvm {
-        dependenciesFromClassContext(
-            AsyncApiScript::class,
-            "kotlin-stdlib",
-            "kotlin-asyncapi-core",
-            "kotlin-asyncapi-script"
+        updateClasspath(
+            classpath = scriptCompilationClasspathFromContextOrNull(
+                "kotlin-stdlib",
+                "kotlin-asyncapi-core",
+                "kotlin-asyncapi-script",
+                classLoader = AsyncApiScript::class.java.classLoader
+            )
         )
     }
 })
