@@ -8,7 +8,7 @@ import kotlin.script.experimental.api.acceptedLocations
 import kotlin.script.experimental.api.defaultImports
 import kotlin.script.experimental.api.ide
 import kotlin.script.experimental.api.implicitReceivers
-import kotlin.script.experimental.jvm.dependenciesFromClassloader
+import kotlin.script.experimental.jvm.dependenciesFromClassContext
 import kotlin.script.experimental.jvm.jvm
 
 @KotlinScript(
@@ -18,18 +18,18 @@ import kotlin.script.experimental.jvm.jvm
 )
 abstract class AsyncApiScript
 
-internal object AsyncApiScriptCompilationConfiguration : ScriptCompilationConfiguration({
+object AsyncApiScriptCompilationConfiguration : ScriptCompilationConfiguration({
     defaultImports("org.openfolder.kotlinasyncapi.model.*")
     implicitReceivers(AsyncApi::class)
     ide {
         acceptedLocations(ScriptAcceptedLocation.Everywhere)
     }
     jvm {
-        dependenciesFromClassloader(
+        dependenciesFromClassContext(
+            AsyncApiScript::class,
             "kotlin-stdlib",
             "kotlin-asyncapi-core",
-            "kotlin-asyncapi-script",
-            unpackJarCollections = true
+            "kotlin-asyncapi-script"
         )
     }
 })
