@@ -1,11 +1,27 @@
 {
   "modules": [
     {
-      "name": "kotlin-asyncapi-parent",
+      "name": "kotlin-asyncapi-core",
       "contentEntries": [
         {
-          "path": "file://$PROJECT_DIR$",
-          "sourceFolders": []
+          "path": "file://$PROJECT_DIR$/kotlin-asyncapi-core",
+          "sourceFolders": [
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-core/src/main/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-core/src/test/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-core/src/test/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            }
+          ]
         }
       ],
       "orderEntries": [
@@ -16,6 +32,26 @@
         {
           "name": "<Module source>",
           "type": "Own sources"
+        },
+        {
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.13.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.13.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.skyscreamer:jsonassert:1.5.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1",
+          "type": "Library"
         },
         {
           "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.10",
@@ -827,27 +863,11 @@
       ]
     },
     {
-      "name": "kotlin-asyncapi-core",
+      "name": "kotlin-asyncapi-parent",
       "contentEntries": [
         {
-          "path": "file://$PROJECT_DIR$/kotlin-asyncapi-core",
-          "sourceFolders": [
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-core/src/main/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-core/src/test/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-core/src/test/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            }
-          ]
+          "path": "file://$PROJECT_DIR$",
+          "sourceFolders": []
         }
       ],
       "orderEntries": [
@@ -858,26 +878,6 @@
         {
           "name": "<Module source>",
           "type": "Own sources"
-        },
-        {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.13.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.13.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.skyscreamer:jsonassert:1.5.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1",
-          "type": "Library"
         },
         {
           "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.10",
