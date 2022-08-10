@@ -29,8 +29,7 @@ object AsyncApiScriptCompilationConfiguration : ScriptCompilationConfiguration({
             AsyncApiScript::class,
             "kotlin-stdlib",
             "kotlin-asyncapi-core",
-            "kotlin-asyncapi-script",
-            unpackJarCollections = true
+            "kotlin-asyncapi-script"
         )
     }
 })
