@@ -11,5 +11,5 @@ internal open class AsyncApiMarkerConfiguration {
         return Marker()
     }
 
-    internal class Marker
+    class Marker
 }

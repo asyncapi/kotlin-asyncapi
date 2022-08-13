@@ -19,7 +19,7 @@ import kotlin.script.experimental.jvm.util.scriptCompilationClasspathFromContext
 )
 abstract class AsyncApiScript
 
-object AsyncApiScriptCompilationConfiguration : ScriptCompilationConfiguration({
+internal object AsyncApiScriptCompilationConfiguration : ScriptCompilationConfiguration({
     defaultImports("org.openfolder.kotlinasyncapi.model.*")
     implicitReceivers(AsyncApi::class)
     ide {
