@@ -298,23 +298,23 @@
       "scope": "test"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:2.0.1-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:2.1.0",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-core",
-      "version": "2.0.1-SNAPSHOT",
-      "baseVersion": "2.0.1-SNAPSHOT",
+      "version": "2.1.0",
+      "baseVersion": "2.1.0",
       "type": "jar",
       "optional": false,
       "scope": "compile"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-script:2.0.1-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-script:2.1.0",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-script",
-      "version": "2.0.1-SNAPSHOT",
-      "baseVersion": "2.0.1-SNAPSHOT",
+      "version": "2.1.0",
+      "baseVersion": "2.1.0",
       "type": "jar",
       "optional": false,
       "scope": "compile"
@@ -1233,12 +1233,12 @@
       "scope": "provided"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:2.0.1-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:2.1.0",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-core",
-      "version": "2.0.1-SNAPSHOT",
-      "baseVersion": "2.0.1-SNAPSHOT",
+      "version": "2.1.0",
+      "baseVersion": "2.1.0",
       "type": "jar",
       "optional": false,
       "scope": "compile"
@@ -1519,23 +1519,23 @@
       "scope": "test"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:2.0.1-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:2.1.0",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-core",
-      "version": "2.0.1-SNAPSHOT",
-      "baseVersion": "2.0.1-SNAPSHOT",
+      "version": "2.1.0",
+      "baseVersion": "2.1.0",
       "type": "jar",
       "optional": false,
       "scope": "compile"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-script:2.0.1-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-script:2.1.0",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-script",
-      "version": "2.0.1-SNAPSHOT",
-      "baseVersion": "2.0.1-SNAPSHOT",
+      "version": "2.1.0",
+      "baseVersion": "2.1.0",
       "type": "jar",
       "optional": false,
       "scope": "compile"
