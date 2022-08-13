@@ -1,51 +1,23 @@
 {"version":"3","listProblem":[{
   "tool": "Code Inspection",
   "category": "Style issues",
-  "type": "Nested lambda has shadowed implicit parameter",
-  "severity": "Moderate",
-  "comment": "Implicit parameter 'it' of enclosing lambda is shadowed",
-  "detailsInfo": "Reports nested lambdas with shadowed implicit parameters.\n\n**Example:**\n\n\n    fun foo(listOfLists: List<List<String>>) {\n      listOfLists.forEach {\n        it.forEach {\n          println(it)\n        }\n      }\n    }\n\nAfter the quick-fix is applied:\n\n\n    fun foo(listOfLists: List<List<String>>) {\n      listOfLists.forEach {\n        it.forEach { it1 ->\n          println(it1)\n        }\n      }\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiScriptAutoConfiguration.kt",
-      "language": "kotlin",
-      "line": 34,
-      "offset": 64,
-      "length": 2,
-      "code": {
-        "startLine": 32,
-        "length": 2,
-        "offset": 178,
-        "surroundingCode": "        resourceProvider.resource(asyncApiProperties.script.sourcePath)?.let {\n            AsyncApiExtension.from(\n                script = it.inputStream.bufferedReader().use { it.readText() }.toScriptSource()\n            )\n        }"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-spring-web",
-    "inspectionName": "NestedLambdaShadowedImplicitParameter"
-  },
-  "hash": "f6367a4a3d5a6bd54b9516b35c7640a47b3b67454988182e807ee1e4a824bce2"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
   "type": "Class member can have 'private' visibility",
   "severity": "Info",
-  "comment": "Property 'default' could be private",
+  "comment": "Property 'operationId' could be private",
   "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerVariable.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/OperationTrait.kt",
       "language": "kotlin",
-      "line": 18,
+      "line": 28,
       "offset": 9,
-      "length": 7,
+      "length": 11,
       "code": {
-        "startLine": 16,
-        "length": 7,
-        "offset": 66,
-        "surroundingCode": "class ServerVariable {\n    var enum: List<String>? = null\n    var default: String? = null\n    var description: String? = null\n    var examples: List<String>? = null"
+        "startLine": 26,
+        "length": 11,
+        "offset": 50,
+        "surroundingCode": "@AsyncApiComponent\nclass OperationTrait {\n    var operationId: String? = null\n    var summary: String? = null\n    var description: String? = null"
       }
     }
   ],
@@ -53,5 +25,201 @@
     "module": "kotlin-asyncapi-core",
     "inspectionName": "MemberVisibilityCanBePrivate"
   },
-  "hash": "6f596c03edf7a6dafb4976115d17ea83301a55c584f31550d2d0a37979a27fd3"
+  "hash": "ce1e11049de190c544fcb31eb6a44c17e9a4e41a3864efdbe9217e70451d1304"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"asyncApiController\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
+      "language": "kotlin",
+      "line": 57,
+      "offset": 14,
+      "length": 18,
+      "code": {
+        "startLine": 55,
+        "length": 18,
+        "offset": 24,
+        "surroundingCode": "\n    @Bean\n    open fun asyncApiController(service: AsyncApiService, serializer: AsyncApiSerializer): AsyncApiController =\n        AsyncApiController(service, serializer)\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-spring-web",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "c573b5372e13d8b680a45ea85920c17e06692f9660b1aaba4da807b052b86930"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"asyncApiProperties\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
+      "language": "kotlin",
+      "line": 34,
+      "offset": 14,
+      "length": 18,
+      "code": {
+        "startLine": 32,
+        "length": 18,
+        "offset": 102,
+        "surroundingCode": "    @Bean\n    @ConfigurationProperties(prefix = \"asyncapi\", ignoreUnknownFields = false)\n    open fun asyncApiProperties() =\n        AsyncApiProperties()\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-spring-web",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "f11276a7a5773c0010d6743548aa19e4ad7fec00909bdc4a078909a124668f4a"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"asyncApiDefaultChannelsExtension\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
+      "language": "kotlin",
+      "line": 47,
+      "offset": 14,
+      "length": 32,
+      "code": {
+        "startLine": 45,
+        "length": 32,
+        "offset": 24,
+        "surroundingCode": "\n    @Bean\n    open fun asyncApiDefaultChannelsExtension() =\n        AsyncApiExtension.builder(order = -1) {\n            channels { }"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-spring-web",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "a7f5f15c164366bc2feb04783b985b3bf92730b7cadd20bcf2df200ba4d672d7"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"asyncApiDefaultInfoExtension\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
+      "language": "kotlin",
+      "line": 38,
+      "offset": 14,
+      "length": 28,
+      "code": {
+        "startLine": 36,
+        "length": 28,
+        "offset": 24,
+        "surroundingCode": "\n    @Bean\n    open fun asyncApiDefaultInfoExtension(infoProvider: DefaultInfoProvider) =\n        AsyncApiExtension.builder(order = -1) {\n            info {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-spring-web",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "d261156fe854012ec0c13c663b1ae34009f2068e38e9351710029aba5f4abb7b"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"infoProvider\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
+      "language": "kotlin",
+      "line": 29,
+      "offset": 14,
+      "length": 12,
+      "code": {
+        "startLine": 27,
+        "length": 12,
+        "offset": 24,
+        "surroundingCode": "\n    @Bean\n    open fun infoProvider(context: ApplicationContext) =\n        DefaultInfoProvider(context)\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-spring-web",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "c2a60387cbcaaacce749b5d611181976adce754a918e9bd44c408a58c261e26a"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"asyncApiService\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
+      "language": "kotlin",
+      "line": 53,
+      "offset": 14,
+      "length": 15,
+      "code": {
+        "startLine": 51,
+        "length": 15,
+        "offset": 24,
+        "surroundingCode": "\n    @Bean\n    open fun asyncApiService(extensions: List<AsyncApiExtension>): AsyncApiService =\n        DefaultAsyncApiService(extensions)\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-spring-web",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "1ccb1d8c7e1f437517422cee14aff86e14f4f5ae2eba98d34d2911d6c6a5ea34"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"asyncApiSerializer\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
+      "language": "kotlin",
+      "line": 25,
+      "offset": 14,
+      "length": 18,
+      "code": {
+        "startLine": 23,
+        "length": 18,
+        "offset": 53,
+        "surroundingCode": "    @Bean\n    @ConditionalOnMissingBean\n    open fun asyncApiSerializer(): AsyncApiSerializer =\n        DefaultAsyncApiSerializer()\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-spring-web",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "fc47fafd849ba284dea0a719e23c2eb4817c6def4d84445ede71106e56f57bb7"
 }]}
