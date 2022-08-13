@@ -117,11 +117,8 @@ asyncApi {
 ### <a name="spring-web-usage"></a>Spring Web
 To serve your AsyncAPI specification via Spring Web:
 - add the `kotlin-asyncapi-spring-web` dependency
-- enable the autoconfiguration by annotating a configuration class with `@EnableAsyncApi`
-- [optional] provide `AsyncApiExtension` beans for the application context
-- [optional] add a Kotlin build script to the classpath -> see [Kotlin script usage](#kotlin-script-usage)
-
-The library registers a default `info` extension using the `Implementation-Title` and `Implementation-Version` of the `MANIFEST.md` file. Please note that this information is only available if the application was started from a JAR file. The default info will **not** work if you start the application from your IDE.
+- enable the auto-configuration by annotating a configuration class with `@EnableAsyncApi`
+- document your API with `AsyncApiExtension` beans and/or Kotlin scripting (see [Kotlin script usage](#kotlin-script-usage))
 
 You can register multiple extensions to extend and override AsyncAPI components. Extensions with a higher order override extensions with a lower order. Please note that you can only extend top-level components for now (`info`, `channels`, `servers`...). Subcomponents will always be overwritten.
 
@@ -154,17 +151,19 @@ class AsyncApiConfiguration {
 ```
 
 ### <a name="kotlin-script-usage"></a>Kotlin Script
-[Kotlin Scripting](https://github.com/Kotlin/KEEP/blob/b0c8a37db684eaf74bb1305f3c180b5d2537d787/proposals/scripting-support.md) allows us to execute a piece of code in a provided context. The IDE can still provide features like autocompletion and syntax highlighting. Furthermore, it provides the following benefits:
+[Kotlin scripting](https://github.com/Kotlin/KEEP/blob/b0c8a37db684eaf74bb1305f3c180b5d2537d787/proposals/scripting-support.md) allows us to execute a piece of code in a provided context. The IDE can still provide features like autocompletion and syntax highlighting. Furthermore, it provides the following benefits:
 - separate AsyncAPI documentation from application source code
 - focus on AsyncAPI content and don't worry about the build context or spring web integration
 - use AsyncAPI Kotlin DSL in Java projects
 
 You have two options to use Kotlin scripting in your project:
-- let your Spring Boot application evaluate the script at runtime
-- let the Maven plugin evaluate the script during build time
+- [Plugin] let the Maven plugin evaluate the script during build time (recommended)
+- [Embedded] let your Spring Boot application evaluate the script at runtime
 
-#### Embedded Scripting
-Your Spring Boot application can pick up your build script from the classpath and convert it to an `AsyncApiExtension`. You just have to place your script with the file extension `asyncapi.kts` in your `resources` folder. By default, the library expects the script to be named `build.asyncapi.kts` and placed in the root of the `resources` folder. This can be changed in the application properties.
+#### Maven Plugin
+The Maven plugin evaluates your `asyncapi.kts` script, generates a valid AsyncAPI JSON file and adds it to the project resources. The `kotlin-asyncapi-spring-web` module picks the generated resource up and converts it to an `AsyncApiExtension`.
+
+By default, the plugin expects the script to be named `build.asyncapi.kts` and placed in the project root. The script path and resource target path can be changed in the plugin configuration.
 
 **Example** (simplified version of [Gitter example](https://github.com/asyncapi/spec/blob/22c6f2c7a61846338bfbd43d81024cb12cf4ed5f/examples/gitter-streaming.yml))
 ```kotlin
@@ -179,15 +178,6 @@ servers {
 
 // ...
 ```
-Embedded scripting is enabled by default for Spring Boot applications. If you don't want to include the Kotlin compiler in your build, you can also evaluate the script with the Maven plugin and use the packaged script resources in your Spring Boot application. 
-
-You just need to exclude the `kotlin-scripting-jvm-host` dependency from the `kotlin-asyncapi-spring-web` artifact. The Spring Web integration automatically picks up the script resource from the `resource-path` and converts it to an `AsyncApiExtension`.
-
-#### Maven Plugin
-The Maven plugin will evaluate the script and put the generated AsyncAPI JSON on the package classpath. Your application can convert the resource to an AsyncApi model object. 
-
-By default, the plugin expects the script to be named `build.asyncapi.kts` and placed in the project root. The script path and resource target path can be changed in the plugin configuration.
-
 ```xml
 <plugin>
   <groupId>org.openfolder</groupId>
@@ -200,6 +190,38 @@ By default, the plugin expects the script to be named `build.asyncapi.kts` and p
       </goals>
     </execution>
   </executions>
+</plugin>
+```
+
+#### Embedded Scripting
+If you can't use the Maven plugin for your project, you can also let your Spring Boot application evaluate the script at runtime.
+
+You have to place your script in your `resources` folder. Similarly to the plugin, the `kotlin-asyncapi-spring-web` module will pick up the script and convert it to an `AsyncApiExtension`. By default, the library expects the script to be named `build.asyncapi.kts` and placed in the root of the `resources` folder. This can be changed in the application properties.
+
+In order to enable embedded scripting, you need to make some additional configurations:
+- add `kotlin-scripting-jvm-host` to the classpath
+- unpack `kotlin-compiler-embeddable` from the Spring Boot executable JAR file
+
+```xml
+<dependency>
+  <groupId>org.jetbrains.kotlin</groupId>
+  <artifactId>kotlin-scripting-jvm-host</artifactId>
+  <version>${kotlin.version}</version>
+  <scope>runtime</scope>
+</dependency>
+```
+```xml
+<plugin>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-maven-plugin</artifactId>
+  <configuration>
+    <requiresUnpack>
+      <dependency>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <artifactId>kotlin-compiler-embeddable</artifactId>
+      </dependency>
+    </requiresUnpack>
+  </configuration>
 </plugin>
 ```
 
