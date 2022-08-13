@@ -4,8 +4,9 @@ import org.openfolder.kotlinasyncapi.model.AsyncApi
 import org.openfolder.kotlinasyncapi.script.AsyncApiScript
 import kotlin.script.experimental.api.SourceCode
 import kotlin.script.experimental.api.implicitReceivers
-import kotlin.script.experimental.jvm.dependenciesFromClassloader
 import kotlin.script.experimental.jvm.jvm
+import kotlin.script.experimental.jvm.updateClasspath
+import kotlin.script.experimental.jvm.util.scriptCompilationClasspathFromContextOrNull
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 
 // TODO: Refactor cloning and context propagation
@@ -58,11 +59,13 @@ interface AsyncApiExtension {
                             },
                             compilation = {
                                 jvm {
-                                    dependenciesFromClassloader(
-                                        "kotlin-stdlib",
-                                        "kotlin-asyncapi-core",
-                                        "kotlin-asyncapi-script",
-                                        unpackJarCollections = true
+                                    updateClasspath(
+                                        classpath = scriptCompilationClasspathFromContextOrNull(
+                                            "kotlin-stdlib",
+                                            "kotlin-asyncapi-core",
+                                            "kotlin-asyncapi-script",
+                                            unpackJarCollections = true
+                                        )
                                     )
                                 }
                             }
