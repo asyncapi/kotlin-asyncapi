@@ -1,7 +1,7 @@
 {
   "modules": [
     {
-      "name": "kotlin-asyncapi-maven-plugin",
+      "name": "kotlin-asyncapi-core",
       "languageLevel": 5
     },
     {
@@ -13,11 +13,11 @@
       "languageLevel": 5
     },
     {
-      "name": "kotlin-asyncapi-core",
+      "name": "kotlin-asyncapi-script",
       "languageLevel": 5
     },
     {
-      "name": "kotlin-asyncapi-script",
+      "name": "kotlin-asyncapi-maven-plugin",
       "languageLevel": 5
     }
   ]
