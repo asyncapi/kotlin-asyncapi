@@ -17,8 +17,7 @@ import javax.inject.Inject
 )
 internal class AsyncApiPlugin @Inject constructor(
     private val scriptRunner: AsyncApiScriptRunner,
-    private val fileWriter: AsyncApiFileWriter,
-    private val targetFileName: String = "asyncapi.json"
+    private val fileWriter: AsyncApiFileWriter
 ) : AbstractMojo() {
 
     @Parameter(property = "sourcePath", defaultValue = "build.asyncapi.kts")
@@ -32,6 +31,8 @@ internal class AsyncApiPlugin @Inject constructor(
 
     @Parameter(property = "project", defaultValue = "\${project}", readonly = true)
     lateinit var project: MavenProject
+
+    private val targetFileName: String = "asyncapi.json"
 
     override fun execute() {
         val asyncApi = AsyncApi.asyncApi {
@@ -54,7 +55,7 @@ internal class AsyncApiPlugin @Inject constructor(
         log.info("Writing $targetFileName to $fullTargetPath")
         fileWriter.write(
             asyncApi = asyncApi,
-            file = File(fullTargetPath + targetFileName)
+            file = File(fullTargetPath, targetFileName)
         )
 
         if (packageResources) {
