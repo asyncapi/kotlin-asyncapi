@@ -375,94 +375,6 @@
       "scope": "compile"
     },
     {
-      "ideaName": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.6.10",
-      "unresolved": false,
-      "groupId": "org.jetbrains.kotlin",
-      "artifactId": "kotlin-scripting-jvm-host",
-      "version": "1.6.10",
-      "baseVersion": "1.6.10",
-      "type": "jar",
-      "optional": false,
-      "scope": "compile"
-    },
-    {
-      "ideaName": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.6.10",
-      "unresolved": false,
-      "groupId": "org.jetbrains.kotlin",
-      "artifactId": "kotlin-script-runtime",
-      "version": "1.6.10",
-      "baseVersion": "1.6.10",
-      "type": "jar",
-      "optional": false,
-      "scope": "compile"
-    },
-    {
-      "ideaName": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.6.10",
-      "unresolved": false,
-      "groupId": "org.jetbrains.kotlin",
-      "artifactId": "kotlin-compiler-embeddable",
-      "version": "1.6.10",
-      "baseVersion": "1.6.10",
-      "type": "jar",
-      "optional": false,
-      "scope": "runtime"
-    },
-    {
-      "ideaName": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:1.6.10",
-      "unresolved": false,
-      "groupId": "org.jetbrains.kotlin",
-      "artifactId": "kotlin-daemon-embeddable",
-      "version": "1.6.10",
-      "baseVersion": "1.6.10",
-      "type": "jar",
-      "optional": false,
-      "scope": "runtime"
-    },
-    {
-      "ideaName": "Maven: org.jetbrains.intellij.deps:trove4j:1.0.20181211",
-      "unresolved": false,
-      "groupId": "org.jetbrains.intellij.deps",
-      "artifactId": "trove4j",
-      "version": "1.0.20181211",
-      "baseVersion": "1.0.20181211",
-      "type": "jar",
-      "optional": false,
-      "scope": "runtime"
-    },
-    {
-      "ideaName": "Maven: net.java.dev.jna:jna:5.6.0",
-      "unresolved": false,
-      "groupId": "net.java.dev.jna",
-      "artifactId": "jna",
-      "version": "5.6.0",
-      "baseVersion": "5.6.0",
-      "type": "jar",
-      "optional": false,
-      "scope": "runtime"
-    },
-    {
-      "ideaName": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.6.10",
-      "unresolved": false,
-      "groupId": "org.jetbrains.kotlin",
-      "artifactId": "kotlin-scripting-compiler-embeddable",
-      "version": "1.6.10",
-      "baseVersion": "1.6.10",
-      "type": "jar",
-      "optional": false,
-      "scope": "runtime"
-    },
-    {
-      "ideaName": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.6.10",
-      "unresolved": false,
-      "groupId": "org.jetbrains.kotlin",
-      "artifactId": "kotlin-scripting-compiler-impl-embeddable",
-      "version": "1.6.10",
-      "baseVersion": "1.6.10",
-      "type": "jar",
-      "optional": false,
-      "scope": "runtime"
-    },
-    {
       "ideaName": "Maven: org.springframework:spring-web:5.3.21",
       "unresolved": false,
       "groupId": "org.springframework",
@@ -560,6 +472,94 @@
       "type": "jar",
       "optional": false,
       "scope": "compile"
+    },
+    {
+      "ideaName": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.6.10",
+      "unresolved": false,
+      "groupId": "org.jetbrains.kotlin",
+      "artifactId": "kotlin-scripting-jvm-host",
+      "version": "1.6.10",
+      "baseVersion": "1.6.10",
+      "type": "jar",
+      "optional": false,
+      "scope": "provided"
+    },
+    {
+      "ideaName": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.6.10",
+      "unresolved": false,
+      "groupId": "org.jetbrains.kotlin",
+      "artifactId": "kotlin-script-runtime",
+      "version": "1.6.10",
+      "baseVersion": "1.6.10",
+      "type": "jar",
+      "optional": false,
+      "scope": "compile"
+    },
+    {
+      "ideaName": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.6.10",
+      "unresolved": false,
+      "groupId": "org.jetbrains.kotlin",
+      "artifactId": "kotlin-compiler-embeddable",
+      "version": "1.6.10",
+      "baseVersion": "1.6.10",
+      "type": "jar",
+      "optional": false,
+      "scope": "provided"
+    },
+    {
+      "ideaName": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:1.6.10",
+      "unresolved": false,
+      "groupId": "org.jetbrains.kotlin",
+      "artifactId": "kotlin-daemon-embeddable",
+      "version": "1.6.10",
+      "baseVersion": "1.6.10",
+      "type": "jar",
+      "optional": false,
+      "scope": "provided"
+    },
+    {
+      "ideaName": "Maven: org.jetbrains.intellij.deps:trove4j:1.0.20181211",
+      "unresolved": false,
+      "groupId": "org.jetbrains.intellij.deps",
+      "artifactId": "trove4j",
+      "version": "1.0.20181211",
+      "baseVersion": "1.0.20181211",
+      "type": "jar",
+      "optional": false,
+      "scope": "provided"
+    },
+    {
+      "ideaName": "Maven: net.java.dev.jna:jna:5.6.0",
+      "unresolved": false,
+      "groupId": "net.java.dev.jna",
+      "artifactId": "jna",
+      "version": "5.6.0",
+      "baseVersion": "5.6.0",
+      "type": "jar",
+      "optional": false,
+      "scope": "provided"
+    },
+    {
+      "ideaName": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.6.10",
+      "unresolved": false,
+      "groupId": "org.jetbrains.kotlin",
+      "artifactId": "kotlin-scripting-compiler-embeddable",
+      "version": "1.6.10",
+      "baseVersion": "1.6.10",
+      "type": "jar",
+      "optional": false,
+      "scope": "provided"
+    },
+    {
+      "ideaName": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.6.10",
+      "unresolved": false,
+      "groupId": "org.jetbrains.kotlin",
+      "artifactId": "kotlin-scripting-compiler-impl-embeddable",
+      "version": "1.6.10",
+      "baseVersion": "1.6.10",
+      "type": "jar",
+      "optional": false,
+      "scope": "provided"
     },
     {
       "ideaName": "Maven: org.skyscreamer:jsonassert:1.5.0",
@@ -1230,7 +1230,7 @@
       "baseVersion": "1.6.0",
       "type": "jar",
       "optional": false,
-      "scope": "runtime"
+      "scope": "provided"
     },
     {
       "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:2.0.1-SNAPSHOT",
