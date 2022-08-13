@@ -42,7 +42,7 @@ internal class AsyncApiPluginTest {
         }
 
         every {
-            scriptRunner.run(any())
+            scriptRunner.run(any(), any())
         } returns asyncApi
         every {
             fileWriter.write(capture(asyncApiSlot), json)
@@ -55,7 +55,7 @@ internal class AsyncApiPluginTest {
         }.execute()
 
         verify {
-            scriptRunner.run(script)
+            scriptRunner.run(script, ofType(AsyncApi::class))
             fileWriter.write(asyncApiSlot.captured, json)
             mavenProject.addResource(any())
         }

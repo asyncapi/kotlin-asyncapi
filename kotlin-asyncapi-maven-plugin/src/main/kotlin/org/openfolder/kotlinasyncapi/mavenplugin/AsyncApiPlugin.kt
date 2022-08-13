@@ -6,6 +6,7 @@ import org.apache.maven.plugins.annotations.LifecyclePhase
 import org.apache.maven.plugins.annotations.Mojo
 import org.apache.maven.plugins.annotations.Parameter
 import org.apache.maven.project.MavenProject
+import org.openfolder.kotlinasyncapi.model.AsyncApi
 import java.io.File
 import javax.inject.Inject
 
@@ -33,12 +34,23 @@ internal class AsyncApiPlugin @Inject constructor(
     lateinit var project: MavenProject
 
     override fun execute() {
-        val asyncApi = scriptRunner.run(File(sourcePath))
+        val asyncApi = AsyncApi.asyncApi {
+            info {
+                title(project.name)
+                version(project.version)
+                description(project.description)
+            }
+            channels { }
+        }
+        scriptRunner.run(
+            script = File(sourcePath),
+            receiver = asyncApi
+        )
+
         val fullTargetPath = "./target/$targetPath".let {
             if (it.last() != '/') it.plus('/')
             else it
         }
-
         log.info("Writing $targetFileName to $fullTargetPath")
         fileWriter.write(
             asyncApi = asyncApi,
