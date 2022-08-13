@@ -10,7 +10,7 @@ import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 
 internal interface AsyncApiScriptRunner {
-    fun run(script: File): AsyncApi
+    fun run(script: File, receiver: AsyncApi = AsyncApi()): AsyncApi
 }
 
 @Singleton
@@ -19,16 +19,13 @@ internal class AsyncApiScriptHost : AsyncApiScriptRunner {
 
     private val jvmScriptingHost = BasicJvmScriptingHost()
 
-    override fun run(script: File): AsyncApi {
-        val scriptReceiver = AsyncApi()
-
-        jvmScriptingHost.evalWithTemplate<AsyncApiScript>(
-            script = script.toScriptSource(),
-            evaluation = {
-                implicitReceivers(scriptReceiver)
-            }
-        )
-
-        return scriptReceiver
-    }
+    override fun run(script: File, receiver: AsyncApi) =
+        receiver.also {
+            jvmScriptingHost.evalWithTemplate<AsyncApiScript>(
+                script = script.toScriptSource(),
+                evaluation = {
+                    implicitReceivers(it)
+                }
+            )
+        }
 }
