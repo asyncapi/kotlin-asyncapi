@@ -44,28 +44,25 @@ internal class AsyncApiPlugin @Inject constructor(
             channels { }
         }
         scriptRunner.run(
-            script = File(sourcePath),
+            script = File(project.basedir, sourcePath),
             receiver = asyncApi
         )
 
-        val fullTargetPath = "./target/$targetPath".let {
-            if (it.last() != '/') it.plus('/')
-            else it
-        }
-        log.info("Writing $targetFileName to $fullTargetPath")
+        val targetDir = File(project.basedir, "target/$targetPath")
+        log.info("Writing $targetFileName to $targetDir")
         fileWriter.write(
             asyncApi = asyncApi,
-            file = File(fullTargetPath, targetFileName)
+            file = File(targetDir, targetFileName)
         )
 
         if (packageResources) {
             val resource = Resource().also {
-                it.directory = fullTargetPath
+                it.directory = targetDir.path
                 it.includes = listOf(targetFileName)
                 it.targetPath = targetPath
             }
 
-            log.info("Adding $fullTargetPath to resources")
+            log.info("Adding $targetDir to resources")
             project.addResource(resource)
         }
     }
