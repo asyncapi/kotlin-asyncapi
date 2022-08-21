@@ -30,8 +30,8 @@ internal class AsyncApiPluginTest {
 
     @Test
     fun `should generate resource and write it to the target`() {
-        val script = File("test/source")
-        val json = File("./target/test/target/asyncapi.json")
+        val script = File("./test/source")
+        val json = File("./target/test/generated/asyncapi.json")
         val asyncApiSlot = slot<AsyncApi>()
         val asyncApi = AsyncApi.asyncApi {
             info {
@@ -47,10 +47,13 @@ internal class AsyncApiPluginTest {
         every {
             fileWriter.write(capture(asyncApiSlot), json)
         } returns Unit
+        every {
+            mavenProject.basedir
+        } returns File("./")
 
         plugin.apply {
             sourcePath = "test/source"
-            targetPath = "test/target"
+            targetPath = "test/generated"
             project = mavenProject
         }.execute()
 
