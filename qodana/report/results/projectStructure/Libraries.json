@@ -1,9 +1,15 @@
 {
   "libraries": [
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.7.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.6.10/kotlin-stdlib-1.6.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.7.10/kotlin-stdlib-1.7.10.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.7.10/kotlin-stdlib-common-1.7.10.jar!/"
       ]
     },
     {
@@ -13,21 +19,15 @@
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.7.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.6.10/kotlin-stdlib-common-1.6.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit5/1.7.10/kotlin-test-junit5-1.7.10.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.6.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.7.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit5/1.6.10/kotlin-test-junit5-1.6.10.jar!/"
-      ]
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.6.10",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/1.6.10/kotlin-test-1.6.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/1.7.10/kotlin-test-1.7.10.jar!/"
       ]
     },
     {
@@ -163,45 +163,45 @@
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.6.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.7.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-common/1.6.10/kotlin-scripting-common-1.6.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-common/1.7.10/kotlin-scripting-common-1.7.10.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.6.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.7.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm/1.6.10/kotlin-scripting-jvm-1.6.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm/1.7.10/kotlin-scripting-jvm-1.7.10.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.6.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.7.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-script-runtime/1.6.10/kotlin-script-runtime-1.6.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-script-runtime/1.7.10/kotlin-script-runtime-1.7.10.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.6.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.7.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/1.6.10/kotlin-scripting-jvm-host-1.6.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/1.7.10/kotlin-scripting-jvm-host-1.7.10.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.6.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.7.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/1.6.10/kotlin-compiler-embeddable-1.6.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/1.7.10/kotlin-compiler-embeddable-1.7.10.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:1.6.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:1.7.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/1.6.10/kotlin-daemon-embeddable-1.6.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/1.7.10/kotlin-daemon-embeddable-1.7.10.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.intellij.deps:trove4j:1.0.20181211",
+      "name": "Maven: org.jetbrains.intellij.deps:trove4j:1.0.20200330",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/intellij/deps/trove4j/1.0.20181211/trove4j-1.0.20181211.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/intellij/deps/trove4j/1.0.20200330/trove4j-1.0.20200330.jar!/"
       ]
     },
     {
@@ -211,15 +211,15 @@
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.6.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.7.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/1.6.10/kotlin-scripting-compiler-embeddable-1.6.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/1.7.10/kotlin-scripting-compiler-embeddable-1.7.10.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.6.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.7.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/1.6.10/kotlin-scripting-compiler-impl-embeddable-1.6.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/1.7.10/kotlin-scripting-compiler-impl-embeddable-1.7.10.jar!/"
       ]
     },
     {
@@ -445,57 +445,57 @@
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-web:5.3.21",
+      "name": "Maven: org.springframework:spring-web:5.3.22",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.3.21/spring-web-5.3.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.3.22/spring-web-5.3.22.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-beans:5.3.21",
+      "name": "Maven: org.springframework:spring-beans:5.3.22",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.21/spring-beans-5.3.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.22/spring-beans-5.3.22.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-core:5.3.21",
+      "name": "Maven: org.springframework:spring-core:5.3.22",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.3.21/spring-core-5.3.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.3.22/spring-core-5.3.22.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-jcl:5.3.21",
+      "name": "Maven: org.springframework:spring-jcl:5.3.22",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-jcl/5.3.21/spring-jcl-5.3.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-jcl/5.3.22/spring-jcl-5.3.22.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-context:5.3.21",
+      "name": "Maven: org.springframework:spring-context:5.3.22",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.3.21/spring-context-5.3.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.3.22/spring-context-5.3.22.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-aop:5.3.21",
+      "name": "Maven: org.springframework:spring-aop:5.3.22",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.3.21/spring-aop-5.3.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.3.22/spring-aop-5.3.22.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-expression:5.3.21",
+      "name": "Maven: org.springframework:spring-expression:5.3.22",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/5.3.21/spring-expression-5.3.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/5.3.22/spring-expression-5.3.22.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:2.7.1",
+      "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:2.7.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.7.1/spring-boot-autoconfigure-2.7.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.7.3/spring-boot-autoconfigure-2.7.3.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot:2.7.1",
+      "name": "Maven: org.springframework.boot:spring-boot:2.7.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.7.1/spring-boot-2.7.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.7.3/spring-boot-2.7.3.jar!/"
       ]
     },
     {
@@ -505,21 +505,21 @@
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-test:2.7.1",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-test:2.7.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-test/2.7.1/spring-boot-starter-test-2.7.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-test/2.7.3/spring-boot-starter-test-2.7.3.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter:2.7.1",
+      "name": "Maven: org.springframework.boot:spring-boot-starter:2.7.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter/2.7.1/spring-boot-starter-2.7.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter/2.7.3/spring-boot-starter-2.7.3.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-logging:2.7.1",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-logging:2.7.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-logging/2.7.1/spring-boot-starter-logging-2.7.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-logging/2.7.3/spring-boot-starter-logging-2.7.3.jar!/"
       ]
     },
     {
@@ -565,15 +565,15 @@
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-test:2.7.1",
+      "name": "Maven: org.springframework.boot:spring-boot-test:2.7.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test/2.7.1/spring-boot-test-2.7.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test/2.7.3/spring-boot-test-2.7.3.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.7.1",
+      "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.7.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test-autoconfigure/2.7.1/spring-boot-test-autoconfigure-2.7.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test-autoconfigure/2.7.3/spring-boot-test-autoconfigure-2.7.3.jar!/"
       ]
     },
     {
@@ -667,9 +667,9 @@
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-test:5.3.21",
+      "name": "Maven: org.springframework:spring-test:5.3.22",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.3.21/spring-test-5.3.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.3.22/spring-test-5.3.22.jar!/"
       ]
     },
     {
@@ -679,15 +679,15 @@
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-web:2.7.1",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-web:2.7.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-web/2.7.1/spring-boot-starter-web-2.7.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-web/2.7.3/spring-boot-starter-web-2.7.3.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-json:2.7.1",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-json:2.7.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-json/2.7.1/spring-boot-starter-json-2.7.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-json/2.7.3/spring-boot-starter-json-2.7.3.jar!/"
       ]
     },
     {
@@ -709,33 +709,33 @@
       ]
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:2.7.1",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:2.7.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-tomcat/2.7.1/spring-boot-starter-tomcat-2.7.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-tomcat/2.7.3/spring-boot-starter-tomcat-2.7.3.jar!/"
       ]
     },
     {
-      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.64",
+      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.65",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.64/tomcat-embed-core-9.0.64.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.65/tomcat-embed-core-9.0.65.jar!/"
       ]
     },
     {
-      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.64",
+      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.65",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-el/9.0.64/tomcat-embed-el-9.0.64.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-el/9.0.65/tomcat-embed-el-9.0.65.jar!/"
       ]
     },
     {
-      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.64",
+      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.65",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.64/tomcat-embed-websocket-9.0.64.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.65/tomcat-embed-websocket-9.0.65.jar!/"
       ]
     },
     {
-      "name": "Maven: org.springframework:spring-webmvc:5.3.21",
+      "name": "Maven: org.springframework:spring-webmvc:5.3.22",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.3.21/spring-webmvc-5.3.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.3.22/spring-webmvc-5.3.22.jar!/"
       ]
     }
   ]

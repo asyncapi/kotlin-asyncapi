@@ -54,7 +54,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10",
           "type": "Library"
         },
         {
@@ -62,15 +66,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.7.10",
           "type": "Library"
         },
         {
@@ -190,11 +190,11 @@
           "type": "Module"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.7.10",
           "type": "Library"
         },
         {
@@ -210,59 +210,59 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-web:5.3.21",
+          "name": "Maven: org.springframework:spring-web:5.3.22",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-beans:5.3.21",
+          "name": "Maven: org.springframework:spring-beans:5.3.22",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-core:5.3.21",
+          "name": "Maven: org.springframework:spring-core:5.3.22",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-jcl:5.3.21",
+          "name": "Maven: org.springframework:spring-jcl:5.3.22",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-context:5.3.21",
+          "name": "Maven: org.springframework:spring-context:5.3.22",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-aop:5.3.21",
+          "name": "Maven: org.springframework:spring-aop:5.3.22",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-expression:5.3.21",
+          "name": "Maven: org.springframework:spring-expression:5.3.22",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:2.7.1",
+          "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:2.7.3",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot:2.7.1",
+          "name": "Maven: org.springframework.boot:spring-boot:2.7.3",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.intellij.deps:trove4j:1.0.20181211",
+          "name": "Maven: org.jetbrains.intellij.deps:trove4j:1.0.20200330",
           "type": "Library"
         },
         {
@@ -270,11 +270,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.7.10",
           "type": "Library"
         },
         {
@@ -290,15 +290,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-test:2.7.1",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-test:2.7.3",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter:2.7.1",
+          "name": "Maven: org.springframework.boot:spring-boot-starter:2.7.3",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-logging:2.7.1",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-logging:2.7.3",
           "type": "Library"
         },
         {
@@ -330,11 +330,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-test:2.7.1",
+          "name": "Maven: org.springframework.boot:spring-boot-test:2.7.3",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.7.1",
+          "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.7.3",
           "type": "Library"
         },
         {
@@ -398,7 +398,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-test:5.3.21",
+          "name": "Maven: org.springframework:spring-test:5.3.22",
           "type": "Library"
         },
         {
@@ -406,11 +406,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-web:2.7.1",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-web:2.7.3",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-json:2.7.1",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-json:2.7.3",
           "type": "Library"
         },
         {
@@ -426,27 +426,31 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:2.7.1",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:2.7.3",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.64",
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.65",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.64",
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.65",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.64",
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.65",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-webmvc:5.3.21",
+          "name": "Maven: org.springframework:spring-webmvc:5.3.22",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10",
           "type": "Library"
         },
         {
@@ -454,15 +458,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.7.10",
           "type": "Library"
         },
         {
@@ -515,247 +515,6 @@
         },
         {
           "name": "Maven: io.mockk:mockk-agent-common:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:1.6.0",
-          "type": "Library"
-        }
-      ]
-    },
-    {
-      "name": "kotlin-asyncapi-parent",
-      "contentEntries": [
-        {
-          "path": "file://$PROJECT_DIR$",
-          "sourceFolders": []
-        }
-      ],
-      "orderEntries": [
-        {
-          "name": "jbr-11",
-          "type": "SDK"
-        },
-        {
-          "name": "<Module source>",
-          "type": "Own sources"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains:annotations:13.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.6.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.apiguardian:apiguardian-api:1.1.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.opentest4j:opentest4j:1.2.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.6.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.6.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.6.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-common:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-dsl:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-agent-api:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-agent-common:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.objenesis:objenesis:3.1",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.12.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.12.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:1.6.0",
-          "type": "Library"
-        }
-      ]
-    },
-    {
-      "name": "kotlin-asyncapi-script",
-      "contentEntries": [
-        {
-          "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script",
-          "sourceFolders": [
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/src/main/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/src/main/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            }
-          ]
-        }
-      ],
-      "orderEntries": [
-        {
-          "name": "jbr-11",
-          "type": "SDK"
-        },
-        {
-          "name": "<Module source>",
-          "type": "Own sources"
-        },
-        {
-          "name": "kotlin-asyncapi-core",
-          "type": "Module"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains:annotations:13.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.6.10",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.6.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.apiguardian:apiguardian-api:1.1.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.opentest4j:opentest4j:1.2.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.6.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.6.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.6.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-common:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-dsl:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-agent-api:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-agent-common:1.12.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.objenesis:objenesis:3.1",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.12.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.12.6",
           "type": "Library"
         },
         {
@@ -806,11 +565,11 @@
           "type": "Module"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.7.10",
           "type": "Library"
         },
         {
@@ -826,23 +585,23 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.intellij.deps:trove4j:1.0.20181211",
+          "name": "Maven: org.jetbrains.intellij.deps:trove4j:1.0.20200330",
           "type": "Library"
         },
         {
@@ -850,11 +609,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.7.10",
           "type": "Library"
         },
         {
@@ -1014,7 +773,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10",
           "type": "Library"
         },
         {
@@ -1022,15 +785,252 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.6.10",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.7.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.6.10",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.6.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.apiguardian:apiguardian-api:1.1.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.opentest4j:opentest4j:1.2.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.6.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.6.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.6.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-common:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-dsl:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-agent-api:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-agent-common:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.objenesis:objenesis:3.1",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: net.bytebuddy:byte-buddy:1.12.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.12.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:1.6.0",
+          "type": "Library"
+        }
+      ]
+    },
+    {
+      "name": "kotlin-asyncapi-script",
+      "contentEntries": [
+        {
+          "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script",
+          "sourceFolders": [
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/src/main/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/src/main/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            }
+          ]
+        }
+      ],
+      "orderEntries": [
+        {
+          "name": "jbr-11",
+          "type": "SDK"
+        },
+        {
+          "name": "<Module source>",
+          "type": "Own sources"
+        },
+        {
+          "name": "kotlin-asyncapi-core",
+          "type": "Module"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains:annotations:13.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.6.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.apiguardian:apiguardian-api:1.1.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.opentest4j:opentest4j:1.2.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.6.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.6.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.6.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-common:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-dsl:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-agent-api:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-agent-common:1.12.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.objenesis:objenesis:3.1",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: net.bytebuddy:byte-buddy:1.12.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.12.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:1.6.0",
+          "type": "Library"
+        }
+      ]
+    },
+    {
+      "name": "kotlin-asyncapi-parent",
+      "contentEntries": [
+        {
+          "path": "file://$PROJECT_DIR$",
+          "sourceFolders": []
+        }
+      ],
+      "orderEntries": [
+        {
+          "name": "jbr-11",
+          "type": "SDK"
+        },
+        {
+          "name": "<Module source>",
+          "type": "Own sources"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains:annotations:13.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.7.10",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.7.10",
           "type": "Library"
         },
         {
