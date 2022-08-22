@@ -5,7 +5,6 @@
         <artifactId>kotlin-asyncapi-parent</artifactId>
         <groupId>org.openfolder</groupId>
         <version>2.1.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>kotlin-asyncapi-script</artifactId>
