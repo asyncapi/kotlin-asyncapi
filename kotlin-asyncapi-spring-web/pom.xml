@@ -6,7 +6,6 @@
         <groupId>org.openfolder</groupId>
         <artifactId>kotlin-asyncapi-parent</artifactId>
         <version>2.1.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>kotlin-asyncapi-spring-web</artifactId>
