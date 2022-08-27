@@ -31,15 +31,15 @@
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.7.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.7.10/kotlin-stdlib-1.7.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.6.21/kotlin-stdlib-1.6.21.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.7.10/kotlin-stdlib-common-1.7.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.6.21/kotlin-stdlib-common-1.6.21.jar!/"
       ]
     },
     {
@@ -49,15 +49,15 @@
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.7.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:1.6.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit5/1.7.10/kotlin-test-junit5-1.7.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit5/1.6.21/kotlin-test-junit5-1.6.21.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.7.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.6.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/1.7.10/kotlin-test-1.7.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/1.6.21/kotlin-test-1.6.21.jar!/"
       ]
     },
     {
@@ -163,39 +163,39 @@
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.7.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.6.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-common/1.7.10/kotlin-scripting-common-1.7.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-common/1.6.21/kotlin-scripting-common-1.6.21.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.7.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.6.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm/1.7.10/kotlin-scripting-jvm-1.7.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm/1.6.21/kotlin-scripting-jvm-1.6.21.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.7.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.6.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-script-runtime/1.7.10/kotlin-script-runtime-1.7.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-script-runtime/1.6.21/kotlin-script-runtime-1.6.21.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.7.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:1.6.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/1.7.10/kotlin-scripting-jvm-host-1.7.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/1.6.21/kotlin-scripting-jvm-host-1.6.21.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.7.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:1.6.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/1.7.10/kotlin-compiler-embeddable-1.7.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/1.6.21/kotlin-compiler-embeddable-1.6.21.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:1.7.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:1.6.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/1.7.10/kotlin-daemon-embeddable-1.7.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/1.6.21/kotlin-daemon-embeddable-1.6.21.jar!/"
       ]
     },
     {
@@ -211,15 +211,15 @@
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.7.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.6.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/1.7.10/kotlin-scripting-compiler-embeddable-1.7.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/1.6.21/kotlin-scripting-compiler-embeddable-1.6.21.jar!/"
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.7.10",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.6.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/1.7.10/kotlin-scripting-compiler-impl-embeddable-1.7.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/1.6.21/kotlin-scripting-compiler-impl-embeddable-1.6.21.jar!/"
       ]
     },
     {

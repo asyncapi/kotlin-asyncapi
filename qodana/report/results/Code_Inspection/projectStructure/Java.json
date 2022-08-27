@@ -1,15 +1,11 @@
 {
   "modules": [
     {
-      "name": "kotlin-asyncapi-spring-web",
-      "languageLevel": 5
-    },
-    {
       "name": "kotlin-asyncapi-parent",
       "languageLevel": 5
     },
     {
-      "name": "kotlin-asyncapi-core",
+      "name": "kotlin-asyncapi-spring-web",
       "languageLevel": 5
     },
     {
@@ -18,6 +14,10 @@
     },
     {
       "name": "kotlin-asyncapi-script",
+      "languageLevel": 5
+    },
+    {
+      "name": "kotlin-asyncapi-core",
       "languageLevel": 5
     }
   ]
