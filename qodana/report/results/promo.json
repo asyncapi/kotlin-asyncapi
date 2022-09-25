@@ -1,583 +1,51 @@
 {"version":"3","listProblem":[{
   "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'protocolVersion' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "category": "Naming conventions",
+  "type": "Property naming convention",
+  "severity": "Moderate",
+  "comment": "Property name '`$ref`' should start with a lowercase letter",
+  "detailsInfo": "Reports property names that do not follow the recommended naming conventions.\n\n\nConsistent naming allows for easier code reading and understanding.\nAccording to the [Kotlin official style guide](https://kotlinlang.org/docs/coding-conventions.html#naming-rules),\nproperty names should start with a lowercase letter and use camel case.\n\nIt is possible to introduce other naming rules by changing the \"Pattern\" regular expression.\n\n**Example:**\n\n\n      val My_Cool_Property = \"\"\n\nA quick-fix renames the class according to the Kotlin naming conventions:\n\n\n      val myCoolProperty = \"\"\n",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/Server.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Reference.kt",
       "language": "kotlin",
-      "line": 26,
-      "offset": 9,
-      "length": 15,
-      "code": {
-        "startLine": 24,
-        "length": 15,
-        "offset": 71,
-        "surroundingCode": "    lateinit var url: String\n    lateinit var protocol: String\n    var protocolVersion: String? = null\n    var description: String? = null\n    var variables: ReferencableServerVariablesMap? = null"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "5fc7051c596e0005212eb80b8ca408969a948c46c517b162fe2f79a49834786a"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'multiEndpointServer' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 147,
-      "offset": 13,
-      "length": 19,
-      "code": {
-        "startLine": 145,
-        "length": 19,
-        "offset": 100,
-        "surroundingCode": "        var ccdtQueueManagerName: String? = null\n        var cipherSpec: String? = null\n        var multiEndpointServer: Boolean? = null\n        var heartBeatInterval: Int? = null\n        var bindingVersion: String? = null"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "a324da230f559de00a410666f05795d957e1fca6fada32560aacb1237ebaa10f"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'keepAlive' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 94,
-      "offset": 13,
-      "length": 9,
-      "code": {
-        "startLine": 92,
-        "length": 9,
-        "offset": 93,
-        "surroundingCode": "        var cleanSession: Boolean? = null\n        var lastWill: LastWill? = null\n        var keepAlive: Int? = null\n        var bindingVersion: String? = null\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "dd1ea010be0e467efde6f7efe85c967e776698e360515188a6302bddfc813358"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'ccdtQueueManagerName' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 145,
-      "offset": 13,
-      "length": 20,
-      "code": {
-        "startLine": 143,
-        "length": 20,
-        "offset": 82,
-        "surroundingCode": "    class IBMMQ : ServerBinding {\n        var groupId: String? = null\n        var ccdtQueueManagerName: String? = null\n        var cipherSpec: String? = null\n        var multiEndpointServer: Boolean? = null"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "cd40d765f70e08e938cae983d2bf995570ff68a7de6da39858f4358de77780f6"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'retain' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 116,
-      "offset": 17,
+      "line": 5,
+      "offset": 18,
       "length": 6,
       "code": {
-        "startLine": 114,
+        "startLine": 3,
         "length": 6,
-        "offset": 89,
-        "surroundingCode": "            var qos: Int? = null\n            var message: String? = null\n            var retain: Boolean? = null\n\n            fun topic(value: String): String ="
+        "offset": 54,
+        "surroundingCode": "@AsyncApiComponent\nclass Reference {\n    lateinit var `$ref`: String\n\n    fun ref(value: String): String ="
       }
     }
   ],
   "attributes": {
     "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
+    "inspectionName": "PropertyName"
   },
-  "hash": "dc3d24ceeee000d328913b66c9a85d3b348a95f35831c63c301425b934e19b2a"
+  "hash": "d1df3ae562b6a9c7988035d8870dc57c60e008da01fe9d17985ac922a9e6a46e"
 },{
   "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'cleanSession' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"tag\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Tag.kt",
       "language": "kotlin",
-      "line": 92,
-      "offset": 13,
-      "length": 12,
-      "code": {
-        "startLine": 90,
-        "length": 12,
-        "offset": 82,
-        "surroundingCode": "    class MQTT : ServerBinding {\n        var clientId: String? = null\n        var cleanSession: Boolean? = null\n        var lastWill: LastWill? = null\n        var keepAlive: Int? = null"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "d2fa876d6bd04f0fa107093375bd37097c3e2b1b9b3c87aa5a894fbae59aeffe"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'topic' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 113,
-      "offset": 17,
-      "length": 5,
-      "code": {
-        "startLine": 111,
-        "length": 5,
-        "offset": 42,
-        "surroundingCode": "\n        class LastWill {\n            var topic: String? = null\n            var qos: Int? = null\n            var message: String? = null"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "e8dfb0302dbf11e2c50c3352daeb9300f6bacaead1ab2ec9aba75e4331b5d6bc"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'cipherSpec' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 146,
-      "offset": 13,
-      "length": 10,
-      "code": {
-        "startLine": 144,
-        "length": 10,
-        "offset": 97,
-        "surroundingCode": "        var groupId: String? = null\n        var ccdtQueueManagerName: String? = null\n        var cipherSpec: String? = null\n        var multiEndpointServer: Boolean? = null\n        var heartBeatInterval: Int? = null"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "beaab5596741ffd7e4fd00b94714baa61623b8908380388b7524c1db2b6c8358"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'qos' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 114,
-      "offset": 17,
+      "line": 5,
+      "offset": 16,
       "length": 3,
       "code": {
-        "startLine": 112,
+        "startLine": 3,
         "length": 3,
-        "offset": 79,
-        "surroundingCode": "        class LastWill {\n            var topic: String? = null\n            var qos: Int? = null\n            var message: String? = null\n            var retain: Boolean? = null"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "953a75a380dffeecf8438d27c4da69f247069972e992afa8d31124e981cb50af"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'msgVpn' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 134,
-      "offset": 13,
-      "length": 6,
-      "code": {
-        "startLine": 132,
-        "length": 6,
-        "offset": 90,
-        "surroundingCode": "    class Solace : ServerBinding {\n        var bindingVersion: String? = null\n        var msgVpn: String? = null\n\n        fun bindingVersion(value: String): String ="
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "42d733a311b482b272505a811425436fecbc0a60d73eb29aa5988d0be72e1f25"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'groupId' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 144,
-      "offset": 13,
-      "length": 7,
-      "code": {
-        "startLine": 142,
-        "length": 7,
-        "offset": 47,
-        "surroundingCode": "\n    class IBMMQ : ServerBinding {\n        var groupId: String? = null\n        var ccdtQueueManagerName: String? = null\n        var cipherSpec: String? = null"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "a97e844eb59e685d3709103fff80df70ba8b55bbeca729e52c446f202c30ed07"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'heartBeatInterval' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 148,
-      "offset": 13,
-      "length": 17,
-      "code": {
-        "startLine": 146,
-        "length": 17,
-        "offset": 100,
-        "surroundingCode": "        var cipherSpec: String? = null\n        var multiEndpointServer: Boolean? = null\n        var heartBeatInterval: Int? = null\n        var bindingVersion: String? = null\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "086dda0681d34b7990aea59deffc91212b38b43e7afb98d262f281cbd90b6fe3"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Info",
-  "comment": "Property 'clientId' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 91,
-      "offset": 13,
-      "length": 8,
-      "code": {
-        "startLine": 89,
-        "length": 8,
-        "offset": 46,
-        "surroundingCode": "\n    class MQTT : ServerBinding {\n        var clientId: String? = null\n        var cleanSession: Boolean? = null\n        var lastWill: LastWill? = null"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "d8ac38881f60e3bd315f61eef2daaf08085d22f8a1e5e1b583001c935d43e743"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"asyncApiSerializer\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
-      "language": "kotlin",
-      "line": 25,
-      "offset": 14,
-      "length": 18,
-      "code": {
-        "startLine": 23,
-        "length": 18,
-        "offset": 53,
-        "surroundingCode": "    @Bean\n    @ConditionalOnMissingBean\n    open fun asyncApiSerializer(): AsyncApiSerializer =\n        DefaultAsyncApiSerializer()\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-spring-web",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "fc47fafd849ba284dea0a719e23c2eb4817c6def4d84445ede71106e56f57bb7"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"infoProvider\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
-      "language": "kotlin",
-      "line": 29,
-      "offset": 14,
-      "length": 12,
-      "code": {
-        "startLine": 27,
-        "length": 12,
-        "offset": 24,
-        "surroundingCode": "\n    @Bean\n    open fun infoProvider(context: ApplicationContext) =\n        DefaultInfoProvider(context)\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-spring-web",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "c2a60387cbcaaacce749b5d611181976adce754a918e9bd44c408a58c261e26a"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"asyncApiService\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
-      "language": "kotlin",
-      "line": 53,
-      "offset": 14,
-      "length": 15,
-      "code": {
-        "startLine": 51,
-        "length": 15,
-        "offset": 24,
-        "surroundingCode": "\n    @Bean\n    open fun asyncApiService(extensions: List<AsyncApiExtension>): AsyncApiService =\n        DefaultAsyncApiService(extensions)\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-spring-web",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "1ccb1d8c7e1f437517422cee14aff86e14f4f5ae2eba98d34d2911d6c6a5ea34"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"asyncApiController\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
-      "language": "kotlin",
-      "line": 57,
-      "offset": 14,
-      "length": 18,
-      "code": {
-        "startLine": 55,
-        "length": 18,
-        "offset": 24,
-        "surroundingCode": "\n    @Bean\n    open fun asyncApiController(service: AsyncApiService, serializer: AsyncApiSerializer): AsyncApiController =\n        AsyncApiController(service, serializer)\n}"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-spring-web",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "c573b5372e13d8b680a45ea85920c17e06692f9660b1aaba4da807b052b86930"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"asyncApiDefaultInfoExtension\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
-      "language": "kotlin",
-      "line": 38,
-      "offset": 14,
-      "length": 28,
-      "code": {
-        "startLine": 36,
-        "length": 28,
-        "offset": 24,
-        "surroundingCode": "\n    @Bean\n    open fun asyncApiDefaultInfoExtension(infoProvider: DefaultInfoProvider) =\n        AsyncApiExtension.builder(order = -1) {\n            info {"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-spring-web",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "d261156fe854012ec0c13c663b1ae34009f2068e38e9351710029aba5f4abb7b"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"asyncApiProperties\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
-      "language": "kotlin",
-      "line": 34,
-      "offset": 14,
-      "length": 18,
-      "code": {
-        "startLine": 32,
-        "length": 18,
-        "offset": 102,
-        "surroundingCode": "    @Bean\n    @ConfigurationProperties(prefix = \"asyncapi\", ignoreUnknownFields = false)\n    open fun asyncApiProperties() =\n        AsyncApiProperties()\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-spring-web",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "f11276a7a5773c0010d6743548aa19e4ad7fec00909bdc4a078909a124668f4a"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"asyncApiDefaultChannelsExtension\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
-      "language": "kotlin",
-      "line": 47,
-      "offset": 14,
-      "length": 32,
-      "code": {
-        "startLine": 45,
-        "length": 32,
-        "offset": 24,
-        "surroundingCode": "\n    @Bean\n    open fun asyncApiDefaultChannelsExtension() =\n        AsyncApiExtension.builder(order = -1) {\n            channels { }"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-spring-web",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "a7f5f15c164366bc2feb04783b985b3bf92730b7cadd20bcf2df200ba4d672d7"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"payloadRef\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/Message.kt",
-      "language": "kotlin",
-      "line": 66,
-      "offset": 16,
-      "length": 10,
-      "code": {
-        "startLine": 64,
-        "length": 10,
-        "offset": 68,
-        "surroundingCode": "        Schema().apply(build).also { payload = it }\n\n    inline fun payloadRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { payload = it }\n"
+        "offset": 70,
+        "surroundingCode": "@AsyncApiComponent\nclass TagsList : ArrayList<Tag>() {\n    inline fun tag(build: Tag.() -> Unit): Tag =\n        Tag().apply(build).also { add(it) }\n}"
       }
     }
   ],
@@ -585,27 +53,27 @@
     "module": "kotlin-asyncapi-core",
     "inspectionName": "UnusedSymbol"
   },
-  "hash": "2944e04683bedb19cb7a4b47f6e402336eb63cb230d8f92af7b455d9186dd23a"
+  "hash": "6fcb5b97d03bb48d7918a415d3b09871322a7edcd1245477fb4b7a24429e4bb0"
 },{
   "tool": "Code Inspection",
   "category": "Redundant constructs",
   "type": "Unused symbol",
   "severity": "High",
-  "comment": "Function \"correlationIdRef\" is never used",
+  "comment": "Function \"propertyNamesRef\" is never used",
   "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/Message.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Schema.kt",
       "language": "kotlin",
-      "line": 72,
+      "line": 185,
       "offset": 16,
       "length": 16,
       "code": {
-        "startLine": 70,
+        "startLine": 183,
         "length": 16,
-        "offset": 81,
-        "surroundingCode": "        CorrelationID().apply(build).also { correlationId = it }\n\n    inline fun correlationIdRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { correlationId = it }\n"
+        "offset": 74,
+        "surroundingCode": "        Schema().apply(build).also { propertyNames = it }\n\n    inline fun propertyNamesRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { propertyNames = it }\n"
       }
     }
   ],
@@ -613,55 +81,27 @@
     "module": "kotlin-asyncapi-core",
     "inspectionName": "UnusedSymbol"
   },
-  "hash": "7cc708ab2b56ff0aaf45f426030296c8a2a9cdf97a357b1099cf7073d95cb11c"
+  "hash": "4e6037c663cbf934dbe61d69f789380cbf655d7a98629a231e889dffcb40d8a7"
 },{
   "tool": "Code Inspection",
   "category": "Redundant constructs",
   "type": "Unused symbol",
   "severity": "High",
-  "comment": "Function \"headersRef\" is never used",
+  "comment": "Function \"items\" is never used",
   "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/Message.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Schema.kt",
       "language": "kotlin",
-      "line": 60,
-      "offset": 16,
-      "length": 10,
-      "code": {
-        "startLine": 58,
-        "length": 10,
-        "offset": 68,
-        "surroundingCode": "        Schema().apply(build).also { headers = it }\n\n    inline fun headersRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { headers = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "a3a5cb71a11227d750c4c2b2733192002a8adf062967dbf16525fe0869e5dc2d"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"mqtt5\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 56,
+      "line": 134,
       "offset": 16,
       "length": 5,
       "code": {
-        "startLine": 54,
+        "startLine": 132,
         "length": 5,
-        "offset": 77,
-        "surroundingCode": "        ServerBinding.MQTT().apply(build).also { mqtt = it }\n\n    inline fun mqtt5(build: ServerBinding.MQTT5.() -> Unit): ServerBinding.MQTT5 =\n        ServerBinding.MQTT5.apply(build).also { mqtt5 = it }\n"
+        "offset": 69,
+        "surroundingCode": "        Reference().apply(build).also { items = it }\n\n    inline fun items(build: ReferencableSchemasList.() -> Unit): ReferencableSchemasList =\n        ReferencableSchemasList().apply(build).also { items = it }\n"
       }
     }
   ],
@@ -669,251 +109,27 @@
     "module": "kotlin-asyncapi-core",
     "inspectionName": "UnusedSymbol"
   },
-  "hash": "ea554296bdbc13bcbe0500d8c5a17f3d1bd0699235fcb59c2ddd5a0948dbd32e"
+  "hash": "ce495c4096d631cb886a4aaf9c660d63d7b6c9adf29e51176f75458b138ecf43"
 },{
   "tool": "Code Inspection",
   "category": "Redundant constructs",
   "type": "Unused symbol",
   "severity": "High",
-  "comment": "Function \"groupId\" is never used",
+  "comment": "Function \"thenRef\" is never used",
   "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Schema.kt",
       "language": "kotlin",
-      "line": 151,
-      "offset": 13,
+      "line": 197,
+      "offset": 16,
       "length": 7,
       "code": {
-        "startLine": 149,
+        "startLine": 195,
         "length": 7,
-        "offset": 56,
-        "surroundingCode": "        var bindingVersion: String? = null\n\n        fun groupId(value: String): String =\n            value.also { groupId = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "8f02b0ea1083ec8565f6cb73c3568836493be8f80b4d621641222a452b7deac6"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"solace\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 68,
-      "offset": 16,
-      "length": 6,
-      "code": {
-        "startLine": 66,
-        "length": 6,
-        "offset": 73,
-        "surroundingCode": "        ServerBinding.SNS.apply(build).also { sns = it }\n\n    inline fun solace(build: ServerBinding.Solace.() -> Unit): ServerBinding.Solace =\n        ServerBinding.Solace().apply(build).also { solace = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "d946d97e93ce08b1b29b772b73c3aa3367723d6c36079669364a920ee6ebb040"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"kafka\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 41,
-      "offset": 16,
-      "length": 5,
-      "code": {
-        "startLine": 39,
-        "length": 5,
-        "offset": 79,
-        "surroundingCode": "        ServerBinding.WebSockets.apply(build).also { ws = it }\n\n    inline fun kafka(build: ServerBinding.Kafka.() -> Unit): ServerBinding.Kafka =\n        ServerBinding.Kafka.apply(build).also { kafka = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "77deb98065c1896da5abf79a7bc3c5415d28f9df7f11977baa57d790d78c4d4a"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"redis\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 77,
-      "offset": 16,
-      "length": 5,
-      "code": {
-        "startLine": 75,
-        "length": 5,
-        "offset": 77,
-        "surroundingCode": "        ServerBinding.STOMP.apply(build).also { stomp = it }\n\n    inline fun redis(build: ServerBinding.Redis.() -> Unit): ServerBinding.Redis =\n        ServerBinding.Redis.apply(build).also { redis = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "5cfb0ab662cc757f05a2fc094c62905d5c3c57003b551bc4937f0e18d9c65cda"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"amqp1\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 50,
-      "offset": 16,
-      "length": 5,
-      "code": {
-        "startLine": 48,
-        "length": 5,
-        "offset": 75,
-        "surroundingCode": "        ServerBinding.AMQP.apply(build).also { amqp = it }\n\n    inline fun amqp1(build: ServerBinding.AMQP1.() -> Unit): ServerBinding.AMQP1 =\n        ServerBinding.AMQP1.apply(build).also { amqp1 = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "4bb4438194f1b106b50f870ca35ea1aa11f430cc4a81f93c6a58e729e7920bf4"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"multiEndpointServer\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 160,
-      "offset": 13,
-      "length": 19,
-      "code": {
-        "startLine": 158,
-        "length": 19,
-        "offset": 56,
-        "surroundingCode": "            value.also { cipherSpec = it }\n\n        fun multiEndpointServer(value: Boolean): Boolean =\n            value.also { multiEndpointServer = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "7e7c193309b4741d8ddd418e5256f5209df942af5c90939735c8b158cb2e92c6"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"sns\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 65,
-      "offset": 16,
-      "length": 3,
-      "code": {
-        "startLine": 63,
-        "length": 3,
-        "offset": 73,
-        "surroundingCode": "        ServerBinding.JMS.apply(build).also { jms = it }\n\n    inline fun sns(build: ServerBinding.SNS.() -> Unit): ServerBinding.SNS =\n        ServerBinding.SNS.apply(build).also { sns = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "9ffa7f5514f4b00d837f362d42c3858c859019ed9d752d4f0aa90ddc285d052c"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"anypointmq\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 44,
-      "offset": 16,
-      "length": 10,
-      "code": {
-        "startLine": 42,
-        "length": 10,
-        "offset": 77,
-        "surroundingCode": "        ServerBinding.Kafka.apply(build).also { kafka = it }\n\n    inline fun anypointmq(build: ServerBinding.AnypointMQ.() -> Unit): ServerBinding.AnypointMQ =\n        ServerBinding.AnypointMQ.apply(build).also { anypointmq = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "48de78409c00eb1c87b47794d9ff03983457aff05171be789aa066728c69a15a"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"heartBeatInterval\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 163,
-      "offset": 13,
-      "length": 17,
-      "code": {
-        "startLine": 161,
-        "length": 17,
         "offset": 65,
-        "surroundingCode": "            value.also { multiEndpointServer = it }\n\n        fun heartBeatInterval(value: Int): Int =\n            value.also { heartBeatInterval = it }\n"
+        "surroundingCode": "        Schema().apply(build).also { then = it }\n\n    inline fun thenRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { then = it }\n"
       }
     }
   ],
@@ -921,167 +137,27 @@
     "module": "kotlin-asyncapi-core",
     "inspectionName": "UnusedSymbol"
   },
-  "hash": "e6c0ad2acf7609bb3ce8fab278dfcc7f091d0e5f3789b1fdff75176f9c677fea"
+  "hash": "b91fdcdf212f50fc42b82a51bfa706ac82e860af0865340e245b9dd49ed61428"
 },{
   "tool": "Code Inspection",
   "category": "Redundant constructs",
   "type": "Unused symbol",
   "severity": "High",
-  "comment": "Function \"cipherSpec\" is never used",
+  "comment": "Function \"ifRef\" is never used",
   "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Schema.kt",
       "language": "kotlin",
-      "line": 157,
-      "offset": 13,
-      "length": 10,
-      "code": {
-        "startLine": 155,
-        "length": 10,
-        "offset": 66,
-        "surroundingCode": "            value.also { ccdtQueueManagerName = it }\n\n        fun cipherSpec(value: String): String =\n            value.also { cipherSpec = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "8adeb22c91d6270b8fee6bf7c80c9d8e6d3bfda4506f97997361f2a3c49b9684"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"msgVpn\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 139,
-      "offset": 13,
-      "length": 6,
-      "code": {
-        "startLine": 137,
-        "length": 6,
-        "offset": 60,
-        "surroundingCode": "            value.also { bindingVersion = it }\n\n        fun msgVpn(value: String): String =\n            value.also { msgVpn = it }\n    }"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "3e637c40ec21cd86ab5e77c45255a4d102581e9f9f64f1842b533f1c1ebe1581"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"ws\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 38,
-      "offset": 16,
-      "length": 2,
-      "code": {
-        "startLine": 36,
-        "length": 2,
-        "offset": 75,
-        "surroundingCode": "        ServerBinding.HTTP.apply(build).also { http = it }\n\n    inline fun ws(build: ServerBinding.WebSockets.() -> Unit): ServerBinding.WebSockets =\n        ServerBinding.WebSockets.apply(build).also { ws = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "55291e0ff5cc7113a8b6da18877c2ab50b40e0da69dd4fc7430cb961a9035674"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"amqp\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 47,
-      "offset": 16,
-      "length": 4,
-      "code": {
-        "startLine": 45,
-        "length": 4,
-        "offset": 87,
-        "surroundingCode": "        ServerBinding.AnypointMQ.apply(build).also { anypointmq = it }\n\n    inline fun amqp(build: ServerBinding.AMQP.() -> Unit): ServerBinding.AMQP =\n        ServerBinding.AMQP.apply(build).also { amqp = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "19c36b704ada6719c8ddd098fc5a6b87fcfe64ee6357c8f62690cb547e58307a"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"ccdtQueueManagerName\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 154,
-      "offset": 13,
-      "length": 20,
-      "code": {
-        "startLine": 152,
-        "length": 20,
-        "offset": 53,
-        "surroundingCode": "            value.also { groupId = it }\n\n        fun ccdtQueueManagerName(value: String): String =\n            value.also { ccdtQueueManagerName = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "6ab6572cf61097c76916ae387d115916d8218b8c4d52e29716abe112e68b98eb"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"ibmmq\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 83,
+      "line": 191,
       "offset": 16,
       "length": 5,
       "code": {
-        "startLine": 81,
+        "startLine": 189,
         "length": 5,
-        "offset": 81,
-        "surroundingCode": "        ServerBinding.Mercure.apply(build).also { mercure = it }\n\n    inline fun ibmmq(build: ServerBinding.IBMMQ.() -> Unit): ServerBinding.IBMMQ =\n        ServerBinding.IBMMQ().apply(build).also { ibmmq = it }\n}"
+        "offset": 65,
+        "surroundingCode": "        Schema().apply(build).also { `if` = it }\n\n    inline fun ifRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { `if` = it }\n"
       }
     }
   ],
@@ -1089,27 +165,27 @@
     "module": "kotlin-asyncapi-core",
     "inspectionName": "UnusedSymbol"
   },
-  "hash": "f2abdb6b6c3f6e3adf4ea4b6df63a13c3bb00583c8a0c96eeea91a726ff33253"
+  "hash": "df9fcc3a53448e20c428a9d0bbea84d3aa3758a9d32040df7c93cb6bcdae2a1d"
 },{
   "tool": "Code Inspection",
   "category": "Redundant constructs",
   "type": "Unused symbol",
   "severity": "High",
-  "comment": "Function \"mercure\" is never used",
+  "comment": "Function \"elseRef\" is never used",
   "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Schema.kt",
       "language": "kotlin",
-      "line": 80,
+      "line": 203,
       "offset": 16,
       "length": 7,
       "code": {
-        "startLine": 78,
+        "startLine": 201,
         "length": 7,
-        "offset": 77,
-        "surroundingCode": "        ServerBinding.Redis.apply(build).also { redis = it }\n\n    inline fun mercure(build: ServerBinding.Mercure.() -> Unit): ServerBinding.Mercure =\n        ServerBinding.Mercure.apply(build).also { mercure = it }\n"
+        "offset": 67,
+        "surroundingCode": "        Schema().apply(build).also { `else` = it }\n\n    inline fun elseRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { `else` = it }\n"
       }
     }
   ],
@@ -1117,27 +193,167 @@
     "module": "kotlin-asyncapi-core",
     "inspectionName": "UnusedSymbol"
   },
-  "hash": "1e93ed3efe00d19096cc9dc1be65cdbc909b6dd9900abcd452f2bf5c0f8431a9"
+  "hash": "d49b375321ef1abb00efe7ffabee5eda5d1ba41211f733c59a3e26dd2a88908b"
 },{
   "tool": "Code Inspection",
   "category": "Redundant constructs",
   "type": "Unused symbol",
   "severity": "High",
-  "comment": "Function \"stomp\" is never used",
+  "comment": "Function \"itemRef\" is never used",
   "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Schema.kt",
       "language": "kotlin",
-      "line": 74,
+      "line": 131,
+      "offset": 16,
+      "length": 7,
+      "code": {
+        "startLine": 129,
+        "length": 7,
+        "offset": 66,
+        "surroundingCode": "        Schema().apply(build).also { items = it }\n\n    inline fun itemRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { items = it }\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "6f2cee8390b0837e54e53a678e831c38551737a3ffcc33330c46d24c4af640cf"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"additionalItemsRef\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Schema.kt",
+      "language": "kotlin",
+      "line": 140,
+      "offset": 16,
+      "length": 18,
+      "code": {
+        "startLine": 138,
+        "length": 18,
+        "offset": 76,
+        "surroundingCode": "        Schema().apply(build).also { additionalItems = it }\n\n    inline fun additionalItemsRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { additionalItems = it }\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "3818b1523b116802e71d121c50352dcb6438b832cabfb0c733418c2142d804c1"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"containsRef\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Schema.kt",
+      "language": "kotlin",
+      "line": 155,
+      "offset": 16,
+      "length": 11,
+      "code": {
+        "startLine": 153,
+        "length": 11,
+        "offset": 69,
+        "surroundingCode": "        Schema().apply(build).also { contains = it }\n\n    inline fun containsRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { contains = it }\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "e84e3f815e261776307f45597d85853d5879245fab6dd2f355acff56f10042eb"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"notRef\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Schema.kt",
+      "language": "kotlin",
+      "line": 218,
+      "offset": 16,
+      "length": 6,
+      "code": {
+        "startLine": 216,
+        "length": 6,
+        "offset": 64,
+        "surroundingCode": "        Schema().apply(build).also { not = it }\n\n    inline fun notRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { not = it }\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "8903005f239ce74983db73abddbc09f458ebd128cf1e4e239a9a3fa5715c1881"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"additionalPropertiesRef\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Schema.kt",
+      "language": "kotlin",
+      "line": 176,
+      "offset": 16,
+      "length": 23,
+      "code": {
+        "startLine": 174,
+        "length": 23,
+        "offset": 81,
+        "surroundingCode": "        Schema().apply(build).also { additionalProperties = it }\n\n    inline fun additionalPropertiesRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { additionalProperties = it }\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "42e8a5e206cf370f6c4164ac49c2558887e7c976d941eec35bcc88e639e4c886"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"trait\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/OperationTrait.kt",
+      "language": "kotlin",
+      "line": 19,
       "offset": 16,
       "length": 5,
       "code": {
-        "startLine": 72,
+        "startLine": 17,
         "length": 5,
-        "offset": 73,
-        "surroundingCode": "        ServerBinding.SQS.apply(build).also { sqs = it }\n\n    inline fun stomp(build: ServerBinding.STOMP.() -> Unit): ServerBinding.STOMP =\n        ServerBinding.STOMP.apply(build).also { stomp = it }\n"
+        "offset": 104,
+        "surroundingCode": "@AsyncApiComponent\nclass ReferencableOperationTraitsMap : LinkedHashMap<String, Any>() {\n    inline fun trait(key: String, build: OperationTrait.() -> Unit): OperationTrait =\n        OperationTrait().apply(build).also { put(key, it) }\n"
       }
     }
   ],
@@ -1145,27 +361,27 @@
     "module": "kotlin-asyncapi-core",
     "inspectionName": "UnusedSymbol"
   },
-  "hash": "a83dc5f5a5abc68af774829df467aa115573f0e33387c0916e5343393b81859b"
+  "hash": "5187ac7c88ca0d87d8a31d39c581d98059d3fb9c22482b79b09cc233a8fea2d2"
 },{
   "tool": "Code Inspection",
   "category": "Redundant constructs",
   "type": "Unused symbol",
   "severity": "High",
-  "comment": "Function \"sqs\" is never used",
+  "comment": "Function \"trait\" is never used",
   "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/OperationTrait.kt",
       "language": "kotlin",
-      "line": 71,
+      "line": 10,
       "offset": 16,
-      "length": 3,
+      "length": 5,
       "code": {
-        "startLine": 69,
-        "length": 3,
-        "offset": 81,
-        "surroundingCode": "        ServerBinding.Solace().apply(build).also { solace = it }\n\n    inline fun sqs(build: ServerBinding.SQS.() -> Unit): ServerBinding.SQS =\n        ServerBinding.SQS.apply(build).also { sqs = it }\n"
+        "startLine": 8,
+        "length": 5,
+        "offset": 93,
+        "surroundingCode": "@AsyncApiComponent\nclass ReferencableOperationTraitsList : ArrayList<Any>() {\n    inline fun trait(build: OperationTrait.() -> Unit): OperationTrait =\n        OperationTrait().apply(build).also { add(it) }\n"
       }
     }
   ],
@@ -1173,27 +389,27 @@
     "module": "kotlin-asyncapi-core",
     "inspectionName": "UnusedSymbol"
   },
-  "hash": "a3697256392726aae8a1a46d1588a0c54588bad759037fc025871eab0aad2441"
+  "hash": "d7820d3835db1f75dc4ef5df40ca8207b11ee95c43eeefd4e919446ece8e32df"
 },{
   "tool": "Code Inspection",
   "category": "Redundant constructs",
   "type": "Unused symbol",
   "severity": "High",
-  "comment": "Function \"jms\" is never used",
+  "comment": "Function \"bindingsRef\" is never used",
   "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/OperationTrait.kt",
       "language": "kotlin",
-      "line": 62,
+      "line": 53,
       "offset": 16,
-      "length": 3,
+      "length": 11,
       "code": {
-        "startLine": 60,
-        "length": 3,
-        "offset": 75,
-        "surroundingCode": "        ServerBinding.NATS.apply(build).also { nats = it }\n\n    inline fun jms(build: ServerBinding.JMS.() -> Unit): ServerBinding.JMS =\n        ServerBinding.JMS.apply(build).also { jms = it }\n"
+        "startLine": 51,
+        "length": 11,
+        "offset": 80,
+        "surroundingCode": "        OperationBindings().apply(build).also { bindings = it }\n\n    inline fun bindingsRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { bindings = it }\n}"
       }
     }
   ],
@@ -1201,33 +417,5 @@
     "module": "kotlin-asyncapi-core",
     "inspectionName": "UnusedSymbol"
   },
-  "hash": "dba36d5edcc4e2fab26944410d26b3e4a3226eae24f0be26b51806232bb03ee3"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"nats\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/server/ServerBinding.kt",
-      "language": "kotlin",
-      "line": 59,
-      "offset": 16,
-      "length": 4,
-      "code": {
-        "startLine": 57,
-        "length": 4,
-        "offset": 77,
-        "surroundingCode": "        ServerBinding.MQTT5.apply(build).also { mqtt5 = it }\n\n    inline fun nats(build: ServerBinding.NATS.() -> Unit): ServerBinding.NATS =\n        ServerBinding.NATS.apply(build).also { nats = it }\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "380eff153b498f44b4a41fa67c0ccfad90312bf88c8647ada50903f59c0f2c8d"
+  "hash": "339f0355326941570ae0519532ef7dcb7108e911326efc2d49325cedc8baccb4"
 }]}
