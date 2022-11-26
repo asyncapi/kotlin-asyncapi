@@ -27,9 +27,9 @@ The framework generally supports any JVM project. Compatibility has been tested,
 
 | Identifier      | Version                     |
 |-----------------|-----------------------------|
-| **JRE**         | `8`, `11`                   |
+| **JRE**         | `8`, `11`, `17`             |
 | **Kotlin**      | `1.6.21`, `1.7.0`, `1.7.10` |
-| **Spring Boot** | `2.6.0`-`2.7.4`             |
+| **Spring Boot** | `2.6.0`-`2.7.6`             |
 | **Maven**       | `3.8.4`, `3.8.6`            |
 
 ## Module Roadmap
