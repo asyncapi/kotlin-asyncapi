@@ -1,79 +1,583 @@
 {"version":"3","listProblem":[{
   "tool": "Code Inspection",
-  "category": "Naming conventions",
-  "type": "Property naming convention",
+  "category": "Other problems",
+  "type": "@Deprecated annotation without 'replaceWith' argument",
   "severity": "Moderate",
-  "comment": "Property name '`$ref`' should start with a lowercase letter",
-  "detailsInfo": "Reports property names that do not follow the recommended naming conventions.\n\n\nConsistent naming allows for easier code reading and understanding.\nAccording to the [Kotlin official style guide](https://kotlinlang.org/docs/coding-conventions.html#naming-rules),\nproperty names should start with a lowercase letter and use camel case.\n\nIt is possible to introduce other naming rules by changing the \"Pattern\" regular expression.\n\n**Example:**\n\n\n      val My_Cool_Property = \"\"\n\nA quick-fix renames the class according to the Kotlin naming conventions:\n\n\n      val myCoolProperty = \"\"\n",
+  "comment": "'@Deprecated' annotation without a 'replaceWith' argument",
+  "detailsInfo": "Reports deprecated functions and properties that do not have the `kotlin.ReplaceWith` argument in its `kotlin.deprecated` annotation and suggests to add one based on their body.\n\n\nKotlin provides the `ReplaceWith` argument to replace deprecated declarations automatically.\nIt is recommended to use the argument to fix deprecation issues in code.\n\n**Example:**\n\n\n      @Deprecated(\"Use refined() instead.\")\n      fun deprecated() = refined()\n\n      fun refined() = 42\n\nA quick-fix adds the `ReplaceWith()` argument:\n\n\n      @Deprecated(\"Use refined() instead.\", ReplaceWith(\"refined()\"))\n      fun deprecated() = refined()\n\n      fun refined() = 42\n",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/Reference.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/Channel.kt",
       "language": "kotlin",
-      "line": 5,
-      "offset": 18,
-      "length": 6,
+      "line": 25,
+      "offset": 5,
+      "length": 62,
       "code": {
-        "startLine": 3,
-        "length": 6,
-        "offset": 54,
-        "surroundingCode": "@AsyncApiComponent\nclass Reference {\n    lateinit var `$ref`: String\n\n    fun ref(value: String): String ="
+        "startLine": 23,
+        "length": 62,
+        "offset": 35,
+        "surroundingCode": "    var bindings: Any? = null\n\n    @Deprecated(\"Usage of the \\$ref property has been deprecated\")\n    fun ref(value: String): String =\n        value.also { `$ref` = it }"
       }
     }
   ],
   "attributes": {
     "module": "kotlin-asyncapi-core",
-    "inspectionName": "PropertyName"
+    "inspectionName": "DeprecatedCallableAddReplaceWith"
   },
-  "hash": "d1df3ae562b6a9c7988035d8870dc57c60e008da01fe9d17985ac922a9e6a46e"
+  "hash": "7188c0f3ce91c618cd0d2b2ee87fa94f1a033d9cc669e642cf6d557f442e8784"
 },{
   "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"asyncApi\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'durable' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-spring-web/src/main/kotlin/org/openfolder/kotlinasyncapi/springweb/controller/AsyncApiController.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
       "language": "kotlin",
-      "line": 18,
-      "offset": 9,
-      "length": 8,
-      "code": {
-        "startLine": 16,
-        "length": 8,
-        "offset": 72,
-        "surroundingCode": "\n    @GetMapping(produces = [MediaType.APPLICATION_JSON_VALUE])\n    fun asyncApi() = with(serializer) {\n        service.asyncApi().serialize()\n    }"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-spring-web",
-    "inspectionName": "UnusedSymbol"
-  },
-  "hash": "be672e7bfd7deb58b2011dd2bc48d7f8397bb24f43e7ad9ac5b7baef2891c7a6"
-},{
-  "tool": "Code Inspection",
-  "category": "Redundant constructs",
-  "type": "Unused symbol",
-  "severity": "High",
-  "comment": "Function \"example\" is never used",
-  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/MessageExample.kt",
-      "language": "kotlin",
-      "line": 7,
-      "offset": 16,
+      "line": 177,
+      "offset": 17,
       "length": 7,
       "code": {
-        "startLine": 5,
+        "startLine": 175,
         "length": 7,
+        "offset": 90,
+        "surroundingCode": "            var name: String? = null\n            var type: String? = null\n            var durable: Boolean? = null\n            var exclusive: Boolean? = null\n            var autoDelete: Boolean? = null"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "a46c20deb310a509c821c1365ed728f9dfdef3b3962872c3f96dbbc7214efaf0"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'destination' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 117,
+      "offset": 13,
+      "length": 11,
+      "code": {
+        "startLine": 115,
+        "length": 11,
+        "offset": 53,
+        "surroundingCode": "\n    class AnypointMQ : ChannelBinding {\n        var destination: String? = null\n        var destinationType: String? = null\n        var bindingVersion: String? = null"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "b3a2bec963e463ec1d9d09d4c0abd2326ec0d5d89baf0f4908ce42e59ab5bc95"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'autoDelete' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 179,
+      "offset": 17,
+      "length": 10,
+      "code": {
+        "startLine": 177,
+        "length": 10,
+        "offset": 100,
+        "surroundingCode": "            var durable: Boolean? = null\n            var exclusive: Boolean? = null\n            var autoDelete: Boolean? = null\n            var vhost: String? = null\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "b9ffb65cbb607573c7d40fd1da839769eb1cd90866e64512907590b2df11e7bc"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'isPartitioned' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 226,
+      "offset": 17,
+      "length": 13,
+      "code": {
+        "startLine": 224,
+        "length": 13,
+        "offset": 82,
+        "surroundingCode": "        class Queue {\n            lateinit var objectName: String\n            var isPartitioned: Boolean? = null\n            var exclusive: Boolean? = null\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "a862847b3d54e7fead9942fac9232a07bc174f285331075c74c1ddf6f0e3870e"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'exclusive' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 178,
+      "offset": 17,
+      "length": 9,
+      "code": {
+        "startLine": 176,
+        "length": 9,
+        "offset": 94,
+        "surroundingCode": "            var type: String? = null\n            var durable: Boolean? = null\n            var exclusive: Boolean? = null\n            var autoDelete: Boolean? = null\n            var vhost: String? = null"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "2e9d15b9ec8e4fd2de0517eda7ac9f12185556b2bc51eb1ebeacbaac3c2f68d7"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'autoDelete' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 154,
+      "offset": 17,
+      "length": 10,
+      "code": {
+        "startLine": 152,
+        "length": 10,
+        "offset": 94,
+        "surroundingCode": "            var type: String? = null\n            var durable: Boolean? = null\n            var autoDelete: Boolean? = null\n            var vhost: String? = null\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "bd8185d5fdde059eedc47e4111b0bafff6fad3273ce842661e07e4ca6f204e5b"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'exclusive' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 227,
+      "offset": 17,
+      "length": 9,
+      "code": {
+        "startLine": 225,
+        "length": 9,
+        "offset": 107,
+        "surroundingCode": "            lateinit var objectName: String\n            var isPartitioned: Boolean? = null\n            var exclusive: Boolean? = null\n\n            fun objectName(value: String): String ="
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "6a6361dd67575240fe5a77189936da9e543427caf4f45b7efb570e38155b75ef"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'is' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 132,
+      "offset": 13,
+      "length": 4,
+      "code": {
+        "startLine": 130,
+        "length": 4,
+        "offset": 47,
+        "surroundingCode": "\n    class AMQP : ChannelBinding {\n        var `is`: String? = null\n        var exchange: Exchange? = null\n        var queue: Queue? = null"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "2936022ba4f5158c27fb1062b4708ddc2305549a0cef94093061632172e9b542"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'lastMsgRetained' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 243,
+      "offset": 17,
+      "length": 15,
+      "code": {
+        "startLine": 241,
+        "length": 15,
+        "offset": 109,
+        "surroundingCode": "            var objectName: String? = null\n            var durablePermitted: Boolean? = null\n            var lastMsgRetained: Boolean? = null\n\n            fun string(value: String): String ="
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "01f1e442083f96f00d1c9251869ec0cb644048cfe40e92bcfdfae86e65bcd437"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'objectName' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 225,
+      "offset": 26,
+      "length": 10,
+      "code": {
+        "startLine": 223,
+        "length": 10,
+        "offset": 48,
+        "surroundingCode": "\n        class Queue {\n            lateinit var objectName: String\n            var isPartitioned: Boolean? = null\n            var exclusive: Boolean? = null"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "7c40706a5783d5cccd1fdff56daa64503c4e3cf3702e739eeeaad5fbc7323665"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'durablePermitted' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 242,
+      "offset": 17,
+      "length": 16,
+      "code": {
+        "startLine": 240,
+        "length": 16,
+        "offset": 98,
+        "surroundingCode": "            var string: String? = null\n            var objectName: String? = null\n            var durablePermitted: Boolean? = null\n            var lastMsgRetained: Boolean? = null\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "d9d89d11babdfa068ee43178a788217e349c775b5ab0cbad04119bf4a5f10af1"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'maxMsgLength' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 206,
+      "offset": 13,
+      "length": 12,
+      "code": {
+        "startLine": 204,
+        "length": 12,
+        "offset": 78,
+        "surroundingCode": "        var queue: Queue? = null\n        var topic: Topic? = null\n        var maxMsgLength: Int? = null\n        var bindingVersion: String? = null\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "2e10d3c5aaea91652e2758fe9bf7f8fc45796bdb41d22a8ab72a4327e04c3cd4"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'destinationType' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 203,
+      "offset": 13,
+      "length": 15,
+      "code": {
+        "startLine": 201,
+        "length": 15,
+        "offset": 48,
+        "surroundingCode": "\n    class IBMMQ : ChannelBinding {\n        var destinationType: String? = null\n        var queue: Queue? = null\n        var topic: Topic? = null"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "af407dd44e0481da192cf90401235e1ef04b93ea1a8dd4b246c661294da272f9"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'vhost' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 180,
+      "offset": 17,
+      "length": 5,
+      "code": {
+        "startLine": 178,
+        "length": 5,
+        "offset": 103,
+        "surroundingCode": "            var exclusive: Boolean? = null\n            var autoDelete: Boolean? = null\n            var vhost: String? = null\n\n            fun name(value: String): String ="
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "a41d94e7650ce97c4e32973dc26a1338876e60fee3f29ffa9b4b8640dbbdc7e4"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'objectName' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 241,
+      "offset": 17,
+      "length": 10,
+      "code": {
+        "startLine": 239,
+        "length": 10,
+        "offset": 77,
+        "surroundingCode": "        class Topic {\n            var string: String? = null\n            var objectName: String? = null\n            var durablePermitted: Boolean? = null\n            var lastMsgRetained: Boolean? = null"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "38175986cfaba17757393ba2d0e6c6925c1c143627472013842883733ace9661"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'vhost' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 155,
+      "offset": 17,
+      "length": 5,
+      "code": {
+        "startLine": 153,
+        "length": 5,
+        "offset": 101,
+        "surroundingCode": "            var durable: Boolean? = null\n            var autoDelete: Boolean? = null\n            var vhost: String? = null\n\n            fun name(value: String): String ="
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "c7e4f5fd4f42ab30610f61187dc18042831c3fcfc2462300c1a8642c4ea05c6f"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'method' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 92,
+      "offset": 13,
+      "length": 6,
+      "code": {
+        "startLine": 90,
+        "length": 6,
+        "offset": 53,
+        "surroundingCode": "\n    class WebSockets : ChannelBinding {\n        var method: String? = null\n        var query: Any? = null\n        var headers: Any? = null"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "225e8fad67f6bccc0aabd532fa435ef2031681eda57acf19a5c3b554cda5cf94"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'destinationType' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 118,
+      "offset": 13,
+      "length": 15,
+      "code": {
+        "startLine": 116,
+        "length": 15,
         "offset": 92,
-        "surroundingCode": "@AsyncApiComponent\nclass MessageExamplesList : ArrayList<MessageExample>() {\n    inline fun example(build: MessageExample.() -> Unit): MessageExample =\n        MessageExample().apply(build).also { add(it) }\n}"
+        "surroundingCode": "    class AnypointMQ : ChannelBinding {\n        var destination: String? = null\n        var destinationType: String? = null\n        var bindingVersion: String? = null\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "cebf7046898a6f4549b495ea92e189ca1e7df6fd150361e0a1af08e19a4a40c9"
+},{
+  "tool": "Code Inspection",
+  "category": "Style issues",
+  "type": "Class member can have 'private' visibility",
+  "severity": "Moderate",
+  "comment": "Property 'durable' could be private",
+  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/ChannelBinding.kt",
+      "language": "kotlin",
+      "line": 153,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 151,
+        "length": 7,
+        "offset": 90,
+        "surroundingCode": "            var name: String? = null\n            var type: String? = null\n            var durable: Boolean? = null\n            var autoDelete: Boolean? = null\n            var vhost: String? = null"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "MemberVisibilityCanBePrivate"
+  },
+  "hash": "191ae1f5ebe679f846f5b122a10b547c2f2fba3adca1e6eb12ef8ace20ed3492"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"messageRef\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/Operation.kt",
+      "language": "kotlin",
+      "line": 51,
+      "offset": 16,
+      "length": 10,
+      "code": {
+        "startLine": 49,
+        "length": 10,
+        "offset": 69,
+        "surroundingCode": "        Message().apply(build).also { message = it }\n\n    inline fun messageRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { message = it }\n"
       }
     }
   ],
@@ -81,5 +585,33 @@
     "module": "kotlin-asyncapi-core",
     "inspectionName": "UnusedSymbol"
   },
-  "hash": "d669d04175ca1750046fb7566cb673224d23d1a5344b1c895507bb9dd8525df9"
+  "hash": "eec72a29c4fef04206d9320ee43176d0f65747962011eaadf59c4ab9756fcb88"
+},{
+  "tool": "Code Inspection",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"bindingsRef\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/Operation.kt",
+      "language": "kotlin",
+      "line": 42,
+      "offset": 16,
+      "length": 11,
+      "code": {
+        "startLine": 40,
+        "length": 11,
+        "offset": 80,
+        "surroundingCode": "        OperationBindings().apply(build).also { bindings = it }\n\n    inline fun bindingsRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { bindings = it }\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-core",
+    "inspectionName": "UnusedSymbol"
+  },
+  "hash": "86b796a441a2f112cee4986853ac687b41a2d845b47e1cc9bcd2c91a06477a20"
 }]}
