@@ -26,6 +26,7 @@ class ReferencableMessageTraitsMap : LinkedHashMap<String, Any>() {
 class MessageTrait {
     var headers: Any? = null
     var correlationId: Any? = null
+    var messageId: String? = null
     var schemaFormat: String? = null
     var contentType: String? = null
     var name: String? = null
@@ -48,6 +49,9 @@ class MessageTrait {
 
     inline fun correlationIdRef(build: Reference.() -> Unit): Reference =
         Reference().apply(build).also { correlationId = it }
+
+    fun messageId(value: String): String =
+        value.also { messageId = it }
 
     fun schemaFormat(value: String): String =
         value.also { schemaFormat = it }
