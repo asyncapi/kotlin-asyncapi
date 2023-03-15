@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component
 import kotlin.reflect.KClass
 
 @Component
-class MessageProcessor: AnnotationProcessor<Message> {
+internal class MessageProcessor: AnnotationProcessor<Message> {
     override fun process(annotation: Message, clazz: KClass<*>?): Components {
         val objectMapper = ObjectMapper()
         val schemaGenerator = JsonSchemaGenerator(objectMapper)

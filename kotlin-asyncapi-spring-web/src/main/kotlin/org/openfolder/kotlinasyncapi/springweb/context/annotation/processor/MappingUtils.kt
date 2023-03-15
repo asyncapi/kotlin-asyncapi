@@ -15,10 +15,10 @@ import org.openfolder.kotlinasyncapi.model.TagsList
 import org.openfolder.kotlinasyncapi.model.channel.MessageExamplesList
 import org.openfolder.kotlinasyncapi.model.channel.MessageTraitsList
 
-val objectMapper = ObjectMapper()
-val jsonSchemaGenerator = JsonSchemaGenerator(objectMapper)
+internal val objectMapper = ObjectMapper()
+internal val jsonSchemaGenerator = JsonSchemaGenerator(objectMapper)
 
-fun Message.toMessage(): org.openfolder.kotlinasyncapi.model.channel.Message =
+internal fun Message.toMessage(): org.openfolder.kotlinasyncapi.model.channel.Message =
     org.openfolder.kotlinasyncapi.model.channel.Message().apply {
         messageId = this@toMessage.messageId.takeIf { it.isNotEmpty() }
         schemaFormat = this@toMessage.schemaFormat.takeIf { it.isNotEmpty() }
@@ -41,26 +41,26 @@ fun Message.toMessage(): org.openfolder.kotlinasyncapi.model.channel.Message =
         }
     }
 
-fun CorrelationID.toCorrelationID(): org.openfolder.kotlinasyncapi.model.CorrelationID =
+internal fun CorrelationID.toCorrelationID(): org.openfolder.kotlinasyncapi.model.CorrelationID =
     org.openfolder.kotlinasyncapi.model.CorrelationID().apply {
         location = this@toCorrelationID.location
         description = this@toCorrelationID.description.takeIf { it.isNotEmpty() }
     }
 
-fun ExternalDocumentation.toExternalDocumentation(): org.openfolder.kotlinasyncapi.model.ExternalDocumentation =
+internal fun ExternalDocumentation.toExternalDocumentation(): org.openfolder.kotlinasyncapi.model.ExternalDocumentation =
     org.openfolder.kotlinasyncapi.model.ExternalDocumentation().apply {
         url = this@toExternalDocumentation.url
         description = this@toExternalDocumentation.description.takeIf { it.isNotEmpty() }
     }
 
-fun Tag.toTag(): org.openfolder.kotlinasyncapi.model.Tag =
+internal fun Tag.toTag(): org.openfolder.kotlinasyncapi.model.Tag =
     org.openfolder.kotlinasyncapi.model.Tag().apply {
         name = this@toTag.name
         description = this@toTag.description.takeIf { it.isNotEmpty() }
         externalDocs = this@toTag.externalDocs.takeUnless { it.default }?.toExternalDocumentation()
     }
 
-fun MessageExample.toMessageExample(): org.openfolder.kotlinasyncapi.model.channel.MessageExample =
+internal fun MessageExample.toMessageExample(): org.openfolder.kotlinasyncapi.model.channel.MessageExample =
     org.openfolder.kotlinasyncapi.model.channel.MessageExample().apply {
         name = this@toMessageExample.name.takeIf { it.isNotEmpty() }
         summary = this@toMessageExample.summary.takeIf { it.isNotEmpty() }
@@ -72,7 +72,7 @@ fun MessageExample.toMessageExample(): org.openfolder.kotlinasyncapi.model.chann
         }
     }
 
-fun MessageBindings.toMessageBindings(): org.openfolder.kotlinasyncapi.model.channel.MessageBindings =
+internal fun MessageBindings.toMessageBindings(): org.openfolder.kotlinasyncapi.model.channel.MessageBindings =
     org.openfolder.kotlinasyncapi.model.channel.MessageBindings().apply {
         http = this@toMessageBindings.http.takeUnless { it.default }?.toHTTP()
         kafka = this@toMessageBindings.kafka.takeUnless { it.default }?.toKafka()
@@ -82,7 +82,7 @@ fun MessageBindings.toMessageBindings(): org.openfolder.kotlinasyncapi.model.cha
         ibmmq = this@toMessageBindings.ibmmq.takeUnless { it.default }?.toIBMMQ()
     }
 
-fun MessageTrait.toMessageTrait(): org.openfolder.kotlinasyncapi.model.channel.MessageTrait =
+internal fun MessageTrait.toMessageTrait(): org.openfolder.kotlinasyncapi.model.channel.MessageTrait =
     org.openfolder.kotlinasyncapi.model.channel.MessageTrait().apply {
         messageId = this@toMessageTrait.messageId.takeIf { it.isNotEmpty() }
         schemaFormat = this@toMessageTrait.schemaFormat.takeIf { it.isNotEmpty() }
@@ -101,7 +101,7 @@ fun MessageTrait.toMessageTrait(): org.openfolder.kotlinasyncapi.model.channel.M
         }
     }
 
-fun MessageBinding.HTTP.toHTTP(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.HTTP =
+internal fun MessageBinding.HTTP.toHTTP(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.HTTP =
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.HTTP().apply {
         bindingVersion = this@toHTTP.bindingVersion.takeIf { it.isNotEmpty() }
         headers = this@toHTTP.headers.takeUnless { it.default }?.implementation?.let {
@@ -109,7 +109,7 @@ fun MessageBinding.HTTP.toHTTP(): org.openfolder.kotlinasyncapi.model.channel.Me
         }
     }
 
-fun MessageBinding.Kafka.toKafka(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.Kafka =
+internal fun MessageBinding.Kafka.toKafka(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.Kafka =
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.Kafka().apply {
         bindingVersion = this@toKafka.bindingVersion.takeIf { it.isNotEmpty() }
         key = this@toKafka.key.takeUnless { it.default }?.implementation?.let {
@@ -117,7 +117,7 @@ fun MessageBinding.Kafka.toKafka(): org.openfolder.kotlinasyncapi.model.channel.
         }
     }
 
-fun MessageBinding.AnypointMQ.toAnypointMQ(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.AnypointMQ =
+internal fun MessageBinding.AnypointMQ.toAnypointMQ(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.AnypointMQ =
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.AnypointMQ().apply {
         bindingVersion = this@toAnypointMQ.bindingVersion.takeIf { it.isNotEmpty() }
         headers = this@toAnypointMQ.headers.takeUnless { it.default }?.implementation?.let {
@@ -125,19 +125,19 @@ fun MessageBinding.AnypointMQ.toAnypointMQ(): org.openfolder.kotlinasyncapi.mode
         }
     }
 
-fun MessageBinding.AMQP.toAMQP(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.AMQP =
+internal fun MessageBinding.AMQP.toAMQP(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.AMQP =
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.AMQP().apply {
         bindingVersion = this@toAMQP.bindingVersion.takeIf { it.isNotEmpty() }
         messageType = this@toAMQP.messageType.takeIf { it.isNotEmpty() }
         contentEncoding = this@toAMQP.contentEncoding.takeIf { it.isNotEmpty() }
     }
 
-fun MessageBinding.MQTT.toMQTT(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.MQTT =
+internal fun MessageBinding.MQTT.toMQTT(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.MQTT =
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.MQTT().apply {
         bindingVersion = this@toMQTT.bindingVersion.takeIf { it.isNotEmpty() }
     }
 
-fun MessageBinding.IBMMQ.toIBMMQ(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.IBMMQ =
+internal fun MessageBinding.IBMMQ.toIBMMQ(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.IBMMQ =
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.IBMMQ().apply {
         bindingVersion = this@toIBMMQ.bindingVersion.takeIf { it.isNotEmpty() }
         type = this@toIBMMQ.type.takeIf { it.isNotEmpty() }
