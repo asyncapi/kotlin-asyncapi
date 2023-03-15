@@ -24,8 +24,16 @@
             <artifactId>kotlin-asyncapi-script</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.openfolder</groupId>
+            <artifactId>kotlin-asyncapi-annotation</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jsonSchema</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

@@ -47,7 +47,7 @@ class Message {
     var description: String? = null
     var tags: TagsList? = null
     var externalDocs: ExternalDocumentation? = null
-    var bindings: ReferencableMessageBindingsMap? = null
+    var bindings: Any? = null
     var examples: MessageExamplesList? = null
     var traits: MessageTraitsList? = null
 
@@ -96,8 +96,11 @@ class Message {
     inline fun externalDocs(build: ExternalDocumentation.() -> Unit): ExternalDocumentation =
         ExternalDocumentation().apply(build).also { externalDocs = it }
 
-    inline fun bindings(build: ReferencableMessageBindingsMap.() -> Unit): ReferencableMessageBindingsMap =
-        ReferencableMessageBindingsMap().apply(build).also { bindings = it }
+    inline fun bindings(build: MessageBindings.() -> Unit): MessageBindings =
+        MessageBindings().apply(build).also { bindings = it }
+
+    inline fun bindingsRef(build: Reference.() -> Unit): Reference =
+        Reference().apply(build).also { bindings = it }
 
     inline fun examples(build: MessageExamplesList.() -> Unit): MessageExamplesList =
         MessageExamplesList().apply(build).also { examples = it }
