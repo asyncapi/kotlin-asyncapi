@@ -8,8 +8,6 @@ import org.openfolder.kotlinasyncapi.annotation.Tag
 
 @Target(
     AnnotationTarget.CLASS,
-    AnnotationTarget.FUNCTION,
-    AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.ANNOTATION_CLASS
 )
 @Repeatable

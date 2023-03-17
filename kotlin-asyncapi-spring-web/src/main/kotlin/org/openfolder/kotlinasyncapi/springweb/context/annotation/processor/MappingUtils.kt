@@ -2,7 +2,6 @@ package org.openfolder.kotlinasyncapi.springweb.context.annotation.processor
 
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator
 import org.openfolder.kotlinasyncapi.annotation.CorrelationID
 import org.openfolder.kotlinasyncapi.annotation.ExternalDocumentation
 import org.openfolder.kotlinasyncapi.annotation.Tag
@@ -11,12 +10,10 @@ import org.openfolder.kotlinasyncapi.annotation.channel.MessageBinding
 import org.openfolder.kotlinasyncapi.annotation.channel.MessageBindings
 import org.openfolder.kotlinasyncapi.annotation.channel.MessageExample
 import org.openfolder.kotlinasyncapi.annotation.channel.MessageTrait
+import org.openfolder.kotlinasyncapi.model.Reference
 import org.openfolder.kotlinasyncapi.model.TagsList
 import org.openfolder.kotlinasyncapi.model.channel.MessageExamplesList
 import org.openfolder.kotlinasyncapi.model.channel.MessageTraitsList
-
-internal val objectMapper = ObjectMapper()
-internal val jsonSchemaGenerator = JsonSchemaGenerator(objectMapper)
 
 internal fun Message.toMessage(): org.openfolder.kotlinasyncapi.model.channel.Message =
     org.openfolder.kotlinasyncapi.model.channel.Message().apply {
@@ -28,17 +25,32 @@ internal fun Message.toMessage(): org.openfolder.kotlinasyncapi.model.channel.Me
         summary = this@toMessage.summary.takeIf { it.isNotEmpty() }
         description = this@toMessage.description.takeIf { it.isNotEmpty() }
         correlationId = this@toMessage.correlationId.takeUnless { it.default }?.toCorrelationID()
-        tags = this@toMessage.tags.map { it.toTag() }.toList() as TagsList
+        tags = this@toMessage.tags.takeUnless { it.isEmpty() }?.toTagsList()
         externalDocs = this@toMessage.externalDocs.takeUnless { it.default }?.toExternalDocumentation()
-        examples = this@toMessage.examples.map { it.toMessageExample() }.toList() as MessageExamplesList
+        examples = this@toMessage.examples.takeUnless { it.isEmpty() }?.toMessageExamplesList()
         bindings = this@toMessage.bindings.takeUnless { it.default }?.toMessageBindings()
-        traits = this@toMessage.traits.map { it.toMessageTrait() }.toList() as MessageTraitsList
+        traits = this@toMessage.traits.takeUnless { it.isEmpty() }?.toMessageTraitsList()
         headers = this@toMessage.headers.takeUnless { it.default }?.implementation?.let {
-            jsonSchemaGenerator.generateSchema(it.java)
+            Reference().apply { ref("#/components/schemas/${it.simpleName}") }
         }
         payload = this@toMessage.payload.takeUnless { it.default }?.implementation?.let {
-            jsonSchemaGenerator.generateSchema(it.java)
+            Reference().apply { ref("#/components/schemas/${it.simpleName}") }
         }
+    }
+
+internal fun Array<Tag>.toTagsList(): TagsList =
+    TagsList().apply {
+        addAll(this@toTagsList.map { it.toTag() })
+    }
+
+internal fun Array<MessageExample>.toMessageExamplesList(): MessageExamplesList =
+    MessageExamplesList().apply {
+        addAll(this@toMessageExamplesList.map { it.toMessageExample() })
+    }
+
+internal fun Array<MessageTrait>.toMessageTraitsList(): MessageTraitsList =
+    MessageTraitsList().apply {
+        addAll(this@toMessageTraitsList.map { it.toMessageTrait() })
     }
 
 internal fun CorrelationID.toCorrelationID(): org.openfolder.kotlinasyncapi.model.CorrelationID =
@@ -62,6 +74,8 @@ internal fun Tag.toTag(): org.openfolder.kotlinasyncapi.model.Tag =
 
 internal fun MessageExample.toMessageExample(): org.openfolder.kotlinasyncapi.model.channel.MessageExample =
     org.openfolder.kotlinasyncapi.model.channel.MessageExample().apply {
+        val objectMapper = ObjectMapper()
+
         name = this@toMessageExample.name.takeIf { it.isNotEmpty() }
         summary = this@toMessageExample.summary.takeIf { it.isNotEmpty() }
         payload = this@toMessageExample.payload.takeIf { it.isNotEmpty() }?.let {
@@ -92,12 +106,12 @@ internal fun MessageTrait.toMessageTrait(): org.openfolder.kotlinasyncapi.model.
         summary = this@toMessageTrait.summary.takeIf { it.isNotEmpty() }
         description = this@toMessageTrait.description.takeIf { it.isNotEmpty() }
         correlationId = this@toMessageTrait.correlationId.takeUnless { it.default }?.toCorrelationID()
-        tags = this@toMessageTrait.tags.map { it.toTag() }.toList() as TagsList
+        tags = this@toMessageTrait.tags.takeUnless { it.isEmpty() }?.toTagsList()
         externalDocs = this@toMessageTrait.externalDocs.takeUnless { it.default }?.toExternalDocumentation()
-        examples = this@toMessageTrait.examples.map { it.toMessageExample() }.toList() as MessageExamplesList
+        examples = this@toMessageTrait.examples.takeUnless { it.isEmpty() }?.toMessageExamplesList()
         bindings = this@toMessageTrait.bindings.takeUnless { it.default }?.toMessageBindings()
         headers = this@toMessageTrait.headers.takeUnless { it.default }?.implementation?.let {
-            jsonSchemaGenerator.generateSchema(it.java)
+            Reference().apply { ref("#/components/schemas/${it.simpleName}") }
         }
     }
 
@@ -105,7 +119,7 @@ internal fun MessageBinding.HTTP.toHTTP(): org.openfolder.kotlinasyncapi.model.c
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.HTTP().apply {
         bindingVersion = this@toHTTP.bindingVersion.takeIf { it.isNotEmpty() }
         headers = this@toHTTP.headers.takeUnless { it.default }?.implementation?.let {
-            jsonSchemaGenerator.generateSchema(it.java)
+            Reference().apply { ref("#/components/schemas/${it.simpleName}") }
         }
     }
 
@@ -113,7 +127,7 @@ internal fun MessageBinding.Kafka.toKafka(): org.openfolder.kotlinasyncapi.model
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.Kafka().apply {
         bindingVersion = this@toKafka.bindingVersion.takeIf { it.isNotEmpty() }
         key = this@toKafka.key.takeUnless { it.default }?.implementation?.let {
-            jsonSchemaGenerator.generateSchema(it.java)
+            Reference().apply { ref("#/components/schemas/${it.simpleName}") }
         }
     }
 
@@ -121,7 +135,7 @@ internal fun MessageBinding.AnypointMQ.toAnypointMQ(): org.openfolder.kotlinasyn
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.AnypointMQ().apply {
         bindingVersion = this@toAnypointMQ.bindingVersion.takeIf { it.isNotEmpty() }
         headers = this@toAnypointMQ.headers.takeUnless { it.default }?.implementation?.let {
-            jsonSchemaGenerator.generateSchema(it.java)
+            Reference().apply { ref("#/components/schemas/${it.simpleName}") }
         }
     }
 
