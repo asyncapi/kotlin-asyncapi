@@ -23,6 +23,7 @@ import org.openfolder.kotlinasyncapi.springweb.context.annotation.AnnotationScan
 import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.AnnotationProcessor
 import org.springframework.context.ApplicationContext
 import org.springframework.stereotype.Component
+import kotlin.reflect.KClass
 import kotlin.reflect.full.findAnnotation
 
 internal interface AnnotationProvider {
@@ -34,17 +35,19 @@ internal interface AnnotationProvider {
 internal class DefaultAnnotationProvider(
     context: ApplicationContext,
     scanner: AnnotationScanner,
-    messageProcessor: AnnotationProcessor<Message>,
-    schemaProcessor: AnnotationProcessor<Schema>
+    messageProcessor: AnnotationProcessor<Message, KClass<*>>,
+    schemaProcessor: AnnotationProcessor<Schema, KClass<*>>
 ) : AnnotationProvider {
 
     override val components: Components? by lazy {
         val scanPackage = context.getBeansWithAnnotation(EnableAsyncApi::class.java).values
             .firstOrNull()
-            ?.let { it::class.java.packageName }
+            ?.let { it::class.java.`package`.name }
             ?.takeIf { it.isNotEmpty() }
 
-        val annotatedClasses = scanner.scan(scanPackage = scanPackage!!, annotation = AsyncApiAnnotation::class)
+        val annotatedClasses = scanPackage?.let {
+            scanner.scan(scanPackage = it, annotation = AsyncApiAnnotation::class)
+        } ?: emptyList()
 
         Components().apply {
             annotatedClasses

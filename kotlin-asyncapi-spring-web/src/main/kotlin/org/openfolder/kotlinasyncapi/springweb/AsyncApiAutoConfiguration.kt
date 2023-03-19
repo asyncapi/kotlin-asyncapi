@@ -1,9 +1,17 @@
 package org.openfolder.kotlinasyncapi.springweb
 
+import org.openfolder.kotlinasyncapi.annotation.Schema
+import org.openfolder.kotlinasyncapi.annotation.channel.Message
 import org.openfolder.kotlinasyncapi.model.AsyncApi
+import org.openfolder.kotlinasyncapi.springweb.context.DefaultAnnotationProvider
 import org.openfolder.kotlinasyncapi.springweb.context.DefaultInfoProvider
 import org.openfolder.kotlinasyncapi.springweb.context.DefaultResourceProvider
 import org.openfolder.kotlinasyncapi.springweb.context.ResourceProvider
+import org.openfolder.kotlinasyncapi.springweb.context.annotation.AnnotationScanner
+import org.openfolder.kotlinasyncapi.springweb.context.annotation.DefaultAnnotationScanner
+import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.AnnotationProcessor
+import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.MessageProcessor
+import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.SchemaProcessor
 import org.openfolder.kotlinasyncapi.springweb.controller.AsyncApiController
 import org.openfolder.kotlinasyncapi.springweb.service.AsyncApiExtension
 import org.openfolder.kotlinasyncapi.springweb.service.AsyncApiSerializer
@@ -19,12 +27,13 @@ import org.springframework.context.ApplicationContext
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Import
+import kotlin.reflect.KClass
 import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 
 @Configuration
 @ConditionalOnBean(AsyncApiMarkerConfiguration.Marker::class)
-@Import(AsyncApiScriptAutoConfiguration::class)
+@Import(AsyncApiScriptAutoConfiguration::class, AsyncApiAnnotationAutoConfiguration::class)
 internal open class AsyncApiAutoConfiguration {
 
     @Bean
@@ -79,6 +88,31 @@ internal open class AsyncApiScriptAutoConfiguration {
         resourceProvider.resource(asyncApiProperties.script.resourcePath, AsyncApi::class)?.let {
             AsyncApiExtension.from(resource = it)
         }
+}
+
+@Configuration
+@ConditionalOnProperty(name = ["asyncapi.annotation.enabled"], havingValue = "true", matchIfMissing = true)
+internal open class AsyncApiAnnotationAutoConfiguration {
+
+    @Bean
+    open fun messageProcessor() =
+        MessageProcessor()
+
+    @Bean
+    open fun schemaProcessor() =
+        SchemaProcessor()
+
+    @Bean
+    open fun annotationScanner(context: ApplicationContext) =
+        DefaultAnnotationScanner(context)
+
+    @Bean
+    open fun annotationProvider(
+        context: ApplicationContext,
+        scanner: AnnotationScanner,
+        messageProcessor: AnnotationProcessor<Message, KClass<*>>,
+        schemaProcessor: AnnotationProcessor<Schema, KClass<*>>
+    ) = DefaultAnnotationProvider(context, scanner, messageProcessor, schemaProcessor)
 }
 
 @Configuration

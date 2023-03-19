@@ -8,22 +8,22 @@ import org.springframework.stereotype.Component
 import kotlin.reflect.KClass
 
 @Component
-internal class MessageProcessor: AnnotationProcessor<Message> {
-    override fun process(annotation: Message, clazz: KClass<*>): Components {
+internal class MessageProcessor: AnnotationProcessor<Message, KClass<*>> {
+    override fun process(annotation: Message, context: KClass<*>): Components {
         val converters = ModelConverters()
-        val jsonSchema = converters.readAll(clazz.java)
+        val jsonSchema = converters.readAll(context.java)
 
         return Components().apply {
             messages {
                 annotation.toMessage()
                     .apply {
                         payload = payload ?: Reference().apply {
-                            ref("#/components/schemas/${clazz.simpleName}")
+                            ref("#/components/schemas/${context.simpleName}")
                         }
                         schemaFormat = "application/schema+json;version=draft-07"
                     }
                     .also {
-                        put(clazz.java.simpleName, it)
+                        put(context.java.simpleName, it)
                     }
             }
             schemas {

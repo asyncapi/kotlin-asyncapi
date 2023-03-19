@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component
 import kotlin.reflect.KClass
 
 @Component
-internal class SchemaProcessor : AnnotationProcessor<Schema> {
-    override fun process(annotation: Schema, clazz: KClass<*>): Components {
+internal class SchemaProcessor : AnnotationProcessor<Schema, KClass<*>> {
+    override fun process(annotation: Schema, context: KClass<*>): Components {
         val converters = ModelConverters()
-        val jsonSchema = converters.readAll(clazz.java)
+        val jsonSchema = converters.readAll(context.java)
 
         return Components().apply {
             schemas {
