@@ -1,7 +1,6 @@
 package org.openfolder.kotlinasyncapi.springweb.context.annotation.processor
 
 import org.junit.jupiter.api.Test
-
 import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.annotation.Tag
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
@@ -33,7 +32,7 @@ internal class MessageProcessorTest {
     data class TestPayload(
         val id: Int = 0,
         val name: String,
-        val isTest: Boolean,
+        val isTest: Boolean
     )
 
     @Schema

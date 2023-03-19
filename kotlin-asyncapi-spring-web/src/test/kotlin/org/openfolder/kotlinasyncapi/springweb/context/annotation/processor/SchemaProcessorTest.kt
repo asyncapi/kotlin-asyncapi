@@ -1,7 +1,6 @@
 package org.openfolder.kotlinasyncapi.springweb.context.annotation.processor
 
 import org.junit.jupiter.api.Test
-
 import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.springweb.TestUtils
 import kotlin.reflect.full.findAnnotation

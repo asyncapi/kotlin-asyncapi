@@ -2,7 +2,6 @@ package org.openfolder.kotlinasyncapi.springweb.context.external
 
 import org.junit.jupiter.api.Test
 import org.openfolder.kotlinasyncapi.annotation.ExternalDocumentation
-
 import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.annotation.Tag
 import org.openfolder.kotlinasyncapi.annotation.channel.Message

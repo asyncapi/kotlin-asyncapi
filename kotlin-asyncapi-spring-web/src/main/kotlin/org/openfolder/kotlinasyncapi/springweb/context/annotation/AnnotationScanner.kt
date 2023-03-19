@@ -14,7 +14,7 @@ internal interface AnnotationScanner {
 @Component
 internal class DefaultAnnotationScanner(
     private val context: ApplicationContext
-): AnnotationScanner {
+) : AnnotationScanner {
     override fun scan(scanPackage: String, annotation: KClass<out Annotation>): List<KClass<*>> {
         val classPathScanner = ClassPathScanningCandidateComponentProvider(false).also {
             it.addIncludeFilter(AnnotationTypeFilter(AsyncApiAnnotation::class.java))
