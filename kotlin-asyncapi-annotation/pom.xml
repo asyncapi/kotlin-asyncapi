@@ -13,11 +13,4 @@
 
     <name>Kotlin AsyncAPI Annotation</name>
     <description>AsyncAPI annotations for meta-documentation</description>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.openfolder</groupId>
-            <artifactId>kotlin-asyncapi-core</artifactId>
-        </dependency>
-    </dependencies>
 </project>
