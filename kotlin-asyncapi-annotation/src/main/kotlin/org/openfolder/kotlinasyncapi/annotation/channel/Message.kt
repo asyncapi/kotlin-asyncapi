@@ -1,5 +1,6 @@
 package org.openfolder.kotlinasyncapi.annotation.channel
 
+import org.openfolder.kotlinasyncapi.annotation.AsyncApiAnnotation
 import org.openfolder.kotlinasyncapi.annotation.CorrelationID
 import org.openfolder.kotlinasyncapi.annotation.ExternalDocumentation
 import org.openfolder.kotlinasyncapi.annotation.Schema
@@ -7,11 +8,10 @@ import org.openfolder.kotlinasyncapi.annotation.Tag
 
 @Target(
     AnnotationTarget.CLASS,
-    AnnotationTarget.FUNCTION,
-    AnnotationTarget.VALUE_PARAMETER,
     AnnotationTarget.ANNOTATION_CLASS
 )
 @Repeatable
+@AsyncApiAnnotation
 annotation class Message(
     val default: Boolean = false,
     val reference: String = "",
@@ -22,8 +22,8 @@ annotation class Message(
     val title: String = "",
     val summary: String = "",
     val description: String = "",
-    val headers: Array<Schema> = [],
-    val payload: Schema = Schema(),
+    val headers: Schema = Schema(default = true),
+    val payload: Schema = Schema(default = true),
     val correlationId: CorrelationID = CorrelationID(default = true, location = ""),
     val tags: Array<Tag> = [],
     val externalDocs: ExternalDocumentation = ExternalDocumentation(default = true, url = ""),

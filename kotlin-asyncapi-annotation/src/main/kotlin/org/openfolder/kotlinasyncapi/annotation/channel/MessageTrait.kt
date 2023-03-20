@@ -15,7 +15,7 @@ annotation class MessageTrait(
     val title: String = "",
     val summary: String = "",
     val description: String = "",
-    val headers: Array<Schema> = [],
+    val headers: Schema = Schema(default = true),
     val correlationId: CorrelationID = CorrelationID(default = true, location = ""),
     val tags: Array<Tag> = [],
     val externalDocs: ExternalDocumentation = ExternalDocumentation(default = true, url = ""),
