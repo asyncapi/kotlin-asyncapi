@@ -30,10 +30,10 @@ internal fun Message.toMessage(): org.openfolder.kotlinasyncapi.model.channel.Me
         examples = this@toMessage.examples.takeUnless { it.isEmpty() }?.toMessageExamplesList()
         bindings = this@toMessage.bindings.takeUnless { it.default }?.toMessageBindings()
         traits = this@toMessage.traits.takeUnless { it.isEmpty() }?.toMessageTraitsList()
-        headers = this@toMessage.headers.takeUnless { it.default }?.implementation?.let {
+        headers = this@toMessage.headers.takeUnless { it.default }?.value?.let {
             Reference().apply { ref("#/components/schemas/${it.simpleName}") }
         }
-        payload = this@toMessage.payload.takeUnless { it.default }?.implementation?.let {
+        payload = this@toMessage.payload.takeUnless { it.default }?.value?.let {
             Reference().apply { ref("#/components/schemas/${it.simpleName}") }
         }
     }
@@ -110,7 +110,7 @@ internal fun MessageTrait.toMessageTrait(): org.openfolder.kotlinasyncapi.model.
         externalDocs = this@toMessageTrait.externalDocs.takeUnless { it.default }?.toExternalDocumentation()
         examples = this@toMessageTrait.examples.takeUnless { it.isEmpty() }?.toMessageExamplesList()
         bindings = this@toMessageTrait.bindings.takeUnless { it.default }?.toMessageBindings()
-        headers = this@toMessageTrait.headers.takeUnless { it.default }?.implementation?.let {
+        headers = this@toMessageTrait.headers.takeUnless { it.default }?.value?.let {
             Reference().apply { ref("#/components/schemas/${it.simpleName}") }
         }
     }
@@ -118,7 +118,7 @@ internal fun MessageTrait.toMessageTrait(): org.openfolder.kotlinasyncapi.model.
 internal fun MessageBinding.HTTP.toHTTP(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.HTTP =
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.HTTP().apply {
         bindingVersion = this@toHTTP.bindingVersion.takeIf { it.isNotEmpty() }
-        headers = this@toHTTP.headers.takeUnless { it.default }?.implementation?.let {
+        headers = this@toHTTP.headers.takeUnless { it.default }?.value?.let {
             Reference().apply { ref("#/components/schemas/${it.simpleName}") }
         }
     }
@@ -126,7 +126,7 @@ internal fun MessageBinding.HTTP.toHTTP(): org.openfolder.kotlinasyncapi.model.c
 internal fun MessageBinding.Kafka.toKafka(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.Kafka =
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.Kafka().apply {
         bindingVersion = this@toKafka.bindingVersion.takeIf { it.isNotEmpty() }
-        key = this@toKafka.key.takeUnless { it.default }?.implementation?.let {
+        key = this@toKafka.key.takeUnless { it.default }?.value?.let {
             Reference().apply { ref("#/components/schemas/${it.simpleName}") }
         }
     }
@@ -134,7 +134,7 @@ internal fun MessageBinding.Kafka.toKafka(): org.openfolder.kotlinasyncapi.model
 internal fun MessageBinding.AnypointMQ.toAnypointMQ(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.AnypointMQ =
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.AnypointMQ().apply {
         bindingVersion = this@toAnypointMQ.bindingVersion.takeIf { it.isNotEmpty() }
-        headers = this@toAnypointMQ.headers.takeUnless { it.default }?.implementation?.let {
+        headers = this@toAnypointMQ.headers.takeUnless { it.default }?.value?.let {
             Reference().apply { ref("#/components/schemas/${it.simpleName}") }
         }
     }

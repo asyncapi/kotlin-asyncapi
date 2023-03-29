@@ -6,9 +6,8 @@ import kotlin.reflect.KClass
     AnnotationTarget.CLASS,
     AnnotationTarget.ANNOTATION_CLASS
 )
-@Repeatable
 @AsyncApiAnnotation
 annotation class Schema(
-    val default: Boolean = false,
-    val implementation: KClass<*> = Void::class
+    val value: KClass<*> = Void::class,
+    val default: Boolean = false
 )

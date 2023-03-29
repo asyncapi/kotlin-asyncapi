@@ -27,7 +27,7 @@ internal class MessageProcessorTest {
         name = "testName",
         description = "testDescription",
         tags = [Tag(name = "testName")],
-        headers = Schema(implementation = TestHeaders::class)
+        headers = Schema(TestHeaders::class)
     )
     data class TestPayload(
         val id: Int = 0,

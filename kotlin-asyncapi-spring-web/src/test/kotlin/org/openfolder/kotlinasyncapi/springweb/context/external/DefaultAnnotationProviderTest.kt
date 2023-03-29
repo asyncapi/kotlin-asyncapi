@@ -39,7 +39,7 @@ internal class DefaultAnnotationProviderTest {
         messageId = "testMessageId",
         name = "testName",
         description = "testDescription",
-        headers = Schema(implementation = TestHeaders::class),
+        headers = Schema(TestHeaders::class),
         externalDocs = ExternalDocumentation(url = "http://example.com"),
         bindings = MessageBindings(http = MessageBinding.HTTP(bindingVersion = "1.0")),
         examples = [MessageExample(headers = "{\"type\":\"TEST\"}", payload = "{\"body\":\"body test\"}")],
