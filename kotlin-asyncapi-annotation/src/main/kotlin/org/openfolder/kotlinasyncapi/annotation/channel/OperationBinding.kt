@@ -4,7 +4,6 @@ import org.openfolder.kotlinasyncapi.annotation.Schema
 
 annotation class OperationBindings(
     val default: Boolean = false,
-    val reference: String = "",
     val http: OperationBinding.HTTP = OperationBinding.HTTP(default = true, type = ""),
     val ws: OperationBinding.WebSockets = OperationBinding.WebSockets(default = true),
     val kafka: OperationBinding.Kafka = OperationBinding.Kafka(default = true),
@@ -67,7 +66,6 @@ sealed interface OperationBinding {
         val queue: String = "",
         val bindingVersion: String = ""
     )
-
 
     annotation class Solace(
         val default: Boolean = false,

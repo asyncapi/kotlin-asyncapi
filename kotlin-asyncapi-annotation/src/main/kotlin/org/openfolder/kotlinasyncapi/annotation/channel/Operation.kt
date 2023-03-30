@@ -9,12 +9,12 @@ import org.openfolder.kotlinasyncapi.annotation.Tag
     AnnotationTarget.ANNOTATION_CLASS
 )
 @AsyncApiAnnotation
-annotation class SubscribeOperation(
+annotation class Subscribe(
     val default: Boolean = false,
     val operationId: String = "",
     val summary: String = "",
     val description: String = "",
-    val security: Array<String> = [],
+    val security: Array<SecurityRequirement> = [],
     val tags: Array<Tag> = [],
     val externalDocs: ExternalDocumentation = ExternalDocumentation(default = true, url = ""),
     val bindings: OperationBindings = OperationBindings(default = true),
@@ -28,12 +28,12 @@ annotation class SubscribeOperation(
     AnnotationTarget.ANNOTATION_CLASS
 )
 @AsyncApiAnnotation
-annotation class PublishOperation(
+annotation class Publish(
     val default: Boolean = false,
     val operationId: String = "",
     val summary: String = "",
     val description: String = "",
-    val security: Array<String> = [],
+    val security: Array<SecurityRequirement> = [],
     val tags: Array<Tag> = [],
     val externalDocs: ExternalDocumentation = ExternalDocumentation(default = true, url = ""),
     val bindings: OperationBindings = OperationBindings(default = true),

@@ -5,7 +5,6 @@ import org.openfolder.kotlinasyncapi.annotation.Tag
 
 annotation class OperationTrait(
     val default: Boolean = false,
-    val reference: String = "",
     val operationId: String = "",
     val summary: String = "",
     val description: String = "",

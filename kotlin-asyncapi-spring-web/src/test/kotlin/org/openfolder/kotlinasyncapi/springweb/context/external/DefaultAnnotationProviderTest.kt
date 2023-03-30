@@ -4,10 +4,17 @@ import org.junit.jupiter.api.Test
 import org.openfolder.kotlinasyncapi.annotation.ExternalDocumentation
 import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.annotation.Tag
+import org.openfolder.kotlinasyncapi.annotation.channel.Channel
+import org.openfolder.kotlinasyncapi.annotation.channel.ChannelBinding
+import org.openfolder.kotlinasyncapi.annotation.channel.ChannelBindings
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
 import org.openfolder.kotlinasyncapi.annotation.channel.MessageBinding
 import org.openfolder.kotlinasyncapi.annotation.channel.MessageBindings
 import org.openfolder.kotlinasyncapi.annotation.channel.MessageExample
+import org.openfolder.kotlinasyncapi.annotation.channel.OperationBinding
+import org.openfolder.kotlinasyncapi.annotation.channel.OperationBindings
+import org.openfolder.kotlinasyncapi.annotation.channel.Parameter
+import org.openfolder.kotlinasyncapi.annotation.channel.Subscribe
 import org.openfolder.kotlinasyncapi.springweb.EnableAsyncApi
 import org.openfolder.kotlinasyncapi.springweb.TestUtils
 import org.openfolder.kotlinasyncapi.springweb.context.DefaultAnnotationProvider
@@ -35,13 +42,29 @@ internal class DefaultAnnotationProviderTest {
     @EnableAsyncApi
     open class TestConfig
 
+    @Channel(
+        key = "test/{parameter}/sqs",
+        description = "testDescription",
+        parameters = [Parameter(key = "parameter")],
+        bindings = ChannelBindings(amqp = ChannelBinding.AMQP(bindingVersion = "1.0"))
+    )
+    class TestChannel {
+
+        @Subscribe(
+            description = "testDescription",
+            bindings = OperationBindings(amqp = OperationBinding.AMQP(bindingVersion = "1.0")),
+            message = Message(TestMessage::class)
+        )
+        fun testOperation() {}
+    }
+
     @Message(
         messageId = "testMessageId",
         name = "testName",
         description = "testDescription",
         headers = Schema(TestHeaders::class),
         externalDocs = ExternalDocumentation(url = "http://example.com"),
-        bindings = MessageBindings(http = MessageBinding.HTTP(bindingVersion = "1.0")),
+        bindings = MessageBindings(amqp = MessageBinding.AMQP(bindingVersion = "1.0")),
         examples = [MessageExample(headers = "{\"type\":\"TEST\"}", payload = "{\"body\":\"body test\"}")],
         tags = [Tag(name = "testName")]
     )

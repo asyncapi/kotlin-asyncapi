@@ -4,7 +4,6 @@ import org.openfolder.kotlinasyncapi.annotation.Schema
 
 annotation class ChannelBindings(
     val default: Boolean = false,
-    val reference: String = "",
     val http: ChannelBinding.HTTP = ChannelBinding.HTTP(default = true),
     val ws: ChannelBinding.WebSockets = ChannelBinding.WebSockets(default = true),
     val kafka: ChannelBinding.Kafka = ChannelBinding.Kafka(default = true),
@@ -28,6 +27,7 @@ sealed interface ChannelBinding {
 
     annotation class AnypointMQ(
         val default: Boolean = false,
+        val destination: String = "",
         val destinationType: String = "",
         val bindingVersion: String = ""
     )
@@ -85,6 +85,7 @@ sealed interface ChannelBinding {
 
     annotation class WebSockets(
         val default: Boolean = false,
+        val method: String = "",
         val bindingVersion: String = "",
         val query: Schema = Schema(default = true),
         val headers: Schema = Schema(default = true)

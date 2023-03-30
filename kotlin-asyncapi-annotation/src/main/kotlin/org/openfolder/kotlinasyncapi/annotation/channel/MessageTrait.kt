@@ -7,7 +7,6 @@ import org.openfolder.kotlinasyncapi.annotation.Tag
 
 annotation class MessageTrait(
     val default: Boolean = false,
-    val reference: String = "",
     val messageId: String = "",
     val schemaFormat: String = "",
     val contentType: String = "",

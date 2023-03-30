@@ -15,7 +15,6 @@ import kotlin.reflect.KClass
 annotation class Message(
     val value: KClass<*> = Void::class,
     val default: Boolean = false,
-    val reference: String = "",
     val messageId: String = "",
     val schemaFormat: String = "",
     val contentType: String = "",
