@@ -8,8 +8,8 @@ import org.openfolder.kotlinasyncapi.annotation.AsyncApiAnnotation
 )
 @AsyncApiAnnotation
 annotation class Channel(
+    val value: String = "",
     val default: Boolean = false,
-    val key: String = "",
     val description: String = "",
     val servers: Array<String> = [],
     val subscribe: Subscribe = Subscribe(default = true),

@@ -329,7 +329,7 @@ internal fun Array<SecurityRequirement>.toSecurityRequirementsList(): SecurityRe
 
 internal fun Array<Parameter>.toReferencableParametersMap(): ReferencableParametersMap =
     ReferencableParametersMap().apply {
-        putAll(this@toReferencableParametersMap.map { it.key to it.toParameter() })
+        putAll(this@toReferencableParametersMap.map { it.value to it.toParameter() })
     }
 
 internal fun Parameter.toParameter(): org.openfolder.kotlinasyncapi.model.channel.Parameter =

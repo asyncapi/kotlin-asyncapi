@@ -27,12 +27,12 @@ internal class ChannelProcessorTest {
     }
 
     @Channel(
-        key = "some/{parameter}/sqs",
+        value = "some/{parameter}/sqs",
         description = "testDescription",
         servers = ["sqs"],
         parameters = [
             Parameter(
-                key = "parameter",
+                value = "parameter",
                 description = "testDescription"
             )
         ]

@@ -43,9 +43,9 @@ internal class DefaultAnnotationProviderTest {
     open class TestConfig
 
     @Channel(
-        key = "test/{parameter}/sqs",
+        value = "test/{parameter}/sqs",
         description = "testDescription",
-        parameters = [Parameter(key = "parameter")],
+        parameters = [Parameter("parameter")],
         bindings = ChannelBindings(amqp = ChannelBinding.AMQP(bindingVersion = "1.0"))
     )
     class TestChannel {
