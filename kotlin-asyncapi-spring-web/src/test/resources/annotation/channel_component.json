@@ -1,8 +1,8 @@
 {
   "channels" : {
-    "some/{parameter}/sqs" : {
+    "some/{parameter}/channel" : {
       "description" : "testDescription",
-      "servers" : [ "sqs" ],
+      "servers" : [ "dev" ],
       "subscribe" : {
         "operationId" : "testOperationId",
         "security" : [ {

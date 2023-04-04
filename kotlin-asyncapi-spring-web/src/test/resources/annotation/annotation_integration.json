@@ -1,6 +1,6 @@
 {
   "channels" : {
-    "test/{parameter}/sqs" : {
+    "test/{parameter}/channel" : {
       "description" : "testDescription",
       "subscribe" : {
         "description" : "testDescription",
