@@ -31,7 +31,7 @@
       ],
       "orderEntries": [
         {
-          "name": "openjdk-19",
+          "name": "corretto-19",
           "type": "SDK"
         },
         {
@@ -179,7 +179,7 @@
       ],
       "orderEntries": [
         {
-          "name": "openjdk-19",
+          "name": "corretto-19",
           "type": "SDK"
         },
         {
@@ -559,7 +559,7 @@
       ],
       "orderEntries": [
         {
-          "name": "openjdk-19",
+          "name": "corretto-19",
           "type": "SDK"
         },
         {
@@ -682,7 +682,7 @@
       ],
       "orderEntries": [
         {
-          "name": "openjdk-19",
+          "name": "corretto-19",
           "type": "SDK"
         },
         {
@@ -810,7 +810,7 @@
       ],
       "orderEntries": [
         {
-          "name": "openjdk-19",
+          "name": "corretto-19",
           "type": "SDK"
         },
         {
