@@ -42,7 +42,7 @@ internal class SchemaTest {
             maxLength(1)
             minLength(1)
             pattern("patternValue")
-            item { }
+            items { }
             additionalItems { }
             maxItems(1)
             minItems(1)
@@ -54,7 +54,7 @@ internal class SchemaTest {
             properties { }
             patternProperties { }
             additionalProperties { }
-            dependencies(mapOf("dependenciesKey" to "dependenciesValue"))
+            dependencies { }
             propertyNames { }
             `if` { }
             then { }

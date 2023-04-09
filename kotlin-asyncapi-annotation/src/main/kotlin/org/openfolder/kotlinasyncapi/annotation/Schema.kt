@@ -9,7 +9,7 @@ import kotlin.reflect.KClass
 @AsyncApiAnnotation
 annotation class Schema(
     val value: KClass<*> = Void::class,
-    val isDefault: kotlin.Boolean = true,
+    val isDefault: kotlin.Boolean = false,
     val title: String = "",
     val description: String = "",
     val default: String = "",

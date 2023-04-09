@@ -34,6 +34,8 @@ internal class DefaultAnnotationProviderTest {
         val expected = TestUtils.json("annotation/annotation_integration.json")
         val actual = TestUtils.json(annotationProvider.components!!)
 
+        println(actual)
+
         TestUtils.assertJsonEquals(expected, actual)
     }
 
