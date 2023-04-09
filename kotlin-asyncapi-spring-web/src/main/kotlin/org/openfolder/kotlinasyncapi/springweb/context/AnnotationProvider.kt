@@ -2,6 +2,7 @@ package org.openfolder.kotlinasyncapi.springweb.context
 
 import org.openfolder.kotlinasyncapi.annotation.AsyncApiAnnotation
 import org.openfolder.kotlinasyncapi.annotation.Schema
+import org.openfolder.kotlinasyncapi.annotation.channel.Channel
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
 import org.openfolder.kotlinasyncapi.model.ReferencableCorrelationIDsMap
 import org.openfolder.kotlinasyncapi.model.ReferencableSchemasMap
@@ -36,7 +37,8 @@ internal class DefaultAnnotationProvider(
     context: ApplicationContext,
     scanner: AnnotationScanner,
     messageProcessor: AnnotationProcessor<Message, KClass<*>>,
-    schemaProcessor: AnnotationProcessor<Schema, KClass<*>>
+    schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
+    channelProcessor: AnnotationProcessor<Channel, KClass<*>>
 ) : AnnotationProvider {
 
     override val components: Components? by lazy {
@@ -54,13 +56,15 @@ internal class DefaultAnnotationProvider(
                 .flatMap { clazz ->
                     listOfNotNull(
                         clazz.findAnnotation<Message>()?.let { clazz to it },
-                        clazz.findAnnotation<Schema>()?.let { clazz to it }
+                        clazz.findAnnotation<Schema>()?.let { clazz to it },
+                        clazz.findAnnotation<Channel>()?.let { clazz to it }
                     )
                 }
                 .mapNotNull { (clazz, annotation) ->
                     when (annotation) {
                         is Message -> messageProcessor.process(annotation, clazz)
                         is Schema -> schemaProcessor.process(annotation, clazz)
+                        is Channel -> channelProcessor.process(annotation, clazz)
                         else -> null
                     }
                 }

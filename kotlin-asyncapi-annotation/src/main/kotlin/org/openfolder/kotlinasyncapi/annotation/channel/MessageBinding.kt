@@ -4,7 +4,6 @@ import org.openfolder.kotlinasyncapi.annotation.Schema
 
 annotation class MessageBindings(
     val default: Boolean = false,
-    val reference: String = "",
     val http: MessageBinding.HTTP = MessageBinding.HTTP(default = true),
     val ws: MessageBinding.WebSockets = MessageBinding.WebSockets(default = true),
     val kafka: MessageBinding.Kafka = MessageBinding.Kafka(default = true),

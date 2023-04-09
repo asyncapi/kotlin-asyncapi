@@ -1,6 +1,7 @@
 package org.openfolder.kotlinasyncapi.springweb
 
 import org.openfolder.kotlinasyncapi.annotation.Schema
+import org.openfolder.kotlinasyncapi.annotation.channel.Channel
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
 import org.openfolder.kotlinasyncapi.model.AsyncApi
 import org.openfolder.kotlinasyncapi.springweb.context.DefaultAnnotationProvider
@@ -10,6 +11,7 @@ import org.openfolder.kotlinasyncapi.springweb.context.ResourceProvider
 import org.openfolder.kotlinasyncapi.springweb.context.annotation.AnnotationScanner
 import org.openfolder.kotlinasyncapi.springweb.context.annotation.DefaultAnnotationScanner
 import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.AnnotationProcessor
+import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.ChannelProcessor
 import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.MessageProcessor
 import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.SchemaProcessor
 import org.openfolder.kotlinasyncapi.springweb.controller.AsyncApiController
@@ -103,6 +105,10 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         SchemaProcessor()
 
     @Bean
+    open fun channelProcessor() =
+        ChannelProcessor()
+
+    @Bean
     open fun annotationScanner(context: ApplicationContext) =
         DefaultAnnotationScanner(context)
 
@@ -111,8 +117,9 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         context: ApplicationContext,
         scanner: AnnotationScanner,
         messageProcessor: AnnotationProcessor<Message, KClass<*>>,
-        schemaProcessor: AnnotationProcessor<Schema, KClass<*>>
-    ) = DefaultAnnotationProvider(context, scanner, messageProcessor, schemaProcessor)
+        schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
+        channelProcessor: AnnotationProcessor<Channel, KClass<*>>
+    ) = DefaultAnnotationProvider(context, scanner, messageProcessor, schemaProcessor, channelProcessor)
 }
 
 @Configuration

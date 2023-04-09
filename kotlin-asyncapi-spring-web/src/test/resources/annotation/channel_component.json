@@ -1,0 +1,35 @@
+{
+  "channels" : {
+    "some/{parameter}/channel" : {
+      "description" : "testDescription",
+      "servers" : [ "dev" ],
+      "subscribe" : {
+        "operationId" : "testOperationId",
+        "security" : [ {
+          "petstore_auth" : [ "write:pets", "read:pets" ]
+        } ],
+        "message" : {
+          "$ref" : "#/components/messages/TestSubscribeMessage"
+        }
+      },
+      "publish" : {
+        "description" : "testDescription",
+        "tags" : [ {
+          "name" : "testTag"
+        } ],
+        "message" : {
+          "oneOf" : [ {
+            "$ref" : "#/components/messages/TestPublishMessage"
+          }, {
+            "$ref" : "#/components/messages/TestPublishMessage2"
+          } ]
+        }
+      },
+      "parameters" : {
+        "parameter" : {
+          "description" : "testDescription"
+        }
+      }
+    }
+  }
+}

@@ -5,16 +5,16 @@ import org.openfolder.kotlinasyncapi.annotation.CorrelationID
 import org.openfolder.kotlinasyncapi.annotation.ExternalDocumentation
 import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.annotation.Tag
+import kotlin.reflect.KClass
 
 @Target(
     AnnotationTarget.CLASS,
     AnnotationTarget.ANNOTATION_CLASS
 )
-@Repeatable
 @AsyncApiAnnotation
 annotation class Message(
+    val value: KClass<*> = Void::class,
     val default: Boolean = false,
-    val reference: String = "",
     val messageId: String = "",
     val schemaFormat: String = "",
     val contentType: String = "",
