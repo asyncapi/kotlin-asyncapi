@@ -51,9 +51,12 @@ internal fun Message.toMessage(): org.openfolder.kotlinasyncapi.model.channel.Me
         examples = this@toMessage.examples.takeIf { it.isNotEmpty() }?.toMessageExamplesList()
         bindings = this@toMessage.bindings.takeUnless { it.isDefault }?.toMessageBindings()
         traits = this@toMessage.traits.takeIf { it.isNotEmpty() }?.toMessageTraitsList()
-        headers = this@toMessage.headers.takeUnless { it.isDefault }?.toReference()
-        payload = this@toMessage.payload.takeUnless { it.isDefault }?.toReference()
+        headers = this@toMessage.headers.takeUnless { it.isDefault }?.toSchemaOrReference()
+        payload = this@toMessage.payload.takeUnless { it.isDefault }?.toSchemaOrReference()
     }
+
+internal fun Message.toMessageOrReference(): Any =
+    value.takeUnless { it == Void::class }?.let { toReference() } ?: toMessage()
 
 internal fun Schema.toSchema(): org.openfolder.kotlinasyncapi.model.Schema =
     org.openfolder.kotlinasyncapi.model.Schema().apply {
@@ -199,25 +202,25 @@ internal fun MessageTrait.toMessageTrait(): org.openfolder.kotlinasyncapi.model.
         externalDocs = this@toMessageTrait.externalDocs.takeUnless { it.isDefault }?.toExternalDocumentation()
         examples = this@toMessageTrait.examples.takeIf { it.isNotEmpty() }?.toMessageExamplesList()
         bindings = this@toMessageTrait.bindings.takeUnless { it.isDefault }?.toMessageBindings()
-        headers = this@toMessageTrait.headers.takeUnless { it.isDefault }?.toReference()
+        headers = this@toMessageTrait.headers.takeUnless { it.isDefault }?.toSchemaOrReference()
     }
 
 internal fun MessageBinding.HTTP.toHTTP(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.HTTP =
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.HTTP().apply {
         bindingVersion = this@toHTTP.bindingVersion.takeIf { it.isNotEmpty() }
-        headers = this@toHTTP.headers.takeUnless { it.isDefault }?.toReference()
+        headers = this@toHTTP.headers.takeUnless { it.isDefault }?.toSchemaOrReference()
     }
 
 internal fun MessageBinding.Kafka.toKafka(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.Kafka =
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.Kafka().apply {
         bindingVersion = this@toKafka.bindingVersion.takeIf { it.isNotEmpty() }
-        key = this@toKafka.key.takeUnless { it.isDefault }?.toReference()
+        key = this@toKafka.key.takeUnless { it.isDefault }?.toSchemaOrReference()
     }
 
 internal fun MessageBinding.AnypointMQ.toAnypointMQ(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.AnypointMQ =
     org.openfolder.kotlinasyncapi.model.channel.MessageBinding.AnypointMQ().apply {
         bindingVersion = this@toAnypointMQ.bindingVersion.takeIf { it.isNotEmpty() }
-        headers = this@toAnypointMQ.headers.takeUnless { it.isDefault }?.toReference()
+        headers = this@toAnypointMQ.headers.takeUnless { it.isDefault }?.toSchemaOrReference()
     }
 
 internal fun MessageBinding.AMQP.toAMQP(): org.openfolder.kotlinasyncapi.model.channel.MessageBinding.AMQP =
@@ -261,7 +264,7 @@ internal fun Subscribe.toOperation(): Operation =
         externalDocs = this@toOperation.externalDocs.takeUnless { it.isDefault }?.toExternalDocumentation()
         bindings = this@toOperation.bindings.takeUnless { it.isDefault }?.toOperationBindings()
         traits = this@toOperation.traits.takeIf { it.isNotEmpty() }?.toReferencableOperationTraitsList()
-        message = this@toOperation.message.takeUnless { it.isDefault }?.toReference()
+        message = this@toOperation.message.takeUnless { it.isDefault }?.toMessageOrReference()
             ?: this@toOperation.messages.takeIf { it.isNotEmpty() }?.toOneOfReferencableMessages()
     }
 
@@ -275,7 +278,7 @@ internal fun Publish.toOperation(): Operation =
         externalDocs = this@toOperation.externalDocs.takeUnless { it.isDefault }?.toExternalDocumentation()
         bindings = this@toOperation.bindings.takeUnless { it.isDefault }?.toOperationBindings()
         traits = this@toOperation.traits.takeIf { it.isNotEmpty() }?.toReferencableOperationTraitsList()
-        message = this@toOperation.message.takeUnless { it.isDefault }?.toReference()
+        message = this@toOperation.message.takeUnless { it.isDefault }?.toMessageOrReference()
             ?: this@toOperation.messages.takeIf { it.isNotEmpty() }?.toOneOfReferencableMessages()
     }
 
@@ -296,7 +299,7 @@ internal fun Array<Message>.toOneOfReferencableMessages(): OneOfReferencableMess
 
 internal fun Array<Message>.toReferencableMessagesList(): ReferencableMessagesList =
     ReferencableMessagesList().apply {
-        addAll(this@toReferencableMessagesList.map { it.toReference() })
+        addAll(this@toReferencableMessagesList.map { it.toMessageOrReference() })
     }
 
 internal fun Array<OperationTrait>.toReferencableOperationTraitsList(): ReferencableOperationTraitsList =
@@ -327,14 +330,14 @@ internal fun OperationBindings.toOperationBindings(): org.openfolder.kotlinasync
 internal fun OperationBinding.HTTP.toHTTP(): org.openfolder.kotlinasyncapi.model.channel.OperationBinding.HTTP =
     org.openfolder.kotlinasyncapi.model.channel.OperationBinding.HTTP().apply {
         method = this@toHTTP.method.takeIf { it.isNotEmpty() }
-        query = this@toHTTP.query.takeUnless { it.isDefault }?.toReference()
+        query = this@toHTTP.query.takeUnless { it.isDefault }?.toSchemaOrReference()
         bindingVersion = this@toHTTP.bindingVersion.takeIf { it.isNotEmpty() }
     }
 
 internal fun OperationBinding.Kafka.toKafka(): org.openfolder.kotlinasyncapi.model.channel.OperationBinding.Kafka =
     org.openfolder.kotlinasyncapi.model.channel.OperationBinding.Kafka().apply {
-        groupId = this@toKafka.groupId.takeUnless { it.isDefault }?.toReference()
-        clientId = this@toKafka.clientId.takeUnless { it.isDefault }?.toReference()
+        groupId = this@toKafka.groupId.takeUnless { it.isDefault }?.toSchemaOrReference()
+        clientId = this@toKafka.clientId.takeUnless { it.isDefault }?.toSchemaOrReference()
         bindingVersion = this@toKafka.bindingVersion.takeIf { it.isNotEmpty() }
     }
 
@@ -411,7 +414,7 @@ internal fun Parameter.toParameter(): org.openfolder.kotlinasyncapi.model.channe
     org.openfolder.kotlinasyncapi.model.channel.Parameter().apply {
         description = this@toParameter.description.takeIf { it.isNotEmpty() }
         location = this@toParameter.location.takeIf { it.isNotEmpty() }
-        schema = this@toParameter.schema.takeUnless { it.isDefault }?.toReference()
+        schema = this@toParameter.schema.takeUnless { it.isDefault }?.toSchemaOrReference()
     }
 
 internal fun ChannelBindings.toChannelBindings(): org.openfolder.kotlinasyncapi.model.channel.ChannelBindings =
@@ -425,8 +428,8 @@ internal fun ChannelBindings.toChannelBindings(): org.openfolder.kotlinasyncapi.
 internal fun ChannelBinding.WebSockets.toWebSockets(): org.openfolder.kotlinasyncapi.model.channel.ChannelBinding.WebSockets =
     org.openfolder.kotlinasyncapi.model.channel.ChannelBinding.WebSockets().apply {
         method = this@toWebSockets.method.takeIf { it.isNotEmpty() }
-        query = this@toWebSockets.query.takeUnless { it.isDefault }?.toReference()
-        headers = this@toWebSockets.headers.takeUnless { it.isDefault }?.toReference()
+        query = this@toWebSockets.query.takeUnless { it.isDefault }?.toSchemaOrReference()
+        headers = this@toWebSockets.headers.takeUnless { it.isDefault }?.toSchemaOrReference()
         bindingVersion = this@toWebSockets.bindingVersion.takeIf { it.isNotEmpty() }
     }
 
