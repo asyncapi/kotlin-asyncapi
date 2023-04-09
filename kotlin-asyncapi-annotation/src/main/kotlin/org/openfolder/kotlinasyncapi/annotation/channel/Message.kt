@@ -14,7 +14,7 @@ import kotlin.reflect.KClass
 @AsyncApiAnnotation
 annotation class Message(
     val value: KClass<*> = Void::class,
-    val default: Boolean = false,
+    val isDefault: Boolean = false,
     val messageId: String = "",
     val schemaFormat: String = "",
     val contentType: String = "",
@@ -22,12 +22,12 @@ annotation class Message(
     val title: String = "",
     val summary: String = "",
     val description: String = "",
-    val headers: Schema = Schema(default = true),
-    val payload: Schema = Schema(default = true),
-    val correlationId: CorrelationID = CorrelationID(default = true, location = ""),
+    val headers: Schema = Schema(isDefault = true),
+    val payload: Schema = Schema(isDefault = true),
+    val correlationId: CorrelationID = CorrelationID(isDefault = true, location = ""),
     val tags: Array<Tag> = [],
-    val externalDocs: ExternalDocumentation = ExternalDocumentation(default = true, url = ""),
+    val externalDocs: ExternalDocumentation = ExternalDocumentation(isDefault = true, url = ""),
     val examples: Array<MessageExample> = [],
-    val bindings: MessageBindings = MessageBindings(default = true),
+    val bindings: MessageBindings = MessageBindings(isDefault = true),
     val traits: Array<MessageTrait> = []
 )

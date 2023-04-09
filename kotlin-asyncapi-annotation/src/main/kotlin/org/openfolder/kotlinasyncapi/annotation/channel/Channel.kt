@@ -9,11 +9,11 @@ import org.openfolder.kotlinasyncapi.annotation.AsyncApiAnnotation
 @AsyncApiAnnotation
 annotation class Channel(
     val value: String = "",
-    val default: Boolean = false,
+    val isDefault: Boolean = false,
     val description: String = "",
     val servers: Array<String> = [],
-    val subscribe: Subscribe = Subscribe(default = true),
-    val publish: Publish = Publish(default = true),
+    val subscribe: Subscribe = Subscribe(isDefault = true),
+    val publish: Publish = Publish(isDefault = true),
     val parameters: Array<Parameter> = [],
-    val bindings: ChannelBindings = ChannelBindings(default = true)
+    val bindings: ChannelBindings = ChannelBindings(isDefault = true)
 )
