@@ -20,8 +20,8 @@ internal class ChannelProcessor : AnnotationProcessor<Channel, KClass<*>> {
                         subscribe = subscribe ?: context.findSubscribeOperation()?.toOperation()
                         publish = publish ?: context.findPublishOperation()?.toOperation()
                     }
-                    .also { channel ->
-                        put(annotation.value.takeIf { it.isNotEmpty() } ?: context.java.simpleName, channel)
+                    .also {
+                        put(context.java.simpleName, it)
                     }
             }
         }

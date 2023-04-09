@@ -50,8 +50,8 @@ class Schema {
     var required: List<String>? = null
     var properties: ReferencableSchemasMap? = null
     var patternProperties: ReferencableSchemasMap? = null
-    var additionalProperties: Any? = null
-    var dependencies: Any? = null
+    var additionalProperties: ReferencableSchemasMap? = null
+    var dependencies: ReferencableSchemasMap? = null
     var propertyNames: Any? = null
     var `if`: Any? = null
     var then: Any? = null
@@ -61,7 +61,7 @@ class Schema {
     var oneOf: ReferencableSchemasList? = null
     var not: Any? = null
     var format: String? = null
-    var discriminator: String? = null
+    var discriminator: Any? = null
     var externalDocs: ExternalDocumentation? = null
     var deprecated: Boolean? = null
 
@@ -125,14 +125,11 @@ class Schema {
     fun pattern(value: String): String =
         value.also { pattern = it }
 
-    inline fun item(build: Schema.() -> Unit): Schema =
+    inline fun items(build: Schema.() -> Unit): Schema =
         Schema().apply(build).also { items = it }
 
-    inline fun itemRef(build: Reference.() -> Unit): Reference =
+    inline fun itemsRef(build: Reference.() -> Unit): Reference =
         Reference().apply(build).also { items = it }
-
-    inline fun items(build: ReferencableSchemasList.() -> Unit): ReferencableSchemasList =
-        ReferencableSchemasList().apply(build).also { items = it }
 
     inline fun additionalItems(build: Schema.() -> Unit): Schema =
         Schema().apply(build).also { additionalItems = it }
@@ -170,14 +167,11 @@ class Schema {
     inline fun patternProperties(build: ReferencableSchemasMap.() -> Unit): ReferencableSchemasMap =
         ReferencableSchemasMap().apply(build).also { patternProperties = it }
 
-    inline fun additionalProperties(build: Schema.() -> Unit): Schema =
-        Schema().apply(build).also { additionalProperties = it }
+    inline fun additionalProperties(build: ReferencableSchemasMap.() -> Unit): ReferencableSchemasMap =
+        ReferencableSchemasMap().apply(build).also { additionalProperties = it }
 
-    inline fun additionalPropertiesRef(build: Reference.() -> Unit): Reference =
-        Reference().apply(build).also { additionalProperties = it }
-
-    fun dependencies(value: Any): Any =
-        value.also { dependencies = it }
+    fun dependencies(build: ReferencableSchemasMap.() -> Unit): ReferencableSchemasMap =
+        ReferencableSchemasMap().apply(build).also { dependencies = it }
 
     inline fun propertyNames(build: Schema.() -> Unit): Schema =
         Schema().apply(build).also { propertyNames = it }
@@ -221,7 +215,7 @@ class Schema {
     fun format(value: String): String =
         value.also { format = it }
 
-    fun discriminator(value: String): String =
+    fun discriminator(value: Any): Any =
         value.also { discriminator = it }
 
     inline fun externalDocs(build: ExternalDocumentation.() -> Unit): ExternalDocumentation =

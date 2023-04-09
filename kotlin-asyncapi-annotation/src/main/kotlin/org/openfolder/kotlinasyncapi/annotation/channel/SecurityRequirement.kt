@@ -2,6 +2,6 @@ package org.openfolder.kotlinasyncapi.annotation.channel
 
 annotation class SecurityRequirement(
     val key: String = "",
-    val default: Boolean = false,
+    val isDefault: Boolean = false,
     val values: Array<String> = []
 )

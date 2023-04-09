@@ -1,17 +1,11 @@
 {
   "channels" : {
-    "test/{parameter}/channel" : {
+    "TestChannel" : {
       "description" : "testDescription",
       "subscribe" : {
         "description" : "testDescription",
         "bindings" : {
           "amqp" : {
-            "expiration" : 0,
-            "priority" : 0,
-            "deliveryMode" : 0,
-            "mandatory" : false,
-            "timestamp" : false,
-            "ack" : false,
             "bindingVersion" : "1.0"
           }
         },

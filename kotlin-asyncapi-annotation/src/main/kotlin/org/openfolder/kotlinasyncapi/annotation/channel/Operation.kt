@@ -10,16 +10,16 @@ import org.openfolder.kotlinasyncapi.annotation.Tag
 )
 @AsyncApiAnnotation
 annotation class Subscribe(
-    val default: Boolean = false,
+    val isDefault: Boolean = false,
     val operationId: String = "",
     val summary: String = "",
     val description: String = "",
     val security: Array<SecurityRequirement> = [],
     val tags: Array<Tag> = [],
-    val externalDocs: ExternalDocumentation = ExternalDocumentation(default = true, url = ""),
-    val bindings: OperationBindings = OperationBindings(default = true),
+    val externalDocs: ExternalDocumentation = ExternalDocumentation(isDefault = true, url = ""),
+    val bindings: OperationBindings = OperationBindings(isDefault = true),
     val traits: Array<OperationTrait> = [],
-    val message: Message = Message(default = true),
+    val message: Message = Message(isDefault = true),
     val messages: Array<Message> = []
 )
 
@@ -29,15 +29,15 @@ annotation class Subscribe(
 )
 @AsyncApiAnnotation
 annotation class Publish(
-    val default: Boolean = false,
+    val isDefault: Boolean = false,
     val operationId: String = "",
     val summary: String = "",
     val description: String = "",
     val security: Array<SecurityRequirement> = [],
     val tags: Array<Tag> = [],
-    val externalDocs: ExternalDocumentation = ExternalDocumentation(default = true, url = ""),
-    val bindings: OperationBindings = OperationBindings(default = true),
+    val externalDocs: ExternalDocumentation = ExternalDocumentation(isDefault = true, url = ""),
+    val bindings: OperationBindings = OperationBindings(isDefault = true),
     val traits: Array<OperationTrait> = [],
-    val message: Message = Message(default = true),
+    val message: Message = Message(isDefault = true),
     val messages: Array<Message> = []
 )
