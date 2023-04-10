@@ -1,0 +1,96 @@
+{
+  "channels" : {
+    "TestChannel" : {
+      "description" : "testDescription",
+      "subscribe" : {
+        "description" : "testDescription",
+        "bindings" : {
+          "amqp" : {
+            "bindingVersion" : "1.0"
+          }
+        },
+        "message" : {
+          "$ref" : "#/components/messages/TestMessage"
+        }
+      },
+      "parameters" : {
+        "parameter" : { }
+      },
+      "bindings" : {
+        "amqp" : {
+          "bindingVersion" : "1.0"
+        }
+      }
+    }
+  },
+  "messages" : {
+    "TestMessage" : {
+      "messageId" : "testMessageId",
+      "headers" : {
+        "$ref" : "#/components/schemas/TestHeaders"
+      },
+      "payload" : {
+        "$ref" : "#/components/schemas/TestMessage"
+      },
+      "schemaFormat" : "application/schema+json;version=draft-07",
+      "name" : "testName",
+      "description" : "testDescription",
+      "tags" : [ {
+        "name" : "testName"
+      } ],
+      "externalDocs" : {
+        "url" : "http://example.com"
+      },
+      "bindings" : {
+        "amqp" : {
+          "bindingVersion" : "1.0"
+        }
+      },
+      "examples" : [ {
+        "headers" : {
+          "type" : "TEST"
+        },
+        "payload" : {
+          "body" : "body test"
+        }
+      } ]
+    }
+  },
+  "schemas" : {
+    "TestHeaders" : {
+      "required" : [ "type" ],
+      "type" : "object",
+      "properties" : {
+        "type" : {
+          "type" : "string",
+          "exampleSetFlag" : false,
+          "types" : [ "string" ]
+        }
+      },
+      "exampleSetFlag" : false
+    },
+    "TestMessage" : {
+      "required" : [ "id", "isTest", "name" ],
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32",
+          "exampleSetFlag" : false,
+          "types" : [ "integer" ]
+        },
+        "name" : {
+          "type" : "string",
+          "exampleSetFlag" : false,
+          "types" : [ "string" ]
+        },
+        "isTest" : {
+          "type" : "boolean",
+          "exampleSetFlag" : false,
+          "types" : [ "boolean" ]
+        }
+      },
+      "exampleSetFlag" : false
+    }
+  }
+}

@@ -62,9 +62,7 @@
         "schemaFormat" : "application/schema+yaml;version=draft-07",
         "summary" : "A message represents an individual chat message sent to a room.",
         "bindings" : {
-          "http" : {
-            "$ref" : "#/components/messageBindings/streamingHeaders"
-          }
+          "$ref" : "#/components/messageBindings/streamingHeaders"
         }
       },
       "heartbeat" : {
@@ -75,9 +73,7 @@
         "schemaFormat" : "application/schema+yaml;version=draft-07",
         "summary" : "Its purpose is to keep the connection alive.",
         "bindings" : {
-          "http" : {
-            "$ref" : "#/components/messageBindings/streamingHeaders"
-          }
+          "$ref" : "#/components/messageBindings/streamingHeaders"
         }
       }
     },

@@ -43,6 +43,7 @@
         <module>kotlin-asyncapi-spring-web</module>
         <module>kotlin-asyncapi-script</module>
         <module>kotlin-asyncapi-maven-plugin</module>
+        <module>kotlin-asyncapi-annotation</module>
     </modules>
 
     <properties>
@@ -235,9 +236,24 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.openfolder</groupId>
+                <artifactId>kotlin-asyncapi-annotation</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>2.14.1</version>
+                <version>2.14.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-kotlin</artifactId>
+                <version>2.14.2</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-core</artifactId>
+                <version>2.2.8</version>
             </dependency>
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>

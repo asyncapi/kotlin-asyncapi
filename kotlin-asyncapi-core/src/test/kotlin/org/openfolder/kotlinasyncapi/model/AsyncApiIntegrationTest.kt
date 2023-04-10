@@ -79,10 +79,8 @@ internal class AsyncApiIntegrationTest {
                                 }
                             }
                         }
-                        bindings {
-                            reference("http") {
-                                ref("#/components/messageBindings/streamingHeaders")
-                            }
+                        bindingsRef {
+                            ref("#/components/messageBindings/streamingHeaders")
                         }
                     }
                     message("heartbeat") {
@@ -92,10 +90,8 @@ internal class AsyncApiIntegrationTest {
                             type("string")
                             enum("\r\n")
                         }
-                        bindings {
-                            reference("http") {
-                                ref("#/components/messageBindings/streamingHeaders")
-                            }
+                        bindingsRef {
+                            ref("#/components/messageBindings/streamingHeaders")
                         }
                     }
                 }
