@@ -1,8 +1,8 @@
 package org.openfolder.kotlinasyncapi.annotation.channel
 
-import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.annotation.Boolean
 import org.openfolder.kotlinasyncapi.annotation.Int
+import org.openfolder.kotlinasyncapi.annotation.Schema
 
 annotation class OperationBindings(
     val isDefault: kotlin.Boolean = false,
@@ -21,7 +21,7 @@ annotation class OperationBindings(
     val sqs: OperationBinding.SQS = OperationBinding.SQS(isDefault = true),
     val stomp: OperationBinding.STOMP = OperationBinding.STOMP(isDefault = true),
     val redis: OperationBinding.Redis = OperationBinding.Redis(isDefault = true),
-    val mercure: OperationBinding.Mercure = OperationBinding.Mercure(isDefault = true),
+    val mercure: OperationBinding.Mercure = OperationBinding.Mercure(isDefault = true)
 )
 
 sealed interface OperationBinding {

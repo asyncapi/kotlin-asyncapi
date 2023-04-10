@@ -1,8 +1,8 @@
 package org.openfolder.kotlinasyncapi.annotation.channel
 
-import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.annotation.Boolean
 import org.openfolder.kotlinasyncapi.annotation.Int
+import org.openfolder.kotlinasyncapi.annotation.Schema
 
 annotation class ChannelBindings(
     val isDefault: kotlin.Boolean = false,
