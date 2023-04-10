@@ -25,7 +25,7 @@ internal class SchemaProcessorTest {
         val id: Int = 0,
         val name: String,
         val isTest: Boolean,
-        val sub: TestSubSchema
+        val sub: TestSubSchema?
     )
 
     data class TestSubSchema(
