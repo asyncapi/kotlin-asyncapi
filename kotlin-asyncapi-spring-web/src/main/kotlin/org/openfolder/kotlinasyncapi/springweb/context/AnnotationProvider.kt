@@ -4,6 +4,7 @@ import org.openfolder.kotlinasyncapi.annotation.AsyncApiAnnotation
 import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.annotation.channel.Channel
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
+import org.openfolder.kotlinasyncapi.model.AsyncApi
 import org.openfolder.kotlinasyncapi.model.ReferencableCorrelationIDsMap
 import org.openfolder.kotlinasyncapi.model.ReferencableSchemasMap
 import org.openfolder.kotlinasyncapi.model.channel.ReferencableChannelBindingsMap
@@ -27,21 +28,37 @@ import org.springframework.stereotype.Component
 import kotlin.reflect.KClass
 import kotlin.reflect.full.findAnnotation
 
-internal interface AnnotationProvider {
-
-    val components: Components?
-}
-
 @Component
-internal class DefaultAnnotationProvider(
-    context: ApplicationContext,
-    scanner: AnnotationScanner,
-    messageProcessor: AnnotationProcessor<Message, KClass<*>>,
-    schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
-    channelProcessor: AnnotationProcessor<Channel, KClass<*>>
-) : AnnotationProvider {
+internal class AnnotationProvider(
+    private val context: ApplicationContext,
+    private val scanner: AnnotationScanner,
+    private val messageProcessor: AnnotationProcessor<Message, KClass<*>>,
+    private val schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
+    private val channelProcessor: AnnotationProcessor<Channel, KClass<*>>
+) : AsyncApiContextProvider {
 
-    override val components: Components? by lazy {
+    private val componentToChannelMapping = mutableMapOf<String, String>()
+
+    override val asyncApi: AsyncApi? by lazy {
+        AsyncApi().apply {
+            channels {
+                bind(this)
+            }
+            components {
+                bind(this)
+            }
+        }
+    }
+
+    private fun bind(channels: ReferencableChannelsMap) {
+        for ((component, channel) in componentToChannelMapping) {
+            channels.reference(channel) {
+                ref("#/components/channels/$component")
+            }
+        }
+    }
+
+    private fun bind(components: Components) {
         val scanPackage = context.getBeansWithAnnotation(EnableAsyncApi::class.java).values
             .firstOrNull()
             ?.let { it::class.java.`package`.name }
@@ -51,25 +68,26 @@ internal class DefaultAnnotationProvider(
             scanner.scan(scanPackage = it, annotation = AsyncApiAnnotation::class)
         } ?: emptyList()
 
-        Components().apply {
-            annotatedClasses
-                .flatMap { clazz ->
-                    listOfNotNull(
-                        clazz.findAnnotation<Message>()?.let { clazz to it },
-                        clazz.findAnnotation<Schema>()?.let { clazz to it },
-                        clazz.findAnnotation<Channel>()?.let { clazz to it }
-                    )
-                }
-                .mapNotNull { (clazz, annotation) ->
-                    when (annotation) {
-                        is Message -> messageProcessor.process(annotation, clazz)
-                        is Schema -> schemaProcessor.process(annotation, clazz)
-                        is Channel -> channelProcessor.process(annotation, clazz)
-                        else -> null
+        annotatedClasses
+            .flatMap { clazz ->
+                listOfNotNull(
+                    clazz.findAnnotation<Message>()?.let { clazz to it },
+                    clazz.findAnnotation<Schema>()?.let { clazz to it },
+                    clazz.findAnnotation<Channel>()?.let { clazz to it }
+                )
+            }
+            .mapNotNull { (clazz, annotation) ->
+                when (annotation) {
+                    is Message -> messageProcessor.process(annotation, clazz)
+                    is Schema -> schemaProcessor.process(annotation, clazz)
+                    is Channel -> channelProcessor.process(annotation, clazz).also {
+                        componentToChannelMapping[clazz.java.simpleName] =
+                            annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
                     }
+                    else -> null
                 }
-                .forEach { this + it }
-        }
+            }
+            .forEach { components + it }
     }
 
     private operator fun Components.plus(components: Components) {

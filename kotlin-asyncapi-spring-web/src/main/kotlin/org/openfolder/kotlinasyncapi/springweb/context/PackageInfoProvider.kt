@@ -1,20 +1,14 @@
 package org.openfolder.kotlinasyncapi.springweb.context
 
+import org.openfolder.kotlinasyncapi.model.AsyncApi
 import org.openfolder.kotlinasyncapi.springweb.EnableAsyncApi
 import org.springframework.context.ApplicationContext
 import org.springframework.stereotype.Component
 
-internal interface InfoProvider {
-
-    val title: String?
-
-    val version: String?
-}
-
 @Component
-internal class DefaultInfoProvider(
+internal class PackageInfoProvider(
     context: ApplicationContext
-) : InfoProvider {
+) : AsyncApiContextProvider {
 
     private val applicationPackage = context
         .getBeansWithAnnotation(EnableAsyncApi::class.java)
@@ -23,7 +17,12 @@ internal class DefaultInfoProvider(
         ?.javaClass
         ?.`package`
 
-    override val title by lazy { applicationPackage?.implementationTitle }
-
-    override val version by lazy { applicationPackage?.implementationVersion }
+    override val asyncApi: AsyncApi? by lazy {
+        AsyncApi().apply {
+            info {
+                title(applicationPackage?.implementationTitle ?: "AsyncAPI Definition")
+                version(applicationPackage?.implementationVersion ?: "SNAPSHOT")
+            }
+        }
+    }
 }

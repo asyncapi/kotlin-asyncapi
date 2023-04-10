@@ -3,11 +3,10 @@ package org.openfolder.kotlinasyncapi.springweb
 import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.annotation.channel.Channel
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
-import org.openfolder.kotlinasyncapi.model.AsyncApi
-import org.openfolder.kotlinasyncapi.springweb.context.DefaultAnnotationProvider
-import org.openfolder.kotlinasyncapi.springweb.context.DefaultInfoProvider
-import org.openfolder.kotlinasyncapi.springweb.context.DefaultResourceProvider
-import org.openfolder.kotlinasyncapi.springweb.context.ResourceProvider
+import org.openfolder.kotlinasyncapi.springweb.context.AnnotationProvider
+import org.openfolder.kotlinasyncapi.springweb.context.AsyncApiContextProvider
+import org.openfolder.kotlinasyncapi.springweb.context.PackageInfoProvider
+import org.openfolder.kotlinasyncapi.springweb.context.PackageResourceProvider
 import org.openfolder.kotlinasyncapi.springweb.context.annotation.AnnotationScanner
 import org.openfolder.kotlinasyncapi.springweb.context.annotation.DefaultAnnotationScanner
 import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.AnnotationProcessor
@@ -44,8 +43,8 @@ internal open class AsyncApiAutoConfiguration {
         DefaultAsyncApiSerializer()
 
     @Bean
-    open fun infoProvider(context: ApplicationContext) =
-        DefaultInfoProvider(context)
+    open fun packageInfoProvider(context: ApplicationContext) =
+        PackageInfoProvider(context)
 
     @Bean
     @ConfigurationProperties(prefix = "asyncapi", ignoreUnknownFields = false)
@@ -53,13 +52,8 @@ internal open class AsyncApiAutoConfiguration {
         AsyncApiProperties()
 
     @Bean
-    open fun asyncApiDefaultInfoExtension(infoProvider: DefaultInfoProvider) =
-        AsyncApiExtension.builder(order = -1) {
-            info {
-                infoProvider.title?.let { title(it) }
-                infoProvider.version?.let { version(it) }
-            }
-        }
+    open fun asyncApiPackageInfoExtension(packageInfoProvider: AsyncApiContextProvider) =
+        packageInfoProvider.asyncApi?.let { AsyncApiExtension.from(order = -1, it) }
 
     @Bean
     open fun asyncApiDefaultChannelsExtension() =
@@ -82,14 +76,12 @@ internal open class AsyncApiAutoConfiguration {
 internal open class AsyncApiScriptAutoConfiguration {
 
     @Bean
-    open fun resourceProvider(context: ApplicationContext) =
-        DefaultResourceProvider(context)
+    open fun packageResourceProvider(context: ApplicationContext, asyncApiProperties: AsyncApiProperties) =
+        PackageResourceProvider(context, asyncApiProperties.script.resourcePath)
 
     @Bean
-    open fun asyncApiResourceExtension(resourceProvider: ResourceProvider, asyncApiProperties: AsyncApiProperties) =
-        resourceProvider.resource(asyncApiProperties.script.resourcePath, AsyncApi::class)?.let {
-            AsyncApiExtension.from(resource = it)
-        }
+    open fun asyncApiPackageResourceExtension(packageResourceProvider: AsyncApiContextProvider) =
+        packageResourceProvider.asyncApi?.let { AsyncApiExtension.from(order = -1, it) }
 }
 
 @Configuration
@@ -119,7 +111,11 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         messageProcessor: AnnotationProcessor<Message, KClass<*>>,
         schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
         channelProcessor: AnnotationProcessor<Channel, KClass<*>>
-    ) = DefaultAnnotationProvider(context, scanner, messageProcessor, schemaProcessor, channelProcessor)
+    ) = AnnotationProvider(context, scanner, messageProcessor, schemaProcessor, channelProcessor)
+
+    @Bean
+    open fun asyncApiAnnotationExtension(annotationProvider: AsyncApiContextProvider) =
+        annotationProvider.asyncApi?.let { AsyncApiExtension.from(order = -1, it) }
 }
 
 @Configuration
@@ -127,8 +123,8 @@ internal open class AsyncApiAnnotationAutoConfiguration {
 internal open class AsyncApiEmbeddedScriptAutoConfiguration {
 
     @Bean
-    open fun asyncApiScriptExtension(resourceProvider: ResourceProvider, asyncApiProperties: AsyncApiProperties) =
-        resourceProvider.resource(asyncApiProperties.script.sourcePath)?.let {
+    open fun asyncApiScriptExtension(context: ApplicationContext, asyncApiProperties: AsyncApiProperties) =
+        context.getResource(asyncApiProperties.script.sourcePath).takeIf { it.exists() }?.let {
             AsyncApiExtension.from(
                 script = it.inputStream.bufferedReader().use { it.readText() }.toScriptSource()
             )

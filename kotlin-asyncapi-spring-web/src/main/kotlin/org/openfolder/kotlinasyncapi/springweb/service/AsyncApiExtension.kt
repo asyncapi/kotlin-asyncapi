@@ -34,8 +34,12 @@ interface AsyncApiExtension {
                 override val order = order
                 override fun extend(asyncApi: AsyncApi) =
                     asyncApi.apply {
-                        info = resource.info
-                        channels = resource.channels
+                        try {
+                            resource.info.let { info = it }
+                        } catch (_: UninitializedPropertyAccessException) { }
+                        try {
+                            resource.channels.let { channels = it }
+                        } catch (_: UninitializedPropertyAccessException) { }
                         resource.id?.let { id = it }
                         resource.servers?.let { servers = it }
                         resource.defaultContentType?.let { defaultContentType = it }
