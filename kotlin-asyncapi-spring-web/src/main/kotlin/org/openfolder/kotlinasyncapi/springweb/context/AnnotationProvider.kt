@@ -41,10 +41,10 @@ internal class AnnotationProvider(
 
     override val asyncApi: AsyncApi? by lazy {
         AsyncApi().apply {
-            channels {
+            components {
                 bind(this)
             }
-            components {
+            channels {
                 bind(this)
             }
         }

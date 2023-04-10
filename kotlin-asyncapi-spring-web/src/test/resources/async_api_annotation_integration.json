@@ -1,0 +1,57 @@
+{
+  "asyncapi": "2.4.0",
+  "info": {
+    "title": "testTitle",
+    "version": "testVersion"
+  },
+  "channels": {
+    "my/channel": {
+      "$ref": "#/components/channels/TestChannel"
+    }
+  },
+  "components": {
+    "schemas": {
+      "TestMessage": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "exampleSetFlag": false,
+            "types": [
+              "string"
+            ]
+          },
+          "optionalValue": {
+            "type": "boolean",
+            "exampleSetFlag": false,
+            "types": [
+              "boolean"
+            ]
+          }
+        },
+        "exampleSetFlag": false
+      }
+    },
+    "channels": {
+      "TestChannel": {
+        "publish": {
+          "description": "testDescription",
+          "message": {
+            "$ref": "#/components/messages/TestMessage"
+          }
+        }
+      }
+    },
+    "messages": {
+      "TestMessage": {
+        "payload": {
+          "$ref": "#/components/schemas/TestMessage"
+        },
+        "schemaFormat": "application/schema+json;version=draft-07"
+      }
+    }
+  }
+}
