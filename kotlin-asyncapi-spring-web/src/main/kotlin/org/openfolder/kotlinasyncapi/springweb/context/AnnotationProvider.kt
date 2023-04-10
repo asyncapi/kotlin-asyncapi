@@ -37,6 +37,8 @@ internal class AnnotationProvider(
     channelProcessor: AnnotationProcessor<Channel, KClass<*>>
 ) : AsyncApiContextProvider {
 
+    private val componentToChannelMapping = mutableMapOf<String, String>()
+
     override val asyncApi: AsyncApi? by lazy {
         val scanPackage = context.getBeansWithAnnotation(EnableAsyncApi::class.java).values
             .firstOrNull()
@@ -48,6 +50,13 @@ internal class AnnotationProvider(
         } ?: emptyList()
 
         AsyncApi().apply {
+            channels {
+                for ((component, channel) in componentToChannelMapping) {
+                    reference(channel) {
+                        ref("#/components/channels/$component")
+                    }
+                }
+            }
             components {
                 annotatedClasses
                     .flatMap { clazz ->
@@ -61,7 +70,10 @@ internal class AnnotationProvider(
                         when (annotation) {
                             is Message -> messageProcessor.process(annotation, clazz)
                             is Schema -> schemaProcessor.process(annotation, clazz)
-                            is Channel -> channelProcessor.process(annotation, clazz)
+                            is Channel -> channelProcessor.process(annotation, clazz).also {
+                                componentToChannelMapping[clazz.java.simpleName] =
+                                    annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
+                            }
                             else -> null
                         }
                     }

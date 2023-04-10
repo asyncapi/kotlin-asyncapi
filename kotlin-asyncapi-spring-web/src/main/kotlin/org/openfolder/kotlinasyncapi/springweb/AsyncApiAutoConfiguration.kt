@@ -112,6 +112,10 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
         channelProcessor: AnnotationProcessor<Channel, KClass<*>>
     ) = AnnotationProvider(context, scanner, messageProcessor, schemaProcessor, channelProcessor)
+
+    @Bean
+    open fun asyncApiAnnotationExtension(annotationProvider: AsyncApiContextProvider) =
+        annotationProvider.asyncApi?.let { AsyncApiExtension.from(order = -1, it) }
 }
 
 @Configuration
