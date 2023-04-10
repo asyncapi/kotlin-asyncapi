@@ -17,22 +17,22 @@ import org.openfolder.kotlinasyncapi.annotation.channel.Parameter
 import org.openfolder.kotlinasyncapi.annotation.channel.Subscribe
 import org.openfolder.kotlinasyncapi.springweb.EnableAsyncApi
 import org.openfolder.kotlinasyncapi.springweb.TestUtils
-import org.openfolder.kotlinasyncapi.springweb.context.DefaultAnnotationProvider
+import org.openfolder.kotlinasyncapi.springweb.context.AnnotationProvider
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringBootConfiguration
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-internal class DefaultAnnotationProviderTest {
+internal class AnnotationProviderTest {
 
     @Autowired
-    private lateinit var annotationProvider: DefaultAnnotationProvider
+    private lateinit var annotationProvider: AnnotationProvider
 
     @Test
     fun `should provide annotation components`() {
         val expected = TestUtils.json("annotation/annotation_integration.json")
-        val actual = TestUtils.json(annotationProvider.components!!)
+        val actual = TestUtils.json(annotationProvider.asyncApi?.components!!)
 
         TestUtils.assertJsonEquals(expected, actual)
     }
