@@ -30,16 +30,35 @@ import kotlin.reflect.full.findAnnotation
 
 @Component
 internal class AnnotationProvider(
-    context: ApplicationContext,
-    scanner: AnnotationScanner,
-    messageProcessor: AnnotationProcessor<Message, KClass<*>>,
-    schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
-    channelProcessor: AnnotationProcessor<Channel, KClass<*>>
+    private val context: ApplicationContext,
+    private val scanner: AnnotationScanner,
+    private val messageProcessor: AnnotationProcessor<Message, KClass<*>>,
+    private val schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
+    private val channelProcessor: AnnotationProcessor<Channel, KClass<*>>
 ) : AsyncApiContextProvider {
 
     private val componentToChannelMapping = mutableMapOf<String, String>()
 
     override val asyncApi: AsyncApi? by lazy {
+        AsyncApi().apply {
+            channels {
+                bind(this)
+            }
+            components {
+                bind(this)
+            }
+        }
+    }
+
+    private fun bind(channels: ReferencableChannelsMap) {
+        for ((component, channel) in componentToChannelMapping) {
+            channels.reference(channel) {
+                ref("#/components/channels/$component")
+            }
+        }
+    }
+
+    private fun bind(components: Components) {
         val scanPackage = context.getBeansWithAnnotation(EnableAsyncApi::class.java).values
             .firstOrNull()
             ?.let { it::class.java.`package`.name }
@@ -49,37 +68,26 @@ internal class AnnotationProvider(
             scanner.scan(scanPackage = it, annotation = AsyncApiAnnotation::class)
         } ?: emptyList()
 
-        AsyncApi().apply {
-            channels {
-                for ((component, channel) in componentToChannelMapping) {
-                    reference(channel) {
-                        ref("#/components/channels/$component")
+        annotatedClasses
+            .flatMap { clazz ->
+                listOfNotNull(
+                    clazz.findAnnotation<Message>()?.let { clazz to it },
+                    clazz.findAnnotation<Schema>()?.let { clazz to it },
+                    clazz.findAnnotation<Channel>()?.let { clazz to it }
+                )
+            }
+            .mapNotNull { (clazz, annotation) ->
+                when (annotation) {
+                    is Message -> messageProcessor.process(annotation, clazz)
+                    is Schema -> schemaProcessor.process(annotation, clazz)
+                    is Channel -> channelProcessor.process(annotation, clazz).also {
+                        componentToChannelMapping[clazz.java.simpleName] =
+                            annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
                     }
+                    else -> null
                 }
             }
-            components {
-                annotatedClasses
-                    .flatMap { clazz ->
-                        listOfNotNull(
-                            clazz.findAnnotation<Message>()?.let { clazz to it },
-                            clazz.findAnnotation<Schema>()?.let { clazz to it },
-                            clazz.findAnnotation<Channel>()?.let { clazz to it }
-                        )
-                    }
-                    .mapNotNull { (clazz, annotation) ->
-                        when (annotation) {
-                            is Message -> messageProcessor.process(annotation, clazz)
-                            is Schema -> schemaProcessor.process(annotation, clazz)
-                            is Channel -> channelProcessor.process(annotation, clazz).also {
-                                componentToChannelMapping[clazz.java.simpleName] =
-                                    annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
-                            }
-                            else -> null
-                        }
-                    }
-                    .forEach { this + it }
-            }
-        }
+            .forEach { components + it }
     }
 
     private operator fun Components.plus(components: Components) {
