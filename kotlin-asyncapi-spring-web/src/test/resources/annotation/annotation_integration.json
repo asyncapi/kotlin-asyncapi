@@ -58,6 +58,7 @@
   },
   "schemas" : {
     "TestHeaders" : {
+      "required" : [ "type" ],
       "type" : "object",
       "properties" : {
         "type" : {
@@ -69,6 +70,7 @@
       "exampleSetFlag" : false
     },
     "TestMessage" : {
+      "required" : [ "id", "isTest", "name" ],
       "type" : "object",
       "properties" : {
         "id" : {
@@ -82,7 +84,7 @@
           "exampleSetFlag" : false,
           "types" : [ "string" ]
         },
-        "test" : {
+        "isTest" : {
           "type" : "boolean",
           "exampleSetFlag" : false,
           "types" : [ "boolean" ]

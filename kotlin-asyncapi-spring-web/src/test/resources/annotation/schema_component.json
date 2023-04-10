@@ -1,6 +1,7 @@
 {
   "schemas" : {
     "TestSchema" : {
+      "required" : [ "id", "isTest", "name" ],
       "type" : "object",
       "properties" : {
         "id" : {
@@ -14,19 +15,20 @@
           "exampleSetFlag" : false,
           "types" : [ "string" ]
         },
-        "sub" : {
-          "$ref" : "#/components/schemas/TestSubSchema",
-          "exampleSetFlag" : false
-        },
-        "test" : {
+        "isTest" : {
           "type" : "boolean",
           "exampleSetFlag" : false,
           "types" : [ "boolean" ]
+        },
+        "sub" : {
+          "$ref" : "#/components/schemas/TestSubSchema",
+          "exampleSetFlag" : false
         }
       },
       "exampleSetFlag" : false
     },
     "TestSubSchema" : {
+      "required" : [ "exists" ],
       "type" : "object",
       "properties" : {
         "exists" : {
