@@ -4,6 +4,8 @@ import org.openfolder.kotlinasyncapi.annotation.AsyncApiAnnotation
 import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.annotation.channel.Channel
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
+import org.openfolder.kotlinasyncapi.annotation.channel.Parameter
+import org.openfolder.kotlinasyncapi.annotation.channel.Subscribe
 import org.openfolder.kotlinasyncapi.model.AsyncApi
 import org.openfolder.kotlinasyncapi.model.ReferencableCorrelationIDsMap
 import org.openfolder.kotlinasyncapi.model.ReferencableSchemasMap
@@ -29,6 +31,7 @@ import kotlin.reflect.KClass
 import kotlin.reflect.full.findAnnotation
 
 @Component
+@Schema
 internal class AnnotationProvider(
     private val context: ApplicationContext,
     private val scanner: AnnotationScanner,
