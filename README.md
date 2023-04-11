@@ -159,7 +159,7 @@ class AsyncApiConfiguration {
     value = "/rooms/{roomId}",
     parameters = [
         Parameter(
-            value = "parameter",
+            value = "roomId",
             schema = Schema(
                 type = "string",
                 examples = ["53307860c3599d1de448e19d"]
