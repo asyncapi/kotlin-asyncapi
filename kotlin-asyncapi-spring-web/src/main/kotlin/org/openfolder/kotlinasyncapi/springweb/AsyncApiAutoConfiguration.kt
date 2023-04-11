@@ -132,6 +132,7 @@ internal open class AsyncApiEmbeddedScriptAutoConfiguration {
 }
 
 @Configuration
+@ConditionalOnProperty(name = ["asyncapi.enabled"], havingValue = "true", matchIfMissing = true)
 internal open class AsyncApiMarkerConfiguration {
 
     @Bean
