@@ -101,8 +101,8 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         ChannelProcessor()
 
     @Bean
-    open fun annotationScanner(context: ApplicationContext) =
-        DefaultAnnotationScanner(context)
+    open fun annotationScanner() =
+        DefaultAnnotationScanner()
 
     @Bean
     open fun annotationProvider(
