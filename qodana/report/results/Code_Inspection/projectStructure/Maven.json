@@ -1850,6 +1850,17 @@
       "scope": "compile"
     },
     {
+      "ideaName": "Maven: io.github.classgraph:classgraph:4.8.157",
+      "unresolved": false,
+      "groupId": "io.github.classgraph",
+      "artifactId": "classgraph",
+      "version": "4.8.157",
+      "baseVersion": "4.8.157",
+      "type": "jar",
+      "optional": false,
+      "scope": "compile"
+    },
+    {
       "ideaName": "Maven: org.springframework:spring-web:5.3.24",
       "unresolved": false,
       "groupId": "org.springframework",
