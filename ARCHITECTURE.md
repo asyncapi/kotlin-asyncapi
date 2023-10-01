@@ -12,6 +12,9 @@ The core module provides the Kotlin DSL for building the AsyncAPI POJO. This POJ
 
 Every module in this project depends on the core. The core module itself is independent of the rest of the project and does not depend on any other module.
 
+## `annotation`
+The annotation module defines technology-agnostic annotations that represent a subset of the core model.
+
 ## `script`
 The script module configures the context for the `asyncapi.kts` script and defines compilation properties for the Kotlin compiler. It tells the compiler what the script environment should look like.
 

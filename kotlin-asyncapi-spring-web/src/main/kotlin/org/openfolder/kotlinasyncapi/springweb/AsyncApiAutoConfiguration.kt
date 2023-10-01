@@ -53,11 +53,11 @@ internal open class AsyncApiAutoConfiguration {
 
     @Bean
     open fun asyncApiPackageInfoExtension(packageInfoProvider: AsyncApiContextProvider) =
-        packageInfoProvider.asyncApi?.let { AsyncApiExtension.from(order = -1, it) }
+        packageInfoProvider.asyncApi?.let { AsyncApiExtension.from(order = -10, it) }
 
     @Bean
     open fun asyncApiDefaultChannelsExtension() =
-        AsyncApiExtension.builder(order = -1) {
+        AsyncApiExtension.builder(order = -10) {
             channels { }
         }
 
@@ -81,7 +81,7 @@ internal open class AsyncApiScriptAutoConfiguration {
 
     @Bean
     open fun asyncApiPackageResourceExtension(packageResourceProvider: AsyncApiContextProvider) =
-        packageResourceProvider.asyncApi?.let { AsyncApiExtension.from(order = -1, it) }
+        packageResourceProvider.asyncApi?.let { AsyncApiExtension.from(resource = it) }
 }
 
 @Configuration
@@ -101,8 +101,8 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         ChannelProcessor()
 
     @Bean
-    open fun annotationScanner(context: ApplicationContext) =
-        DefaultAnnotationScanner(context)
+    open fun annotationScanner() =
+        DefaultAnnotationScanner()
 
     @Bean
     open fun annotationProvider(
@@ -132,6 +132,7 @@ internal open class AsyncApiEmbeddedScriptAutoConfiguration {
 }
 
 @Configuration
+@ConditionalOnProperty(name = ["asyncapi.enabled"], havingValue = "true", matchIfMissing = true)
 internal open class AsyncApiMarkerConfiguration {
 
     @Bean

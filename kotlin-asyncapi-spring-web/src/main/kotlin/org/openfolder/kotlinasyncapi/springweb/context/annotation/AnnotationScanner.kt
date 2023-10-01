@@ -1,9 +1,6 @@
 package org.openfolder.kotlinasyncapi.springweb.context.annotation
 
-import org.openfolder.kotlinasyncapi.annotation.AsyncApiAnnotation
-import org.springframework.context.ApplicationContext
-import org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider
-import org.springframework.core.type.filter.AnnotationTypeFilter
+import io.github.classgraph.ClassGraph
 import org.springframework.stereotype.Component
 import kotlin.reflect.KClass
 
@@ -12,16 +9,15 @@ internal interface AnnotationScanner {
 }
 
 @Component
-internal class DefaultAnnotationScanner(
-    private val context: ApplicationContext
-) : AnnotationScanner {
+internal class DefaultAnnotationScanner : AnnotationScanner {
     override fun scan(scanPackage: String, annotation: KClass<out Annotation>): List<KClass<*>> {
-        val classPathScanner = ClassPathScanningCandidateComponentProvider(false).also {
-            it.addIncludeFilter(AnnotationTypeFilter(AsyncApiAnnotation::class.java))
-        }
+        val packageClasses = ClassGraph()
+            .enableAllInfo()
+            .acceptPackages(scanPackage)
+            .scan()
 
-        return classPathScanner.findCandidateComponents(scanPackage).map {
-            Class.forName(it.beanClassName).kotlin
-        }.toList()
+        return packageClasses.getClassesWithAnnotation(annotation.java).standardClasses.map {
+            it.loadClass().kotlin
+        }
     }
 }

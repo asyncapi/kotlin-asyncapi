@@ -22,7 +22,10 @@ class Channel {
     var parameters: ReferencableParametersMap? = null
     var bindings: Any? = null
 
-    @Deprecated("Usage of the \$ref property has been deprecated")
+    @Deprecated(
+        message = "Usage of the \$ref property has been deprecated",
+        replaceWith = ReplaceWith("Reference().ref()")
+    )
     fun ref(value: String): String =
         value.also { `$ref` = it }
 

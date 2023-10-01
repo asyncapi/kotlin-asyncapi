@@ -10,6 +10,7 @@
 * [Usage](#usage)
     * [Kotlin DSL](#kotlin-dsl-usage)
     * [Spring Web](#spring-web-usage)
+    * [Annotation](#annotation-usage)
     * [Kotlin Script](#kotlin-script-usage)
 * [Configuration](#configuration)
     * [Spring Web](#spring-web-configuration)
@@ -39,8 +40,8 @@ The framework generally supports any JVM project. Compatibility has been tested,
 | **spring&#x2011;web**   | Spring Boot autoconfiguration for serving the generated document               | :white_check_mark: |
 | **script**              | Kotlin scripting support for configuration as code                             | :white_check_mark: |
 | **maven&#x2011;plugin** | Maven plugin for evaluating AsyncAPI scripts and packaging generated resources | :white_check_mark: |
-| **annotation**          | Technology agnostic annotations for meta-configuration                         | :soon:             |
-| **template**            | Template engine for reusing similar AsyncAPI components                        | :eyes:             |
+| **annotation**          | Technology agnostic annotations for meta-configuration                         | :white_check_mark: |
+| **template**            | Template engine for reusing similar AsyncAPI components                        | :x:                |
 
 ## Usage
 ### <a name="kotlin-dsl-usage"></a>Kotlin DSL
@@ -130,6 +131,7 @@ To serve your AsyncAPI specification via Spring Web:
 - add the `kotlin-asyncapi-spring-web` dependency
 - enable the auto-configuration by annotating a configuration class with `@EnableAsyncApi`
 - document your API with `AsyncApiExtension` beans and/or Kotlin scripting (see [Kotlin script usage](#kotlin-script-usage))
+- add annotations to auto-generate components (see [annotation usage](#annotation-usage))
 
 You can register multiple extensions to extend and override AsyncAPI components. Extensions with a higher order override extensions with a lower order. Please note that you can only extend top-level components for now (`info`, `channels`, `servers`...). Subcomponents will always be overwritten.
 
@@ -152,6 +154,30 @@ class AsyncApiConfiguration {
             // ...
         }
 }
+
+@Channel(
+    value = "/rooms/{roomId}",
+    parameters = [
+        Parameter(
+            value = "roomId",
+            schema = Schema(
+                type = "string",
+                examples = ["53307860c3599d1de448e19d"]
+            )
+        )
+    ]
+)
+class RoomsChannel {
+
+    @Subscribe(message = Message(ChatMessage::class))
+    fun publish(/*...*/) { /*...*/ }
+}
+
+@Message
+data class ChatMessage(
+    val id: String,
+    val text: String
+)
 ```
 ```xml
 <dependency>
@@ -160,6 +186,16 @@ class AsyncApiConfiguration {
   <version>${kotlin-asyncapi.version}</version>
 </dependency>
 ```
+
+### <a name="annotation-usage"></a>Annotation
+The `kotlin-asyncapi-annotation` module defines technology-agnostic annotations that can be used to document event-driven microservice APIs. 
+
+| Annotation        | Target   | Description                                                                                                                          |
+|-------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------|
+| Channel           | `class`  | Marks a class that represents a event channel. The value property defines the name of the channel.                                   |
+| Subscribe/Publish | `method` | Marks a method that represents a channel operation. The method must be defined inside a channel class.                               |
+| Message           | `class`  | Marks a class that represents a message. The value property can be used to reference a class that is annotated with this annotation. |
+| Schema            | `class`  | Marks a class that represents a schema. The value property can be used to reference a class that is annotated with this annotation.  |
 
 ### <a name="kotlin-script-usage"></a>Kotlin Script
 [Kotlin scripting](https://github.com/Kotlin/KEEP/blob/b0c8a37db684eaf74bb1305f3c180b5d2537d787/proposals/scripting-support.md) allows us to execute a piece of code in a provided context. The IDE can still provide features like autocompletion and syntax highlighting. Furthermore, it provides the following benefits:
@@ -244,6 +280,7 @@ You can configure the Spring Web integration in the application properties:
 |---------------------------------|---------------------------------------------------------------|----------------------------------------------|
 | `asyncapi.enabled`              | Enables the autoconfiguration                                 | `true`                                       |
 | `asyncapi.path`                 | The resource path for serving the generated AsyncAPI document | `/docs/asyncapi`                             |
+| `asyncapi.annotation.enabled`   | Enables the annotation scanning and processing                | `true`                                       |
 | `asyncapi.script.enabled`       | Enables the Kotlin script support                             | `true`                                       |
 | `asyncapi.script.resource-path` | Path to the generated script resource file                    | `classpath:asyncapi/generated/asyncapi.json` |
 | `asyncapi.script.source-path`   | Path to the AsyncAPI Kotlin script file                       | `classpath:build.asyncapi.kts`               |
