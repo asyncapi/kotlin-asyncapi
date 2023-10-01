@@ -44,6 +44,7 @@
         <module>kotlin-asyncapi-script</module>
         <module>kotlin-asyncapi-maven-plugin</module>
         <module>kotlin-asyncapi-annotation</module>
+        <module>kotlin-asyncapi-examples</module>
     </modules>
 
     <properties>
