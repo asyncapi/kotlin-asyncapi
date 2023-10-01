@@ -16,7 +16,7 @@
 	<description>Example for Kotlin AsyncAPI Spring Boot Application</description>
 
 	<properties>
-		<java.version>17</java.version>
+		<java.version>11</java.version>
 		<kotlin.version>1.8.22</kotlin.version>
 		<spring-boot.version>2.7.6</spring-boot.version>
 	</properties>
@@ -76,7 +76,7 @@
 				<groupId>org.jetbrains.kotlin</groupId>
 				<artifactId>kotlin-maven-plugin</artifactId>
 				<configuration>
-					<jvmTarget>17</jvmTarget>
+					<jvmTarget>${java.version}</jvmTarget>
 					<args>
 						<arg>-Xjsr305=strict</arg>
 					</args>
