@@ -1,4 +1,4 @@
-package com.example.demo
+package org.openfolder.kotlinasyncapi.example.spring
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
@@ -9,5 +9,4 @@ class ExampleApplicationTests {
 	@Test
 	fun contextLoads() {
 	}
-
 }
