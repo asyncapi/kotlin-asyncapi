@@ -1,1 +1,94 @@
-{"version":"3","listProblem":[]}
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "Kotlin",
+  "type": "Library and maven plugin versions are different",
+  "tags": [
+    "XML"
+  ],
+  "severity": "High",
+  "comment": "Plugin version (1.8.22) is not the same as library version (null)",
+  "detailsInfo": "Reports different Kotlin stdlib and compiler versions.\n\nUsing different versions of the Kotlin compiler and the standard library can lead to unpredictable\nruntime problems and should be avoided.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/pom.xml",
+      "language": "XML",
+      "line": 54,
+      "offset": 4,
+      "length": 10,
+      "code": {
+        "startLine": 52,
+        "length": 10,
+        "offset": 62,
+        "surroundingCode": "\t\t\t<artifactId>kotlin-reflect</artifactId>\n\t\t</dependency>\n\t\t<dependency>\n\t\t\t<groupId>org.jetbrains.kotlin</groupId>\n\t\t\t<artifactId>kotlin-stdlib</artifactId>"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-spring-boot-example",
+    "inspectionName": "DifferentMavenStdlibVersion"
+  },
+  "hash": "2aa6bfcbd34ea619f048bbf2fa90e4b2e72d06b8c224d9e45ce29eb2f872cf76"
+},{
+  "tool": "Code Inspection",
+  "category": "Kotlin",
+  "type": "Library and maven plugin versions are different",
+  "tags": [
+    "XML"
+  ],
+  "severity": "High",
+  "comment": "Plugin version (null) is not the same as library version (1.6.21)",
+  "detailsInfo": "Reports different Kotlin stdlib and compiler versions.\n\nUsing different versions of the Kotlin compiler and the standard library can lead to unpredictable\nruntime problems and should be avoided.",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/pom.xml",
+      "language": "XML",
+      "line": 75,
+      "offset": 5,
+      "length": 6,
+      "code": {
+        "startLine": 73,
+        "length": 6,
+        "offset": 63,
+        "surroundingCode": "\t\t\t\t<version>${spring-boot.version}</version>\n\t\t\t</plugin>\n\t\t\t<plugin>\n\t\t\t\t<groupId>org.jetbrains.kotlin</groupId>\n\t\t\t\t<artifactId>kotlin-maven-plugin</artifactId>"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-spring-boot-example",
+    "inspectionName": "DifferentMavenStdlibVersion"
+  },
+  "hash": "73ddebdc1b13e4a26f746e6a5b3afa97f85458326c83869abe3f457f58482da3"
+},{
+  "tool": "Code Inspection",
+  "category": "Probable bugs",
+  "type": "Serializable object must implement 'readResolve'",
+  "tags": [
+    "kotlin"
+  ],
+  "severity": "High",
+  "comment": "Serializable object must implement 'readResolve'",
+  "detailsInfo": "Reports `object`s (`data object` including) that implement `java.io.Serializable` but don't implement\n[readResolve](https://docs.oracle.com/en/java/javase/11/docs/specs/serialization/input.html#the-readresolve-method)\n\n**Example:**\n\n\n      import java.io.Serializable\n\n      object Foo : Serializable\n\nThe quick fix implements `readResolve` method:\n\n\n      import java.io.Serializable\n\n      object Foo : Serializable {\n          private fun readResolve() = Foo\n      }\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "kotlin-asyncapi-script/src/main/kotlin/org/openfolder/kotlinasyncapi/script/AsyncApiScript.kt",
+      "language": "kotlin",
+      "line": 22,
+      "offset": 17,
+      "length": 38,
+      "code": {
+        "startLine": 20,
+        "length": 38,
+        "offset": 47,
+        "surroundingCode": "abstract class AsyncApiScript\n\ninternal object AsyncApiScriptCompilationConfiguration : ScriptCompilationConfiguration({\n    defaultImports(\"org.openfolder.kotlinasyncapi.model.*\")\n    implicitReceivers(AsyncApi::class)"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "kotlin-asyncapi-script",
+    "inspectionName": "JavaIoSerializableObjectMustHaveReadResolve"
+  },
+  "hash": "2c70b13d07b9c40cf43e6986d3f1d3025325319b3931e03fc5e77989a9a0bbd2"
+}]}

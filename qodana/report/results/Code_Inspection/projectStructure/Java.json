@@ -1,28 +1,36 @@
 {
   "modules": [
     {
+      "name": "kotlin-asyncapi-maven-plugin",
+      "languageLevel": 7
+    },
+    {
       "name": "kotlin-asyncapi-script",
-      "languageLevel": 5
+      "languageLevel": 7
     },
     {
       "name": "kotlin-asyncapi-spring-web",
-      "languageLevel": 5
+      "languageLevel": 7
     },
     {
-      "name": "kotlin-asyncapi-maven-plugin",
+      "name": "kotlin-asyncapi-examples",
       "languageLevel": 5
     },
     {
       "name": "kotlin-asyncapi-core",
-      "languageLevel": 5
+      "languageLevel": 7
     },
     {
       "name": "kotlin-asyncapi-parent",
       "languageLevel": 5
     },
     {
+      "name": "kotlin-asyncapi-spring-boot-example",
+      "languageLevel": 7
+    },
+    {
       "name": "kotlin-asyncapi-annotation",
-      "languageLevel": 5
+      "languageLevel": 7
     }
   ]
 }
