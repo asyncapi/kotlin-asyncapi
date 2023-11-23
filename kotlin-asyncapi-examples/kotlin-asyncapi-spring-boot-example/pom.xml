@@ -16,9 +16,9 @@
 	<description>Example for Kotlin AsyncAPI Spring Boot Application</description>
 
 	<properties>
-		<java.version>11</java.version>
-		<kotlin.version>1.8.22</kotlin.version>
-		<spring-boot.version>2.7.6</spring-boot.version>
+		<java.version>17</java.version>
+		<kotlin.version>1.9.10</kotlin.version>
+		<spring-boot.version>3.2.0</spring-boot.version>
 	</properties>
 
 	<dependencyManagement>
