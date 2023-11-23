@@ -52,7 +52,7 @@
         <java.version>17</java.version>
         <kotlin.version>1.9.10</kotlin.version>
         <jackson.version>2.15.3</jackson.version>
-        <swagger.version>2.2.16</swagger.version>
+        <swagger.version>2.2.19</swagger.version>
         <classgraph.version>4.8.163</classgraph.version>
         <mockk.version>1.12.3</mockk.version>
         <jsonassert.version>1.5.1</jsonassert.version>
@@ -261,7 +261,7 @@
             </dependency>
             <dependency>
                 <groupId>io.swagger.core.v3</groupId>
-                <artifactId>swagger-core</artifactId>
+                <artifactId>swagger-core-jakarta</artifactId>
                 <version>${swagger.version}</version>
             </dependency>
             <dependency>
