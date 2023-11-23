@@ -19,6 +19,7 @@ import org.openfolder.kotlinasyncapi.springweb.service.AsyncApiSerializer
 import org.openfolder.kotlinasyncapi.springweb.service.AsyncApiService
 import org.openfolder.kotlinasyncapi.springweb.service.DefaultAsyncApiSerializer
 import org.openfolder.kotlinasyncapi.springweb.service.DefaultAsyncApiService
+import org.springframework.boot.autoconfigure.AutoConfiguration
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
@@ -32,7 +33,7 @@ import kotlin.reflect.KClass
 import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 
-@Configuration
+@AutoConfiguration
 @ConditionalOnBean(AsyncApiMarkerConfiguration.Marker::class)
 @Import(AsyncApiScriptAutoConfiguration::class, AsyncApiAnnotationAutoConfiguration::class)
 internal open class AsyncApiAutoConfiguration {

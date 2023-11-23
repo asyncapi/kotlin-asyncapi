@@ -56,6 +56,7 @@
         <classgraph.version>4.8.163</classgraph.version>
         <mockk.version>1.12.3</mockk.version>
         <jsonassert.version>1.5.1</jsonassert.version>
+        <junit-jupiter.version>5.10.1</junit-jupiter.version>
         <assertj.version>3.24.2</assertj.version>
     </properties>
 
@@ -272,6 +273,18 @@
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-scripting-jvm-host</artifactId>
                 <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.skyscreamer</groupId>
