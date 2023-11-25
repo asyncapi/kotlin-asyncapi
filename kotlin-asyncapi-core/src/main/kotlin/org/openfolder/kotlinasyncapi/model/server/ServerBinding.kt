@@ -167,31 +167,31 @@ sealed interface ServerBinding {
             value.also { bindingVersion = it }
     }
 
-    object HTTP : ServerBinding
+    data object HTTP : ServerBinding
 
-    object WebSockets : ServerBinding
+    data object WebSockets : ServerBinding
 
-    object Kafka : ServerBinding
+    data object Kafka : ServerBinding
 
-    object AnypointMQ : ServerBinding
+    data object AnypointMQ : ServerBinding
 
-    object AMQP : ServerBinding
+    data object AMQP : ServerBinding
 
-    object AMQP1 : ServerBinding
+    data object AMQP1 : ServerBinding
 
-    object MQTT5 : ServerBinding
+    data object MQTT5 : ServerBinding
 
-    object NATS : ServerBinding
+    data object NATS : ServerBinding
 
-    object JMS : ServerBinding
+    data object JMS : ServerBinding
 
-    object SNS : ServerBinding
+    data object SNS : ServerBinding
 
-    object SQS : ServerBinding
+    data object SQS : ServerBinding
 
-    object STOMP : ServerBinding
+    data object STOMP : ServerBinding
 
-    object Redis : ServerBinding
+    data object Redis : ServerBinding
 
-    object Mercure : ServerBinding
+    data object Mercure : ServerBinding
 }
