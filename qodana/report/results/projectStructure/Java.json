@@ -5,19 +5,15 @@
       "languageLevel": 7
     },
     {
-      "name": "kotlin-asyncapi-script",
-      "languageLevel": 7
-    },
-    {
-      "name": "kotlin-asyncapi-spring-web",
-      "languageLevel": 7
-    },
-    {
       "name": "kotlin-asyncapi-examples",
       "languageLevel": 5
     },
     {
       "name": "kotlin-asyncapi-core",
+      "languageLevel": 7
+    },
+    {
+      "name": "kotlin-asyncapi-script",
       "languageLevel": 7
     },
     {
@@ -30,6 +26,10 @@
     },
     {
       "name": "kotlin-asyncapi-annotation",
+      "languageLevel": 7
+    },
+    {
+      "name": "kotlin-asyncapi-spring-web",
       "languageLevel": 7
     }
   ]
