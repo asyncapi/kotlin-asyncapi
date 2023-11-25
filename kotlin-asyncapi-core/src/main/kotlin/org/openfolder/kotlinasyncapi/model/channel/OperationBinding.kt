@@ -261,23 +261,23 @@ sealed interface OperationBinding {
         }
     }
 
-    object WebSockets : OperationBinding
+    data object WebSockets : OperationBinding
 
-    object AnypointMQ : OperationBinding
+    data object AnypointMQ : OperationBinding
 
-    object AMQP1 : OperationBinding
+    data object AMQP1 : OperationBinding
 
-    object MQTT5 : OperationBinding
+    data object MQTT5 : OperationBinding
 
-    object JMS : OperationBinding
+    data object JMS : OperationBinding
 
-    object SNS : OperationBinding
+    data object SNS : OperationBinding
 
-    object SQS : OperationBinding
+    data object SQS : OperationBinding
 
-    object STOMP : OperationBinding
+    data object STOMP : OperationBinding
 
-    object Redis : OperationBinding
+    data object Redis : OperationBinding
 
-    object Mercure : OperationBinding
+    data object Mercure : OperationBinding
 }

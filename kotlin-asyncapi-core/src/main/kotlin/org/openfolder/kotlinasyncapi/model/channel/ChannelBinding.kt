@@ -256,29 +256,29 @@ sealed interface ChannelBinding {
         }
     }
 
-    object HTTP : ChannelBinding
+    data object HTTP : ChannelBinding
 
-    object Kafka : ChannelBinding
+    data object Kafka : ChannelBinding
 
-    object AMQP1 : ChannelBinding
+    data object AMQP1 : ChannelBinding
 
-    object MQTT : ChannelBinding
+    data object MQTT : ChannelBinding
 
-    object MQTT5 : ChannelBinding
+    data object MQTT5 : ChannelBinding
 
-    object NATS : ChannelBinding
+    data object NATS : ChannelBinding
 
-    object JMS : ChannelBinding
+    data object JMS : ChannelBinding
 
-    object SNS : ChannelBinding
+    data object SNS : ChannelBinding
 
-    object Solace : ChannelBinding
+    data object Solace : ChannelBinding
 
-    object SQS : ChannelBinding
+    data object SQS : ChannelBinding
 
-    object STOMP : ChannelBinding
+    data object STOMP : ChannelBinding
 
-    object Redis : ChannelBinding
+    data object Redis : ChannelBinding
 
-    object Mercure : ChannelBinding
+    data object Mercure : ChannelBinding
 }
