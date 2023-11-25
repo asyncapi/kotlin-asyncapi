@@ -175,25 +175,25 @@ sealed interface MessageBinding {
             value.also { bindingVersion = it }
     }
 
-    object WebSockets : MessageBinding
+    data object WebSockets : MessageBinding
 
-    object AMQP1 : MessageBinding
+    data object AMQP1 : MessageBinding
 
-    object MQTT5 : MessageBinding
+    data object MQTT5 : MessageBinding
 
-    object NATS : MessageBinding
+    data object NATS : MessageBinding
 
-    object JMS : MessageBinding
+    data object JMS : MessageBinding
 
-    object SNS : MessageBinding
+    data object SNS : MessageBinding
 
-    object Solace : MessageBinding
+    data object Solace : MessageBinding
 
-    object SQS : MessageBinding
+    data object SQS : MessageBinding
 
-    object STOMP : MessageBinding
+    data object STOMP : MessageBinding
 
-    object Redis : MessageBinding
+    data object Redis : MessageBinding
 
-    object Mercure : MessageBinding
+    data object Mercure : MessageBinding
 }
