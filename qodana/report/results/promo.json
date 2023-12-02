@@ -1,113 +1,57 @@
 {"version":"3","listProblem":[{
   "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Moderate",
-  "comment": "Property 'authorizationUrl' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"bindingsRef\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/component/OAuthFlows.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/Operation.kt",
       "language": "kotlin",
-      "line": 27,
-      "offset": 9,
-      "length": 16,
+      "line": 42,
+      "offset": 16,
+      "length": 11,
       "code": {
-        "startLine": 25,
-        "length": 16,
-        "offset": 45,
-        "surroundingCode": "@AsyncApiComponent\nclass OAuthFlow {\n    var authorizationUrl: String? = null\n    var tokenUrl: String? = null\n    var scopes: Map<String, String>? = null"
+        "startLine": 40,
+        "length": 11,
+        "offset": 80,
+        "surroundingCode": "        OperationBindings().apply(build).also { bindings = it }\n\n    inline fun bindingsRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { bindings = it }\n"
       }
     }
   ],
   "attributes": {
     "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
+    "inspectionName": "UnusedSymbol"
   },
-  "hash": "35c335204de7f119f4b11120991bee684947b204d786f054095a42d7875a268f"
+  "hash": "1378ec5fc3a1bb486f8f3a189f4528e3812427ef71dbe962d79cccd2478eb631"
 },{
   "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Moderate",
-  "comment": "Property 'refreshUrl' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+  "category": "Redundant constructs",
+  "type": "Unused symbol",
+  "severity": "High",
+  "comment": "Function \"messageRef\" is never used",
+  "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
   "sources": [
     {
       "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/component/OAuthFlows.kt",
+      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/channel/Operation.kt",
       "language": "kotlin",
-      "line": 30,
-      "offset": 9,
+      "line": 51,
+      "offset": 16,
       "length": 10,
       "code": {
-        "startLine": 28,
+        "startLine": 49,
         "length": 10,
-        "offset": 85,
-        "surroundingCode": "    var tokenUrl: String? = null\n    var scopes: Map<String, String>? = null\n    var refreshUrl: String? = null\n\n    fun authorizationUrl(value: String): String ="
+        "offset": 69,
+        "surroundingCode": "        Message().apply(build).also { message = it }\n\n    inline fun messageRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { message = it }\n"
       }
     }
   ],
   "attributes": {
     "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
+    "inspectionName": "UnusedSymbol"
   },
-  "hash": "5c44d26df1d661a40598e0f232e3f9bed621ac58770628d096033feea4d0bd69"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Moderate",
-  "comment": "Property 'tokenUrl' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/component/OAuthFlows.kt",
-      "language": "kotlin",
-      "line": 28,
-      "offset": 9,
-      "length": 8,
-      "code": {
-        "startLine": 26,
-        "length": 8,
-        "offset": 67,
-        "surroundingCode": "class OAuthFlow {\n    var authorizationUrl: String? = null\n    var tokenUrl: String? = null\n    var scopes: Map<String, String>? = null\n    var refreshUrl: String? = null"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "a516a3edde0bebdb5f9a7a996067c535c280bb4f2cc57c056dffa42f0f1f33db"
-},{
-  "tool": "Code Inspection",
-  "category": "Style issues",
-  "type": "Class member can have 'private' visibility",
-  "severity": "Moderate",
-  "comment": "Property 'scopes' could be private",
-  "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
-  "sources": [
-    {
-      "type": "file",
-      "path": "kotlin-asyncapi-core/src/main/kotlin/org/openfolder/kotlinasyncapi/model/component/OAuthFlows.kt",
-      "language": "kotlin",
-      "line": 29,
-      "offset": 9,
-      "length": 6,
-      "code": {
-        "startLine": 27,
-        "length": 6,
-        "offset": 82,
-        "surroundingCode": "    var authorizationUrl: String? = null\n    var tokenUrl: String? = null\n    var scopes: Map<String, String>? = null\n    var refreshUrl: String? = null\n"
-      }
-    }
-  ],
-  "attributes": {
-    "module": "kotlin-asyncapi-core",
-    "inspectionName": "MemberVisibilityCanBePrivate"
-  },
-  "hash": "fdc448171394285fbf293aa98724af4f5b4c9d3e8dfe6bb63eb22a37730cb9d3"
+  "hash": "c558701e892ea5821f708e0dfc11d6c9910ec922a808681dcaadd702955e6941"
 }]}

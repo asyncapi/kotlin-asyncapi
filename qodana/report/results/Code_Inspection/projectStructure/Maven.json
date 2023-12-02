@@ -1,23 +1,23 @@
 {
   "libraries": [
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:3.0.3-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:3.0.3",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-core",
-      "version": "3.0.3-SNAPSHOT",
-      "baseVersion": "3.0.3-SNAPSHOT",
+      "version": "3.0.3",
+      "baseVersion": "3.0.3",
       "type": "jar",
       "optional": false,
       "scope": "compile"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-script:3.0.3-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-script:3.0.3",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-script",
-      "version": "3.0.3-SNAPSHOT",
-      "baseVersion": "3.0.3-SNAPSHOT",
+      "version": "3.0.3",
+      "baseVersion": "3.0.3",
       "type": "jar",
       "optional": false,
       "scope": "compile"
@@ -45,12 +45,12 @@
       "scope": "compile"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-annotation:3.0.3-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-annotation:3.0.3",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-annotation",
-      "version": "3.0.3-SNAPSHOT",
-      "baseVersion": "3.0.3-SNAPSHOT",
+      "version": "3.0.3",
+      "baseVersion": "3.0.3",
       "type": "jar",
       "optional": false,
       "scope": "compile"
@@ -991,12 +991,12 @@
       "scope": "test"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:3.0.3-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:3.0.3",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-core",
-      "version": "3.0.3-SNAPSHOT",
-      "baseVersion": "3.0.3-SNAPSHOT",
+      "version": "3.0.3",
+      "baseVersion": "3.0.3",
       "type": "jar",
       "optional": false,
       "scope": "compile"
@@ -1277,23 +1277,23 @@
       "scope": "test"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:3.0.3-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:3.0.3",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-core",
-      "version": "3.0.3-SNAPSHOT",
-      "baseVersion": "3.0.3-SNAPSHOT",
+      "version": "3.0.3",
+      "baseVersion": "3.0.3",
       "type": "jar",
       "optional": false,
       "scope": "compile"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-script:3.0.3-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-script:3.0.3",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-script",
-      "version": "3.0.3-SNAPSHOT",
-      "baseVersion": "3.0.3-SNAPSHOT",
+      "version": "3.0.3",
+      "baseVersion": "3.0.3",
       "type": "jar",
       "optional": false,
       "scope": "compile"
@@ -2587,34 +2587,34 @@
       "scope": "test"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-spring-web:3.0.3-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-spring-web:3.0.3",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-spring-web",
-      "version": "3.0.3-SNAPSHOT",
-      "baseVersion": "3.0.3-SNAPSHOT",
+      "version": "3.0.3",
+      "baseVersion": "3.0.3",
       "type": "jar",
       "optional": false,
       "scope": "compile"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:3.0.3-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-core:3.0.3",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-core",
-      "version": "3.0.3-SNAPSHOT",
-      "baseVersion": "3.0.3-SNAPSHOT",
+      "version": "3.0.3",
+      "baseVersion": "3.0.3",
       "type": "jar",
       "optional": false,
       "scope": "compile"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-script:3.0.3-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-script:3.0.3",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-script",
-      "version": "3.0.3-SNAPSHOT",
-      "baseVersion": "3.0.3-SNAPSHOT",
+      "version": "3.0.3",
+      "baseVersion": "3.0.3",
       "type": "jar",
       "optional": false,
       "scope": "compile"
@@ -2653,12 +2653,12 @@
       "scope": "compile"
     },
     {
-      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-annotation:3.0.3-SNAPSHOT",
+      "ideaName": "Maven: org.openfolder:kotlin-asyncapi-annotation:3.0.3",
       "unresolved": false,
       "groupId": "org.openfolder",
       "artifactId": "kotlin-asyncapi-annotation",
-      "version": "3.0.3-SNAPSHOT",
-      "baseVersion": "3.0.3-SNAPSHOT",
+      "version": "3.0.3",
+      "baseVersion": "3.0.3",
       "type": "jar",
       "optional": false,
       "scope": "compile"
