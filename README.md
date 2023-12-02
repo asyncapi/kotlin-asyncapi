@@ -4,9 +4,10 @@
 [![Qodana](https://github.com/OpenFolder/kotlin-asyncapi/actions/workflows/qodana.yml/badge.svg?branch=master)](https://openfolder.github.io/kotlin-asyncapi/qodana/report)
 [![Maven Central status](https://img.shields.io/maven-central/v/org.openfolder/kotlin-asyncapi-parent.svg)](https://search.maven.org/#search%7Cga%7C1%7Corg.openfolder%20kotlin-asyncapi)
 
+> [!NOTE]
+> Spring Framework 6 / Spring Boot 3 is supported since `6.0.14` / `3.1.6`
+
 * [About](#about)
-* [Prerequisites](#prerequisites)
-* [Module Roadmap](#module-roadmap)
 * [Usage](#usage)
     * [Kotlin DSL](#kotlin-dsl-usage)
     * [Spring Web](#spring-web-usage)
@@ -22,26 +23,6 @@ The Kotlin AsyncAPI project aims to provide convenience tools for generating and
 [AsyncAPI](https://www.asyncapi.com/) documentation. The core of this project is a 
 [Kotlin DSL](https://kotlinlang.org/docs/type-safe-builders.html) for building the specification in a typesafe way. 
 The modules around that core build a framework for documenting asynchronous microservice APIs.
-
-## Prerequisites
-The framework generally supports any JVM project. Compatibility has been tested, but is not limited to the following versions:
-
-| Identifier      | Version                     |
-|-----------------|-----------------------------|
-| **JRE**         | `8`, `11`, `17`             |
-| **Kotlin**      | `1.6.21`, `1.7.0`, `1.7.10` |
-| **Spring Boot** | `2.6.0`-`2.7.6`             |
-| **Maven**       | `3.8.4`, `3.8.6`            |
-
-## Module Roadmap
-| Module                  | Description                                                                    | State              |
-|-------------------------|--------------------------------------------------------------------------------|--------------------|
-| **core**                | Kotlin DSL for building AsyncAPI specifications                                | :white_check_mark: |
-| **spring&#x2011;web**   | Spring Boot autoconfiguration for serving the generated document               | :white_check_mark: |
-| **script**              | Kotlin scripting support for configuration as code                             | :white_check_mark: |
-| **maven&#x2011;plugin** | Maven plugin for evaluating AsyncAPI scripts and packaging generated resources | :white_check_mark: |
-| **annotation**          | Technology agnostic annotations for meta-configuration                         | :white_check_mark: |
-| **template**            | Template engine for reusing similar AsyncAPI components                        | :x:                |
 
 ## Usage
 ### <a name="kotlin-dsl-usage"></a>Kotlin DSL
