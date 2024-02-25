@@ -13,6 +13,7 @@
     * [Spring Web](#spring-web-usage)
     * [Annotation](#annotation-usage)
     * [Kotlin Script](#kotlin-script-usage)
+    * [Examples](#examples)
 * [Configuration](#configuration)
     * [Spring Web](#spring-web-configuration)
     * [Maven Plugin](#maven-plugin-configuration)
@@ -187,6 +188,9 @@ The `kotlin-asyncapi-annotation` module defines technology-agnostic annotations 
 You have two options to use Kotlin scripting in your project:
 - [Plugin] let the Maven plugin evaluate the script during build time (recommended)
 - [Embedded] let your Spring Boot application evaluate the script at runtime
+
+### <a name="examples"></a>Examples
+- [Spring Boot Application](kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example)
 
 #### Maven Plugin
 The Maven plugin evaluates your `asyncapi.kts` script, generates a valid AsyncAPI JSON file and adds it to the project resources. The `kotlin-asyncapi-spring-web` module picks the generated resource up and converts it to an `AsyncApiExtension`.
