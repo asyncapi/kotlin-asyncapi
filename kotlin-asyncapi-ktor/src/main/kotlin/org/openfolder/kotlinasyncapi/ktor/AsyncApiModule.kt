@@ -1,5 +1,6 @@
 package org.openfolder.kotlinasyncapi.ktor
 
+import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
@@ -78,8 +79,12 @@ class AsyncApiModule(
         route(configuration.path) {
             get {
                 with(asyncApiSerializer) {
-                    val message = asyncApiService.asyncApi().serialize()
-                    call.respond(message)
+                    val asyncApi = asyncApiService.asyncApi().serialize()
+                    call.respondText(
+                        text = asyncApi,
+                        status = HttpStatusCode.OK,
+                        contentType = ContentType.Application.Json,
+                    )
                 }
             }
         }
