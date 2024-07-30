@@ -1,6 +1,6 @@
 package org.openfolder.kotlinasyncapi.example.spring
 
-import org.openfolder.kotlinasyncapi.springweb.service.AsyncApiExtension
+import org.openfolder.kotlinasyncapi.context.service.AsyncApiExtension
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
