@@ -1,4 +1,4 @@
-package org.openfolder.kotlinasyncapi.springweb
+package org.openfolder.kotlinasyncapi.springweb.annotation
 
 import org.junit.jupiter.api.Test
 import org.openfolder.kotlinasyncapi.annotation.ExternalDocumentation
@@ -16,6 +16,8 @@ import org.openfolder.kotlinasyncapi.annotation.channel.OperationBindings
 import org.openfolder.kotlinasyncapi.annotation.channel.Parameter
 import org.openfolder.kotlinasyncapi.annotation.channel.Subscribe
 import org.openfolder.kotlinasyncapi.context.annotation.AnnotationProvider
+import org.openfolder.kotlinasyncapi.springweb.EnableAsyncApi
+import org.openfolder.kotlinasyncapi.springweb.TestUtils
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringBootConfiguration
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
@@ -31,8 +33,6 @@ internal class AnnotationProviderIntegrationTest {
     fun `should provide annotation components`() {
         val expected = TestUtils.json("annotation_integration.json")
         val actual = TestUtils.json(annotationProvider.asyncApi?.components!!)
-
-        println(actual)
 
         TestUtils.assertJsonEquals(expected, actual)
     }
