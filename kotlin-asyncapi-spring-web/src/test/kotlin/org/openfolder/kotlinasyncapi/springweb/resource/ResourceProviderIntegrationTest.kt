@@ -1,9 +1,10 @@
-package org.openfolder.kotlinasyncapi.springweb
+package org.openfolder.kotlinasyncapi.springweb.resource
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.openfolder.kotlinasyncapi.context.PackageResourceProvider
 import org.openfolder.kotlinasyncapi.model.AsyncApi
+import org.openfolder.kotlinasyncapi.springweb.EnableAsyncApi
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringBootConfiguration
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
