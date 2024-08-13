@@ -1,6 +1,6 @@
 package org.openfolder.kotlinasyncapi.ktor
 
-import io.ktor.server.application.*
+import io.ktor.server.application.createApplicationPlugin
 
 val AsyncApiPlugin = createApplicationPlugin(
     name = "AsyncApiPlugin",

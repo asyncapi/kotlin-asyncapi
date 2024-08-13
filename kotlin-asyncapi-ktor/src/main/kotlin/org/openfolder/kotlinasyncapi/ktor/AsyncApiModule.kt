@@ -1,9 +1,15 @@
 package org.openfolder.kotlinasyncapi.ktor
 
-import io.ktor.http.*
-import io.ktor.server.application.*
-import io.ktor.server.response.*
-import io.ktor.server.routing.*
+import io.ktor.http.ContentType
+import io.ktor.http.HttpStatusCode
+import io.ktor.server.application.Application
+import io.ktor.server.application.ApplicationEnvironment
+import io.ktor.server.application.call
+import io.ktor.server.response.respondText
+import io.ktor.server.routing.get
+import io.ktor.server.routing.route
+import io.ktor.server.routing.routing
+import kotlin.script.experimental.host.toScriptSource
 import org.openfolder.kotlinasyncapi.context.PackageInfoProvider
 import org.openfolder.kotlinasyncapi.context.ResourceProvider
 import org.openfolder.kotlinasyncapi.context.annotation.AnnotationProvider
@@ -16,7 +22,6 @@ import org.openfolder.kotlinasyncapi.context.service.AsyncApiSerializer
 import org.openfolder.kotlinasyncapi.context.service.AsyncApiService
 import org.openfolder.kotlinasyncapi.context.service.DefaultAsyncApiSerializer
 import org.openfolder.kotlinasyncapi.context.service.DefaultAsyncApiService
-import kotlin.script.experimental.host.toScriptSource
 
 class AsyncApiModule(
     environment: ApplicationEnvironment,
