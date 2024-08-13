@@ -2,7 +2,7 @@ package org.openfolder.kotlinasyncapi.springweb.resource
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import org.openfolder.kotlinasyncapi.context.PackageResourceProvider
+import org.openfolder.kotlinasyncapi.context.ResourceProvider
 import org.openfolder.kotlinasyncapi.model.AsyncApi
 import org.openfolder.kotlinasyncapi.springweb.EnableAsyncApi
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,7 +19,7 @@ internal class ResourceProviderIntegrationTest {
 
     @Test
     fun `should provide parsed JSON resource`() {
-        val resourceProvider = PackageResourceProvider(
+        val resourceProvider = ResourceProvider(
             path = "async_api_resource_integration.json"
         )
 

@@ -5,7 +5,7 @@ import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import org.openfolder.kotlinasyncapi.context.PackageInfoProvider
-import org.openfolder.kotlinasyncapi.context.PackageResourceProvider
+import org.openfolder.kotlinasyncapi.context.ResourceProvider
 import org.openfolder.kotlinasyncapi.context.annotation.AnnotationProvider
 import org.openfolder.kotlinasyncapi.context.annotation.DefaultAnnotationScanner
 import org.openfolder.kotlinasyncapi.context.annotation.processor.ChannelProcessor
@@ -16,6 +16,7 @@ import org.openfolder.kotlinasyncapi.context.service.AsyncApiSerializer
 import org.openfolder.kotlinasyncapi.context.service.AsyncApiService
 import org.openfolder.kotlinasyncapi.context.service.DefaultAsyncApiSerializer
 import org.openfolder.kotlinasyncapi.context.service.DefaultAsyncApiService
+import kotlin.script.experimental.host.toScriptSource
 
 class AsyncApiModule(
     environment: ApplicationEnvironment,
@@ -29,7 +30,7 @@ class AsyncApiModule(
         packageInfoProvider.asyncApi?.let { AsyncApiExtension.from(order = -10, it) }
 
     private val packageResourceProvider = with(configuration) {
-        PackageResourceProvider(path = resourcePath)
+        ResourceProvider(path = resourcePath)
     }
 
     private val asyncApiPackageResourceExtension =
@@ -62,6 +63,24 @@ class AsyncApiModule(
     private val asyncApiAnnotationExtension =
         annotationProvider.asyncApi?.let { AsyncApiExtension.from(order = -1, it) }
 
+    private val scriptResourceProvider =
+        runCatching {
+            Class.forName(
+                "kotlin.script.experimental.jvmhost.BasicJvmScriptingHost",
+                false,
+                environment.classLoader
+            )
+        }.getOrNull()?.let {
+            println(it.name)
+            with(configuration) {
+                ResourceProvider(path = sourcePath)
+            }
+        }
+
+    private val asyncApiScriptResourceExtension = scriptResourceProvider?.resource?.let {
+        AsyncApiExtension.from(order = -1, script = it.toScriptSource())
+    }
+
     val asyncApiExtensions = listOfNotNull(
         configuration.extension,
         *configuration.extensions.toTypedArray(),
@@ -69,6 +88,7 @@ class AsyncApiModule(
         asyncApiPackageResourceExtension,
         asyncApiDefaultChannelsExtension,
         asyncApiAnnotationExtension,
+        asyncApiScriptResourceExtension,
     )
 
     val asyncApiService: AsyncApiService = DefaultAsyncApiService(asyncApiExtensions)

@@ -5,7 +5,7 @@ import org.openfolder.kotlinasyncapi.annotation.channel.Channel
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
 import org.openfolder.kotlinasyncapi.context.AsyncApiContextProvider
 import org.openfolder.kotlinasyncapi.context.PackageInfoProvider
-import org.openfolder.kotlinasyncapi.context.PackageResourceProvider
+import org.openfolder.kotlinasyncapi.context.ResourceProvider
 import org.openfolder.kotlinasyncapi.context.annotation.AnnotationProvider
 import org.openfolder.kotlinasyncapi.context.annotation.AnnotationScanner
 import org.openfolder.kotlinasyncapi.context.annotation.DefaultAnnotationScanner
@@ -79,7 +79,7 @@ internal open class AsyncApiScriptAutoConfiguration {
 
     @Bean
     open fun packageResourceProvider(asyncApiProperties: AsyncApiProperties) =
-        PackageResourceProvider(path = asyncApiProperties.script.resourcePath)
+        ResourceProvider(path = asyncApiProperties.script.resourcePath)
 
     @Bean
     open fun asyncApiPackageResourceExtension(packageResourceProvider: AsyncApiContextProvider) =
