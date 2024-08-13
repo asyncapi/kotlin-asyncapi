@@ -71,7 +71,6 @@ class AsyncApiModule(
                 environment.classLoader
             )
         }.getOrNull()?.let {
-            println(it.name)
             with(configuration) {
                 ResourceProvider(path = sourcePath)
             }
