@@ -4,16 +4,20 @@
 [![Qodana](https://github.com/OpenFolder/kotlin-asyncapi/actions/workflows/qodana.yml/badge.svg?branch=master)](https://openfolder.github.io/kotlin-asyncapi/qodana/report)
 [![Maven Central status](https://img.shields.io/maven-central/v/org.openfolder/kotlin-asyncapi-parent.svg)](https://search.maven.org/#search%7Cga%7C1%7Corg.openfolder%20kotlin-asyncapi)
 
+> [!NOTE]
+> Spring Framework 6 / Spring Boot 3 is supported since `6.0.14` / `3.1.6`
+
 * [About](#about)
-* [Prerequisites](#prerequisites)
-* [Module Roadmap](#module-roadmap)
 * [Usage](#usage)
     * [Kotlin DSL](#kotlin-dsl-usage)
     * [Spring Web](#spring-web-usage)
+    * [Ktor](#ktor-usage)
     * [Annotation](#annotation-usage)
     * [Kotlin Script](#kotlin-script-usage)
+    * [Examples](#examples)
 * [Configuration](#configuration)
     * [Spring Web](#spring-web-configuration)
+    * [Ktor](#ktor-configuration)
     * [Maven Plugin](#maven-plugin-configuration)
 * [License](#license)
 
@@ -22,26 +26,6 @@ The Kotlin AsyncAPI project aims to provide convenience tools for generating and
 [AsyncAPI](https://www.asyncapi.com/) documentation. The core of this project is a 
 [Kotlin DSL](https://kotlinlang.org/docs/type-safe-builders.html) for building the specification in a typesafe way. 
 The modules around that core build a framework for documenting asynchronous microservice APIs.
-
-## Prerequisites
-The framework generally supports any JVM project. Compatibility has been tested, but is not limited to the following versions:
-
-| Identifier      | Version                     |
-|-----------------|-----------------------------|
-| **JRE**         | `8`, `11`, `17`             |
-| **Kotlin**      | `1.6.21`, `1.7.0`, `1.7.10` |
-| **Spring Boot** | `2.6.0`-`2.7.6`             |
-| **Maven**       | `3.8.4`, `3.8.6`            |
-
-## Module Roadmap
-| Module                  | Description                                                                    | State              |
-|-------------------------|--------------------------------------------------------------------------------|--------------------|
-| **core**                | Kotlin DSL for building AsyncAPI specifications                                | :white_check_mark: |
-| **spring&#x2011;web**   | Spring Boot autoconfiguration for serving the generated document               | :white_check_mark: |
-| **script**              | Kotlin scripting support for configuration as code                             | :white_check_mark: |
-| **maven&#x2011;plugin** | Maven plugin for evaluating AsyncAPI scripts and packaging generated resources | :white_check_mark: |
-| **annotation**          | Technology agnostic annotations for meta-configuration                         | :white_check_mark: |
-| **template**            | Template engine for reusing similar AsyncAPI components                        | :x:                |
 
 ## Usage
 ### <a name="kotlin-dsl-usage"></a>Kotlin DSL
@@ -187,6 +171,66 @@ data class ChatMessage(
 </dependency>
 ```
 
+### <a name="ktor-usage"></a>Ktor
+To serve your AsyncAPI specification via Ktor:
+- add the `kotlin-asyncapi-ktor` dependency
+- install the `AsyncApiPlugin` in you application
+- document your API with `AsyncApiExtension` and/or Kotlin scripting (see [Kotlin script usage](#kotlin-script-usage))
+- add annotations to auto-generate components (see [annotation usage](#annotation-usage))
+
+You can register multiple extensions to extend and override AsyncAPI components. Extensions with a higher order override extensions with a lower order. Please note that you can only extend top-level components for now (`info`, `channels`, `servers`...). Subcomponents will always be overwritten.
+
+**Example** (simplified version of [Gitter example](https://github.com/asyncapi/spec/blob/22c6f2c7a61846338bfbd43d81024cb12cf4ed5f/examples/gitter-streaming.yml))
+```kotlin
+fun main() {
+    embeddedServer(Netty, port = 8000) {
+        install(AsyncApiPlugin) {
+            extension = AsyncApiExtension.builder(order = 10) {
+                info {
+                    title("Gitter Streaming API")
+                    version("1.0.0")
+                }
+                servers {
+                    // ...
+                }
+                // ...
+            }
+        }
+    }.start(wait = true)
+}
+
+@Channel(
+    value = "/rooms/{roomId}",
+    parameters = [
+        Parameter(
+            value = "roomId",
+            schema = Schema(
+                type = "string",
+                examples = ["53307860c3599d1de448e19d"]
+            )
+        )
+    ]
+)
+class RoomsChannel {
+
+    @Subscribe(message = Message(ChatMessage::class))
+    fun publish(/*...*/) { /*...*/ }
+}
+
+@Message
+data class ChatMessage(
+    val id: String,
+    val text: String
+)
+```
+```xml
+<dependency>
+  <groupId>org.openfolder</groupId>
+  <artifactId>kotlin-asyncapi-ktor</artifactId>
+  <version>${kotlin-asyncapi.version}</version>
+</dependency>
+```
+
 ### <a name="annotation-usage"></a>Annotation
 The `kotlin-asyncapi-annotation` module defines technology-agnostic annotations that can be used to document event-driven microservice APIs. 
 
@@ -206,6 +250,10 @@ The `kotlin-asyncapi-annotation` module defines technology-agnostic annotations 
 You have two options to use Kotlin scripting in your project:
 - [Plugin] let the Maven plugin evaluate the script during build time (recommended)
 - [Embedded] let your Spring Boot application evaluate the script at runtime
+
+### <a name="examples"></a>Examples
+- [Spring Boot Application](kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example)
+- [Ktor Application](kotlin-asyncapi-examples/kotlin-asyncapi-ktor-example)
 
 #### Maven Plugin
 The Maven plugin evaluates your `asyncapi.kts` script, generates a valid AsyncAPI JSON file and adds it to the project resources. The `kotlin-asyncapi-spring-web` module picks the generated resource up and converts it to an `AsyncApiExtension`.
@@ -276,14 +324,28 @@ In order to enable embedded scripting, you need to make some additional configur
 ### <a name="spring-web-configuration"></a>Spring Web
 You can configure the Spring Web integration in the application properties:
 
-| Property                        | Description                                                   | Default                                      |
-|---------------------------------|---------------------------------------------------------------|----------------------------------------------|
-| `asyncapi.enabled`              | Enables the autoconfiguration                                 | `true`                                       |
-| `asyncapi.path`                 | The resource path for serving the generated AsyncAPI document | `/docs/asyncapi`                             |
-| `asyncapi.annotation.enabled`   | Enables the annotation scanning and processing                | `true`                                       |
-| `asyncapi.script.enabled`       | Enables the Kotlin script support                             | `true`                                       |
-| `asyncapi.script.resource-path` | Path to the generated script resource file                    | `classpath:asyncapi/generated/asyncapi.json` |
-| `asyncapi.script.source-path`   | Path to the AsyncAPI Kotlin script file                       | `classpath:build.asyncapi.kts`               |
+| Property                        | Description                                                   | Default                            |
+|---------------------------------|---------------------------------------------------------------|------------------------------------|
+| `asyncapi.enabled`              | Enables the autoconfiguration                                 | `true`                             |
+| `asyncapi.path`                 | The resource path for serving the generated AsyncAPI document | `/docs/asyncapi`                   |
+| `asyncapi.annotation.enabled`   | Enables the annotation scanning and processing                | `true`                             |
+| `asyncapi.script.enabled`       | Enables the Kotlin script support                             | `true`                             |
+| `asyncapi.script.resource-path` | Path to the generated script resource file                    | `asyncapi/generated/asyncapi.json` |
+| `asyncapi.script.source-path`   | Path to the AsyncAPI Kotlin script file                       | `build.asyncapi.kts`               |
+
+### <a name="ktor-configuration"></a>Ktor
+You can configure the Ktor integration in the plugin configuration:
+
+| Property          | Description                                                   | Default                            |
+|-------------------|---------------------------------------------------------------|------------------------------------|
+| `path`            | The resource path for serving the generated AsyncAPI document | `/docs/asyncapi`                   |
+| `baseClass`       | The base class to filter code scanning packages               | `null`                             |
+| `scanAnnotations` | Enables class path scanning for annotations                   | `true`                             |
+| `extension`       | AsyncApiExtension hook                                        | `AsyncApiExtension.empty()`        |
+| `extensions`      | For registering multiple AsyncApiExtension hooks              | `emptyList()`                      |
+| `resourcePath`    | Path to the generated script resource file                    | `asyncapi/generated/asyncapi.json` |
+| `sourcePath`      | Path to the AsyncAPI Kotlin script file                       | `build.asyncapi.kts`               |
+
 
 ### <a name="maven-plugin-configuration"></a>Maven Plugin
 You can configure the plugin in the plugin configuration:
