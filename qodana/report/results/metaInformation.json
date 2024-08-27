@@ -8,12 +8,12 @@
     "vcs": {
       "sarifIdea": {
         "repositoryUri": "https://github.com/OpenFolder/kotlin-asyncapi",
-        "revisionId": "a3dc05810ff7eaa8e8265b21225105c6ddd3e431",
+        "revisionId": "703c7f50e1b96fbb27a7e05f5a3cba741131bb75",
         "branch": "master"
       }
     },
+    "repoUrl": "https://github.com/OpenFolder/kotlin-asyncapi",
     "deviceId": "200820300000000-6c78-f715-3e70-2f0f4b680a20",
-    "jobUrl": "",
-    "repoUrl": "https://github.com/OpenFolder/kotlin-asyncapi"
+    "jobUrl": ""
   }
 }
