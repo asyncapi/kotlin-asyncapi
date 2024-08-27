@@ -11,6 +11,6 @@ internal data class AsyncApiProperties(
 
 internal data class AsyncApiScriptProperties(
     val enabled: Boolean = true,
-    val resourcePath: String = "classpath:asyncapi/generated/asyncapi.json",
-    val sourcePath: String = "classpath:build.asyncapi.kts"
+    val resourcePath: String = "asyncapi/generated/asyncapi.json",
+    val sourcePath: String = "build.asyncapi.kts"
 )

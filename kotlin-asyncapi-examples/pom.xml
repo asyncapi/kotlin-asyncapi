@@ -17,5 +17,6 @@
 
 	<modules>
 		<module>kotlin-asyncapi-spring-boot-example</module>
+		<module>kotlin-asyncapi-ktor-example</module>
 	</modules>
 </project>

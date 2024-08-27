@@ -41,10 +41,12 @@
     <modules>
         <module>kotlin-asyncapi-core</module>
         <module>kotlin-asyncapi-spring-web</module>
+        <module>kotlin-asyncapi-ktor</module>
         <module>kotlin-asyncapi-script</module>
         <module>kotlin-asyncapi-maven-plugin</module>
         <module>kotlin-asyncapi-annotation</module>
         <module>kotlin-asyncapi-examples</module>
+        <module>kotlin-asyncapi-context</module>
     </modules>
 
     <properties>
@@ -236,6 +238,11 @@
             </dependency>
             <dependency>
                 <groupId>org.openfolder</groupId>
+                <artifactId>kotlin-asyncapi-ktor</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openfolder</groupId>
                 <artifactId>kotlin-asyncapi-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -247,6 +254,11 @@
             <dependency>
                 <groupId>org.openfolder</groupId>
                 <artifactId>kotlin-asyncapi-annotation</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openfolder</groupId>
+                <artifactId>kotlin-asyncapi-context</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

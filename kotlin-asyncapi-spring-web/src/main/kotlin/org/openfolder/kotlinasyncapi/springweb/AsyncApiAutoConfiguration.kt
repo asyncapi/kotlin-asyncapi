@@ -1,24 +1,26 @@
 package org.openfolder.kotlinasyncapi.springweb
 
+import kotlin.reflect.KClass
+import kotlin.script.experimental.host.toScriptSource
+import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.annotation.channel.Channel
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
-import org.openfolder.kotlinasyncapi.springweb.context.AnnotationProvider
-import org.openfolder.kotlinasyncapi.springweb.context.AsyncApiContextProvider
-import org.openfolder.kotlinasyncapi.springweb.context.PackageInfoProvider
-import org.openfolder.kotlinasyncapi.springweb.context.PackageResourceProvider
-import org.openfolder.kotlinasyncapi.springweb.context.annotation.AnnotationScanner
-import org.openfolder.kotlinasyncapi.springweb.context.annotation.DefaultAnnotationScanner
-import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.AnnotationProcessor
-import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.ChannelProcessor
-import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.MessageProcessor
-import org.openfolder.kotlinasyncapi.springweb.context.annotation.processor.SchemaProcessor
-import org.openfolder.kotlinasyncapi.springweb.controller.AsyncApiController
-import org.openfolder.kotlinasyncapi.springweb.service.AsyncApiExtension
-import org.openfolder.kotlinasyncapi.springweb.service.AsyncApiSerializer
-import org.openfolder.kotlinasyncapi.springweb.service.AsyncApiService
-import org.openfolder.kotlinasyncapi.springweb.service.DefaultAsyncApiSerializer
-import org.openfolder.kotlinasyncapi.springweb.service.DefaultAsyncApiService
+import org.openfolder.kotlinasyncapi.context.AsyncApiContextProvider
+import org.openfolder.kotlinasyncapi.context.PackageInfoProvider
+import org.openfolder.kotlinasyncapi.context.ResourceProvider
+import org.openfolder.kotlinasyncapi.context.annotation.AnnotationProvider
+import org.openfolder.kotlinasyncapi.context.annotation.AnnotationScanner
+import org.openfolder.kotlinasyncapi.context.annotation.DefaultAnnotationScanner
+import org.openfolder.kotlinasyncapi.context.annotation.processor.AnnotationProcessor
+import org.openfolder.kotlinasyncapi.context.annotation.processor.ChannelProcessor
+import org.openfolder.kotlinasyncapi.context.annotation.processor.MessageProcessor
+import org.openfolder.kotlinasyncapi.context.annotation.processor.SchemaProcessor
+import org.openfolder.kotlinasyncapi.context.service.AsyncApiExtension
+import org.openfolder.kotlinasyncapi.context.service.AsyncApiSerializer
+import org.openfolder.kotlinasyncapi.context.service.AsyncApiService
+import org.openfolder.kotlinasyncapi.context.service.DefaultAsyncApiSerializer
+import org.openfolder.kotlinasyncapi.context.service.DefaultAsyncApiService
 import org.springframework.boot.autoconfigure.AutoConfiguration
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass
@@ -29,9 +31,6 @@ import org.springframework.context.ApplicationContext
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Import
-import kotlin.reflect.KClass
-import kotlin.script.experimental.host.toScriptSource
-import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 
 @AutoConfiguration
 @ConditionalOnBean(AsyncApiMarkerConfiguration.Marker::class)
@@ -45,7 +44,9 @@ internal open class AsyncApiAutoConfiguration {
 
     @Bean
     open fun packageInfoProvider(context: ApplicationContext) =
-        PackageInfoProvider(context)
+        packageFromContext(context)?.let {
+            PackageInfoProvider(applicationPackage = it)
+        }
 
     @Bean
     @ConfigurationProperties(prefix = "asyncapi", ignoreUnknownFields = false)
@@ -54,11 +55,11 @@ internal open class AsyncApiAutoConfiguration {
 
     @Bean
     open fun asyncApiPackageInfoExtension(packageInfoProvider: AsyncApiContextProvider) =
-        packageInfoProvider.asyncApi?.let { AsyncApiExtension.from(order = -10, it) }
+        packageInfoProvider.asyncApi?.let { AsyncApiExtension.from(order = -100, it) }
 
     @Bean
     open fun asyncApiDefaultChannelsExtension() =
-        AsyncApiExtension.builder(order = -10) {
+        AsyncApiExtension.builder(order = -100) {
             channels { }
         }
 
@@ -77,12 +78,12 @@ internal open class AsyncApiAutoConfiguration {
 internal open class AsyncApiScriptAutoConfiguration {
 
     @Bean
-    open fun packageResourceProvider(context: ApplicationContext, asyncApiProperties: AsyncApiProperties) =
-        PackageResourceProvider(context, asyncApiProperties.script.resourcePath)
+    open fun packageResourceProvider(asyncApiProperties: AsyncApiProperties) =
+        ResourceProvider(path = asyncApiProperties.script.resourcePath)
 
     @Bean
     open fun asyncApiPackageResourceExtension(packageResourceProvider: AsyncApiContextProvider) =
-        packageResourceProvider.asyncApi?.let { AsyncApiExtension.from(resource = it) }
+        packageResourceProvider.asyncApi?.let { AsyncApiExtension.from(order = -10, resource = it) }
 }
 
 @Configuration
@@ -112,11 +113,19 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         messageProcessor: AnnotationProcessor<Message, KClass<*>>,
         schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
         channelProcessor: AnnotationProcessor<Channel, KClass<*>>
-    ) = AnnotationProvider(context, scanner, messageProcessor, schemaProcessor, channelProcessor)
+    ) = packageFromContext(context)?.let {
+        AnnotationProvider(
+            applicationPackage = it,
+            scanner = scanner,
+            messageProcessor = messageProcessor,
+            schemaProcessor = schemaProcessor,
+            channelProcessor = channelProcessor,
+        )
+    }
 
     @Bean
-    open fun asyncApiAnnotationExtension(annotationProvider: AsyncApiContextProvider) =
-        annotationProvider.asyncApi?.let { AsyncApiExtension.from(order = -1, it) }
+    open fun asyncApiAnnotationExtension(annotationProvider: AsyncApiContextProvider?) =
+        annotationProvider?.asyncApi?.let { AsyncApiExtension.from(order = -1, it) }
 }
 
 @Configuration
@@ -143,3 +152,9 @@ internal open class AsyncApiMarkerConfiguration {
 
     class Marker
 }
+
+private fun packageFromContext(context: ApplicationContext) =
+    context.getBeansWithAnnotation(EnableAsyncApi::class.java)
+        .values
+        .firstOrNull()
+        ?.let { it::class.java.`package` }

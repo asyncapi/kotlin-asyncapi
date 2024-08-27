@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test
 import org.openfolder.kotlinasyncapi.annotation.channel.Channel
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
 import org.openfolder.kotlinasyncapi.annotation.channel.Publish
+import org.openfolder.kotlinasyncapi.context.service.AsyncApiExtension
 import org.openfolder.kotlinasyncapi.springweb.EnableAsyncApi
 import org.openfolder.kotlinasyncapi.springweb.TestUtils
-import org.openfolder.kotlinasyncapi.springweb.service.AsyncApiExtension
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringBootConfiguration
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration

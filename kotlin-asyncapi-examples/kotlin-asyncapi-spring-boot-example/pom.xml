@@ -19,6 +19,7 @@
 		<java.version>17</java.version>
 		<kotlin.version>1.9.10</kotlin.version>
 		<spring-boot.version>3.2.0</spring-boot.version>
+		<main.class>org.openfolder.kotlinasyncapi.example.spring.ExampleApplicationKt</main.class>
 	</properties>
 
 	<dependencyManagement>
@@ -71,6 +72,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>${spring-boot.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>${main.class}</mainClass>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.jetbrains.kotlin</groupId>
@@ -91,6 +102,18 @@
 						<version>${kotlin.version}</version>
 					</dependency>
 				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.openfolder</groupId>
+				<artifactId>kotlin-asyncapi-maven-plugin</artifactId>
+				<version>${version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generateResources</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
