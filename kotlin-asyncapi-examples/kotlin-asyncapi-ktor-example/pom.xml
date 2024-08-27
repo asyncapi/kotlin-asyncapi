@@ -136,6 +136,18 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.openfolder</groupId>
+                <artifactId>kotlin-asyncapi-maven-plugin</artifactId>
+                <version>${version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generateResources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>

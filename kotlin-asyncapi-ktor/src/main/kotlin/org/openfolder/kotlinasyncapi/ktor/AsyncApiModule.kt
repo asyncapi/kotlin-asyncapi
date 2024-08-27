@@ -32,17 +32,17 @@ class AsyncApiModule(
     }
 
     private val asyncApiPackageInfoExtension =
-        packageInfoProvider.asyncApi?.let { AsyncApiExtension.from(order = -10, it) }
+        packageInfoProvider.asyncApi?.let { AsyncApiExtension.from(order = -100, it) }
 
     private val packageResourceProvider = with(configuration) {
         ResourceProvider(path = resourcePath)
     }
 
     private val asyncApiPackageResourceExtension =
-        packageResourceProvider.asyncApi?.let { AsyncApiExtension.from(resource = it) }
+        packageResourceProvider.asyncApi?.let { AsyncApiExtension.from(order = -10, resource = it) }
 
     private val asyncApiDefaultChannelsExtension =
-        AsyncApiExtension.builder(order = -10) {
+        AsyncApiExtension.builder(order = -100) {
             channels { }
         }
 

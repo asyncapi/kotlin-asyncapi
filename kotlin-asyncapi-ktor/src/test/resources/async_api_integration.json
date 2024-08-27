@@ -1,0 +1,106 @@
+{
+  "asyncapi" : "2.4.0",
+  "info" : {
+    "title" : "Gitter Streaming API",
+    "version" : "1.0.0",
+    "description" : "Gitter Streaming API Final Description"
+  },
+  "id" : "urn:com:gitter:streaming:api",
+  "servers" : {
+    "production" : {
+      "url" : "https://stream.gitter.im/v1",
+      "protocol" : "https",
+      "protocolVersion" : "1.1",
+      "security" : [ {
+        "httpBearerToken" : [ ]
+      } ]
+    }
+  },
+  "channels" : {
+    "/rooms/{roomId}" : {
+      "subscribe" : {
+        "bindings" : {
+          "http" : {
+            "type" : "response"
+          }
+        },
+        "message" : {
+          "oneOf" : [ {
+            "$ref" : "#/components/messages/chatMessage"
+          }, {
+            "$ref" : "#/components/messages/heartbeat"
+          } ]
+        }
+      },
+      "parameters" : {
+        "roomId" : {
+          "description" : "Id of the Gitter room.",
+          "schema" : {
+            "examples" : [ "53307860c3599d1de448e19d" ],
+            "type" : "string"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "messages" : {
+      "chatMessage" : {
+        "payload" : {
+          "type" : "object",
+          "properties" : {
+            "id" : {
+              "description" : "ID of the message.",
+              "type" : "string"
+            },
+            "text" : {
+              "description" : "Original message in plain-text/markdown.",
+              "type" : "string"
+            }
+          }
+        },
+        "schemaFormat" : "application/schema+yaml;version=draft-07",
+        "summary" : "A message represents an individual chat message sent to a room.",
+        "bindings" : {
+          "$ref" : "#/components/messageBindings/streamingHeaders"
+        }
+      },
+      "heartbeat" : {
+        "payload" : {
+          "type" : "string",
+          "enum" : [ "\r\n" ]
+        },
+        "schemaFormat" : "application/schema+yaml;version=draft-07",
+        "summary" : "Its purpose is to keep the connection alive.",
+        "bindings" : {
+          "$ref" : "#/components/messageBindings/streamingHeaders"
+        }
+      }
+    },
+    "securitySchemes" : {
+      "httpBearerToken" : {
+        "type" : "http",
+        "scheme" : "bearer"
+      }
+    },
+    "messageBindings" : {
+      "streamingHeaders" : {
+        "http" : {
+          "headers" : {
+            "type" : "object",
+            "properties" : {
+              "Transfer-Encoding" : {
+                "type" : "string",
+                "enum" : [ "chunked" ]
+              },
+              "Trailer" : {
+                "type" : "string",
+                "enum" : [ "\\r\\n" ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

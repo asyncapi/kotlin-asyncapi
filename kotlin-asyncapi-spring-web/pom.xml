@@ -17,10 +17,6 @@
     <dependencies>
         <dependency>
             <groupId>org.openfolder</groupId>
-            <artifactId>kotlin-asyncapi-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.openfolder</groupId>
             <artifactId>kotlin-asyncapi-context</artifactId>
         </dependency>
         <dependency>

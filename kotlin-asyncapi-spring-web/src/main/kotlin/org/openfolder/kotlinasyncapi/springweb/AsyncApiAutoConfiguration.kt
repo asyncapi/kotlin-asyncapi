@@ -1,5 +1,8 @@
 package org.openfolder.kotlinasyncapi.springweb
 
+import kotlin.reflect.KClass
+import kotlin.script.experimental.host.toScriptSource
+import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.annotation.channel.Channel
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
@@ -28,9 +31,6 @@ import org.springframework.context.ApplicationContext
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Import
-import kotlin.reflect.KClass
-import kotlin.script.experimental.host.toScriptSource
-import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
 
 @AutoConfiguration
 @ConditionalOnBean(AsyncApiMarkerConfiguration.Marker::class)
@@ -55,11 +55,11 @@ internal open class AsyncApiAutoConfiguration {
 
     @Bean
     open fun asyncApiPackageInfoExtension(packageInfoProvider: AsyncApiContextProvider) =
-        packageInfoProvider.asyncApi?.let { AsyncApiExtension.from(order = -10, it) }
+        packageInfoProvider.asyncApi?.let { AsyncApiExtension.from(order = -100, it) }
 
     @Bean
     open fun asyncApiDefaultChannelsExtension() =
-        AsyncApiExtension.builder(order = -10) {
+        AsyncApiExtension.builder(order = -100) {
             channels { }
         }
 
@@ -83,7 +83,7 @@ internal open class AsyncApiScriptAutoConfiguration {
 
     @Bean
     open fun asyncApiPackageResourceExtension(packageResourceProvider: AsyncApiContextProvider) =
-        packageResourceProvider.asyncApi?.let { AsyncApiExtension.from(resource = it) }
+        packageResourceProvider.asyncApi?.let { AsyncApiExtension.from(order = -10, resource = it) }
 }
 
 @Configuration
