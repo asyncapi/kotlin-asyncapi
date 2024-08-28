@@ -2,7 +2,7 @@
 [![Apache License 2](https://img.shields.io/badge/license-ASF2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 [![Build status](https://github.com/OpenFolder/kotlin-asyncapi/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/OpenFolder/kotlin-asyncapi/actions/workflows/build.yml)
 [![Qodana](https://github.com/OpenFolder/kotlin-asyncapi/actions/workflows/qodana.yml/badge.svg?branch=master)](https://openfolder.github.io/kotlin-asyncapi/qodana/report)
-[![Maven Central status](https://img.shields.io/maven-central/v/org.openfolder/kotlin-asyncapi-parent.svg)](https://search.maven.org/#search%7Cga%7C1%7Corg.openfolder%20kotlin-asyncapi)
+[![Maven Central status](https://img.shields.io/maven-central/v/com.asyncapi/kotlin-asyncapi-parent.svg)](https://search.maven.org/#search%7Cga%7C1%7Ccom.asyncapi%20kotlin-asyncapi)
 
 > [!NOTE]
 > Spring Framework 6 / Spring Boot 3 is supported since `6.0.14` / `3.1.6`
@@ -165,7 +165,7 @@ data class ChatMessage(
 ```
 ```xml
 <dependency>
-  <groupId>org.openfolder</groupId>
+  <groupId>com.asyncapi</groupId>
   <artifactId>kotlin-asyncapi-spring-web</artifactId>
   <version>${kotlin-asyncapi.version}</version>
 </dependency>
@@ -225,7 +225,7 @@ data class ChatMessage(
 ```
 ```xml
 <dependency>
-  <groupId>org.openfolder</groupId>
+  <groupId>com.asyncapi</groupId>
   <artifactId>kotlin-asyncapi-ktor</artifactId>
   <version>${kotlin-asyncapi.version}</version>
 </dependency>
@@ -275,7 +275,7 @@ servers {
 ```
 ```xml
 <plugin>
-  <groupId>org.openfolder</groupId>
+  <groupId>com.asyncapi</groupId>
   <artifactId>kotlin-asyncapi-maven-plugin</artifactId>
   <version>${kotlin-asyncapi.version}</version>
   <executions>
