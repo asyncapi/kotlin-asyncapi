@@ -9,7 +9,7 @@
 
     <name>Kotlin AsyncAPI Parent POM</name>
     <description>Parent POM for the Kotlin AsyncAPI framework</description>
-    <url>https://github.com/openfolder/kotlin-asyncapi</url>
+    <url>https://github.com/asyncapi/kotlin-asyncapi</url>
 
     <organization>
         <name>AsyncAPI Initiative</name>

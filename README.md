@@ -1,7 +1,7 @@
 ![Logo](.github/assets/kotlin_asyncapi_logo.png)
 [![Apache License 2](https://img.shields.io/badge/license-ASF2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
-[![Build status](https://github.com/OpenFolder/kotlin-asyncapi/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/OpenFolder/kotlin-asyncapi/actions/workflows/build.yml)
-[![Qodana](https://github.com/OpenFolder/kotlin-asyncapi/actions/workflows/qodana.yml/badge.svg?branch=master)](https://openfolder.github.io/kotlin-asyncapi/qodana/report)
+[![Build status](https://github.com/asyncapi/kotlin-asyncapi/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/asyncapi/kotlin-asyncapi/actions/workflows/build.yml)
+[![Qodana](https://github.com/asyncapi/kotlin-asyncapi/actions/workflows/qodana.yml/badge.svg?branch=master)](https://asyncapi.github.io/kotlin-asyncapi/qodana/report)
 [![Maven Central status](https://img.shields.io/maven-central/v/com.asyncapi/kotlin-asyncapi-parent.svg)](https://search.maven.org/#search%7Cga%7C1%7Ccom.asyncapi%20kotlin-asyncapi)
 
 > [!NOTE]
