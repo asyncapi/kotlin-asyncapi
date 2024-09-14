@@ -1,19 +1,21 @@
 {
+  "version": "1.0",
   "total": 0,
   "tools inspection": {
     "Code Inspection": 0
   },
   "linter": "QDJVMC",
   "attributes": {
+    "deviceId": "200820300000000-199c-c7f7-efe0-98f5c461790c",
+    "jobUrl": "",
     "vcs": {
       "sarifIdea": {
-        "repositoryUri": "https://github.com/OpenFolder/kotlin-asyncapi",
-        "revisionId": "703c7f50e1b96fbb27a7e05f5a3cba741131bb75",
+        "repositoryUri": "https://github.com/asyncapi/kotlin-asyncapi",
+        "revisionId": "a8658f2546fdd2fdc9ad7209dd26cabbeb6d84ba",
         "branch": "master"
       }
     },
-    "repoUrl": "https://github.com/OpenFolder/kotlin-asyncapi",
-    "deviceId": "200820300000000-6c78-f715-3e70-2f0f4b680a20",
-    "jobUrl": ""
-  }
+    "repoUrl": "https://github.com/asyncapi/kotlin-asyncapi"
+  },
+  "linterVersion": "242.22941"
 }
