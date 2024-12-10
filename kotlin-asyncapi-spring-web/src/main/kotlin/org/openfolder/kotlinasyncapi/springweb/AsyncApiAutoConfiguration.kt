@@ -13,9 +13,9 @@ import org.openfolder.kotlinasyncapi.context.annotation.AnnotationProvider
 import org.openfolder.kotlinasyncapi.context.annotation.AnnotationScanner
 import org.openfolder.kotlinasyncapi.context.annotation.DefaultAnnotationScanner
 import org.openfolder.kotlinasyncapi.context.annotation.processor.AnnotationProcessor
-import org.openfolder.kotlinasyncapi.context.annotation.processor.ChannelProcessor
 import org.openfolder.kotlinasyncapi.context.annotation.processor.MessageProcessor
 import org.openfolder.kotlinasyncapi.context.annotation.processor.SchemaProcessor
+import org.openfolder.kotlinasyncapi.context.annotation.processor.ChannelProcessor
 import org.openfolder.kotlinasyncapi.context.service.AsyncApiExtension
 import org.openfolder.kotlinasyncapi.context.service.AsyncApiSerializer
 import org.openfolder.kotlinasyncapi.context.service.AsyncApiService
@@ -112,7 +112,7 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         scanner: AnnotationScanner,
         messageProcessor: AnnotationProcessor<Message, KClass<*>>,
         schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
-        channelProcessor: AnnotationProcessor<Channel, KClass<*>>
+        channelProcessor: AnnotationProcessor<Channel, Any>
     ) = packageFromContext(context)?.let {
         AnnotationProvider(
             applicationPackage = it,

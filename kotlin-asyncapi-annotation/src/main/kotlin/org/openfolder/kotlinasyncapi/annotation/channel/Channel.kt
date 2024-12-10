@@ -4,7 +4,8 @@ import org.openfolder.kotlinasyncapi.annotation.AsyncApiAnnotation
 
 @Target(
     AnnotationTarget.CLASS,
-    AnnotationTarget.ANNOTATION_CLASS
+    AnnotationTarget.ANNOTATION_CLASS,
+    AnnotationTarget.FUNCTION
 )
 @AsyncApiAnnotation
 annotation class Channel(
