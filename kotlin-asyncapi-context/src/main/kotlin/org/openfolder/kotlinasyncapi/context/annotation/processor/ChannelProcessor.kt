@@ -5,22 +5,38 @@ import org.openfolder.kotlinasyncapi.annotation.channel.Publish
 import org.openfolder.kotlinasyncapi.annotation.channel.Subscribe
 import org.openfolder.kotlinasyncapi.model.component.Components
 import kotlin.reflect.KClass
+import kotlin.reflect.KFunction
 import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.functions
 import kotlin.reflect.full.hasAnnotation
 
-class ChannelProcessor : AnnotationProcessor<Channel, KClass<*>> {
-    override fun process(annotation: Channel, context: KClass<*>): Components {
+class ChannelProcessor : AnnotationProcessor<Channel, Any> {
+    override fun process(annotation: Channel, context: Any): Components {
         return Components().apply {
             channels {
-                annotation.toChannel()
-                    .apply {
-                        subscribe = subscribe ?: context.findSubscribeOperation()?.toOperation()
-                        publish = publish ?: context.findPublishOperation()?.toOperation()
+                when (context) {
+                    is KClass<*> -> {
+                        annotation.toChannel()
+                            .apply {
+                                subscribe = subscribe ?: context.findSubscribeOperation()?.toOperation()
+                                publish = publish ?: context.findPublishOperation()?.toOperation()
+                            }
+                            .also {
+                                put(context.java.simpleName, it)
+                            }
                     }
-                    .also {
-                        put(context.java.simpleName, it)
+                    is KFunction<*> -> {
+                        annotation.toChannel()
+                            .apply {
+                                subscribe = subscribe ?: context.findAnnotation<Subscribe>()?.toOperation()
+                                publish = publish ?: context.findAnnotation<Publish>()?.toOperation()
+                            }
+                            .also {
+                                put(context.name, it)
+                            }
                     }
+                    else -> throw IllegalArgumentException("Unsupported context type: ${context::class}")
+                }
             }
         }
     }

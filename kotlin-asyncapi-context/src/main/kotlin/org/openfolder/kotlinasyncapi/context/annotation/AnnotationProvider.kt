@@ -24,6 +24,7 @@ import org.openfolder.kotlinasyncapi.model.server.ReferencableServerVariablesMap
 import org.openfolder.kotlinasyncapi.model.server.ReferencableServersMap
 import kotlin.reflect.KClass
 import kotlin.reflect.full.findAnnotation
+import kotlin.reflect.full.functions
 
 class AnnotationProvider(
     private val applicationPackage: Package? = null,
@@ -31,7 +32,7 @@ class AnnotationProvider(
     private val scanner: AnnotationScanner,
     private val messageProcessor: AnnotationProcessor<Message, KClass<*>>,
     private val schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
-    private val channelProcessor: AnnotationProcessor<Channel, KClass<*>>
+    private val channelProcessor: AnnotationProcessor<Channel, Any>
 ) : AsyncApiContextProvider {
 
     private val componentToChannelMapping = mutableMapOf<String, String>()
@@ -67,19 +68,31 @@ class AnnotationProvider(
 
         annotatedClasses
             .flatMap { clazz ->
-                listOfNotNull(
+                val classAnnotations = listOfNotNull(
                     clazz.findAnnotation<Message>()?.let { clazz to it },
                     clazz.findAnnotation<Schema>()?.let { clazz to it },
                     clazz.findAnnotation<Channel>()?.let { clazz to it }
                 )
+
+                val functionAnnotations = clazz.functions.flatMap { function ->
+                    listOfNotNull(
+                        function.findAnnotation<Message>()?.let { function to it },
+                        function.findAnnotation<Schema>()?.let { function to it },
+                        function.findAnnotation<Channel>()?.let { function to it }
+                    )
+                }
+
+                classAnnotations + functionAnnotations
             }
-            .mapNotNull { (clazz, annotation) ->
+            .mapNotNull { (element, annotation) ->
                 when (annotation) {
-                    is Message -> messageProcessor.process(annotation, clazz)
-                    is Schema -> schemaProcessor.process(annotation, clazz)
-                    is Channel -> channelProcessor.process(annotation, clazz).also {
-                        componentToChannelMapping[clazz.java.simpleName] =
-                            annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
+                    is Message -> if (element is KClass<*>)  messageProcessor.process(annotation, element) else null
+                    is Schema -> if (element is KClass<*>) schemaProcessor.process(annotation, element) else null
+                    is Channel -> channelProcessor.process(annotation, element).also {
+                        if (element is KClass<*>) {
+                            componentToChannelMapping[element.java.simpleName] =
+                                annotation.value.takeIf { it.isNotEmpty() } ?: element.java.simpleName
+                        }
                     }
                     else -> null
                 }
