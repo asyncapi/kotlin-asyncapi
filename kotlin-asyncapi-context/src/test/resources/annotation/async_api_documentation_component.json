@@ -1,6 +1,6 @@
 {
   "channels" : {
-    "TestChannelFunction" : {
+    "testSubscribe" : {
       "description" : "testDescription",
       "servers" : [ "dev" ],
       "subscribe" : {

@@ -1,5 +1,6 @@
 package org.openfolder.kotlinasyncapi.springweb
 
+import org.openfolder.kotlinasyncapi.annotation.AsyncApiDocumentation
 import kotlin.reflect.KClass
 import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
@@ -13,6 +14,7 @@ import org.openfolder.kotlinasyncapi.context.annotation.AnnotationProvider
 import org.openfolder.kotlinasyncapi.context.annotation.AnnotationScanner
 import org.openfolder.kotlinasyncapi.context.annotation.DefaultAnnotationScanner
 import org.openfolder.kotlinasyncapi.context.annotation.processor.AnnotationProcessor
+import org.openfolder.kotlinasyncapi.context.annotation.processor.AsyncApiDocumentationProcessor
 import org.openfolder.kotlinasyncapi.context.annotation.processor.MessageProcessor
 import org.openfolder.kotlinasyncapi.context.annotation.processor.SchemaProcessor
 import org.openfolder.kotlinasyncapi.context.annotation.processor.ChannelProcessor
@@ -103,6 +105,10 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         ChannelProcessor()
 
     @Bean
+    open fun asyncApiDocumentationProcessor() =
+        AsyncApiDocumentationProcessor()
+
+    @Bean
     open fun annotationScanner() =
         DefaultAnnotationScanner()
 
@@ -112,14 +118,16 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         scanner: AnnotationScanner,
         messageProcessor: AnnotationProcessor<Message, KClass<*>>,
         schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
-        channelProcessor: AnnotationProcessor<Channel, Any>
+        channelClassProcessor: AnnotationProcessor<Channel, KClass<*>>,
+        asyncApiDocumentationProcessor: AnnotationProcessor<AsyncApiDocumentation, KClass<*>>
     ) = packageFromContext(context)?.let {
         AnnotationProvider(
             applicationPackage = it,
             scanner = scanner,
             messageProcessor = messageProcessor,
             schemaProcessor = schemaProcessor,
-            channelProcessor = channelProcessor,
+            channelProcessor = channelClassProcessor,
+            asyncApiDocumentationProcessor = asyncApiDocumentationProcessor,
         )
     }
 
