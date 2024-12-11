@@ -83,7 +83,10 @@ class AnnotationProvider(
                         componentToChannelMapping[clazz.java.simpleName] =
                             annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
                     }
-                    is AsyncApiComponent -> asyncApiComponentProcessor.process(annotation, clazz)
+                    is AsyncApiComponent -> asyncApiComponentProcessor.process(annotation, clazz).also {
+                        componentToChannelMapping[clazz.java.simpleName] =
+                            annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
+                    }
                     else -> null
                 }
             }

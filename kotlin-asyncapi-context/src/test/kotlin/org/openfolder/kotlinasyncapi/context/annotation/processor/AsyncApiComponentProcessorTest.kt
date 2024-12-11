@@ -16,11 +16,11 @@ internal class AsyncApiComponentProcessorTest {
     private val processor = AsyncApiComponentProcessor()
 
     @Test
-    fun `should process async api documentation annotation on class`() {
+    fun `should process async api component annotation on class`() {
         val payload = TestChannelFunction::class
         val annotation = payload.findAnnotation<AsyncApiComponent>()!!
 
-        val expected = json("annotation/async_api_documentation_component.json")
+        val expected = json("annotation/async_api_component.json")
         val actual = json(processor.process(annotation, payload))
 
         assertJsonEquals(expected, actual)
