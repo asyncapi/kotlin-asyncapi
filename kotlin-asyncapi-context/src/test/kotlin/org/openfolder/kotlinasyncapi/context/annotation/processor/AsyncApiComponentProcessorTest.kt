@@ -1,7 +1,7 @@
 package org.openfolder.kotlinasyncapi.context.annotation.processor
 
 import org.junit.jupiter.api.Test
-import org.openfolder.kotlinasyncapi.annotation.AsyncApiDocumentation
+import org.openfolder.kotlinasyncapi.annotation.AsyncApiComponent
 import org.openfolder.kotlinasyncapi.annotation.channel.Channel
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
 import org.openfolder.kotlinasyncapi.annotation.channel.Parameter
@@ -11,14 +11,14 @@ import org.openfolder.kotlinasyncapi.context.TestUtils.assertJsonEquals
 import org.openfolder.kotlinasyncapi.context.TestUtils.json
 import kotlin.reflect.full.findAnnotation
 
-internal class AsyncApiDocumentationProcessorTest {
+internal class AsyncApiComponentProcessorTest {
 
-    private val processor = AsyncApiDocumentationProcessor()
+    private val processor = AsyncApiComponentProcessor()
 
     @Test
     fun `should process async api documentation annotation on class`() {
         val payload = TestChannelFunction::class
-        val annotation = payload.findAnnotation<AsyncApiDocumentation>()!!
+        val annotation = payload.findAnnotation<AsyncApiComponent>()!!
 
         val expected = json("annotation/async_api_documentation_component.json")
         val actual = json(processor.process(annotation, payload))
@@ -27,7 +27,7 @@ internal class AsyncApiDocumentationProcessorTest {
     }
 
 
-    @AsyncApiDocumentation
+    @AsyncApiComponent
     class TestChannelFunction {
         @Channel(
             value = "some/{parameter}/channel",

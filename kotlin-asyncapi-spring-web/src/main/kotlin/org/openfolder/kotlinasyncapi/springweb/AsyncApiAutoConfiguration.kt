@@ -1,6 +1,6 @@
 package org.openfolder.kotlinasyncapi.springweb
 
-import org.openfolder.kotlinasyncapi.annotation.AsyncApiDocumentation
+import org.openfolder.kotlinasyncapi.annotation.AsyncApiComponent
 import kotlin.reflect.KClass
 import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
@@ -14,7 +14,7 @@ import org.openfolder.kotlinasyncapi.context.annotation.AnnotationProvider
 import org.openfolder.kotlinasyncapi.context.annotation.AnnotationScanner
 import org.openfolder.kotlinasyncapi.context.annotation.DefaultAnnotationScanner
 import org.openfolder.kotlinasyncapi.context.annotation.processor.AnnotationProcessor
-import org.openfolder.kotlinasyncapi.context.annotation.processor.AsyncApiDocumentationProcessor
+import org.openfolder.kotlinasyncapi.context.annotation.processor.AsyncApiComponentProcessor
 import org.openfolder.kotlinasyncapi.context.annotation.processor.MessageProcessor
 import org.openfolder.kotlinasyncapi.context.annotation.processor.SchemaProcessor
 import org.openfolder.kotlinasyncapi.context.annotation.processor.ChannelProcessor
@@ -106,7 +106,7 @@ internal open class AsyncApiAnnotationAutoConfiguration {
 
     @Bean
     open fun asyncApiDocumentationProcessor() =
-        AsyncApiDocumentationProcessor()
+        AsyncApiComponentProcessor()
 
     @Bean
     open fun annotationScanner() =
@@ -119,7 +119,7 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         messageProcessor: AnnotationProcessor<Message, KClass<*>>,
         schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
         channelClassProcessor: AnnotationProcessor<Channel, KClass<*>>,
-        asyncApiDocumentationProcessor: AnnotationProcessor<AsyncApiDocumentation, KClass<*>>
+        asyncApiComponentProcessor: AnnotationProcessor<AsyncApiComponent, KClass<*>>
     ) = packageFromContext(context)?.let {
         AnnotationProvider(
             applicationPackage = it,
@@ -127,7 +127,7 @@ internal open class AsyncApiAnnotationAutoConfiguration {
             messageProcessor = messageProcessor,
             schemaProcessor = schemaProcessor,
             channelProcessor = channelClassProcessor,
-            asyncApiDocumentationProcessor = asyncApiDocumentationProcessor,
+            asyncApiComponentProcessor = asyncApiComponentProcessor,
         )
     }
 
