@@ -25,6 +25,119 @@
       ]
     },
     {
+      "name": "JVM languages",
+      "inspections": [
+        {
+          "shortName": "OverrideOnly",
+          "displayName": "Method can only be overridden",
+          "enabled": true,
+          "description": "Reports calls to API methods marked with `@ApiStatus.OverrideOnly`.\n\n\nThe `@ApiStatus.OverrideOnly` annotation indicates that the method is part of SPI (Service Provider Interface).\nClients of the declaring library should implement or override such methods, not call them directly.\nMarking a class or interface with this annotation is the same as marking every method with it."
+        },
+        {
+          "shortName": "SerializableHasSerialVersionUIDField",
+          "displayName": "Serializable class without 'serialVersionUID'",
+          "enabled": false,
+          "description": "Reports classes that implement `Serializable` and do not declare a `serialVersionUID` field.\n\n\nWithout a `serialVersionUID` field, any change to the class will make previously serialized versions unreadable.\n\n**Example:**\n\n\n      class Main implements Serializable {\n      }\n\nAfter the quick-fix is applied:\n\n\n      class Main implements Serializable {\n        private static final long serialVersionUID = -1446398935944895849L;\n      }\n\nWhen using a language level of JDK 14 or higher, the quickfix will also add the `java.io.Serial` annotation.\n\nUse the following options to configure the inspection:\n\n* List classes whose inheritors should not be reported by this inspection. This is meant for classes that inherit `Serializable` from a superclass but are not intended for serialization.\n* Whether to ignore `Serializable` anonymous classes."
+        },
+        {
+          "shortName": "SystemGetProperty",
+          "displayName": "Call to 'System.getProperty(str)' could be simplified",
+          "enabled": true,
+          "description": "Reports the usage of method `System.getProperty(str)` and suggests a fix in 2 cases:\n\n* `System.getProperty(\"path.separator\")` -\\> `File.pathSeparator`\n* `System.getProperty(\"line.separator\")` -\\> `System.lineSeparator()`\n\nThe second one is not only less error-prone but is likely to be faster, as `System.lineSeparator()` returns cached value, while `System.getProperty(\"line.separator\")` each time calls to Properties (Hashtable or CHM depending on implementation)."
+        },
+        {
+          "shortName": "EmptyMethod",
+          "displayName": "Empty method",
+          "enabled": false,
+          "description": "Reports empty methods that can be removed.\n\nMethods are considered empty if they are empty themselves and if they are overridden or\nimplemented by empty methods only. Note that methods containing only comments and the `super()` call with own parameters are\nalso considered empty.\n\nThe inspection ignores methods with special annotations, for example, the `javax.ejb.Init` and `javax.ejb.Remove` EJB annotations .\n\nThe quick-fix safely removes unnecessary methods.\n\nConfigure the inspection:\n\n* Use the **Comments and javadoc count as content** option to select whether methods with comments should be treated as non-empty.\n* Use the **Additional special annotations** option to configure additional annotations that should be ignored by this inspection."
+        },
+        {
+          "shortName": "SuppressionAnnotation",
+          "displayName": "Inspection suppression annotation",
+          "enabled": false,
+          "description": "Reports comments or annotations suppressing inspections.\n\nThis inspection can be useful when leaving suppressions intentionally for further review.\n\n**Example:**\n\n\n    @SuppressWarnings(\"unused\")\n    static Stream<String> stringProvider() {\n        return Stream.of(\"foo\", \"bar\");\n    }\n"
+        },
+        {
+          "shortName": "BlockingMethodInNonBlockingContext",
+          "displayName": "Possibly blocking call in non-blocking context",
+          "enabled": true,
+          "description": "Reports thread-blocking method calls in code fragments where threads should not be blocked.\n\n**Example (Project Reactor):**\n\n\n    Flux.just(\"1\").flatMap(f -> {\n        Flux<String> just = loadUsersFromDatabase();\n        just.toIterable(); // Error: blocking operator call in non-blocking scope\n        return just;\n      }\n    );\n\nConsider running blocking code [with a proper\nscheduler](https://projectreactor.io/docs/core/release/reference/#faq.wrap-blocking), for example `Schedulers.boundedElastic()`, or try to find an alternative non-blocking API.\n\n**Example (Kotlin Coroutines):**\n\n\n    suspend fun exampleFun() {\n        Thread.sleep(100); // Error: blocking method call inside suspend function\n    }\n\nConsider running blocking code [with a special dispatcher](https://kotlinlang.org/docs/coroutine-context-and-dispatchers.html),\nfor example `Dispatchers.IO`, or try to find an alternative non-blocking API.\n\nConfigure the inspection:\n\n* In the **Blocking Annotations** list, specify annotations that mark thread-blocking methods.\n* In the **Non-Blocking Annotations** list, specify annotations that mark non-blocking methods.\n\nSpecified annotations can be used as [External Annotations](https://www.jetbrains.com/help/idea/external-annotations.html)"
+        },
+        {
+          "shortName": "MissingDeprecatedAnnotationOnScheduledForRemovalApi",
+          "displayName": "Missing '@Deprecated' annotation on scheduled for removal API",
+          "enabled": true,
+          "description": "Reports declarations marked with `@ApiStatus.ScheduledForRemoval` without `@Deprecated`.\n\nExample:\n\n\n      @ApiStatus.ScheduledForRemoval(inVersion = \"2017.3\")\n      public void myLegacyMethod() { }\n\nAfter the quick-fix is applied the result looks like:\n\n\n      @Deprecated\n      @ApiStatus.ScheduledForRemoval(inVersion = \"2017.3\")\n      public void myLegacyMethod() { }\n"
+        },
+        {
+          "shortName": "SourceToSinkFlow",
+          "displayName": "Non-safe string is passed to safe method",
+          "enabled": true,
+          "description": "Reports cases when a non-safe object is passed to a method with a parameter marked with `@Untainted` annotations, returned from annotated methods or assigned to annotated fields, parameters, or local variables. Kotlin `set` and `get` methods for fields are not supported as entry points.\n\n\nA safe object (in the same class) is:\n\n* a string literal, interface instance, or enum object\n* a result of a call of a method that is marked as `@Untainted`\n* a private field, which is assigned only with a string literal and has a safe initializer\n* a final field, which has a safe initializer\n* local variable or parameter that are marked as `@Untainted` and are not assigned from non-safe objects\nThis field, local variable, or parameter must not be passed as arguments to methods or used as a qualifier or must be a primitive, its wrapper or immutable.\n\nAlso static final fields are considered as safe.\n\n\nThe analysis is performed only inside one file. To process dependencies from other classes, use options.\nThe analysis extends to private or static methods and has a limit of depth propagation.\n\n\nExample:\n\n\n      void doSmth(boolean b) {\n        String s = safe();\n        String s1 = \"other\";\n        if (b) s1 = s;\n        sink(s);\n      }\n\n      String sink(@Untainted String s) {}\n\n\nHere we do not have non-safe string assignments to `s` so a warning is not produced. On the other hand:\n\n\n      void doSmth(boolean b) {\n        String s = safe();\n        String s1 = \"other\";\n        s1 = foo();\n        if (b) s = s1;\n        sink(s);        // warning here\n      }\n\n      String foo();\n\n      String sink(@Untainted String s) {}\n\n\nHere we have a warning since `s1` has an unknown state after `foo` call result assignment.\n\nNew in 2021.2"
+        },
+        {
+          "shortName": "Dependency",
+          "displayName": "Illegal package dependencies",
+          "enabled": true,
+          "description": "Reports illegal dependencies between scopes according to the dependency rules given. Dependency rules can be used to prohibit usage from a scope to another scope.\n\nUse the **Configure dependency rules** button below to customize validation rules."
+        },
+        {
+          "shortName": "ThreadRun",
+          "displayName": "Call to 'Thread.run()'",
+          "enabled": true,
+          "description": "Reports calls to `run()` on `java.lang.Thread` or any of its subclasses.\n\n\nWhile occasionally intended, this is usually a mistake, because `run()` doesn't start a new thread.\nTo execute the code in a separate thread, `start()` should be used."
+        },
+        {
+          "shortName": "UnstableApiUsage",
+          "displayName": "Unstable API Usage",
+          "enabled": true,
+          "description": "Reports usages of an API marked with one of the annotations as unstable. Such an API may be changed or removed in future versions, breaking the code that uses it.\n\nThe annotations which are used to mark unstable APIs are shown in the list below.\n\nBy default, the inspection ignores usages of unstable APIs\nif their declarations are located in sources of the same project. In such cases it'll be possible to update the usages when you change APIs.\nHowever, it may be inconvenient if the project is big, so one can switch off the **Ignore API declared in this project** option to report\nthe usages of unstable APIs declared in both the project sources and libraries."
+        },
+        {
+          "shortName": "Since15",
+          "displayName": "Usages of API which isn't available at the configured language level",
+          "enabled": false,
+          "description": "Reports usages of the API that is unavailable at the configured language level. This inspection does 3 things:\n\n* Highlight usage of generified classes when the language level is below Java 7.\n* Highlight when default methods are not overridden and the language level is below Java 8.\n* Highlight usage of API when the language level is lower than marked using the `@since` tag in the documentation.\n\n\nUse the **Forbid API usages** option to forbid usages of the API in respect to the project or custom language level."
+        },
+        {
+          "shortName": "MustAlreadyBeRemovedApi",
+          "displayName": "API must already be removed",
+          "enabled": true,
+          "description": "Reports declarations marked with `@ApiStatus.ScheduledForRemoval` that should have been removed in the current version of the declaring library.\n\nIt compares the specified scheduled removal version with the version that you can set below.\n\n\nSpecify the version as a string separated with dots and optionally postfixed with\n`alpha`, `beta`, `snapshot`, or `eap`.\n\nExamples of valid versions: `1.0`, `2.3.1`, `2018.1`, `7.5-snapshot`, `3.0-eap`.\n\n\nVersion comparison is intuitive: `1.0 < 2.0`, `1.0-eap < 1.0`, `2.3-snapshot < 2.3` and so on.\nFor detailed comparison logic, refer to the implementation of [VersionComparatorUtil](https://github.com/JetBrains/intellij-community/blob/master/platform/util-rt/src/com/intellij/util/text/VersionComparatorUtil.java)."
+        },
+        {
+          "shortName": "UnstableTypeUsedInSignature",
+          "displayName": "Unstable type is used in signature",
+          "enabled": false,
+          "description": "Reports declarations of classes, methods, and fields that reference an unstable API type in the signature, but are not marked with the same unstable annotation.\n\n\nThis inspection ensures that the signatures of a public API do not expose any *unstable* (internal, experimental) types.\nFor example, if a method returns an *experimental* class, the method itself is considered *experimental*\nbecause incompatible changes of the type (deletion or move to another package) lead to incompatible method signature changes.\n\nUse the list below to specify which annotations mark an unstable API."
+        },
+        {
+          "shortName": "UrlHashCode",
+          "displayName": "Call to 'equals()' or 'hashCode()' on 'URL' object",
+          "enabled": true,
+          "description": "Reports `hashCode()` and `equals()` calls on `java.net.URL` objects and calls that add `URL` objects to maps and sets.\n\n\n`URL`'s `equals()` and `hashCode()` methods can perform a DNS lookup to resolve the host name.\nThis may cause significant delays, depending on the availability and speed of the network and the DNS server.\nUsing `java.net.URI` instead of `java.net.URL` will avoid the DNS lookup.\n\n**Example:**\n\n\n      boolean urlEquals(URL url1, URL url2) {\n          return url1.equals(url2);\n      }\n"
+        },
+        {
+          "shortName": "NonExtendableApiUsage",
+          "displayName": "Class, interface, or method should not be extended",
+          "enabled": true,
+          "description": "Reports classes, interfaces and methods that extend, implement, or override API elements marked with `@ApiStatus.NonExtendable`.\n\n\nThe `@ApiStatus.NonExtendable` annotation indicates that the class, interface, or method **must not be extended,\nimplemented, or overridden** .\nSince casting such interfaces and classes to the internal library implementation is rather common,\nif a client provides a different implementation, you will get `ClassCastException`.\nAdding new abstract methods to such classes and interfaces will break the compatibility with the client's implementations."
+        },
+        {
+          "shortName": "IllegalDependencyOnInternalPackage",
+          "displayName": "Illegal dependency on internal package",
+          "enabled": false,
+          "description": "Reports references in modules without `module-info.java` on packages which are not exported from named modules.\n\nSuch configuration may occur when some modules in the project are already migrated to Java modules but others are still non-modular.\nBy analogy to the JDK, such non-modular code should not get access to the code in named modules which is not explicitly exported."
+        },
+        {
+          "shortName": "UsagesOfObsoleteApi",
+          "displayName": "Usages of ApiStatus.@Obsolete",
+          "enabled": false,
+          "description": "Reports declarations (classes, methods, fields) annotated as `@ApiStatus.Obsolete`.\n\n\nSometimes it's impossible to delete the current API, though it might not work correctly, there is a newer, or better, or more generic API.\nThis way, it's a weaker variant of `@Deprecated` annotation.\nThe annotated API is not supposed to be used in the new code, but it's permitted to postpone the migration of the existing code,\ntherefore the usage is not considered a warning."
+        }
+      ]
+    },
+    {
       "name": "Kotlin",
       "inspections": [
         {
@@ -49,7 +162,7 @@
           "shortName": "DifferentKotlinGradleVersion",
           "displayName": "Kotlin Gradle and IDE plugins versions are different",
           "enabled": false,
-          "description": "Reports that Gradle plugin version isn't properly supported in the current IDE plugin.\n\nThis can cause inconsistencies between IDE and Gradle builds in error reporting or code behavior.\n\n**Example:**\n\n\n      dependencies {\n        classpath \"org.jetbrains.kotlin:kotlin-gradle-plugin:0.0.1\"\n      }\n\nTo fix the problem change the kotlin gradle plugin version to match the version of kotlin that is bundled into the IDE plugin."
+          "description": "Reports that Gradle plugin version isn't properly supported in the current IDE plugin.\n\nThis can cause inconsistencies between IDE and Gradle builds in error reporting or code behavior.\n\n**Example:**\n\n\n      dependencies {\n        classpath \"org.jetbrains.kotlin:kotlin-gradle-plugin:0.0.1\"\n      }\n\nTo fix the problem, change the Kotlin Gradle plugin version to match the version of Kotlin that is bundled into the IDE plugin."
         },
         {
           "shortName": "DeprecatedMavenDependency",
@@ -129,16 +242,16 @@
           "description": "Reports calls to `assertTrue()` and `assertFalse()` that can be replaced with assert equality functions.\n\n\n`assertEquals()`, `assertSame()`, and their negating counterparts (-Not-) provide more informative messages on\nfailure.\n\n**Example:**\n\n      assertTrue(a == b)\n\nAfter the quick-fix is applied:\n\n      assertEquals(a, b)\n"
         },
         {
-          "shortName": "ReplaceNotNullAssertionWithElvisReturn",
-          "displayName": "Not-null assertion can be replaced with 'return'",
-          "enabled": false,
-          "description": "Reports not-null assertion (`!!`) calls that can be replaced with the elvis operator and return (`?: return`).\n\nA not-null assertion can lead to NPE (NullPointerException) that is not expected. Avoiding the use of `!!` is good practice.\n\nThe quick-fix replaces the not-null assertion with `return` or `return null`.\n\n**Example:**\n\n\n      fun test(number: Int?) {\n          val x = number!!\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test(number: Int?) {\n          val x = number ?: return\n      }\n"
-        },
-        {
           "shortName": "ReplaceStringFormatWithLiteral",
           "displayName": "'String.format' call can be replaced with string templates",
           "enabled": false,
           "description": "Reports `String.format` calls that can be replaced with string templates.\n\nUsing string templates makes your code simpler.\n\nThe quick-fix replaces the call with a string template.\n\n**Example:**\n\n\n      fun main() {\n          val id = \"abc\"\n          val date = \"123\"\n          val s = String.format(\"%s_%s_%s\", id, date, id)\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun main() {\n          val id = \"abc\"\n          val date = \"123\"\n          val s = \"${id}_${date}_$id\"\n      }\n"
+        },
+        {
+          "shortName": "ReplaceNotNullAssertionWithElvisReturn",
+          "displayName": "Not-null assertion can be replaced with 'return'",
+          "enabled": false,
+          "description": "Reports not-null assertion (`!!`) calls that can be replaced with the elvis operator and return (`?: return`).\n\nA not-null assertion can lead to NPE (NullPointerException) that is not expected. Avoiding the use of `!!` is good practice.\n\nThe quick-fix replaces the not-null assertion with `return` or `return null`.\n\n**Example:**\n\n\n      fun test(number: Int?) {\n          val x = number!!\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test(number: Int?) {\n          val x = number ?: return\n      }\n"
         },
         {
           "shortName": "ReplaceSubstringWithSubstringBefore",
@@ -635,119 +748,6 @@
       ]
     },
     {
-      "name": "JVM languages",
-      "inspections": [
-        {
-          "shortName": "OverrideOnly",
-          "displayName": "Method can only be overridden",
-          "enabled": true,
-          "description": "Reports calls to API methods marked with `@ApiStatus.OverrideOnly`.\n\n\nThe `@ApiStatus.OverrideOnly` annotation indicates that the method is part of SPI (Service Provider Interface).\nClients of the declaring library should implement or override such methods, not call them directly.\nMarking a class or interface with this annotation is the same as marking every method with it."
-        },
-        {
-          "shortName": "SerializableHasSerialVersionUIDField",
-          "displayName": "Serializable class without 'serialVersionUID'",
-          "enabled": false,
-          "description": "Reports classes that implement `Serializable` and do not declare a `serialVersionUID` field.\n\n\nWithout a `serialVersionUID` field, any change to the class will make previously serialized versions unreadable.\n\n**Example:**\n\n\n      class Main implements Serializable {\n      }\n\nAfter the quick-fix is applied:\n\n\n      class Main implements Serializable {\n        private static final long serialVersionUID = -1446398935944895849L;\n      }\n\nWhen using a language level of JDK 14 or higher, the quickfix will also add the `java.io.Serial` annotation.\n\nUse the following options to configure the inspection:\n\n* List classes whose inheritors should not be reported by this inspection. This is meant for classes that inherit `Serializable` from a superclass but are not intended for serialization.\n* Whether to ignore `Serializable` anonymous classes."
-        },
-        {
-          "shortName": "SystemGetProperty",
-          "displayName": "Call to 'System.getProperty(str)' could be simplified",
-          "enabled": true,
-          "description": "Reports the usage of method `System.getProperty(str)` and suggests a fix in 2 cases:\n\n* `System.getProperty(\"path.separator\")` -\\> `File.pathSeparator`\n* `System.getProperty(\"line.separator\")` -\\> `System.lineSeparator()`\n\nThe second one is not only less error-prone but is likely to be faster, as `System.lineSeparator()` returns cached value, while `System.getProperty(\"line.separator\")` each time calls to Properties (Hashtable or CHM depending on implementation)."
-        },
-        {
-          "shortName": "EmptyMethod",
-          "displayName": "Empty method",
-          "enabled": false,
-          "description": "Reports empty methods that can be removed.\n\nMethods are considered empty if they are empty themselves and if they are overridden or\nimplemented by empty methods only. Note that methods containing only comments and the `super()` call with own parameters are\nalso considered empty.\n\nThe inspection ignores methods with special annotations, for example, the `javax.ejb.Init` and `javax.ejb.Remove` EJB annotations .\n\nThe quick-fix safely removes unnecessary methods.\n\nConfigure the inspection:\n\n* Use the **Comments and javadoc count as content** option to select whether methods with comments should be treated as non-empty.\n* Use the **Additional special annotations** option to configure additional annotations that should be ignored by this inspection."
-        },
-        {
-          "shortName": "SuppressionAnnotation",
-          "displayName": "Inspection suppression annotation",
-          "enabled": false,
-          "description": "Reports comments or annotations suppressing inspections.\n\nThis inspection can be useful when leaving suppressions intentionally for further review.\n\n**Example:**\n\n\n    @SuppressWarnings(\"unused\")\n    static Stream<String> stringProvider() {\n        return Stream.of(\"foo\", \"bar\");\n    }\n"
-        },
-        {
-          "shortName": "BlockingMethodInNonBlockingContext",
-          "displayName": "Possibly blocking call in non-blocking context",
-          "enabled": true,
-          "description": "Reports thread-blocking method calls in code fragments where threads should not be blocked.\n\n**Example (Project Reactor):**\n\n\n    Flux.just(\"1\").flatMap(f -> {\n        Flux<String> just = loadUsersFromDatabase();\n        just.toIterable(); // Error: blocking operator call in non-blocking scope\n        return just;\n      }\n    );\n\nConsider running blocking code [with a proper\nscheduler](https://projectreactor.io/docs/core/release/reference/#faq.wrap-blocking), for example `Schedulers.boundedElastic()`, or try to find an alternative non-blocking API.\n\n**Example (Kotlin Coroutines):**\n\n\n    suspend fun exampleFun() {\n        Thread.sleep(100); // Error: blocking method call inside suspend function\n    }\n\nConsider running blocking code [with a special dispatcher](https://kotlinlang.org/docs/coroutine-context-and-dispatchers.html),\nfor example `Dispatchers.IO`, or try to find an alternative non-blocking API.\n\nConfigure the inspection:\n\n* In the **Blocking Annotations** list, specify annotations that mark thread-blocking methods.\n* In the **Non-Blocking Annotations** list, specify annotations that mark non-blocking methods.\n\nSpecified annotations can be used as [External Annotations](https://www.jetbrains.com/help/idea/external-annotations.html)"
-        },
-        {
-          "shortName": "MissingDeprecatedAnnotationOnScheduledForRemovalApi",
-          "displayName": "Missing '@Deprecated' annotation on scheduled for removal API",
-          "enabled": true,
-          "description": "Reports declarations marked with `@ApiStatus.ScheduledForRemoval` without `@Deprecated`.\n\nExample:\n\n\n      @ApiStatus.ScheduledForRemoval(inVersion = \"2017.3\")\n      public void myLegacyMethod() { }\n\nAfter the quick-fix is applied the result looks like:\n\n\n      @Deprecated\n      @ApiStatus.ScheduledForRemoval(inVersion = \"2017.3\")\n      public void myLegacyMethod() { }\n"
-        },
-        {
-          "shortName": "SourceToSinkFlow",
-          "displayName": "Non-safe string is passed to safe method",
-          "enabled": true,
-          "description": "Reports cases when a non-safe object is passed to a method with a parameter marked with `@Untainted` annotations, returned from annotated methods or assigned to annotated fields, parameters, or local variables. Kotlin `set` and `get` methods for fields are not supported as entry points.\n\n\nA safe object (in the same class) is:\n\n* a string literal, interface instance, or enum object\n* a result of a call of a method that is marked as `@Untainted`\n* a private field, which is assigned only with a string literal and has a safe initializer\n* a final field, which has a safe initializer\n* local variable or parameter that are marked as `@Untainted` and are not assigned from non-safe objects\nThis field, local variable, or parameter must not be passed as arguments to methods or used as a qualifier or must be a primitive, its wrapper or immutable.\n\nAlso static final fields are considered as safe.\n\n\nThe analysis is performed only inside one file. To process dependencies from other classes, use options.\nThe analysis extends to private or static methods and has a limit of depth propagation.\n\n\nExample:\n\n\n      void doSmth(boolean b) {\n        String s = safe();\n        String s1 = \"other\";\n        if (b) s1 = s;\n        sink(s);\n      }\n\n      String sink(@Untainted String s) {}\n\n\nHere we do not have non-safe string assignments to `s` so a warning is not produced. On the other hand:\n\n\n      void doSmth(boolean b) {\n        String s = safe();\n        String s1 = \"other\";\n        s1 = foo();\n        if (b) s = s1;\n        sink(s);        // warning here\n      }\n\n      String foo();\n\n      String sink(@Untainted String s) {}\n\n\nHere we have a warning since `s1` has an unknown state after `foo` call result assignment.\n\nNew in 2021.2"
-        },
-        {
-          "shortName": "Dependency",
-          "displayName": "Illegal package dependencies",
-          "enabled": true,
-          "description": "Reports illegal dependencies between scopes according to the dependency rules given. Dependency rules can be used to prohibit usage from a scope to another scope.\n\nUse the **Configure dependency rules** button below to customize validation rules."
-        },
-        {
-          "shortName": "ThreadRun",
-          "displayName": "Call to 'Thread.run()'",
-          "enabled": true,
-          "description": "Reports calls to `run()` on `java.lang.Thread` or any of its subclasses.\n\n\nWhile occasionally intended, this is usually a mistake, because `run()` doesn't start a new thread.\nTo execute the code in a separate thread, `start()` should be used."
-        },
-        {
-          "shortName": "UnstableApiUsage",
-          "displayName": "Unstable API Usage",
-          "enabled": true,
-          "description": "Reports usages of an API marked with one of the annotations as unstable. Such an API may be changed or removed in future versions, breaking the code that uses it.\n\nThe annotations which are used to mark unstable APIs are shown in the list below.\n\nBy default, the inspection ignores usages of unstable APIs\nif their declarations are located in sources of the same project. In such cases it'll be possible to update the usages when you change APIs.\nHowever, it may be inconvenient if the project is big, so one can switch off the **Ignore API declared in this project** option to report\nthe usages of unstable APIs declared in both the project sources and libraries."
-        },
-        {
-          "shortName": "Since15",
-          "displayName": "Usages of API which isn't available at the configured language level",
-          "enabled": false,
-          "description": "Reports usages of the API that is unavailable at the configured language level. This inspection does 3 things:\n\n* Highlight usage of generified classes when the language level is below Java 7.\n* Highlight when default methods are not overridden and the language level is below Java 8.\n* Highlight usage of API when the language level is lower than marked using the `@since` tag in the documentation.\n\n\nUse the **Forbid API usages** option to forbid usages of the API in respect to the project or custom language level."
-        },
-        {
-          "shortName": "MustAlreadyBeRemovedApi",
-          "displayName": "API must already be removed",
-          "enabled": true,
-          "description": "Reports declarations marked with `@ApiStatus.ScheduledForRemoval` that should have been removed in the current version of the declaring library.\n\nIt compares the specified scheduled removal version with the version that you can set below.\n\n\nSpecify the version as a string separated with dots and optionally postfixed with\n`alpha`, `beta`, `snapshot`, or `eap`.\n\nExamples of valid versions: `1.0`, `2.3.1`, `2018.1`, `7.5-snapshot`, `3.0-eap`.\n\n\nVersion comparison is intuitive: `1.0 < 2.0`, `1.0-eap < 1.0`, `2.3-snapshot < 2.3` and so on.\nFor detailed comparison logic, refer to the implementation of [VersionComparatorUtil](https://github.com/JetBrains/intellij-community/blob/master/platform/util-rt/src/com/intellij/util/text/VersionComparatorUtil.java)."
-        },
-        {
-          "shortName": "UnstableTypeUsedInSignature",
-          "displayName": "Unstable type is used in signature",
-          "enabled": false,
-          "description": "Reports declarations of classes, methods, and fields that reference an unstable API type in the signature, but are not marked with the same unstable annotation.\n\n\nThis inspection ensures that the signatures of a public API do not expose any *unstable* (internal, experimental) types.\nFor example, if a method returns an *experimental* class, the method itself is considered *experimental*\nbecause incompatible changes of the type (deletion or move to another package) lead to incompatible method signature changes.\n\nUse the list below to specify which annotations mark an unstable API."
-        },
-        {
-          "shortName": "UrlHashCode",
-          "displayName": "Call to 'equals()' or 'hashCode()' on 'URL' object",
-          "enabled": true,
-          "description": "Reports `hashCode()` and `equals()` calls on `java.net.URL` objects and calls that add `URL` objects to maps and sets.\n\n\n`URL`'s `equals()` and `hashCode()` methods can perform a DNS lookup to resolve the host name.\nThis may cause significant delays, depending on the availability and speed of the network and the DNS server.\nUsing `java.net.URI` instead of `java.net.URL` will avoid the DNS lookup.\n\n**Example:**\n\n\n      boolean urlEquals(URL url1, URL url2) {\n          return url1.equals(url2);\n      }\n"
-        },
-        {
-          "shortName": "NonExtendableApiUsage",
-          "displayName": "Class, interface, or method should not be extended",
-          "enabled": true,
-          "description": "Reports classes, interfaces and methods that extend, implement, or override API elements marked with `@ApiStatus.NonExtendable`.\n\n\nThe `@ApiStatus.NonExtendable` annotation indicates that the class, interface, or method **must not be extended,\nimplemented, or overridden** .\nSince casting such interfaces and classes to the internal library implementation is rather common,\nif a client provides a different implementation, you will get `ClassCastException`.\nAdding new abstract methods to such classes and interfaces will break the compatibility with the client's implementations."
-        },
-        {
-          "shortName": "IllegalDependencyOnInternalPackage",
-          "displayName": "Illegal dependency on internal package",
-          "enabled": false,
-          "description": "Reports references in modules without `module-info.java` on packages which are not exported from named modules.\n\nSuch configuration may occur when some modules in the project are already migrated to Java modules but others are still non-modular.\nBy analogy to the JDK, such non-modular code should not get access to the code in named modules which is not explicitly exported."
-        },
-        {
-          "shortName": "UsagesOfObsoleteApi",
-          "displayName": "Usages of ApiStatus.@Obsolete",
-          "enabled": false,
-          "description": "Reports declarations (classes, methods, fields) annotated as `@ApiStatus.Obsolete`.\n\n\nSometimes it's impossible to delete the current API, though it might not work correctly, there is a newer, or better, or more generic API.\nThis way, it's a weaker variant of `@Deprecated` annotation.\nThe annotated API is not supposed to be used in the new code, but it's permitted to postpone the migration of the existing code,\ntherefore the usage is not considered a warning."
-        }
-      ]
-    },
-    {
       "name": "Redundant constructs",
       "inspections": [
         {
@@ -1152,16 +1152,16 @@
           "description": "Reports method and constructor calls that implicitly use the platform default charset. Such calls can produce different results on systems that use a different default charset and may result in unexpected behaviour.\n\n**Example:**\n\n    void foo(byte[] bytes) {\n      String s = new String(bytes);\n    }\n\nYou can use a quick-fix that specifies the explicit UTF-8 charset if the corresponding overloaded method is available.\nAfter the quick-fix is applied:\n\n    void foo(byte[] bytes) {\n      String s = new String(bytes, StandardCharsets.UTF_8);\n    }\n"
         },
         {
-          "shortName": "UnnecessaryUnicodeEscape",
-          "displayName": "Unnecessary unicode escape sequence",
-          "enabled": false,
-          "description": "Reports unnecessary unicode escape sequences. For example, when the file encoding can handle the character without escaping it. Unicode control characters are not reported by this inspection (except for a line feed and a tab).\n\n**Example:**\n\n    String s = \"\\u0062\";\n"
-        },
-        {
           "shortName": "StringTokenizer",
           "displayName": "Use of 'StringTokenizer'",
           "enabled": false,
           "description": "Reports usages of the `StringTokenizer` class. Excessive use of `StringTokenizer` is incorrect in an internationalized environment."
+        },
+        {
+          "shortName": "UnnecessaryUnicodeEscape",
+          "displayName": "Unnecessary unicode escape sequence",
+          "enabled": false,
+          "description": "Reports unnecessary unicode escape sequences. For example, when the file encoding can handle the character without escaping it. Unicode control characters are not reported by this inspection (except for a line feed and a tab).\n\n**Example:**\n\n    String s = \"\\u0062\";\n"
         },
         {
           "shortName": "NumericToString",
@@ -1903,7 +1903,7 @@
           "shortName": "MissortedModifiers",
           "displayName": "Missorted modifiers",
           "enabled": false,
-          "description": "Reports declarations whose modifiers are not in the canonical preferred order (as stated in the Java Language Specification).\n\n**Example:**\n\n\n      class Foo {\n        native public final void foo();\n      }\n\nAfter the quick-fix is applied:\n\n\n      class Foo {\n        public final native void foo();\n      }\n"
+          "description": "Reports declaration modifiers that are not in the canonical preferred order (as stated in the Java Language Specification).\n\n**Example:**\n\n\n      class Foo {\n        native public final void foo();\n      }\n\nAfter the quick-fix is applied:\n\n\n      class Foo {\n        public final native void foo();\n      }\n"
         },
         {
           "shortName": "TypeParameterExtendsObject",
@@ -2338,6 +2338,125 @@
       ]
     },
     {
+      "name": "Migration",
+      "inspections": [
+        {
+          "shortName": "NonExhaustiveWhenStatementMigration",
+          "displayName": "Non-exhaustive 'when' statements will be prohibited since 1.7",
+          "enabled": false,
+          "description": "Reports a non-exhaustive `when` statements that will lead to compilation error since 1.7.\n\nMotivation types:\n\n* Problematic/meaningless usage patterns need to be discouraged/blocked (e.g. counterintuitive behaviors)\n  * Code is error-prone\n* Inconsistency in the design (things are done differently in different contexts)\n\nImpact types:\n\n* Compilation. Some code that used to compile won't compile any more\n  * There were cases when such code worked with no exceptions\n    * Some such code could compile without any warnings\n\n**More details:** [KT-47709: Make when statements with enum, sealed, and Boolean subjects exhaustive by default](https://youtrack.jetbrains.com/issue/KT-47709)\n\nThe quick-fix adds the missing `else -> {}` branch.\n\n**Example:**\n\n\n      sealed class Base {\n          class A : Base()\n          class B : Base()\n      }\n\n      fun test(base: Base) {\n          when (base) {\n              is Base.A -> \"\"\n          }\n      }\n\nAfter the quick-fix is applied:\n\n\n      sealed class Base {\n          class A : Base()\n          class B : Base()\n      }\n\n      fun test(base: Base) {\n          when (base) {\n              is Base.A -> \"\"\n              else -> {}\n          }\n      }\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.6 or higher."
+        },
+        {
+          "shortName": "AmbiguousExpressionInWhenBranchMigration",
+          "displayName": "Ambiguous logical expressions in 'when' branches since 1.7",
+          "enabled": false,
+          "description": "Reports ambiguous logical expressions in `when` branches which cause compilation errors in Kotlin 1.8 and later.\n\n\n      fun Int.matches(strict: Boolean): Boolean = when (strict) {\n          true -> this == 6\n          this in (4..7) -> true // is ambiguous\n          else -> false\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun Int.matches(strict: Boolean): Boolean = when (strict) {\n          true -> this == 6\n          (this in (4..7)) -> true // wrapped in parentheses\n          else -> false\n      }\n\nInspection is available for Kotlin language level starting from 1.7."
+        },
+        {
+          "shortName": "CastDueToProgressionResolutionChangeMigration",
+          "displayName": "Progression resolution change since 1.9",
+          "enabled": false,
+          "description": "Reports overloaded function calls where an argument requires an explicit cast to resolve to a proper declaration.\nThe current compiler warning (available since Kotlin 1.6.20) will become an error in Kotlin 1.8.\n\n\nProgressions and ranges types (`kotlin.ranges`) will start implementing the `Collection` interface in Kotlin\n1.9 and later. This update will cause a change in resolution for overloaded functions. For instance, in the example below, the\n`test(1..5)` call will be resolved to `test(t: Any)` in Kotlin 1.8 and earlier and to\n`test(t: Collection<*>)` in Kotlin 1.9 and later.\n\n\n      fun test(t: Any) { }\n      fun test(t: Collection<*>) { }\n      fun invoke() {\n        test(1..5) // IntRange becomes Collection in 1.9\n      }\n\nThe provided quick-fix captures the behaviour specific to the compiler of version 1.8 and earlier:\n\n\n      fun test(t: Any) { }\n      fun test(t: Collection<*>) { }\n\n      fun invoke() {\n        test(1..5) // resolved to 'test(t: T)' before Kotlin 1.9\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test(t: Any) { }\n      fun test(t: Collection<*>) { }\n\n      fun invoke() {\n        test((1..5) as Iterable<Int>) // resolved to 'test(t: T)' in Kotlin 1.9\n      }\n\nInspection is available for the Kotlin language level starting from 1.6."
+        },
+        {
+          "shortName": "AddConversionCallMigration",
+          "displayName": "Explicit conversion from `Int` needed since 1.9",
+          "enabled": false,
+          "description": "Reports expressions that will be of type `Int`, thus causing compilation errors in Kotlin 1.9 and later.\n\nExample:\n\n\n      fun takeByte(x: Byte) {}\n\n      fun foo() {\n          takeByte(1 + 1) // will be resolved to Int in 1.9\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun takeByte(x: Byte) {}\n\n      fun foo() {\n          takeByte((1 + 1).toByte()) // will be resolved to Int in 1.9\n      }\n\nInspection is available for Kotlin language level starting from 1.7."
+        },
+        {
+          "shortName": "WarningOnMainUnusedParameterMigration",
+          "displayName": "Unused 'args' on 'main' since 1.4",
+          "enabled": false,
+          "description": "Reports `main` function with an unused single parameter.\n\nSince Kotlin 1.4, it is possible to use the `main` function without parameter as the entry point to the Kotlin program.\nThe compiler reports a warning for the `main` function with an unused parameter."
+        },
+        {
+          "shortName": "RedundantLabelMigration",
+          "displayName": "Redundant label",
+          "enabled": false,
+          "description": "Reports redundant labels which cause compilation errors since Kotlin 1.4.\n\nSince Kotlin 1.0, one can mark any statement with a label:\n\n\n      fun foo() {\n        L1@ val x = L2@bar()\n      }\n\nHowever, these labels can be referenced only in a limited number of ways:\n\n* break / continue from a loop\n* non-local return from an inline lambda or inline anonymous function\nsssss\n\nSuch labels are prohibited since Kotlin 1.4.\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.4 or higher."
+        },
+        {
+          "shortName": "NoConstructorMigration",
+          "displayName": "Forbidden constructor call",
+          "enabled": false,
+          "description": "Reports a constructor calls on functional supertypes that will lead to compilation error since 1.9.\n\nMotivation types:\n\n* The implementation does not abide by a published spec or documentation\n\n**More details:** [KT-46344: No error for a super class constructor call on a function interface in supertypes list](https://youtrack.jetbrains.com/issue/KT-46344)\n\nThe quick-fix removes a constructor call.\n\n**Example:**\n\n\n      abstract class A : () -> Int()\n\nAfter the quick-fix is applied:\n\n\n      abstract class A : () -> Int\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.7 or higher."
+        },
+        {
+          "shortName": "ProhibitTypeParametersForLocalVariablesMigration",
+          "displayName": "Local variable with type parameters",
+          "enabled": false,
+          "description": "Reports local variables with type parameters.\n\nA type parameter for a local variable doesn't make sense because it can't be specialized.\n\n**Example:**\n\n\n      fun main() {\n          val <T> x = \"\"\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun main() {\n          val x = \"\"\n      }\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.4 or higher."
+        },
+        {
+          "shortName": "InlineClassDeprecatedMigration",
+          "displayName": "Inline classes are deprecated since 1.5",
+          "enabled": false,
+          "description": "Reports inline classes that are deprecated and cause compilation warnings in Kotlin 1.5 and later.\nSee [What's new in Kotlin 1.5.0](https://kotlinlang.org/docs/whatsnew15.html#inline-classes)\n\nExample:\n\n\n      inline class Password(val s: String)\n\nAfter the quick-fix is applied:\n\n\n      @JvmInline\n      value class Password(val s: String)\n\nInspection is available for Kotlin language level starting from 1.5."
+        },
+        {
+          "shortName": "ProhibitJvmOverloadsOnConstructorsOfAnnotationClassesMigration",
+          "displayName": "'@JvmOverloads' annotation cannot be used on constructors of annotation classes since 1.4",
+          "enabled": false,
+          "description": "Reports `@JvmOverloads` on constructors of annotation classes because it's meaningless.\n\n\nThere is no footprint of `@JvmOverloads` in the generated bytecode and Kotlin metadata,\nso `@JvmOverloads` doesn't affect the generated bytecode and the code behavior.\n\n`@JvmOverloads` on constructors of annotation classes causes a compilation error since Kotlin 1.4.\n\n**Example:**\n\n\n      annotation class A @JvmOverloads constructor(val x: Int = 1)\n\nAfter the quick-fix is applied:\n\n\n      annotation class A constructor(val x: Int = 1)\n"
+        },
+        {
+          "shortName": "KotlinDeprecation",
+          "displayName": "Usage of redundant or deprecated syntax or deprecated symbols",
+          "enabled": false,
+          "description": "Reports obsolete language features and unnecessarily verbose code constructs during the code cleanup operation (**Code \\| Code Cleanup** ).\n\n\nThe quick-fix automatically replaces usages of obsolete language features or unnecessarily verbose code constructs with compact and up-to-date syntax.\n\n\nIt also replaces deprecated symbols with their proposed substitutions."
+        },
+        {
+          "shortName": "OverrideDeprecatedMigration",
+          "displayName": "Do not propagate method deprecation through overrides since 1.9",
+          "enabled": false,
+          "description": "Reports a declarations that are propagated by `@Deprecated` annotation that will lead to compilation error since 1.9.\n\nMotivation types:\n\n* Implementation changes are required for implementation design/architectural reasons\n* Inconsistency in the design (things are done differently in different contexts)\n\n**More details:** [KT-47902: Do not propagate method deprecation through overrides](https://youtrack.jetbrains.com/issue/KT-47902)\n\nThe quick-fix copies `@Deprecated` annotation from the parent declaration.\n\n**Example:**\n\n\n      open class Base {\n          @Deprecated(\"Don't use\")\n          open fun foo() {}\n      }\n\n      class Derived : Base() {\n          override fun foo() {}\n      }\n\nAfter the quick-fix is applied:\n\n\n      open class Base {\n          @Deprecated(\"Don't use\")\n          open fun foo() {}\n      }\n\n      class Derived : Base() {\n          @Deprecated(\"Don't use\")\n          override fun foo() {}\n      }\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.6 or higher."
+        },
+        {
+          "shortName": "ObsoleteExperimentalCoroutines",
+          "displayName": "Experimental coroutines usages are deprecated since 1.3",
+          "enabled": false,
+          "description": "Reports code that uses experimental coroutines.\n\nSuch usages are incompatible with Kotlin 1.3+ and should be updated."
+        },
+        {
+          "shortName": "FromClosedRangeMigration",
+          "displayName": "MIN_VALUE step in fromClosedRange() since 1.3",
+          "enabled": false,
+          "description": "Reports `IntProgression.fromClosedRange()` and `LongProgression.fromClosedRange()` with `MIN_VALUE` step.\n\n\nIt is prohibited to call `IntProgression.fromClosedRange()` and `LongProgression.fromClosedRange()` with\n`MIN_VALUE` step. All such calls should be checked during migration to Kotlin 1.3+.\n\n**Example:**\n\n\n      IntProgression.fromClosedRange(12, 143, Int.MIN_VALUE)\n\nTo fix the problem change the step of the progression."
+        },
+        {
+          "shortName": "DeclaringClassMigration",
+          "displayName": "Deprecated 'Enum.declaringClass' property",
+          "enabled": false,
+          "description": "Reports 'declaringClass' property calls on Enum that will lead to compilation error since 1.9.\n\n'Enum.getDeclaringClass' is among \"hidden\" Java functions which aren't normally visible by resolve. However, it's visible via synthetic\nproperty that is a front-end bug.\n\n**More details:** [KT-49653 Deprecate and remove Enum.declaringClass synthetic\nproperty](https://youtrack.jetbrains.com/issue/KT-49653)\n\nThe quick-fix replaces a call with 'declaringJavaClass'.\n\n**Example:**\n\n\n      fun <E: Enum<E>> foo(values: Array<E>) {\n        EnumSet.noneOf(values.first().declaringClass)\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun <E: Enum<E>> foo(values: Array<E>) {\n        EnumSet.noneOf(values.first().declaringJavaClass)\n      }\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.7 or higher."
+        },
+        {
+          "shortName": "ProhibitUseSiteTargetAnnotationsOnSuperTypesMigration",
+          "displayName": "Meaningless annotations targets on superclass",
+          "enabled": false,
+          "description": "Reports meaningless annotation targets on superclasses since Kotlin 1.4.\n\nAnnotation targets such as `@get:` are meaningless on superclasses and are prohibited.\n\n**Example:**\n\n\n      interface Foo\n\n      annotation class Ann\n\n      class E : @field:Ann @get:Ann @set:Ann @setparam:Ann Foo\n\nAfter the quick-fix is applied:\n\n\n      interface Foo\n\n      annotation class Ann\n\n      class E : Foo\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.4 or higher."
+        },
+        {
+          "shortName": "ObsoleteKotlinJsPackages",
+          "displayName": "'kotlin.browser' and 'kotlin.dom' packages are deprecated since 1.4",
+          "enabled": false,
+          "description": "Reports usages of `kotlin.dom` and `kotlin.browser` packages.\n\nThese packages were moved to `kotlinx.dom` and `kotlinx.browser`\nrespectively in Kotlin 1.4+."
+        },
+        {
+          "shortName": "RestrictReturnStatementTargetMigration",
+          "displayName": "Target label does not denote a function since 1.4",
+          "enabled": false,
+          "description": "Reports labels that don't points to a functions.\n\nIt's forbidden to declare a target label that does not denote a function.\n\nThe quick-fix removes the label.\n\n**Example:**\n\n\n      fun testValLabelInReturn() {\n          L@ val fn = { return@L }\n          fn()\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun testValLabelInReturn() {\n          L@ val fn = { return }\n          fn()\n      }\n\nThis inspection only reports if the language level of the project or module is 1.4 or higher."
+        },
+        {
+          "shortName": "ProhibitRepeatedUseSiteTargetAnnotationsMigration",
+          "displayName": "Repeated annotation which is not marked as '@Repeatable'",
+          "enabled": false,
+          "description": "Reports the repeated use of a non-`@Repeatable` annotation on property accessors.\n\n\nAs a result of using non-`@Repeatable` annotation multiple times, both annotation usages\nwill appear in the bytecode leading to an ambiguity in reflection calls.\n\n\nSince Kotlin 1.4 it's mandatory to either mark annotation as `@Repeatable` or not\nrepeat the annotation, otherwise it will lead to compilation error.\n\n**Example:**\n\n\n      annotation class Foo(val x: Int)\n\n      @get:Foo(10)\n      val a: String\n          @Foo(20) get() = \"foo\" // annotation repeated twice but not marked as @Repeatable\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.4 or higher."
+        }
+      ]
+    },
+    {
       "name": "Probable bugs",
       "inspections": [
         {
@@ -2371,16 +2490,16 @@
           "description": "Reports calls to `StringBuffer` and `StringBuilder` constructors with `char` as the argument. In this case, `char` is silently cast to an integer and interpreted as the initial capacity of the buffer.\n\n**Example:**\n\n\n      new StringBuilder('(').append(\"1\").append(')');\n\nAfter the quick-fix is applied:\n\n\n      new StringBuilder(\"(\").append(\"1\").append(')');\n"
         },
         {
-          "shortName": "ClassGetClass",
-          "displayName": "Suspicious 'Class.getClass()' call",
-          "enabled": true,
-          "description": "Reports `getClass()` methods that are called on a `java.lang.Class` instance.\n\nThis is usually a mistake as the result is always equivalent to `Class.class`.\nIf it's a mistake, then it's better to remove the `getClass()` call and use the qualifier directly.\nIf the behavior is intended, then it's better to write `Class.class` explicitly to avoid confusion.\n\nExample:\n\n\n      void test(Class<?> clazz) {\n        String name = clazz.getClass().getName();\n      }\n\nAfter one of the possible quick-fixes is applied:\n\n\n      void test(Class<?> clazz) {\n        String name = clazz.getName();\n      }\n\nNew in 2018.2"
-        },
-        {
           "shortName": "ResultOfObjectAllocationIgnored",
           "displayName": "Result of object allocation ignored",
           "enabled": false,
           "description": "Reports object allocations where the allocated object is ignored and neither assigned to a variable nor used in another way.\n\n\nSuch allocation expressions are legal in Java, but are usually either unintended, or\nevidence of a very odd object initialization strategy.\n\n\nUse the options to list classes whose allocations should be ignored by this inspection."
+        },
+        {
+          "shortName": "ClassGetClass",
+          "displayName": "Suspicious 'Class.getClass()' call",
+          "enabled": true,
+          "description": "Reports `getClass()` methods that are called on a `java.lang.Class` instance.\n\nThis is usually a mistake as the result is always equivalent to `Class.class`.\nIf it's a mistake, then it's better to remove the `getClass()` call and use the qualifier directly.\nIf the behavior is intended, then it's better to write `Class.class` explicitly to avoid confusion.\n\nExample:\n\n\n      void test(Class<?> clazz) {\n        String name = clazz.getClass().getName();\n      }\n\nAfter one of the possible quick-fixes is applied:\n\n\n      void test(Class<?> clazz) {\n        String name = clazz.getName();\n      }\n\nNew in 2018.2"
         },
         {
           "shortName": "MismatchedStringBuilderQueryUpdate",
@@ -2464,7 +2583,7 @@
           "shortName": "ExpressionComparedToItself",
           "displayName": "Expression is compared to itself",
           "enabled": true,
-          "description": "Reports comparisons where left and right operand represent the identical expression. While sometimes comparison of an expression with itself could be intended, in most cases they are the result of an oversight.\n\nExample:\n\n\n      // Probably left.getLength() == right.getLength() was intended\n      boolean result = left.getLength() == left.getLength();\n\n\nTo ignore comparisons that may produce side effects, use the **Ignore conditions with side effects** option.\nDisabling this option may lead to false-positives, for example, when the same method returns different values on subsequent invocations.\n\nExample:\n\n\n      native int unknownMethod();\n      \n      ...\n      \n      if (unknownMethod() > unknownMethod()) {\n        System.out.println(\"Got it\");\n      }\n\nDue to possible side effects of `unknownMethod()` (on the example), the warning will only be\ntriggered if the **Ignore conditions with side effects** option is disabled.\n\nNew in 2024.2"
+          "description": "Reports comparisons where left and right operand represent the identical expression. While sometimes comparing an expression with itself could be intended, in most cases, it is an oversight.\n\nExample:\n\n\n      // Probably left.getLength() == right.getLength() was intended\n      boolean result = left.getLength() == left.getLength();\n\n\nTo ignore comparisons that may produce side effects, use the **Ignore conditions with side effects** option.\nDisabling this option may lead to false-positives, for example, when the same method returns different values on subsequent invocations.\n\nExample:\n\n\n      native int unknownMethod();\n      \n      ...\n      \n      if (unknownMethod() > unknownMethod()) {\n        System.out.println(\"Got it\");\n      }\n\nDue to possible side effects of `unknownMethod()` (on the example), the warning will only be\ntriggered if the **Ignore conditions with side effects** option is disabled.\n\nNew in 2024.2"
         },
         {
           "shortName": "CollectionAddedToSelf",
@@ -2542,7 +2661,7 @@
           "shortName": "EqualsWithItself",
           "displayName": "'equals()' called on itself",
           "enabled": true,
-          "description": "Reports calls to `equals()`, `compareTo()` or similar, that compare an object for equality with itself. The method contracts of these methods specify that such calls will always return `true` for `equals()` or `0` for `compareTo()`. The inspection also checks calls to `Objects.equals()`, `Objects.deepEquals()`, `Arrays.equals()`, `Comparator.compare()`, `assertEquals()` methods of test frameworks (JUnit, TestNG, AssertJ), `Integer.compare()`, `Integer.compareUnsigned()` and similar methods.\n\n**Example:**\n\n\n      class Foo {\n        boolean foo(Object o) {\n            return o.equals(o); // warning\n        }\n\n        boolean bar(String[] ss) {\n            return Arrays.equals(ss, ss); // warning\n        }\n    }\n\n\nUse the option to report test assertions report only on non-extendable library classes (like `String`) and primitive types.\nThis option can be useful, when testing `equals()` methods."
+          "description": "Reports calls to `equals()`, `compareTo()` or similar, that compare an object for equality with itself. The method contracts of these methods specify that such calls will always return `true` for `equals()` or `0` for `compareTo()`. The inspection also checks calls to `Objects.equals()`, `Objects.deepEquals()`, `Arrays.equals()`, `Comparator.compare()`, `assertEquals()` methods of test frameworks (JUnit, TestNG, AssertJ), `Integer.compare()`, `Integer.compareUnsigned()` and similar methods.\n\n\nNote that in rare cases, the inspection may report `equals()` calls that return false, because while the expressions\non the both sides are the same, they produce separate objects, and comparison is performed on references, rather than on content.\nThe simplest example is `new Object().equals(new Object())`. In any case, such calls are suspicious, and likely\nsomething else was intended.\n\n**Example:**\n\n\n      class Foo {\n        boolean foo(Object o) {\n            return o.equals(o); // warning\n        }\n\n        boolean bar(String[] ss) {\n            return Arrays.equals(ss, ss); // warning\n        }\n    }\n"
         },
         {
           "shortName": "IteratorNextDoesNotThrowNoSuchElementException",
@@ -2554,7 +2673,7 @@
           "shortName": "IncorrectMessageFormat",
           "displayName": "Incorrect 'MessageFormat' pattern",
           "enabled": true,
-          "description": "Reports incorrect message format patterns or incorrect indexes of placeholders\n\nThe following errors are reported:\n\n* Unparsed or negative index\n* Unclosed brace\n* Unpaired quote. In this case, a part of a pattern may not be used\n* Probably incorrect number of quotes\n* Incorrect lower bound of nested choice patterns\n* Incorrect indexes of placeholders. In this case, a placeholder may not be substituted or an argument may not be used\n\nExamples:\n\n\n      MessageFormat.format(\"{wrong}\", 1); // incorrect index\n      MessageFormat.format(\"{0\", 1); // Unmatched brace\n      MessageFormat.format(\"'{0}\", 1); // Unpaired quote\n      MessageFormat.format(\"It''''s {0}\", 1); // \"It''s\" will be printed, instead of \"It's\"\n      MessageFormat.format(\"{0}\", 1, 2); // The argument with index '1' is not used in the pattern\n\nNew in 2023.2"
+          "description": "Reports incorrect message format patterns or incorrect indexes of placeholders\n\nThe following errors are reported:\n\n* Unparsed or negative index\n* Unclosed brace\n* Unpaired quote. In this case, a part of a pattern may not be used\n* Probably incorrect number of quotes\n* Incorrect lower bound of nested choice patterns\n* Incorrect indexes of placeholders. In this case, a placeholder may not be substituted or an argument may not be used\n\nExamples:\n\n\n      MessageFormat.format(\"{wrong}\", 1); // incorrect index\n      MessageFormat.format(\"{0\", 1); // Unmatched brace\n      MessageFormat.format(\"'{0}\", 1); // Unpaired quote\n      MessageFormat.format(\"It''''s {0}\", 1); // \"It''s\" will be printed, instead of \"It's\"\n      MessageFormat.format(\"{0}\", 1, 2); // The argument with index '1' is not used in the pattern\n\n\nUse the **Custom MessageFormat methods** table\nto specify method calls that should have their arguments checked as MessageFormat patterns.\nThe table contains pairs of fully qualified class name and method name regular expression\nto match the containing class and name of the method calls.\nClass names also match subclasses.\n\nNew in 2023.2"
         },
         {
           "shortName": "SuspiciousTernaryOperatorInVarargsCall",
@@ -2570,7 +2689,7 @@
         },
         {
           "shortName": "EqualsWhichDoesntCheckParameterClass",
-          "displayName": "'equals()' method which does not check class of parameter",
+          "displayName": "'equals()' method that does not check the class of its parameter",
           "enabled": true,
           "description": "Reports `equals()` methods that do not check the type of their parameter.\n\nFailure to check the type of the parameter\nin the `equals()` method may result in latent errors if the object is used in an untyped collection.\n\n**Example:**\n\n\n      class MyClass {\n        int x;\n\n        @Override\n        public boolean equals(Object obj) {\n          // equals method should return false if obj is not MyClass\n          return ((MyClass)obj).x == x;\n        }\n      }\n"
         },
@@ -2941,16 +3060,16 @@
           "description": "Reports expressions and conditions that always produce the same result, like true, false, null, or zero. Such expressions could be replaced with the corresponding constant value. Very often though they signal about a bug in the code.\n\nExamples:\n\n      // always true\n      // root cause: || is used instead of &&\n      if (x > 0 || x < 10) {}\n\n      System.out.println(str.trim());\n      // always false\n      // root cause: variable was dereferenced before null-check\n      if (str == null) {}\n\n\nThe inspection behavior may be controlled by a number of annotations, such as\n[nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) annotations,\n[@Contract](https://www.jetbrains.com/help/idea/contract-annotations.html) annotation,\n`@Range` annotation and so on.\n\nConfigure the inspection:\n\n* Use the **Don't report assertions with condition statically proven to be always true** option to avoid reporting assertions that were statically proven to be always true. This also includes conditions like `if (alwaysFalseCondition) throw new IllegalArgumentException();`.\n* Use the **Ignore assert statements** option to control how the inspection treats `assert` statements. By default, the option is disabled, which means that the assertions are assumed to be executed (-ea mode). If the option is enabled, the assertions will be completely ignored (-da mode).\n* Use the **Warn when constant is stored in variable** option to display warnings when variable is used, whose value is known to be a constant.\n\n\nBefore IntelliJ IDEA 2022.3, this inspection was part of \"Constant Conditions \\& Exceptions\" inspection. Now, it split into two inspections:\n\"Constant Values\" and \"Nullability and data flow problems\"."
         },
         {
-          "shortName": "IteratorHasNextCallsIteratorNext",
-          "displayName": "'Iterator.hasNext()' which calls 'next()'",
-          "enabled": true,
-          "description": "Reports implementations of `Iterator.hasNext()` or `ListIterator.hasPrevious()` that call `Iterator.next()` or `ListIterator.previous()` on the iterator instance. Such calls are almost certainly an error, as methods like `hasNext()` should not modify the iterators state, while `next()` should.\n\n**Example:**\n\n\n      class MyIterator implements Iterator<Integer> {\n        public boolean hasNext() {\n          return next() != null;\n        }\n      }\n"
-        },
-        {
           "shortName": "EqualsAndHashcode",
           "displayName": "'equals()' and 'hashCode()' not paired",
           "enabled": false,
           "description": "Reports classes that override the `equals()` method but do not override the `hashCode()` method or vice versa, which can potentially lead to problems when the class is added to a `Collection` or a `HashMap`.\n\nThe quick-fix generates the default implementation for an absent method.\n\nExample:\n\n\n    class StringHolder {\n      String s;\n\n      @Override public int hashCode() {\n        return s != null ? s.hashCode() : 0;\n      }\n    }\n\nAfter the quick-fix is applied:\n\n\n    class StringHolder {\n      String s;\n\n      @Override public int hashCode() {\n        return s != null ? s.hashCode() : 0;\n      }\n\n      @Override\n      public boolean equals(Object o) {\n        if (this == o) return true;\n        if (!(o instanceof StringHolder)) return false;\n\n        StringHolder holder = (StringHolder)o;\n\n        if (s != null ? !s.equals(holder.s) : holder.s != null) return false;\n\n        return true;\n      }\n    }\n"
+        },
+        {
+          "shortName": "IteratorHasNextCallsIteratorNext",
+          "displayName": "'Iterator.hasNext()' which calls 'next()'",
+          "enabled": true,
+          "description": "Reports implementations of `Iterator.hasNext()` or `ListIterator.hasPrevious()` that call `Iterator.next()` or `ListIterator.previous()` on the iterator instance. Such calls are almost certainly an error, as methods like `hasNext()` should not modify the iterators state, while `next()` should.\n\n**Example:**\n\n\n      class MyIterator implements Iterator<Integer> {\n        public boolean hasNext() {\n          return next() != null;\n        }\n      }\n"
         },
         {
           "shortName": "MathRoundingWithIntArgument",
@@ -3395,125 +3514,6 @@
           "displayName": "Non-external classifier extending State or Props",
           "enabled": true,
           "description": "Reports non-external classifier extending State or Props. Read more in the [migration guide](https://kotlinlang.org/docs/js-ir-migration.html#convert-js-and-react-related-classes-and-interfaces-to-external-interfaces)."
-        }
-      ]
-    },
-    {
-      "name": "Migration",
-      "inspections": [
-        {
-          "shortName": "NonExhaustiveWhenStatementMigration",
-          "displayName": "Non-exhaustive 'when' statements will be prohibited since 1.7",
-          "enabled": false,
-          "description": "Reports a non-exhaustive `when` statements that will lead to compilation error since 1.7.\n\nMotivation types:\n\n* Problematic/meaningless usage patterns need to be discouraged/blocked (e.g. counterintuitive behaviors)\n  * Code is error-prone\n* Inconsistency in the design (things are done differently in different contexts)\n\nImpact types:\n\n* Compilation. Some code that used to compile won't compile any more\n  * There were cases when such code worked with no exceptions\n    * Some such code could compile without any warnings\n\n**More details:** [KT-47709: Make when statements with enum, sealed, and Boolean subjects exhaustive by default](https://youtrack.jetbrains.com/issue/KT-47709)\n\nThe quick-fix adds the missing `else -> {}` branch.\n\n**Example:**\n\n\n      sealed class Base {\n          class A : Base()\n          class B : Base()\n      }\n\n      fun test(base: Base) {\n          when (base) {\n              is Base.A -> \"\"\n          }\n      }\n\nAfter the quick-fix is applied:\n\n\n      sealed class Base {\n          class A : Base()\n          class B : Base()\n      }\n\n      fun test(base: Base) {\n          when (base) {\n              is Base.A -> \"\"\n              else -> {}\n          }\n      }\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.6 or higher."
-        },
-        {
-          "shortName": "AmbiguousExpressionInWhenBranchMigration",
-          "displayName": "Ambiguous logical expressions in 'when' branches since 1.7",
-          "enabled": false,
-          "description": "Reports ambiguous logical expressions in `when` branches which cause compilation errors in Kotlin 1.8 and later.\n\n\n      fun Int.matches(strict: Boolean): Boolean = when (strict) {\n          true -> this == 6\n          this in (4..7) -> true // is ambiguous\n          else -> false\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun Int.matches(strict: Boolean): Boolean = when (strict) {\n          true -> this == 6\n          (this in (4..7)) -> true // wrapped in parentheses\n          else -> false\n      }\n\nInspection is available for Kotlin language level starting from 1.7."
-        },
-        {
-          "shortName": "CastDueToProgressionResolutionChangeMigration",
-          "displayName": "Progression resolution change since 1.9",
-          "enabled": false,
-          "description": "Reports overloaded function calls where an argument requires an explicit cast to resolve to a proper declaration.\nThe current compiler warning (available since Kotlin 1.6.20) will become an error in Kotlin 1.8.\n\n\nProgressions and ranges types (`kotlin.ranges`) will start implementing the `Collection` interface in Kotlin\n1.9 and later. This update will cause a change in resolution for overloaded functions. For instance, in the example below, the\n`test(1..5)` call will be resolved to `test(t: Any)` in Kotlin 1.8 and earlier and to\n`test(t: Collection<*>)` in Kotlin 1.9 and later.\n\n\n      fun test(t: Any) { }\n      fun test(t: Collection<*>) { }\n      fun invoke() {\n        test(1..5) // IntRange becomes Collection in 1.9\n      }\n\nThe provided quick-fix captures the behaviour specific to the compiler of version 1.8 and earlier:\n\n\n      fun test(t: Any) { }\n      fun test(t: Collection<*>) { }\n\n      fun invoke() {\n        test(1..5) // resolved to 'test(t: T)' before Kotlin 1.9\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test(t: Any) { }\n      fun test(t: Collection<*>) { }\n\n      fun invoke() {\n        test((1..5) as Iterable<Int>) // resolved to 'test(t: T)' in Kotlin 1.9\n      }\n\nInspection is available for the Kotlin language level starting from 1.6."
-        },
-        {
-          "shortName": "AddConversionCallMigration",
-          "displayName": "Explicit conversion from `Int` needed since 1.9",
-          "enabled": false,
-          "description": "Reports expressions that will be of type `Int`, thus causing compilation errors in Kotlin 1.9 and later.\n\nExample:\n\n\n      fun takeByte(x: Byte) {}\n\n      fun foo() {\n          takeByte(1 + 1) // will be resolved to Int in 1.9\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun takeByte(x: Byte) {}\n\n      fun foo() {\n          takeByte((1 + 1).toByte()) // will be resolved to Int in 1.9\n      }\n\nInspection is available for Kotlin language level starting from 1.7."
-        },
-        {
-          "shortName": "WarningOnMainUnusedParameterMigration",
-          "displayName": "Unused 'args' on 'main' since 1.4",
-          "enabled": false,
-          "description": "Reports `main` function with an unused single parameter.\n\nSince Kotlin 1.4, it is possible to use the `main` function without parameter as the entry point to the Kotlin program.\nThe compiler reports a warning for the `main` function with an unused parameter."
-        },
-        {
-          "shortName": "RedundantLabelMigration",
-          "displayName": "Redundant label",
-          "enabled": false,
-          "description": "Reports redundant labels which cause compilation errors since Kotlin 1.4.\n\nSince Kotlin 1.0, one can mark any statement with a label:\n\n\n      fun foo() {\n        L1@ val x = L2@bar()\n      }\n\nHowever, these labels can be referenced only in a limited number of ways:\n\n* break / continue from a loop\n* non-local return from an inline lambda or inline anonymous function\nsssss\n\nSuch labels are prohibited since Kotlin 1.4.\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.4 or higher."
-        },
-        {
-          "shortName": "NoConstructorMigration",
-          "displayName": "Forbidden constructor call",
-          "enabled": false,
-          "description": "Reports a constructor calls on functional supertypes that will lead to compilation error since 1.9.\n\nMotivation types:\n\n* The implementation does not abide by a published spec or documentation\n\n**More details:** [KT-46344: No error for a super class constructor call on a function interface in supertypes list](https://youtrack.jetbrains.com/issue/KT-46344)\n\nThe quick-fix removes a constructor call.\n\n**Example:**\n\n\n      abstract class A : () -> Int()\n\nAfter the quick-fix is applied:\n\n\n      abstract class A : () -> Int\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.7 or higher."
-        },
-        {
-          "shortName": "ProhibitTypeParametersForLocalVariablesMigration",
-          "displayName": "Local variable with type parameters",
-          "enabled": false,
-          "description": "Reports local variables with type parameters.\n\nA type parameter for a local variable doesn't make sense because it can't be specialized.\n\n**Example:**\n\n\n      fun main() {\n          val <T> x = \"\"\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun main() {\n          val x = \"\"\n      }\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.4 or higher."
-        },
-        {
-          "shortName": "InlineClassDeprecatedMigration",
-          "displayName": "Inline classes are deprecated since 1.5",
-          "enabled": false,
-          "description": "Reports inline classes that are deprecated and cause compilation warnings in Kotlin 1.5 and later.\nSee [What's new in Kotlin 1.5.0](https://kotlinlang.org/docs/whatsnew15.html#inline-classes)\n\nExample:\n\n\n      inline class Password(val s: String)\n\nAfter the quick-fix is applied:\n\n\n      @JvmInline\n      value class Password(val s: String)\n\nInspection is available for Kotlin language level starting from 1.5."
-        },
-        {
-          "shortName": "ProhibitJvmOverloadsOnConstructorsOfAnnotationClassesMigration",
-          "displayName": "'@JvmOverloads' annotation cannot be used on constructors of annotation classes since 1.4",
-          "enabled": false,
-          "description": "Reports `@JvmOverloads` on constructors of annotation classes because it's meaningless.\n\n\nThere is no footprint of `@JvmOverloads` in the generated bytecode and Kotlin metadata,\nso `@JvmOverloads` doesn't affect the generated bytecode and the code behavior.\n\n`@JvmOverloads` on constructors of annotation classes causes a compilation error since Kotlin 1.4.\n\n**Example:**\n\n\n      annotation class A @JvmOverloads constructor(val x: Int = 1)\n\nAfter the quick-fix is applied:\n\n\n      annotation class A constructor(val x: Int = 1)\n"
-        },
-        {
-          "shortName": "KotlinDeprecation",
-          "displayName": "Usage of redundant or deprecated syntax or deprecated symbols",
-          "enabled": false,
-          "description": "Reports obsolete language features and unnecessarily verbose code constructs during the code cleanup operation (**Code \\| Code Cleanup** ).\n\n\nThe quick-fix automatically replaces usages of obsolete language features or unnecessarily verbose code constructs with compact and up-to-date syntax.\n\n\nIt also replaces deprecated symbols with their proposed substitutions."
-        },
-        {
-          "shortName": "OverrideDeprecatedMigration",
-          "displayName": "Do not propagate method deprecation through overrides since 1.9",
-          "enabled": false,
-          "description": "Reports a declarations that are propagated by `@Deprecated` annotation that will lead to compilation error since 1.9.\n\nMotivation types:\n\n* Implementation changes are required for implementation design/architectural reasons\n* Inconsistency in the design (things are done differently in different contexts)\n\n**More details:** [KT-47902: Do not propagate method deprecation through overrides](https://youtrack.jetbrains.com/issue/KT-47902)\n\nThe quick-fix copies `@Deprecated` annotation from the parent declaration.\n\n**Example:**\n\n\n      open class Base {\n          @Deprecated(\"Don't use\")\n          open fun foo() {}\n      }\n\n      class Derived : Base() {\n          override fun foo() {}\n      }\n\nAfter the quick-fix is applied:\n\n\n      open class Base {\n          @Deprecated(\"Don't use\")\n          open fun foo() {}\n      }\n\n      class Derived : Base() {\n          @Deprecated(\"Don't use\")\n          override fun foo() {}\n      }\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.6 or higher."
-        },
-        {
-          "shortName": "ObsoleteExperimentalCoroutines",
-          "displayName": "Experimental coroutines usages are deprecated since 1.3",
-          "enabled": false,
-          "description": "Reports code that uses experimental coroutines.\n\nSuch usages are incompatible with Kotlin 1.3+ and should be updated."
-        },
-        {
-          "shortName": "FromClosedRangeMigration",
-          "displayName": "MIN_VALUE step in fromClosedRange() since 1.3",
-          "enabled": false,
-          "description": "Reports `IntProgression.fromClosedRange()` and `LongProgression.fromClosedRange()` with `MIN_VALUE` step.\n\n\nIt is prohibited to call `IntProgression.fromClosedRange()` and `LongProgression.fromClosedRange()` with\n`MIN_VALUE` step. All such calls should be checked during migration to Kotlin 1.3+.\n\n**Example:**\n\n\n      IntProgression.fromClosedRange(12, 143, Int.MIN_VALUE)\n\nTo fix the problem change the step of the progression."
-        },
-        {
-          "shortName": "DeclaringClassMigration",
-          "displayName": "Deprecated 'Enum.declaringClass' property",
-          "enabled": false,
-          "description": "Reports 'declaringClass' property calls on Enum that will lead to compilation error since 1.9.\n\n'Enum.getDeclaringClass' is among \"hidden\" Java functions which aren't normally visible by resolve. However, it's visible via synthetic\nproperty that is a front-end bug.\n\n**More details:** [KT-49653 Deprecate and remove Enum.declaringClass synthetic\nproperty](https://youtrack.jetbrains.com/issue/KT-49653)\n\nThe quick-fix replaces a call with 'declaringJavaClass'.\n\n**Example:**\n\n\n      fun <E: Enum<E>> foo(values: Array<E>) {\n        EnumSet.noneOf(values.first().declaringClass)\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun <E: Enum<E>> foo(values: Array<E>) {\n        EnumSet.noneOf(values.first().declaringJavaClass)\n      }\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.7 or higher."
-        },
-        {
-          "shortName": "ProhibitUseSiteTargetAnnotationsOnSuperTypesMigration",
-          "displayName": "Meaningless annotations targets on superclass",
-          "enabled": false,
-          "description": "Reports meaningless annotation targets on superclasses since Kotlin 1.4.\n\nAnnotation targets such as `@get:` are meaningless on superclasses and are prohibited.\n\n**Example:**\n\n\n      interface Foo\n\n      annotation class Ann\n\n      class E : @field:Ann @get:Ann @set:Ann @setparam:Ann Foo\n\nAfter the quick-fix is applied:\n\n\n      interface Foo\n\n      annotation class Ann\n\n      class E : Foo\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.4 or higher."
-        },
-        {
-          "shortName": "ObsoleteKotlinJsPackages",
-          "displayName": "'kotlin.browser' and 'kotlin.dom' packages are deprecated since 1.4",
-          "enabled": false,
-          "description": "Reports usages of `kotlin.dom` and `kotlin.browser` packages.\n\nThese packages were moved to `kotlinx.dom` and `kotlinx.browser`\nrespectively in Kotlin 1.4+."
-        },
-        {
-          "shortName": "RestrictReturnStatementTargetMigration",
-          "displayName": "Target label does not denote a function since 1.4",
-          "enabled": false,
-          "description": "Reports labels that don't points to a functions.\n\nIt's forbidden to declare a target label that does not denote a function.\n\nThe quick-fix removes the label.\n\n**Example:**\n\n\n      fun testValLabelInReturn() {\n          L@ val fn = { return@L }\n          fn()\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun testValLabelInReturn() {\n          L@ val fn = { return }\n          fn()\n      }\n\nThis inspection only reports if the language level of the project or module is 1.4 or higher."
-        },
-        {
-          "shortName": "ProhibitRepeatedUseSiteTargetAnnotationsMigration",
-          "displayName": "Repeated annotation which is not marked as '@Repeatable'",
-          "enabled": false,
-          "description": "Reports the repeated use of a non-`@Repeatable` annotation on property accessors.\n\n\nAs a result of using non-`@Repeatable` annotation multiple times, both annotation usages\nwill appear in the bytecode leading to an ambiguity in reflection calls.\n\n\nSince Kotlin 1.4 it's mandatory to either mark annotation as `@Repeatable` or not\nrepeat the annotation, otherwise it will lead to compilation error.\n\n**Example:**\n\n\n      annotation class Foo(val x: Int)\n\n      @get:Foo(10)\n      val a: String\n          @Foo(20) get() = \"foo\" // annotation repeated twice but not marked as @Repeatable\n\nThis inspection only reports if the Kotlin language level of the project or module is 1.4 or higher."
         }
       ]
     },
@@ -4128,16 +4128,16 @@
           "description": "Reports classes that refer to their subclasses in static initializers or static fields.\n\nSuch references can cause JVM-level deadlocks in multithreaded environment, when one thread tries to load the superclass\nand another thread tries to load the subclass at the same time.\n\n**Example:**\n\n\n      class Parent {\n        static final Child field = new Child();\n      }\n      class Child extends Parent { }\n"
         },
         {
-          "shortName": "WaitCalledOnCondition",
-          "displayName": "'wait()' called on 'java.util.concurrent.locks.Condition' object",
-          "enabled": false,
-          "description": "Reports calls to `wait()` made on a `java.util.concurrent.locks.Condition` object. This is probably a programming error, and some variant of the `await()` method was intended instead.\n\n**Example:**\n\n\n      void acquire(Condition released) throws InterruptedException {\n        while (acquired) {\n          released.wait();\n        }\n      }\n\nGood code would look like this:\n\n\n      void acquire(Condition released) throws InterruptedException {\n        while (acquired) {\n          released.await();\n        }\n      }\n"
-        },
-        {
           "shortName": "NonSynchronizedMethodOverridesSynchronizedMethod",
           "displayName": "Unsynchronized method overrides 'synchronized' method",
           "enabled": false,
           "description": "Reports non-`synchronized` methods overriding `synchronized` methods.\n\n\nThe overridden method will not be automatically synchronized if the superclass method\nis declared as `synchronized`. This may result in unexpected race conditions when using the subclass.\n\n**Example:**\n\n\n      class Super {\n        synchronized void process() {}\n      }\n      class Sub extends Super {\n        // Unsynchronized method 'process()' overrides synchronized method\n        void process() {}\n      }  \n"
+        },
+        {
+          "shortName": "WaitCalledOnCondition",
+          "displayName": "'wait()' called on 'java.util.concurrent.locks.Condition' object",
+          "enabled": false,
+          "description": "Reports calls to `wait()` made on a `java.util.concurrent.locks.Condition` object. This is probably a programming error, and some variant of the `await()` method was intended instead.\n\n**Example:**\n\n\n      void acquire(Condition released) throws InterruptedException {\n        while (acquired) {\n          released.wait();\n        }\n      }\n\nGood code would look like this:\n\n\n      void acquire(Condition released) throws InterruptedException {\n        while (acquired) {\n          released.await();\n        }\n      }\n"
         },
         {
           "shortName": "WaitNotifyNotInSynchronizedContext",
@@ -4582,16 +4582,16 @@
           "description": "Reports equality expressions which are negated by a prefix expression.\n\nSuch expressions can be simplified using the `!=` operator.\n\nExample:\n\n\n      !(i == 1)\n\nAfter the quick-fix is applied:\n\n\n      i != 1\n"
         },
         {
-          "shortName": "AssertionCanBeIf",
-          "displayName": "Assertion can be replaced with 'if' statement",
-          "enabled": false,
-          "description": "Reports `assert` statements and suggests replacing them with `if` statements that throw `java.lang.AssertionError`.\n\nExample:\n\n\n      assert param != null;\n\nAfter the quick-fix is applied:\n\n\n      if (param == null) throw new AssertionError();\n\nThis inspection depends on the Java feature 'Assertions', which is available since Java 1.4."
-        },
-        {
           "shortName": "DoubleNegation",
           "displayName": "Double negation",
           "enabled": true,
           "description": "Reports double negations that can be simplified.\n\nExample:\n\n\n      if (!!functionCall()) {}\n\nAfter the quick-fix is applied:\n\n\n      if (functionCall()) {}\n\nExample:\n\n\n      if (!(a != b)) {}\n\nAfter the quick-fix is applied:\n\n\n      if (a == b) {}\n"
+        },
+        {
+          "shortName": "AssertionCanBeIf",
+          "displayName": "Assertion can be replaced with 'if' statement",
+          "enabled": false,
+          "description": "Reports `assert` statements and suggests replacing them with `if` statements that throw `java.lang.AssertionError`.\n\nExample:\n\n\n      assert param != null;\n\nAfter the quick-fix is applied:\n\n\n      if (param == null) throw new AssertionError();\n\nThis inspection depends on the Java feature 'Assertions', which is available since Java 1.4."
         },
         {
           "shortName": "BreakStatement",
@@ -5290,6 +5290,12 @@
           "displayName": "Invalid property key",
           "enabled": true,
           "description": "Reports invalid arguments that are passed to methods with parameters annotated as `@PropertyKey`.\n\nThese arguments should be valid property keys in corresponding properties files.\nAlso, the inspection verifies that the `resourceBundle`\nargument of the `@PropertyKey` annotation is an existing resource bundle.\n\n\nUse the quick-fix to create a new property or to select an existing one.\n\nExample:\n\n\n      @PropertyKey(resourceBundle = \"myBundle\") String value = \"invalid.key\";\n"
+        },
+        {
+          "shortName": "UnsupportedCharacter",
+          "displayName": "Unsupported character",
+          "enabled": true,
+          "description": "Reports characters in property files that are unsupported by the ISO-8859-1 charset when Java 1.8 or earlier is used. The inspection checks if a property file contains characters that cannot be mapped to ISO-8859-1 and suggests converting them to Unicode escape sequences for compatibility.\n\nConfigure the inspection:\n\n\nUse the **Convert to escape sequences** quick-fix to ensure compatibility with ISO-8859-1 encoding:\n\n**Example:**\n\n\n      key=Java + ☕ = 🍀\n\nAfter the quick-fix is applied:\n\n\n      key=Java + \\u2615 = \\uD83C\\uDF40\n"
         }
       ]
     },
@@ -5637,6 +5643,12 @@
           "description": "Reports condition chains in which a value range is checked and these condition chains can be simplified to a single check.\n\nThe quick-fix replaces a condition chain with a simplified expression:\n\nExample:\n\n\n      x > 2 && x < 4\n\nAfter the quick-fix is applied:\n\n\n      x == 3\n\nExample:\n\n\n      arr.length == 0 || arr.length > 1\n\nAfter the quick-fix is applied:\n\n\n      arr.length != 1\n\nNew in 2019.1"
         },
         {
+          "shortName": "RedundantJavaTimeOperations",
+          "displayName": "Redundant operation on 'java.time' object",
+          "enabled": false,
+          "description": "Reports redundant operation on 'java.time' object redundant:\n\n* creation of date/time objects from the JDK `java.time` package when simpler method calls can be used or creation can be avoided.\n* `java.time` method calls with `java.time.temporal.ChronoField` and `java.time.temporal.ChronoUnit` as arguments when these calls can be replaced with calls of more specific methods.\n* `java.time` comparisons with `compareTo()` calls that can be replaced with `isAfter()`, `isBefore()` or `isEqual()` calls.\n\nExamples:\n- Before:\n\n\n    LocalDateTime now = LocalDateTime.now();\n    return LocalDateTime.from(now);\n\nAfter the quick-fix is applied:\n\n\n    LocalDateTime now = LocalDateTime.now();\n    return now;\n\n- Before:\n\n\n    LocalTime localTime = LocalTime.now();\n    int minute = localTime.get(ChronoField.MINUTE_OF_HOUR);\n\nAfter the quick-fix is applied:\n\n\n    LocalTime localTime = LocalTime.now();\n    int minute = localTime.getMinute();\n\n- Before:\n\n\n      LocalDate date1 = LocalDate.now();\n      LocalDate date2 = LocalDate.now();\n      boolean t = date1.compareTo(date2) > 0;\n\nAfter the quick-fix is applied:\n\n\n      LocalDate date1 = LocalDate.now();\n      LocalDate date2 = LocalDate.now();\n      boolean t = date1.isAfter(date2);\n\nNew in 2024.3"
+        },
+        {
           "shortName": "UnnecessaryBreak",
           "displayName": "Unnecessary 'break' statement",
           "enabled": false,
@@ -5667,12 +5679,6 @@
           "description": "Reports usages of `StringBuffer`, `StringBuilder`, or `StringJoiner` which can be replaced with a single `String` concatenation.\n\nUsing `String` concatenation\nmakes the code shorter and simpler.\n\n\nThis inspection only reports when the suggested replacement does not result in significant\nperformance drawback on modern JVMs. In many cases, `String` concatenation may perform better.\n\n**Example:**\n\n\n      StringBuilder result = new StringBuilder();\n      result.append(\"i = \");\n      result.append(i);\n      result.append(\";\");\n      return result.toString();\n\nAfter the quick-fix is applied:\n\n\n      String result = \"i = \" + i + \";\";\n      return result;\n"
         },
         {
-          "shortName": "RedundantExplicitChronoField",
-          "displayName": "Calls of 'java.time' methods with explicit 'ChronoField' or 'ChronoUnit' arguments can be simplified",
-          "enabled": false,
-          "description": "Reports `java.time` method calls with `java.time.temporal.ChronoField` and `java.time.temporal.ChronoUnit` as arguments when these calls can be replaced with calls of more specific methods.\n\nExample:\n\n\n    LocalTime localTime = LocalTime.now();\n    int minute = localTime.get(ChronoField.MINUTE_OF_HOUR);\n\nAfter the quick-fix is applied:\n\n\n    LocalTime localTime = LocalTime.now();\n    int minute = localTime.getMinute();\n\nNew in 2023.2"
-        },
-        {
           "shortName": "RedundantLengthCheck",
           "displayName": "Redundant array length check",
           "enabled": false,
@@ -5689,12 +5695,6 @@
           "displayName": "Redundant step in 'Stream' or 'Optional' call chain",
           "enabled": false,
           "description": "Reports redundant `Stream` or `Optional` calls like `map(x -> x)`, `filter(x -> true)` or redundant `sorted()` or `distinct()` calls.\n\nNote that a mapping operation in code like `streamOfIntegers.map(Integer::valueOf)`\nworks as `requireNonNull()` check:\nif the stream contains `null`, it throws a `NullPointerException`, thus it's not absolutely redundant.\nDisable the **Report redundant boxing in Stream.map()** option if you do not want such cases to be reported.\n\nThis inspection depends on the Java feature 'Stream and Optional API', which is available since Java 8."
-        },
-        {
-          "shortName": "RedundantCompareToJavaTime",
-          "displayName": "Expression with 'java.time' 'compareTo()' call can be simplified",
-          "enabled": false,
-          "description": "Reports `java.time` comparisons with `compareTo()` calls that can be replaced with `isAfter()`, `isBefore()` or `isEqual()` calls.\n\nExample:\n\n\n      LocalDate date1 = LocalDate.now();\n      LocalDate date2 = LocalDate.now();\n      boolean t = date1.compareTo(date2) > 0;\n\nAfter the quick-fix is applied:\n\n\n      LocalDate date1 = LocalDate.now();\n      LocalDate date2 = LocalDate.now();\n      boolean t = date1.isAfter(date2);\n\nNew in 2022.3"
         },
         {
           "shortName": "CastCanBeRemovedNarrowingVariableType",
@@ -5855,7 +5855,7 @@
           "shortName": "LoggerInitializedWithForeignClass",
           "displayName": "Logger initialized with foreign class",
           "enabled": true,
-          "description": "Reports `Logger` instances that are initialized with a `class` literal from a different class than the `Logger` is contained in. This can easily happen when copy-pasting some code from another class and may result in logging events under an unexpected category and cause filters to be applied incorrectly.\n\nA quick-fix is provided to replace the foreign class literal with one from the surrounding class.\n\n**Example:**\n\n\n      public class Paramount {\n        protected static final Logger LOG = Logger.getLogger(Critical.class);\n\n        // ... other fields and methods\n      }\n\nAfter the quick-fix is applied:\n\n\n      public class Paramount {\n        protected static final Logger LOG = Logger.getLogger(Paramount.class);\n\n        // ... other fields and methods\n      }\n\n\nConfigure the inspection:\n\n* Use the table to specify the logger factory classes and logger factory methods recognized by this inspection.\n* Use the **Ignore loggers initialized with a superclass** option to ignore loggers that are initialized with a superclass of the class containing the logger.\n* Use the **Ignore loggers in non-public classes** to only warn on loggers in `public` classes."
+          "description": "Reports `Logger` instances that are initialized with a `class` literal from a different class than the `Logger` is contained in. This can easily happen when copy-pasting some code from another class and may result in logging events under an unexpected category and cause filters to be applied incorrectly.\n\nA quick-fix is provided to replace the foreign class literal with one from the surrounding class.\n\n**Example:**\n\n\n      public class Paramount {\n        protected static final Logger LOG = Logger.getLogger(Critical.class);\n\n        // ... other fields and methods\n      }\n\nAfter the quick-fix is applied:\n\n\n      public class Paramount {\n        protected static final Logger LOG = Logger.getLogger(Paramount.class);\n\n        // ... other fields and methods\n      }\n\n\nConfigure the inspection:\n\n* Use the table to specify the logger factory classes and logger factory methods recognized by this inspection.\n* Use the **Ignore loggers initialized with a superclass** option to ignore loggers that are initialized with a superclass of the class containing the logger.\n* Use the **Ignore loggers in non-public classes** to only warn on loggers in `public` classes.\n* Use the **Ignore loggers not initialized in a final field** to only report loggers initialized in a final field, other cases will be ignored."
         },
         {
           "shortName": "ClassWithoutLogger",
@@ -6347,7 +6347,7 @@
           "shortName": "DevKitPropertiesMessageValidation",
           "displayName": "Message format validation in properties files",
           "enabled": false,
-          "description": "Reports the following `MessageFormat` problems in property values:\n\n**Unknown format types**\n\n\n`MessageFormat` supports only these format types:\n\n* number\n* date\n* time\n* choice\n\nOther format types will be reported.\n\n**Unpaired quotes**\n\n\n      property.key=Shouldn't happen: {0}\n\n\nA single quote is interpreted as an escape until the end of the property, and will not be present in the result string.\nIn most cases this is not what is intended.\nIf a single quote should be present in the result string, it has to be duplicated in the property.\n\n**Unmatched braces**\n\n\nEvery placeholder must have a closing brace.\n\n**Too many quotes**\n\n\nIn some cases (e.g. `it's`), it is expected that only one quote ends up in the result string.\nCases where two or more quotes are placed together in the result string are reported.\n\n**Incorrect lower bounds for nested `ChoiceFormat`**\n\n\nLower bounds are expected to be numbers and to be sorted in ascending order.\n\n**Wrong number of quotes around parameters**\n\n\nIn `java.text.MessageFormat` patterns single quotes are used for escaping.\nTo keep quotes visible, they must be duplicated.\nFor example when passing `1`:\n\n* `'{0}'` → `{0}`\n* `''{0}''` → `'1'`\n\n\nWhen using choice format, nested formats are evaluated as format strings themselves, and quotes will need to be duplicated twice.\nFor example when passing `1`:\n\n* `{0, choice, 0#no|#1''{0}'' files}` → `{0} files`\n* `{0, choice, 0#no|#1''''{0}'''' files}` → `'1' files`\n\n**Note**\n\n\nProperty values are verified only if they contain the literal text `{0}`, `{0,`, `{1}` or `{1,`.\nThis is to make sure that these property values are actually used as `MessageFormat` patterns.\n\nNew in 2023.2"
+          "description": "Reports the following `MessageFormat` problems in property values:\n\n**Unknown format types**\n\n\n`MessageFormat` supports only these format types:\n\n* number\n* date\n* time\n* choice\n\nOther format types will be reported.\n\n**Unpaired quotes**\n\n\n      property.key=Shouldn't happen: {0}\n\n\nA single quote is interpreted as an escape until the end of the property, and will not be present in the result string.\nIn most cases this is not what is intended.\nIf a single quote should be present in the result string, it has to be duplicated in the property.\n\n**Unmatched braces**\n\n\nEvery placeholder must have a closing brace.\n\n**Too many quotes**\n\n\nIn some cases (e.g. `it's`), it is expected that only one quote ends up in the result string.\nCases where two or more quotes are placed together in the result string are reported.\n\n**Incorrect lower bounds for nested `ChoiceFormat`**\n\n\nLower bounds are expected to be numbers and to be sorted in ascending order.\n\n**Wrong number of quotes around parameters**\n\n\nIn `java.text.MessageFormat` patterns single quotes are used for escaping.\nTo keep quotes visible, they must be duplicated.\nFor example when passing `1`:\n\n* `'{0}'` → `{0}`\n* `''{0}''` → `'1'`\n\n\nWhen using choice format, nested formats are evaluated as format strings themselves, and quotes will need to be duplicated twice.\nFor example when passing `1`:\n\n* `{0, choice, 0#no|1#''{0}'' files}` → `{0} files`\n* `{0, choice, 0#no|1#''''{0}'''' files}` → `'1' files`\n\n**Note**\n\n\nProperty values are verified only if they contain the literal text `{0}`, `{0,`, `{1}` or `{1,`.\nThis is to make sure that these property values are actually used as `MessageFormat` patterns.\n\nNew in 2023.2"
         }
       ]
     },
@@ -6524,7 +6524,7 @@
           "shortName": "MissingActionUpdateThread",
           "displayName": "ActionUpdateThread is missing",
           "enabled": false,
-          "description": "Reports actions, action groups and other `ActionUpdateThreadAware` classes that implicitly state the deprecated and costly `ActionUpdateThread.OLD_EDT` mode.\n\n\nWhen an action or an action group defines its own `update()` method, IntelliJ Platform tries to mimic\nthe old synchronous way of calling `update()` and `getChildren()` methods in the UI thread and\nsupply it with all the data in `AnActionEvent.dataContext()`.\nTo do that, it caches all the possible data on a background thread beforehand, even if it is not needed.\n\n\nProvide one of the two new modes `ActionUpdateThread.EDT` or `ActionUpdateThread.BGT`\nby overriding the `getActionUpdateThread()` method.\n\n\nSee the documentation of `ActionUpdateThread` for more information."
+          "description": "Reports actions, action groups and other `ActionUpdateThreadAware` classes that do not explicitly state their mode.\n\n\nWhen an action or an action group defines its own `update()` method, IntelliJ Platform tries to mimic\nthe old synchronous way of calling `update()` and `getChildren()` methods in the UI thread and\nsupply it with all the data in `AnActionEvent.dataContext()`.\nTo do that, it caches all the possible data on a background thread beforehand, even if it is not needed.\n\n\nProvide one of the two modes `ActionUpdateThread.EDT` or `ActionUpdateThread.BGT`\nby overriding the `getActionUpdateThread()` method.\n\n\nSee the documentation of `ActionUpdateThread` for more information."
         },
         {
           "shortName": "UsePrimitiveTypes",
@@ -6533,10 +6533,10 @@
           "description": "Reports comparing `PsiPrimitiveType` instances using `==`.\n\n\nPrimitive types should be compared with `equals` as Java 8 type annotations are also applicable for them.\n\n\nReplace with `equals()` call."
         },
         {
-          "shortName": "IncorrectProcessCanceledExceptionHandling",
-          "displayName": "'ProcessCanceledException' handled incorrectly",
+          "shortName": "IncorrectCancellationExceptionHandling",
+          "displayName": "Cancellation exception handled incorrectly",
           "enabled": false,
-          "description": "Reports `ProcessCanceledException`s handled in an incorrect way.\n\n\n`ProcessCanceledException` and its inheritors must not be caught, swallowed, logged, or handled in any way.\nInstead, it must be rethrown so that the infrastructure can handle it correctly.\n\n\nInspection reports both explicit `ProcessCanceledException` or its inheritors catching,\nas well as catching `RuntimeException`, `Exception` and `Throwable` covering `ProcessCanceledException`.\n\nExample:\n\n\n    // bad:\n    try {\n      // ...\n    } catch (ProcessCanceledException e) { // exception should not be swallowed\n    }\n\n    // bad:\n    try {\n      // ...\n    } catch (ProcessCanceledException e) {\n      LOG.error(\"Error occurred\", e); // exception should not be logged\n      throw e;\n    }\n\n\n    // good:\n    try {\n      // ...\n    } catch (ProcessCanceledException e) {\n      // additional actions\n      throw e;\n    }\n\nNew in 2023.2"
+          "description": "Reports `ProcessCanceledException` and `CancellationException` handled incorrectly.\n\n\n`ProcessCanceledException` and its inheritors must not be caught, swallowed, logged, or handled in any way.\nInstead, it must be rethrown so that the IntelliJ Platform infrastructure can handle it correctly.\n\n\n`CancellationException` must not be caught, swallowed, logged, or handled in any way in coroutine context.\nInstead, it must be rethrown so that the coroutines infrastructure can handle it correctly.\n\n\nInspection reports both explicit `ProcessCanceledException` (including inheritors) and `CancellationException`catching,\nas well as catching `RuntimeException`, `Exception` and `Throwable` covering cancellation exceptions.\n\n### Examples:\n\n#### `ProcessCanceledException`:\n\n\n    // bad:\n    try {\n      // ...\n    } catch (ProcessCanceledException e) { // exception should not be swallowed\n    }\n\n    // bad:\n    try {\n      // ...\n    } catch (ProcessCanceledException e) {\n      LOG.error(\"Error occurred\", e); // exception should not be logged\n      throw e;\n    }\n\n\n    // good:\n    try {\n      // ...\n    } catch (ProcessCanceledException e) {\n      // additional actions\n      throw e;\n    }\n\n#### `CancellationException`:\n\n\n    // bad:\n    cs.launch {\n      try {\n        // ...\n      } catch (e: CancellationException) { // exception should not be swallowed\n      }\n    }\n\n    // bad:\n    suspend fun suspendingFunction() {\n      try {\n        // ...\n      } catch (ProcessCanceledException e) {\n        LOG.error(\"Error occurred\", e); // exception should not be logged\n        throw e;\n      }\n    }\n\n\n    // good:\n    cs.launch {\n      try {\n        // ...\n      } catch (ProcessCanceledException e) {\n        // additional actions\n        throw e;\n      }\n    }\n\nNew in 2023.2"
         },
         {
           "shortName": "SerializableCtor",
@@ -6555,12 +6555,6 @@
           "displayName": "Unresolved plugin configuration reference",
           "enabled": false,
           "description": "Reports unresolved references to plugin configuration elements.\n\n#### Extensions\n\n\nReferencing extension with an unknown `id` might result in errors at runtime.\n\n\nThe following extension points are supported:\n\n* `com.intellij.advancedSetting` in resource bundle `advanced.setting.*` key\n* `com.intellij.experimentalFeature` in `Experiments.isFeatureEnabled()/setFeatureEnabled()`\n* `com.intellij.notificationGroup` in `Notification` constructor and `NotificationGroupManager.getNotificationGroup()`\n* `com.intellij.registryKey` in `Registry` methods `key` parameter\n* `com.intellij.toolWindow` in resource bundle `toolwindow.stripe.*` key\n\n#### Extension Point\n\n\nExtension point name referencing its corresponding `<extensionPoint>` declaration in `plugin.xml`.\n\n* `com.intellij.openapi.extensions.ExtensionPointName` constructor and `create()`\n* `com.intellij.openapi.extensions.ProjectExtensionPointName` constructor\n* `com.intellij.openapi.util.KeyedExtensionCollector` and inheritors constructor"
-        },
-        {
-          "shortName": "ReadOrWriteActionInServiceInitialization",
-          "displayName": "Read or Write Action run during service initialization",
-          "enabled": false,
-          "description": "Reports read and write actions run from the scope of service initialization:\n\n* service constructors and initialization blocks (including static)\n* service companion object's initialization blocks (Kotlin)\n* service methods used in initialization blocks and fields initialization\n* `PersistentStateComponent` initialization lifecycle methods:\n  * `loadState`\n  * `noStateLoaded`\n  * `initializeComponent`\n\nRunning a read or write action during service initialization may cause deadlocks.\n\n**Examples:**\n\nKotlin:\n\n\n    @Service\n    internal class MyService {\n      private val myData = initMyData();\n\n      constructor() {\n        val data = runReadAction { // bad: read action run in a constructor\n          // read data\n        }\n      }\n\n      private fun initMyData(): Data {\n        return runWriteAction { // bad: invoked while initializing myData property\n          // write data\n        }\n      }\n\n      companion object {\n        lateinit var companionData: String\n        init {\n          companionData = runReadAction { // bad: read action run in an init block\n            // read data\n          }\n        }\n      }\n    }\n\nJava:\n\n\n    @Service\n    class MyService {\n      private static final Data ourData1 = ReadAction.compute(() -> {\n        // read data\n      });\n      private static final Data ourData2;\n\n      static {\n        ourData2 = ReadAction.compute(() -> { // bad: read action in a static initialization block\n          // read data\n        });\n      }\n\n      private final Data myData2 = initMyData();\n\n      MyService() {\n        Data data = WriteAction.compute(() -> { // bad: read action run in a constructor\n          // write data\n        });\n      }\n\n      private Data initMyData() {\n        return ReadAction.compute(() -> { // bad: invoked while initializing myData property\n          // read data\n        });\n      }\n    }\n\n`PersistentStateComponent`:\n\n\n    @Service\n    @State(...)\n    internal class MySettings : PersistentStateComponent<MyService> {\n      var stateValue: String? = null\n\n      override fun loadState(state: MySettings) {\n        val data = runReadAction { // bad: read action run in loadState\n          // read data\n        }\n        // ...\n      }\n\n      override fun noStateLoaded() {\n        val data = runWriteAction { // bad: read action run in noStateLoaded\n          // write data\n        }\n        // ...\n      }\n\n      override fun initializeComponent() {\n        val data = runReadAction { // bad: read action run in initializeComponent\n          // read data\n        }\n        // ...\n      }\n\n    }\n\nNew in 2024.2"
         },
         {
           "shortName": "UseDPIAwareInsets",
@@ -6591,6 +6585,12 @@
           "displayName": "Extension class should be final and non-public",
           "enabled": false,
           "description": "Reports extension classes that are non-final or public.\n\nNew in 2023.2"
+        },
+        {
+          "shortName": "JComponentDataProvider",
+          "displayName": "JComponent must use UiDataProvider",
+          "enabled": false,
+          "description": "Reports JComponent classes implementing incorrect data provider interface.\n\n\n`javax.swing.JComponent` must use `com.intellij.openapi.actionSystem.UiDataProvider` instead of\nobsolete `com.intellij.openapi.actionSystem.DataProvider` API.\n\nNew in 2024.3"
         },
         {
           "shortName": "ForbiddenInSuspectContextMethod",
@@ -6687,6 +6687,12 @@
           "displayName": "Use 'PluginId#equals(Object)'",
           "enabled": false,
           "description": "Reports comparing `PluginId` instances using `==`.\n\n\nReplace with `equals()` call."
+        },
+        {
+          "shortName": "PotentialDeadlockInServiceInitialization",
+          "displayName": "Potential deadlock in service initialization",
+          "enabled": false,
+          "description": "Reports read/write actions and `invokeAndWait` called from the scope of service initialization:\n\n* service constructors and initialization blocks (including static)\n* service companion object's initialization blocks (Kotlin)\n* service methods used in initialization blocks and fields initialization\n* `PersistentStateComponent` initialization lifecycle methods:\n  * `loadState`\n  * `noStateLoaded`\n  * `initializeComponent`\n\nRunning a read/write action or calling `invokeAndWait` during service initialization may cause deadlocks.\n\n**Examples:**\n\nKotlin:\n\n\n    @Service\n    internal class MyService {\n      private val myData = initMyData();\n\n      constructor() {\n        val data = runReadAction { // bad: read action run in a constructor\n          // read data\n        }\n      }\n\n      private fun initMyData(): Data {\n        return runWriteAction { // bad: invoked while initializing myData property\n          // write data\n        }\n      }\n\n      companion object {\n        lateinit var companionData: String\n        init {\n          companionData = runReadAction { // bad: read action run in an init block\n            // read data\n          }\n        }\n      }\n    }\n\nJava:\n\n\n    @Service\n    class MyService {\n      private static final Data ourData1 = ReadAction.compute(() -> {\n        // read data\n      });\n      private static final Data ourData2;\n\n      static {\n        ourData2 = ReadAction.compute(() -> { // bad: read action in a static initialization block\n          // read data\n        });\n      }\n\n      private final Data myData2 = initMyData();\n\n      MyService() {\n        Data data = WriteAction.compute(() -> { // bad: read action run in a constructor\n          // write data\n        });\n      }\n\n      private Data initMyData() {\n        return ReadAction.compute(() -> { // bad: invoked while initializing myData property\n          // read data\n        });\n      }\n    }\n\n`PersistentStateComponent`:\n\n\n    @Service\n    @State(...)\n    internal class MySettings : PersistentStateComponent<MyService> {\n      var stateValue: String? = null\n\n      override fun loadState(state: MySettings) {\n        val data = runReadAction { // bad: read action run in loadState\n          // read data\n        }\n        // ...\n      }\n\n      override fun noStateLoaded() {\n        val data = runWriteAction { // bad: read action run in noStateLoaded\n          // write data\n        }\n        // ...\n      }\n\n      override fun initializeComponent() {\n        val data = runReadAction { // bad: read action run in initializeComponent\n          // read data\n        }\n        // ...\n      }\n\n    }\n\nNew in 2024.2"
         },
         {
           "shortName": "StatefulEp",
@@ -6866,7 +6872,7 @@
         },
         {
           "shortName": "HtmlTagCanBeJavadocTag",
-          "displayName": "'<code>...</code>' can be replaced with '{@code ...}'",
+          "displayName": "'<code>…</code>' can be replaced with '{@code …}'",
           "enabled": false,
           "description": "Reports usages of `<code>` tags in Javadoc comments. Since Java 5, these tags can be replaced with `{@code ...}` constructs. This allows using angle brackets `<` and `>` inside the comment instead of HTML character entities.\n\n**Example:**\n\n\n      /**\n       * @return empty <code>ArrayList&lt;Integer&gt;</code>\n       */\n      List<Integer> getList(){ ... }\n\nAfter the quick-fix is applied:\n\n\n      /**\n       * @return empty {@code ArrayList<Integer>}\n       */\n      List<Integer> getList(){ ... }\n"
         },
@@ -7075,13 +7081,19 @@
           "shortName": "PluginXmlExtensionRegistration",
           "displayName": "Plugin.xml extension registration",
           "enabled": false,
-          "description": "Reports problems with extension registration in `plugin.xml`.\n\n\nThe following problems are reported:\n\n* Missing `language` declaration. If the extension does not target a specific language, use quick fix to create an explicit declaration for \"any language\".\n* Inspections: missing attributes\n* Services: redundant `serviceInterface` declaration\n* `com.intellij.stubElementTypeHolder` without `externalIdPrefix`, see [Stub Indexes](https://plugins.jetbrains.com/docs/intellij/stub-indexes.html?from=?from=DevkitPluginXmlInspectionDescription)\n* `com.intellij.statusBarWidgetFactory` without `id`\n\nNew in 2022.3"
+          "description": "Reports problems with extension registration in `plugin.xml`.\n\n\nThe following problems are reported:\n\n* Missing `language` declaration. If the extension does not target a specific language, use quick fix to create an explicit declaration for \"any language\".\n* Inspections: missing attributes\n* Services: redundant `serviceInterface` declaration\n* `com.intellij.stubElementTypeHolder` without `externalIdPrefix`, see [Stub Indexes](https://plugins.jetbrains.com/docs/intellij/stub-indexes.html?from=?from=DevkitPluginXmlInspectionDescription)\n* `com.intellij.statusBarWidgetFactory` without `id`\n* `com.intellij.applicationConfigurable|projectConfigurable` without `displayName`/`key`\n\nNew in 2022.3"
         },
         {
           "shortName": "PluginXmlI18n",
           "displayName": "Plugin.xml i18n verification",
           "enabled": false,
-          "description": "Reports hardcoded texts in `plugin.xml`.\n\n\nUsing texts defined in resource bundles allows supporting multiple languages in the IDE.\n\n\nThe following elements are checked:\n\n* `<action>, <group>`\n* `<separator, <override-text>`\n* known extension points having `bundle/key` alternative"
+          "description": "Reports hardcoded texts in `plugin.xml`.\n\n\nUsing texts defined in resource bundles allows supporting multiple languages in the IDE.\nSee [Internationalization](https://plugins.jetbrains.com/docs/intellij/internationalization.html)\nin IntelliJ Platform Plugin SDK docs for more details.\n\n\nThe following elements are checked:\n\n* `<action>, <group>`\n* `<separator, <override-text>`\n* known extension points having `bundle/key` alternative"
+        },
+        {
+          "shortName": "PluginXmlPluginLogo",
+          "displayName": "Plugin Logo check",
+          "enabled": false,
+          "description": "Reports missing plugin logo.\n\n\nA plugin logo is intended to be a unique representation of a plugin's functionality, technology, or company.\n\nSee [Plugin Logo](https://plugins.jetbrains.com/docs/intellij/plugin-icon-file.html?from=PluginXmlPluginLogoInspection)\nin IntelliJ Platform SDK documentation."
         },
         {
           "shortName": "PluginXmlDynamicPlugin",
@@ -7962,71 +7974,6 @@
       ]
     },
     {
-      "name": "UI form",
-      "inspections": [
-        {
-          "shortName": "InvalidPropertyKeyForm",
-          "displayName": "Invalid property key in a UI form",
-          "enabled": false,
-          "description": "Reports unresolved references to .properties files."
-        },
-        {
-          "shortName": "MissingMnemonic",
-          "displayName": "Missing mnemonics",
-          "enabled": false,
-          "description": "Reports focusable components with the `text` property or labels with the assigned `labelFor` property that do not have a mnemonic character. The quick-fix assigns a unique mnemonic to such a component."
-        },
-        {
-          "shortName": "NoScrollPane",
-          "displayName": "Scrollable component not in JScrollPane",
-          "enabled": false,
-          "description": "Reports `Scrollable` components, except for `JTextField`, that are not placed in `JScrollPane`. The quick-fix surrounds the problematic component with a scroll pane."
-        },
-        {
-          "shortName": "FormSpellChecking",
-          "displayName": "Typo in a UI form",
-          "enabled": false,
-          "description": "Reports typos and misspelling in your UI forms (for example, in a `JLabel` text or `JPanel` title) and fixes them\nwith one click."
-        },
-        {
-          "shortName": "I18nForm",
-          "displayName": "Hardcoded string literal in a UI form",
-          "enabled": false,
-          "description": "Reports any instances of hardcoded strings in your UI forms.\n\nHardcoded string literals are usually errors in\nan internationalized environment.\nThis inspection does not report empty strings and strings consisting of only whitespace.\n\nThe quick-fix transforms a string literal\ninto a reference to a property in a resource bundle."
-        },
-        {
-          "shortName": "BoundFieldAssignment",
-          "displayName": "Assignment to UI-bound field",
-          "enabled": false,
-          "description": "Reports assignments to fields which are bound to components in UI Designer forms.\n\nSuch assignments will cause the component setup code generated by UI Designer\nfor such fields to be ignored."
-        },
-        {
-          "shortName": "NoLabelFor",
-          "displayName": "No label for component",
-          "enabled": false,
-          "description": "Reports components that do not have any static text and do not have any label marked with `setLabelFor` for this component.\n\nComponents that do not have static text include edit fields and combo boxes.\nSuch components cannot be activated with a keyboard shortcut. The quick-fix for this inspection\nallows you to automatically associate an adjacent label with the problematic component."
-        },
-        {
-          "shortName": "OneButtonGroup",
-          "displayName": "Button group with one button",
-          "enabled": false,
-          "description": "Reports `ButtonGroup` instances that contain only one `JRadioButton`."
-        },
-        {
-          "shortName": "DuplicateMnemonic",
-          "displayName": "Duplicate mnemonics",
-          "enabled": false,
-          "description": "Reports components that have duplicated mnemonic characters.\n\nThe quick-fix assigns a unique mnemonic character to each of the components."
-        },
-        {
-          "shortName": "NoButtonGroup",
-          "displayName": "Radio button not in a group",
-          "enabled": false,
-          "description": "Reports `JRadioButton` components that are not placed in `ButtonGroup`. A quick-fix is available to group radio buttons placed in adjacent grid cells."
-        }
-      ]
-    },
-    {
       "name": "Method",
       "inspections": [
         {
@@ -8652,7 +8599,7 @@
         {
           "shortName": "MisorderedAssertEqualsArguments",
           "displayName": "Misordered 'assertEquals()' arguments",
-          "enabled": false,
+          "enabled": true,
           "description": "Reports calls to `assertEquals()` that have the expected argument and the actual argument in the wrong order.\n\n\nFor JUnit 3, 4, and 5 the correct order is `(expected, actual)`.\nFor TestNG the correct order is `(actual, expected)`.\n\n\nSuch calls will behave fine for assertions that pass, but may give confusing error reports on failure.\nUse the quick-fix to flip the order of the arguments.\n\n**Example (JUnit):**\n\n\n      assertEquals(actual, expected)\n\nAfter the quick-fix is applied:\n\n\n      assertEquals(expected, actual)\n"
         },
         {
@@ -9058,7 +9005,7 @@
           "shortName": "IntentionDescriptionNotFoundInspection",
           "displayName": "Intention description checker",
           "enabled": false,
-          "description": "Reports intentions that are missing an HTML description file, `before.template` file or `after.template` file. These are shown in [Settings \\| Editor \\| Intentions](settings://preferences.intentionPowerPack).\n\n\nThe **Create description file** quick-fix creates a template HTML description file."
+          "description": "Reports intentions that are missing an HTML description file, `before.template` file or `after.template` file. These are shown in [Settings \\| Editor \\| Intentions](settings://preferences.intentionPowerPack).\n\n\nThe **Create description file** quick-fix creates a template HTML description file.\n\n\nIf no before/after template files are required, add `<skipBeforeAfter>true</skipBeforeAfter>`\nto the intention registration in `plugin.xml`.\n\n\nSee [Intentions](https://plugins.jetbrains.com/docs/intellij/code-intentions.html#intention-description)\nin IntelliJ Platform Plugin SDK docs for more details."
         },
         {
           "shortName": "InspectionDescriptionNotFoundInspection",
@@ -9070,7 +9017,7 @@
           "shortName": "PostfixTemplateDescriptionNotFound",
           "displayName": "Postfix template description checker",
           "enabled": false,
-          "description": "Reports postfix templates missing an HTML description file, `before.template` file or `after.template` file. These are shown in [Settings \\| Editor \\| General \\| Postfix Completion](settings://reference.settingsdialog.IDE.editor.postfix.templates).\n\n\nThe **Create description file** quick-fix creates a template HTML description file."
+          "description": "Reports postfix templates missing an HTML description file, `before.template` file or `after.template` file. These are shown in [Settings \\| Editor \\| General \\| Postfix Completion](settings://reference.settingsdialog.IDE.editor.postfix.templates).\n\n\nThe **Create description file** quick-fix creates a template HTML description file.\n\n\nSee [Postfix Templates](https://plugins.jetbrains.com/docs/intellij/postfix-templates.html#postfix-template-description)\nin IntelliJ Platform Plugin SDK docs for more details."
         }
       ]
     },
@@ -9292,7 +9239,7 @@
           "shortName": "AbstractClassNeverImplemented",
           "displayName": "Abstract class which has no concrete subclass",
           "enabled": false,
-          "description": "Reports `abstract` classes that have no concrete subclasses."
+          "description": "Reports `abstract` classes that have no concrete subclasses. Deprecated abstract classes are not reported."
         },
         {
           "shortName": "ExtendsAnnotation",
@@ -9688,17 +9635,6 @@
       ]
     },
     {
-      "name": "Qodana",
-      "inspections": [
-        {
-          "shortName": "QodanaSanity",
-          "displayName": "Sanity",
-          "enabled": false,
-          "description": "Reports issues essential to this file like syntax errors, unresolved methods and variables, etc..."
-        }
-      ]
-    },
-    {
       "name": "Java 16",
       "inspections": [
         {
@@ -9733,7 +9669,7 @@
           "shortName": "DeconstructionCanBeUsed",
           "displayName": "Record pattern can be used",
           "enabled": false,
-          "description": "Reports patterns that can be replaced with record patterns.\n\nExample:\n\n\n      record Point(int x, int y) {}\n\n      static void printSum(Object obj) {\n        if (obj instanceof Point p) {\n          int x = p.x();\n          int y = p.y();\n          System.out.println(x + y);\n        }\n      }\n\nAfter the quick-fix is applied:\n\n\n      record Point(int x, int y) {}\n\n      static void printSum(Object obj) {\n        if (obj instanceof Point(int x, int y)) {\n          System.out.println(x + y);\n        }\n      }\n\nThis inspection depends on the Java feature 'Pattern guards and record patterns', which is available since Java 21.\n\nNew in 2023.1"
+          "description": "Reports patterns that can be replaced with record patterns.\n\nExample:\n\n\n      record Point(int x, int y) {\n        static void printSum(Object obj) {\n          if (obj instanceof Point p) {\n            int x = p.x();\n            int y = p.y();\n            System.out.println(x + y);\n          }\n        }\n      }\n\nAfter the quick-fix is applied:\n\n\n      record Point(int x, int y) {\n        static void printSum(Object obj) {\n          if (obj instanceof Point(int x, int y)) {\n            System.out.println(x + y);\n          }\n        }\n      }\n\nThis inspection depends on the Java feature 'Pattern guards and record patterns', which is available since Java 21.\n\nNew in 2023.1"
         },
         {
           "shortName": "ExplicitToImplicitClassMigration",
@@ -9832,6 +9768,28 @@
           "displayName": "Class does not override 'toString()' method",
           "enabled": false,
           "description": "Reports classes without a `toString()` method."
+        }
+      ]
+    },
+    {
+      "name": "Qodana",
+      "inspections": [
+        {
+          "shortName": "CyclomaticComplexityInspection",
+          "displayName": "Code metrics",
+          "enabled": false,
+          "description": "Calculates cyclomatic complexity."
+        }
+      ]
+    },
+    {
+      "name": "Code metrics",
+      "inspections": [
+        {
+          "shortName": "JvmLinesOfCodeInspection",
+          "displayName": "Calculate Kotlin and Java code metrics",
+          "enabled": false,
+          "description": "Counts the number of code lines."
         }
       ]
     },
