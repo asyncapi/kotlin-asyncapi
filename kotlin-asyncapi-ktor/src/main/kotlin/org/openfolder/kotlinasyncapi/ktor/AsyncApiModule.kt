@@ -14,6 +14,7 @@ import org.openfolder.kotlinasyncapi.context.PackageInfoProvider
 import org.openfolder.kotlinasyncapi.context.ResourceProvider
 import org.openfolder.kotlinasyncapi.context.annotation.AnnotationProvider
 import org.openfolder.kotlinasyncapi.context.annotation.DefaultAnnotationScanner
+import org.openfolder.kotlinasyncapi.context.annotation.processor.AsyncApiComponentProcessor
 import org.openfolder.kotlinasyncapi.context.annotation.processor.ChannelProcessor
 import org.openfolder.kotlinasyncapi.context.annotation.processor.MessageProcessor
 import org.openfolder.kotlinasyncapi.context.annotation.processor.SchemaProcessor
@@ -52,6 +53,8 @@ class AsyncApiModule(
 
     private val channelProcessor = ChannelProcessor()
 
+    private val asyncApiComponentProcessor = AsyncApiComponentProcessor()
+
     private val annotationScanner = DefaultAnnotationScanner()
 
     private val annotationProvider = with(configuration) {
@@ -62,6 +65,7 @@ class AsyncApiModule(
             messageProcessor = messageProcessor,
             schemaProcessor = schemaProcessor,
             channelProcessor = channelProcessor,
+            asyncApiComponentProcessor = asyncApiComponentProcessor
         )
     }
 

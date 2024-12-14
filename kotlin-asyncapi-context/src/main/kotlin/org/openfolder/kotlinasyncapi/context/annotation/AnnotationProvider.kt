@@ -1,6 +1,7 @@
 package org.openfolder.kotlinasyncapi.context.annotation
 
 import org.openfolder.kotlinasyncapi.annotation.AsyncApiAnnotation
+import org.openfolder.kotlinasyncapi.annotation.AsyncApiComponent
 import org.openfolder.kotlinasyncapi.annotation.Schema
 import org.openfolder.kotlinasyncapi.annotation.channel.Channel
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
@@ -31,7 +32,8 @@ class AnnotationProvider(
     private val scanner: AnnotationScanner,
     private val messageProcessor: AnnotationProcessor<Message, KClass<*>>,
     private val schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
-    private val channelProcessor: AnnotationProcessor<Channel, KClass<*>>
+    private val channelProcessor: AnnotationProcessor<Channel, KClass<*>>,
+    private val asyncApiComponentProcessor: AnnotationProcessor<AsyncApiComponent, KClass<*>>
 ) : AsyncApiContextProvider {
 
     private val componentToChannelMapping = mutableMapOf<String, String>()
@@ -78,6 +80,10 @@ class AnnotationProvider(
                     is Message -> messageProcessor.process(annotation, clazz)
                     is Schema -> schemaProcessor.process(annotation, clazz)
                     is Channel -> channelProcessor.process(annotation, clazz).also {
+                        componentToChannelMapping[clazz.java.simpleName] =
+                            annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
+                    }
+                    is AsyncApiComponent -> asyncApiComponentProcessor.process(annotation, clazz).also {
                         componentToChannelMapping[clazz.java.simpleName] =
                             annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
                     }
