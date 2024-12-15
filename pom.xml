@@ -2,18 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.openfolder</groupId>
+    <groupId>com.asyncapi</groupId>
     <artifactId>kotlin-asyncapi-parent</artifactId>
     <version>3.0.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Kotlin AsyncAPI Parent POM</name>
     <description>Parent POM for the Kotlin AsyncAPI framework</description>
-    <url>https://github.com/openfolder/kotlin-asyncapi</url>
+    <url>https://github.com/asyncapi/kotlin-asyncapi</url>
 
     <organization>
-        <name>OpenFolder</name>
-        <url>http://openfolder.org</url>
+        <name>AsyncAPI Initiative</name>
+        <url>https://www.asyncapi.com/</url>
     </organization>
 
     <licenses>
@@ -24,17 +24,17 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/openfolder/kotlin-asyncapi.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:openfolder/kotlin-asyncapi.git</developerConnection>
-        <url>https://github.com/openfolder/kotlin-asyncapi</url>
+        <connection>scm:git:git://github.com/asyncapi/kotlin-asyncapi.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:asyncapi/kotlin-asyncapi.git</developerConnection>
+        <url>https://github.com/asyncapi/kotlin-asyncapi</url>
     </scm>
 
     <developers>
         <developer>
             <name>Lorenz Simon</name>
-            <email>lorenz.simon@openfolder.org</email>
-            <organization>OpenFolder</organization>
-            <organizationUrl>http://openfolder.org</organizationUrl>
+            <email>lorenz.simon.mail@gmail.com</email>
+            <organization>AsyncAPI Initiative</organization>
+            <organizationUrl>http://www.asyncapi.com</organizationUrl>
         </developer>
     </developers>
 
@@ -56,10 +56,10 @@
         <jackson.version>2.15.3</jackson.version>
         <swagger.version>2.2.19</swagger.version>
         <classgraph.version>4.8.163</classgraph.version>
-        <mockk.version>1.12.3</mockk.version>
-        <jsonassert.version>1.5.1</jsonassert.version>
-        <junit-jupiter.version>5.10.1</junit-jupiter.version>
-        <assertj.version>3.24.2</assertj.version>
+        <mockk.version>1.13.13</mockk.version>
+        <jsonassert.version>1.5.3</jsonassert.version>
+        <junit-jupiter.version>5.11.3</junit-jupiter.version>
+        <assertj.version>3.26.3</assertj.version>
     </properties>
 
     <build>
@@ -223,7 +223,7 @@
         </dependency>
         <dependency>
             <groupId>io.mockk</groupId>
-            <artifactId>mockk</artifactId>
+            <artifactId>mockk-jvm</artifactId>
             <version>${mockk.version}</version>
             <scope>test</scope>
         </dependency>
@@ -232,32 +232,32 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.openfolder</groupId>
+                <groupId>com.asyncapi</groupId>
                 <artifactId>kotlin-asyncapi-spring-web</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.openfolder</groupId>
+                <groupId>com.asyncapi</groupId>
                 <artifactId>kotlin-asyncapi-ktor</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.openfolder</groupId>
+                <groupId>com.asyncapi</groupId>
                 <artifactId>kotlin-asyncapi-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.openfolder</groupId>
+                <groupId>com.asyncapi</groupId>
                 <artifactId>kotlin-asyncapi-script</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.openfolder</groupId>
+                <groupId>com.asyncapi</groupId>
                 <artifactId>kotlin-asyncapi-annotation</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.openfolder</groupId>
+                <groupId>com.asyncapi</groupId>
                 <artifactId>kotlin-asyncapi-context</artifactId>
                 <version>${project.version}</version>
             </dependency>

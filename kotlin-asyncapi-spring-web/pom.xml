@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.openfolder</groupId>
+        <groupId>com.asyncapi</groupId>
         <artifactId>kotlin-asyncapi-parent</artifactId>
         <version>3.0.4-SNAPSHOT</version>
     </parent>
@@ -16,7 +16,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.openfolder</groupId>
+            <groupId>com.asyncapi</groupId>
             <artifactId>kotlin-asyncapi-context</artifactId>
         </dependency>
         <dependency>
@@ -52,7 +52,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>3.2.0</version>
+            <version>3.4.0</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -64,7 +64,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.2.0</version>
+            <version>3.4.0</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>

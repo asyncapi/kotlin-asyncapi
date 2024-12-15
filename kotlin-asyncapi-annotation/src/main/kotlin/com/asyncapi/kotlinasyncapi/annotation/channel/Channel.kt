@@ -1,0 +1,19 @@
+package com.asyncapi.kotlinasyncapi.annotation.channel
+
+import com.asyncapi.kotlinasyncapi.annotation.AsyncApiAnnotation
+
+@Target(
+    AnnotationTarget.CLASS,
+    AnnotationTarget.ANNOTATION_CLASS
+)
+@AsyncApiAnnotation
+annotation class Channel(
+    val value: String = "",
+    val isDefault: Boolean = false,
+    val description: String = "",
+    val servers: Array<String> = [],
+    val subscribe: Subscribe = Subscribe(isDefault = true),
+    val publish: Publish = Publish(isDefault = true),
+    val parameters: Array<Parameter> = [],
+    val bindings: ChannelBindings = ChannelBindings(isDefault = true)
+)
