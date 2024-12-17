@@ -15,13 +15,14 @@ class AsyncApiComponentProcessor : AnnotationProcessor<AsyncApiComponent, KClass
         return Components().apply {
             channels {
                 context.functions.filter { it.hasAnnotation<Channel>() }.forEach { currentFunction ->
-                    currentFunction.findAnnotation<Channel>()!!.toChannel()
+                    var currentAnnotation = currentFunction.findAnnotation<Channel>()!!
+                    currentAnnotation.toChannel()
                         .apply {
                             subscribe = subscribe ?: currentFunction.findAnnotation<Subscribe>()?.toOperation()
                             publish = publish ?: currentFunction.findAnnotation<Publish>()?.toOperation()
                         }
                         .also {
-                            put(currentFunction.name, it)
+                            put(currentAnnotation.value, it)
                         }
                 }
             }

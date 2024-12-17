@@ -72,7 +72,8 @@ class AnnotationProvider(
                 listOfNotNull(
                     clazz.findAnnotation<Message>()?.let { clazz to it },
                     clazz.findAnnotation<Schema>()?.let { clazz to it },
-                    clazz.findAnnotation<Channel>()?.let { clazz to it }
+                    clazz.findAnnotation<Channel>()?.let { clazz to it },
+                    clazz.findAnnotation<AsyncApiComponent>()?.let { clazz to it}
                 )
             }
             .mapNotNull { (clazz, annotation) ->
@@ -80,12 +81,15 @@ class AnnotationProvider(
                     is Message -> messageProcessor.process(annotation, clazz)
                     is Schema -> schemaProcessor.process(annotation, clazz)
                     is Channel -> channelProcessor.process(annotation, clazz).also {
-                        componentToChannelMapping[clazz.java.simpleName] =
-                            annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
+                        if (clazz.annotations.any { it is Channel }) {
+                            componentToChannelMapping[clazz.java.simpleName] =
+                                annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
+                        }
                     }
-                    is AsyncApiComponent -> asyncApiComponentProcessor.process(annotation, clazz).also {
-                        componentToChannelMapping[clazz.java.simpleName] =
-                            annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
+                    is AsyncApiComponent -> asyncApiComponentProcessor.process(annotation, clazz).also { processedComponents ->
+                        processedComponents.channels?.forEach { (channelName, _) ->
+                            componentToChannelMapping[channelName] = channelName
+                        }
                     }
                     else -> null
                 }

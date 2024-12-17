@@ -1,6 +1,6 @@
 {
   "channels" : {
-    "testSubscribe" : {
+    "some/{parameter}/channel" : {
       "description" : "testDescription",
       "servers" : [ "dev" ],
       "subscribe" : {

@@ -1,6 +1,7 @@
 package org.openfolder.kotlinasyncapi.springweb.controller
 
 import org.junit.jupiter.api.Test
+import org.openfolder.kotlinasyncapi.annotation.AsyncApiComponent
 import org.openfolder.kotlinasyncapi.annotation.channel.Channel
 import org.openfolder.kotlinasyncapi.annotation.channel.Message
 import org.openfolder.kotlinasyncapi.annotation.channel.Publish
@@ -199,6 +200,55 @@ internal class AsyncApiControllerAnnotationIntegrationTest {
     @Channel("my/channel")
     class TestChannel {
 
+        @Publish(
+            description = "testDescription",
+            message = Message(TestMessage::class)
+        )
+        fun testOperation() {}
+    }
+
+    @Message
+    data class TestMessage(
+        val value: String,
+        val optionalValue: Boolean?
+    )
+}
+
+@SpringBootTest
+@AutoConfigureMockMvc
+internal class AsyncApiComponentAnnotationControllerIntegrationTest {
+
+    @Autowired
+    lateinit var mockMvc: MockMvc
+
+    @Test
+    fun `should return AsyncApi document`() {
+        val expected = TestUtils.json("async_api_component_annotation_integration.json")
+
+        mockMvc.perform(get("/docs/asyncapi"))
+            .andExpect(MockMvcResultMatchers.status().is2xxSuccessful)
+            .andExpect(content().json(expected))
+    }
+
+    @SpringBootConfiguration
+    @EnableAutoConfiguration
+    @EnableAsyncApi
+    open class TestConfig {
+
+        @Bean
+        open fun asyncApiExtension() =
+            AsyncApiExtension.builder {
+                info {
+                    title("testTitle")
+                    version("testVersion")
+                }
+            }
+    }
+
+    @AsyncApiComponent
+    class TestChannel {
+
+        @Channel("my/channel")
         @Publish(
             description = "testDescription",
             message = Message(TestMessage::class)
