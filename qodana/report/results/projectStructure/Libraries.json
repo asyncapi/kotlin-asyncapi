@@ -1135,16 +1135,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.4.0",
+      "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.4.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/3.4.0/spring-boot-autoconfigure-3.4.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/3.4.1/spring-boot-autoconfigure-3.4.1.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot:3.4.0",
+      "name": "Maven: org.springframework.boot:spring-boot:3.4.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/3.4.0/spring-boot-3.4.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/3.4.1/spring-boot-3.4.1.jar!/"
       ],
       "properties": {}
     },

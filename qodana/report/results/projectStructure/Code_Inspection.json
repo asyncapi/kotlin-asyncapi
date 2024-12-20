@@ -155,11 +155,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.4.0",
+          "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.4.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot:3.4.0",
+          "name": "Maven: org.springframework.boot:spring-boot:3.4.1",
           "type": "Library"
         },
         {
