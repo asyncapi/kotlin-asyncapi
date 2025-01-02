@@ -105,7 +105,7 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         ChannelProcessor()
 
     @Bean
-    open fun asyncApiDocumentationProcessor() =
+    open fun asyncApiComponentProcessor() =
         AsyncApiComponentProcessor()
 
     @Bean

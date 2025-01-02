@@ -81,10 +81,8 @@ class AnnotationProvider(
                     is Message -> messageProcessor.process(annotation, clazz)
                     is Schema -> schemaProcessor.process(annotation, clazz)
                     is Channel -> channelProcessor.process(annotation, clazz).also {
-                        if (clazz.annotations.any { it is Channel }) {
-                            componentToChannelMapping[clazz.java.simpleName] =
-                                annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
-                        }
+                        componentToChannelMapping[clazz.java.simpleName] =
+                            annotation.value.takeIf { it.isNotEmpty() } ?: clazz.java.simpleName
                     }
                     is AsyncApiComponent -> asyncApiComponentProcessor.process(annotation, clazz).also { processedComponents ->
                         processedComponents.channels?.forEach { (channelName, _) ->
