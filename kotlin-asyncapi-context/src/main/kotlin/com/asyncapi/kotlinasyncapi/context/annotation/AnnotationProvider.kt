@@ -34,6 +34,7 @@ class AnnotationProvider(
     private val schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
     private val channelProcessor: AnnotationProcessor<Channel, KClass<*>>,
     private val asyncApiComponentProcessor: AnnotationProcessor<AsyncApiComponent, KClass<*>>
+
 ) : AsyncApiContextProvider {
 
     private val componentToChannelMapping = mutableMapOf<String, String>()
