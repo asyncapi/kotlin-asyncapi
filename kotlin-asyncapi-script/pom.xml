@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>kotlin-asyncapi-parent</artifactId>
-        <groupId>org.openfolder</groupId>
+        <groupId>com.asyncapi</groupId>
         <version>3.0.4-SNAPSHOT</version>
     </parent>
 
@@ -15,7 +15,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.openfolder</groupId>
+            <groupId>com.asyncapi</groupId>
             <artifactId>kotlin-asyncapi-core</artifactId>
         </dependency>
         <dependency>
