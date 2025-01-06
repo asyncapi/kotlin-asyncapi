@@ -1,5 +1,6 @@
 package com.asyncapi.kotlinasyncapi.springweb
 
+import com.asyncapi.kotlinasyncapi.annotation.AsyncApiComponent
 import kotlin.reflect.KClass
 import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
@@ -13,6 +14,7 @@ import com.asyncapi.kotlinasyncapi.context.annotation.AnnotationProvider
 import com.asyncapi.kotlinasyncapi.context.annotation.AnnotationScanner
 import com.asyncapi.kotlinasyncapi.context.annotation.DefaultAnnotationScanner
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.AnnotationProcessor
+import com.asyncapi.kotlinasyncapi.context.annotation.processor.AsyncApiComponentProcessor
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.ChannelProcessor
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.MessageProcessor
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.SchemaProcessor
@@ -103,6 +105,10 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         ChannelProcessor()
 
     @Bean
+    open fun asyncApiComponentProcessor() =
+        AsyncApiComponentProcessor()
+
+    @Bean
     open fun annotationScanner() =
         DefaultAnnotationScanner()
 
@@ -112,14 +118,16 @@ internal open class AsyncApiAnnotationAutoConfiguration {
         scanner: AnnotationScanner,
         messageProcessor: AnnotationProcessor<Message, KClass<*>>,
         schemaProcessor: AnnotationProcessor<Schema, KClass<*>>,
-        channelProcessor: AnnotationProcessor<Channel, KClass<*>>
+        channelClassProcessor: AnnotationProcessor<Channel, KClass<*>>,
+        asyncApiComponentProcessor: AnnotationProcessor<AsyncApiComponent, KClass<*>>
     ) = packageFromContext(context)?.let {
         AnnotationProvider(
             applicationPackage = it,
             scanner = scanner,
             messageProcessor = messageProcessor,
             schemaProcessor = schemaProcessor,
-            channelProcessor = channelProcessor,
+            channelProcessor = channelClassProcessor,
+            asyncApiComponentProcessor = asyncApiComponentProcessor,
         )
     }
 
