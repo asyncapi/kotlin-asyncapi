@@ -14,6 +14,7 @@ import com.asyncapi.kotlinasyncapi.context.PackageInfoProvider
 import com.asyncapi.kotlinasyncapi.context.ResourceProvider
 import com.asyncapi.kotlinasyncapi.context.annotation.AnnotationProvider
 import com.asyncapi.kotlinasyncapi.context.annotation.DefaultAnnotationScanner
+import com.asyncapi.kotlinasyncapi.context.annotation.processor.AsyncApiComponentProcessor
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.ChannelProcessor
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.MessageProcessor
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.SchemaProcessor
@@ -52,6 +53,8 @@ class AsyncApiModule(
 
     private val channelProcessor = ChannelProcessor()
 
+    private val asyncApiComponentProcessor = AsyncApiComponentProcessor()
+
     private val annotationScanner = DefaultAnnotationScanner()
 
     private val annotationProvider = with(configuration) {
@@ -62,6 +65,7 @@ class AsyncApiModule(
             messageProcessor = messageProcessor,
             schemaProcessor = schemaProcessor,
             channelProcessor = channelProcessor,
+            asyncApiComponentProcessor = asyncApiComponentProcessor
         )
     }
 

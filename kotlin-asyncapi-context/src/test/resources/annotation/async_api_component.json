@@ -1,0 +1,22 @@
+{
+  "channels" : {
+    "some/{parameter}/channel" : {
+      "description" : "testDescription",
+      "servers" : [ "dev" ],
+      "subscribe" : {
+        "operationId" : "testOperationId",
+        "security" : [ {
+          "petstore_auth" : [ "write:pets", "read:pets" ]
+        } ],
+        "message" : {
+          "$ref" : "#/components/messages/TestSubscribeMessage"
+        }
+      },
+      "parameters" : {
+        "parameter" : {
+          "description" : "testDescription"
+        }
+      }
+    }
+  }
+}
