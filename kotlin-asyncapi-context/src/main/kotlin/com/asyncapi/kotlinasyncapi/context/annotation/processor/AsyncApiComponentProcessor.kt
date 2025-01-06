@@ -1,10 +1,10 @@
-package org.openfolder.kotlinasyncapi.context.annotation.processor
+package com.asyncapi.kotlinasyncapi.context.annotation.processor
 
-import org.openfolder.kotlinasyncapi.annotation.AsyncApiComponent
-import org.openfolder.kotlinasyncapi.annotation.channel.Channel
-import org.openfolder.kotlinasyncapi.annotation.channel.Publish
-import org.openfolder.kotlinasyncapi.annotation.channel.Subscribe
-import org.openfolder.kotlinasyncapi.model.component.Components
+import com.asyncapi.kotlinasyncapi.annotation.AsyncApiComponent
+import com.asyncapi.kotlinasyncapi.annotation.channel.Channel
+import com.asyncapi.kotlinasyncapi.annotation.channel.Publish
+import com.asyncapi.kotlinasyncapi.annotation.channel.Subscribe
+import com.asyncapi.kotlinasyncapi.model.component.Components
 import kotlin.reflect.KClass
 import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.functions

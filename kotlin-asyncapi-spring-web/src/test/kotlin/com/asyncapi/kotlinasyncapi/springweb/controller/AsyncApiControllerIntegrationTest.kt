@@ -1,5 +1,6 @@
 package com.asyncapi.kotlinasyncapi.springweb.controller
 
+import com.asyncapi.kotlinasyncapi.annotation.AsyncApiComponent
 import org.junit.jupiter.api.Test
 import com.asyncapi.kotlinasyncapi.annotation.channel.Channel
 import com.asyncapi.kotlinasyncapi.annotation.channel.Message

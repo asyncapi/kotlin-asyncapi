@@ -1,5 +1,5 @@
-package org.openfolder.kotlinasyncapi.annotation
+package com.asyncapi.kotlinasyncapi.annotation
 
 @Target(AnnotationTarget.CLASS)
 @AsyncApiAnnotation
-annotation class AsyncApiComponent
+annotation  class AsyncApiComponent

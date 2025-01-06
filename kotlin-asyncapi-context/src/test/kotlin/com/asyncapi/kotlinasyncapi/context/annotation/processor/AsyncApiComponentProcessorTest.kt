@@ -1,14 +1,14 @@
-package org.openfolder.kotlinasyncapi.context.annotation.processor
+package com.asyncapi.kotlinasyncapi.context.annotation.processor
 
 import org.junit.jupiter.api.Test
-import org.openfolder.kotlinasyncapi.annotation.AsyncApiComponent
-import org.openfolder.kotlinasyncapi.annotation.channel.Channel
-import org.openfolder.kotlinasyncapi.annotation.channel.Message
-import org.openfolder.kotlinasyncapi.annotation.channel.Parameter
-import org.openfolder.kotlinasyncapi.annotation.channel.SecurityRequirement
-import org.openfolder.kotlinasyncapi.annotation.channel.Subscribe
-import org.openfolder.kotlinasyncapi.context.TestUtils.assertJsonEquals
-import org.openfolder.kotlinasyncapi.context.TestUtils.json
+import com.asyncapi.kotlinasyncapi.annotation.AsyncApiComponent
+import com.asyncapi.kotlinasyncapi.annotation.channel.Channel
+import com.asyncapi.kotlinasyncapi.annotation.channel.Message
+import com.asyncapi.kotlinasyncapi.annotation.channel.Parameter
+import com.asyncapi.kotlinasyncapi.annotation.channel.SecurityRequirement
+import com.asyncapi.kotlinasyncapi.annotation.channel.Subscribe
+import com.asyncapi.kotlinasyncapi.context.TestUtils.assertJsonEquals
+import com.asyncapi.kotlinasyncapi.context.TestUtils.json
 import kotlin.reflect.full.findAnnotation
 
 internal class AsyncApiComponentProcessorTest {

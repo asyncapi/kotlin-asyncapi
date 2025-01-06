@@ -1,6 +1,7 @@
 package com.asyncapi.kotlinasyncapi.context.annotation
 
 import com.asyncapi.kotlinasyncapi.annotation.AsyncApiAnnotation
+import com.asyncapi.kotlinasyncapi.annotation.AsyncApiComponent
 import com.asyncapi.kotlinasyncapi.annotation.Schema
 import com.asyncapi.kotlinasyncapi.annotation.channel.Channel
 import com.asyncapi.kotlinasyncapi.annotation.channel.Message

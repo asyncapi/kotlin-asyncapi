@@ -14,6 +14,7 @@ import com.asyncapi.kotlinasyncapi.context.PackageInfoProvider
 import com.asyncapi.kotlinasyncapi.context.ResourceProvider
 import com.asyncapi.kotlinasyncapi.context.annotation.AnnotationProvider
 import com.asyncapi.kotlinasyncapi.context.annotation.DefaultAnnotationScanner
+import com.asyncapi.kotlinasyncapi.context.annotation.processor.AsyncApiComponentProcessor
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.ChannelProcessor
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.MessageProcessor
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.SchemaProcessor

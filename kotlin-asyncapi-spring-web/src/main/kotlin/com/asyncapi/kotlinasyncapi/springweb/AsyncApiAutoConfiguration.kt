@@ -1,5 +1,6 @@
 package com.asyncapi.kotlinasyncapi.springweb
 
+import com.asyncapi.kotlinasyncapi.annotation.AsyncApiComponent
 import kotlin.reflect.KClass
 import kotlin.script.experimental.host.toScriptSource
 import kotlin.script.experimental.jvmhost.BasicJvmScriptingHost
@@ -13,6 +14,7 @@ import com.asyncapi.kotlinasyncapi.context.annotation.AnnotationProvider
 import com.asyncapi.kotlinasyncapi.context.annotation.AnnotationScanner
 import com.asyncapi.kotlinasyncapi.context.annotation.DefaultAnnotationScanner
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.AnnotationProcessor
+import com.asyncapi.kotlinasyncapi.context.annotation.processor.AsyncApiComponentProcessor
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.ChannelProcessor
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.MessageProcessor
 import com.asyncapi.kotlinasyncapi.context.annotation.processor.SchemaProcessor
