@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>kotlin-asyncapi-parent</artifactId>
-        <groupId>com.asyncapi</groupId>
-        <version>3.0.4-SNAPSHOT</version>
+        <groupId>org.openfolder</groupId>
+        <version>3.0.4</version>
     </parent>
 
     <artifactId>kotlin-asyncapi-maven-plugin</artifactId>
@@ -15,11 +15,11 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.asyncapi</groupId>
+            <groupId>org.openfolder</groupId>
             <artifactId>kotlin-asyncapi-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.asyncapi</groupId>
+            <groupId>org.openfolder</groupId>
             <artifactId>kotlin-asyncapi-script</artifactId>
         </dependency>
         <dependency>

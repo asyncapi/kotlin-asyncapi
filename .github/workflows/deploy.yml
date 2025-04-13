@@ -26,7 +26,7 @@ jobs:
         with:
           java-version: 17
           distribution: 'zulu'
-          server-id: ossrh
+          server-id: central
           server-username: SONATYPE_USERNAME
           server-password: SONATYPE_PASSWORD
           gpg-private-key: ${{ secrets.GPG_SECRET_KEY }}

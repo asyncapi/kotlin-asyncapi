@@ -5,8 +5,8 @@
 
 	<parent>
 		<artifactId>kotlin-asyncapi-examples</artifactId>
-		<groupId>com.asyncapi</groupId>
-		<version>3.0.4-SNAPSHOT</version>
+		<groupId>org.openfolder</groupId>
+		<version>3.0.4</version>
 	</parent>
 
 	<artifactId>kotlin-asyncapi-spring-boot-example</artifactId>
@@ -36,7 +36,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.asyncapi</groupId>
+			<groupId>org.openfolder</groupId>
 			<artifactId>kotlin-asyncapi-spring-web</artifactId>
 		</dependency>
 
@@ -104,7 +104,7 @@
 				</dependencies>
 			</plugin>
 			<plugin>
-				<groupId>com.asyncapi</groupId>
+				<groupId>org.openfolder</groupId>
 				<artifactId>kotlin-asyncapi-maven-plugin</artifactId>
 				<version>${version}</version>
 				<executions>
