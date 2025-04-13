@@ -3,45 +3,45 @@
   "listProblem": [
     {
       "tool": "Code Inspection",
-      "category": "Redundant constructs",
+      "category": "Style issues",
       "categoryPath": [
         {
           "id": "Kotlin",
           "name": "Kotlin"
         },
         {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
+          "id": "Kotlin/Style issues",
+          "name": "Style issues"
         }
       ],
-      "type": "Unused import directive",
+      "type": "Class member can have 'private' visibility",
       "tags": [
         "kotlin"
       ],
-      "severity": "High",
-      "comment": "Unused import directive",
-      "detailsInfo": "Reports redundant `import` statements.\n\nDefault and unused imports can be safely removed.\n\n**Example:**\n\n\n      import kotlin.*\n      import kotlin.collections.*\n      import kotlin.comparisons.*\n      import kotlin.io.*\n      import kotlin.ranges.*\n      import kotlin.sequences.*\n      import kotlin.text.*\n\n      // jvm specific\n      import java.lang.*\n      import kotlin.jvm.*\n\n      // js specific\n      import kotlin.js.*\n\n      import java.io.* // this import is unused and could be removed\n      import java.util.*\n\n      fun foo(list: ArrayList<String>) {\n          list.add(\"\")\n      }\n",
+      "severity": "Moderate",
+      "comment": "Property 'cipherSpec' could be private",
+      "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-ktor/src/main/kotlin/com/asyncapi/kotlinasyncapi/ktor/AsyncApiModule.kt",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
           "language": "kotlin",
-          "line": 7,
-          "offset": 1,
-          "length": 38,
+          "line": 146,
+          "offset": 13,
+          "length": 10,
           "code": {
-            "startLine": 5,
-            "length": 38,
-            "offset": 103,
-            "surroundingCode": "import io.ktor.server.application.Application\nimport io.ktor.server.application.ApplicationEnvironment\nimport io.ktor.server.application.call\nimport io.ktor.server.response.respondText\nimport io.ktor.server.routing.get"
+            "startLine": 144,
+            "length": 10,
+            "offset": 97,
+            "surroundingCode": "        var groupId: String? = null\n        var ccdtQueueManagerName: String? = null\n        var cipherSpec: String? = null\n        var multiEndpointServer: Boolean? = null\n        var heartBeatInterval: Int? = null"
           }
         }
       ],
       "attributes": {
-        "module": "kotlin-asyncapi-ktor",
-        "inspectionName": "KotlinUnusedImport"
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "MemberVisibilityCanBePrivate"
       },
-      "hash": "21e3d3714677501c2d60fd6c19b1bbc4ec1dc0f7f5a681199d16b9a5f2c72c5d"
+      "hash": "2c7bfe8eb00b5754cecd1f323f39876a438fea4ec2c83ba2ba7c9238e7bad68b"
     },
     {
       "tool": "Code Inspection",
@@ -56,286 +56,412 @@
           "name": "Style issues"
         }
       ],
-      "type": "Nested lambda has shadowed implicit parameter",
+      "type": "Class member can have 'private' visibility",
       "tags": [
         "kotlin"
       ],
       "severity": "Moderate",
-      "comment": "Implicit parameter 'it' of enclosing lambda is shadowed",
-      "detailsInfo": "Reports nested lambdas with shadowed implicit parameters.\n\n**Example:**\n\n\n    fun foo(listOfLists: List<List<String>>) {\n      listOfLists.forEach {\n        it.forEach {\n          println(it)\n        }\n      }\n    }\n\nAfter the quick-fix is applied:\n\n\n    fun foo(listOfLists: List<List<String>>) {\n      listOfLists.forEach {\n        it.forEach { it1 ->\n          println(it1)\n        }\n      }\n    }\n",
+      "comment": "Property 'heartBeatInterval' could be private",
+      "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-spring-web/src/main/kotlin/com/asyncapi/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 148,
+          "offset": 13,
+          "length": 17,
+          "code": {
+            "startLine": 146,
+            "length": 17,
+            "offset": 100,
+            "surroundingCode": "        var cipherSpec: String? = null\n        var multiEndpointServer: Boolean? = null\n        var heartBeatInterval: Int? = null\n        var bindingVersion: String? = null\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "MemberVisibilityCanBePrivate"
+      },
+      "hash": "2cded08dd4c0be2252b114ac2a64fa4f015d3a951125bcf1272ac7f06685a2bb"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Style issues",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Style issues",
+          "name": "Style issues"
+        }
+      ],
+      "type": "Class member can have 'private' visibility",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "Moderate",
+      "comment": "Property 'cleanSession' could be private",
+      "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 92,
+          "offset": 13,
+          "length": 12,
+          "code": {
+            "startLine": 90,
+            "length": 12,
+            "offset": 82,
+            "surroundingCode": "    class MQTT : ServerBinding {\n        var clientId: String? = null\n        var cleanSession: Boolean? = null\n        var lastWill: LastWill? = null\n        var keepAlive: Int? = null"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "MemberVisibilityCanBePrivate"
+      },
+      "hash": "37a89095fc4700fcd2c21306db16e597e9965e98d1903b9d53f00c96dcf99681"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Style issues",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Style issues",
+          "name": "Style issues"
+        }
+      ],
+      "type": "Class member can have 'private' visibility",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "Moderate",
+      "comment": "Property 'multiEndpointServer' could be private",
+      "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
           "language": "kotlin",
           "line": 147,
-          "offset": 64,
-          "length": 2,
+          "offset": 13,
+          "length": 19,
           "code": {
             "startLine": 145,
-            "length": 2,
-            "offset": 195,
-            "surroundingCode": "        context.getResource(asyncApiProperties.script.sourcePath).takeIf { it.exists() }?.let {\n            AsyncApiExtension.from(\n                script = it.inputStream.bufferedReader().use { it.readText() }.toScriptSource()\n            )\n        }"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-spring-web",
-        "inspectionName": "NestedLambdaShadowedImplicitParameter"
-      },
-      "hash": "b1419ff3e20a3e0dc6d78b81d2e78bed96e04faddc890a42625e89cbbfb88ac7"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"trait\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/MessageTrait.kt",
-          "language": "kotlin",
-          "line": 12,
-          "offset": 16,
-          "length": 5,
-          "code": {
-            "startLine": 10,
-            "length": 5,
-            "offset": 91,
-            "surroundingCode": "@AsyncApiComponent\nclass ReferencableMessageTraitsList : ArrayList<Any>() {\n    inline fun trait(build: MessageTrait.() -> Unit): MessageTrait =\n        MessageTrait().apply(build).also { add(it) }\n"
+            "length": 19,
+            "offset": 100,
+            "surroundingCode": "        var ccdtQueueManagerName: String? = null\n        var cipherSpec: String? = null\n        var multiEndpointServer: Boolean? = null\n        var heartBeatInterval: Int? = null\n        var bindingVersion: String? = null"
           }
         }
       ],
       "attributes": {
         "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
+        "inspectionName": "MemberVisibilityCanBePrivate"
       },
-      "hash": "4caa33c6c5b721b93e47fe9cfeb52a38ba8a0796d1b308bb2ba0a94e59a65c43"
+      "hash": "561e6288de96e68e7c7d85b1e5f78ce21ad3a2c14e8e6807edebda548597b708"
     },
     {
       "tool": "Code Inspection",
-      "category": "Redundant constructs",
+      "category": "Style issues",
       "categoryPath": [
         {
           "id": "Kotlin",
           "name": "Kotlin"
         },
         {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
+          "id": "Kotlin/Style issues",
+          "name": "Style issues"
         }
       ],
-      "type": "Unused symbol",
+      "type": "Class member can have 'private' visibility",
       "tags": [
         "kotlin"
       ],
-      "severity": "High",
-      "comment": "Function \"headersRef\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+      "severity": "Moderate",
+      "comment": "Property 'retain' could be private",
+      "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/MessageTrait.kt",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
           "language": "kotlin",
-          "line": 47,
-          "offset": 16,
-          "length": 10,
+          "line": 116,
+          "offset": 17,
+          "length": 6,
           "code": {
-            "startLine": 45,
-            "length": 10,
-            "offset": 68,
-            "surroundingCode": "        Schema().apply(build).also { headers = it }\n\n    inline fun headersRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { headers = it }\n"
+            "startLine": 114,
+            "length": 6,
+            "offset": 89,
+            "surroundingCode": "            var qos: Int? = null\n            var message: String? = null\n            var retain: Boolean? = null\n\n            fun topic(value: String): String ="
           }
         }
       ],
       "attributes": {
         "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
+        "inspectionName": "MemberVisibilityCanBePrivate"
       },
-      "hash": "5319fdee2868e4fefd77a26e9b3bf470da0fba8031953597f82f746dba8e51e3"
+      "hash": "611ecae8ac8ef0a7aa2078f10dda07cd03909b3a4487f4630f4b8535e6d42d26"
     },
     {
       "tool": "Code Inspection",
-      "category": "Redundant constructs",
+      "category": "Style issues",
       "categoryPath": [
         {
           "id": "Kotlin",
           "name": "Kotlin"
         },
         {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
+          "id": "Kotlin/Style issues",
+          "name": "Style issues"
         }
       ],
-      "type": "Unused symbol",
+      "type": "Class member can have 'private' visibility",
       "tags": [
         "kotlin"
       ],
-      "severity": "High",
-      "comment": "Function \"bindingsRef\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+      "severity": "Moderate",
+      "comment": "Property 'qos' could be private",
+      "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/MessageTrait.kt",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
           "language": "kotlin",
-          "line": 86,
-          "offset": 16,
-          "length": 11,
-          "code": {
-            "startLine": 84,
-            "length": 11,
-            "offset": 78,
-            "surroundingCode": "        MessageBindings().apply(build).also { bindings = it }\n\n    inline fun bindingsRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { bindings = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "9268d8a25a012d4b375b1a9ca3cc8d04a446efb89fec4d77cdbb6ddba0b168de"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"schemaRef\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/Parameter.kt",
-          "language": "kotlin",
-          "line": 28,
-          "offset": 16,
-          "length": 9,
-          "code": {
-            "startLine": 26,
-            "length": 9,
-            "offset": 67,
-            "surroundingCode": "        Schema().apply(build).also { schema = it }\n\n    inline fun schemaRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { schema = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "c89ad462d8aef871d607526c16dbe2aa1ef5506c69d6c5e22a026a60d7918a75"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"correlationIdRef\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/MessageTrait.kt",
-          "language": "kotlin",
-          "line": 53,
-          "offset": 16,
-          "length": 16,
-          "code": {
-            "startLine": 51,
-            "length": 16,
-            "offset": 81,
-            "surroundingCode": "        CorrelationID().apply(build).also { correlationId = it }\n\n    inline fun correlationIdRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { correlationId = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "c901ea1977ee62133d9a34019641590638eea216bb65e8394834f07e8070da07"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"tag\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/Tag.kt",
-          "language": "kotlin",
-          "line": 5,
-          "offset": 16,
+          "line": 114,
+          "offset": 17,
           "length": 3,
           "code": {
-            "startLine": 3,
+            "startLine": 112,
             "length": 3,
-            "offset": 70,
-            "surroundingCode": "@AsyncApiComponent\nclass TagsList : ArrayList<Tag>() {\n    inline fun tag(build: Tag.() -> Unit): Tag =\n        Tag().apply(build).also { add(it) }\n}"
+            "offset": 79,
+            "surroundingCode": "        class LastWill {\n            var topic: String? = null\n            var qos: Int? = null\n            var message: String? = null\n            var retain: Boolean? = null"
           }
         }
       ],
       "attributes": {
         "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
+        "inspectionName": "MemberVisibilityCanBePrivate"
       },
-      "hash": "d06b34e8c98edec07bc189ca810527e71d4f8c4c946be70150d389d91632fd14"
+      "hash": "64358ca435ab3fa06f38cea9895bd736b84226bcd7e4f83aaef89406353b8ba8"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Style issues",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Style issues",
+          "name": "Style issues"
+        }
+      ],
+      "type": "Class member can have 'private' visibility",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "Moderate",
+      "comment": "Property 'clientId' could be private",
+      "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 91,
+          "offset": 13,
+          "length": 8,
+          "code": {
+            "startLine": 89,
+            "length": 8,
+            "offset": 46,
+            "surroundingCode": "\n    class MQTT : ServerBinding {\n        var clientId: String? = null\n        var cleanSession: Boolean? = null\n        var lastWill: LastWill? = null"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "MemberVisibilityCanBePrivate"
+      },
+      "hash": "8f75bc54b565ba780ebfc40fbcdc527df68a4db0c61fd7827fc72dcf60eb7d6d"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Style issues",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Style issues",
+          "name": "Style issues"
+        }
+      ],
+      "type": "Class member can have 'private' visibility",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "Moderate",
+      "comment": "Property 'topic' could be private",
+      "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 113,
+          "offset": 17,
+          "length": 5,
+          "code": {
+            "startLine": 111,
+            "length": 5,
+            "offset": 42,
+            "surroundingCode": "\n        class LastWill {\n            var topic: String? = null\n            var qos: Int? = null\n            var message: String? = null"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "MemberVisibilityCanBePrivate"
+      },
+      "hash": "a344f3941fd993a4f22aaa875c1fffbba6f4b3ecaedcef587394f969231c321e"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Style issues",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Style issues",
+          "name": "Style issues"
+        }
+      ],
+      "type": "Class member can have 'private' visibility",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "Moderate",
+      "comment": "Property 'keepAlive' could be private",
+      "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 94,
+          "offset": 13,
+          "length": 9,
+          "code": {
+            "startLine": 92,
+            "length": 9,
+            "offset": 93,
+            "surroundingCode": "        var cleanSession: Boolean? = null\n        var lastWill: LastWill? = null\n        var keepAlive: Int? = null\n        var bindingVersion: String? = null\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "MemberVisibilityCanBePrivate"
+      },
+      "hash": "a52edac75359e209eb8392736ad3008005a824507c494691304e7f92f8437215"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Style issues",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Style issues",
+          "name": "Style issues"
+        }
+      ],
+      "type": "Class member can have 'private' visibility",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "Moderate",
+      "comment": "Property 'msgVpn' could be private",
+      "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 134,
+          "offset": 13,
+          "length": 6,
+          "code": {
+            "startLine": 132,
+            "length": 6,
+            "offset": 90,
+            "surroundingCode": "    class Solace : ServerBinding {\n        var bindingVersion: String? = null\n        var msgVpn: String? = null\n\n        fun bindingVersion(value: String): String ="
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "MemberVisibilityCanBePrivate"
+      },
+      "hash": "cf2e31cc63a9764998a40df75d5c9c17787970b7d0a41cd2ab300173e7095bee"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Style issues",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Style issues",
+          "name": "Style issues"
+        }
+      ],
+      "type": "Class member can have 'private' visibility",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "Moderate",
+      "comment": "Property 'ccdtQueueManagerName' could be private",
+      "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 145,
+          "offset": 13,
+          "length": 20,
+          "code": {
+            "startLine": 143,
+            "length": 20,
+            "offset": 82,
+            "surroundingCode": "    class IBMMQ : ServerBinding {\n        var groupId: String? = null\n        var ccdtQueueManagerName: String? = null\n        var cipherSpec: String? = null\n        var multiEndpointServer: Boolean? = null"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "MemberVisibilityCanBePrivate"
+      },
+      "hash": "d56c6bf648bb4efcb497cf19761c28818dd3061a63840830b900a6f04edcab5c"
     }
   ]
 }
