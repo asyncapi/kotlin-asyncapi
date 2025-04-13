@@ -8,9 +8,12 @@ import com.asyncapi.kotlinasyncapi.model.Schema
 import com.asyncapi.kotlinasyncapi.model.TagsList
 
 @AsyncApiComponent
-class MessageTraitsList : ArrayList<MessageTrait>() {
+class ReferencableMessageTraitsList : ArrayList<Any>() {
     inline fun trait(build: MessageTrait.() -> Unit): MessageTrait =
         MessageTrait().apply(build).also { add(it) }
+
+    inline fun reference(build: Reference.() -> Unit): Reference =
+        Reference().apply(build).also { add(it) }
 }
 
 @AsyncApiComponent

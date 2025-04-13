@@ -1,9 +1,9 @@
 package com.asyncapi.kotlinasyncapi.model
 
-import org.junit.jupiter.api.Test
 import com.asyncapi.kotlinasyncapi.model.AsyncApi.Companion.asyncApi
 import com.asyncapi.kotlinasyncapi.model.TestUtils.assertJsonEquals
 import com.asyncapi.kotlinasyncapi.model.TestUtils.json
+import org.junit.jupiter.api.Test
 
 internal class AsyncApiIntegrationTest {
 
@@ -93,6 +93,11 @@ internal class AsyncApiIntegrationTest {
                         bindingsRef {
                             ref("#/components/messageBindings/streamingHeaders")
                         }
+                        traits {
+                            reference {
+                                ref("#/components/messageTraits/cloudEventHeaders")
+                            }
+                        }
                     }
                 }
                 messageBindings {
@@ -112,6 +117,11 @@ internal class AsyncApiIntegrationTest {
                                 }
                             }
                         }
+                    }
+                }
+                messageTraits {
+                    trait("cloudEventHeaders") {
+                        name("Cloud Events Header")
                     }
                 }
             }

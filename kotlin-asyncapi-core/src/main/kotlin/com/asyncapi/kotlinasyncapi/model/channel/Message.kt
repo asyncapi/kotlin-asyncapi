@@ -49,7 +49,7 @@ class Message {
     var externalDocs: ExternalDocumentation? = null
     var bindings: Any? = null
     var examples: MessageExamplesList? = null
-    var traits: MessageTraitsList? = null
+    var traits: ReferencableMessageTraitsList? = null
 
     fun messageId(value: String): String =
         value.also { messageId = it }
@@ -105,6 +105,6 @@ class Message {
     inline fun examples(build: MessageExamplesList.() -> Unit): MessageExamplesList =
         MessageExamplesList().apply(build).also { examples = it }
 
-    inline fun traits(build: MessageTraitsList.() -> Unit): MessageTraitsList =
-        MessageTraitsList().apply(build).also { traits = it }
+    inline fun traits(build: ReferencableMessageTraitsList.() -> Unit): ReferencableMessageTraitsList =
+        ReferencableMessageTraitsList().apply(build).also { traits = it }
 }
