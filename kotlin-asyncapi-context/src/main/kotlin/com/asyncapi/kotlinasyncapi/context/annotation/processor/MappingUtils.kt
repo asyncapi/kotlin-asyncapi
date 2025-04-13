@@ -1,7 +1,5 @@
 package com.asyncapi.kotlinasyncapi.context.annotation.processor
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.databind.ObjectMapper
 import com.asyncapi.kotlinasyncapi.annotation.CorrelationID
 import com.asyncapi.kotlinasyncapi.annotation.ExternalDocumentation
 import com.asyncapi.kotlinasyncapi.annotation.Schema
@@ -27,13 +25,15 @@ import com.asyncapi.kotlinasyncapi.model.ReferencableSchemasMap
 import com.asyncapi.kotlinasyncapi.model.Reference
 import com.asyncapi.kotlinasyncapi.model.TagsList
 import com.asyncapi.kotlinasyncapi.model.channel.MessageExamplesList
-import com.asyncapi.kotlinasyncapi.model.channel.MessageTraitsList
 import com.asyncapi.kotlinasyncapi.model.channel.OneOfReferencableMessages
 import com.asyncapi.kotlinasyncapi.model.channel.Operation
+import com.asyncapi.kotlinasyncapi.model.channel.ReferencableMessageTraitsList
 import com.asyncapi.kotlinasyncapi.model.channel.ReferencableMessagesList
 import com.asyncapi.kotlinasyncapi.model.channel.ReferencableOperationTraitsList
 import com.asyncapi.kotlinasyncapi.model.channel.ReferencableParametersMap
 import com.asyncapi.kotlinasyncapi.model.server.SecurityRequirementsList
+import com.fasterxml.jackson.core.type.TypeReference
+import com.fasterxml.jackson.databind.ObjectMapper
 import java.util.AbstractMap
 
 internal fun Message.toMessage(): com.asyncapi.kotlinasyncapi.model.channel.Message =
@@ -140,8 +140,8 @@ internal fun Array<MessageExample>.toMessageExamplesList(): MessageExamplesList 
         addAll(this@toMessageExamplesList.map { it.toMessageExample() })
     }
 
-internal fun Array<MessageTrait>.toMessageTraitsList(): MessageTraitsList =
-    MessageTraitsList().apply {
+internal fun Array<MessageTrait>.toMessageTraitsList(): ReferencableMessageTraitsList =
+    ReferencableMessageTraitsList().apply {
         addAll(this@toMessageTraitsList.map { it.toMessageTrait() })
     }
 

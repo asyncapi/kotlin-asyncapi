@@ -4,17 +4,6 @@
     "title" : "Gitter Streaming API",
     "version" : "1.0.0"
   },
-  "id" : "urn:com:gitter:streaming:api",
-  "servers" : {
-    "production" : {
-      "url" : "https://stream.gitter.im/v1",
-      "protocol" : "https",
-      "protocolVersion" : "1.1",
-      "security" : [ {
-        "httpBearerToken" : [ ]
-      } ]
-    }
-  },
   "channels" : {
     "/rooms/{roomId}" : {
       "subscribe" : {
@@ -40,6 +29,17 @@
           }
         }
       }
+    }
+  },
+  "id" : "urn:com:gitter:streaming:api",
+  "servers" : {
+    "production" : {
+      "url" : "https://stream.gitter.im/v1",
+      "protocol" : "https",
+      "protocolVersion" : "1.1",
+      "security" : [ {
+        "httpBearerToken" : [ ]
+      } ]
     }
   },
   "components" : {
@@ -73,13 +73,21 @@
         "summary" : "Its purpose is to keep the connection alive.",
         "bindings" : {
           "$ref" : "#/components/messageBindings/streamingHeaders"
-        }
+        },
+        "traits" : [ {
+          "$ref" : "#/components/messageTraits/cloudEventHeaders"
+        } ]
       }
     },
     "securitySchemes" : {
       "httpBearerToken" : {
         "type" : "http",
         "scheme" : "bearer"
+      }
+    },
+    "messageTraits" : {
+      "cloudEventHeaders" : {
+        "name" : "Cloud Events Header"
       }
     },
     "messageBindings" : {
