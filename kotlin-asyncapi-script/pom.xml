@@ -4,7 +4,7 @@
     <parent>
         <artifactId>kotlin-asyncapi-parent</artifactId>
         <groupId>org.openfolder</groupId>
-        <version>3.1.0-SNAPSHOT</version>
+        <version>3.1.0</version>
     </parent>
 
     <artifactId>kotlin-asyncapi-script</artifactId>
