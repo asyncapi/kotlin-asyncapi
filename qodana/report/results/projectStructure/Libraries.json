@@ -29,9 +29,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.12.2",
+      "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.12.2/junit-jupiter-api-5.12.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar!/"
       ],
       "properties": {}
     },
@@ -43,9 +43,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.junit.platform:junit-platform-commons:1.12.2",
+      "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.12.2/junit-platform-commons-1.12.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar!/"
       ],
       "properties": {}
     },
@@ -57,16 +57,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.12.2",
+      "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.12.2/junit-jupiter-engine-5.12.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.junit.platform:junit-platform-engine:1.12.2",
+      "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.12.2/junit-platform-engine-1.12.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar!/"
       ],
       "properties": {}
     },
@@ -925,6 +925,146 @@
       "properties": {}
     },
     {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.9.25",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-common/1.9.25/kotlin-scripting-common-1.9.25.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.25",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm/1.9.25/kotlin-scripting-jvm-1.9.25.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.9.25",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-script-runtime/1.9.25/kotlin-script-runtime-1.9.25.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.18.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.3/jackson-dataformat-yaml-2.18.3.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework.boot:spring-boot-starter-logging:3.4.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-logging/3.4.4/spring-boot-starter-logging-3.4.4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: ch.qos.logback:logback-classic:1.5.18",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.5.18/logback-classic-1.5.18.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: ch.qos.logback:logback-core:1.5.18",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.5.18/logback-core-1.5.18.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.logging.log4j:log4j-to-slf4j:2.24.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.logging.log4j:log4j-api:2.24.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.slf4j:jul-to-slf4j:2.0.17",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.18.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.3/jackson-datatype-jsr310-2.18.3.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:1.9.25",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/1.9.25/kotlin-reflect-1.9.25.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.9.25",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.9.25/kotlin-stdlib-1.9.25.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.slf4j:slf4j-api:2.0.17",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.9.25",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/1.9.25/kotlin-test-1.9.25.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.junit.platform:junit-platform-launcher:1.11.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.hamcrest:hamcrest-core:2.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core/1.8.1/kotlinx-coroutines-core-1.8.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.8.1/kotlinx-coroutines-core-jvm-1.8.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
       "name": "Maven: io.ktor:ktor-server-core-jvm:3.1.2",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-core-jvm/3.1.2/ktor-server-core-jvm-3.1.2.jar!/"
@@ -1324,20 +1464,6 @@
       "properties": {}
     },
     {
-      "name": "Maven: ch.qos.logback:logback-classic:1.4.14",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: ch.qos.logback:logback-core:1.4.14",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar!/"
-      ],
-      "properties": {}
-    },
-    {
       "name": "Maven: net.bytebuddy:byte-buddy:1.10.9",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.10.9/byte-buddy-1.10.9.jar!/"
@@ -1348,160 +1474,6 @@
       "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit:2.1.20",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit/2.1.20/kotlin-test-junit-2.1.20.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.9.25",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-common/1.9.25/kotlin-scripting-common-1.9.25.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.25",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm/1.9.25/kotlin-scripting-jvm-1.9.25.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.9.25",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-script-runtime/1.9.25/kotlin-script-runtime-1.9.25.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.18.3",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.3/jackson-dataformat-yaml-2.18.3.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-logging:3.4.4",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-logging/3.4.4/spring-boot-starter-logging-3.4.4.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: ch.qos.logback:logback-classic:1.5.18",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.5.18/logback-classic-1.5.18.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: ch.qos.logback:logback-core:1.5.18",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.5.18/logback-core-1.5.18.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.logging.log4j:log4j-to-slf4j:2.24.3",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.logging.log4j:log4j-api:2.24.3",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.slf4j:jul-to-slf4j:2.0.17",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.18.3",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.3/jackson-datatype-jsr310-2.18.3.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:1.9.25",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/1.9.25/kotlin-reflect-1.9.25.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.9.25",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.9.25/kotlin-stdlib-1.9.25.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.slf4j:slf4j-api:2.0.17",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.9.25",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/1.9.25/kotlin-test-1.9.25.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.junit.platform:junit-platform-launcher:1.11.4",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.hamcrest:hamcrest-core:2.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core/1.8.1/kotlinx-coroutines-core-1.8.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.8.1/kotlinx-coroutines-core-jvm-1.8.1.jar!/"
       ],
       "properties": {}
     }

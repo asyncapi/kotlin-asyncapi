@@ -61,29 +61,29 @@
         "kotlin"
       ],
       "severity": "Moderate",
-      "comment": "Property 'email' could be private",
+      "comment": "Property 'asyncApiExtensions' could be private",
       "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/info/Contact.kt",
+          "path": "kotlin-asyncapi-ktor/src/main/kotlin/com/asyncapi/kotlinasyncapi/ktor/AsyncApiModule.kt",
           "language": "kotlin",
-          "line": 9,
+          "line": 92,
           "offset": 9,
-          "length": 5,
+          "length": 18,
           "code": {
-            "startLine": 7,
-            "length": 5,
-            "offset": 65,
-            "surroundingCode": "    var name: String? = null\n    var url: String? = null\n    var email: String? = null\n\n    fun name(value: String): String ="
+            "startLine": 90,
+            "length": 18,
+            "offset": 15,
+            "surroundingCode": "    }\n\n    val asyncApiExtensions = listOfNotNull(\n        configuration.extension,\n        *configuration.extensions.toTypedArray(),"
           }
         }
       ],
       "attributes": {
-        "module": "kotlin-asyncapi-core",
+        "module": "kotlin-asyncapi-ktor",
         "inspectionName": "MemberVisibilityCanBePrivate"
       },
-      "hash": "9c8d443b01d53ef0d628bd6b0cc4aaf68644257fef4afb96659f8cde39fa04e1"
+      "hash": "98935ecabb8a1636d3bfbfc0fe55edcdc74366faded0207c48c74cae163d774f"
     },
     {
       "tool": "Code Inspection",
@@ -126,6 +126,48 @@
         "inspectionName": "MemberVisibilityCanBePrivate"
       },
       "hash": "a8af3cd5824f5f69f29d9ee078898220931afaab31227c54ed90699c725e02b5"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Style issues",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Style issues",
+          "name": "Style issues"
+        }
+      ],
+      "type": "Class member can have 'private' visibility",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "Moderate",
+      "comment": "Property 'asyncApiService' could be private",
+      "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-ktor/src/main/kotlin/com/asyncapi/kotlinasyncapi/ktor/AsyncApiModule.kt",
+          "language": "kotlin",
+          "line": 102,
+          "offset": 9,
+          "length": 15,
+          "code": {
+            "startLine": 100,
+            "length": 15,
+            "offset": 15,
+            "surroundingCode": "    )\n\n    val asyncApiService: AsyncApiService = DefaultAsyncApiService(asyncApiExtensions)\n\n    val asyncApiSerializer: AsyncApiSerializer = DefaultAsyncApiSerializer()"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-ktor",
+        "inspectionName": "MemberVisibilityCanBePrivate"
+      },
+      "hash": "b237bb12bfdf97c98f8fcf8743754622998c6a59009baf85e2917567081f76b0"
     },
     {
       "tool": "Code Inspection",
@@ -229,155 +271,29 @@
         "kotlin"
       ],
       "severity": "Moderate",
-      "comment": "Property 'termsOfService' could be private",
+      "comment": "Property 'asyncApiSerializer' could be private",
       "detailsInfo": "Reports declarations that can be made `private` to follow the encapsulation principle.\n\n**Example:**\n\n\n    class Service(val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n\nAfter the quick-fix is applied (considering there are no usages of `url` outside of `Service` class):\n\n\n    class Service(private val url: String) {\n        fun connect(): URLConnection = URL(url).openConnection()\n    }\n",
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/info/Info.kt",
+          "path": "kotlin-asyncapi-ktor/src/main/kotlin/com/asyncapi/kotlinasyncapi/ktor/AsyncApiModule.kt",
           "language": "kotlin",
-          "line": 10,
+          "line": 104,
           "offset": 9,
-          "length": 14,
+          "length": 18,
           "code": {
-            "startLine": 8,
-            "length": 14,
-            "offset": 77,
-            "surroundingCode": "    lateinit var version: String\n    var description: String? = null\n    var termsOfService: String? = null\n    var contact: Contact? = null\n    var license: License? = null"
+            "startLine": 102,
+            "length": 18,
+            "offset": 95,
+            "surroundingCode": "    val asyncApiService: AsyncApiService = DefaultAsyncApiService(asyncApiExtensions)\n\n    val asyncApiSerializer: AsyncApiSerializer = DefaultAsyncApiSerializer()\n\n    fun Application.asyncApiModule() = routing {"
           }
         }
       ],
       "attributes": {
-        "module": "kotlin-asyncapi-core",
+        "module": "kotlin-asyncapi-ktor",
         "inspectionName": "MemberVisibilityCanBePrivate"
       },
-      "hash": "ec71531006e32001f0ddf94607241250349a3189b555ea91538902ee182119fa"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Naming conventions",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Naming conventions",
-          "name": "Naming conventions"
-        }
-      ],
-      "type": "Property naming convention",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "Moderate",
-      "comment": "Property name ```$ref``` should start with a lowercase letter",
-      "detailsInfo": "Reports property names that do not follow the recommended naming conventions.\n\n\nConsistent naming allows for easier code reading and understanding.\nAccording to the [Kotlin official style guide](https://kotlinlang.org/docs/coding-conventions.html#naming-rules),\nproperty names should start with a lowercase letter and use camel case.\n\nIt is possible to introduce other naming rules by changing the \"Pattern\" regular expression.\n\n**Example:**\n\n\n      val My_Cool_Property = \"\"\n\nThe quick-fix renames the class according to the Kotlin naming conventions:\n\n\n      val myCoolProperty = \"\"\n",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/Reference.kt",
-          "language": "kotlin",
-          "line": 5,
-          "offset": 18,
-          "length": 6,
-          "code": {
-            "startLine": 3,
-            "length": 6,
-            "offset": 54,
-            "surroundingCode": "@AsyncApiComponent\nclass Reference {\n    lateinit var `$ref`: String\n\n    fun ref(value: String): String ="
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "PropertyName"
-      },
-      "hash": "a9d8fd446c7e41ea527828cc9a064ebba0b1a86264a1b88dbfc42d64a4c76dda"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Class \"AsyncApiConfiguration\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/spring/AsyncApiConfiguration.kt",
-          "language": "kotlin",
-          "line": 8,
-          "offset": 16,
-          "length": 21,
-          "code": {
-            "startLine": 6,
-            "length": 21,
-            "offset": 31,
-            "surroundingCode": "\n@Configuration\ninternal class AsyncApiConfiguration {\n\n    @Bean"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-spring-boot-example",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "b40991372bbd3a3dae0c93191d1ad0598186b48a994d50febbad60e6a84a1831"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"asyncApiExtension\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/spring/AsyncApiConfiguration.kt",
-          "language": "kotlin",
-          "line": 11,
-          "offset": 9,
-          "length": 17,
-          "code": {
-            "startLine": 9,
-            "length": 17,
-            "offset": 19,
-            "surroundingCode": "\n    @Bean\n    fun asyncApiExtension() = AsyncApiExtension.builder {\n        defaultContentType(\"application/json\")\n        servers {"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-spring-boot-example",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "eedab588ce6ba560c7afa0bcef90f5bd87977c5831ac28bb544268ba20dc2c61"
+      "hash": "e88a2220768c767c531c42f68be87328a05be650a0561bed7757eb1607581148"
     }
   ]
 }
