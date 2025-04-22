@@ -7120,16 +7120,16 @@
           "description": "Reports calls to `StringBuffer` and `StringBuilder` constructors with `char` as the argument. In this case, `char` is silently cast to an integer and interpreted as the initial capacity of the buffer.\n\n**Example:**\n\n\n      new StringBuilder('(').append(\"1\").append(')');\n\nAfter the quick-fix is applied:\n\n\n      new StringBuilder(\"(\").append(\"1\").append(')');\n"
         },
         {
-          "shortName": "ClassGetClass",
-          "displayName": "Suspicious 'Class.getClass()' call",
-          "enabled": true,
-          "description": "Reports `getClass()` methods that are called on a `java.lang.Class` instance.\n\nThis is usually a mistake as the result is always equivalent to `Class.class`.\nIf it's a mistake, then it's better to remove the `getClass()` call and use the qualifier directly.\nIf the behavior is intended, then it's better to write `Class.class` explicitly to avoid confusion.\n\nExample:\n\n\n      void test(Class<?> clazz) {\n        String name = clazz.getClass().getName();\n      }\n\nAfter one of the possible quick-fixes is applied:\n\n\n      void test(Class<?> clazz) {\n        String name = clazz.getName();\n      }\n\nNew in 2018.2"
-        },
-        {
           "shortName": "ResultOfObjectAllocationIgnored",
           "displayName": "Result of object allocation ignored",
           "enabled": false,
           "description": "Reports object allocations where the allocated object is ignored and neither assigned to a variable nor used in another way.\n\n\nSuch allocation expressions are legal in Java, but are usually either unintended, or\nevidence of a very odd object initialization strategy.\n\n\nUse the options to list classes whose allocations should be ignored by this inspection."
+        },
+        {
+          "shortName": "ClassGetClass",
+          "displayName": "Suspicious 'Class.getClass()' call",
+          "enabled": true,
+          "description": "Reports `getClass()` methods that are called on a `java.lang.Class` instance.\n\nThis is usually a mistake as the result is always equivalent to `Class.class`.\nIf it's a mistake, then it's better to remove the `getClass()` call and use the qualifier directly.\nIf the behavior is intended, then it's better to write `Class.class` explicitly to avoid confusion.\n\nExample:\n\n\n      void test(Class<?> clazz) {\n        String name = clazz.getClass().getName();\n      }\n\nAfter one of the possible quick-fixes is applied:\n\n\n      void test(Class<?> clazz) {\n        String name = clazz.getName();\n      }\n\nNew in 2018.2"
         },
         {
           "shortName": "MismatchedStringBuilderQueryUpdate",
@@ -7690,16 +7690,16 @@
           "description": "Reports expressions and conditions that always produce the same result, like true, false, null, or zero. Such expressions could be replaced with the corresponding constant value. Very often though they signal about a bug in the code.\n\nExamples:\n\n      // always true\n      // root cause: || is used instead of &&\n      if (x > 0 || x < 10) {}\n\n      System.out.println(str.trim());\n      // always false\n      // root cause: variable was dereferenced before null-check\n      if (str == null) {}\n\n\nThe inspection behavior may be controlled by a number of annotations, such as\n[nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) annotations,\n[@Contract](https://www.jetbrains.com/help/idea/contract-annotations.html) annotation,\n`@Range` annotation and so on.\n\nConfigure the inspection:\n\n* Use the **Don't report assertions with condition statically proven to be always true** option to avoid reporting assertions that were statically proven to be always true. This also includes conditions like `if (alwaysFalseCondition) throw new IllegalArgumentException();`.\n* Use the **Ignore assert statements** option to control how the inspection treats `assert` statements. By default, the option is disabled, which means that the assertions are assumed to be executed (-ea mode). If the option is enabled, the assertions will be completely ignored (-da mode).\n* Use the **Warn when constant is stored in variable** option to display warnings when variable is used, whose value is known to be a constant.\n\n\nBefore IntelliJ IDEA 2022.3, this inspection was part of \"Constant Conditions \\& Exceptions\" inspection. Now, it split into two inspections:\n\"Constant Values\" and \"Nullability and data flow problems\"."
         },
         {
-          "shortName": "IteratorHasNextCallsIteratorNext",
-          "displayName": "'Iterator.hasNext()' which calls 'next()'",
-          "enabled": true,
-          "description": "Reports implementations of `Iterator.hasNext()` or `ListIterator.hasPrevious()` that call `Iterator.next()` or `ListIterator.previous()` on the iterator instance. Such calls are almost certainly an error, as methods like `hasNext()` should not modify the iterators state, while `next()` should.\n\n**Example:**\n\n\n      class MyIterator implements Iterator<Integer> {\n        public boolean hasNext() {\n          return next() != null;\n        }\n      }\n"
-        },
-        {
           "shortName": "EqualsAndHashcode",
           "displayName": "'equals()' and 'hashCode()' not paired",
           "enabled": false,
           "description": "Reports classes that override the `equals()` method but do not override the `hashCode()` method or vice versa, which can potentially lead to problems when the class is added to a `Collection` or a `HashMap`.\n\nThe quick-fix generates the default implementation for an absent method.\n\nExample:\n\n\n    class StringHolder {\n      String s;\n\n      @Override public int hashCode() {\n        return s != null ? s.hashCode() : 0;\n      }\n    }\n\nAfter the quick-fix is applied:\n\n\n    class StringHolder {\n      String s;\n\n      @Override public int hashCode() {\n        return s != null ? s.hashCode() : 0;\n      }\n\n      @Override\n      public boolean equals(Object o) {\n        if (this == o) return true;\n        if (!(o instanceof StringHolder)) return false;\n\n        StringHolder holder = (StringHolder)o;\n\n        if (s != null ? !s.equals(holder.s) : holder.s != null) return false;\n\n        return true;\n      }\n    }\n"
+        },
+        {
+          "shortName": "IteratorHasNextCallsIteratorNext",
+          "displayName": "'Iterator.hasNext()' which calls 'next()'",
+          "enabled": true,
+          "description": "Reports implementations of `Iterator.hasNext()` or `ListIterator.hasPrevious()` that call `Iterator.next()` or `ListIterator.previous()` on the iterator instance. Such calls are almost certainly an error, as methods like `hasNext()` should not modify the iterators state, while `next()` should.\n\n**Example:**\n\n\n      class MyIterator implements Iterator<Integer> {\n        public boolean hasNext() {\n          return next() != null;\n        }\n      }\n"
         },
         {
           "shortName": "MathRoundingWithIntArgument",
