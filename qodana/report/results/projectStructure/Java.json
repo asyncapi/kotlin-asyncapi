@@ -13,10 +13,6 @@
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-spring-boot-example",
-      "languageLevel": 8
-    },
-    {
       "name": "kotlin-asyncapi-context",
       "languageLevel": 8
     },
@@ -30,6 +26,10 @@
     },
     {
       "name": "kotlin-asyncapi-core",
+      "languageLevel": 8
+    },
+    {
+      "name": "kotlin-asyncapi-spring-boot-example",
       "languageLevel": 8
     },
     {
