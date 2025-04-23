@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>kotlin-asyncapi-examples</artifactId>
 		<groupId>org.openfolder</groupId>
-		<version>3.1.1-SNAPSHOT</version>
+		<version>3.1.1</version>
 	</parent>
 
 	<artifactId>kotlin-asyncapi-spring-boot-example</artifactId>
