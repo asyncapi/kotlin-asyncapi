@@ -645,30 +645,30 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-web:6.2.5",
+      "name": "Maven: org.springframework:spring-web:6.2.6",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/6.2.5/spring-web-6.2.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/6.2.6/spring-web-6.2.6.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-beans:6.2.5",
+      "name": "Maven: org.springframework:spring-beans:6.2.6",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/6.2.5/spring-beans-6.2.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/6.2.6/spring-beans-6.2.6.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-core:6.2.5",
+      "name": "Maven: org.springframework:spring-core:6.2.6",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/6.2.5/spring-core-6.2.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/6.2.6/spring-core-6.2.6.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-jcl:6.2.5",
+      "name": "Maven: org.springframework:spring-jcl:6.2.6",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-jcl/6.2.5/spring-jcl-6.2.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-jcl/6.2.6/spring-jcl-6.2.6.jar!/"
       ],
       "properties": {}
     },
@@ -687,23 +687,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-context:6.2.5",
+      "name": "Maven: org.springframework:spring-context:6.2.6",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/6.2.5/spring-context-6.2.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/6.2.6/spring-context-6.2.6.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-aop:6.2.5",
+      "name": "Maven: org.springframework:spring-aop:6.2.6",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/6.2.5/spring-aop-6.2.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/6.2.6/spring-aop-6.2.6.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-expression:6.2.5",
+      "name": "Maven: org.springframework:spring-expression:6.2.6",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/6.2.5/spring-expression-6.2.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/6.2.6/spring-expression-6.2.6.jar!/"
       ],
       "properties": {}
     },
@@ -1065,9 +1065,44 @@
       "properties": {}
     },
     {
+      "name": "Maven: org.springframework:spring-web:6.2.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/6.2.5/spring-web-6.2.5.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-beans:6.2.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/6.2.5/spring-beans-6.2.5.jar!/"
+      ],
+      "properties": {}
+    },
+    {
       "name": "Maven: org.springframework:spring-webmvc:6.2.5",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/6.2.5/spring-webmvc-6.2.5.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-aop:6.2.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/6.2.5/spring-aop-6.2.5.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-context:6.2.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/6.2.5/spring-context-6.2.5.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-expression:6.2.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/6.2.5/spring-expression-6.2.5.jar!/"
       ],
       "properties": {}
     },
@@ -1124,6 +1159,20 @@
       "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-core:6.2.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/6.2.5/spring-core-6.2.5.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-jcl:6.2.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-jcl/6.2.5/spring-jcl-6.2.5.jar!/"
       ],
       "properties": {}
     },
