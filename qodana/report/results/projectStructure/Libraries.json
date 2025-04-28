@@ -708,30 +708,30 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.4.4",
+      "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.4.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/3.4.4/spring-boot-autoconfigure-3.4.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/3.4.5/spring-boot-autoconfigure-3.4.5.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot:3.4.4",
+      "name": "Maven: org.springframework.boot:spring-boot:3.4.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/3.4.4/spring-boot-3.4.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/3.4.5/spring-boot-3.4.5.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-test:3.4.4",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-test:3.4.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-test/3.4.4/spring-boot-starter-test-3.4.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-test/3.4.5/spring-boot-starter-test-3.4.5.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter:3.4.4",
+      "name": "Maven: org.springframework.boot:spring-boot-starter:3.4.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter/3.4.4/spring-boot-starter-3.4.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter/3.4.5/spring-boot-starter-3.4.5.jar!/"
       ],
       "properties": {}
     },
@@ -743,16 +743,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-test:3.4.4",
+      "name": "Maven: org.springframework.boot:spring-boot-test:3.4.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test/3.4.4/spring-boot-test-3.4.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test/3.4.5/spring-boot-test-3.4.5.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:3.4.4",
+      "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:3.4.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test-autoconfigure/3.4.4/spring-boot-test-autoconfigure-3.4.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test-autoconfigure/3.4.5/spring-boot-test-autoconfigure-3.4.5.jar!/"
       ],
       "properties": {}
     },
@@ -848,9 +848,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-test:6.2.5",
+      "name": "Maven: org.springframework:spring-test:6.2.6",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/6.2.5/spring-test-6.2.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/6.2.6/spring-test-6.2.6.jar!/"
       ],
       "properties": {}
     },
@@ -862,16 +862,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-web:3.4.4",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-web:3.4.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-web/3.4.4/spring-boot-starter-web-3.4.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-web/3.4.5/spring-boot-starter-web-3.4.5.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-json:3.4.4",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-json:3.4.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-json/3.4.4/spring-boot-starter-json-3.4.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-json/3.4.5/spring-boot-starter-json-3.4.5.jar!/"
       ],
       "properties": {}
     },
@@ -890,37 +890,37 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:3.4.4",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:3.4.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-tomcat/3.4.4/spring-boot-starter-tomcat-3.4.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-tomcat/3.4.5/spring-boot-starter-tomcat-3.4.5.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.39",
+      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.40",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/10.1.39/tomcat-embed-core-10.1.39.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/10.1.40/tomcat-embed-core-10.1.40.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:10.1.39",
+      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:10.1.40",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-el/10.1.39/tomcat-embed-el-10.1.39.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-el/10.1.40/tomcat-embed-el-10.1.40.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.39",
+      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.40",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.39/tomcat-embed-websocket-10.1.39.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.40/tomcat-embed-websocket-10.1.40.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-webmvc:6.2.5",
+      "name": "Maven: org.springframework:spring-webmvc:6.2.6",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/6.2.5/spring-webmvc-6.2.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/6.2.6/spring-webmvc-6.2.6.jar!/"
       ],
       "properties": {}
     },
@@ -949,6 +949,34 @@
       "name": "Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.18.3",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.3/jackson-dataformat-yaml-2.18.3.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework.boot:spring-boot-starter-web:3.4.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-web/3.4.4/spring-boot-starter-web-3.4.4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework.boot:spring-boot-starter:3.4.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter/3.4.4/spring-boot-starter-3.4.4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework.boot:spring-boot:3.4.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/3.4.4/spring-boot-3.4.4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.4.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/3.4.4/spring-boot-autoconfigure-3.4.4.jar!/"
       ],
       "properties": {}
     },
@@ -995,9 +1023,51 @@
       "properties": {}
     },
     {
+      "name": "Maven: org.springframework.boot:spring-boot-starter-json:3.4.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-json/3.4.4/spring-boot-starter-json-3.4.4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
       "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.18.3",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.3/jackson-datatype-jsr310-2.18.3.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:3.4.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-tomcat/3.4.4/spring-boot-starter-tomcat-3.4.4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.39",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/10.1.39/tomcat-embed-core-10.1.39.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:10.1.39",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-el/10.1.39/tomcat-embed-el-10.1.39.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.39",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.39/tomcat-embed-websocket-10.1.39.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-webmvc:6.2.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/6.2.5/spring-webmvc-6.2.5.jar!/"
       ],
       "properties": {}
     },
@@ -1023,6 +1093,27 @@
       "properties": {}
     },
     {
+      "name": "Maven: org.springframework.boot:spring-boot-starter-test:3.4.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-test/3.4.4/spring-boot-starter-test-3.4.4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework.boot:spring-boot-test:3.4.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test/3.4.4/spring-boot-test-3.4.4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:3.4.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test-autoconfigure/3.4.4/spring-boot-test-autoconfigure-3.4.4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
       "name": "Maven: org.slf4j:slf4j-api:2.0.17",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar!/"
@@ -1033,6 +1124,13 @@
       "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-test:6.2.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/6.2.5/spring-test-6.2.5.jar!/"
       ],
       "properties": {}
     },

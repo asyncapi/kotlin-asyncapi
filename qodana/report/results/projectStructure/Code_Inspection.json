@@ -1438,11 +1438,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.4.4",
+          "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.4.5",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot:3.4.4",
+          "name": "Maven: org.springframework.boot:spring-boot:3.4.5",
           "type": "Library"
         },
         {
@@ -1502,11 +1502,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-test:3.4.4",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-test:3.4.5",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter:3.4.4",
+          "name": "Maven: org.springframework.boot:spring-boot-starter:3.4.5",
           "type": "Library"
         },
         {
@@ -1514,11 +1514,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-test:3.4.4",
+          "name": "Maven: org.springframework.boot:spring-boot-test:3.4.5",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:3.4.4",
+          "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:3.4.5",
           "type": "Library"
         },
         {
@@ -1578,7 +1578,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-test:6.2.5",
+          "name": "Maven: org.springframework:spring-test:6.2.6",
           "type": "Library"
         },
         {
@@ -1586,11 +1586,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-web:3.4.4",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-web:3.4.5",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-json:3.4.4",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-json:3.4.5",
           "type": "Library"
         },
         {
@@ -1602,23 +1602,23 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:3.4.4",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:3.4.5",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.39",
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.40",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:10.1.39",
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:10.1.40",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.39",
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.40",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-webmvc:6.2.5",
+          "name": "Maven: org.springframework:spring-webmvc:6.2.6",
           "type": "Library"
         },
         {
