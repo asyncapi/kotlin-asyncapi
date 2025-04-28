@@ -16,7 +16,7 @@
 
     <properties>
         <spring-framework.version>6.2.5</spring-framework.version>
-        <spring-boot.version>3.4.4</spring-boot.version>
+        <spring-boot.version>3.4.5</spring-boot.version>
     </properties>
 
     <dependencies>
