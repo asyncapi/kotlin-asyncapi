@@ -78,23 +78,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-jvm:1.14.0",
+      "name": "Maven: io.mockk:mockk-jvm:1.14.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-jvm/1.14.0/mockk-jvm-1.14.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-jvm/1.14.2/mockk-jvm-1.14.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.0",
+      "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-dsl-jvm/1.14.0/mockk-dsl-jvm-1.14.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-dsl-jvm/1.14.2/mockk-dsl-jvm-1.14.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-agent-jvm:1.14.0",
+      "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-jvm/1.14.0/mockk-agent-jvm-1.14.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-jvm/1.14.2/mockk-agent-jvm-1.14.2.jar!/"
       ],
       "properties": {}
     },
@@ -120,16 +120,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.0",
+      "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-api-jvm/1.14.0/mockk-agent-api-jvm-1.14.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-api-jvm/1.14.2/mockk-agent-api-jvm-1.14.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-core-jvm:1.14.0",
+      "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-core-jvm/1.14.0/mockk-core-jvm-1.14.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-core-jvm/1.14.2/mockk-core-jvm-1.14.2.jar!/"
       ],
       "properties": {}
     },
