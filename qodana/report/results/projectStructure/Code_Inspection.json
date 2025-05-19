@@ -1,7 +1,7 @@
 {
   "modules": [
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
@@ -469,7 +469,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.32",
           "type": "Library"
         },
         {
@@ -477,11 +477,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.32",
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.32",
           "type": "Library"
         },
         {
@@ -1352,7 +1352,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.32",
           "type": "Library"
         },
         {
@@ -1364,11 +1364,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.32",
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.32",
           "type": "Library"
         },
         {
@@ -1763,7 +1763,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.32",
           "type": "Library"
         },
         {
@@ -1775,11 +1775,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.32",
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.32",
           "type": "Library"
         },
         {
@@ -2363,7 +2363,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.32",
           "type": "Library"
         },
         {
@@ -2371,11 +2371,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.32",
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.32",
           "type": "Library"
         },
         {
@@ -2811,7 +2811,7 @@
           "type": "Module"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.32",
           "type": "Library"
         },
         {
@@ -2819,11 +2819,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.32",
           "type": "Library"
         },
         {
-          "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.30",
+          "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.32",
           "type": "Library"
         },
         {
@@ -3157,7 +3157,21 @@
       ]
     },
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
+      "contentEntries": [],
+      "orderEntries": [
+        {
+          "name": "openjdk-24",
+          "type": "SDK"
+        },
+        {
+          "name": ".kts definition dependencies",
+          "type": "Library"
+        }
+      ]
+    },
+    {
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
