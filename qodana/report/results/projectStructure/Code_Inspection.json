@@ -1,7 +1,7 @@
 {
   "modules": [
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
@@ -1839,11 +1839,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.4.5",
+          "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.5.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot:3.4.5",
+          "name": "Maven: org.springframework.boot:spring-boot:3.5.0",
           "type": "Library"
         },
         {
@@ -1903,11 +1903,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-test:3.4.5",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-test:3.5.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter:3.4.5",
+          "name": "Maven: org.springframework.boot:spring-boot-starter:3.5.0",
           "type": "Library"
         },
         {
@@ -1915,11 +1915,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-test:3.4.5",
+          "name": "Maven: org.springframework.boot:spring-boot-test:3.5.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:3.4.5",
+          "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:3.5.0",
           "type": "Library"
         },
         {
@@ -1947,27 +1947,27 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.awaitility:awaitility:4.2.2",
+          "name": "Maven: org.awaitility:awaitility:4.3.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.hamcrest:hamcrest:2.2",
+          "name": "Maven: org.hamcrest:hamcrest:3.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter:5.11.4",
+          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.11.4",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.mockito:mockito-core:5.14.2",
+          "name": "Maven: org.mockito:mockito-core:5.17.0",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.4",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
           "type": "Library"
         },
         {
@@ -1975,51 +1975,51 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.mockito:mockito-junit-jupiter:5.14.2",
+          "name": "Maven: org.mockito:mockito-junit-jupiter:5.17.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-test:6.2.6",
+          "name": "Maven: org.springframework:spring-test:6.2.7",
           "type": "Library"
         },
         {
-          "name": "Maven: org.xmlunit:xmlunit-core:2.10.0",
+          "name": "Maven: org.xmlunit:xmlunit-core:2.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-web:3.4.5",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-web:3.5.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-json:3.4.5",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-json:3.5.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.18.3",
+          "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.19.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.18.3",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.19.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:3.4.5",
+          "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:3.5.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.40",
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.41",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:10.1.40",
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:10.1.41",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.40",
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.41",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-webmvc:6.2.6",
+          "name": "Maven: org.springframework:spring-webmvc:6.2.7",
           "type": "Library"
         },
         {
@@ -3157,7 +3157,7 @@
       ]
     },
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
@@ -3171,7 +3171,7 @@
       ]
     },
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
