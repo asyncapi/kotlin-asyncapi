@@ -1,7 +1,7 @@
 {
   "modules": [
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
@@ -1803,39 +1803,39 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-web:6.2.6",
+          "name": "Maven: org.springframework:spring-web:6.2.7",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-beans:6.2.6",
+          "name": "Maven: org.springframework:spring-beans:6.2.7",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-core:6.2.6",
+          "name": "Maven: org.springframework:spring-core:6.2.7",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-jcl:6.2.6",
+          "name": "Maven: org.springframework:spring-jcl:6.2.7",
           "type": "Library"
         },
         {
-          "name": "Maven: io.micrometer:micrometer-observation:1.14.5",
+          "name": "Maven: io.micrometer:micrometer-observation:1.14.7",
           "type": "Library"
         },
         {
-          "name": "Maven: io.micrometer:micrometer-commons:1.14.5",
+          "name": "Maven: io.micrometer:micrometer-commons:1.14.7",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-context:6.2.6",
+          "name": "Maven: org.springframework:spring-context:6.2.7",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-aop:6.2.6",
+          "name": "Maven: org.springframework:spring-aop:6.2.7",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-expression:6.2.6",
+          "name": "Maven: org.springframework:spring-expression:6.2.7",
           "type": "Library"
         },
         {
@@ -3157,21 +3157,7 @@
       ]
     },
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
-      "contentEntries": [],
-      "orderEntries": [
-        {
-          "name": "openjdk-24",
-          "type": "SDK"
-        },
-        {
-          "name": ".kts definition dependencies",
-          "type": "Library"
-        }
-      ]
-    },
-    {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
