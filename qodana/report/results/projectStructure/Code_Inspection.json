@@ -1,7 +1,7 @@
 {
   "modules": [
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
@@ -1064,15 +1064,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-core:3.9.9",
+          "name": "Maven: org.apache.maven:maven-core:3.9.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-settings:3.9.9",
+          "name": "Maven: org.apache.maven:maven-settings:3.9.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-settings-builder:3.9.9",
+          "name": "Maven: org.apache.maven:maven-settings-builder:3.9.10",
           "type": "Library"
         },
         {
@@ -1084,39 +1084,39 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-builder-support:3.9.9",
+          "name": "Maven: org.apache.maven:maven-builder-support:3.9.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.9",
+          "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-model-builder:3.9.9",
+          "name": "Maven: org.apache.maven:maven-model-builder:3.9.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.9",
+          "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.10",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.9.22",
+          "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.9.23",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven.resolver:maven-resolver-named-locks:1.9.22",
+          "name": "Maven: org.apache.maven.resolver:maven-resolver-named-locks:1.9.23",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.9.22",
+          "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.9.23",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.9.22",
+          "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.9.23",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.9.22",
+          "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.9.23",
           "type": "Library"
         },
         {
@@ -1124,11 +1124,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.inject:0.9.0.M3",
+          "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.inject:0.9.0.M4",
           "type": "Library"
         },
         {
-          "name": "Maven: com.google.inject:guice:5.1.0",
+          "name": "Maven: org.ow2.asm:asm:9.8",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.google.inject:guice:classes:5.1.0",
           "type": "Library"
         },
         {
@@ -1136,19 +1140,23 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.google.guava:guava:33.2.1-jre",
+          "name": "Maven: com.google.guava:guava:33.4.8-jre",
           "type": "Library"
         },
         {
-          "name": "Maven: com.google.guava:failureaccess:1.0.2",
+          "name": "Maven: org.jspecify:jspecify:1.0.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.codehaus.plexus:plexus-interpolation:1.27",
+          "name": "Maven: com.google.guava:failureaccess:1.0.3",
           "type": "Library"
         },
         {
-          "name": "Maven: org.codehaus.plexus:plexus-component-annotations:2.1.0",
+          "name": "Maven: org.codehaus.plexus:plexus-interpolation:1.28",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.codehaus.plexus:plexus-component-annotations:2.2.0",
           "type": "Library"
         },
         {
@@ -3157,21 +3165,7 @@
       ]
     },
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
-      "contentEntries": [],
-      "orderEntries": [
-        {
-          "name": "openjdk-24",
-          "type": "SDK"
-        },
-        {
-          "name": ".kts definition dependencies",
-          "type": "Library"
-        }
-      ]
-    },
-    {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {

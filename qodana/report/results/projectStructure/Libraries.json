@@ -947,23 +947,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-core:3.9.9",
+      "name": "Maven: org.apache.maven:maven-core:3.9.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-core/3.9.9/maven-core-3.9.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-core/3.9.10/maven-core-3.9.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-settings:3.9.9",
+      "name": "Maven: org.apache.maven:maven-settings:3.9.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings/3.9.9/maven-settings-3.9.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings/3.9.10/maven-settings-3.9.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-settings-builder:3.9.9",
+      "name": "Maven: org.apache.maven:maven-settings-builder:3.9.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings-builder/3.9.9/maven-settings-builder-3.9.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings-builder/3.9.10/maven-settings-builder-3.9.10.jar!/"
       ],
       "properties": {}
     },
@@ -982,65 +982,65 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-builder-support:3.9.9",
+      "name": "Maven: org.apache.maven:maven-builder-support:3.9.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-builder-support/3.9.9/maven-builder-support-3.9.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-builder-support/3.9.10/maven-builder-support-3.9.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.9",
+      "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-repository-metadata/3.9.9/maven-repository-metadata-3.9.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-repository-metadata/3.9.10/maven-repository-metadata-3.9.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-model-builder:3.9.9",
+      "name": "Maven: org.apache.maven:maven-model-builder:3.9.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model-builder/3.9.9/maven-model-builder-3.9.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model-builder/3.9.10/maven-model-builder-3.9.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.9",
+      "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-resolver-provider/3.9.9/maven-resolver-provider-3.9.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-resolver-provider/3.9.10/maven-resolver-provider-3.9.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.9.22",
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.9.23",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-impl/1.9.22/maven-resolver-impl-1.9.22.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-impl/1.9.23/maven-resolver-impl-1.9.23.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-named-locks:1.9.22",
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-named-locks:1.9.23",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-named-locks/1.9.22/maven-resolver-named-locks-1.9.22.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-named-locks/1.9.23/maven-resolver-named-locks-1.9.23.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.9.22",
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.9.23",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-api/1.9.22/maven-resolver-api-1.9.22.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-api/1.9.23/maven-resolver-api-1.9.23.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.9.22",
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.9.23",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-spi/1.9.22/maven-resolver-spi-1.9.22.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-spi/1.9.23/maven-resolver-spi-1.9.23.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.9.22",
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.9.23",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-util/1.9.22/maven-resolver-util-1.9.22.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-util/1.9.23/maven-resolver-util-1.9.23.jar!/"
       ],
       "properties": {}
     },
@@ -1052,16 +1052,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.inject:0.9.0.M3",
+      "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.inject:0.9.0.M4",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M3/org.eclipse.sisu.inject-0.9.0.M3.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M4/org.eclipse.sisu.inject-0.9.0.M4.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: com.google.inject:guice:5.1.0",
+      "name": "Maven: org.ow2.asm:asm:9.8",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/google/inject/guice/5.1.0/guice-5.1.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/ow2/asm/asm/9.8/asm-9.8.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: com.google.inject:guice:classes:5.1.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/google/inject/guice/5.1.0/guice-5.1.0-classes.jar!/"
       ],
       "properties": {}
     },
@@ -1073,30 +1080,37 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.google.guava:guava:33.2.1-jre",
+      "name": "Maven: com.google.guava:guava:33.4.8-jre",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/google/guava/guava/33.2.1-jre/guava-33.2.1-jre.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: com.google.guava:failureaccess:1.0.2",
+      "name": "Maven: org.jspecify:jspecify:1.0.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.codehaus.plexus:plexus-interpolation:1.27",
+      "name": "Maven: com.google.guava:failureaccess:1.0.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-interpolation/1.27/plexus-interpolation-1.27.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.codehaus.plexus:plexus-component-annotations:2.1.0",
+      "name": "Maven: org.codehaus.plexus:plexus-interpolation:1.28",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-component-annotations/2.1.0/plexus-component-annotations-2.1.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-interpolation/1.28/plexus-interpolation-1.28.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-component-annotations:2.2.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-component-annotations/2.2.0/plexus-component-annotations-2.2.0.jar!/"
       ],
       "properties": {}
     },
