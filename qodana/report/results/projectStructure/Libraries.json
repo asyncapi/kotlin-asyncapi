@@ -86,23 +86,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-jvm:1.14.2",
+      "name": "Maven: io.mockk:mockk-jvm:1.14.4",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-jvm/1.14.2/mockk-jvm-1.14.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-jvm/1.14.4/mockk-jvm-1.14.4.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
+      "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-dsl-jvm/1.14.2/mockk-dsl-jvm-1.14.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-dsl-jvm/1.14.4/mockk-dsl-jvm-1.14.4.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
+      "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-jvm/1.14.2/mockk-agent-jvm-1.14.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-jvm/1.14.4/mockk-agent-jvm-1.14.4.jar!/"
       ],
       "properties": {}
     },
@@ -114,30 +114,30 @@
       "properties": {}
     },
     {
-      "name": "Maven: net.bytebuddy:byte-buddy:1.14.17",
+      "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.14.17/byte-buddy-1.14.17.jar!/"
+        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.17.5/byte-buddy-1.17.5.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: net.bytebuddy:byte-buddy-agent:1.14.17",
+      "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.14.17/byte-buddy-agent-1.14.17.jar!/"
+        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.17.5/byte-buddy-agent-1.17.5.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
+      "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-api-jvm/1.14.2/mockk-agent-api-jvm-1.14.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-api-jvm/1.14.4/mockk-agent-api-jvm-1.14.4.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
+      "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-core-jvm/1.14.2/mockk-core-jvm-1.14.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-core-jvm/1.14.4/mockk-core-jvm-1.14.4.jar!/"
       ],
       "properties": {}
     },
@@ -156,58 +156,37 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.junit.jupiter:junit-jupiter:5.8.2",
+      "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.12.2/junit-jupiter-5.12.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.8.2",
+      "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.12.2/junit-jupiter-params-5.12.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4",
+      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core/1.6.4/kotlinx-coroutines-core-1.6.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core/1.10.1/kotlinx-coroutines-core-1.10.1.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4",
+      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.6.4/kotlinx-coroutines-core-jvm-1.6.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.10.1/kotlinx-coroutines-core-jvm-1.10.1.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.6.21/kotlin-stdlib-jdk8-1.6.21.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.6.21/kotlin-stdlib-jdk7-1.6.21.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.6.21/kotlin-stdlib-common-1.6.21.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.0.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/2.0.0/kotlin-reflect-2.0.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/2.1.20/kotlin-reflect-2.1.20.jar!/"
       ],
       "properties": {}
     },
@@ -828,20 +807,6 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.12.2/junit-jupiter-5.12.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.12.2/junit-jupiter-params-5.12.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
       "name": "Maven: org.mockito:mockito-core:5.17.0",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/mockito/mockito-core/5.17.0/mockito-core-5.17.0.jar!/"
@@ -1206,23 +1171,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.17.5/byte-buddy-1.17.5.jar!/"
-      ],
-      "properties": {}
-    },
-    {
       "name": "Maven: org.awaitility:awaitility:4.3.0",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/awaitility/awaitility/4.3.0/awaitility-4.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.17.5/byte-buddy-agent-1.17.5.jar!/"
       ],
       "properties": {}
     },
@@ -1650,13 +1601,6 @@
       "name": "Maven: io.ktor:ktor-websockets-jvm:3.1.3",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-websockets-jvm/3.1.3/ktor-websockets-jvm-3.1.3.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/2.1.20/kotlin-reflect-2.1.20.jar!/"
       ],
       "properties": {}
     },

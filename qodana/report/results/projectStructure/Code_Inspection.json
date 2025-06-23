@@ -125,15 +125,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -141,19 +141,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -165,35 +165,23 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.0.0",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
           "type": "Library"
         }
       ]
@@ -561,15 +549,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -577,11 +565,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -593,7 +581,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
           "type": "Library"
         }
       ]
@@ -668,15 +656,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -684,19 +672,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -708,35 +696,23 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.0.0",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
           "type": "Library"
         }
       ]
@@ -968,15 +944,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -984,15 +960,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -1004,15 +980,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
           "type": "Library"
         }
       ]
@@ -1087,15 +1063,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -1103,19 +1079,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -1127,35 +1103,23 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.0.0",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
           "type": "Library"
         }
       ]
@@ -1267,15 +1231,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -1283,19 +1247,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -1307,35 +1271,23 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.0.0",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
           "type": "Library"
         }
       ]
@@ -1431,15 +1383,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -1447,19 +1399,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -1471,35 +1423,23 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.0.0",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
           "type": "Library"
         }
       ]
@@ -1939,15 +1879,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -1955,15 +1895,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
           "type": "Library"
         }
       ]
@@ -2351,23 +2291,23 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -2379,11 +2319,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.0.0",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
           "type": "Library"
         }
       ]
@@ -2775,23 +2715,23 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -3103,15 +3043,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -3119,19 +3059,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.14.17",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.2",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
           "type": "Library"
         },
         {
@@ -3143,19 +3083,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.8.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.0.0",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
           "type": "Library"
         }
       ]
