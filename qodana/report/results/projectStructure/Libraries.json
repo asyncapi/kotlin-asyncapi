@@ -37,9 +37,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
+      "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.13.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.13.2/junit-jupiter-api-5.13.2.jar!/"
       ],
       "properties": {}
     },
@@ -51,9 +51,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
+      "name": "Maven: org.junit.platform:junit-platform-commons:1.13.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.13.2/junit-platform-commons-1.13.2.jar!/"
       ],
       "properties": {}
     },
@@ -65,16 +65,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
+      "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.13.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.13.2/junit-jupiter-engine-5.13.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
+      "name": "Maven: org.junit.platform:junit-platform-engine:1.13.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.13.2/junit-platform-engine-1.13.2.jar!/"
       ],
       "properties": {}
     },
@@ -611,9 +611,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.github.classgraph:classgraph:4.8.179",
+      "name": "Maven: io.github.classgraph:classgraph:4.8.180",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/github/classgraph/classgraph/4.8.179/classgraph-4.8.179.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/github/classgraph/classgraph/4.8.180/classgraph-4.8.180.jar!/"
       ],
       "properties": {}
     },
