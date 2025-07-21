@@ -1,4 +1,91 @@
 {
   "version": "3",
-  "listProblem": []
+  "listProblem": [
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Class \"RoomsChannel\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-ktor-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/ktor/RoomChannel.kt",
+          "language": "kotlin",
+          "line": 21,
+          "offset": 7,
+          "length": 12,
+          "code": {
+            "startLine": 19,
+            "length": 12,
+            "offset": 14,
+            "surroundingCode": "    ]\n)\nclass RoomsChannel {\n\n    @Subscribe("
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-ktor-example",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "1d91be46c75a7ba63c16d3a8054a37dc40e167a48a5a7d7e0d2bdbc1370159b3",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"publish\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-ktor-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/ktor/RoomChannel.kt",
+          "language": "kotlin",
+          "line": 36,
+          "offset": 9,
+          "length": 7,
+          "code": {
+            "startLine": 34,
+            "length": 7,
+            "offset": 24,
+            "surroundingCode": "        ]\n    )\n    fun publish(message: String): Nothing = TODO()\n}\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-ktor-example",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "562435ffa2e51331799ee7b8f003fc27becaaefb2ddb73d945afb8573e0cc5ac",
+      "problemType": "REGULAR"
+    }
+  ]
 }
