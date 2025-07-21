@@ -86,23 +86,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-jvm:1.14.4",
+      "name": "Maven: io.mockk:mockk-jvm:1.14.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-jvm/1.14.4/mockk-jvm-1.14.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-jvm/1.14.5/mockk-jvm-1.14.5.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
+      "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-dsl-jvm/1.14.4/mockk-dsl-jvm-1.14.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-dsl-jvm/1.14.5/mockk-dsl-jvm-1.14.5.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
+      "name": "Maven: io.mockk:mockk-agent-jvm:1.14.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-jvm/1.14.4/mockk-agent-jvm-1.14.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-jvm/1.14.5/mockk-agent-jvm-1.14.5.jar!/"
       ],
       "properties": {}
     },
@@ -114,30 +114,30 @@
       "properties": {}
     },
     {
-      "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
+      "name": "Maven: net.bytebuddy:byte-buddy:1.15.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.17.5/byte-buddy-1.17.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
+      "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.17.5/byte-buddy-agent-1.17.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
+      "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-api-jvm/1.14.4/mockk-agent-api-jvm-1.14.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-api-jvm/1.14.5/mockk-agent-api-jvm-1.14.5.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
+      "name": "Maven: io.mockk:mockk-core-jvm:1.14.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-core-jvm/1.14.4/mockk-core-jvm-1.14.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-core-jvm/1.14.5/mockk-core-jvm-1.14.5.jar!/"
       ],
       "properties": {}
     },
@@ -625,13 +625,6 @@
       "properties": {}
     },
     {
-      "name": "Maven: net.bytebuddy:byte-buddy:1.15.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
       "name": "Maven: org.springframework:spring-web:6.2.9",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/6.2.9/spring-web-6.2.9.jar!/"
@@ -803,13 +796,6 @@
       "name": "Maven: org.mockito:mockito-core:5.17.0",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/mockito/mockito-core/5.17.0/mockito-core-5.17.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar!/"
       ],
       "properties": {}
     },

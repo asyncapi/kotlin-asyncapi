@@ -125,15 +125,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -141,19 +141,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -549,15 +549,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -565,11 +565,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -656,15 +656,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -672,19 +672,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -940,15 +940,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -956,15 +956,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -1059,15 +1059,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -1075,19 +1075,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -1227,15 +1227,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -1243,19 +1243,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -1379,15 +1379,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -1395,19 +1395,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -1875,15 +1875,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -1891,11 +1891,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -2283,23 +2283,23 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -2707,23 +2707,23 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -3031,15 +3031,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -3047,19 +3047,19 @@
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.5",
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.5",
           "type": "Library"
         },
         {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.4",
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.5",
           "type": "Library"
         },
         {
@@ -3089,7 +3089,7 @@
       ]
     },
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
@@ -3103,7 +3103,7 @@
       ]
     },
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
