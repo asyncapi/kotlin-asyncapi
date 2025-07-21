@@ -1,7 +1,7 @@
 {
   "modules": [
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
@@ -61,15 +61,15 @@
           "type": "Own sources"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
           "type": "Library"
         },
         {
@@ -97,7 +97,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
           "type": "Library"
         },
         {
@@ -105,7 +105,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
           "type": "Library"
         },
         {
@@ -113,11 +113,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
           "type": "Library"
         },
         {
@@ -261,19 +261,19 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.2",
           "type": "Library"
         },
         {
@@ -521,7 +521,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
           "type": "Library"
         },
         {
@@ -529,7 +529,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
           "type": "Library"
         },
         {
@@ -537,11 +537,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
           "type": "Library"
         },
         {
@@ -628,7 +628,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
           "type": "Library"
         },
         {
@@ -636,7 +636,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
           "type": "Library"
         },
         {
@@ -644,11 +644,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
           "type": "Library"
         },
         {
@@ -784,19 +784,19 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.2",
           "type": "Library"
         },
         {
@@ -912,7 +912,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
           "type": "Library"
         },
         {
@@ -920,7 +920,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
           "type": "Library"
         },
         {
@@ -928,11 +928,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
           "type": "Library"
         },
         {
@@ -1031,7 +1031,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
           "type": "Library"
         },
         {
@@ -1039,7 +1039,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
           "type": "Library"
         },
         {
@@ -1047,11 +1047,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
           "type": "Library"
         },
         {
@@ -1199,7 +1199,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
           "type": "Library"
         },
         {
@@ -1207,7 +1207,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
           "type": "Library"
         },
         {
@@ -1215,11 +1215,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
           "type": "Library"
         },
         {
@@ -1351,7 +1351,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
           "type": "Library"
         },
         {
@@ -1359,7 +1359,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
           "type": "Library"
         },
         {
@@ -1367,11 +1367,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
           "type": "Library"
         },
         {
@@ -1519,19 +1519,19 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.2",
           "type": "Library"
         },
         {
@@ -1847,7 +1847,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
           "type": "Library"
         },
         {
@@ -1855,7 +1855,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
           "type": "Library"
         },
         {
@@ -1863,11 +1863,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
           "type": "Library"
         },
         {
@@ -1967,19 +1967,19 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.2",
           "type": "Library"
         },
         {
@@ -2023,39 +2023,39 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-web:6.2.8",
+          "name": "Maven: org.springframework:spring-web:6.2.9",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-beans:6.2.8",
+          "name": "Maven: org.springframework:spring-beans:6.2.9",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-core:6.2.8",
+          "name": "Maven: org.springframework:spring-core:6.2.9",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-jcl:6.2.8",
+          "name": "Maven: org.springframework:spring-jcl:6.2.9",
           "type": "Library"
         },
         {
-          "name": "Maven: io.micrometer:micrometer-observation:1.14.8",
+          "name": "Maven: io.micrometer:micrometer-observation:1.14.9",
           "type": "Library"
         },
         {
-          "name": "Maven: io.micrometer:micrometer-commons:1.14.8",
+          "name": "Maven: io.micrometer:micrometer-commons:1.14.9",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-context:6.2.8",
+          "name": "Maven: org.springframework:spring-context:6.2.9",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-aop:6.2.8",
+          "name": "Maven: org.springframework:spring-aop:6.2.9",
           "type": "Library"
         },
         {
-          "name": "Maven: org.springframework:spring-expression:6.2.8",
+          "name": "Maven: org.springframework:spring-expression:6.2.9",
           "type": "Library"
         },
         {
@@ -2255,7 +2255,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
           "type": "Library"
         },
         {
@@ -2263,7 +2263,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
           "type": "Library"
         },
         {
@@ -2271,11 +2271,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
           "type": "Library"
         },
         {
@@ -2539,11 +2539,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
           "type": "Library"
         },
         {
@@ -2679,7 +2679,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
           "type": "Library"
         },
         {
@@ -2695,7 +2695,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
           "type": "Library"
         },
         {
@@ -2807,15 +2807,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
           "type": "Library"
         },
         {
@@ -2851,15 +2851,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-plugin-api:3.9.10",
+          "name": "Maven: org.apache.maven:maven-plugin-api:3.9.11",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-model:3.9.10",
+          "name": "Maven: org.apache.maven:maven-model:3.9.11",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-artifact:3.9.10",
+          "name": "Maven: org.apache.maven:maven-artifact:3.9.11",
           "type": "Library"
         },
         {
@@ -3003,7 +3003,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
           "type": "Library"
         },
         {
@@ -3011,7 +3011,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
           "type": "Library"
         },
         {
@@ -3019,11 +3019,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.13.2",
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.13.2",
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
           "type": "Library"
         },
         {
@@ -3089,7 +3089,7 @@
       ]
     },
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
@@ -3103,7 +3103,7 @@
       ]
     },
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
