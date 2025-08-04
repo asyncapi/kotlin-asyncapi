@@ -1,7 +1,7 @@
 {
   "libraries": [
     {
-      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
@@ -9,7 +9,7 @@
       ]
     },
     {
-      "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
@@ -353,23 +353,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-core:3.9.10",
+      "name": "Maven: org.apache.maven:maven-core:3.9.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-core/3.9.10/maven-core-3.9.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-core/3.9.11/maven-core-3.9.11.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-settings:3.9.10",
+      "name": "Maven: org.apache.maven:maven-settings:3.9.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings/3.9.10/maven-settings-3.9.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings/3.9.11/maven-settings-3.9.11.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-settings-builder:3.9.10",
+      "name": "Maven: org.apache.maven:maven-settings-builder:3.9.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings-builder/3.9.10/maven-settings-builder-3.9.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings-builder/3.9.11/maven-settings-builder-3.9.11.jar!/"
       ],
       "properties": {}
     },
@@ -388,65 +388,65 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-builder-support:3.9.10",
+      "name": "Maven: org.apache.maven:maven-builder-support:3.9.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-builder-support/3.9.10/maven-builder-support-3.9.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-builder-support/3.9.11/maven-builder-support-3.9.11.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.10",
+      "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-repository-metadata/3.9.10/maven-repository-metadata-3.9.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-repository-metadata/3.9.11/maven-repository-metadata-3.9.11.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-model-builder:3.9.10",
+      "name": "Maven: org.apache.maven:maven-model-builder:3.9.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model-builder/3.9.10/maven-model-builder-3.9.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model-builder/3.9.11/maven-model-builder-3.9.11.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.10",
+      "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-resolver-provider/3.9.10/maven-resolver-provider-3.9.10.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-resolver-provider/3.9.11/maven-resolver-provider-3.9.11.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.9.23",
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.9.24",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-impl/1.9.23/maven-resolver-impl-1.9.23.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-impl/1.9.24/maven-resolver-impl-1.9.24.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-named-locks:1.9.23",
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-named-locks:1.9.24",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-named-locks/1.9.23/maven-resolver-named-locks-1.9.23.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-named-locks/1.9.24/maven-resolver-named-locks-1.9.24.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.9.23",
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.9.24",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-api/1.9.23/maven-resolver-api-1.9.23.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-api/1.9.24/maven-resolver-api-1.9.24.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.9.23",
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.9.24",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-spi/1.9.23/maven-resolver-spi-1.9.23.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-spi/1.9.24/maven-resolver-spi-1.9.24.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.9.23",
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.9.24",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-util/1.9.23/maven-resolver-util-1.9.23.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-util/1.9.24/maven-resolver-util-1.9.24.jar!/"
       ],
       "properties": {}
     },
@@ -1718,7 +1718,7 @@
       "properties": {}
     },
     {
-      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
