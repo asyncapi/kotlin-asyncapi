@@ -1,7 +1,15 @@
 {
   "libraries": [
     {
-      "name": ".kts definition dependencies",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
+      "roots": [
+        "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
+        "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
+        "jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib.jar!/"
+      ]
+    },
+    {
+      "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
@@ -534,16 +542,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.34",
+      "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.35",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-core-jakarta/2.2.34/swagger-core-jakarta-2.2.34.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-core-jakarta/2.2.35/swagger-core-jakarta-2.2.35.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.commons:commons-lang3:3.17.0",
+      "name": "Maven: org.apache.commons:commons-lang3:3.18.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar!/"
       ],
       "properties": {}
     },
@@ -555,16 +563,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.34",
+      "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.35",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-annotations-jakarta/2.2.34/swagger-annotations-jakarta-2.2.34.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-annotations-jakarta/2.2.35/swagger-annotations-jakarta-2.2.35.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.34",
+      "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.35",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-models-jakarta/2.2.34/swagger-models-jakarta-2.2.34.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-models-jakarta/2.2.35/swagger-models-jakarta-2.2.35.jar!/"
       ],
       "properties": {}
     },
@@ -597,16 +605,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.18.2",
+      "name": "Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.19.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.2/jackson-dataformat-yaml-2.18.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.19.2/jackson-dataformat-yaml-2.19.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.18.2",
+      "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.19.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.2/jackson-datatype-jsr310-2.18.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.19.2/jackson-datatype-jsr310-2.19.2.jar!/"
       ],
       "properties": {}
     },
@@ -901,6 +909,13 @@
       "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.9.25",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-script-runtime/1.9.25/kotlin-script-runtime-1.9.25.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.commons:commons-lang3:3.17.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar!/"
       ],
       "properties": {}
     },
@@ -1701,6 +1716,14 @@
         "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit/2.2.0/kotlin-test-junit-2.2.0.jar!/"
       ],
       "properties": {}
+    },
+    {
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
+      "roots": [
+        "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
+        "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
+        "jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib.jar!/"
+      ]
     }
   ]
 }
