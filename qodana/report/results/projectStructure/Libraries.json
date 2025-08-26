@@ -1,14 +1,6 @@
 {
   "libraries": [
     {
-      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
-      "roots": [
-        "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
-        "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
-        "jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib.jar!/"
-      ]
-    },
-    {
       "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
@@ -17,9 +9,17 @@
       ]
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:2.2.0",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/2.2.0/kotlin-stdlib-2.2.0.jar!/"
+        "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
+        "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
+        "jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib.jar!/"
+      ]
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:2.2.10",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/2.2.10/kotlin-stdlib-2.2.10.jar!/"
       ],
       "properties": {}
     },
@@ -31,16 +31,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:2.2.0",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:2.2.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit5/2.2.0/kotlin-test-junit5-2.2.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit5/2.2.10/kotlin-test-junit5-2.2.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test:2.2.0",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test:2.2.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/2.2.0/kotlin-test-2.2.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/2.2.10/kotlin-test-2.2.10.jar!/"
       ],
       "properties": {}
     },
@@ -234,44 +234,44 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:2.2.0",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:2.2.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-common/2.2.0/kotlin-scripting-common-2.2.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-common/2.2.10/kotlin-scripting-common-2.2.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:2.2.0",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:2.2.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm/2.2.0/kotlin-scripting-jvm-2.2.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm/2.2.10/kotlin-scripting-jvm-2.2.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:2.2.0",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:2.2.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-script-runtime/2.2.0/kotlin-script-runtime-2.2.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-script-runtime/2.2.10/kotlin-script-runtime-2.2.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:2.2.0",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:2.2.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/2.2.0/kotlin-scripting-jvm-host-2.2.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/2.2.10/kotlin-scripting-jvm-host-2.2.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:2.2.0",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:2.2.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/2.2.0/kotlin-compiler-embeddable-2.2.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/2.2.10/kotlin-compiler-embeddable-2.2.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:2.2.0",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:2.2.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/2.2.0/kotlin-daemon-embeddable-2.2.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/2.2.10/kotlin-daemon-embeddable-2.2.10.jar!/"
       ],
       "properties": {}
     },
@@ -283,16 +283,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:2.2.0",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:2.2.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/2.2.0/kotlin-scripting-compiler-embeddable-2.2.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/2.2.10/kotlin-scripting-compiler-embeddable-2.2.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:2.2.0",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:2.2.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/2.2.0/kotlin-scripting-compiler-impl-embeddable-2.2.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/2.2.10/kotlin-scripting-compiler-impl-embeddable-2.2.10.jar!/"
       ],
       "properties": {}
     },
@@ -1011,6 +1011,13 @@
       "properties": {}
     },
     {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:2.2.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit5/2.2.0/kotlin-test-junit5-2.2.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
       "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.9.25",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/1.9.25/kotlin-test-1.9.25.jar!/"
@@ -1473,14 +1480,14 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit:2.2.0",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit:2.2.10",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit/2.2.0/kotlin-test-junit-2.2.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit/2.2.10/kotlin-test-junit-2.2.10.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
