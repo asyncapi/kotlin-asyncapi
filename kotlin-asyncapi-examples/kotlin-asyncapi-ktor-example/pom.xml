@@ -18,7 +18,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <kotlin.version>2.2.0</kotlin.version>
+        <kotlin.version>2.2.10</kotlin.version>
         <ktor.version>3.2.3</ktor.version>
         <logback.version>1.5.18</logback.version>
         <slf4j.version>2.0.17</slf4j.version>
