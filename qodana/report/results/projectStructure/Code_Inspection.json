@@ -229,15 +229,15 @@
           "type": "Own sources"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.0",
           "type": "Library"
         },
         {
@@ -429,19 +429,19 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.0",
           "type": "Library"
         },
         {
@@ -948,15 +948,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.0",
           "type": "Library"
         },
         {
@@ -1296,23 +1296,23 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:1.9.25",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.0.21",
           "type": "Library"
         },
         {
@@ -1695,19 +1695,19 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.0",
           "type": "Library"
         },
         {
@@ -2279,19 +2279,19 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.0",
           "type": "Library"
         },
         {
@@ -2887,11 +2887,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.0",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.19.2",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.0",
           "type": "Library"
         },
         {
@@ -3093,20 +3093,6 @@
       ]
     },
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
-      "contentEntries": [],
-      "orderEntries": [
-        {
-          "name": "openjdk-24",
-          "type": "SDK"
-        },
-        {
-          "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
-          "type": "Library"
-        }
-      ]
-    },
-    {
       "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
@@ -3116,6 +3102,20 @@
         },
         {
           "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
+          "type": "Library"
+        }
+      ]
+    },
+    {
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
+      "contentEntries": [],
+      "orderEntries": [
+        {
+          "name": "openjdk-24",
+          "type": "SDK"
+        },
+        {
+          "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
           "type": "Library"
         }
       ]
