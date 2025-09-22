@@ -15,7 +15,7 @@
     <description>The Ktor plugin for the Kotlin AsyncAPI framework</description>
 
     <properties>
-        <ktor-server.version>3.2.3</ktor-server.version>
+        <ktor-server.version>3.3.0</ktor-server.version>
     </properties>
 
     <dependencies>
