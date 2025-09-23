@@ -9,7 +9,7 @@
       ]
     },
     {
-      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
@@ -395,9 +395,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.assertj:assertj-core:3.27.4",
+      "name": "Maven: org.assertj:assertj-core:3.27.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/assertj/assertj-core/3.27.4/assertj-core-3.27.4.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/assertj/assertj-core/3.27.5/assertj-core-3.27.5.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: net.bytebuddy:byte-buddy:1.17.7",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.17.7/byte-buddy-1.17.7.jar!/"
       ],
       "properties": {}
     },
@@ -909,13 +916,6 @@
       "name": "Maven: org.slf4j:slf4j-api:2.0.17",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: net.bytebuddy:byte-buddy:1.17.7",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.17.7/byte-buddy-1.17.7.jar!/"
       ],
       "properties": {}
     },
@@ -1655,7 +1655,7 @@
       "properties": {}
     },
     {
-      "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",

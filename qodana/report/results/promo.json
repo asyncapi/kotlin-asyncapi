@@ -19,1491 +19,29 @@
         "kotlin"
       ],
       "severity": "High",
-      "comment": "Function \"cc\" is never used",
+      "comment": "Property \"mqtt5\" is never used",
       "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
+          "path": "kotlin-asyncapi-annotation/src/main/kotlin/com/asyncapi/kotlinasyncapi/annotation/channel/MessageBinding.kt",
           "language": "kotlin",
-          "line": 149,
-          "offset": 13,
-          "length": 2,
-          "code": {
-            "startLine": 147,
-            "length": 2,
-            "offset": 52,
-            "surroundingCode": "            value.also { userId = it }\n\n        fun cc(vararg values: String): List<String> =\n            listOf(*values).also { cc = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "0bf11aa987c797cd0800529358f763cebfaf3c8e6f1280ea00545048132cc2b9",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"queue\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 232,
-          "offset": 24,
+          "line": 15,
+          "offset": 9,
           "length": 5,
           "code": {
-            "startLine": 230,
+            "startLine": 13,
             "length": 5,
-            "offset": 73,
-            "surroundingCode": "                value.also { deliveryMode = it }\n\n            inline fun queue(build: Queue.() -> Unit): Queue =\n                Queue().apply(build).also { queue = it }\n"
+            "offset": 161,
+            "surroundingCode": "    val amqp1: MessageBinding.AMQP1 = MessageBinding.AMQP1(isDefault = true),\n    val mqtt: MessageBinding.MQTT = MessageBinding.MQTT(isDefault = true),\n    val mqtt5: MessageBinding.MQTT5 = MessageBinding.MQTT5(isDefault = true),\n    val nats: MessageBinding.NATS = MessageBinding.NATS(isDefault = true),\n    val jms: MessageBinding.JMS = MessageBinding.JMS(isDefault = true),"
           }
         }
       ],
       "attributes": {
-        "module": "kotlin-asyncapi-core",
+        "module": "kotlin-asyncapi-annotation",
         "inspectionName": "UnusedSymbol"
       },
-      "hash": "0d944a3781d2f5d3def28f0a45a716b15390bc7dc837fe0dae3897d406f42e3e",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"clientId\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 120,
-          "offset": 20,
-          "length": 8,
-          "code": {
-            "startLine": 118,
-            "length": 8,
-            "offset": 79,
-            "surroundingCode": "            Reference().apply(build).also { groupId = it }\n\n        inline fun clientId(build: Schema.() -> Unit): Schema =\n            Schema().apply(build).also { clientId = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "128342d832120f4c46d0dee706a8461f2c290f7ed27d43e4e299c1f2d6c9e0a1",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"replyTo\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 164,
-          "offset": 13,
-          "length": 7,
-          "code": {
-            "startLine": 162,
-            "length": 7,
-            "offset": 59,
-            "surroundingCode": "            listOf(*values).also { bcc = it }\n\n        fun replyTo(value: String): String =\n            value.also { replyTo = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "192335b82e9d2305532638443b033e77aed6b04a53dccad57aefb9c915956fd5",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"priority\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 152,
-          "offset": 13,
-          "length": 8,
-          "code": {
-            "startLine": 150,
-            "length": 8,
-            "offset": 58,
-            "surroundingCode": "            listOf(*values).also { cc = it }\n\n        fun priority(value: Int): Int =\n            value.also { priority = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "1ad17ca6b48ec1e87d017847c0433fe5fb72de63d1c9c1b89d7a8aa9439d759d",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"expiration\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 143,
-          "offset": 13,
-          "length": 10,
-          "code": {
-            "startLine": 141,
-            "length": 10,
-            "offset": 56,
-            "surroundingCode": "        var bindingVersion: String? = null\n\n        fun expiration(value: Int): Int =\n            value.also { expiration = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "230018df0940363c0204a6d0807e1c3358b5a1f6725c72c50566c92cfdb8eff8",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"stomp\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 74,
-          "offset": 16,
-          "length": 5,
-          "code": {
-            "startLine": 72,
-            "length": 5,
-            "offset": 76,
-            "surroundingCode": "        OperationBinding.SQS.apply(build).also { sqs = it }\n\n    inline fun stomp(build: OperationBinding.STOMP.() -> Unit): OperationBinding.STOMP =\n        OperationBinding.STOMP.apply(build).also { stomp = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "24a94fe21bd04398617c06824773095ec0787848d0bf6a859174a2b6a31e3993",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"jms\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 62,
-          "offset": 16,
-          "length": 3,
-          "code": {
-            "startLine": 60,
-            "length": 3,
-            "offset": 80,
-            "surroundingCode": "        OperationBinding.NATS().apply(build).also { nats = it }\n\n    inline fun jms(build: OperationBinding.JMS.() -> Unit): OperationBinding.JMS =\n        OperationBinding.JMS.apply(build).also { jms = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "273a03c8b7ac31f6a655cd06ee5f37bfa514a01422f67751ad20c7d9d9671175",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"topic\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 235,
-          "offset": 24,
-          "length": 5,
-          "code": {
-            "startLine": 233,
-            "length": 5,
-            "offset": 81,
-            "surroundingCode": "                Queue().apply(build).also { queue = it }\n\n            inline fun topic(build: Topic.() -> Unit): Topic =\n                Topic().apply(build).also { topic = it }\n        }"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "2e212b74128e8c51b1ce455f57555db9e29d22e1c93294e9a57d65c0df585221",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"userId\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 146,
-          "offset": 13,
-          "length": 6,
-          "code": {
-            "startLine": 144,
-            "length": 6,
-            "offset": 56,
-            "surroundingCode": "            value.also { expiration = it }\n\n        fun userId(value: String): String =\n            value.also { userId = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "3383c3117e832330e08367894bcb2bcd6db90fe62d4486b771e4d85841bc5d19",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"solace\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 68,
-          "offset": 16,
-          "length": 6,
-          "code": {
-            "startLine": 66,
-            "length": 6,
-            "offset": 76,
-            "surroundingCode": "        OperationBinding.SNS.apply(build).also { sns = it }\n\n    inline fun solace(build: OperationBinding.Solace.() -> Unit): OperationBinding.Solace =\n        OperationBinding.Solace().apply(build).also { solace = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "3c4f19177c97d5149e41bd5ac9e9f1e02eaa05455386d20645873e4de704c46e",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"bindingsRef\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/Channel.kt",
-          "language": "kotlin",
-          "line": 50,
-          "offset": 16,
-          "length": 11,
-          "code": {
-            "startLine": 48,
-            "length": 11,
-            "offset": 78,
-            "surroundingCode": "        ChannelBindings().apply(build).also { bindings = it }\n\n    inline fun bindingsRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { bindings = it }\n}"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "41818d73de269f0de8578442e5535b55890e96875109cea7f703cbee494ee2a6",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"nats\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 59,
-          "offset": 16,
-          "length": 4,
-          "code": {
-            "startLine": 57,
-            "length": 4,
-            "offset": 80,
-            "surroundingCode": "        OperationBinding.MQTT5.apply(build).also { mqtt5 = it }\n\n    inline fun nats(build: OperationBinding.NATS.() -> Unit): OperationBinding.NATS =\n        OperationBinding.NATS().apply(build).also { nats = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "4702f28db7bf98a1944e12be8cf7ac2d711c5b98787470435aa486ab50448838",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"ack\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 170,
-          "offset": 13,
-          "length": 3,
-          "code": {
-            "startLine": 168,
-            "length": 3,
-            "offset": 55,
-            "surroundingCode": "            value.also { timestamp = it }\n\n        fun ack(value: Boolean): Boolean =\n            value.also { ack = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "4950c579a68fcee8b18224892a4b457ef4a54e4a1c9c247aabc94de2fed62357",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"amqp1\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 50,
-          "offset": 16,
-          "length": 5,
-          "code": {
-            "startLine": 48,
-            "length": 5,
-            "offset": 80,
-            "surroundingCode": "        OperationBinding.AMQP().apply(build).also { amqp = it }\n\n    inline fun amqp1(build: OperationBinding.AMQP1.() -> Unit): OperationBinding.AMQP1 =\n        OperationBinding.AMQP1.apply(build).also { amqp1 = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "4c05037e9bfb996ca2ca2e3a87c9555fcb8216d721ace0a4381de308b2fc52f5",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"accessType\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 251,
-          "offset": 17,
-          "length": 10,
-          "code": {
-            "startLine": 249,
-            "length": 10,
-            "offset": 82,
-            "surroundingCode": "                listOf(*values).also { topicSubscriptions = it }\n\n            fun accessType(value: String): String =\n                value.also { accessType = it }\n        }"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "515a1d2dee669757dcc7493b4aed4e14c598c946093aae328671cd40c6537afa",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"deliveryMode\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 155,
-          "offset": 13,
-          "length": 12,
-          "code": {
-            "startLine": 153,
-            "length": 12,
-            "offset": 54,
-            "surroundingCode": "            value.also { priority = it }\n\n        fun deliveryMode(value: Int): Int =\n            value.also { deliveryMode = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "54f01ada8282bf83274c735a11e19ee18075edcfc8c5896fcfdba8bd35d31b1d",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"queue\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 196,
-          "offset": 13,
-          "length": 5,
-          "code": {
-            "startLine": 194,
-            "length": 5,
-            "offset": 56,
-            "surroundingCode": "        var bindingVersion: String? = null\n\n        fun queue(value: String): String =\n            value.also { queue = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "5a0e50672a92c116b52ee0f15a81b9a1c164ba71d4054946e45dfa33e35a4c5f",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"redis\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 77,
-          "offset": 16,
-          "length": 5,
-          "code": {
-            "startLine": 75,
-            "length": 5,
-            "offset": 80,
-            "surroundingCode": "        OperationBinding.STOMP.apply(build).also { stomp = it }\n\n    inline fun redis(build: OperationBinding.Redis.() -> Unit): OperationBinding.Redis =\n        OperationBinding.Redis.apply(build).also { redis = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "601d8d793ea314e0b6d9887c22007916e3fa0fe3c75389e5741c8f461b6a6f13",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"bindingsRef\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/Server.kt",
-          "language": "kotlin",
-          "line": 53,
-          "offset": 16,
-          "length": 11,
-          "code": {
-            "startLine": 51,
-            "length": 11,
-            "offset": 77,
-            "surroundingCode": "        ServerBindings().apply(build).also { bindings = it }\n\n    inline fun bindingsRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { bindings = it }\n}"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "6e89417950572c5dff0674ba10069e3b3455584d417ba770eb4ba5f5c2d4791b",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"query\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 99,
-          "offset": 20,
-          "length": 5,
-          "code": {
-            "startLine": 97,
-            "length": 5,
-            "offset": 59,
-            "surroundingCode": "            value.also { method = it }\n\n        inline fun query(build: Schema.() -> Unit): Schema =\n            Schema().apply(build).also { query = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "6effc50aab7d392ff71cdbea6f100e214fd71ec083efbf0ea70b5bb4b94369ab",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"groupIdRef\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 117,
-          "offset": 20,
-          "length": 10,
-          "code": {
-            "startLine": 115,
-            "length": 10,
-            "offset": 76,
-            "surroundingCode": "            Schema().apply(build).also { groupId = it }\n\n        inline fun groupIdRef(build: Reference.() -> Unit): Reference =\n            Reference().apply(build).also { groupId = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "7727f2ba23c104b424d486242c954e0aaa529e8d5145013ebc9cc331d4b17502",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"ws\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 38,
-          "offset": 16,
-          "length": 2,
-          "code": {
-            "startLine": 36,
-            "length": 2,
-            "offset": 80,
-            "surroundingCode": "        OperationBinding.HTTP().apply(build).also { http = it }\n\n    inline fun ws(build: OperationBinding.WebSockets.() -> Unit): OperationBinding.WebSockets =\n        OperationBinding.WebSockets.apply(build).also { ws = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "78ede540e49cb8a26eaa732250c5b325e5787b83c0c3c21fbfb266150297e185",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"method\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 96,
-          "offset": 13,
-          "length": 6,
-          "code": {
-            "startLine": 94,
-            "length": 6,
-            "offset": 50,
-            "surroundingCode": "            value.also { type = it }\n\n        fun method(value: String): String =\n            value.also { method = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "8899c115901e0cd39b822502bdeccfb99aa83e7c24257b4f56afb6fcdbea9d7e",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"topicSubscriptions\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 259,
-          "offset": 17,
-          "length": 18,
-          "code": {
-            "startLine": 257,
-            "length": 18,
-            "offset": 74,
-            "surroundingCode": "            var topicSubscriptions: List<String>? = null\n\n            fun topicSubscriptions(vararg values: String): List<String> =\n                listOf(*values).also { topicSubscriptions = it }\n        }"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "89020fc69e6448dee1294d91e2c37c4d53ad528d7d53943a1b9490bec8d18d6e",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"topicSubscriptions\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 248,
-          "offset": 17,
-          "length": 18,
-          "code": {
-            "startLine": 246,
-            "length": 18,
-            "offset": 58,
-            "surroundingCode": "                value.also { name = it }\n\n            fun topicSubscriptions(vararg values: String): List<String> =\n                listOf(*values).also { topicSubscriptions = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "8926401e787cc237da263936448411e2d7d48f72903f06fe6f31842218f2beeb",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"destinations\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 210,
-          "offset": 20,
-          "length": 12,
-          "code": {
-            "startLine": 208,
-            "length": 12,
-            "offset": 67,
-            "surroundingCode": "            value.also { bindingVersion = it }\n\n        inline fun destinations(build: DestinationsList.() -> Unit): DestinationsList =\n            DestinationsList().apply(build).also { destinations = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "98a2194fae6a0472d3e7e335580b64408f1d5d8851a5a913f1458beef77bc532",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"kafka\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 41,
-          "offset": 16,
-          "length": 5,
-          "code": {
-            "startLine": 39,
-            "length": 5,
-            "offset": 82,
-            "surroundingCode": "        OperationBinding.WebSockets.apply(build).also { ws = it }\n\n    inline fun kafka(build: OperationBinding.Kafka.() -> Unit): OperationBinding.Kafka =\n        OperationBinding.Kafka().apply(build).also { kafka = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "a7b9826ed26202f35441b0455cfae7086447f5415584814b61db3242a8fa35e0",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"sqs\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 71,
-          "offset": 16,
-          "length": 3,
-          "code": {
-            "startLine": 69,
-            "length": 3,
-            "offset": 84,
-            "surroundingCode": "        OperationBinding.Solace().apply(build).also { solace = it }\n\n    inline fun sqs(build: OperationBinding.SQS.() -> Unit): OperationBinding.SQS =\n        OperationBinding.SQS.apply(build).also { sqs = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "a9498c0b5f8dd5bba98d1216144af1e209675a8df4164e32ab4d43de736a6c41",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"timestamp\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 167,
-          "offset": 13,
-          "length": 9,
-          "code": {
-            "startLine": 165,
-            "length": 9,
-            "offset": 53,
-            "surroundingCode": "            value.also { replyTo = it }\n\n        fun timestamp(value: Boolean): Boolean =\n            value.also { timestamp = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "ad8e45cd0f44e933db117486e766119470a47a98b4d2336724dcbe8ce2d2a38d",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"destinationType\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 226,
-          "offset": 17,
-          "length": 15,
-          "code": {
-            "startLine": 224,
-            "length": 15,
-            "offset": 54,
-            "surroundingCode": "            var topic: Topic? = null\n\n            fun destinationType(value: String): String =\n                value.also { destinationType = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "b27626c05b33c3b180b767eb9847160556fd825ed59e3e7e229edeaf1d90cd8f",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"deliveryMode\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 229,
-          "offset": 17,
-          "length": 12,
-          "code": {
-            "startLine": 227,
-            "length": 12,
-            "offset": 69,
-            "surroundingCode": "                value.also { destinationType = it }\n\n            fun deliveryMode(value: String): String =\n                value.also { deliveryMode = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "b79f82d1bd0fcff1ca9687dfac197d25a5dd5b87ae5dba7b0fc5bbadda574085",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"mandatory\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 158,
-          "offset": 13,
-          "length": 9,
-          "code": {
-            "startLine": 156,
-            "length": 9,
-            "offset": 58,
-            "surroundingCode": "            value.also { deliveryMode = it }\n\n        fun mandatory(value: Boolean): Boolean =\n            value.also { mandatory = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "c82152fc1d847ed6d854eec579d9739abedfffb6a57a4226f898bd810bfd63f1",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"tag\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/Tag.kt",
-          "language": "kotlin",
-          "line": 5,
-          "offset": 16,
-          "length": 3,
-          "code": {
-            "startLine": 3,
-            "length": 3,
-            "offset": 70,
-            "surroundingCode": "@AsyncApiComponent\nclass TagsList : ArrayList<Tag>() {\n    inline fun tag(build: Tag.() -> Unit): Tag =\n        Tag().apply(build).also { add(it) }\n}"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "d06b34e8c98edec07bc189ca810527e71d4f8c4c946be70150d389d91632fd14",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"clientIdRef\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 123,
-          "offset": 20,
-          "length": 11,
-          "code": {
-            "startLine": 121,
-            "length": 11,
-            "offset": 77,
-            "surroundingCode": "            Schema().apply(build).also { clientId = it }\n\n        inline fun clientIdRef(build: Reference.() -> Unit): Reference =\n            Reference().apply(build).also { clientId = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "d4949a0c55d8379dad1b598d6000605d193efddc91d59fbdd31393ef6226e251",
+      "hash": "04cbde188f1f6afee4867e1a152227866230f01deb0b5b6db4885079b8b5c3f0",
       "problemType": "REGULAR"
     },
     {
@@ -1529,7 +67,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
           "language": "kotlin",
           "line": 56,
           "offset": 16,
@@ -1537,8 +75,8 @@
           "code": {
             "startLine": 54,
             "length": 5,
-            "offset": 80,
-            "surroundingCode": "        OperationBinding.MQTT().apply(build).also { mqtt = it }\n\n    inline fun mqtt5(build: OperationBinding.MQTT5.() -> Unit): OperationBinding.MQTT5 =\n        OperationBinding.MQTT5.apply(build).also { mqtt5 = it }\n"
+            "offset": 77,
+            "surroundingCode": "        ServerBinding.MQTT().apply(build).also { mqtt = it }\n\n    inline fun mqtt5(build: ServerBinding.MQTT5.() -> Unit): ServerBinding.MQTT5 =\n        ServerBinding.MQTT5.apply(build).also { mqtt5 = it }\n"
           }
         }
       ],
@@ -1546,7 +84,7 @@
         "module": "kotlin-asyncapi-core",
         "inspectionName": "UnusedSymbol"
       },
-      "hash": "d802d19ab1bdfc0ed8c7d2366a1e7196e46a328b47a804188acf63e168fc0baf",
+      "hash": "18b3cbe1ca57e3ca366fa21275f116c82eeafd383a3c3463382d6800ab5e5e60",
       "problemType": "REGULAR"
     },
     {
@@ -1567,150 +105,21 @@
         "kotlin"
       ],
       "severity": "High",
-      "comment": "Function \"mercure\" is never used",
+      "comment": "Function \"multiEndpointServer\" is never used",
       "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
           "language": "kotlin",
-          "line": 80,
-          "offset": 16,
-          "length": 7,
-          "code": {
-            "startLine": 78,
-            "length": 7,
-            "offset": 80,
-            "surroundingCode": "        OperationBinding.Redis.apply(build).also { redis = it }\n\n    inline fun mercure(build: OperationBinding.Mercure.() -> Unit): OperationBinding.Mercure =\n        OperationBinding.Mercure.apply(build).also { mercure = it }\n}"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "dd0331648717e96892222bd7ef5a22800a912e798afb914ab3171a1cd3a792b1",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"destination\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 215,
-          "offset": 24,
-          "length": 11,
-          "code": {
-            "startLine": 213,
-            "length": 11,
-            "offset": 110,
-            "surroundingCode": "        @AsyncApiComponent\n        class DestinationsList : ArrayList<Destination>() {\n            inline fun destination(build: Destination.() -> Unit): Destination =\n                Destination().apply(build).also { add(it) }\n        }"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "e2498ada29ad51f439a47159673e199a8ba7351eb4fbe9d75c1a31e7b7f9cc70",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"queryRef\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 102,
-          "offset": 20,
-          "length": 8,
-          "code": {
-            "startLine": 100,
-            "length": 8,
-            "offset": 74,
-            "surroundingCode": "            Schema().apply(build).also { query = it }\n\n        inline fun queryRef(build: Reference.() -> Unit): Reference =\n            Reference().apply(build).also { query = it }\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-core",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "e3d28ed5b6de1e61328351eb6be53af43f4d52f37167cc81a10f7fb7b4747f36",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"bcc\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
-          "language": "kotlin",
-          "line": 161,
+          "line": 160,
           "offset": 13,
-          "length": 3,
+          "length": 19,
           "code": {
-            "startLine": 159,
-            "length": 3,
-            "offset": 55,
-            "surroundingCode": "            value.also { mandatory = it }\n\n        fun bcc(vararg values: String): List<String> =\n            listOf(*values).also { bcc = it }\n"
+            "startLine": 158,
+            "length": 19,
+            "offset": 56,
+            "surroundingCode": "            value.also { cipherSpec = it }\n\n        fun multiEndpointServer(value: Boolean): Boolean =\n            value.also { multiEndpointServer = it }\n"
           }
         }
       ],
@@ -1718,7 +127,7 @@
         "module": "kotlin-asyncapi-core",
         "inspectionName": "UnusedSymbol"
       },
-      "hash": "e5fe4ca34598f72d8b8d56b35cf37d76a3108b4ad8f8a452f2b04c9a0fa90a51",
+      "hash": "1b0f64969233bd736a239cc73fee501dadce838c0f45389566858dacc26738cb",
       "problemType": "REGULAR"
     },
     {
@@ -1739,29 +148,29 @@
         "kotlin"
       ],
       "severity": "High",
-      "comment": "Function \"sns\" is never used",
+      "comment": "Property \"amqp1\" is never used",
       "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
+          "path": "kotlin-asyncapi-annotation/src/main/kotlin/com/asyncapi/kotlinasyncapi/annotation/channel/MessageBinding.kt",
           "language": "kotlin",
-          "line": 65,
-          "offset": 16,
-          "length": 3,
+          "line": 13,
+          "offset": 9,
+          "length": 5,
           "code": {
-            "startLine": 63,
-            "length": 3,
-            "offset": 76,
-            "surroundingCode": "        OperationBinding.JMS.apply(build).also { jms = it }\n\n    inline fun sns(build: OperationBinding.SNS.() -> Unit): OperationBinding.SNS =\n        OperationBinding.SNS.apply(build).also { sns = it }\n"
+            "startLine": 11,
+            "length": 5,
+            "offset": 176,
+            "surroundingCode": "    val anypointmq: MessageBinding.AnypointMQ = MessageBinding.AnypointMQ(isDefault = true),\n    val amqp: MessageBinding.AMQP = MessageBinding.AMQP(isDefault = true),\n    val amqp1: MessageBinding.AMQP1 = MessageBinding.AMQP1(isDefault = true),\n    val mqtt: MessageBinding.MQTT = MessageBinding.MQTT(isDefault = true),\n    val mqtt5: MessageBinding.MQTT5 = MessageBinding.MQTT5(isDefault = true),"
           }
         }
       ],
       "attributes": {
-        "module": "kotlin-asyncapi-core",
+        "module": "kotlin-asyncapi-annotation",
         "inspectionName": "UnusedSymbol"
       },
-      "hash": "f3022de46d59fef72f869e374bd446cdf6b35185191aa1381ba7a20d60d27fab",
+      "hash": "1e4dad9fc0dd4103cc31dc2a5135dcb6c522f636a896df670b567dce7d446522",
       "problemType": "REGULAR"
     },
     {
@@ -1787,7 +196,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationBinding.kt",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
           "language": "kotlin",
           "line": 44,
           "offset": 16,
@@ -1795,8 +204,8 @@
           "code": {
             "startLine": 42,
             "length": 10,
-            "offset": 82,
-            "surroundingCode": "        OperationBinding.Kafka().apply(build).also { kafka = it }\n\n    inline fun anypointmq(build: OperationBinding.AnypointMQ.() -> Unit): OperationBinding.AnypointMQ =\n        OperationBinding.AnypointMQ.apply(build).also { anypointmq = it }\n"
+            "offset": 77,
+            "surroundingCode": "        ServerBinding.Kafka.apply(build).also { kafka = it }\n\n    inline fun anypointmq(build: ServerBinding.AnypointMQ.() -> Unit): ServerBinding.AnypointMQ =\n        ServerBinding.AnypointMQ.apply(build).also { anypointmq = it }\n"
           }
         }
       ],
@@ -1804,7 +213,1082 @@
         "module": "kotlin-asyncapi-core",
         "inspectionName": "UnusedSymbol"
       },
-      "hash": "fbf1accd6dad8b1b09b07be5ad9bcc9622b10efd989f99061309e6a2fa4e90de",
+      "hash": "1faa322726f52022cc4560de5e54d9f2c5ac31a226417c92da58cff048083d39",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"sns\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 65,
+          "offset": 16,
+          "length": 3,
+          "code": {
+            "startLine": 63,
+            "length": 3,
+            "offset": 73,
+            "surroundingCode": "        ServerBinding.JMS.apply(build).also { jms = it }\n\n    inline fun sns(build: ServerBinding.SNS.() -> Unit): ServerBinding.SNS =\n        ServerBinding.SNS.apply(build).also { sns = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "2a25f1ac83855c1e74189965ffe5eb6cd4d10f42bac0fc7eb4e95f6f69f0ca4c",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Property \"sns\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-annotation/src/main/kotlin/com/asyncapi/kotlinasyncapi/annotation/channel/MessageBinding.kt",
+          "language": "kotlin",
+          "line": 18,
+          "offset": 9,
+          "length": 3,
+          "code": {
+            "startLine": 16,
+            "length": 3,
+            "offset": 155,
+            "surroundingCode": "    val nats: MessageBinding.NATS = MessageBinding.NATS(isDefault = true),\n    val jms: MessageBinding.JMS = MessageBinding.JMS(isDefault = true),\n    val sns: MessageBinding.SNS = MessageBinding.SNS(isDefault = true),\n    val solace: MessageBinding.Solace = MessageBinding.Solace(isDefault = true),\n    val sqs: MessageBinding.SQS = MessageBinding.SQS(isDefault = true),"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-annotation",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "41be37f5776aa07e14e68fca87a33be960b877262272cdfb300fed37ceee58db",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"heartBeatInterval\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 163,
+          "offset": 13,
+          "length": 17,
+          "code": {
+            "startLine": 161,
+            "length": 17,
+            "offset": 65,
+            "surroundingCode": "            value.also { multiEndpointServer = it }\n\n        fun heartBeatInterval(value: Int): Int =\n            value.also { heartBeatInterval = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "459134a3d4c7914c9f286c145f363b0c25973dd80fe5a5a1f07c3b2265a88cd7",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"msgVpn\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 139,
+          "offset": 13,
+          "length": 6,
+          "code": {
+            "startLine": 137,
+            "length": 6,
+            "offset": 60,
+            "surroundingCode": "            value.also { bindingVersion = it }\n\n        fun msgVpn(value: String): String =\n            value.also { msgVpn = it }\n    }"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "487ccf7e145a972ce7e0c940693216e87134b04abeb70e05531036eaa7574b21",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"cipherSpec\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 157,
+          "offset": 13,
+          "length": 10,
+          "code": {
+            "startLine": 155,
+            "length": 10,
+            "offset": 66,
+            "surroundingCode": "            value.also { ccdtQueueManagerName = it }\n\n        fun cipherSpec(value: String): String =\n            value.also { cipherSpec = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "575066df2ec66fd4dcb0c9f81600b2fbc641111990bc2669dc447f4d2e7ec73f",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"kafka\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 41,
+          "offset": 16,
+          "length": 5,
+          "code": {
+            "startLine": 39,
+            "length": 5,
+            "offset": 79,
+            "surroundingCode": "        ServerBinding.WebSockets.apply(build).also { ws = it }\n\n    inline fun kafka(build: ServerBinding.Kafka.() -> Unit): ServerBinding.Kafka =\n        ServerBinding.Kafka.apply(build).also { kafka = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "5917a11809b9f66864ca88057b659ce37a190b57d72a982fba4a3d642fe453a9",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"amqp1\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 50,
+          "offset": 16,
+          "length": 5,
+          "code": {
+            "startLine": 48,
+            "length": 5,
+            "offset": 75,
+            "surroundingCode": "        ServerBinding.AMQP.apply(build).also { amqp = it }\n\n    inline fun amqp1(build: ServerBinding.AMQP1.() -> Unit): ServerBinding.AMQP1 =\n        ServerBinding.AMQP1.apply(build).also { amqp1 = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "6727fe076dd8931bd1d13c6f88049d6ac0f784cee60d991a343f530b92321f05",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Property \"nats\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-annotation/src/main/kotlin/com/asyncapi/kotlinasyncapi/annotation/channel/MessageBinding.kt",
+          "language": "kotlin",
+          "line": 16,
+          "offset": 9,
+          "length": 4,
+          "code": {
+            "startLine": 14,
+            "length": 4,
+            "offset": 161,
+            "surroundingCode": "    val mqtt: MessageBinding.MQTT = MessageBinding.MQTT(isDefault = true),\n    val mqtt5: MessageBinding.MQTT5 = MessageBinding.MQTT5(isDefault = true),\n    val nats: MessageBinding.NATS = MessageBinding.NATS(isDefault = true),\n    val jms: MessageBinding.JMS = MessageBinding.JMS(isDefault = true),\n    val sns: MessageBinding.SNS = MessageBinding.SNS(isDefault = true),"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-annotation",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "6b2b97fac0253a609055a5e67373724ed51d2403e2c16e05046d9572e57912df",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Property \"redis\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-annotation/src/main/kotlin/com/asyncapi/kotlinasyncapi/annotation/channel/MessageBinding.kt",
+          "language": "kotlin",
+          "line": 22,
+          "offset": 9,
+          "length": 5,
+          "code": {
+            "startLine": 20,
+            "length": 5,
+            "offset": 158,
+            "surroundingCode": "    val sqs: MessageBinding.SQS = MessageBinding.SQS(isDefault = true),\n    val stomp: MessageBinding.STOMP = MessageBinding.STOMP(isDefault = true),\n    val redis: MessageBinding.Redis = MessageBinding.Redis(isDefault = true),\n    val mercure: MessageBinding.Mercure = MessageBinding.Mercure(isDefault = true),\n    val ibmmq: MessageBinding.IBMMQ = MessageBinding.IBMMQ(isDefault = true)"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-annotation",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "76db88c070a13adce6343bd801b98e7f794812a436804f5559dfdab1eac557d5",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"jms\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 62,
+          "offset": 16,
+          "length": 3,
+          "code": {
+            "startLine": 60,
+            "length": 3,
+            "offset": 75,
+            "surroundingCode": "        ServerBinding.NATS.apply(build).also { nats = it }\n\n    inline fun jms(build: ServerBinding.JMS.() -> Unit): ServerBinding.JMS =\n        ServerBinding.JMS.apply(build).also { jms = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "7847b80e1e5edf9d1c3eaf8fe6d9753a3f1e4ffce875708a07a37dae7661e9cd",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"solace\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 68,
+          "offset": 16,
+          "length": 6,
+          "code": {
+            "startLine": 66,
+            "length": 6,
+            "offset": 73,
+            "surroundingCode": "        ServerBinding.SNS.apply(build).also { sns = it }\n\n    inline fun solace(build: ServerBinding.Solace.() -> Unit): ServerBinding.Solace =\n        ServerBinding.Solace().apply(build).also { solace = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "78e52e9b640deaa3478138fdb8c2fe8af5e51cc2696efe84a54a76c1e1a0fdb7",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"stomp\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 74,
+          "offset": 16,
+          "length": 5,
+          "code": {
+            "startLine": 72,
+            "length": 5,
+            "offset": 73,
+            "surroundingCode": "        ServerBinding.SQS.apply(build).also { sqs = it }\n\n    inline fun stomp(build: ServerBinding.STOMP.() -> Unit): ServerBinding.STOMP =\n        ServerBinding.STOMP.apply(build).also { stomp = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "7eca331adc5b632c358726a011441926ec39675f12a69e76f53050d808f5d7f4",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Property \"jms\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-annotation/src/main/kotlin/com/asyncapi/kotlinasyncapi/annotation/channel/MessageBinding.kt",
+          "language": "kotlin",
+          "line": 17,
+          "offset": 9,
+          "length": 3,
+          "code": {
+            "startLine": 15,
+            "length": 3,
+            "offset": 161,
+            "surroundingCode": "    val mqtt5: MessageBinding.MQTT5 = MessageBinding.MQTT5(isDefault = true),\n    val nats: MessageBinding.NATS = MessageBinding.NATS(isDefault = true),\n    val jms: MessageBinding.JMS = MessageBinding.JMS(isDefault = true),\n    val sns: MessageBinding.SNS = MessageBinding.SNS(isDefault = true),\n    val solace: MessageBinding.Solace = MessageBinding.Solace(isDefault = true),"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-annotation",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "89c73b5aff12144d049bad5388967ade7ba29a8ae4720d404079d31d528c2427",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Property \"mercure\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-annotation/src/main/kotlin/com/asyncapi/kotlinasyncapi/annotation/channel/MessageBinding.kt",
+          "language": "kotlin",
+          "line": 23,
+          "offset": 9,
+          "length": 7,
+          "code": {
+            "startLine": 21,
+            "length": 7,
+            "offset": 164,
+            "surroundingCode": "    val stomp: MessageBinding.STOMP = MessageBinding.STOMP(isDefault = true),\n    val redis: MessageBinding.Redis = MessageBinding.Redis(isDefault = true),\n    val mercure: MessageBinding.Mercure = MessageBinding.Mercure(isDefault = true),\n    val ibmmq: MessageBinding.IBMMQ = MessageBinding.IBMMQ(isDefault = true)\n)"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-annotation",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "92646a1e3c8b9a77859173c29997693cbd762c7305434d4f748a00f9ba709e45",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"ibmmq\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 83,
+          "offset": 16,
+          "length": 5,
+          "code": {
+            "startLine": 81,
+            "length": 5,
+            "offset": 81,
+            "surroundingCode": "        ServerBinding.Mercure.apply(build).also { mercure = it }\n\n    inline fun ibmmq(build: ServerBinding.IBMMQ.() -> Unit): ServerBinding.IBMMQ =\n        ServerBinding.IBMMQ().apply(build).also { ibmmq = it }\n}"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "966c41887417d5af44c484fcfb31c327389dc33f2f2882390e695b716320272e",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"ws\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 38,
+          "offset": 16,
+          "length": 2,
+          "code": {
+            "startLine": 36,
+            "length": 2,
+            "offset": 75,
+            "surroundingCode": "        ServerBinding.HTTP.apply(build).also { http = it }\n\n    inline fun ws(build: ServerBinding.WebSockets.() -> Unit): ServerBinding.WebSockets =\n        ServerBinding.WebSockets.apply(build).also { ws = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "9b2464dd79d64f8747d2826ade52f2e68caf0d2cb86423e5a100b4c79a6bd5df",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Property \"sqs\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-annotation/src/main/kotlin/com/asyncapi/kotlinasyncapi/annotation/channel/MessageBinding.kt",
+          "language": "kotlin",
+          "line": 20,
+          "offset": 9,
+          "length": 3,
+          "code": {
+            "startLine": 18,
+            "length": 3,
+            "offset": 161,
+            "surroundingCode": "    val sns: MessageBinding.SNS = MessageBinding.SNS(isDefault = true),\n    val solace: MessageBinding.Solace = MessageBinding.Solace(isDefault = true),\n    val sqs: MessageBinding.SQS = MessageBinding.SQS(isDefault = true),\n    val stomp: MessageBinding.STOMP = MessageBinding.STOMP(isDefault = true),\n    val redis: MessageBinding.Redis = MessageBinding.Redis(isDefault = true),"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-annotation",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "a8ffe8b808395aa0bef3afb50ac8dd848e6082d5e9d50e6a0d41a830799de40f",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"sqs\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 71,
+          "offset": 16,
+          "length": 3,
+          "code": {
+            "startLine": 69,
+            "length": 3,
+            "offset": 81,
+            "surroundingCode": "        ServerBinding.Solace().apply(build).also { solace = it }\n\n    inline fun sqs(build: ServerBinding.SQS.() -> Unit): ServerBinding.SQS =\n        ServerBinding.SQS.apply(build).also { sqs = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "ab9364d5e1fe50f69112a51c83ce3d10fa0eccb989ec1670d0dc39b445959dcb",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"redis\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 77,
+          "offset": 16,
+          "length": 5,
+          "code": {
+            "startLine": 75,
+            "length": 5,
+            "offset": 77,
+            "surroundingCode": "        ServerBinding.STOMP.apply(build).also { stomp = it }\n\n    inline fun redis(build: ServerBinding.Redis.() -> Unit): ServerBinding.Redis =\n        ServerBinding.Redis.apply(build).also { redis = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "c7fc4ebd4cb28b0f304f29e18437cccb4b2faf573a7c9ac96863f380dab5e09c",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Property \"ws\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-annotation/src/main/kotlin/com/asyncapi/kotlinasyncapi/annotation/channel/MessageBinding.kt",
+          "language": "kotlin",
+          "line": 9,
+          "offset": 9,
+          "length": 2,
+          "code": {
+            "startLine": 7,
+            "length": 2,
+            "offset": 119,
+            "surroundingCode": "    val isDefault: Boolean = false,\n    val http: MessageBinding.HTTP = MessageBinding.HTTP(isDefault = true),\n    val ws: MessageBinding.WebSockets = MessageBinding.WebSockets(isDefault = true),\n    val kafka: MessageBinding.Kafka = MessageBinding.Kafka(isDefault = true),\n    val anypointmq: MessageBinding.AnypointMQ = MessageBinding.AnypointMQ(isDefault = true),"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-annotation",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "cae69404195759d024ec9c5190aea05f157c20832493847000c6b055b0aa82b9",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Property \"stomp\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-annotation/src/main/kotlin/com/asyncapi/kotlinasyncapi/annotation/channel/MessageBinding.kt",
+          "language": "kotlin",
+          "line": 21,
+          "offset": 9,
+          "length": 5,
+          "code": {
+            "startLine": 19,
+            "length": 5,
+            "offset": 161,
+            "surroundingCode": "    val solace: MessageBinding.Solace = MessageBinding.Solace(isDefault = true),\n    val sqs: MessageBinding.SQS = MessageBinding.SQS(isDefault = true),\n    val stomp: MessageBinding.STOMP = MessageBinding.STOMP(isDefault = true),\n    val redis: MessageBinding.Redis = MessageBinding.Redis(isDefault = true),\n    val mercure: MessageBinding.Mercure = MessageBinding.Mercure(isDefault = true),"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-annotation",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "d167727cbb48e2500758d2bf93573e194afe5cf314d874ff5c676b54eed35a51",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"mercure\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 80,
+          "offset": 16,
+          "length": 7,
+          "code": {
+            "startLine": 78,
+            "length": 7,
+            "offset": 77,
+            "surroundingCode": "        ServerBinding.Redis.apply(build).also { redis = it }\n\n    inline fun mercure(build: ServerBinding.Mercure.() -> Unit): ServerBinding.Mercure =\n        ServerBinding.Mercure.apply(build).also { mercure = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "dc4ecd7d414af912c728399a4d26ca4ed31b8c05394d79bbb995f32e550dfb64",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Property \"solace\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-annotation/src/main/kotlin/com/asyncapi/kotlinasyncapi/annotation/channel/MessageBinding.kt",
+          "language": "kotlin",
+          "line": 19,
+          "offset": 9,
+          "length": 6,
+          "code": {
+            "startLine": 17,
+            "length": 6,
+            "offset": 152,
+            "surroundingCode": "    val jms: MessageBinding.JMS = MessageBinding.JMS(isDefault = true),\n    val sns: MessageBinding.SNS = MessageBinding.SNS(isDefault = true),\n    val solace: MessageBinding.Solace = MessageBinding.Solace(isDefault = true),\n    val sqs: MessageBinding.SQS = MessageBinding.SQS(isDefault = true),\n    val stomp: MessageBinding.STOMP = MessageBinding.STOMP(isDefault = true),"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-annotation",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "e404f8c9dfc8b4de00a07a0681c003087379dee0dde498e573c2427bb19849a8",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"nats\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 59,
+          "offset": 16,
+          "length": 4,
+          "code": {
+            "startLine": 57,
+            "length": 4,
+            "offset": 77,
+            "surroundingCode": "        ServerBinding.MQTT5.apply(build).also { mqtt5 = it }\n\n    inline fun nats(build: ServerBinding.NATS.() -> Unit): ServerBinding.NATS =\n        ServerBinding.NATS.apply(build).also { nats = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "f405f0262d3bbb93f3323e3ef174943dc880c53e17da11c9f2320cfae7dbb850",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"ccdtQueueManagerName\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/server/ServerBinding.kt",
+          "language": "kotlin",
+          "line": 154,
+          "offset": 13,
+          "length": 20,
+          "code": {
+            "startLine": 152,
+            "length": 20,
+            "offset": 53,
+            "surroundingCode": "            value.also { groupId = it }\n\n        fun ccdtQueueManagerName(value: String): String =\n            value.also { ccdtQueueManagerName = it }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "fab9e105b4af4978b685e32218c0365efec0550c3398c660f351bc442b1fa87c",
       "problemType": "REGULAR"
     }
   ]

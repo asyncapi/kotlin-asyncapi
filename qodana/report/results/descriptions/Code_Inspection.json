@@ -554,16 +554,16 @@
           "description": "Reports methods that are declared `final`. Such methods can't be overridden and may indicate a lack of object-oriented design. Some coding standards discourage `final` methods.\n\nInspection ID: FinalMethod"
         },
         {
-          "shortName": "Singleton",
-          "displayName": "Singleton",
-          "enabled": false,
-          "description": "Reports singleton classes.\n\nSingleton classes are declared in a way that only one instance of the class can ever be instantiated. Singleton classes complicate testing,\nand their presence may indicate a lack of object-oriented design.\n\n**Example:**\n\n\n      class Singleton {\n        private static final Singleton ourInstance = new Singleton();\n\n        private Singleton() {\n        }\n\n        public Singleton getInstance() {\n            return ourInstance;\n        }\n      }\n\nInspection ID: Singleton"
-        },
-        {
           "shortName": "NonFinalUtilityClass",
           "displayName": "Utility class is not 'final'",
           "enabled": false,
           "description": "Reports utility classes that aren't `final` or `abstract`.\n\nUtility classes have all fields and methods declared as `static`.\nMaking them `final` prevents them from being accidentally subclassed.\n\n**Example:**\n\n\n      public class UtilityClass {\n        public static void foo() {}\n      }\n\nAfter the quick-fix is applied:\n\n\n      public final class UtilityClass {\n        public static void foo() {}\n      }\n\nInspection ID: NonFinalUtilityClass"
+        },
+        {
+          "shortName": "Singleton",
+          "displayName": "Singleton",
+          "enabled": false,
+          "description": "Reports singleton classes.\n\nSingleton classes are declared in a way that only one instance of the class can ever be instantiated. Singleton classes complicate testing,\nand their presence may indicate a lack of object-oriented design.\n\n**Example:**\n\n\n      class Singleton {\n        private static final Singleton ourInstance = new Singleton();\n\n        private Singleton() {\n        }\n\n        public Singleton getInstance() {\n            return ourInstance;\n        }\n      }\n\nInspection ID: Singleton"
         },
         {
           "shortName": "StaticNonFinalField",
@@ -1902,16 +1902,16 @@
           "description": "Reports equality expressions which are negated by a prefix expression.\n\nSuch expressions can be simplified using the `!=` operator.\n\nExample:\n\n\n      !(i == 1)\n\nAfter the quick-fix is applied:\n\n\n      i != 1\n\n\nInspection ID: NegatedEqualityExpression"
         },
         {
-          "shortName": "DoubleNegation",
-          "displayName": "Double negation",
-          "enabled": true,
-          "description": "Reports double negations that can be simplified.\n\nExample:\n\n\n      if (!!functionCall()) {}\n\nAfter the quick-fix is applied:\n\n\n      if (functionCall()) {}\n\nExample:\n\n\n      if (!(a != b)) {}\n\nAfter the quick-fix is applied:\n\n\n      if (a == b) {}\n\n\nInspection ID: DoubleNegation"
-        },
-        {
           "shortName": "AssertionCanBeIf",
           "displayName": "Assertion can be replaced with 'if' statement",
           "enabled": false,
           "description": "Reports `assert` statements and suggests replacing them with `if` statements that throw `java.lang.AssertionError`.\n\nExample:\n\n\n      assert param != null;\n\nAfter the quick-fix is applied:\n\n\n      if (param == null) throw new AssertionError();\n\nThis inspection depends on the Java feature 'Assertions', which is available since Java 1.4.\n\nInspection ID: AssertionCanBeIf"
+        },
+        {
+          "shortName": "DoubleNegation",
+          "displayName": "Double negation",
+          "enabled": true,
+          "description": "Reports double negations that can be simplified.\n\nExample:\n\n\n      if (!!functionCall()) {}\n\nAfter the quick-fix is applied:\n\n\n      if (functionCall()) {}\n\nExample:\n\n\n      if (!(a != b)) {}\n\nAfter the quick-fix is applied:\n\n\n      if (a == b) {}\n\n\nInspection ID: DoubleNegation"
         },
         {
           "shortName": "BreakStatement",
@@ -5663,16 +5663,16 @@
           "description": "Reports methods whose number of statements exceeds the specified maximum.\n\nMethods with too many statements may be confusing and are a good sign that refactoring is necessary.\n\nThe following statements are not counted:\n\n* empty statements (semicolons)\n* block statements\n* `for` loop initialization statements, that is, `int i = ...` within a `for(int i = ...;...)` statement\n* `for` loop update statements, that is, `i += 2` within a `for(int i = ...;...; i += 2)` statement\n\nUse the **Maximum statements per method** field to specify the maximum allowed number of statements in a method.\n\n\nInspection ID: NonCommentSourceStatements"
         },
         {
-          "shortName": "ParametersPerMethod",
-          "displayName": "Method with too many parameters",
-          "enabled": false,
-          "description": "Reports methods whose number of parameters exceeds the specified maximum. Methods with too many parameters can be a good sign that a refactoring is necessary.\n\nMethods that have super methods are not reported.\n\nUse the **Parameter limit** field to specify the maximum allowed number of parameters for a method.\n\n\nInspection ID: ParametersPerMethod"
-        },
-        {
           "shortName": "OverlyLongLambda",
           "displayName": "Overly long lambda expression",
           "enabled": false,
           "description": "Reports lambda expressions whose number of statements exceeds the specified maximum.\n\nLambda expressions that are too long may be confusing, and it is often better to extract the statements into a separate method.\n\n\nThe following statements are not counted:\n\n* empty statements (semicolons)\n* block statements\n* `for` loop initialization statements, that is, `int i = ...` within a `for(int i = ...;...)` statement\n* `for` loop update statements, that is, `i += 2` within a `for(int i = ...;...; i += 2)` statement\n\nUse the **Non-comment source statements limit** field to specify the maximum allowed number of statements in a lambda expression.\n\n\nInspection ID: OverlyLongLambda"
+        },
+        {
+          "shortName": "ParametersPerMethod",
+          "displayName": "Method with too many parameters",
+          "enabled": false,
+          "description": "Reports methods whose number of parameters exceeds the specified maximum. Methods with too many parameters can be a good sign that a refactoring is necessary.\n\nMethods that have super methods are not reported.\n\nUse the **Parameter limit** field to specify the maximum allowed number of parameters for a method.\n\n\nInspection ID: ParametersPerMethod"
         },
         {
           "shortName": "MethodCoupling",
@@ -5818,6 +5818,87 @@
       "name": "Naming conventions",
       "categoryPath": [
         {
+          "id": "Java",
+          "name": "Java"
+        },
+        {
+          "id": "Java/Naming conventions",
+          "name": "Naming conventions"
+        }
+      ],
+      "inspections": [
+        {
+          "shortName": "DollarSignInName",
+          "displayName": "Use of '$' in identifier",
+          "enabled": false,
+          "description": "Reports variables, methods, and classes with dollar signs (`$`) in their names. While such names are legal Java, their use outside of generated java code is strongly discouraged.\n\n**Example:**\n\n\n      class SalaryIn${}\n\nRename quick-fix is suggested only in the editor.\n\nInspection ID: DollarSignInName"
+        },
+        {
+          "shortName": "StandardVariableNames",
+          "displayName": "Standard variable names",
+          "enabled": false,
+          "description": "Reports variables with 'standard' names that do not correspond to their types. Such names may be confusing. There are the following standard names for specific types:\n\n* i, j, k, m, n - `int`\n* f - `float`\n* d - `double`\n* b - `byte`\n* c, ch - `char`\n* l - `long`\n* s, str - `String`\n\nRename quick-fix is suggested only in the editor.\n\n\nUse the option to ignore parameter names which are identical to the parameter name from a direct super method.\n\nInspection ID: StandardVariableNames"
+        },
+        {
+          "shortName": "JavaModuleNaming",
+          "displayName": "Java module name violates convention",
+          "enabled": false,
+          "description": "Reports module names in `module-info.java` that violate the Java Platform Module System [recommendation](http://mail.openjdk.org/pipermail/jpms-spec-experts/2017-March/000659.html) to avoid encoding version information in module names by ending the name with one or more digits.\n\n**Example:**\n\n\n     module foo.bar2 {}\n\nAfter the quick-fix is applied:\n\n\n      module foo.bar {}\n\nInspection ID: JavaModuleNaming"
+        },
+        {
+          "shortName": "UpperCaseFieldNameNotConstant",
+          "displayName": "Non-constant field with upper-case name",
+          "enabled": false,
+          "description": "Reports non-`static` non-`final` fields whose names are all in upper case.\n\nSuch fields may cause confusion by breaking a common naming convention and\nare often used by mistake.\n\n**Example:**\n\n\n      public static int THE_ANSWER = 42; //a warning here: final modifier is missing\n\nA quick-fix that renames such fields is available only in the editor.\n\nInspection ID: UpperCaseFieldNameNotConstant"
+        },
+        {
+          "shortName": "PackageNamingConvention",
+          "displayName": "Package naming convention",
+          "enabled": false,
+          "description": "Reports packages whose names are either too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:**\n\n\n      package io;\n\n\nUse the options to specify the minimum and maximum length of the package name\nas well as a regular expression that matches valid package names\n(regular expressions are in standard `java.util.regex` format).\n\nInspection ID: PackageNamingConvention"
+        },
+        {
+          "shortName": "QuestionableName",
+          "displayName": "Questionable name",
+          "enabled": false,
+          "description": "Reports variables, methods, or classes with questionable, not really descriptive names. Such names do not help to understand the code, and most probably were created as a temporary thing but were forgotten afterwards.\n\n**Example:**\n\n\n      int aa = 42;\n\nRename quick-fix is suggested only in the editor.\n\n\nUse the option to list names that should be reported.\n\n\nInspection ID: QuestionableName"
+        },
+        {
+          "shortName": "LocalVariableNamingConvention",
+          "displayName": "Local variable naming convention",
+          "enabled": false,
+          "description": "Reports local variables whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** `int X = 42;`\nshould be reported if the inspection is enabled with the default settings in which a variable name should start with a lowercase letter.\n\nConfigure the inspection:\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and a regular expression expected for local variable names.\nSpecify **0** in order not to check the length of names. Regular expressions should be specified in the standard **java.util.regex** format.\n\nUse checkboxes to ignore `for`-loop and `catch` section parameters.\n\nInspection ID: LocalVariableNamingConvention"
+        },
+        {
+          "shortName": "LambdaParameterNamingConvention",
+          "displayName": "Lambda parameter naming convention",
+          "enabled": false,
+          "description": "Reports lambda parameters whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** `Function<String, String> id = X -> X;`\nshould be reported if the inspection is enabled with the default settings in which a parameter name should start with a lowercase letter.\n\nConfigure the inspection:\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and a regular expression expected for lambda parameter names.\nSpecify **0** in order not to check the length of names.\n\nRegular expressions should be specified in the standard `java.util.regex` format.\n\nInspection ID: LambdaParameterNamingConvention"
+        },
+        {
+          "shortName": "FieldNamingConvention",
+          "displayName": "Field naming convention",
+          "enabled": false,
+          "description": "Reports fields whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** if the inspection is enabled for constants, and the minimum specified length for a field name is 5 (the default), the following constant\nproduces a warning because the length of its name is 3, which is less than 5: `public static final int MAX = 42;`.\n\nA quick-fix that renames such fields is available only in the editor.\n\nConfigure the inspection:\n\nUse the list in the **Options** section to specify which fields should be checked. Deselect the checkboxes for the fields for which\nyou want to skip the check.\n\nFor each field type, specify the minimum length, maximum length, and the regular expression expected for field names using the\nprovided input fields.\nSpecify **0** in the length fields to skip the corresponding checks.\n\nRegular expressions should be specified in the standard\n`java.util.regex` format.\n\nInspection ID: FieldNamingConvention"
+        },
+        {
+          "shortName": "ParameterNameDiffersFromOverriddenParameter",
+          "displayName": "Parameter name differs from parameter in overridden or overloaded method",
+          "enabled": false,
+          "description": "Reports parameters whose names differ from the corresponding parameters of the methods they override or overload. While legal in Java, such inconsistent names may be confusing and decrease the documentation benefits of good naming practices.\n\n**Example:**\n\n\n      class Person {\n        Person(String fullName) {}\n      }\n      class Child extends Person {\n        Child(String name) { super(name); }\n      }\n\nAfter the quick-fix is applied:\n\n\n      class Person {\n        Person(String fullName) {}\n      }\n      class Child extends Person {\n        Child(String fullName) { super(fullName); }\n      }\n\n\nUse the options to indicate whether to ignore overridden parameter names that are only\na single character long or come from a library method. Both can be useful if\nyou do not wish to be bound by dubious naming conventions used in libraries.\n\nInspection ID: ParameterNameDiffersFromOverriddenParameter"
+        },
+        {
+          "shortName": "ParameterNamingConvention",
+          "displayName": "Method parameter naming convention",
+          "enabled": false,
+          "description": "Reports method parameters whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** `void fooBar(int X)`\nshould be reported if the inspection is enabled with the default settings in which a parameter name should start with a lowercase letter.\n\nConfigure the inspection:\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and a regular expression expected for\nmethod parameter names. Specify **0** in order not to check the length of names.\n\nRegular expressions should be specified in the standard `java.util.regex` format.\n\nInspection ID: ParameterNamingConvention"
+        }
+      ]
+    },
+    {
+      "name": "Naming conventions",
+      "categoryPath": [
+        {
           "id": "Kotlin",
           "name": "Kotlin"
         },
@@ -5898,87 +5979,6 @@
           "displayName": "Const property naming convention",
           "enabled": false,
           "description": "Reports `const` property names that do not follow the recommended naming conventions.\n\n\nConsistent naming allows for easier code reading and understanding.\nAccording to the [Kotlin official style guide](https://kotlinlang.org/docs/coding-conventions.html#property-names),\n`const` properties should use uppercase underscore-separated names.\n\n**Example:**\n\n\n      const val Planck: Double = 6.62607015E-34\n\nThe quick-fix renames the property:\n\n\n      const val PLANCK: Double = 6.62607015E-34\n\nInspection ID: ConstPropertyName"
-        }
-      ]
-    },
-    {
-      "name": "Naming conventions",
-      "categoryPath": [
-        {
-          "id": "Java",
-          "name": "Java"
-        },
-        {
-          "id": "Java/Naming conventions",
-          "name": "Naming conventions"
-        }
-      ],
-      "inspections": [
-        {
-          "shortName": "DollarSignInName",
-          "displayName": "Use of '$' in identifier",
-          "enabled": false,
-          "description": "Reports variables, methods, and classes with dollar signs (`$`) in their names. While such names are legal Java, their use outside of generated java code is strongly discouraged.\n\n**Example:**\n\n\n      class SalaryIn${}\n\nRename quick-fix is suggested only in the editor.\n\nInspection ID: DollarSignInName"
-        },
-        {
-          "shortName": "StandardVariableNames",
-          "displayName": "Standard variable names",
-          "enabled": false,
-          "description": "Reports variables with 'standard' names that do not correspond to their types. Such names may be confusing. There are the following standard names for specific types:\n\n* i, j, k, m, n - `int`\n* f - `float`\n* d - `double`\n* b - `byte`\n* c, ch - `char`\n* l - `long`\n* s, str - `String`\n\nRename quick-fix is suggested only in the editor.\n\n\nUse the option to ignore parameter names which are identical to the parameter name from a direct super method.\n\nInspection ID: StandardVariableNames"
-        },
-        {
-          "shortName": "JavaModuleNaming",
-          "displayName": "Java module name violates convention",
-          "enabled": false,
-          "description": "Reports module names in `module-info.java` that violate the Java Platform Module System [recommendation](http://mail.openjdk.org/pipermail/jpms-spec-experts/2017-March/000659.html) to avoid encoding version information in module names by ending the name with one or more digits.\n\n**Example:**\n\n\n     module foo.bar2 {}\n\nAfter the quick-fix is applied:\n\n\n      module foo.bar {}\n\nInspection ID: JavaModuleNaming"
-        },
-        {
-          "shortName": "UpperCaseFieldNameNotConstant",
-          "displayName": "Non-constant field with upper-case name",
-          "enabled": false,
-          "description": "Reports non-`static` non-`final` fields whose names are all in upper case.\n\nSuch fields may cause confusion by breaking a common naming convention and\nare often used by mistake.\n\n**Example:**\n\n\n      public static int THE_ANSWER = 42; //a warning here: final modifier is missing\n\nA quick-fix that renames such fields is available only in the editor.\n\nInspection ID: UpperCaseFieldNameNotConstant"
-        },
-        {
-          "shortName": "PackageNamingConvention",
-          "displayName": "Package naming convention",
-          "enabled": false,
-          "description": "Reports packages whose names are either too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:**\n\n\n      package io;\n\n\nUse the options to specify the minimum and maximum length of the package name\nas well as a regular expression that matches valid package names\n(regular expressions are in standard `java.util.regex` format).\n\nInspection ID: PackageNamingConvention"
-        },
-        {
-          "shortName": "QuestionableName",
-          "displayName": "Questionable name",
-          "enabled": false,
-          "description": "Reports variables, methods, or classes with questionable, not really descriptive names. Such names do not help to understand the code, and most probably were created as a temporary thing but were forgotten afterwards.\n\n**Example:**\n\n\n      int aa = 42;\n\nRename quick-fix is suggested only in the editor.\n\n\nUse the option to list names that should be reported.\n\n\nInspection ID: QuestionableName"
-        },
-        {
-          "shortName": "LocalVariableNamingConvention",
-          "displayName": "Local variable naming convention",
-          "enabled": false,
-          "description": "Reports local variables whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** `int X = 42;`\nshould be reported if the inspection is enabled with the default settings in which a variable name should start with a lowercase letter.\n\nConfigure the inspection:\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and a regular expression expected for local variable names.\nSpecify **0** in order not to check the length of names. Regular expressions should be specified in the standard **java.util.regex** format.\n\nUse checkboxes to ignore `for`-loop and `catch` section parameters.\n\nInspection ID: LocalVariableNamingConvention"
-        },
-        {
-          "shortName": "LambdaParameterNamingConvention",
-          "displayName": "Lambda parameter naming convention",
-          "enabled": false,
-          "description": "Reports lambda parameters whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** `Function<String, String> id = X -> X;`\nshould be reported if the inspection is enabled with the default settings in which a parameter name should start with a lowercase letter.\n\nConfigure the inspection:\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and a regular expression expected for lambda parameter names.\nSpecify **0** in order not to check the length of names.\n\nRegular expressions should be specified in the standard `java.util.regex` format.\n\nInspection ID: LambdaParameterNamingConvention"
-        },
-        {
-          "shortName": "FieldNamingConvention",
-          "displayName": "Field naming convention",
-          "enabled": false,
-          "description": "Reports fields whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** if the inspection is enabled for constants, and the minimum specified length for a field name is 5 (the default), the following constant\nproduces a warning because the length of its name is 3, which is less than 5: `public static final int MAX = 42;`.\n\nA quick-fix that renames such fields is available only in the editor.\n\nConfigure the inspection:\n\nUse the list in the **Options** section to specify which fields should be checked. Deselect the checkboxes for the fields for which\nyou want to skip the check.\n\nFor each field type, specify the minimum length, maximum length, and the regular expression expected for field names using the\nprovided input fields.\nSpecify **0** in the length fields to skip the corresponding checks.\n\nRegular expressions should be specified in the standard\n`java.util.regex` format.\n\nInspection ID: FieldNamingConvention"
-        },
-        {
-          "shortName": "ParameterNameDiffersFromOverriddenParameter",
-          "displayName": "Parameter name differs from parameter in overridden or overloaded method",
-          "enabled": false,
-          "description": "Reports parameters whose names differ from the corresponding parameters of the methods they override or overload. While legal in Java, such inconsistent names may be confusing and decrease the documentation benefits of good naming practices.\n\n**Example:**\n\n\n      class Person {\n        Person(String fullName) {}\n      }\n      class Child extends Person {\n        Child(String name) { super(name); }\n      }\n\nAfter the quick-fix is applied:\n\n\n      class Person {\n        Person(String fullName) {}\n      }\n      class Child extends Person {\n        Child(String fullName) { super(fullName); }\n      }\n\n\nUse the options to indicate whether to ignore overridden parameter names that are only\na single character long or come from a library method. Both can be useful if\nyou do not wish to be bound by dubious naming conventions used in libraries.\n\nInspection ID: ParameterNameDiffersFromOverriddenParameter"
-        },
-        {
-          "shortName": "ParameterNamingConvention",
-          "displayName": "Method parameter naming convention",
-          "enabled": false,
-          "description": "Reports method parameters whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** `void fooBar(int X)`\nshould be reported if the inspection is enabled with the default settings in which a parameter name should start with a lowercase letter.\n\nConfigure the inspection:\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and a regular expression expected for\nmethod parameter names. Specify **0** in order not to check the length of names.\n\nRegular expressions should be specified in the standard `java.util.regex` format.\n\nInspection ID: ParameterNamingConvention"
         }
       ]
     },
@@ -6079,27 +6079,6 @@
           "displayName": "@NotNull field is not initialized",
           "enabled": false,
           "description": "Reports fields annotated as not-null that are not initialized in the constructor.\n\nExample:\n\n    public class MyClass {\n      private @NotNull String value;\n\n      public void setValue(@NotNull String value) {\n        this.value = value;\n      }\n\n      public @NotNull String getValue() {\n        return value;\n      }\n    }\n\n\nSuch fields may violate the not-null constraint. In the example above, the `setValue` parameter is annotated as not-null, but\n`getValue` may return null if the setter was not called.\n\nInspection ID: NotNullFieldNotInitialized"
-        }
-      ]
-    },
-    {
-      "name": "Numeric issues",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Numeric issues",
-          "name": "Numeric issues"
-        }
-      ],
-      "inspections": [
-        {
-          "shortName": "KotlinBigDecimalEquals",
-          "displayName": "'equals()' called on 'BigDecimal'",
-          "enabled": false,
-          "description": "Reports `==` or `equals()` calls that compare two `java.math.BigDecimal` numbers. This is normally a mistake, as two `java.math.BigDecimal` numbers are only equal if they are equal in both value and scale.\n\n**Example:**\n\n\n      // condition is false\n      val condition = BigDecimal(\"2.0\") ==\n          BigDecimal(\"2.00\")\n\nAfter the quick-fix is applied:\n\n\n      // condition is true\n      val condition = BigDecimal(\"2.0\").compareTo(\n          BigDecimal(\"2.00\")) == 0\n\nInspection ID: KotlinBigDecimalEquals"
         }
       ]
     },
@@ -6283,6 +6262,27 @@
           "displayName": "Overly complex arithmetic expression",
           "enabled": false,
           "description": "Reports arithmetic expressions with the excessive number of terms. Such expressions might be hard to understand and might contain errors.\n\nParameters, field references, and other primary expressions are counted as a term.\n\n**Example:**\n\n    int calc(int a, int b) {\n            return a + a + a + b + b + b + b; // The line contains 7 terms and will be reported.\n        }\n\nUse the field below to specify a number of terms allowed in arithmetic expressions.\n\nInspection ID: OverlyComplexArithmeticExpression"
+        }
+      ]
+    },
+    {
+      "name": "Numeric issues",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Numeric issues",
+          "name": "Numeric issues"
+        }
+      ],
+      "inspections": [
+        {
+          "shortName": "KotlinBigDecimalEquals",
+          "displayName": "'equals()' called on 'BigDecimal'",
+          "enabled": false,
+          "description": "Reports `==` or `equals()` calls that compare two `java.math.BigDecimal` numbers. This is normally a mistake, as two `java.math.BigDecimal` numbers are only equal if they are equal in both value and scale.\n\n**Example:**\n\n\n      // condition is false\n      val condition = BigDecimal(\"2.0\") ==\n          BigDecimal(\"2.00\")\n\nAfter the quick-fix is applied:\n\n\n      // condition is true\n      val condition = BigDecimal(\"2.0\").compareTo(\n          BigDecimal(\"2.00\")) == 0\n\nInspection ID: KotlinBigDecimalEquals"
         }
       ]
     },
@@ -7065,255 +7065,6 @@
       "name": "Probable bugs",
       "categoryPath": [
         {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Probable bugs",
-          "name": "Probable bugs"
-        }
-      ],
-      "inspections": [
-        {
-          "shortName": "IncompleteDestructuring",
-          "displayName": "Incomplete destructuring declaration",
-          "enabled": false,
-          "description": "Reports incomplete destructuring declaration.\n\n**Example:**\n\n\n      data class Person(val name: String, val age: Int)\n      val person = Person(\"\", 0)\n      val (name) = person\n\nThe quick fix completes destructuring declaration with new variables:\n\n\n      data class Person(val name: String, val age: Int)\n      val person = Person(\"\", 0)\n      val (name, age) = person\n\nInspection ID: IncompleteDestructuring"
-        },
-        {
-          "shortName": "AmbiguousNonLocalJump",
-          "displayName": "Ambiguous non-local 'break' or 'continue'",
-          "enabled": true,
-          "description": "Reports `break` or `continue` usages inside of lambdas of loop-like functions.\n\n\n`break` and `continue` keywords always apply to the real loops (`for`,\n`while`, `do-while`). `break` and `continue` never apply to any function; for example,\n`break` and `continue` don't apply to `forEach`, `filter`, `map`.\n\n\nUsing `break` or `continue` inside a loop-like function (for example, `forEach`) may be confusing.\nThe inspection suggests adding a label to clarify to which statement `break` or `continue` applies to.\n\n\nSince Kotlin doesn't have a concept of loop-like functions, the inspection uses the heuristic. It assumes that functions that don't\nhave one of `callsInPlace(EXACTLY_ONCE)` or `callsInPlace(AT_LEAST_ONCE)` contracts are loop-like functions.\n\n**Example:**\n\n\n        for (file in files) {\n            file.readLines().forEach { line ->\n                if (line == commentMarkerLine) continue\n                println(line)\n            }\n        }\n\nThe quick-fix adds clarifying labels:\n\n\n        loop@ for (file in files) {\n            file.readLines().forEach { line ->\n                if (line == commentMarkerLine) continue@loop\n                println(line)\n            }\n        }\n\nInspection ID: AmbiguousNonLocalJump"
-        },
-        {
-          "shortName": "UselessCallOnCollection",
-          "displayName": "Useless call on collection type",
-          "enabled": true,
-          "description": "Reports `filter...` calls from the standard library on already filtered collections.\n\nSeveral functions from the standard library such as `filterNotNull()` or `filterIsInstance`\nhave sense only when they are called on receivers that have types distinct from the resulting one. Otherwise,\nsuch calls can be omitted as the result will be the same.\n\n**Remove redundant call** quick-fix can be used to amend the code automatically.\n\nExample:\n\n\n      fun test(list: List<String>) {\n          val x = list.filterNotNull() // quick-fix simplifies to 'list'\n          val y = list.filterIsInstance<String>() // quick-fix simplifies to 'list'\n      }\n\nInspection ID: UselessCallOnCollection"
-        },
-        {
-          "shortName": "ObjectInheritsException",
-          "displayName": "Exception should not be an object",
-          "enabled": true,
-          "description": "Reports object inherited from `Exception` because exceptions are inherently stateful, containing information like the stacktrace.\n\n**Example:**\n\n\n    object MyEx: Exception()\n\nAfter the quick-fix is applied:\n\n\n    class MyEx: Exception()\n\nInspection ID: ObjectInheritsException"
-        },
-        {
-          "shortName": "WrapUnaryOperator",
-          "displayName": "Ambiguous unary operator use with number constant",
-          "enabled": true,
-          "description": "Reports an unary operator followed by a dot qualifier such as `-1.inc()`.\n\nCode like `-1.inc()` can be misleading because `-` has a lower precedence than `.inc()`.\nAs a result, `-1.inc()` evaluates to `-2` and not `0` as it might be expected.\n\n**Wrap unary operator and value with ()** quick-fix can be used to amend the code automatically.\n\nInspection ID: WrapUnaryOperator"
-        },
-        {
-          "shortName": "SuspiciousVarProperty",
-          "displayName": "Suspicious 'var' property: its setter does not influence its getter result",
-          "enabled": true,
-          "description": "Reports `var` properties with default setter and getter that do not reference backing field.\n\n\nSuch properties do not affect calling its setter; therefore, it will be clearer to change such property to `val` and delete the initializer.\n\n**Change to val and delete initializer** quick-fix can be used to amend the code automatically.\n\nExample:\n\n\n      // This property always returns '1' and it doesn't important that the property is a 'var'\n      var foo: Int = 0\n          get() = 1\n\nInspection ID: SuspiciousVarProperty"
-        },
-        {
-          "shortName": "UnusedExpression",
-          "displayName": "Unused expression",
-          "enabled": true,
-          "description": "Reports unused expressions, which often indicate incomplete code or a missing `return` statement.\n\n\nIf the unused expression is the last statement in a function and its type matches the function's return type,\na quick fix is available to automatically add the `return` keyword.\n\n**Example:**\n\n\n    fun example(): Int {\n        val x = 10\n        x // Warning: Expression is unused\n    }\n\nAfter the quick-fix is applied:\n\n\n    fun example(): Int {\n        val x = 10\n        return x\n    }\n\nInspection ID: UnusedExpression"
-        },
-        {
-          "shortName": "ReplaceArrayEqualityOpWithArraysEquals",
-          "displayName": "Arrays comparison via '==' and '!='",
-          "enabled": true,
-          "description": "Reports usages of `==` or `!=` operator for arrays that should be replaced with `contentEquals()`.\n\n\nThe `==` and `!=`operators compare array references instead of their content.\n\n**Examples:**\n\n      fun test() {\n          val a = arrayOf(1, 2, 3)\n          val b = arrayOf(1, 2, 3)\n          println(a == b) // references comparison\n      }\n\nAfter the quick-fix is applied:\n\n      fun test() {\n          val a = arrayOf(1, 2, 3)\n          val b = arrayOf(1, 2, 3)\n          println(a.contentEquals(b))\n      }\n\nInspection ID: ReplaceArrayEqualityOpWithArraysEquals"
-        },
-        {
-          "shortName": "RedundantLabel",
-          "displayName": "Redundant label",
-          "enabled": true,
-          "description": "Reports redundant labels that cannot be referenced from 'break', 'continue' or 'return' statements.\n\n\nSuch labels can be safely removed.\n\n**Example:**\n\n\n    fun foo(c: Boolean) {\n        b@ while (true) a@ {\n            while (true) {\n                break@b\n            }\n        }\n    }\n\nAfter the quick fix is applied:\n\n\n    fun foo(c: Boolean) {\n        b@ while (true) {\n            while (true) {\n                break@b\n            }\n        }\n    }\n\nInspection ID: RedundantLabel"
-        },
-        {
-          "shortName": "UnusedUnaryOperator",
-          "displayName": "Unused unary operator",
-          "enabled": true,
-          "description": "Reports unary operators for number types on unused expressions.\n\nUnary operators break previous expression if they are used without braces.\nAs a result, mathematical expressions spanning multi lines can be misleading.\n\nExample:\n\n\n      fun main() {\n          val result = 1 + 2 * 3\n                      + 3              // <== note that '+ 3' doesn't belong to the 'result' variable, it is unused\n          println(\"Result = $result\")  // The result is '7' and not '10' as it might be expected\n      }\n\nInspection ID: UnusedUnaryOperator"
-        },
-        {
-          "shortName": "VariableNeverRead",
-          "displayName": "Variable is never read",
-          "enabled": true,
-          "description": "Reports local variables that are defined but never used afterward in the code.\n\n**Example:**\n\n\n      fun example() {\n          var local = 42 // Variable 'local' is never read\n          local = 0\n      }\n\nInspection ID: VariableNeverRead"
-        },
-        {
-          "shortName": "LateinitVarOverridesLateinitVar",
-          "displayName": "'lateinit var' property overrides 'lateinit var' property",
-          "enabled": true,
-          "description": "Reports `lateinit var` properties that override other `lateinit var` properties.\n\nA subclass instance will have two fields for a single property, and the one from the superclass will remain effectively unused.\n\n**Example:**\n\n\n        open class BaseClass {\n          open lateinit var name: String\n        }\n\n        class RealClass : BaseClass() {\n          override lateinit var name: String\n        }\n\nInspection ID: LateinitVarOverridesLateinitVar"
-        },
-        {
-          "shortName": "KotlinEqualsBetweenInconvertibleTypes",
-          "displayName": "'equals()' between objects of inconvertible types",
-          "enabled": true,
-          "description": "Reports calls to `equals()` where the receiver and the argument are of incompatible primitive, enum, or string types.\n\nWhile such a call might theoretically be useful, most likely it represents a bug.\n\n**Example:**\n\n      5.equals(\"\");\n\nInspection ID: KotlinEqualsBetweenInconvertibleTypes"
-        },
-        {
-          "shortName": "KotlinUnreachableCode",
-          "displayName": "Unreachable code",
-          "enabled": true,
-          "description": "Reports code statements are unreachable for execution.\n\n\nThe quick-fix removes unreachable code.\n\n**Example:**\n\n\n      fun value(): Int {\n          return 42\n          print(\"Hello, world !\")\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun value(): Int {\n          return 42\n      }\n\nInspection ID: KotlinUnreachableCode"
-        },
-        {
-          "shortName": "DataClassPrivateConstructor",
-          "displayName": "Private data class constructor is exposed via the 'copy' method",
-          "enabled": true,
-          "description": "Reports the `private` primary constructor in data classes.\n\n\n`data` classes have a `copy()` factory method that can be used similarly to a constructor.\nA constructor should not be marked as `private` to provide enough safety.\n\n**Example:**\n\n\n      data class User private constructor(val name: String)\n\nThe quick-fix changes the constructor visibility modifier to `public`:\n\n\n      data class User(val name: String)\n\nInspection ID: DataClassPrivateConstructor"
-        },
-        {
-          "shortName": "DelegationToVarProperty",
-          "displayName": "Delegating to 'var' property",
-          "enabled": true,
-          "description": "Reports interface delegation to a `var` property.\n\nOnly initial value of a property is used for delegation, any later assignments do not affect it.\n\n**Example:**\n\n\n      class Example(var text: CharSequence): CharSequence by text\n\nThe quick-fix replaces a property with immutable one:\n\n\n      class Example(val text: CharSequence): CharSequence by text\n\nAlternative way, if you rely on mutability for some reason:\n\n\n      class Example(text: CharSequence): CharSequence by text {\n          var text = text\n      }\n\nInspection ID: DelegationToVarProperty"
-        },
-        {
-          "shortName": "ConvertNaNEquality",
-          "displayName": "Convert equality check with 'NaN' to 'isNaN' call",
-          "enabled": true,
-          "description": "Reports an equality check with `Float.NaN` or `Double.NaN` that should be replaced with an `isNaN()` check.\n\n\nAccording to IEEE 754, equality check against NaN always returns `false`, even for `NaN == NaN`.\nTherefore, such a check is likely to be a mistake.\n\nThe quick-fix replaces comparison with `isNaN()` check that uses a different comparison technique and handles `NaN` values correctly.\n\n**Example:**\n\n\n      fun check(value: Double): Boolean {\n          return Double.NaN == value\n      }\n\nAfter the fix is applied:\n\n\n      fun check(value: Double): Boolean {\n          return value.isNaN()\n      }\n\nInspection ID: ConvertNaNEquality"
-        },
-        {
-          "shortName": "FilterIsInstanceResultIsAlwaysEmpty",
-          "displayName": "The result of 'filterIsInstance' call is always empty",
-          "enabled": true,
-          "description": "The inspection detects calls to Kotlin standard library functions `filterIsInstance`/`filterIsInstanceTo`,\nwhose target type is not a subtype of the element type the filtering is called on.\n\nExample:\n\n\n        val list = listOf<Int>(1, 2, 3)\n        val filteredList = list.filterIsInstance<Boolean>() // Empty result\n\nInspection ID: FilterIsInstanceResultIsAlwaysEmpty"
-        },
-        {
-          "shortName": "RunBlockingInSuspendFunction",
-          "displayName": "'runBlocking' inside suspend function",
-          "enabled": true,
-          "description": "Reports `runBlocking` calls inside `suspend` functions.\n\nUsing `runBlocking` within a `suspend` function blocks the calling thread and defeats the purpose of asynchronous programming.\n\nThe quick-fix replaces the `runBlocking` call with one of the following alternatives, depending on the context:\n\n* A `run` call.\n* A `withContext` call when a specific `CoroutineContext` is used.\n* Directly inlined code without the `runBlocking` wrapper.\n\nExample:\n\n\n    suspend fun something() {\n      runBlocking {\n        code() // The thread is blocked here\n      }\n    }\n\nAfter the quick-fix is applied:\n\n\n    suspend fun something() {\n      code() // Runs asynchronously\n    }\n\nInspection ID: RunBlockingInSuspendFunction\n\nNew in 2025.1"
-        },
-        {
-          "shortName": "KDocUnresolvedReference",
-          "displayName": "Unresolved reference in KDoc",
-          "enabled": true,
-          "description": "Reports unresolved references in KDoc comments.\n\n**Example:**\n\n\n      /**\n       * [unresolvedLink]\n       */\n      fun foo() {}\n\nTo fix the problem make the link valid.\n\nInspection ID: KDocUnresolvedReference"
-        },
-        {
-          "shortName": "KotlinConstantConditions",
-          "displayName": "Constant conditions",
-          "enabled": true,
-          "description": "Reports non-trivial conditions and values that are statically known to be always true, false, null or zero. While sometimes intended, often this is a sign of logical error in the program. Additionally, reports never reachable `when` branches and some expressions that are statically known to fail always.\n\nExamples:\n\n\n    fun process(x: Int?) {\n      val isNull = x == null\n      if (!isNull) {\n        if (x != null) {} // condition is always true\n        require(x!! < 0 && x > 10) // condition is always false\n      } else {\n        println(x!!) // !! operator will always fail\n      }\n    }\n    fun process(v: Any) {\n      when(v) {\n        is CharSequence -> println(v as Int) // cast will always fail\n        is String -> println(v) // branch is unreachable\n      }\n    }\n\n\nUncheck the \"Warn when constant is stored in variable\" option to avoid reporting of variables having constant values not in conditions.\n\nInspection ID: KotlinConstantConditions\n\nNew in 2021.3"
-        },
-        {
-          "shortName": "UnusedFlow",
-          "displayName": "Unused flow",
-          "enabled": true,
-          "description": "Reports Kotlinx Coroutines Flows that are created but never consumed or passed to other functions.\n\nThe code defining a Flow does not run unless the Flow is collected by using a terminal operator.\n\n**Example:**\n\n\n    fun foo() {\n        flowOf(1).onEach { println(it) }\n    }\n\nSee [some examples](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/) of terminal operators.\n\nInspection ID: UnusedFlow"
-        },
-        {
-          "shortName": "ForEachParameterNotUsed",
-          "displayName": "Iterated elements are not used in forEach",
-          "enabled": true,
-          "description": "Reports `forEach` loops that do not use iterable values.\n\n**Example:**\n\n\n      listOf(1, 2, 3).forEach { }\n\nThe quick fix introduces anonymous parameter in the `forEach` section:\n\n\n      listOf(1, 2, 3).forEach { _ -> }\n\nInspection ID: ForEachParameterNotUsed"
-        },
-        {
-          "shortName": "AddExplicitTargetToParameterAnnotation",
-          "displayName": "Redundant interpolation prefix",
-          "enabled": true,
-          "description": "Reports value parameter annotation usages without an explicit target for which the default target might be unexpected and undesirable.\n\n\nThe value parameter annotations without an explicit target are applied only to the parameter itself until Kotlin 2.1.20.\nFor annotations applicable to both parameters and fields or properties, this behavior might\nbe unintended when the annotation is used on a `val` or `var` constructor parameter.\n\n\nExample:\n\n\n    class Example(\n        @Param val foo: String,\n        @ParamField val bar: String, // the field is not annotated, only the parameter is\n        @ParamProperty val baz: String, // the property is not annotated, only the parameter is\n        @ParamProperty boo: String,\n    )\n\n    @Target(AnnotationTarget.VALUE_PARAMETER)\n    annotation class Param\n    @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.FIELD)\n    annotation class ParamField\n    @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.PROPERTY)\n    annotation class ParamProperty\n\nAfter the quick-fix is applied:\n\n\n    class Example(\n        @Param val foo: String,\n        @field:ParamField val bar: String,\n        @property:ParamProperty val baz: String,\n        @ParamProperty boo: String,\n    )\n\n    @Target(AnnotationTarget.VALUE_PARAMETER)\n    annotation class Param\n    @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.FIELD)\n    annotation class ParamField\n    @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.PROPERTY)\n    annotation class ParamProperty\n\nInspection ID: AddExplicitTargetToParameterAnnotation"
-        },
-        {
-          "shortName": "SuspiciousCascadingIf",
-          "displayName": "Suspicious cascading 'if' expression",
-          "enabled": true,
-          "description": "Reports cascading `if` expressions where the last `else` branch is part of a dot-qualified or binary expression.\n\nThis can lead to unexpected behavior because only the innermost `if-else` expression becomes the receiver or left operand of\nthe outer expression, which may not align with the intended logic.\n\n**Example:**\n\n\n    fun printNumberSign(num: Int) {\n        if (num > 0) {\n            \"positive\"\n        } else if (num < 0) {\n            \"negative\"\n        } else {\n            \"zero\"\n        }.let { print(it) }\n    }\n\n    fun main() {\n        printNumberSign(1) // Nothing is printed because the receiver of 'let' is only the inner 'if-else' expression\n    }\n\nAfter applying the first quick-fix (converting to `when`):\n\n\n    fun printNumberSign(num: Int) {\n        when {\n            num > 0 -> {\n                \"positive\"\n            }\n\n            num < 0 -> {\n                \"negative\"\n            }\n\n            else -> {\n                \"zero\"\n            }\n        }.let { print(it) }\n    }\n\n    fun main() {\n        printNumberSign(1) // Prints \"positive\"\n    }\n\nAlternatively, the second quick-fix adds clarifying braces to preserve the original semantics while making the nested `else`\nbranch explicit:\n\n\n    fun printNumberSign(num: Int) {\n        if (num > 0) {\n            \"positive\"\n        } else {\n            if (num < 0) {\n                \"negative\"\n            } else {\n                \"zero\"\n            }.let { print(it) }\n        }\n    }\n\n    fun main() {\n        printNumberSign(1) // Nothing is printed, but the code is clearer\n    }\n\nInspection ID: SuspiciousCascadingIf"
-        },
-        {
-          "shortName": "SelfAssignment",
-          "displayName": "Redundant assignment",
-          "enabled": true,
-          "description": "Reports assignments of a variable to itself.\n\nThe quick-fix removes the redundant assignment.\n\n**Example:**\n\n\n      fun test() {\n          var bar = 1\n          bar = bar\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test() {\n          var bar = 1\n      }\n\nInspection ID: SelfAssignment"
-        },
-        {
-          "shortName": "AssignedValueIsNeverRead",
-          "displayName": "Assigned value is never read",
-          "enabled": true,
-          "description": "Reports assignments where a value is assigned but never used later in the code.\n\n**Example:**\n\n\n      fun foo(): Int = 42\n\n      fun example() {\n          var local = 0\n          print(local)\n          local = 42  // Assigned value is never read\n      }\n\n* After the quick fix, the assignment is deleted:\n\n\n      fun foo(): Int = 42\n\n      fun example() {\n          var local = 0\n          print(local)\n      }\n\n* If the right-hand side (RHS) expression may have side effects, the quick fix will also suggest keeping the RHS expression to preserve those side effects:\n\n\n      fun foo(): Int = 42\n\n      fun example() {\n          var local = 0\n          print(local)\n          foo()  // The function call is kept for its side effects\n      }\n\nInspection ID: AssignedValueIsNeverRead"
-        },
-        {
-          "shortName": "ArrayInDataClass",
-          "displayName": "Array property in data class",
-          "enabled": true,
-          "description": "Reports properties with an `Array` type in a `data` class without overridden `equals()` or `hashCode()`.\n\n\nArray parameters are compared by reference equality, which is likely an unexpected behavior.\nIt is strongly recommended to override `equals()` and `hashCode()` in such cases.\n\n**Example:**\n\n\n      data class Text(val lines: Array<String>)\n\nThe quick-fix generates missing `equals()` and `hashCode()` implementations:\n\n\n      data class Text(val lines: Array<String>) {\n          override fun equals(other: Any?): Boolean {\n              if (this === other) return true\n              if (javaClass != other?.javaClass) return false\n\n              other as Text\n\n              if (!lines.contentEquals(other.lines)) return false\n\n              return true\n          }\n\n          override fun hashCode(): Int {\n              return lines.contentHashCode()\n          }\n      }\n\nInspection ID: ArrayInDataClass"
-        },
-        {
-          "shortName": "SuspiciousCollectionReassignment",
-          "displayName": "Augmented assignment creates a new collection under the hood",
-          "enabled": true,
-          "description": "Reports augmented assignment (`+=`) expressions on a read-only `Collection`.\n\nAugmented assignment (`+=`) expression on a read-only `Collection` temporarily allocates a new collection,\nwhich may hurt performance.\n\n**Change type to mutable** quick-fix can be used to amend the code automatically.\n\nExample:\n\n\n      fun test() {\n          var list = listOf(0)\n          list += 42 // A new list is allocated here, equivalent to list = list + 42\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test() {\n          val list = mutableListOf(0)\n          list += 42\n      }\n\nInspection ID: SuspiciousCollectionReassignment"
-        },
-        {
-          "shortName": "UnusedLambdaExpression",
-          "displayName": "Unused lambda expression",
-          "enabled": true,
-          "description": "Reports lambda expressions that are neither invoked nor assigned.\n\n\nA lambda expression that is neither invoked nor assigned to a variable has no effect on program execution and is likely unintentional.\n\n**Example:**\n\n\n      fun foo() {\n        {} // Warning: Lambda expression is never invoked\n      }\n\nAfter the quick fix is applied:\n\n\n      fun foo() {\n        run {} // Lambda is now invoked via the 'run' function\n      }\n\nInspection ID: UnusedLambdaExpression"
-        },
-        {
-          "shortName": "RecursivePropertyAccessor",
-          "displayName": "Recursive property accessor",
-          "enabled": true,
-          "description": "Reports recursive property accessor calls which can end up with a `StackOverflowError`.\nSuch calls are usually confused with backing field access.\n\n**Example:**\n\n\n      var counter: Int = 0\n          set(value) {\n              counter = if (value < 0) 0 else value\n          }\n\nAfter the quick-fix is applied:\n\n\n      var counter: Int = 0\n          set(value) {\n              field = if (value < 0) 0 else value\n          }\n\nInspection ID: RecursivePropertyAccessor"
-        },
-        {
-          "shortName": "DestructuringWrongName",
-          "displayName": "Variable in destructuring declaration uses name of a wrong data class property",
-          "enabled": true,
-          "description": "Reports entries of destructuring declarations that match the name of a different property of the destructured data class.\n\n**Example:**\n\n\n      data class Foo(val a: String, val b: Int, val c: String)\n\n      fun bar(f: Foo) {\n          val (a, c) = f\n      }\n\nThe quick-fix changes variable's name to match the name of the corresponding class field:\n\n\n      data class Foo(val a: String, val b: Int, val c: String)\n\n      fun bar(f: Foo) {\n          val (a, b) = f\n      }\n\nInspection ID: DestructuringWrongName"
-        },
-        {
-          "shortName": "SuspiciousEqualsCombination",
-          "displayName": "Suspicious combination of == and ===",
-          "enabled": true,
-          "description": "Reports `==` and `===` comparisons that are both used on the same variable within a single expression.\n\nDue to similarities `==` and `===` could be mixed without notice, and\nit takes a close look to check that `==` used instead of `===`\n\nExample:\n\n\n      if (type === FIELD || type == METHOD || type == ANNOTATION_METHOD || // Note that \"==\" is used incorrectly\n          type === LAMBDA_EXPRESSION) return\n\nInspection ID: SuspiciousEqualsCombination"
-        },
-        {
-          "shortName": "SelfReferenceConstructorParameter",
-          "displayName": "Constructor can never be complete",
-          "enabled": true,
-          "description": "Reports constructors with a non-null self-reference parameter.\n\nSuch constructors never instantiate a class.\n\nThe quick-fix converts the parameter type to nullable.\n\n**Example:**\n\n\n      class SelfRef(val ref: SelfRef)\n\nAfter the quick-fix is applied:\n\n\n      class SelfRef(val ref: SelfRef?)\n\nInspection ID: SelfReferenceConstructorParameter"
-        },
-        {
-          "shortName": "JavaIoSerializableObjectMustHaveReadResolve",
-          "displayName": "Serializable object must implement 'readResolve'",
-          "enabled": false,
-          "description": "Reports `object`s (`data object` including) that implement `java.io.Serializable` but don't implement\n[readResolve](https://docs.oracle.com/en/java/javase/11/docs/specs/serialization/input.html#the-readresolve-method)\n\n**Example:**\n\n\n      import java.io.Serializable\n\n      object Foo : Serializable\n\nThe quick fix implements `readResolve` method:\n\n\n      import java.io.Serializable\n\n      object Foo : Serializable {\n          private fun readResolve() = Foo\n      }\n\nInspection ID: JavaIoSerializableObjectMustHaveReadResolve"
-        },
-        {
-          "shortName": "MainFunctionReturnUnit",
-          "displayName": "Main function should return 'Unit'",
-          "enabled": true,
-          "description": "Reports when a main function does not have a return type of `Unit`.\n\n**Example:**\n`fun main() = \"Hello world!\"`\n\nInspection ID: MainFunctionReturnUnit"
-        },
-        {
-          "shortName": "UselessCallOnNotNull",
-          "displayName": "Useless call on not-null type",
-          "enabled": true,
-          "description": "Reports calls on not-null receiver that make sense only for nullable receiver.\n\nSeveral functions from the standard library such as `orEmpty()` or `isNullOrEmpty`\nhave sense only when they are called on receivers of nullable types. Otherwise, they can be omitted or simplified as the result will be the same.\n\n**Remove redundant call** and **Change call to ...** quick-fixes can be used to amend the code automatically.\n\nExamples:\n\n\n      fun test(s: String) {\n          val x = s.orEmpty() // quick-fix simplifies to 's'\n          val y = s.isNullOrEmpty() // quick-fix simplifies to 's.isEmpty()'\n      }\n\nInspection ID: UselessCallOnNotNull"
-        },
-        {
-          "shortName": "UnusedLambdaExpressionBody",
-          "displayName": "Unused return value of a function with lambda expression body",
-          "enabled": true,
-          "description": "Reports calls with an unused return value when the called function returns a lambda from an expression body.\n\n\nIf there is `=` between function header and body block,\ncode from the function will not be evaluated which can lead to incorrect behavior.\n\n**Remove = token from function declaration** can be used to amend the code automatically.\n\nExample:\n\n\n      fun printHello() = { println(\"Hello\") }\n\n      fun main() {\n          printHello() // This function doesn't print anything\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun printHello() { println(\"Hello\") }\n\n      fun main() {\n          printHello()\n      }\n\nInspection ID: UnusedLambdaExpressionBody"
-        },
-        {
-          "shortName": "EqualsOrHashCode",
-          "displayName": "'equals()' and 'hashCode()' not paired",
-          "enabled": true,
-          "description": "Reports classes that override `equals()` but do not override `hashCode()`, or vice versa. It also reports object declarations that override either `equals()` or `hashCode()`.\n\nThis can lead to undesired behavior when a class is added to a `Collection`\n\n**Example:**\n\n\n      class C1 {\n          override fun equals(other: Any?) = true\n      }\n\n      class C2 {\n          override fun hashCode() = 0\n      }\n\n      object O1 {\n          override fun equals(other: Any?) = true\n      }\n\n      object O2 {\n          override fun hashCode() = 0\n      }\n\nThe quick-fix overrides `equals()` or `hashCode()` for classes and deletes these methods for objects:\n\n\n       class C1 {\n           override fun equals(other: Any?) = true\n           override fun hashCode(): Int {\n               return javaClass.hashCode()\n           }\n       }\n\n       class C2 {\n           override fun hashCode() = 0\n           override fun equals(other: Any?): Boolean {\n               if (this === other) return true\n               if (javaClass != other?.javaClass) return false\n               return true\n           }\n       }\n\n       object O1 {\n       }\n\n       object O2 {\n       }\n\nInspection ID: EqualsOrHashCode"
-        }
-      ]
-    },
-    {
-      "name": "Probable bugs",
-      "categoryPath": [
-        {
           "id": "Java",
           "name": "Java"
         },
@@ -7756,16 +7507,16 @@
           "description": "Reports suspicious indentation of statements after a control statement without braces.\n\n\nSuch indentation can make it look like the statement is inside the control statement,\nwhen in fact it will be executed unconditionally after the control statement.\n\n**Example:**\n\n\n      class Bar {\n          void foo(int i) {\n              if (i == 0)\n                  System.out.println(\"foo\");\n                  System.out.println(\"bar\"); // warning\n              if (i == 1);\n                  System.out.println(\"great\"); // warning\n              if (i == 42)\n                  System.out.println(\"answer\");\n                      System.out.println(\"question\"); // warning\n          }\n      }\n\nInspection ID: SuspiciousIndentAfterControlStatement"
         },
         {
-          "shortName": "MagicConstant",
-          "displayName": "Magic constant",
-          "enabled": true,
-          "description": "Reports expressions that can be replaced with \"magic\" constants.\n\nExample 1:\n\n\n      // Bare literal \"2\" is used, warning:\n      Font font = new Font(\"Arial\", 2)\n\nExample 2:\n\n\n      // Predefined constant is used, good:\n      Font font = new Font(\"Arial\", Font.ITALIC)\n\n\nWhen possible, the quick-fix inserts an appropriate predefined constant.\n\n\nThe behavior of this inspection is controlled by `org.intellij.lang.annotations.MagicConstant` annotation.\nSome standard Java library methods are pre-annotated, but you can use this annotation in your code as well.\n\nInspection ID: MagicConstant"
-        },
-        {
           "shortName": "SuspiciousDateFormat",
           "displayName": "Suspicious date format pattern",
           "enabled": true,
           "description": "Reports date format patterns that are likely used by mistake.\n\nThe following patterns are reported:\n\n* Uppercase \"Y\", unless \"w\" appears nearby. It stands for \"Week year\" that is almost always the same as normal \"Year\" (lowercase \"y\" pattern), but may point to the next year at the end of December.\n* Uppercase \"M\" (month) close to \"H\", \"K\", \"h\", or \"k\" (hour). It's likely that a lowercase \"m\" (minute) was intended.\n* Lowercase \"m\" (minute) close to \"y\" (year) or \"d\" (day in month). It's likely that an uppercase \"M\" (month) was intended.\n* Uppercase \"D\" (day in year) close to \"M\", or \"L\" (month). It's likely that a lowercase \"d\" (day in month) was intended.\n* Uppercase \"S\" (milliseconds) close to \"m\" (minutes). It's likely that a lowercase \"s\" (seconds) was intended.\n\n\nExamples:  \n\n`new SimpleDateFormat(\"YYYY-MM-dd\")`: likely `\"yyyy-MM-dd\"` was intended.  \n\n`new SimpleDateFormat(\"yyyy-MM-DD\")`: likely `\"yyyy-MM-dd\"` was intended.  \n\n`new SimpleDateFormat(\"HH:MM\")`: likely `\"HH:mm\"` was intended.\n\nInspection ID: SuspiciousDateFormat\n\nNew in 2020.1"
+        },
+        {
+          "shortName": "MagicConstant",
+          "displayName": "Magic constant",
+          "enabled": true,
+          "description": "Reports expressions that can be replaced with \"magic\" constants.\n\nExample 1:\n\n\n      // Bare literal \"2\" is used, warning:\n      Font font = new Font(\"Arial\", 2)\n\nExample 2:\n\n\n      // Predefined constant is used, good:\n      Font font = new Font(\"Arial\", Font.ITALIC)\n\n\nWhen possible, the quick-fix inserts an appropriate predefined constant.\n\n\nThe behavior of this inspection is controlled by `org.intellij.lang.annotations.MagicConstant` annotation.\nSome standard Java library methods are pre-annotated, but you can use this annotation in your code as well.\n\nInspection ID: MagicConstant"
         },
         {
           "shortName": "ClassNewInstance",
@@ -7942,16 +7693,16 @@
           "description": "Reports `instanceof` expressions where the expression that is checked has a class/interface type that neither extends/implements the class/interface type on the right-side of the `instanceof` expression, nor has subclasses that do.\n\n\nAlthough it could be intended for e.g. library code, such a construct is likely erroneous,\nbecause no instance of any class declared in the project could pass this `instanceof` test.\n\n**Example:**\n\n\n      class Foo { }\n\n      interface Bar { }\n      \n      class Main {\n          void test(Foo f, Bar b) {\n              if (f instanceof Bar) { // problem\n                  System.out.println(\"fail\");\n              }\n              if (b instanceof Foo) { // problem\n                  System.out.println(\"fail\");\n              }\n          }\n      }\n\nInspection ID: InstanceofIncompatibleInterface"
         },
         {
-          "shortName": "NullArgumentToVariableArgMethod",
-          "displayName": "Confusing argument to varargs method",
-          "enabled": true,
-          "description": "Reports calls to variable arity methods that have a single argument in the vararg parameter position, which is either a `null` or an array of a subtype of the vararg parameter. Such an argument may be confusing as it is unclear if a varargs or non-varargs call is desired.\n\n**Example:**\n\n\n      String[] ss = new String[]{\"foo\", \"bar\"};\n      System.out.printf(\"%s\", ss);\n\nIn this example only the first element of the array will be printed, not the entire array.\n\nThis inspection depends on the Java feature 'Variable arity methods', which is available since Java 5.\n\nInspection ID: NullArgumentToVariableArgMethod"
-        },
-        {
           "shortName": "InfiniteRecursion",
           "displayName": "Infinite recursion",
           "enabled": true,
           "description": "Reports methods that call themselves infinitely unless an exception is thrown.\n\n\nMethods reported by this inspection cannot return normally.\nWhile such behavior may be intended, in many cases this is just an oversight.\n\n**Example:**\n\n      int baz() {\n          return baz();\n      }\n\nInspection ID: InfiniteRecursion"
+        },
+        {
+          "shortName": "NullArgumentToVariableArgMethod",
+          "displayName": "Confusing argument to varargs method",
+          "enabled": true,
+          "description": "Reports calls to variable arity methods that have a single argument in the vararg parameter position, which is either a `null` or an array of a subtype of the vararg parameter. Such an argument may be confusing as it is unclear if a varargs or non-varargs call is desired.\n\n**Example:**\n\n\n      String[] ss = new String[]{\"foo\", \"bar\"};\n      System.out.printf(\"%s\", ss);\n\nIn this example only the first element of the array will be printed, not the entire array.\n\nThis inspection depends on the Java feature 'Variable arity methods', which is available since Java 5.\n\nInspection ID: NullArgumentToVariableArgMethod"
         },
         {
           "shortName": "VariableNotUsedInsideIf",
@@ -7964,6 +7715,255 @@
           "displayName": "Suspicious collection method call",
           "enabled": true,
           "description": "Reports method calls on parameterized collections, where the actual argument type does not correspond to the collection's elements type.\n\n**Example:**\n\n\n      List<Integer> list = getListOfElements();\n      list.remove(\"\"); // remove is highlighted\n\n\nIn the inspection settings, you can disable warnings for potentially correct code like the following:\n\n\n      public boolean accept(Map<Integer, String> map, Object key) {\n        return map.containsKey(key);\n      }\n\nInspection ID: SuspiciousMethodCalls"
+        }
+      ]
+    },
+    {
+      "name": "Probable bugs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Probable bugs",
+          "name": "Probable bugs"
+        }
+      ],
+      "inspections": [
+        {
+          "shortName": "IncompleteDestructuring",
+          "displayName": "Incomplete destructuring declaration",
+          "enabled": false,
+          "description": "Reports incomplete destructuring declaration.\n\n**Example:**\n\n\n      data class Person(val name: String, val age: Int)\n      val person = Person(\"\", 0)\n      val (name) = person\n\nThe quick fix completes destructuring declaration with new variables:\n\n\n      data class Person(val name: String, val age: Int)\n      val person = Person(\"\", 0)\n      val (name, age) = person\n\nInspection ID: IncompleteDestructuring"
+        },
+        {
+          "shortName": "AmbiguousNonLocalJump",
+          "displayName": "Ambiguous non-local 'break' or 'continue'",
+          "enabled": true,
+          "description": "Reports `break` or `continue` usages inside of lambdas of loop-like functions.\n\n\n`break` and `continue` keywords always apply to the real loops (`for`,\n`while`, `do-while`). `break` and `continue` never apply to any function; for example,\n`break` and `continue` don't apply to `forEach`, `filter`, `map`.\n\n\nUsing `break` or `continue` inside a loop-like function (for example, `forEach`) may be confusing.\nThe inspection suggests adding a label to clarify to which statement `break` or `continue` applies to.\n\n\nSince Kotlin doesn't have a concept of loop-like functions, the inspection uses the heuristic. It assumes that functions that don't\nhave one of `callsInPlace(EXACTLY_ONCE)` or `callsInPlace(AT_LEAST_ONCE)` contracts are loop-like functions.\n\n**Example:**\n\n\n        for (file in files) {\n            file.readLines().forEach { line ->\n                if (line == commentMarkerLine) continue\n                println(line)\n            }\n        }\n\nThe quick-fix adds clarifying labels:\n\n\n        loop@ for (file in files) {\n            file.readLines().forEach { line ->\n                if (line == commentMarkerLine) continue@loop\n                println(line)\n            }\n        }\n\nInspection ID: AmbiguousNonLocalJump"
+        },
+        {
+          "shortName": "UselessCallOnCollection",
+          "displayName": "Useless call on collection type",
+          "enabled": true,
+          "description": "Reports `filter...` calls from the standard library on already filtered collections.\n\nSeveral functions from the standard library such as `filterNotNull()` or `filterIsInstance`\nhave sense only when they are called on receivers that have types distinct from the resulting one. Otherwise,\nsuch calls can be omitted as the result will be the same.\n\n**Remove redundant call** quick-fix can be used to amend the code automatically.\n\nExample:\n\n\n      fun test(list: List<String>) {\n          val x = list.filterNotNull() // quick-fix simplifies to 'list'\n          val y = list.filterIsInstance<String>() // quick-fix simplifies to 'list'\n      }\n\nInspection ID: UselessCallOnCollection"
+        },
+        {
+          "shortName": "ObjectInheritsException",
+          "displayName": "Exception should not be an object",
+          "enabled": true,
+          "description": "Reports object inherited from `Exception` because exceptions are inherently stateful, containing information like the stacktrace.\n\n**Example:**\n\n\n    object MyEx: Exception()\n\nAfter the quick-fix is applied:\n\n\n    class MyEx: Exception()\n\nInspection ID: ObjectInheritsException"
+        },
+        {
+          "shortName": "WrapUnaryOperator",
+          "displayName": "Ambiguous unary operator use with number constant",
+          "enabled": true,
+          "description": "Reports an unary operator followed by a dot qualifier such as `-1.inc()`.\n\nCode like `-1.inc()` can be misleading because `-` has a lower precedence than `.inc()`.\nAs a result, `-1.inc()` evaluates to `-2` and not `0` as it might be expected.\n\n**Wrap unary operator and value with ()** quick-fix can be used to amend the code automatically.\n\nInspection ID: WrapUnaryOperator"
+        },
+        {
+          "shortName": "SuspiciousVarProperty",
+          "displayName": "Suspicious 'var' property: its setter does not influence its getter result",
+          "enabled": true,
+          "description": "Reports `var` properties with default setter and getter that do not reference backing field.\n\n\nSuch properties do not affect calling its setter; therefore, it will be clearer to change such property to `val` and delete the initializer.\n\n**Change to val and delete initializer** quick-fix can be used to amend the code automatically.\n\nExample:\n\n\n      // This property always returns '1' and it doesn't important that the property is a 'var'\n      var foo: Int = 0\n          get() = 1\n\nInspection ID: SuspiciousVarProperty"
+        },
+        {
+          "shortName": "UnusedExpression",
+          "displayName": "Unused expression",
+          "enabled": true,
+          "description": "Reports unused expressions, which often indicate incomplete code or a missing `return` statement.\n\n\nIf the unused expression is the last statement in a function and its type matches the function's return type,\na quick fix is available to automatically add the `return` keyword.\n\n**Example:**\n\n\n    fun example(): Int {\n        val x = 10\n        x // Warning: Expression is unused\n    }\n\nAfter the quick-fix is applied:\n\n\n    fun example(): Int {\n        val x = 10\n        return x\n    }\n\nInspection ID: UnusedExpression"
+        },
+        {
+          "shortName": "ReplaceArrayEqualityOpWithArraysEquals",
+          "displayName": "Arrays comparison via '==' and '!='",
+          "enabled": true,
+          "description": "Reports usages of `==` or `!=` operator for arrays that should be replaced with `contentEquals()`.\n\n\nThe `==` and `!=`operators compare array references instead of their content.\n\n**Examples:**\n\n      fun test() {\n          val a = arrayOf(1, 2, 3)\n          val b = arrayOf(1, 2, 3)\n          println(a == b) // references comparison\n      }\n\nAfter the quick-fix is applied:\n\n      fun test() {\n          val a = arrayOf(1, 2, 3)\n          val b = arrayOf(1, 2, 3)\n          println(a.contentEquals(b))\n      }\n\nInspection ID: ReplaceArrayEqualityOpWithArraysEquals"
+        },
+        {
+          "shortName": "RedundantLabel",
+          "displayName": "Redundant label",
+          "enabled": true,
+          "description": "Reports redundant labels that cannot be referenced from 'break', 'continue' or 'return' statements.\n\n\nSuch labels can be safely removed.\n\n**Example:**\n\n\n    fun foo(c: Boolean) {\n        b@ while (true) a@ {\n            while (true) {\n                break@b\n            }\n        }\n    }\n\nAfter the quick fix is applied:\n\n\n    fun foo(c: Boolean) {\n        b@ while (true) {\n            while (true) {\n                break@b\n            }\n        }\n    }\n\nInspection ID: RedundantLabel"
+        },
+        {
+          "shortName": "UnusedUnaryOperator",
+          "displayName": "Unused unary operator",
+          "enabled": true,
+          "description": "Reports unary operators for number types on unused expressions.\n\nUnary operators break previous expression if they are used without braces.\nAs a result, mathematical expressions spanning multi lines can be misleading.\n\nExample:\n\n\n      fun main() {\n          val result = 1 + 2 * 3\n                      + 3              // <== note that '+ 3' doesn't belong to the 'result' variable, it is unused\n          println(\"Result = $result\")  // The result is '7' and not '10' as it might be expected\n      }\n\nInspection ID: UnusedUnaryOperator"
+        },
+        {
+          "shortName": "VariableNeverRead",
+          "displayName": "Variable is never read",
+          "enabled": true,
+          "description": "Reports local variables that are defined but never used afterward in the code.\n\n**Example:**\n\n\n      fun example() {\n          var local = 42 // Variable 'local' is never read\n          local = 0\n      }\n\nInspection ID: VariableNeverRead"
+        },
+        {
+          "shortName": "LateinitVarOverridesLateinitVar",
+          "displayName": "'lateinit var' property overrides 'lateinit var' property",
+          "enabled": true,
+          "description": "Reports `lateinit var` properties that override other `lateinit var` properties.\n\nA subclass instance will have two fields for a single property, and the one from the superclass will remain effectively unused.\n\n**Example:**\n\n\n        open class BaseClass {\n          open lateinit var name: String\n        }\n\n        class RealClass : BaseClass() {\n          override lateinit var name: String\n        }\n\nInspection ID: LateinitVarOverridesLateinitVar"
+        },
+        {
+          "shortName": "KotlinEqualsBetweenInconvertibleTypes",
+          "displayName": "'equals()' between objects of inconvertible types",
+          "enabled": true,
+          "description": "Reports calls to `equals()` where the receiver and the argument are of incompatible primitive, enum, or string types.\n\nWhile such a call might theoretically be useful, most likely it represents a bug.\n\n**Example:**\n\n      5.equals(\"\");\n\nInspection ID: KotlinEqualsBetweenInconvertibleTypes"
+        },
+        {
+          "shortName": "KotlinUnreachableCode",
+          "displayName": "Unreachable code",
+          "enabled": true,
+          "description": "Reports code statements are unreachable for execution.\n\n\nThe quick-fix removes unreachable code.\n\n**Example:**\n\n\n      fun value(): Int {\n          return 42\n          print(\"Hello, world !\")\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun value(): Int {\n          return 42\n      }\n\nInspection ID: KotlinUnreachableCode"
+        },
+        {
+          "shortName": "DataClassPrivateConstructor",
+          "displayName": "Private data class constructor is exposed via the 'copy' method",
+          "enabled": true,
+          "description": "Reports the `private` primary constructor in data classes.\n\n\n`data` classes have a `copy()` factory method that can be used similarly to a constructor.\nA constructor should not be marked as `private` to provide enough safety.\n\n**Example:**\n\n\n      data class User private constructor(val name: String)\n\nThe quick-fix changes the constructor visibility modifier to `public`:\n\n\n      data class User(val name: String)\n\nInspection ID: DataClassPrivateConstructor"
+        },
+        {
+          "shortName": "DelegationToVarProperty",
+          "displayName": "Delegating to 'var' property",
+          "enabled": true,
+          "description": "Reports interface delegation to a `var` property.\n\nOnly initial value of a property is used for delegation, any later assignments do not affect it.\n\n**Example:**\n\n\n      class Example(var text: CharSequence): CharSequence by text\n\nThe quick-fix replaces a property with immutable one:\n\n\n      class Example(val text: CharSequence): CharSequence by text\n\nAlternative way, if you rely on mutability for some reason:\n\n\n      class Example(text: CharSequence): CharSequence by text {\n          var text = text\n      }\n\nInspection ID: DelegationToVarProperty"
+        },
+        {
+          "shortName": "ConvertNaNEquality",
+          "displayName": "Convert equality check with 'NaN' to 'isNaN' call",
+          "enabled": true,
+          "description": "Reports an equality check with `Float.NaN` or `Double.NaN` that should be replaced with an `isNaN()` check.\n\n\nAccording to IEEE 754, equality check against NaN always returns `false`, even for `NaN == NaN`.\nTherefore, such a check is likely to be a mistake.\n\nThe quick-fix replaces comparison with `isNaN()` check that uses a different comparison technique and handles `NaN` values correctly.\n\n**Example:**\n\n\n      fun check(value: Double): Boolean {\n          return Double.NaN == value\n      }\n\nAfter the fix is applied:\n\n\n      fun check(value: Double): Boolean {\n          return value.isNaN()\n      }\n\nInspection ID: ConvertNaNEquality"
+        },
+        {
+          "shortName": "FilterIsInstanceResultIsAlwaysEmpty",
+          "displayName": "The result of 'filterIsInstance' call is always empty",
+          "enabled": true,
+          "description": "The inspection detects calls to Kotlin standard library functions `filterIsInstance`/`filterIsInstanceTo`,\nwhose target type is not a subtype of the element type the filtering is called on.\n\nExample:\n\n\n        val list = listOf<Int>(1, 2, 3)\n        val filteredList = list.filterIsInstance<Boolean>() // Empty result\n\nInspection ID: FilterIsInstanceResultIsAlwaysEmpty"
+        },
+        {
+          "shortName": "RunBlockingInSuspendFunction",
+          "displayName": "'runBlocking' inside suspend function",
+          "enabled": true,
+          "description": "Reports `runBlocking` calls inside `suspend` functions.\n\nUsing `runBlocking` within a `suspend` function blocks the calling thread and defeats the purpose of asynchronous programming.\n\nThe quick-fix replaces the `runBlocking` call with one of the following alternatives, depending on the context:\n\n* A `run` call.\n* A `withContext` call when a specific `CoroutineContext` is used.\n* Directly inlined code without the `runBlocking` wrapper.\n\nExample:\n\n\n    suspend fun something() {\n      runBlocking {\n        code() // The thread is blocked here\n      }\n    }\n\nAfter the quick-fix is applied:\n\n\n    suspend fun something() {\n      code() // Runs asynchronously\n    }\n\nInspection ID: RunBlockingInSuspendFunction\n\nNew in 2025.1"
+        },
+        {
+          "shortName": "KDocUnresolvedReference",
+          "displayName": "Unresolved reference in KDoc",
+          "enabled": true,
+          "description": "Reports unresolved references in KDoc comments.\n\n**Example:**\n\n\n      /**\n       * [unresolvedLink]\n       */\n      fun foo() {}\n\nTo fix the problem make the link valid.\n\nInspection ID: KDocUnresolvedReference"
+        },
+        {
+          "shortName": "KotlinConstantConditions",
+          "displayName": "Constant conditions",
+          "enabled": true,
+          "description": "Reports non-trivial conditions and values that are statically known to be always true, false, null or zero. While sometimes intended, often this is a sign of logical error in the program. Additionally, reports never reachable `when` branches and some expressions that are statically known to fail always.\n\nExamples:\n\n\n    fun process(x: Int?) {\n      val isNull = x == null\n      if (!isNull) {\n        if (x != null) {} // condition is always true\n        require(x!! < 0 && x > 10) // condition is always false\n      } else {\n        println(x!!) // !! operator will always fail\n      }\n    }\n    fun process(v: Any) {\n      when(v) {\n        is CharSequence -> println(v as Int) // cast will always fail\n        is String -> println(v) // branch is unreachable\n      }\n    }\n\n\nUncheck the \"Warn when constant is stored in variable\" option to avoid reporting of variables having constant values not in conditions.\n\nInspection ID: KotlinConstantConditions\n\nNew in 2021.3"
+        },
+        {
+          "shortName": "UnusedFlow",
+          "displayName": "Unused flow",
+          "enabled": true,
+          "description": "Reports Kotlinx Coroutines Flows that are created but never consumed or passed to other functions.\n\nThe code defining a Flow does not run unless the Flow is collected by using a terminal operator.\n\n**Example:**\n\n\n    fun foo() {\n        flowOf(1).onEach { println(it) }\n    }\n\nSee [some examples](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/) of terminal operators.\n\nInspection ID: UnusedFlow"
+        },
+        {
+          "shortName": "ForEachParameterNotUsed",
+          "displayName": "Iterated elements are not used in forEach",
+          "enabled": true,
+          "description": "Reports `forEach` loops that do not use iterable values.\n\n**Example:**\n\n\n      listOf(1, 2, 3).forEach { }\n\nThe quick fix introduces anonymous parameter in the `forEach` section:\n\n\n      listOf(1, 2, 3).forEach { _ -> }\n\nInspection ID: ForEachParameterNotUsed"
+        },
+        {
+          "shortName": "AddExplicitTargetToParameterAnnotation",
+          "displayName": "Redundant interpolation prefix",
+          "enabled": true,
+          "description": "Reports value parameter annotation usages without an explicit target for which the default target might be unexpected and undesirable.\n\n\nThe value parameter annotations without an explicit target are applied only to the parameter itself until Kotlin 2.1.20.\nFor annotations applicable to both parameters and fields or properties, this behavior might\nbe unintended when the annotation is used on a `val` or `var` constructor parameter.\n\n\nExample:\n\n\n    class Example(\n        @Param val foo: String,\n        @ParamField val bar: String, // the field is not annotated, only the parameter is\n        @ParamProperty val baz: String, // the property is not annotated, only the parameter is\n        @ParamProperty boo: String,\n    )\n\n    @Target(AnnotationTarget.VALUE_PARAMETER)\n    annotation class Param\n    @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.FIELD)\n    annotation class ParamField\n    @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.PROPERTY)\n    annotation class ParamProperty\n\nAfter the quick-fix is applied:\n\n\n    class Example(\n        @Param val foo: String,\n        @field:ParamField val bar: String,\n        @property:ParamProperty val baz: String,\n        @ParamProperty boo: String,\n    )\n\n    @Target(AnnotationTarget.VALUE_PARAMETER)\n    annotation class Param\n    @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.FIELD)\n    annotation class ParamField\n    @Target(AnnotationTarget.VALUE_PARAMETER, AnnotationTarget.PROPERTY)\n    annotation class ParamProperty\n\nInspection ID: AddExplicitTargetToParameterAnnotation"
+        },
+        {
+          "shortName": "SuspiciousCascadingIf",
+          "displayName": "Suspicious cascading 'if' expression",
+          "enabled": true,
+          "description": "Reports cascading `if` expressions where the last `else` branch is part of a dot-qualified or binary expression.\n\nThis can lead to unexpected behavior because only the innermost `if-else` expression becomes the receiver or left operand of\nthe outer expression, which may not align with the intended logic.\n\n**Example:**\n\n\n    fun printNumberSign(num: Int) {\n        if (num > 0) {\n            \"positive\"\n        } else if (num < 0) {\n            \"negative\"\n        } else {\n            \"zero\"\n        }.let { print(it) }\n    }\n\n    fun main() {\n        printNumberSign(1) // Nothing is printed because the receiver of 'let' is only the inner 'if-else' expression\n    }\n\nAfter applying the first quick-fix (converting to `when`):\n\n\n    fun printNumberSign(num: Int) {\n        when {\n            num > 0 -> {\n                \"positive\"\n            }\n\n            num < 0 -> {\n                \"negative\"\n            }\n\n            else -> {\n                \"zero\"\n            }\n        }.let { print(it) }\n    }\n\n    fun main() {\n        printNumberSign(1) // Prints \"positive\"\n    }\n\nAlternatively, the second quick-fix adds clarifying braces to preserve the original semantics while making the nested `else`\nbranch explicit:\n\n\n    fun printNumberSign(num: Int) {\n        if (num > 0) {\n            \"positive\"\n        } else {\n            if (num < 0) {\n                \"negative\"\n            } else {\n                \"zero\"\n            }.let { print(it) }\n        }\n    }\n\n    fun main() {\n        printNumberSign(1) // Nothing is printed, but the code is clearer\n    }\n\nInspection ID: SuspiciousCascadingIf"
+        },
+        {
+          "shortName": "SelfAssignment",
+          "displayName": "Redundant assignment",
+          "enabled": true,
+          "description": "Reports assignments of a variable to itself.\n\nThe quick-fix removes the redundant assignment.\n\n**Example:**\n\n\n      fun test() {\n          var bar = 1\n          bar = bar\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test() {\n          var bar = 1\n      }\n\nInspection ID: SelfAssignment"
+        },
+        {
+          "shortName": "AssignedValueIsNeverRead",
+          "displayName": "Assigned value is never read",
+          "enabled": true,
+          "description": "Reports assignments where a value is assigned but never used later in the code.\n\n**Example:**\n\n\n      fun foo(): Int = 42\n\n      fun example() {\n          var local = 0\n          print(local)\n          local = 42  // Assigned value is never read\n      }\n\n* After the quick fix, the assignment is deleted:\n\n\n      fun foo(): Int = 42\n\n      fun example() {\n          var local = 0\n          print(local)\n      }\n\n* If the right-hand side (RHS) expression may have side effects, the quick fix will also suggest keeping the RHS expression to preserve those side effects:\n\n\n      fun foo(): Int = 42\n\n      fun example() {\n          var local = 0\n          print(local)\n          foo()  // The function call is kept for its side effects\n      }\n\nInspection ID: AssignedValueIsNeverRead"
+        },
+        {
+          "shortName": "ArrayInDataClass",
+          "displayName": "Array property in data class",
+          "enabled": true,
+          "description": "Reports properties with an `Array` type in a `data` class without overridden `equals()` or `hashCode()`.\n\n\nArray parameters are compared by reference equality, which is likely an unexpected behavior.\nIt is strongly recommended to override `equals()` and `hashCode()` in such cases.\n\n**Example:**\n\n\n      data class Text(val lines: Array<String>)\n\nThe quick-fix generates missing `equals()` and `hashCode()` implementations:\n\n\n      data class Text(val lines: Array<String>) {\n          override fun equals(other: Any?): Boolean {\n              if (this === other) return true\n              if (javaClass != other?.javaClass) return false\n\n              other as Text\n\n              if (!lines.contentEquals(other.lines)) return false\n\n              return true\n          }\n\n          override fun hashCode(): Int {\n              return lines.contentHashCode()\n          }\n      }\n\nInspection ID: ArrayInDataClass"
+        },
+        {
+          "shortName": "SuspiciousCollectionReassignment",
+          "displayName": "Augmented assignment creates a new collection under the hood",
+          "enabled": true,
+          "description": "Reports augmented assignment (`+=`) expressions on a read-only `Collection`.\n\nAugmented assignment (`+=`) expression on a read-only `Collection` temporarily allocates a new collection,\nwhich may hurt performance.\n\n**Change type to mutable** quick-fix can be used to amend the code automatically.\n\nExample:\n\n\n      fun test() {\n          var list = listOf(0)\n          list += 42 // A new list is allocated here, equivalent to list = list + 42\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test() {\n          val list = mutableListOf(0)\n          list += 42\n      }\n\nInspection ID: SuspiciousCollectionReassignment"
+        },
+        {
+          "shortName": "UnusedLambdaExpression",
+          "displayName": "Unused lambda expression",
+          "enabled": true,
+          "description": "Reports lambda expressions that are neither invoked nor assigned.\n\n\nA lambda expression that is neither invoked nor assigned to a variable has no effect on program execution and is likely unintentional.\n\n**Example:**\n\n\n      fun foo() {\n        {} // Warning: Lambda expression is never invoked\n      }\n\nAfter the quick fix is applied:\n\n\n      fun foo() {\n        run {} // Lambda is now invoked via the 'run' function\n      }\n\nInspection ID: UnusedLambdaExpression"
+        },
+        {
+          "shortName": "RecursivePropertyAccessor",
+          "displayName": "Recursive property accessor",
+          "enabled": true,
+          "description": "Reports recursive property accessor calls which can end up with a `StackOverflowError`.\nSuch calls are usually confused with backing field access.\n\n**Example:**\n\n\n      var counter: Int = 0\n          set(value) {\n              counter = if (value < 0) 0 else value\n          }\n\nAfter the quick-fix is applied:\n\n\n      var counter: Int = 0\n          set(value) {\n              field = if (value < 0) 0 else value\n          }\n\nInspection ID: RecursivePropertyAccessor"
+        },
+        {
+          "shortName": "DestructuringWrongName",
+          "displayName": "Variable in destructuring declaration uses name of a wrong data class property",
+          "enabled": true,
+          "description": "Reports entries of destructuring declarations that match the name of a different property of the destructured data class.\n\n**Example:**\n\n\n      data class Foo(val a: String, val b: Int, val c: String)\n\n      fun bar(f: Foo) {\n          val (a, c) = f\n      }\n\nThe quick-fix changes variable's name to match the name of the corresponding class field:\n\n\n      data class Foo(val a: String, val b: Int, val c: String)\n\n      fun bar(f: Foo) {\n          val (a, b) = f\n      }\n\nInspection ID: DestructuringWrongName"
+        },
+        {
+          "shortName": "SuspiciousEqualsCombination",
+          "displayName": "Suspicious combination of == and ===",
+          "enabled": true,
+          "description": "Reports `==` and `===` comparisons that are both used on the same variable within a single expression.\n\nDue to similarities `==` and `===` could be mixed without notice, and\nit takes a close look to check that `==` used instead of `===`\n\nExample:\n\n\n      if (type === FIELD || type == METHOD || type == ANNOTATION_METHOD || // Note that \"==\" is used incorrectly\n          type === LAMBDA_EXPRESSION) return\n\nInspection ID: SuspiciousEqualsCombination"
+        },
+        {
+          "shortName": "SelfReferenceConstructorParameter",
+          "displayName": "Constructor can never be complete",
+          "enabled": true,
+          "description": "Reports constructors with a non-null self-reference parameter.\n\nSuch constructors never instantiate a class.\n\nThe quick-fix converts the parameter type to nullable.\n\n**Example:**\n\n\n      class SelfRef(val ref: SelfRef)\n\nAfter the quick-fix is applied:\n\n\n      class SelfRef(val ref: SelfRef?)\n\nInspection ID: SelfReferenceConstructorParameter"
+        },
+        {
+          "shortName": "JavaIoSerializableObjectMustHaveReadResolve",
+          "displayName": "Serializable object must implement 'readResolve'",
+          "enabled": false,
+          "description": "Reports `object`s (`data object` including) that implement `java.io.Serializable` but don't implement\n[readResolve](https://docs.oracle.com/en/java/javase/11/docs/specs/serialization/input.html#the-readresolve-method)\n\n**Example:**\n\n\n      import java.io.Serializable\n\n      object Foo : Serializable\n\nThe quick fix implements `readResolve` method:\n\n\n      import java.io.Serializable\n\n      object Foo : Serializable {\n          private fun readResolve() = Foo\n      }\n\nInspection ID: JavaIoSerializableObjectMustHaveReadResolve"
+        },
+        {
+          "shortName": "MainFunctionReturnUnit",
+          "displayName": "Main function should return 'Unit'",
+          "enabled": true,
+          "description": "Reports when a main function does not have a return type of `Unit`.\n\n**Example:**\n`fun main() = \"Hello world!\"`\n\nInspection ID: MainFunctionReturnUnit"
+        },
+        {
+          "shortName": "UselessCallOnNotNull",
+          "displayName": "Useless call on not-null type",
+          "enabled": true,
+          "description": "Reports calls on not-null receiver that make sense only for nullable receiver.\n\nSeveral functions from the standard library such as `orEmpty()` or `isNullOrEmpty`\nhave sense only when they are called on receivers of nullable types. Otherwise, they can be omitted or simplified as the result will be the same.\n\n**Remove redundant call** and **Change call to ...** quick-fixes can be used to amend the code automatically.\n\nExamples:\n\n\n      fun test(s: String) {\n          val x = s.orEmpty() // quick-fix simplifies to 's'\n          val y = s.isNullOrEmpty() // quick-fix simplifies to 's.isEmpty()'\n      }\n\nInspection ID: UselessCallOnNotNull"
+        },
+        {
+          "shortName": "UnusedLambdaExpressionBody",
+          "displayName": "Unused return value of a function with lambda expression body",
+          "enabled": true,
+          "description": "Reports calls with an unused return value when the called function returns a lambda from an expression body.\n\n\nIf there is `=` between function header and body block,\ncode from the function will not be evaluated which can lead to incorrect behavior.\n\n**Remove = token from function declaration** can be used to amend the code automatically.\n\nExample:\n\n\n      fun printHello() = { println(\"Hello\") }\n\n      fun main() {\n          printHello() // This function doesn't print anything\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun printHello() { println(\"Hello\") }\n\n      fun main() {\n          printHello()\n      }\n\nInspection ID: UnusedLambdaExpressionBody"
+        },
+        {
+          "shortName": "EqualsOrHashCode",
+          "displayName": "'equals()' and 'hashCode()' not paired",
+          "enabled": true,
+          "description": "Reports classes that override `equals()` but do not override `hashCode()`, or vice versa. It also reports object declarations that override either `equals()` or `hashCode()`.\n\nThis can lead to undesired behavior when a class is added to a `Collection`\n\n**Example:**\n\n\n      class C1 {\n          override fun equals(other: Any?) = true\n      }\n\n      class C2 {\n          override fun hashCode() = 0\n      }\n\n      object O1 {\n          override fun equals(other: Any?) = true\n      }\n\n      object O2 {\n          override fun hashCode() = 0\n      }\n\nThe quick-fix overrides `equals()` or `hashCode()` for classes and deletes these methods for objects:\n\n\n       class C1 {\n           override fun equals(other: Any?) = true\n           override fun hashCode(): Int {\n               return javaClass.hashCode()\n           }\n       }\n\n       class C2 {\n           override fun hashCode() = 0\n           override fun equals(other: Any?): Boolean {\n               if (this === other) return true\n               if (javaClass != other?.javaClass) return false\n               return true\n           }\n       }\n\n       object O1 {\n       }\n\n       object O2 {\n       }\n\nInspection ID: EqualsOrHashCode"
         }
       ]
     },
@@ -8836,16 +8836,16 @@
           "description": "Reports anonymous capturing groups and numeric back references in a RegExp. These are only reported when the RegExp dialect supports named group and named group references. Named groups and named back references improve code readability and are recommended to use instead. When a capture is not needed, matching can be more performant and use less memory by using a non-capturing group, i.e. `(?:xxx)` instead of `(xxx)`.\n\n**Example:**\n\n\n      (\\d\\d\\d\\d)\\1\n\nA better regex pattern could look like this:\n\n\n      (?<quad>\\d\\d\\d\\d)\\k<quad>\n\nNew in 2017.2\n\nInspection ID: RegExpAnonymousGroup"
         },
         {
-          "shortName": "RegExpDuplicateAlternationBranch",
-          "displayName": "Duplicate branch in alternation",
-          "enabled": true,
-          "description": "Reports duplicate branches in a RegExp alternation. Duplicate branches slow down matching and obscure the intent of the expression.\n\n**Example:**\n\n\n      (alpha|bravo|charlie|alpha)\n\nAfter the quick-fix is applied:\n\n\n      (alpha|bravo|charlie)\n\nNew in 2017.1\n\nInspection ID: RegExpDuplicateAlternationBranch"
-        },
-        {
           "shortName": "RegExpRepeatedSpace",
           "displayName": "Consecutive spaces",
           "enabled": true,
           "description": "Reports multiple consecutive spaces in a RegExp. Because spaces are not visible by default, it can be hard to see how many spaces are required. The RegExp can be made more clear by replacing the consecutive spaces with a single space and a counted quantifier.\n\n**Example:**\n\n\n      (     )\n\nAfter the quick-fix is applied:\n\n\n      ( {5})\n\n\nNew in 2017.1\n\nInspection ID: RegExpRepeatedSpace"
+        },
+        {
+          "shortName": "RegExpDuplicateAlternationBranch",
+          "displayName": "Duplicate branch in alternation",
+          "enabled": true,
+          "description": "Reports duplicate branches in a RegExp alternation. Duplicate branches slow down matching and obscure the intent of the expression.\n\n**Example:**\n\n\n      (alpha|bravo|charlie|alpha)\n\nAfter the quick-fix is applied:\n\n\n      (alpha|bravo|charlie)\n\nNew in 2017.1\n\nInspection ID: RegExpDuplicateAlternationBranch"
         }
       ]
     },
@@ -9330,16 +9330,16 @@
           "description": "Reports call arguments with `Boolean` type without explicit parameter names specified.\n\n\nWhen multiple boolean literals are passed sequentially, it's easy to forget parameter ordering that could lead to mistakes.\nExplicit parameter names allow for easier code reading and understanding.\n\n**Example:**\n\n\n      fun check(checkName: Boolean, checkAddress: Boolean, checkPhone: Boolean) {}\n\n      fun usage() {\n          check(true, false, true) // What does this mean?\n      }\n\nThe quick-fix adds missing parameter names:\n\n\n      fun check(checkName: Boolean, checkAddress: Boolean, checkPhone: Boolean) {}\n\n      fun usage() {\n          check(checkName = true, checkAddress = false, checkPhone = true)\n      }\n\nInspection ID: BooleanLiteralArgument"
         },
         {
-          "shortName": "ReplaceSizeZeroCheckWithIsEmpty",
-          "displayName": "Size zero check can be replaced with 'isEmpty()'",
-          "enabled": false,
-          "description": "Reports `size == 0` checks on `Collections/Array/String` that should be replaced with `isEmpty()`.\n\nUsing `isEmpty()` makes your code simpler.\n\nThe quick-fix replaces the size check with `isEmpty()`.\n\n**Example:**\n\n\n      fun foo() {\n          val arrayOf = arrayOf(1, 2, 3)\n          arrayOf.size == 0\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun foo() {\n          val arrayOf = arrayOf(1, 2, 3)\n          arrayOf.isEmpty()\n      }\n\nInspection ID: ReplaceSizeZeroCheckWithIsEmpty"
-        },
-        {
           "shortName": "ReplaceGuardClauseWithFunctionCall",
           "displayName": "Guard clause can be replaced with Kotlin's function call",
           "enabled": false,
           "description": "Reports guard clauses that can be replaced with a function call.\n\n**Example:**\n\n      fun test(foo: Int?) {\n          if (foo == null) throw IllegalArgumentException(\"foo\") // replaceable clause\n      }\n\nAfter the quick-fix is applied:\n\n      fun test(foo: Int?) {\n          checkNotNull(foo)\n      }\n\nInspection ID: ReplaceGuardClauseWithFunctionCall"
+        },
+        {
+          "shortName": "ReplaceSizeZeroCheckWithIsEmpty",
+          "displayName": "Size zero check can be replaced with 'isEmpty()'",
+          "enabled": false,
+          "description": "Reports `size == 0` checks on `Collections/Array/String` that should be replaced with `isEmpty()`.\n\nUsing `isEmpty()` makes your code simpler.\n\nThe quick-fix replaces the size check with `isEmpty()`.\n\n**Example:**\n\n\n      fun foo() {\n          val arrayOf = arrayOf(1, 2, 3)\n          arrayOf.size == 0\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun foo() {\n          val arrayOf = arrayOf(1, 2, 3)\n          arrayOf.isEmpty()\n      }\n\nInspection ID: ReplaceSizeZeroCheckWithIsEmpty"
         },
         {
           "shortName": "ProtectedInFinal",
