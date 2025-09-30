@@ -9,19 +9,7 @@
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-core",
-      "languageLevel": 8
-    },
-    {
-      "name": "kotlin-asyncapi-ktor",
-      "languageLevel": 8
-    },
-    {
-      "name": "kotlin-asyncapi-parent",
-      "languageLevel": 5
-    },
-    {
-      "name": "kotlin-asyncapi-maven-plugin",
+      "name": "kotlin-asyncapi-annotation",
       "languageLevel": 8
     },
     {
@@ -29,11 +17,7 @@
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-examples",
-      "languageLevel": 5
-    },
-    {
-      "name": "kotlin-asyncapi-spring-boot-example",
+      "name": "kotlin-asyncapi-ktor",
       "languageLevel": 8
     },
     {
@@ -41,12 +25,28 @@
       "languageLevel": 8
     },
     {
+      "name": "kotlin-asyncapi-spring-boot-example",
+      "languageLevel": 8
+    },
+    {
+      "name": "kotlin-asyncapi-maven-plugin",
+      "languageLevel": 8
+    },
+    {
+      "name": "kotlin-asyncapi-core",
+      "languageLevel": 8
+    },
+    {
       "name": "kotlin-asyncapi-spring-web",
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-annotation",
-      "languageLevel": 8
+      "name": "kotlin-asyncapi-parent",
+      "languageLevel": 5
+    },
+    {
+      "name": "kotlin-asyncapi-examples",
+      "languageLevel": 5
     },
     {
       "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
