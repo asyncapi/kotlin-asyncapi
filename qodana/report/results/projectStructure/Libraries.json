@@ -1,7 +1,7 @@
 {
   "libraries": [
     {
-      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
@@ -1494,6 +1494,20 @@
       "properties": {}
     },
     {
+      "name": "Maven: ch.qos.logback:logback-classic:1.5.19",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.5.19/logback-classic-1.5.19.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: ch.qos.logback:logback-core:1.5.19",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.5.19/logback-core-1.5.19.jar!/"
+      ],
+      "properties": {}
+    },
+    {
       "name": "Maven: net.bytebuddy:byte-buddy:1.10.9",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.10.9/byte-buddy-1.10.9.jar!/"
@@ -1508,7 +1522,7 @@
       "properties": {}
     },
     {
-      "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
