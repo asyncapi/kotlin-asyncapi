@@ -19,115 +19,72 @@
         "kotlin"
       ],
       "severity": "High",
-      "comment": "Class \"RoomsChannel\" is never used",
+      "comment": "Class \"AsyncApiConfiguration\" is never used",
       "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-ktor-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/ktor/RoomChannel.kt",
+          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/spring/AsyncApiConfiguration.kt",
           "language": "kotlin",
-          "line": 21,
-          "offset": 7,
-          "length": 12,
-          "code": {
-            "startLine": 19,
-            "length": 12,
-            "offset": 14,
-            "surroundingCode": "    ]\n)\nclass RoomsChannel {\n\n    @Subscribe("
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-ktor-example",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "1d91be46c75a7ba63c16d3a8054a37dc40e167a48a5a7d7e0d2bdbc1370159b3",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"publish\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-ktor-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/ktor/RoomChannel.kt",
-          "language": "kotlin",
-          "line": 36,
-          "offset": 9,
-          "length": 7,
-          "code": {
-            "startLine": 34,
-            "length": 7,
-            "offset": 24,
-            "surroundingCode": "        ]\n    )\n    fun publish(message: String): Nothing = TODO()\n}\n"
-          }
-        }
-      ],
-      "attributes": {
-        "module": "kotlin-asyncapi-ktor-example",
-        "inspectionName": "UnusedSymbol"
-      },
-      "hash": "562435ffa2e51331799ee7b8f003fc27becaaefb2ddb73d945afb8573e0cc5ac",
-      "problemType": "REGULAR"
-    },
-    {
-      "tool": "Code Inspection",
-      "category": "Redundant constructs",
-      "categoryPath": [
-        {
-          "id": "Kotlin",
-          "name": "Kotlin"
-        },
-        {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
-        }
-      ],
-      "type": "Unused symbol",
-      "tags": [
-        "kotlin"
-      ],
-      "severity": "High",
-      "comment": "Function \"schemaRef\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
-      "sources": [
-        {
-          "type": "file",
-          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/Parameter.kt",
-          "language": "kotlin",
-          "line": 28,
+          "line": 8,
           "offset": 16,
-          "length": 9,
+          "length": 21,
           "code": {
-            "startLine": 26,
-            "length": 9,
-            "offset": 67,
-            "surroundingCode": "        Schema().apply(build).also { schema = it }\n\n    inline fun schemaRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { schema = it }\n"
+            "startLine": 6,
+            "length": 21,
+            "offset": 31,
+            "surroundingCode": "\n@Configuration\ninternal class AsyncApiConfiguration {\n\n    @Bean"
           }
         }
       ],
       "attributes": {
-        "module": "kotlin-asyncapi-core",
+        "module": "kotlin-asyncapi-spring-boot-example",
         "inspectionName": "UnusedSymbol"
       },
-      "hash": "c89ad462d8aef871d607526c16dbe2aa1ef5506c69d6c5e22a026a60d7918a75",
+      "hash": "b40991372bbd3a3dae0c93191d1ad0598186b48a994d50febbad60e6a84a1831",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"asyncApiExtension\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/spring/AsyncApiConfiguration.kt",
+          "language": "kotlin",
+          "line": 11,
+          "offset": 9,
+          "length": 17,
+          "code": {
+            "startLine": 9,
+            "length": 17,
+            "offset": 19,
+            "surroundingCode": "\n    @Bean\n    fun asyncApiExtension() = AsyncApiExtension.builder {\n        defaultContentType(\"application/json\")\n        servers {"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-spring-boot-example",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "eedab588ce6ba560c7afa0bcef90f5bd87977c5831ac28bb544268ba20dc2c61",
       "problemType": "REGULAR"
     }
   ]
