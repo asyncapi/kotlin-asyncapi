@@ -3,45 +3,45 @@
   "listProblem": [
     {
       "tool": "Code Inspection",
-      "category": "Redundant constructs",
+      "category": "Style issues",
       "categoryPath": [
         {
           "id": "Kotlin",
           "name": "Kotlin"
         },
         {
-          "id": "Kotlin/Redundant constructs",
-          "name": "Redundant constructs"
+          "id": "Kotlin/Style issues",
+          "name": "Style issues"
         }
       ],
-      "type": "Unused symbol",
+      "type": "Nested lambda has shadowed implicit parameter",
       "tags": [
         "kotlin"
       ],
-      "severity": "High",
-      "comment": "Class \"AsyncApiConfiguration\" is never used",
-      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "severity": "Moderate",
+      "comment": "Implicit parameter 'it' of enclosing lambda is shadowed",
+      "detailsInfo": "Reports nested lambdas with shadowed implicit parameters.\n\n**Example:**\n\n\n    fun foo(listOfLists: List<List<String>>) {\n      listOfLists.forEach {\n        it.forEach {\n          println(it)\n        }\n      }\n    }\n\nAfter the quick-fix is applied:\n\n\n    fun foo(listOfLists: List<List<String>>) {\n      listOfLists.forEach {\n        it.forEach { it1 ->\n          println(it1)\n        }\n      }\n    }\n\nInspection ID: NestedLambdaShadowedImplicitParameter",
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/spring/AsyncApiConfiguration.kt",
+          "path": "kotlin-asyncapi-spring-web/src/main/kotlin/com/asyncapi/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
           "language": "kotlin",
-          "line": 8,
-          "offset": 16,
-          "length": 21,
+          "line": 147,
+          "offset": 64,
+          "length": 2,
           "code": {
-            "startLine": 6,
-            "length": 21,
-            "offset": 31,
-            "surroundingCode": "\n@Configuration\ninternal class AsyncApiConfiguration {\n\n    @Bean"
+            "startLine": 145,
+            "length": 2,
+            "offset": 195,
+            "surroundingCode": "        context.getResource(asyncApiProperties.script.sourcePath).takeIf { it.exists() }?.let {\n            AsyncApiExtension.from(\n                script = it.inputStream.bufferedReader().use { it.readText() }.toScriptSource()\n            )\n        }"
           }
         }
       ],
       "attributes": {
-        "module": "kotlin-asyncapi-spring-boot-example",
-        "inspectionName": "UnusedSymbol"
+        "module": "kotlin-asyncapi-spring-web",
+        "inspectionName": "NestedLambdaShadowedImplicitParameter"
       },
-      "hash": "b40991372bbd3a3dae0c93191d1ad0598186b48a994d50febbad60e6a84a1831",
+      "hash": "b1419ff3e20a3e0dc6d78b81d2e78bed96e04faddc890a42625e89cbbfb88ac7",
       "problemType": "REGULAR"
     },
     {
@@ -62,21 +62,21 @@
         "kotlin"
       ],
       "severity": "High",
-      "comment": "Function \"asyncApiExtension\" is never used",
+      "comment": "Function \"publish\" is never used",
       "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
       "sources": [
         {
           "type": "file",
-          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/spring/AsyncApiConfiguration.kt",
+          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/spring/RoomChannel.kt",
           "language": "kotlin",
-          "line": 11,
+          "line": 38,
           "offset": 9,
-          "length": 17,
+          "length": 7,
           "code": {
-            "startLine": 9,
-            "length": 17,
-            "offset": 19,
-            "surroundingCode": "\n    @Bean\n    fun asyncApiExtension() = AsyncApiExtension.builder {\n        defaultContentType(\"application/json\")\n        servers {"
+            "startLine": 36,
+            "length": 7,
+            "offset": 24,
+            "surroundingCode": "        ]\n    )\n    fun publish(message: String): Nothing = TODO()\n}\n"
           }
         }
       ],
@@ -84,7 +84,179 @@
         "module": "kotlin-asyncapi-spring-boot-example",
         "inspectionName": "UnusedSymbol"
       },
-      "hash": "eedab588ce6ba560c7afa0bcef90f5bd87977c5831ac28bb544268ba20dc2c61",
+      "hash": "6a53cb5d46d2d4cb341507499d608af40fce5b5ea8de505dbb8566ec8b2b10cc",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"bindingsRef\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationTrait.kt",
+          "language": "kotlin",
+          "line": 53,
+          "offset": 16,
+          "length": 11,
+          "code": {
+            "startLine": 51,
+            "length": 11,
+            "offset": 80,
+            "surroundingCode": "        OperationBindings().apply(build).also { bindings = it }\n\n    inline fun bindingsRef(build: Reference.() -> Unit): Reference =\n        Reference().apply(build).also { bindings = it }\n}"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "aa235b086000f37839dc3cf304ae415df9824eae49c819d6bd8b2b93f0367cf1",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"trait\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationTrait.kt",
+          "language": "kotlin",
+          "line": 19,
+          "offset": 16,
+          "length": 5,
+          "code": {
+            "startLine": 17,
+            "length": 5,
+            "offset": 104,
+            "surroundingCode": "@AsyncApiComponent\nclass ReferencableOperationTraitsMap : LinkedHashMap<String, Any>() {\n    inline fun trait(key: String, build: OperationTrait.() -> Unit): OperationTrait =\n        OperationTrait().apply(build).also { put(key, it) }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "b8a406e59af90d8b667246659a104ce2d9dc6b97dff1e4711a5e9b856e6a088e",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Class \"RoomsChannel\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/spring/RoomChannel.kt",
+          "language": "kotlin",
+          "line": 23,
+          "offset": 7,
+          "length": 12,
+          "code": {
+            "startLine": 21,
+            "length": 12,
+            "offset": 14,
+            "surroundingCode": "    ]\n)\nclass RoomsChannel {\n\n    @Subscribe("
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-spring-boot-example",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "bd37ee96993b095be62286e08d6a0757ae0ab68cb65d1d5a6ced33508a4ea372",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Redundant constructs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Redundant constructs",
+          "name": "Redundant constructs"
+        }
+      ],
+      "type": "Unused symbol",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Function \"trait\" is never used",
+      "detailsInfo": "Reports symbols that are not used or not reachable from entry points.\n\nInspection ID: UnusedSymbol",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-core/src/main/kotlin/com/asyncapi/kotlinasyncapi/model/channel/OperationTrait.kt",
+          "language": "kotlin",
+          "line": 10,
+          "offset": 16,
+          "length": 5,
+          "code": {
+            "startLine": 8,
+            "length": 5,
+            "offset": 93,
+            "surroundingCode": "@AsyncApiComponent\nclass ReferencableOperationTraitsList : ArrayList<Any>() {\n    inline fun trait(build: OperationTrait.() -> Unit): OperationTrait =\n        OperationTrait().apply(build).also { add(it) }\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-core",
+        "inspectionName": "UnusedSymbol"
+      },
+      "hash": "f9e2a2b63feda1ad4987d7aa8df8ba32a91a43acecf32f2d6a808448ac3b8e87",
       "problemType": "REGULAR"
     }
   ]
