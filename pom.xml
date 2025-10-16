@@ -58,7 +58,7 @@
         <kotlin.version>2.2.20</kotlin.version>
         <jackson.version>2.20.0</jackson.version>
         <swagger.version>2.2.39</swagger.version>
-        <classgraph.version>4.8.181</classgraph.version>
+        <classgraph.version>4.8.184</classgraph.version>
         <mockk.version>1.14.6</mockk.version>
         <jsonassert.version>1.5.3</jsonassert.version>
         <junit-jupiter.version>6.0.0</junit-jupiter.version>
