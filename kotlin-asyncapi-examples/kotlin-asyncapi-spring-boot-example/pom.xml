@@ -106,7 +106,7 @@
 			<plugin>
 				<groupId>org.openfolder</groupId>
 				<artifactId>kotlin-asyncapi-maven-plugin</artifactId>
-				<version>${version}</version>
+				<version>${kotlin-asyncapi-maven-plugin.version}</version>
 				<executions>
 					<execution>
 						<goals>
