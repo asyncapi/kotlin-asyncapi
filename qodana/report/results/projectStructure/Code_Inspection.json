@@ -1,7 +1,7 @@
 {
   "modules": [
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
@@ -9,7 +9,7 @@
           "type": "SDK"
         },
         {
-          "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
+          "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
           "type": "Library"
         }
       ]
@@ -1121,36 +1121,36 @@
       ]
     },
     {
-      "name": "kotlin-asyncapi-script",
+      "name": "kotlin-asyncapi-spring-boot-example",
       "contentEntries": [
         {
-          "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script",
+          "path": "file://$PROJECT_DIR$/kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example",
           "excludePatterns": [],
           "excludeFolders": [
             {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/target",
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/target",
               "type": "Exclude",
               "packagePrefix": ""
             }
           ],
           "sourceFolders": [
             {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/src/main/kotlin",
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/main/kotlin",
               "type": "Source",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/src/main/resources",
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/main/resources",
               "type": "Resource",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/src/test/kotlin",
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/test/kotlin",
               "type": "TestSource",
               "packagePrefix": ""
             },
             {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/src/test/resources",
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/test/resources",
               "type": "TestResource",
               "packagePrefix": ""
             }
@@ -1165,25 +1165,201 @@
         {
           "name": "<Module source>",
           "type": "Own sources"
+        },
+        {
+          "name": "kotlin-asyncapi-spring-web",
+          "type": "Module"
+        },
+        {
+          "name": "kotlin-asyncapi-context",
+          "type": "Module"
         },
         {
           "name": "kotlin-asyncapi-core",
           "type": "Module"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:2.2.20",
+          "name": "kotlin-asyncapi-script",
+          "type": "Module"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.9.25",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:2.2.20",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.25",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:2.2.20",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.9.25",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:2.2.20",
+          "name": "kotlin-asyncapi-annotation",
+          "type": "Module"
+        },
+        {
+          "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.39",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.apache.commons:commons-lang3:3.17.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.39",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.39",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: jakarta.validation:jakarta.validation-api:3.0.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.19.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.github.classgraph:classgraph:4.8.184",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework.boot:spring-boot-starter-web:3.5.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework.boot:spring-boot-starter:3.5.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework.boot:spring-boot:3.5.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.5.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework.boot:spring-boot-starter-logging:3.5.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: ch.qos.logback:logback-classic:1.5.18",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: ch.qos.logback:logback-core:1.5.18",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.apache.logging.log4j:log4j-to-slf4j:2.24.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.apache.logging.log4j:log4j-api:2.24.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.slf4j:jul-to-slf4j:2.0.17",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: jakarta.annotation:jakarta.annotation-api:2.1.1",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.yaml:snakeyaml:2.4",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework.boot:spring-boot-starter-json:3.5.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.19.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.19.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.19.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:3.5.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.46",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:10.1.46",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.46",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-web:6.2.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-beans:6.2.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.micrometer:micrometer-observation:1.15.4",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.micrometer:micrometer-commons:1.15.4",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-webmvc:6.2.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-aop:6.2.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-context:6.2.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-expression:6.2.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:1.9.25",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.9.25",
           "type": "Library"
         },
         {
@@ -1191,11 +1367,115 @@
           "type": "Library"
         },
         {
+          "name": "Maven: org.springframework.boot:spring-boot-starter-test:3.5.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework.boot:spring-boot-test:3.5.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:3.5.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.jayway.jsonpath:json-path:2.9.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.slf4j:slf4j-api:2.0.17",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: jakarta.xml.bind:jakarta.xml.bind-api:4.0.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: jakarta.activation:jakarta.activation-api:2.1.4",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: net.minidev:json-smart:2.5.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: net.minidev:accessors-smart:2.5.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.ow2.asm:asm:9.7.1",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.assertj:assertj-core:3.27.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: net.bytebuddy:byte-buddy:1.17.7",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.awaitility:awaitility:4.2.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.hamcrest:hamcrest:3.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.mockito:mockito-core:5.17.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.7",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.objenesis:objenesis:3.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.mockito:mockito-junit-jupiter:5.17.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.skyscreamer:jsonassert:1.5.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-core:6.2.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-jcl:6.2.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.springframework:spring-test:6.2.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.xmlunit:xmlunit-core:2.10.4",
+          "type": "Library"
+        },
+        {
           "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:2.2.20",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test:2.2.20",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.9.25",
           "type": "Library"
         },
         {
@@ -1207,7 +1487,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.12.2",
           "type": "Library"
         },
         {
@@ -1219,11 +1499,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.12.2",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.platform:junit-platform-launcher:1.10.1",
+          "name": "Maven: org.junit.platform:junit-platform-launcher:1.12.2",
           "type": "Library"
         },
         {
@@ -1239,18 +1519,6 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.objenesis:objenesis:3.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.15.11",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
-          "type": "Library"
-        },
-        {
           "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.6",
           "type": "Library"
         },
@@ -1263,179 +1531,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.hamcrest:hamcrest-core:1.3",
+          "name": "Maven: org.hamcrest:hamcrest-core:3.0",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
-          "type": "Library"
-        }
-      ]
-    },
-    {
-      "name": "kotlin-asyncapi-annotation",
-      "contentEntries": [
-        {
-          "path": "file://$PROJECT_DIR$/kotlin-asyncapi-annotation",
-          "excludePatterns": [],
-          "excludeFolders": [
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-annotation/target",
-              "type": "Exclude",
-              "packagePrefix": ""
-            }
-          ],
-          "sourceFolders": [
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-annotation/src/main/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-annotation/src/main/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-annotation/src/test/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-annotation/src/test/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            }
-          ]
-        }
-      ],
-      "orderEntries": [
-        {
-          "name": "corretto-24",
-          "type": "SDK"
-        },
-        {
-          "name": "<Module source>",
-          "type": "Own sources"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:2.2.20",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains:annotations:13.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:2.2.20",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test:2.2.20",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.opentest4j:opentest4j:1.3.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.apiguardian:apiguardian-api:1.1.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.platform:junit-platform-launcher:1.10.1",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.objenesis:objenesis:3.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.15.11",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: junit:junit:4.13.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.hamcrest:hamcrest-core:1.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.1",
           "type": "Library"
         }
       ]
@@ -1909,430 +2013,6 @@
       ]
     },
     {
-      "name": "kotlin-asyncapi-spring-boot-example",
-      "contentEntries": [
-        {
-          "path": "file://$PROJECT_DIR$/kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example",
-          "excludePatterns": [],
-          "excludeFolders": [
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/target",
-              "type": "Exclude",
-              "packagePrefix": ""
-            }
-          ],
-          "sourceFolders": [
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/main/kotlin",
-              "type": "Source",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/main/resources",
-              "type": "Resource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/test/kotlin",
-              "type": "TestSource",
-              "packagePrefix": ""
-            },
-            {
-              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-examples/kotlin-asyncapi-spring-boot-example/src/test/resources",
-              "type": "TestResource",
-              "packagePrefix": ""
-            }
-          ]
-        }
-      ],
-      "orderEntries": [
-        {
-          "name": "corretto-24",
-          "type": "SDK"
-        },
-        {
-          "name": "<Module source>",
-          "type": "Own sources"
-        },
-        {
-          "name": "kotlin-asyncapi-spring-web",
-          "type": "Module"
-        },
-        {
-          "name": "kotlin-asyncapi-context",
-          "type": "Module"
-        },
-        {
-          "name": "kotlin-asyncapi-core",
-          "type": "Module"
-        },
-        {
-          "name": "kotlin-asyncapi-script",
-          "type": "Module"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:1.9.25",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:1.9.25",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:1.9.25",
-          "type": "Library"
-        },
-        {
-          "name": "kotlin-asyncapi-annotation",
-          "type": "Module"
-        },
-        {
-          "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.39",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.apache.commons:commons-lang3:3.17.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.39",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.39",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: jakarta.validation:jakarta.validation-api:3.0.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.19.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.github.classgraph:classgraph:4.8.184",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-web:3.5.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-starter:3.5.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot:3.5.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:3.5.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-logging:3.5.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: ch.qos.logback:logback-classic:1.5.18",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: ch.qos.logback:logback-core:1.5.18",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.apache.logging.log4j:log4j-to-slf4j:2.24.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.apache.logging.log4j:log4j-api:2.24.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.slf4j:jul-to-slf4j:2.0.17",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: jakarta.annotation:jakarta.annotation-api:2.1.1",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.yaml:snakeyaml:2.4",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-json:3.5.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.19.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.19.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.19.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:3.5.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.46",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:10.1.46",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.46",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-web:6.2.11",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-beans:6.2.11",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.micrometer:micrometer-observation:1.15.4",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.micrometer:micrometer-commons:1.15.4",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-webmvc:6.2.11",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-aop:6.2.11",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-context:6.2.11",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-expression:6.2.11",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.19.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.19.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:1.9.25",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:1.9.25",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains:annotations:13.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-starter-test:3.5.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-test:3.5.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:3.5.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.jayway.jsonpath:json-path:2.9.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.slf4j:slf4j-api:2.0.17",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: jakarta.xml.bind:jakarta.xml.bind-api:4.0.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: jakarta.activation:jakarta.activation-api:2.1.4",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: net.minidev:json-smart:2.5.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: net.minidev:accessors-smart:2.5.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.ow2.asm:asm:9.7.1",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.assertj:assertj-core:3.27.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: net.bytebuddy:byte-buddy:1.17.7",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.awaitility:awaitility:4.2.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.hamcrest:hamcrest:3.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.mockito:mockito-core:5.17.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.7",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.objenesis:objenesis:3.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.mockito:mockito-junit-jupiter:5.17.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.skyscreamer:jsonassert:1.5.3",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-core:6.2.11",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-jcl:6.2.11",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.springframework:spring-test:6.2.11",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.xmlunit:xmlunit-core:2.10.4",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:2.2.20",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.9.25",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.opentest4j:opentest4j:1.3.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.platform:junit-platform-commons:1.12.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.apiguardian:apiguardian-api:1.1.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.platform:junit-platform-engine:1.12.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.junit.platform:junit-platform-launcher:1.12.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-jvm:1.14.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: io.mockk:mockk-core-jvm:1.14.6",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: junit:junit:4.13.2",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.hamcrest:hamcrest-core:3.0",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1",
-          "type": "Library"
-        },
-        {
-          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.1",
-          "type": "Library"
-        }
-      ]
-    },
-    {
       "name": "kotlin-asyncapi-spring-web",
       "contentEntries": [
         {
@@ -2749,6 +2429,326 @@
       ]
     },
     {
+      "name": "kotlin-asyncapi-annotation",
+      "contentEntries": [
+        {
+          "path": "file://$PROJECT_DIR$/kotlin-asyncapi-annotation",
+          "excludePatterns": [],
+          "excludeFolders": [
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-annotation/target",
+              "type": "Exclude",
+              "packagePrefix": ""
+            }
+          ],
+          "sourceFolders": [
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-annotation/src/main/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-annotation/src/main/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-annotation/src/test/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-annotation/src/test/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            }
+          ]
+        }
+      ],
+      "orderEntries": [
+        {
+          "name": "corretto-24",
+          "type": "SDK"
+        },
+        {
+          "name": "<Module source>",
+          "type": "Own sources"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:2.2.20",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains:annotations:13.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:2.2.20",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test:2.2.20",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.opentest4j:opentest4j:1.3.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.apiguardian:apiguardian-api:1.1.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.platform:junit-platform-launcher:1.10.1",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-jvm:1.14.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.objenesis:objenesis:3.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: net.bytebuddy:byte-buddy:1.15.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: junit:junit:4.13.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.hamcrest:hamcrest-core:1.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
+          "type": "Library"
+        }
+      ]
+    },
+    {
+      "name": "kotlin-asyncapi-script",
+      "contentEntries": [
+        {
+          "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script",
+          "excludePatterns": [],
+          "excludeFolders": [
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/target",
+              "type": "Exclude",
+              "packagePrefix": ""
+            }
+          ],
+          "sourceFolders": [
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/src/main/kotlin",
+              "type": "Source",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/src/main/resources",
+              "type": "Resource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/src/test/kotlin",
+              "type": "TestSource",
+              "packagePrefix": ""
+            },
+            {
+              "path": "file://$PROJECT_DIR$/kotlin-asyncapi-script/src/test/resources",
+              "type": "TestResource",
+              "packagePrefix": ""
+            }
+          ]
+        }
+      ],
+      "orderEntries": [
+        {
+          "name": "corretto-24",
+          "type": "SDK"
+        },
+        {
+          "name": "<Module source>",
+          "type": "Own sources"
+        },
+        {
+          "name": "kotlin-asyncapi-core",
+          "type": "Module"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:2.2.20",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:2.2.20",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:2.2.20",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:2.2.20",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains:annotations:13.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:2.2.20",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-test:2.2.20",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter-api:5.11.4",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.opentest4j:opentest4j:1.3.0",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.platform:junit-platform-commons:1.11.4",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.apiguardian:apiguardian-api:1.1.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter-engine:5.11.4",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.platform:junit-platform-engine:1.11.4",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.platform:junit-platform-launcher:1.10.1",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-jvm:1.14.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-agent-jvm:1.14.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.objenesis:objenesis:3.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: net.bytebuddy:byte-buddy:1.15.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: net.bytebuddy:byte-buddy-agent:1.15.11",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: io.mockk:mockk-core-jvm:1.14.6",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: junit:junit:4.13.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.hamcrest:hamcrest-core:1.3",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter:5.12.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.12.2",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.1",
+          "type": "Library"
+        },
+        {
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.20",
+          "type": "Library"
+        }
+      ]
+    },
+    {
       "name": "kotlin-asyncapi-maven-plugin",
       "contentEntries": [
         {
@@ -3093,7 +3093,7 @@
       ]
     },
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
@@ -3101,7 +3101,7 @@
           "type": "SDK"
         },
         {
-          "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
+          "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
           "type": "Library"
         }
       ]
