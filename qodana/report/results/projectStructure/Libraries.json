@@ -255,279 +255,6 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:2.2.20",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/2.2.20/kotlin-scripting-jvm-host-2.2.20.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:2.2.20",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/2.2.20/kotlin-compiler-embeddable-2.2.20.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:2.2.20",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/2.2.20/kotlin-daemon-embeddable-2.2.20.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.8.0/kotlinx-coroutines-core-jvm-1.8.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:2.2.20",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/2.2.20/kotlin-scripting-compiler-embeddable-2.2.20.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:2.2.20",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/2.2.20/kotlin-scripting-compiler-impl-embeddable-2.2.20.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: javax.inject:javax.inject:1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/javax/inject/javax.inject/1/javax.inject-1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-plugin-api:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-plugin-api/3.9.11/maven-plugin-api-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-model:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model/3.9.11/maven-model-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-artifact:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-artifact/3.9.11/maven-artifact-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.plexus:0.9.0.M4",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M4/org.eclipse.sisu.plexus-0.9.0.M4.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.codehaus.plexus:plexus-utils:3.6.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-utils/3.6.0/plexus-utils-3.6.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.codehaus.plexus:plexus-classworlds:2.9.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-classworlds/2.9.0/plexus-classworlds-2.9.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.15.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/plugin-tools/maven-plugin-annotations/3.15.1/maven-plugin-annotations-3.15.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-core:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-core/3.9.11/maven-core-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-settings:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings/3.9.11/maven-settings-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-settings-builder:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings-builder/3.9.11/maven-settings-builder-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.codehaus.plexus:plexus-sec-dispatcher:2.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-sec-dispatcher/2.0/plexus-sec-dispatcher-2.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.codehaus.plexus:plexus-cipher:2.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-cipher/2.0/plexus-cipher-2.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-builder-support:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-builder-support/3.9.11/maven-builder-support-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-repository-metadata/3.9.11/maven-repository-metadata-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-model-builder:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model-builder/3.9.11/maven-model-builder-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-resolver-provider/3.9.11/maven-resolver-provider-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.9.24",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-impl/1.9.24/maven-resolver-impl-1.9.24.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-named-locks:1.9.24",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-named-locks/1.9.24/maven-resolver-named-locks-1.9.24.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.9.24",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-api/1.9.24/maven-resolver-api-1.9.24.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.9.24",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-spi/1.9.24/maven-resolver-spi-1.9.24.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.9.24",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-util/1.9.24/maven-resolver-util-1.9.24.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.shared:maven-shared-utils:3.4.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/shared/maven-shared-utils/3.4.2/maven-shared-utils-3.4.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.inject:0.9.0.M4",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M4/org.eclipse.sisu.inject-0.9.0.M4.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.ow2.asm:asm:9.8",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/ow2/asm/asm/9.8/asm-9.8.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: com.google.inject:guice:classes:5.1.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/google/inject/guice/5.1.0/guice-5.1.0-classes.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: aopalliance:aopalliance:1.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: com.google.guava:guava:33.4.8-jre",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jspecify:jspecify:1.0.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: com.google.guava:failureaccess:1.0.3",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.codehaus.plexus:plexus-interpolation:1.28",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-interpolation/1.28/plexus-interpolation-1.28.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.codehaus.plexus:plexus-component-annotations:2.2.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-component-annotations/2.2.0/plexus-component-annotations-2.2.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.slf4j:slf4j-api:1.7.36",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar!/"
-      ],
-      "properties": {}
-    },
-    {
       "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.0",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.20.0/jackson-module-kotlin-2.20.0.jar!/"
@@ -622,6 +349,48 @@
       "name": "Maven: io.github.classgraph:classgraph:4.8.184",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/io/github/classgraph/classgraph/4.8.184/classgraph-4.8.184.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:2.2.20",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/2.2.20/kotlin-scripting-jvm-host-2.2.20.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:2.2.20",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/2.2.20/kotlin-compiler-embeddable-2.2.20.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:2.2.20",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/2.2.20/kotlin-daemon-embeddable-2.2.20.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.8.0/kotlinx-coroutines-core-jvm-1.8.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:2.2.20",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/2.2.20/kotlin-scripting-compiler-embeddable-2.2.20.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:2.2.20",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/2.2.20/kotlin-scripting-compiler-impl-embeddable-2.2.20.jar!/"
       ],
       "properties": {}
     },
@@ -1137,9 +906,240 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.ktor:ktor-server-core-jvm:3.3.0",
+      "name": "Maven: javax.inject:javax.inject:1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-core-jvm/3.3.0/ktor-server-core-jvm-3.3.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/javax/inject/javax.inject/1/javax.inject-1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-plugin-api:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-plugin-api/3.9.11/maven-plugin-api-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-model:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model/3.9.11/maven-model-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-artifact:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-artifact/3.9.11/maven-artifact-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.plexus:0.9.0.M4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M4/org.eclipse.sisu.plexus-0.9.0.M4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-utils:3.6.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-utils/3.6.0/plexus-utils-3.6.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-classworlds:2.9.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-classworlds/2.9.0/plexus-classworlds-2.9.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.15.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/plugin-tools/maven-plugin-annotations/3.15.1/maven-plugin-annotations-3.15.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-core:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-core/3.9.11/maven-core-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-settings:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings/3.9.11/maven-settings-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-settings-builder:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings-builder/3.9.11/maven-settings-builder-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-sec-dispatcher:2.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-sec-dispatcher/2.0/plexus-sec-dispatcher-2.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-cipher:2.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-cipher/2.0/plexus-cipher-2.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-builder-support:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-builder-support/3.9.11/maven-builder-support-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-repository-metadata/3.9.11/maven-repository-metadata-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-model-builder:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model-builder/3.9.11/maven-model-builder-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-resolver-provider/3.9.11/maven-resolver-provider-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.9.24",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-impl/1.9.24/maven-resolver-impl-1.9.24.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-named-locks:1.9.24",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-named-locks/1.9.24/maven-resolver-named-locks-1.9.24.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.9.24",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-api/1.9.24/maven-resolver-api-1.9.24.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.9.24",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-spi/1.9.24/maven-resolver-spi-1.9.24.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.9.24",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-util/1.9.24/maven-resolver-util-1.9.24.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.shared:maven-shared-utils:3.4.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/shared/maven-shared-utils/3.4.2/maven-shared-utils-3.4.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.inject:0.9.0.M4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M4/org.eclipse.sisu.inject-0.9.0.M4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.ow2.asm:asm:9.8",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/ow2/asm/asm/9.8/asm-9.8.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: com.google.inject:guice:classes:5.1.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/google/inject/guice/5.1.0/guice-5.1.0-classes.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: aopalliance:aopalliance:1.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: com.google.guava:guava:33.4.8-jre",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jspecify:jspecify:1.0.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: com.google.guava:failureaccess:1.0.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-interpolation:1.28",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-interpolation/1.28/plexus-interpolation-1.28.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-component-annotations:2.2.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-component-annotations/2.2.0/plexus-component-annotations-2.2.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.slf4j:slf4j-api:1.7.36",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-server-core-jvm:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-core-jvm/3.3.1/ktor-server-core-jvm-3.3.1.jar!/"
       ],
       "properties": {}
     },
@@ -1158,16 +1158,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.ktor:ktor-utils-jvm:3.3.0",
+      "name": "Maven: io.ktor:ktor-utils-jvm:3.3.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-utils-jvm/3.3.0/ktor-utils-jvm-3.3.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-utils-jvm/3.3.1/ktor-utils-jvm-3.3.1.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.ktor:ktor-io-jvm:3.3.0",
+      "name": "Maven: io.ktor:ktor-io-jvm:3.3.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-io-jvm/3.3.0/ktor-io-jvm-3.3.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-io-jvm/3.3.1/ktor-io-jvm-3.3.1.jar!/"
       ],
       "properties": {}
     },
@@ -1189,265 +1189,6 @@
       "name": "Maven: org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.9.0",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-serialization-core-jvm/1.9.0/kotlinx-serialization-core-jvm-1.9.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-http-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-http-jvm/3.3.0/ktor-http-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-serialization-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-serialization-jvm/3.3.0/ktor-serialization-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-events-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-events-jvm/3.3.0/ktor-events-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-http-cio-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-http-cio-jvm/3.3.0/ktor-http-cio-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-network-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-network-jvm/3.3.0/ktor-network-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-websockets-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-websockets-jvm/3.3.0/ktor-websockets-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.2.10",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/2.2.10/kotlin-reflect-2.2.10.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.fusesource.jansi:jansi:2.4.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi/2.4.2/jansi-2.4.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-server-test-host-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-test-host-jvm/3.3.0/ktor-server-test-host-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-network-tls-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-network-tls-jvm/3.3.0/ktor-network-tls-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-client-apache-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-client-apache-jvm/3.3.0/ktor-client-apache-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.httpcomponents:httpasyncclient:4.1.5",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpasyncclient/4.1.5/httpasyncclient-4.1.5.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.httpcomponents:httpcore:4.4.15",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.15/httpcore-4.4.15.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.httpcomponents:httpcore-nio:4.4.15",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore-nio/4.4.15/httpcore-nio-4.4.15.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.httpcomponents:httpclient:4.5.13",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: commons-codec:commons-codec:1.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.11/commons-codec-1.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: commons-logging:commons-logging:1.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.2/commons-logging-1.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-network-tls-certificates-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-network-tls-certificates-jvm/3.3.0/ktor-network-tls-certificates-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-server-call-logging-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-call-logging-jvm/3.3.0/ktor-server-call-logging-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.10.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-slf4j/1.10.2/kotlinx-coroutines-slf4j-1.10.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-server-websockets-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-websockets-jvm/3.3.0/ktor-server-websockets-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-websocket-serialization-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-websocket-serialization-jvm/3.3.0/ktor-websocket-serialization-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test:2.2.10",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/2.2.10/kotlin-test-2.2.10.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.junit.jupiter:junit-jupiter:5.13.4",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.13.4/junit-jupiter-5.13.4.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.13.4",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.13.4/junit-jupiter-params-5.13.4.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-client-cio-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-client-cio-jvm/3.3.0/ktor-client-cio-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-client-core-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-client-core-jvm/3.3.0/ktor-client-core-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-sse-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-sse-jvm/3.3.0/ktor-sse-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-test-dispatcher-jvm:3.3.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-test-dispatcher-jvm/3.3.0/ktor-test-dispatcher-jvm-3.3.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.10.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-test-jvm/1.10.2/kotlinx-coroutines-test-jvm-1.10.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-debug:1.10.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-debug/1.10.2/kotlinx-coroutines-debug-1.10.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: net.java.dev.jna:jna:5.9.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/java/dev/jna/jna/5.9.0/jna-5.9.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: net.java.dev.jna:jna-platform:5.9.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/java/dev/jna/jna-platform/5.9.0/jna-platform-5.9.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: net.bytebuddy:byte-buddy-agent:1.10.9",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.10.9/byte-buddy-agent-1.10.9.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-server-core-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-core-jvm/3.3.1/ktor-server-core-jvm-3.3.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-utils-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-utils-jvm/3.3.1/ktor-utils-jvm-3.3.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-io-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-io-jvm/3.3.1/ktor-io-jvm-3.3.1.jar!/"
       ],
       "properties": {}
     },
@@ -1497,6 +1238,188 @@
       "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.2.20",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/2.2.20/kotlin-reflect-2.2.20.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.fusesource.jansi:jansi:2.4.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi/2.4.2/jansi-2.4.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-server-test-host-jvm:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-test-host-jvm/3.3.1/ktor-server-test-host-jvm-3.3.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-network-tls-jvm:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-network-tls-jvm/3.3.1/ktor-network-tls-jvm-3.3.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-client-apache-jvm:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-client-apache-jvm/3.3.1/ktor-client-apache-jvm-3.3.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.httpcomponents:httpasyncclient:4.1.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpasyncclient/4.1.5/httpasyncclient-4.1.5.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.httpcomponents:httpcore:4.4.15",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.15/httpcore-4.4.15.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.httpcomponents:httpcore-nio:4.4.15",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore-nio/4.4.15/httpcore-nio-4.4.15.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.httpcomponents:httpclient:4.5.13",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: commons-codec:commons-codec:1.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.11/commons-codec-1.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: commons-logging:commons-logging:1.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.2/commons-logging-1.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-network-tls-certificates-jvm:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-network-tls-certificates-jvm/3.3.1/ktor-network-tls-certificates-jvm-3.3.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-server-call-logging-jvm:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-call-logging-jvm/3.3.1/ktor-server-call-logging-jvm-3.3.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.10.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-slf4j/1.10.2/kotlinx-coroutines-slf4j-1.10.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-server-websockets-jvm:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-websockets-jvm/3.3.1/ktor-server-websockets-jvm-3.3.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-websocket-serialization-jvm:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-websocket-serialization-jvm/3.3.1/ktor-websocket-serialization-jvm-3.3.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.junit.jupiter:junit-jupiter:5.13.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.13.4/junit-jupiter-5.13.4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.13.4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.13.4/junit-jupiter-params-5.13.4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-client-cio-jvm:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-client-cio-jvm/3.3.1/ktor-client-cio-jvm-3.3.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-client-core-jvm:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-client-core-jvm/3.3.1/ktor-client-core-jvm-3.3.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-sse-jvm:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-sse-jvm/3.3.1/ktor-sse-jvm-3.3.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-test-dispatcher-jvm:3.3.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-test-dispatcher-jvm/3.3.1/ktor-test-dispatcher-jvm-3.3.1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm:1.10.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-test-jvm/1.10.2/kotlinx-coroutines-test-jvm-1.10.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-debug:1.10.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-debug/1.10.2/kotlinx-coroutines-debug-1.10.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: net.java.dev.jna:jna:5.9.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/net/java/dev/jna/jna/5.9.0/jna-5.9.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: net.java.dev.jna:jna-platform:5.9.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/net/java/dev/jna/jna-platform/5.9.0/jna-platform-5.9.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: net.bytebuddy:byte-buddy-agent:1.10.9",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.10.9/byte-buddy-agent-1.10.9.jar!/"
       ],
       "properties": {}
     },
@@ -1623,83 +1546,6 @@
       "name": "Maven: ch.qos.logback:logback-core:1.5.19",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.5.19/logback-core-1.5.19.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-server-test-host-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-test-host-jvm/3.3.1/ktor-server-test-host-jvm-3.3.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-network-tls-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-network-tls-jvm/3.3.1/ktor-network-tls-jvm-3.3.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-client-apache-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-client-apache-jvm/3.3.1/ktor-client-apache-jvm-3.3.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-network-tls-certificates-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-network-tls-certificates-jvm/3.3.1/ktor-network-tls-certificates-jvm-3.3.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-server-call-logging-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-call-logging-jvm/3.3.1/ktor-server-call-logging-jvm-3.3.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-server-websockets-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-websockets-jvm/3.3.1/ktor-server-websockets-jvm-3.3.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-websocket-serialization-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-websocket-serialization-jvm/3.3.1/ktor-websocket-serialization-jvm-3.3.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-client-cio-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-client-cio-jvm/3.3.1/ktor-client-cio-jvm-3.3.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-client-core-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-client-core-jvm/3.3.1/ktor-client-core-jvm-3.3.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-sse-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-sse-jvm/3.3.1/ktor-sse-jvm-3.3.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.ktor:ktor-test-dispatcher-jvm:3.3.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-test-dispatcher-jvm/3.3.1/ktor-test-dispatcher-jvm-3.3.1.jar!/"
       ],
       "properties": {}
     },
