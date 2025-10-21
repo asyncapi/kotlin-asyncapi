@@ -2467,11 +2467,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: ch.qos.logback:logback-classic:1.5.19",
+          "name": "Maven: ch.qos.logback:logback-classic:1.5.20",
           "type": "Library"
         },
         {
-          "name": "Maven: ch.qos.logback:logback-core:1.5.19",
+          "name": "Maven: ch.qos.logback:logback-core:1.5.20",
           "type": "Library"
         },
         {
