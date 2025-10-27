@@ -1,7 +1,7 @@
 {
   "modules": [
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
@@ -9,7 +9,7 @@
           "type": "SDK"
         },
         {
-          "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
+          "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
           "type": "Library"
         }
       ]
@@ -1016,7 +1016,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.15.1",
+          "name": "Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.15.2",
           "type": "Library"
         },
         {
@@ -3107,7 +3107,7 @@
       ]
     },
     {
-      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts",
+      "name": "kotlin.scripts.Default Kotlin Script.kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts",
       "contentEntries": [],
       "orderEntries": [
         {
@@ -3115,7 +3115,7 @@
           "type": "SDK"
         },
         {
-          "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
+          "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
           "type": "Library"
         }
       ]

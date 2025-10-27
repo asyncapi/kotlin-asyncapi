@@ -1,7 +1,7 @@
 {
   "libraries": [
     {
-      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
@@ -955,9 +955,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.15.1",
+      "name": "Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.15.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/plugin-tools/maven-plugin-annotations/3.15.1/maven-plugin-annotations-3.15.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/plugin-tools/maven-plugin-annotations/3.15.2/maven-plugin-annotations-3.15.2.jar!/"
       ],
       "properties": {}
     },
@@ -1564,7 +1564,7 @@
       "properties": {}
     },
     {
-      "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
