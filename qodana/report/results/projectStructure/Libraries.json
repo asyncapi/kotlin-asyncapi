@@ -1,7 +1,7 @@
 {
   "libraries": [
     {
-      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
@@ -1039,13 +1039,6 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:2.2.20",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit5/2.2.20/kotlin-test-junit5-2.2.20.jar!/"
-      ],
-      "properties": {}
-    },
-    {
       "name": "Maven: org.jetbrains.kotlin:kotlin-test:1.9.25",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/1.9.25/kotlin-test-1.9.25.jar!/"
@@ -1515,7 +1508,7 @@
       "properties": {}
     },
     {
-      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
