@@ -1,7 +1,7 @@
 {
   "libraries": [
     {
-      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
@@ -199,9 +199,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.0",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.20.0/jackson-databind-2.20.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.20.1/jackson-databind-2.20.1.jar!/"
       ],
       "properties": {}
     },
@@ -213,9 +213,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.0",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.20.0/jackson-core-2.20.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.20.1/jackson-core-2.20.1.jar!/"
       ],
       "properties": {}
     },
@@ -528,9 +528,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.0",
+      "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.20.0/jackson-module-kotlin-2.20.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.20.1/jackson-module-kotlin-2.20.1.jar!/"
       ],
       "properties": {}
     },
@@ -1676,7 +1676,7 @@
       "properties": {}
     },
     {
-      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-spring-boot-example:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
