@@ -9,7 +9,7 @@
       ]
     },
     {
-      "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
@@ -1382,72 +1382,149 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.ktor:ktor-server-netty-jvm:3.3.1",
+      "name": "Maven: io.ktor:ktor-server-core-jvm:3.3.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-netty-jvm/3.3.1/ktor-server-netty-jvm-3.3.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-core-jvm/3.3.2/ktor-server-core-jvm-3.3.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-codec-http2:4.2.6.Final",
+      "name": "Maven: com.typesafe:config:1.4.5",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-codec-http2/4.2.6.Final/netty-codec-http2-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/typesafe/config/1.4.5/config-1.4.5.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-common:4.2.6.Final",
+      "name": "Maven: io.ktor:ktor-utils-jvm:3.3.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-common/4.2.6.Final/netty-common-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-utils-jvm/3.3.2/ktor-utils-jvm-3.3.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-buffer:4.2.6.Final",
+      "name": "Maven: io.ktor:ktor-io-jvm:3.3.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-buffer/4.2.6.Final/netty-buffer-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-io-jvm/3.3.2/ktor-io-jvm-3.3.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-transport:4.2.6.Final",
+      "name": "Maven: io.ktor:ktor-http-jvm:3.3.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-transport/4.2.6.Final/netty-transport-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-http-jvm/3.3.2/ktor-http-jvm-3.3.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-resolver:4.2.6.Final",
+      "name": "Maven: io.ktor:ktor-serialization-jvm:3.3.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-resolver/4.2.6.Final/netty-resolver-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-serialization-jvm/3.3.2/ktor-serialization-jvm-3.3.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-codec-base:4.2.6.Final",
+      "name": "Maven: io.ktor:ktor-events-jvm:3.3.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-codec-base/4.2.6.Final/netty-codec-base-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-events-jvm/3.3.2/ktor-events-jvm-3.3.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-handler:4.2.6.Final",
+      "name": "Maven: io.ktor:ktor-http-cio-jvm:3.3.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-handler/4.2.6.Final/netty-handler-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-http-cio-jvm/3.3.2/ktor-http-cio-jvm-3.3.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-codec-http:4.2.6.Final",
+      "name": "Maven: io.ktor:ktor-network-jvm:3.3.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-codec-http/4.2.6.Final/netty-codec-http-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-network-jvm/3.3.2/ktor-network-jvm-3.3.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-codec-compression:4.2.6.Final",
+      "name": "Maven: io.ktor:ktor-websockets-jvm:3.3.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-codec-compression/4.2.6.Final/netty-codec-compression-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-websockets-jvm/3.3.2/ktor-websockets-jvm-3.3.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.2.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/2.2.21/kotlin-reflect-2.2.21.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-server-netty-jvm:3.3.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-netty-jvm/3.3.2/ktor-server-netty-jvm-3.3.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.netty:netty-codec-http2:4.2.7.Final",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-codec-http2/4.2.7.Final/netty-codec-http2-4.2.7.Final.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.netty:netty-common:4.2.7.Final",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-common/4.2.7.Final/netty-common-4.2.7.Final.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.netty:netty-buffer:4.2.7.Final",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-buffer/4.2.7.Final/netty-buffer-4.2.7.Final.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.netty:netty-transport:4.2.7.Final",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-transport/4.2.7.Final/netty-transport-4.2.7.Final.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.netty:netty-resolver:4.2.7.Final",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-resolver/4.2.7.Final/netty-resolver-4.2.7.Final.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.netty:netty-codec-base:4.2.7.Final",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-codec-base/4.2.7.Final/netty-codec-base-4.2.7.Final.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.netty:netty-handler:4.2.7.Final",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-handler/4.2.7.Final/netty-handler-4.2.7.Final.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.netty:netty-codec-http:4.2.7.Final",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-codec-http/4.2.7.Final/netty-codec-http-4.2.7.Final.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.netty:netty-codec-compression:4.2.7.Final",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-codec-compression/4.2.7.Final/netty-codec-compression-4.2.7.Final.jar!/"
       ],
       "properties": {}
     },
@@ -1459,37 +1536,128 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-transport-native-kqueue:4.2.6.Final",
+      "name": "Maven: io.netty:netty-transport-native-kqueue:4.2.7.Final",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-transport-native-kqueue/4.2.6.Final/netty-transport-native-kqueue-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-transport-native-kqueue/4.2.7.Final/netty-transport-native-kqueue-4.2.7.Final.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-transport-native-unix-common:4.2.6.Final",
+      "name": "Maven: io.netty:netty-transport-native-unix-common:4.2.7.Final",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-transport-native-unix-common/4.2.6.Final/netty-transport-native-unix-common-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-transport-native-unix-common/4.2.7.Final/netty-transport-native-unix-common-4.2.7.Final.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-transport-classes-kqueue:4.2.6.Final",
+      "name": "Maven: io.netty:netty-transport-classes-kqueue:4.2.7.Final",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-transport-classes-kqueue/4.2.6.Final/netty-transport-classes-kqueue-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-transport-classes-kqueue/4.2.7.Final/netty-transport-classes-kqueue-4.2.7.Final.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-transport-native-epoll:4.2.6.Final",
+      "name": "Maven: io.netty:netty-transport-native-epoll:4.2.7.Final",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-transport-native-epoll/4.2.6.Final/netty-transport-native-epoll-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-transport-native-epoll/4.2.7.Final/netty-transport-native-epoll-4.2.7.Final.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.netty:netty-transport-classes-epoll:4.2.6.Final",
+      "name": "Maven: io.netty:netty-transport-classes-epoll:4.2.7.Final",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/netty/netty-transport-classes-epoll/4.2.6.Final/netty-transport-classes-epoll-4.2.6.Final.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/netty/netty-transport-classes-epoll/4.2.7.Final/netty-transport-classes-epoll-4.2.7.Final.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-server-test-host-jvm:3.3.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-test-host-jvm/3.3.2/ktor-server-test-host-jvm-3.3.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-network-tls-jvm:3.3.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-network-tls-jvm/3.3.2/ktor-network-tls-jvm-3.3.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-client-apache-jvm:3.3.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-client-apache-jvm/3.3.2/ktor-client-apache-jvm-3.3.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-network-tls-certificates-jvm:3.3.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-network-tls-certificates-jvm/3.3.2/ktor-network-tls-certificates-jvm-3.3.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-server-call-logging-jvm:3.3.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-call-logging-jvm/3.3.2/ktor-server-call-logging-jvm-3.3.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-server-websockets-jvm:3.3.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-websockets-jvm/3.3.2/ktor-server-websockets-jvm-3.3.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-websocket-serialization-jvm:3.3.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-websocket-serialization-jvm/3.3.2/ktor-websocket-serialization-jvm-3.3.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.junit.jupiter:junit-jupiter:5.14.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.14.0/junit-jupiter-5.14.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.junit.jupiter:junit-jupiter-params:5.14.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.14.0/junit-jupiter-params-5.14.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-client-cio-jvm:3.3.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-client-cio-jvm/3.3.2/ktor-client-cio-jvm-3.3.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-client-core-jvm:3.3.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-client-core-jvm/3.3.2/ktor-client-core-jvm-3.3.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-sse-jvm:3.3.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-sse-jvm/3.3.2/ktor-sse-jvm-3.3.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.ktor:ktor-test-dispatcher-jvm:3.3.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-test-dispatcher-jvm/3.3.2/ktor-test-dispatcher-jvm-3.3.2.jar!/"
       ],
       "properties": {}
     },
@@ -1508,7 +1676,7 @@
       "properties": {}
     },
     {
-      "name": "kotlin-asyncapi-examples:kotlin-asyncapi-ktor-example:build.asyncapi.kts dependencies",
+      "name": "kotlin-asyncapi-maven-plugin:src:test:resources:build.asyncapi.kts dependencies",
       "roots": [
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar!/",
         "jar://$KOTLIN_BUNDLED$/lib/kotlin-script-runtime.jar!/",
