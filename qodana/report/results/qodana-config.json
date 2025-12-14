@@ -1,0 +1,6 @@
+{
+  "local": {
+    "filename": "qodana.yaml",
+    "content": "version: \"1.0\"\nprofile:\n  name: qodana.starter\nexclude:\n  - name: DifferentMavenStdlibVersion\n  - name: JavaIoSerializableObjectMustHaveReadResolve\n"
+  }
+}
