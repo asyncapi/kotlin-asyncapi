@@ -1,9 +1,9 @@
 {
   "libraries": [
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:2.2.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-stdlib:2.3.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/2.2.21/kotlin-stdlib-2.2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/2.3.0/kotlin-stdlib-2.3.0.jar!/"
       ],
       "properties": {}
     },
@@ -15,16 +15,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:2.2.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:2.3.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit5/2.2.21/kotlin-test-junit5-2.2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit5/2.3.0/kotlin-test-junit5-2.3.0.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test:2.2.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test:2.3.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/2.2.21/kotlin-test-2.2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/2.3.0/kotlin-test-2.3.0.jar!/"
       ],
       "properties": {}
     },
@@ -218,23 +218,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:2.2.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-common:2.3.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-common/2.2.21/kotlin-scripting-common-2.2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-common/2.3.0/kotlin-scripting-common-2.3.0.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:2.2.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm:2.3.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm/2.2.21/kotlin-scripting-jvm-2.2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm/2.3.0/kotlin-scripting-jvm-2.3.0.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:2.2.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-script-runtime:2.3.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-script-runtime/2.2.21/kotlin-script-runtime-2.2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-script-runtime/2.3.0/kotlin-script-runtime-2.3.0.jar!/"
       ],
       "properties": {}
     },
@@ -337,23 +337,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:2.2.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:2.3.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/2.2.21/kotlin-scripting-jvm-host-2.2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/2.3.0/kotlin-scripting-jvm-host-2.3.0.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:2.2.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:2.3.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/2.2.21/kotlin-compiler-embeddable-2.2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/2.3.0/kotlin-compiler-embeddable-2.3.0.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:2.2.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:2.3.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/2.2.21/kotlin-daemon-embeddable-2.2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/2.3.0/kotlin-daemon-embeddable-2.3.0.jar!/"
       ],
       "properties": {}
     },
@@ -365,16 +365,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:2.2.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:2.3.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/2.2.21/kotlin-scripting-compiler-embeddable-2.2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/2.3.0/kotlin-scripting-compiler-embeddable-2.3.0.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:2.2.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:2.3.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/2.2.21/kotlin-scripting-compiler-impl-embeddable-2.2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/2.3.0/kotlin-scripting-compiler-impl-embeddable-2.3.0.jar!/"
       ],
       "properties": {}
     },
@@ -788,6 +788,13 @@
       "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.8",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit5:2.2.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit5/2.2.21/kotlin-test-junit5-2.2.21.jar!/"
       ],
       "properties": {}
     },
@@ -1282,6 +1289,13 @@
       "properties": {}
     },
     {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test:2.2.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test/2.2.21/kotlin-test-2.2.21.jar!/"
+      ],
+      "properties": {}
+    },
+    {
       "name": "Maven: org.junit.jupiter:junit-jupiter:5.14.0",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.14.0/junit-jupiter-5.14.0.jar!/"
@@ -1492,9 +1506,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit:2.2.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-test-junit:2.3.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit/2.2.21/kotlin-test-junit-2.2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit/2.3.0/kotlin-test-junit-2.3.0.jar!/"
       ],
       "properties": {}
     }

@@ -1,10 +1,6 @@
 {
   "modules": [
     {
-      "name": "kotlin-asyncapi-script",
-      "languageLevel": 8
-    },
-    {
       "name": "kotlin-asyncapi-core",
       "languageLevel": 8
     },
@@ -13,23 +9,15 @@
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-parent",
-      "languageLevel": 5
-    },
-    {
       "name": "kotlin-asyncapi-maven-plugin",
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-context",
+      "name": "kotlin-asyncapi-annotation",
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-examples",
-      "languageLevel": 5
-    },
-    {
-      "name": "kotlin-asyncapi-annotation",
+      "name": "kotlin-asyncapi-context",
       "languageLevel": 8
     },
     {
@@ -43,6 +31,18 @@
     {
       "name": "kotlin-asyncapi-ktor-example",
       "languageLevel": 8
+    },
+    {
+      "name": "kotlin-asyncapi-script",
+      "languageLevel": 8
+    },
+    {
+      "name": "kotlin-asyncapi-parent",
+      "languageLevel": 5
+    },
+    {
+      "name": "kotlin-asyncapi-examples",
+      "languageLevel": 5
     }
   ]
 }

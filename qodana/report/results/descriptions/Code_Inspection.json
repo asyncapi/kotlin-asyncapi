@@ -638,16 +638,16 @@
           "description": "Reports non-final fields in enumeration types. Non-final fields introduce global mutable state, which is generally considered undesirable.\n\n**Example:**\n\n\n      enum Enum {\n        FIRST(\"first\"),\n        SECOND(\"second\");\n\n        public String str;\n\n        Enum(String str) {\n            this.str = str;\n        }\n      }\n\nAfter the quick-fix is applied:\n\n\n      enum Enum {\n        FIRST(\"first\"),\n        SECOND(\"second\");\n\n        public final String str;\n\n        Enum(String str) {\n            this.str = str;\n        }\n      }\n\nUse the \\`Ignore fields that cannot be made 'final'\\` option to only warn on fields that can be made final using the quick-fix.\n\nInspection ID: NonFinalFieldInEnum"
         },
         {
-          "shortName": "Singleton",
-          "displayName": "Singleton",
-          "enabled": false,
-          "description": "Reports singleton classes.\n\nSingleton classes are declared in a way that only one instance of the class can ever be instantiated. Singleton classes complicate testing,\nand their presence may indicate a lack of object-oriented design.\n\n**Example:**\n\n\n      class Singleton {\n        private static final Singleton ourInstance = new Singleton();\n\n        private Singleton() {\n        }\n\n        public Singleton getInstance() {\n            return ourInstance;\n        }\n      }\n\nInspection ID: Singleton"
-        },
-        {
           "shortName": "NonFinalUtilityClass",
           "displayName": "Utility class is not 'final'",
           "enabled": false,
           "description": "Reports utility classes that aren't `final` or `abstract`.\n\nUtility classes have all fields and methods declared as `static`.\nMaking them `final` prevents them from being accidentally subclassed.\n\n**Example:**\n\n\n      public class UtilityClass {\n        public static void foo() {}\n      }\n\nAfter the quick-fix is applied:\n\n\n      public final class UtilityClass {\n        public static void foo() {}\n      }\n\nInspection ID: NonFinalUtilityClass"
+        },
+        {
+          "shortName": "Singleton",
+          "displayName": "Singleton",
+          "enabled": false,
+          "description": "Reports singleton classes.\n\nSingleton classes are declared in a way that only one instance of the class can ever be instantiated. Singleton classes complicate testing,\nand their presence may indicate a lack of object-oriented design.\n\n**Example:**\n\n\n      class Singleton {\n        private static final Singleton ourInstance = new Singleton();\n\n        private Singleton() {\n        }\n\n        public Singleton getInstance() {\n            return ourInstance;\n        }\n      }\n\nInspection ID: Singleton"
         },
         {
           "shortName": "ParameterCanBeLocal",
@@ -3969,16 +3969,16 @@
           "description": "Reports method and constructor calls that implicitly use the platform default charset. Such calls can produce different results on systems that use a different default charset and may result in unexpected behaviour.\n\n**Example:**\n\n    void foo(byte[] bytes) {\n      String s = new String(bytes);\n    }\n\nYou can use a quick-fix that specifies the explicit UTF-8 charset if the corresponding overloaded method is available.\nAfter the quick-fix is applied:\n\n    void foo(byte[] bytes) {\n      String s = new String(bytes, StandardCharsets.UTF_8);\n    }\n\nInspection ID: ImplicitDefaultCharsetUsage"
         },
         {
-          "shortName": "StringTokenizer",
-          "displayName": "Use of 'StringTokenizer'",
-          "enabled": false,
-          "description": "Reports usages of the `StringTokenizer` class. Excessive use of `StringTokenizer` is incorrect in an internationalized environment.\n\nInspection ID: StringTokenizer"
-        },
-        {
           "shortName": "UnnecessaryUnicodeEscape",
           "displayName": "Unnecessary Unicode escape sequence",
           "enabled": false,
           "description": "Reports unnecessary Unicode escape sequences. A Unicode escape sequence is unnecessary when the file encoding can handle the character without escaping it. This inspection does not report Unicode control characters, except for line feed and horizonal tab.\n\n**Example:**\n\n\n      String s = \"\\u0078\";\n\nAfter the quick-fix is applied:\n\n\n      String s = \"x\";\n\nInspection ID: UnnecessaryUnicodeEscape"
+        },
+        {
+          "shortName": "StringTokenizer",
+          "displayName": "Use of 'StringTokenizer'",
+          "enabled": false,
+          "description": "Reports usages of the `StringTokenizer` class. Excessive use of `StringTokenizer` is incorrect in an internationalized environment.\n\nInspection ID: StringTokenizer"
         },
         {
           "shortName": "NumericToString",
@@ -5742,16 +5742,16 @@
           "description": "Reports methods whose number of statements exceeds the specified maximum.\n\nMethods with too many statements may be confusing and are a good sign that refactoring is necessary.\n\nThe following statements are not counted:\n\n* empty statements (semicolons)\n* block statements\n* `for` loop initialization statements, that is, `int i = ...` within a `for(int i = ...;...)` statement\n* `for` loop update statements, that is, `i += 2` within a `for(int i = ...;...; i += 2)` statement\n\nUse the **Maximum statements per method** field to specify the maximum allowed number of statements in a method.\n\n\nInspection ID: NonCommentSourceStatements"
         },
         {
-          "shortName": "ParametersPerMethod",
-          "displayName": "Method with too many parameters",
-          "enabled": false,
-          "description": "Reports methods whose number of parameters exceeds the specified maximum. Methods with too many parameters can be a good sign that a refactoring is necessary.\n\nMethods that have super methods are not reported.\n\nUse the **Parameter limit** field to specify the maximum allowed number of parameters for a method.\n\n\nInspection ID: ParametersPerMethod"
-        },
-        {
           "shortName": "OverlyLongLambda",
           "displayName": "Overly long lambda expression",
           "enabled": false,
           "description": "Reports lambda expressions whose number of statements exceeds the specified maximum.\n\nLambda expressions that are too long may be confusing, and it is often better to extract the statements into a separate method.\n\n\nThe following statements are not counted:\n\n* empty statements (semicolons)\n* block statements\n* `for` loop initialization statements, that is, `int i = ...` within a `for(int i = ...;...)` statement\n* `for` loop update statements, that is, `i += 2` within a `for(int i = ...;...; i += 2)` statement\n\nUse the **Non-comment source statements limit** field to specify the maximum allowed number of statements in a lambda expression.\n\n\nInspection ID: OverlyLongLambda"
+        },
+        {
+          "shortName": "ParametersPerMethod",
+          "displayName": "Method with too many parameters",
+          "enabled": false,
+          "description": "Reports methods whose number of parameters exceeds the specified maximum. Methods with too many parameters can be a good sign that a refactoring is necessary.\n\nMethods that have super methods are not reported.\n\nUse the **Parameter limit** field to specify the maximum allowed number of parameters for a method.\n\n\nInspection ID: ParametersPerMethod"
         },
         {
           "shortName": "MethodCoupling",
@@ -7760,16 +7760,16 @@
           "description": "Reports annotations used on record components that have no effect.\n\nThis can happen in two cases:\n\n* The reported annotation has the METHOD target, but the corresponding accessor is explicitly defined.\n* The reported annotation has the PARAMETER target, but the canonical constructor is explicitly defined.\n\nExample:\n\n\n    @Target(ElementType.METHOD)\n    @interface A { }\n      \n    // The annotation will not appear in bytecode at all,\n    // as it should be propagated to the accessor but accessor is explicitly defined \n    record R(@A int x) {\n      public int x() { return x; }\n    }\n\nThis inspection depends on the Java feature 'Records', which is available since Java 16.\n\nInspection ID: MeaninglessRecordAnnotationInspection\n\nNew in 2021.1"
         },
         {
-          "shortName": "MagicConstant",
-          "displayName": "Magic constant",
-          "enabled": true,
-          "description": "Reports expressions that can be replaced with \"magic\" constants.\n\nExample 1:\n\n\n      // Bare literal \"2\" is used, warning:\n      Font font = new Font(\"Arial\", 2)\n\nExample 2:\n\n\n      // Predefined constant is used, good:\n      Font font = new Font(\"Arial\", Font.ITALIC)\n\n\nWhen possible, the quick-fix inserts an appropriate predefined constant.\n\n\nThe behavior of this inspection is controlled by `org.intellij.lang.annotations.MagicConstant` annotation.\nSome standard Java library methods are pre-annotated, but you can use this annotation in your code as well.\n\nInspection ID: MagicConstant"
-        },
-        {
           "shortName": "SuspiciousDateFormat",
           "displayName": "Suspicious date format pattern",
           "enabled": true,
           "description": "Reports date format patterns that are likely used by mistake.\n\nThe following patterns are reported:\n\n* Uppercase \"Y\", unless \"w\" appears nearby. It stands for \"Week year\" that is almost always the same as normal \"Year\" (lowercase \"y\" pattern), but may point to the next year at the end of December.\n* Uppercase \"M\" (month) close to \"H\", \"K\", \"h\", or \"k\" (hour). It's likely that a lowercase \"m\" (minute) was intended.\n* Lowercase \"m\" (minute) close to \"y\" (year) or \"d\" (day in month). It's likely that an uppercase \"M\" (month) was intended.\n* Uppercase \"D\" (day in year) close to \"M\", or \"L\" (month). It's likely that a lowercase \"d\" (day in month) was intended.\n* Uppercase \"S\" (milliseconds) close to \"m\" (minutes). It's likely that a lowercase \"s\" (seconds) was intended.\n\n\nExamples:  \n\n`new SimpleDateFormat(\"YYYY-MM-dd\")`: likely `\"yyyy-MM-dd\"` was intended.  \n\n`new SimpleDateFormat(\"yyyy-MM-DD\")`: likely `\"yyyy-MM-dd\"` was intended.  \n\n`new SimpleDateFormat(\"HH:MM\")`: likely `\"HH:mm\"` was intended.\n\nInspection ID: SuspiciousDateFormat\n\nNew in 2020.1"
+        },
+        {
+          "shortName": "MagicConstant",
+          "displayName": "Magic constant",
+          "enabled": true,
+          "description": "Reports expressions that can be replaced with \"magic\" constants.\n\nExample 1:\n\n\n      // Bare literal \"2\" is used, warning:\n      Font font = new Font(\"Arial\", 2)\n\nExample 2:\n\n\n      // Predefined constant is used, good:\n      Font font = new Font(\"Arial\", Font.ITALIC)\n\n\nWhen possible, the quick-fix inserts an appropriate predefined constant.\n\n\nThe behavior of this inspection is controlled by `org.intellij.lang.annotations.MagicConstant` annotation.\nSome standard Java library methods are pre-annotated, but you can use this annotation in your code as well.\n\nInspection ID: MagicConstant"
         },
         {
           "shortName": "MismatchedCollectionQueryUpdate",
