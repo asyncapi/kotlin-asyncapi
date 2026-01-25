@@ -37,11 +37,11 @@
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-ktor-example",
+      "name": "kotlin-asyncapi-spring-boot-example",
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-spring-boot-example",
+      "name": "kotlin-asyncapi-ktor-example",
       "languageLevel": 8
     }
   ]
