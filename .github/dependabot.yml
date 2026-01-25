@@ -18,3 +18,6 @@ updates:
       - dependency-name: "org.springframework:*"
         update-types:
           - "version-update:semver-major"
+      - dependency-name: "org.junit.jupiter:*"
+        update-types:
+          - "version-update:semver-major"
