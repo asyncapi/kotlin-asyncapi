@@ -519,9 +519,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.41",
+      "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.42",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-core-jakarta/2.2.41/swagger-core-jakarta-2.2.41.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-core-jakarta/2.2.42/swagger-core-jakarta-2.2.42.jar!/"
       ],
       "properties": {}
     },
@@ -540,16 +540,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.41",
+      "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.42",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-annotations-jakarta/2.2.41/swagger-annotations-jakarta-2.2.41.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-annotations-jakarta/2.2.42/swagger-annotations-jakarta-2.2.42.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.41",
+      "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.42",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-models-jakarta/2.2.41/swagger-models-jakarta-2.2.41.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-models-jakarta/2.2.42/swagger-models-jakarta-2.2.42.jar!/"
       ],
       "properties": {}
     },
