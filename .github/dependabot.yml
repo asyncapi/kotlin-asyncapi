@@ -9,3 +9,12 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+
+    ignore:
+      - dependency-name: "org.jetbrains.kotlin:*"
+        update-types:
+          - "version-update:semver-major"
+          - "version-update:semver-minor"
+      - dependency-name: "org.springframework:*"
+        update-types:
+          - "version-update:semver-major"
