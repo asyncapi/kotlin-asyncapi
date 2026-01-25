@@ -55,13 +55,13 @@
         <kotlin.compiler.apiVersion>1.8</kotlin.compiler.apiVersion>
         <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
         <java.version>21</java.version>
-        <kotlin.version>2.3.0</kotlin.version>
+        <kotlin.version>2.2.21</kotlin.version>
         <jackson.version>2.20.1</jackson.version>
         <swagger.version>2.2.41</swagger.version>
         <classgraph.version>4.8.184</classgraph.version>
         <mockk.version>1.14.6</mockk.version>
         <jsonassert.version>1.5.3</jsonassert.version>
-        <junit-jupiter.version>5.11.4</junit-jupiter.version>
+        <junit-jupiter.version>6.0.1</junit-jupiter.version>
         <assertj.version>3.27.6</assertj.version>
     </properties>
 
@@ -205,7 +205,7 @@
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-test-junit5</artifactId>
+            <artifactId>kotlin-test-junit</artifactId>
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
