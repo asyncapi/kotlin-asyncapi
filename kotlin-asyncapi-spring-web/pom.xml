@@ -15,7 +15,7 @@
     <description>The Spring Boot autoconfiguration for the Kotlin AsyncAPI framework</description>
 
     <properties>
-        <spring-framework.version>7.0.1</spring-framework.version>
+        <spring-framework.version>7.0.3</spring-framework.version>
         <spring-boot.version>4.0.1</spring-boot.version>
     </properties>
 
