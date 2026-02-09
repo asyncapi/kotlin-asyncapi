@@ -1009,15 +1009,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-core:3.9.11",
+          "name": "Maven: org.apache.maven:maven-core:3.9.12",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-settings:3.9.11",
+          "name": "Maven: org.apache.maven:maven-settings:3.9.12",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-settings-builder:3.9.11",
+          "name": "Maven: org.apache.maven:maven-settings-builder:3.9.12",
           "type": "Library"
         },
         {
@@ -1029,39 +1029,39 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-builder-support:3.9.11",
+          "name": "Maven: org.apache.maven:maven-builder-support:3.9.12",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.11",
+          "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.12",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-model-builder:3.9.11",
+          "name": "Maven: org.apache.maven:maven-model-builder:3.9.12",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.11",
+          "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.12",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.9.24",
+          "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.9.25",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven.resolver:maven-resolver-named-locks:1.9.24",
+          "name": "Maven: org.apache.maven.resolver:maven-resolver-named-locks:1.9.25",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.9.24",
+          "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.9.25",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.9.24",
+          "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.9.25",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.9.24",
+          "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.9.25",
           "type": "Library"
         },
         {
@@ -1073,7 +1073,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.ow2.asm:asm:9.8",
+          "name": "Maven: org.ow2.asm:asm:9.9",
           "type": "Library"
         },
         {
@@ -1085,7 +1085,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.google.guava:guava:33.4.8-jre",
+          "name": "Maven: com.google.guava:guava:33.5.0-jre",
           "type": "Library"
         },
         {
@@ -1097,7 +1097,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.codehaus.plexus:plexus-interpolation:1.28",
+          "name": "Maven: org.codehaus.plexus:plexus-interpolation:1.29",
           "type": "Library"
         },
         {
