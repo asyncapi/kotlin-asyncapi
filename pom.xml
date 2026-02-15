@@ -61,7 +61,7 @@
         <classgraph.version>4.8.184</classgraph.version>
         <mockk.version>1.14.9</mockk.version>
         <jsonassert.version>1.5.3</jsonassert.version>
-        <junit-jupiter.version>6.0.2</junit-jupiter.version>
+        <junit-jupiter.version>6.0.3</junit-jupiter.version>
         <assertj.version>3.27.7</assertj.version>
     </properties>
 
