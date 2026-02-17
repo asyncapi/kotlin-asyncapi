@@ -70,13 +70,17 @@ class AsyncApiModule(
         )
     }
 
-    private val asyncApiAnnotationExtension: AsyncApiExtension? =
+    private val asyncApiAnnotationExtension: AsyncApiExtension =
         object : AsyncApiExtension {
             override val order: Int = -1
+            private var delegate: AsyncApiExtension? = null
 
             override fun extend(asyncApi: AsyncApi): AsyncApi {
                 val annotated = annotationProvider.asyncApi ?: return asyncApi
-                return AsyncApiExtension.from(order = order, resource = annotated).extend(asyncApi)
+                val extension = delegate ?: AsyncApiExtension.from(order = order, resource = annotated).also {
+                    delegate = it
+                }
+                return extension.extend(asyncApi)
             }
         }
 
