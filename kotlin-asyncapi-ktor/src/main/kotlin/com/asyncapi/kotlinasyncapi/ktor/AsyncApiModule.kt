@@ -23,6 +23,7 @@ import com.asyncapi.kotlinasyncapi.context.service.AsyncApiSerializer
 import com.asyncapi.kotlinasyncapi.context.service.AsyncApiService
 import com.asyncapi.kotlinasyncapi.context.service.DefaultAsyncApiSerializer
 import com.asyncapi.kotlinasyncapi.context.service.DefaultAsyncApiService
+import com.asyncapi.kotlinasyncapi.model.AsyncApi
 
 class AsyncApiModule(
     environment: ApplicationEnvironment,
@@ -69,8 +70,15 @@ class AsyncApiModule(
         )
     }
 
-    private val asyncApiAnnotationExtension =
-        annotationProvider.asyncApi?.let { AsyncApiExtension.from(order = -1, it) }
+    private val asyncApiAnnotationExtension: AsyncApiExtension? =
+        object : AsyncApiExtension {
+            override val order: Int = -1
+
+            override fun extend(asyncApi: AsyncApi): AsyncApi {
+                val annotated = annotationProvider.asyncApi ?: return asyncApi
+                return AsyncApiExtension.from(order = order, resource = annotated).extend(asyncApi)
+            }
+        }
 
     private val scriptResourceProvider =
         runCatching {
