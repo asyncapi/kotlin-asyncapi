@@ -34,9 +34,9 @@ interface AsyncApiExtension {
         fun from(order: Int = 0, resource: () -> AsyncApi) =
             object : AsyncApiExtension {
                 override val order = order
+                private val resolvedResource by lazy { resource() }
                 override fun extend(asyncApi: AsyncApi) =
                     asyncApi.apply {
-                        val resolvedResource = resource()
                         try {
                             resolvedResource.info.let { info = it }
                         } catch (_: UninitializedPropertyAccessException) { }

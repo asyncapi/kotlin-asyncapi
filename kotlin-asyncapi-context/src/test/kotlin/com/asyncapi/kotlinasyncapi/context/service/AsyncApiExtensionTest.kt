@@ -94,10 +94,11 @@ internal class AsyncApiExtensionTest {
             }
         }
 
-        val actual = extension.extend(AsyncApi())
+        val first = extension.extend(AsyncApi())
+        val second = extension.extend(AsyncApi())
 
-        assertThat(actual.info.title).isEqualTo("titleValue")
-        assertThat(actual.info.version).isEqualTo("versionValue")
+        assertThat(first.info.title).isEqualTo("titleValue")
+        assertThat(second.info.title).isEqualTo("titleValue")
         assertThat(invocations.get()).isEqualTo(1)
     }
 
