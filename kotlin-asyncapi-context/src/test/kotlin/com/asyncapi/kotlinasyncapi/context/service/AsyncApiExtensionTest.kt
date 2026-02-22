@@ -1,9 +1,9 @@
 package com.asyncapi.kotlinasyncapi.context.service
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
 import com.asyncapi.kotlinasyncapi.model.AsyncApi
 import kotlin.script.experimental.host.toScriptSource
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 internal class AsyncApiExtensionTest {
 
@@ -34,6 +34,7 @@ internal class AsyncApiExtensionTest {
                     title("titleValue")
                     version("versionValue")
                 }
+                channels { }
             }
         )
 
@@ -69,6 +70,10 @@ internal class AsyncApiExtensionTest {
         }
         val actual = extension.extend(
             AsyncApi.asyncApi {
+                info {
+                    title("titleValue")
+                    version("versionValue")
+                }
                 channels {
                     channel("oldChannelKey") {
                         description("oldDescriptionValue")
@@ -109,6 +114,7 @@ internal class AsyncApiExtensionTest {
                     title("titleValue")
                     version("versionValue")
                 }
+                channels { }
             }
         )
 
