@@ -59,21 +59,22 @@ class AsyncApiModule(
     private val annotationScanner = DefaultAnnotationScanner()
 
     private val annotationProvider = with(configuration) {
-        AnnotationProvider(
-            applicationPackage = baseClass?.java?.`package`,
-            classLoader = environment.classLoader,
-            scanner = annotationScanner,
-            messageProcessor = messageProcessor,
-            schemaProcessor = schemaProcessor,
-            channelProcessor = channelProcessor,
-            asyncApiComponentProcessor = asyncApiComponentProcessor
-        )
+        baseClass?.java?.`package`?.let { pkg ->
+            AnnotationProvider(
+                applicationPackage = pkg,
+                classLoader = environment.classLoader,
+                scanner = annotationScanner,
+                messageProcessor = messageProcessor,
+                schemaProcessor = schemaProcessor,
+                channelProcessor = channelProcessor,
+                asyncApiComponentProcessor = asyncApiComponentProcessor
+            )
+        }
     }
 
-    private val asyncApiAnnotationExtension =
-        AsyncApiExtension.from(order = -1) {
-            annotationProvider.asyncApi ?: AsyncApi()
-        }
+    private val asyncApiAnnotationExtension = annotationProvider?.let {
+        AsyncApiExtension.from(order = -1) { it.asyncApi ?: AsyncApi() }
+    }
 
     private val scriptResourceProvider =
         runCatching {
