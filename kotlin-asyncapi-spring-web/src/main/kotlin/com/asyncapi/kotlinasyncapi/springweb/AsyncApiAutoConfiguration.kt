@@ -23,6 +23,7 @@ import com.asyncapi.kotlinasyncapi.context.service.AsyncApiSerializer
 import com.asyncapi.kotlinasyncapi.context.service.AsyncApiService
 import com.asyncapi.kotlinasyncapi.context.service.DefaultAsyncApiSerializer
 import com.asyncapi.kotlinasyncapi.context.service.DefaultAsyncApiService
+import com.asyncapi.kotlinasyncapi.model.AsyncApi
 import org.springframework.boot.autoconfigure.AutoConfiguration
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass
@@ -133,7 +134,11 @@ internal open class AsyncApiAnnotationAutoConfiguration {
 
     @Bean
     open fun asyncApiAnnotationExtension(annotationProvider: AsyncApiContextProvider?) =
-        annotationProvider?.asyncApi?.let { AsyncApiExtension.from(order = -1, it) }
+        annotationProvider?.let {
+            AsyncApiExtension.from(order = -1) {
+                it.asyncApi ?: AsyncApi()
+            }
+        }
 }
 
 @Configuration

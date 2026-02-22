@@ -3,6 +3,7 @@ package com.asyncapi.kotlinasyncapi.context.service
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import com.asyncapi.kotlinasyncapi.model.AsyncApi
+import java.util.concurrent.atomic.AtomicInteger
 import kotlin.script.experimental.host.toScriptSource
 
 internal class AsyncApiExtensionTest {
@@ -78,6 +79,26 @@ internal class AsyncApiExtensionTest {
         )
 
         assertThat(actual).usingRecursiveComparison().isEqualTo(expected)
+    }
+
+    @Test
+    fun `should extend from supplied resource`() {
+        val invocations = AtomicInteger(0)
+        val extension = AsyncApiExtension.from {
+            invocations.incrementAndGet()
+            AsyncApi.asyncApi {
+                info {
+                    title("titleValue")
+                    version("versionValue")
+                }
+            }
+        }
+
+        val actual = extension.extend(AsyncApi())
+
+        assertThat(actual.info.title).isEqualTo("titleValue")
+        assertThat(actual.info.version).isEqualTo("versionValue")
+        assertThat(invocations.get()).isEqualTo(1)
     }
 
     @Test
