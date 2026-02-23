@@ -60,17 +60,15 @@ class AsyncApiModule(
 
     private val annotationProvider = with(configuration) {
         if (scanAnnotations) {
-            baseClass?.java?.`package`?.let { pkg ->
-                AnnotationProvider(
-                    applicationPackage = pkg,
-                    classLoader = environment.classLoader,
-                    scanner = annotationScanner,
-                    messageProcessor = messageProcessor,
-                    schemaProcessor = schemaProcessor,
-                    channelProcessor = channelProcessor,
-                    asyncApiComponentProcessor = asyncApiComponentProcessor
-                )
-            }
+            AnnotationProvider(
+                applicationPackage = baseClass?.java?.`package`,
+                classLoader = environment.classLoader,
+                scanner = annotationScanner,
+                messageProcessor = messageProcessor,
+                schemaProcessor = schemaProcessor,
+                channelProcessor = channelProcessor,
+                asyncApiComponentProcessor = asyncApiComponentProcessor
+            )
         } else null
     }
 
