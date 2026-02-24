@@ -29,22 +29,26 @@ interface AsyncApiExtension {
             }
 
         fun from(order: Int = 0, resource: AsyncApi) =
+            from(order = order) { resource }
+
+        fun from(order: Int = 0, resource: () -> AsyncApi) =
             object : AsyncApiExtension {
                 override val order = order
+                private val resolvedResource by lazy { resource() }
                 override fun extend(asyncApi: AsyncApi) =
                     asyncApi.apply {
                         try {
-                            resource.info.let { info = it }
+                            resolvedResource.info.let { info = it }
                         } catch (_: UninitializedPropertyAccessException) { }
                         try {
-                            resource.channels.let { channels = it }
+                            resolvedResource.channels.let { channels = it }
                         } catch (_: UninitializedPropertyAccessException) { }
-                        resource.id?.let { id = it }
-                        resource.servers?.let { servers = it }
-                        resource.defaultContentType?.let { defaultContentType = it }
-                        resource.components?.let { components = it }
-                        resource.tags?.let { tags = it }
-                        resource.externalDocs?.let { externalDocs = it }
+                        resolvedResource.id?.let { id = it }
+                        resolvedResource.servers?.let { servers = it }
+                        resolvedResource.defaultContentType?.let { defaultContentType = it }
+                        resolvedResource.components?.let { components = it }
+                        resolvedResource.tags?.let { tags = it }
+                        resolvedResource.externalDocs?.let { externalDocs = it }
                     }
             }
 
