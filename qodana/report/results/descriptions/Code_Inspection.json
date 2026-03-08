@@ -926,6 +926,12 @@
           "description": "Reports Kotlin objects that are registered as plugin extensions.\n\n\nExtensions lifecycle is managed by the IntelliJ Platform.\nUsing Kotlin objects for extension registration may cause creation of unnecessary extension instances and make plugin unloading\nimpossible.\n\nExample\n-------\n\nExtension registration:\n\n\n    <annotator language=\"myLang\" implementationClass=\"com.example.MyAnnotator\"/>\n\nExtension implementation:\n\n\n    // bad:\n    object MyAnnotator : Annotator {\n      ...\n    }\n\n    // good:\n    class MyAnnotator : Annotator {\n      ...\n    }\n\nNew in 2023.1\n\nInspection ID: KotlinObjectRegisteredAsExtension"
         },
         {
+          "shortName": "EventLogDescription",
+          "displayName": "Missing event log descriptions",
+          "enabled": false,
+          "description": "Reports missing FUS group or event descriptions in the corresponding recorder properties files (`build/event/*.properties`), and warns when a group or event ID cannot be evaluated.\n\nInspection ID: EventLogDescription"
+        },
+        {
           "shortName": "ExtensionClassShouldBeFinalAndNonPublic",
           "displayName": "Extension class should be final and non-public",
           "enabled": false,
@@ -7808,16 +7814,16 @@
           "description": "Reports expressions and conditions that always produce the same result, like `true`, `false`, `null`, or `0`. Such expressions can be replaced with the corresponding constant value, or may indicate there is a bug in the code.\n\nExamples:\n\n      // always true\n      // cause: || is used instead of &&\n      if (x > 0 || x < 10) {}\n\n      System.out.println(str.trim());\n      // always false\n      // cause: variable was dereferenced before null-check\n      if (str == null) {}\n\n\nThe inspection's behavior may be controlled by annotations, such as\n[nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) annotations,\n[@Contract](https://www.jetbrains.com/help/idea/contract-annotations.html) annotation,\n`@Range` annotation and so on.\n\nConfigure the inspection:\n\n* Use the **Don't report assertions with condition statically proven to be always true** option to avoid reporting assertions that were statically proven to be always true. This includes conditions like `if (alwaysFalseCondition) throw new IllegalArgumentException();`.\n* Use the **Ignore assert statements** option to control how the inspection treats `assert` statements. By default, assertions are assumed to be executed (`-ea` mode). When the option is enabled, assertions will be ignored (`-da` mode).\n* Use the **Warn when constant is stored in variable** option to display warnings when a variable is used, whose value is known to be constant.\n\n\nBefore IntelliJ IDEA 2022.3, this inspection was part of the *Constant Conditions \\& Exceptions* inspection.\nThis inspection has been split into two inspections: *Constant Values* and *Nullability and data flow problems*.\n\nInspection ID: ConstantValue"
         },
         {
-          "shortName": "EqualsAndHashcode",
-          "displayName": "'equals()' and 'hashCode()' not paired",
-          "enabled": false,
-          "description": "Reports classes that override the `equals()` method but do not override the `hashCode()` method or vice versa, which can potentially lead to problems when the class is added to a `Collection` or a `HashMap`.\n\nThe quick-fix generates the default implementation for an absent method.\n\nExample:\n\n\n    class StringHolder {\n      String s;\n\n      @Override public int hashCode() {\n        return s != null ? s.hashCode() : 0;\n      }\n    }\n\nAfter the quick-fix is applied:\n\n\n    class StringHolder {\n      String s;\n\n      @Override public int hashCode() {\n        return s != null ? s.hashCode() : 0;\n      }\n\n      @Override\n      public boolean equals(Object o) {\n        if (this == o) return true;\n        if (!(o instanceof StringHolder)) return false;\n\n        StringHolder holder = (StringHolder)o;\n\n        if (s != null ? !s.equals(holder.s) : holder.s != null) return false;\n\n        return true;\n      }\n    }\n\nInspection ID: EqualsAndHashcode"
-        },
-        {
           "shortName": "IteratorHasNextCallsIteratorNext",
           "displayName": "'Iterator.hasNext()' which calls 'next()'",
           "enabled": true,
           "description": "Reports implementations of `Iterator.hasNext()` or `ListIterator.hasPrevious()` that call `Iterator.next()` or `ListIterator.previous()` on the iterator instance. Such calls are almost certainly an error, as methods like `hasNext()` should not modify the iterators state, while `next()` should.\n\n**Example:**\n\n\n      class MyIterator implements Iterator<Integer> {\n        public boolean hasNext() {\n          return next() != null;\n        }\n      }\n\nInspection ID: IteratorHasNextCallsIteratorNext"
+        },
+        {
+          "shortName": "EqualsAndHashcode",
+          "displayName": "'equals()' and 'hashCode()' not paired",
+          "enabled": false,
+          "description": "Reports classes that override the `equals()` method but do not override the `hashCode()` method or vice versa, which can potentially lead to problems when the class is added to a `Collection` or a `HashMap`.\n\nThe quick-fix generates the default implementation for an absent method.\n\nExample:\n\n\n    class StringHolder {\n      String s;\n\n      @Override public int hashCode() {\n        return s != null ? s.hashCode() : 0;\n      }\n    }\n\nAfter the quick-fix is applied:\n\n\n    class StringHolder {\n      String s;\n\n      @Override public int hashCode() {\n        return s != null ? s.hashCode() : 0;\n      }\n\n      @Override\n      public boolean equals(Object o) {\n        if (this == o) return true;\n        if (!(o instanceof StringHolder)) return false;\n\n        StringHolder holder = (StringHolder)o;\n\n        if (s != null ? !s.equals(holder.s) : holder.s != null) return false;\n\n        return true;\n      }\n    }\n\nInspection ID: EqualsAndHashcode"
         },
         {
           "shortName": "MathRoundingWithIntArgument",
@@ -9555,16 +9561,16 @@
           "description": "Reports calls to `assertTrue()` and `assertFalse()` that can be replaced with assert equality functions.\n\n\n`assertEquals()`, `assertSame()`, and their negating counterparts (-Not-) provide more informative messages on\nfailure.\n\n**Example:**\n\n      assertTrue(a == b)\n\nAfter the quick-fix is applied:\n\n      assertEquals(a, b)\n\nInspection ID: ReplaceAssertBooleanWithAssertEquality"
         },
         {
-          "shortName": "ReplaceNotNullAssertionWithElvisReturn",
-          "displayName": "Not-null assertion can be replaced with 'return'",
-          "enabled": false,
-          "description": "Reports not-null assertion (`!!`) calls that can be replaced with the elvis operator and return (`?: return`).\n\nA not-null assertion can lead to NPE (NullPointerException) that is not expected. Avoiding the use of `!!` is good practice.\n\nThe quick-fix replaces the not-null assertion with `return` or `return null`.\n\n**Example:**\n\n\n      fun test(number: Int?) {\n          val x = number!!\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test(number: Int?) {\n          val x = number ?: return\n      }\n\nInspection ID: ReplaceNotNullAssertionWithElvisReturn"
-        },
-        {
           "shortName": "ReplaceStringFormatWithLiteral",
           "displayName": "'String.format' call can be replaced with string templates",
           "enabled": false,
           "description": "Reports `String.format` calls that can be replaced with string templates.\n\nUsing string templates makes your code simpler.\n\nThe quick-fix replaces the call with a string template.\n\n**Example:**\n\n\n      fun main() {\n          val id = \"abc\"\n          val date = \"123\"\n          val s = String.format(\"%s_%s_%s\", id, date, id)\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun main() {\n          val id = \"abc\"\n          val date = \"123\"\n          val s = \"${id}_${date}_$id\"\n      }\n\nInspection ID: ReplaceStringFormatWithLiteral"
+        },
+        {
+          "shortName": "ReplaceNotNullAssertionWithElvisReturn",
+          "displayName": "Not-null assertion can be replaced with 'return'",
+          "enabled": false,
+          "description": "Reports not-null assertion (`!!`) calls that can be replaced with the elvis operator and return (`?: return`).\n\nA not-null assertion can lead to NPE (NullPointerException) that is not expected. Avoiding the use of `!!` is good practice.\n\nThe quick-fix replaces the not-null assertion with `return` or `return null`.\n\n**Example:**\n\n\n      fun test(number: Int?) {\n          val x = number!!\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test(number: Int?) {\n          val x = number ?: return\n      }\n\nInspection ID: ReplaceNotNullAssertionWithElvisReturn"
         },
         {
           "shortName": "ReplaceSubstringWithSubstringBefore",
