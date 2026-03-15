@@ -239,272 +239,6 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:2.2.21",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/2.2.21/kotlin-scripting-jvm-host-2.2.21.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:2.2.21",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/2.2.21/kotlin-compiler-embeddable-2.2.21.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:2.2.21",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/2.2.21/kotlin-daemon-embeddable-2.2.21.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.8.0/kotlinx-coroutines-core-jvm-1.8.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:2.2.21",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/2.2.21/kotlin-scripting-compiler-embeddable-2.2.21.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:2.2.21",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/2.2.21/kotlin-scripting-compiler-impl-embeddable-2.2.21.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: javax.inject:javax.inject:1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/javax/inject/javax.inject/1/javax.inject-1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-plugin-api:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-plugin-api/3.9.11/maven-plugin-api-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-model:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model/3.9.11/maven-model-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-artifact:3.9.11",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-artifact/3.9.11/maven-artifact-3.9.11.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.plexus:0.9.0.M4",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M4/org.eclipse.sisu.plexus-0.9.0.M4.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.codehaus.plexus:plexus-utils:3.6.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-utils/3.6.0/plexus-utils-3.6.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.codehaus.plexus:plexus-classworlds:2.9.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-classworlds/2.9.0/plexus-classworlds-2.9.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.15.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/plugin-tools/maven-plugin-annotations/3.15.2/maven-plugin-annotations-3.15.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-core:3.9.12",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-core/3.9.12/maven-core-3.9.12.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-settings:3.9.12",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings/3.9.12/maven-settings-3.9.12.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-settings-builder:3.9.12",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings-builder/3.9.12/maven-settings-builder-3.9.12.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.codehaus.plexus:plexus-sec-dispatcher:2.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-sec-dispatcher/2.0/plexus-sec-dispatcher-2.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.codehaus.plexus:plexus-cipher:2.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-cipher/2.0/plexus-cipher-2.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-builder-support:3.9.12",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-builder-support/3.9.12/maven-builder-support-3.9.12.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.12",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-repository-metadata/3.9.12/maven-repository-metadata-3.9.12.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-model-builder:3.9.12",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model-builder/3.9.12/maven-model-builder-3.9.12.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.12",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-resolver-provider/3.9.12/maven-resolver-provider-3.9.12.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.9.25",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-impl/1.9.25/maven-resolver-impl-1.9.25.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-named-locks:1.9.25",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-named-locks/1.9.25/maven-resolver-named-locks-1.9.25.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.9.25",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-api/1.9.25/maven-resolver-api-1.9.25.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.9.25",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-spi/1.9.25/maven-resolver-spi-1.9.25.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.9.25",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-util/1.9.25/maven-resolver-util-1.9.25.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.maven.shared:maven-shared-utils:3.4.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/shared/maven-shared-utils/3.4.2/maven-shared-utils-3.4.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.inject:0.9.0.M4",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M4/org.eclipse.sisu.inject-0.9.0.M4.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.ow2.asm:asm:9.9",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/ow2/asm/asm/9.9/asm-9.9.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: com.google.inject:guice:classes:5.1.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/google/inject/guice/5.1.0/guice-5.1.0-classes.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: aopalliance:aopalliance:1.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: com.google.guava:guava:33.5.0-jre",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/google/guava/guava/33.5.0-jre/guava-33.5.0-jre.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: com.google.guava:failureaccess:1.0.3",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.codehaus.plexus:plexus-interpolation:1.29",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-interpolation/1.29/plexus-interpolation-1.29.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.codehaus.plexus:plexus-component-annotations:2.2.0",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-component-annotations/2.2.0/plexus-component-annotations-2.2.0.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.slf4j:slf4j-api:1.7.36",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar!/"
-      ],
-      "properties": {}
-    },
-    {
       "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.1",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.20.1/jackson-module-kotlin-2.20.1.jar!/"
@@ -599,6 +333,48 @@
       "name": "Maven: io.github.classgraph:classgraph:4.8.184",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/io/github/classgraph/classgraph/4.8.184/classgraph-4.8.184.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-jvm-host:2.2.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-jvm-host/2.2.21/kotlin-scripting-jvm-host-2.2.21.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-compiler-embeddable:2.2.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-compiler-embeddable/2.2.21/kotlin-compiler-embeddable-2.2.21.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-daemon-embeddable:2.2.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-daemon-embeddable/2.2.21/kotlin-daemon-embeddable-2.2.21.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.8.0/kotlinx-coroutines-core-jvm-1.8.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:2.2.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-embeddable/2.2.21/kotlin-scripting-compiler-embeddable-2.2.21.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:2.2.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-scripting-compiler-impl-embeddable/2.2.21/kotlin-scripting-compiler-impl-embeddable-2.2.21.jar!/"
       ],
       "properties": {}
     },
@@ -967,184 +743,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.20.1",
+      "name": "Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.20.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.20.1/jackson-dataformat-yaml-2.20.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.20.2/jackson-dataformat-yaml-2.20.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.20.1",
+      "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.20.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.20.1/jackson-datatype-jsr310-2.20.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.20.2/jackson-datatype-jsr310-2.20.2.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-web:4.0.1",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-web/4.0.1/spring-boot-starter-web-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-jackson:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-jackson/4.0.1/spring-boot-starter-jackson-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-jackson:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-jackson/4.0.1/spring-boot-jackson-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: tools.jackson.core:jackson-databind:3.0.3",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/tools/jackson/core/jackson-databind/3.0.3/jackson-databind-3.0.3.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: tools.jackson.core:jackson-core:3.0.3",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/tools/jackson/core/jackson-core/3.0.3/jackson-core-3.0.3.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-tomcat/4.0.1/spring-boot-starter-tomcat-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-tomcat-runtime:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-tomcat-runtime/4.0.1/spring-boot-starter-tomcat-runtime-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-web-server:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-web-server/4.0.1/spring-boot-web-server-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-core:11.0.15",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/11.0.15/tomcat-embed-core-11.0.15.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-el:11.0.15",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-el/11.0.15/tomcat-embed-el-11.0.15.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.apache.tomcat.embed:tomcat-embed-websocket:11.0.15",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/11.0.15/tomcat-embed-websocket-11.0.15.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-tomcat:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-tomcat/4.0.1/spring-boot-tomcat-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-http-converter:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-http-converter/4.0.1/spring-boot-http-converter-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/4.0.1/spring-boot-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework:spring-context:7.0.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/7.0.2/spring-context-7.0.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework:spring-web:7.0.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/7.0.2/spring-web-7.0.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework:spring-beans:7.0.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/7.0.2/spring-beans-7.0.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.micrometer:micrometer-observation:1.16.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/micrometer/micrometer-observation/1.16.1/micrometer-observation-1.16.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: io.micrometer:micrometer-commons:1.16.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/micrometer/micrometer-commons/1.16.1/micrometer-commons-1.16.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-webmvc:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-webmvc/4.0.1/spring-boot-webmvc-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-servlet:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-servlet/4.0.1/spring-boot-servlet-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework:spring-webmvc:7.0.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/7.0.2/spring-webmvc-7.0.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework:spring-aop:7.0.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/7.0.2/spring-aop-7.0.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework:spring-expression:7.0.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/7.0.2/spring-expression-7.0.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.20.2/jackson-core-2.20.2.jar!/"
       ],
       "properties": {}
     },
@@ -1156,37 +771,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-test:4.0.1",
+      "name": "Maven: org.springframework.boot:spring-boot-starter-logging:4.0.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-test/4.0.1/spring-boot-starter-test-4.0.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-logging/4.0.3/spring-boot-starter-logging-4.0.3.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter:4.0.1",
+      "name": "Maven: ch.qos.logback:logback-classic:1.5.32",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter/4.0.1/spring-boot-starter-4.0.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.5.32/logback-classic-1.5.32.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-starter-logging:4.0.1",
+      "name": "Maven: ch.qos.logback:logback-core:1.5.32",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-logging/4.0.1/spring-boot-starter-logging-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: ch.qos.logback:logback-classic:1.5.22",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.5.22/logback-classic-1.5.22.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: ch.qos.logback:logback-core:1.5.22",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.5.22/logback-core-1.5.22.jar!/"
+        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.5.32/logback-core-1.5.32.jar!/"
       ],
       "properties": {}
     },
@@ -1212,30 +813,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework.boot:spring-boot-autoconfigure:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/4.0.1/spring-boot-autoconfigure-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
       "name": "Maven: org.yaml:snakeyaml:2.5",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/yaml/snakeyaml/2.5/snakeyaml-2.5.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-test:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test/4.0.1/spring-boot-test-4.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework.boot:spring-boot-test-autoconfigure:4.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test-autoconfigure/4.0.1/spring-boot-test-autoconfigure-4.0.1.jar!/"
       ],
       "properties": {}
     },
@@ -1254,51 +834,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.junit.jupiter:junit-jupiter:6.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/6.0.1/junit-jupiter-6.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.junit.platform:junit-platform-commons:6.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/6.0.1/junit-platform-commons-6.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.junit.jupiter:junit-jupiter-params:6.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/6.0.1/junit-jupiter-params-6.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.junit.platform:junit-platform-engine:6.0.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/6.0.1/junit-platform-engine-6.0.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
       "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.8",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework:spring-core:7.0.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/7.0.2/spring-core-7.0.2.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.springframework:spring-test:7.0.2",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/7.0.2/spring-test-7.0.2.jar!/"
       ],
       "properties": {}
     },
@@ -1320,6 +858,230 @@
       "name": "Maven: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.10.2/kotlinx-coroutines-core-jvm-1.10.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: javax.inject:javax.inject:1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/javax/inject/javax.inject/1/javax.inject-1.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-plugin-api:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-plugin-api/3.9.11/maven-plugin-api-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-model:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model/3.9.11/maven-model-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-artifact:3.9.11",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-artifact/3.9.11/maven-artifact-3.9.11.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.plexus:0.9.0.M4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M4/org.eclipse.sisu.plexus-0.9.0.M4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-utils:3.6.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-utils/3.6.0/plexus-utils-3.6.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-classworlds:2.9.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-classworlds/2.9.0/plexus-classworlds-2.9.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.15.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/plugin-tools/maven-plugin-annotations/3.15.2/maven-plugin-annotations-3.15.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-core:3.9.12",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-core/3.9.12/maven-core-3.9.12.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-settings:3.9.12",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings/3.9.12/maven-settings-3.9.12.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-settings-builder:3.9.12",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings-builder/3.9.12/maven-settings-builder-3.9.12.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-sec-dispatcher:2.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-sec-dispatcher/2.0/plexus-sec-dispatcher-2.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-cipher:2.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-cipher/2.0/plexus-cipher-2.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-builder-support:3.9.12",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-builder-support/3.9.12/maven-builder-support-3.9.12.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.12",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-repository-metadata/3.9.12/maven-repository-metadata-3.9.12.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-model-builder:3.9.12",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model-builder/3.9.12/maven-model-builder-3.9.12.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.12",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-resolver-provider/3.9.12/maven-resolver-provider-3.9.12.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-impl:1.9.25",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-impl/1.9.25/maven-resolver-impl-1.9.25.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-named-locks:1.9.25",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-named-locks/1.9.25/maven-resolver-named-locks-1.9.25.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-api:1.9.25",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-api/1.9.25/maven-resolver-api-1.9.25.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-spi:1.9.25",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-spi/1.9.25/maven-resolver-spi-1.9.25.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.resolver:maven-resolver-util:1.9.25",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/resolver/maven-resolver-util/1.9.25/maven-resolver-util-1.9.25.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.apache.maven.shared:maven-shared-utils:3.4.2",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/shared/maven-shared-utils/3.4.2/maven-shared-utils-3.4.2.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.eclipse.sisu:org.eclipse.sisu.inject:0.9.0.M4",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M4/org.eclipse.sisu.inject-0.9.0.M4.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.ow2.asm:asm:9.9",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/ow2/asm/asm/9.9/asm-9.9.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: com.google.inject:guice:classes:5.1.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/google/inject/guice/5.1.0/guice-5.1.0-classes.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: aopalliance:aopalliance:1.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: com.google.guava:guava:33.5.0-jre",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/google/guava/guava/33.5.0-jre/guava-33.5.0-jre.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: com.google.guava:failureaccess:1.0.3",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-interpolation:1.29",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-interpolation/1.29/plexus-interpolation-1.29.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.codehaus.plexus:plexus-component-annotations:2.2.0",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-component-annotations/2.2.0/plexus-component-annotations-2.2.0.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.slf4j:slf4j-api:1.7.36",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar!/"
       ],
       "properties": {}
     },
