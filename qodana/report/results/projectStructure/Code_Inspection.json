@@ -47,15 +47,15 @@
           "type": "Own sources"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.21.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.21",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.1",
           "type": "Library"
         },
         {
@@ -370,23 +370,23 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.21.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.21",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.21.1",
           "type": "Library"
         },
         {
-          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.0.21",
+          "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.21",
           "type": "Library"
         },
         {
@@ -781,19 +781,19 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.21.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.21",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.21.1",
           "type": "Library"
         },
         {
@@ -1157,15 +1157,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.21.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.21",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.1",
           "type": "Library"
         },
         {
@@ -1793,11 +1793,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.21.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.21.1",
           "type": "Library"
         },
         {
@@ -2101,19 +2101,19 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.21.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.21",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.21.1",
           "type": "Library"
         },
         {
@@ -2565,19 +2565,19 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.21.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.21",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.1",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.21.1",
           "type": "Library"
         },
         {

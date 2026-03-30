@@ -183,23 +183,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.20.1",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.21.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.20.1/jackson-databind-2.20.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.21.1/jackson-databind-2.21.1.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.20",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.20/jackson-annotations-2.20.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.20.1",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.20.1/jackson-core-2.20.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.21.1/jackson-core-2.21.1.jar!/"
       ],
       "properties": {}
     },
@@ -505,16 +505,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.20.1",
+      "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.21.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.20.1/jackson-module-kotlin-2.20.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.21.1/jackson-module-kotlin-2.21.1.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.0.21",
+      "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.1.21",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/2.0.21/kotlin-reflect-2.0.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/2.1.21/kotlin-reflect-2.1.21.jar!/"
       ],
       "properties": {}
     },
@@ -1124,20 +1124,6 @@
       "name": "Maven: org.springframework:spring-expression:7.0.6",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/7.0.6/spring-expression-7.0.6.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.1",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.21.1/jackson-core-2.21.1.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.21",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar!/"
       ],
       "properties": {}
     },
