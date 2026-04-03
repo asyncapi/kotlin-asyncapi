@@ -183,9 +183,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.21.1",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.21.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.21.1/jackson-databind-2.21.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.21.2/jackson-databind-2.21.2.jar!/"
       ],
       "properties": {}
     },
@@ -197,9 +197,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.1",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.21.1/jackson-core-2.21.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.21.2/jackson-core-2.21.2.jar!/"
       ],
       "properties": {}
     },
@@ -505,9 +505,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.21.1",
+      "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.21.2",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.21.1/jackson-module-kotlin-2.21.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.21.2/jackson-module-kotlin-2.21.2.jar!/"
       ],
       "properties": {}
     },
@@ -1124,6 +1124,13 @@
       "name": "Maven: org.springframework:spring-expression:7.0.6",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/7.0.6/spring-expression-7.0.6.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.1",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.21.1/jackson-core-2.21.1.jar!/"
       ],
       "properties": {}
     },
