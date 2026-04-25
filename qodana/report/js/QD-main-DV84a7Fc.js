@@ -1,0 +1,1 @@
+import{r as e,e as t,l as n}from"./QD-QodanaUI-DgWZUoPm.js";document.addEventListener("DOMContentLoaded",()=>{e("root",{environment:n.Standalone,isStagingContext:!1,statLaunchConfig:t.ask,paths:{prefix:"./results/"}})});
