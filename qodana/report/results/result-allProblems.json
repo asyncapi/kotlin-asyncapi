@@ -1,4 +1,91 @@
 {
   "version": "3",
-  "listProblem": []
+  "listProblem": [
+    {
+      "tool": "Code Inspection",
+      "category": "Java interop issues",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Java interop issues",
+          "name": "Java interop issues"
+        }
+      ],
+      "type": "Function or property has platform type",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "Moderate",
+      "comment": "Declaration has type inferred from a platform call, which can lead to unchecked nullability issues. Specify type explicitly as nullable or non-nullable.",
+      "detailsInfo": "Reports functions and properties that have a platform type.\n\nTo prevent unexpected errors, the type should be declared explicitly.\n\n**Example:**\n\n\n      fun foo() = java.lang.String.valueOf(1)\n\nThe quick fix allows you to specify the return type:\n\n\n      fun foo(): String = java.lang.String.valueOf(1)\n\nInspection ID: HasPlatformType",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-ktor/src/main/kotlin/com/asyncapi/kotlinasyncapi/ktor/AsyncApiModule.kt",
+          "language": "kotlin",
+          "line": 110,
+          "offset": 21,
+          "length": 14,
+          "code": {
+            "startLine": 108,
+            "length": 14,
+            "offset": 98,
+            "surroundingCode": "    val asyncApiSerializer: AsyncApiSerializer = DefaultAsyncApiSerializer()\n\n    fun Application.asyncApiModule() = routing {\n        route(configuration.path) {\n            get {"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-ktor",
+        "inspectionName": "HasPlatformType"
+      },
+      "hash": "4e8cfa27b1374dd8d8ff4a9a8a7c90dfd1cfcd95a65a81e02f60fc58eb6d280e",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "Java interop issues",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Java interop issues",
+          "name": "Java interop issues"
+        }
+      ],
+      "type": "Function or property has platform type",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "Moderate",
+      "comment": "Declaration has type inferred from a platform call, which can lead to unchecked nullability issues. Specify type explicitly as nullable or non-nullable.",
+      "detailsInfo": "Reports functions and properties that have a platform type.\n\nTo prevent unexpected errors, the type should be declared explicitly.\n\n**Example:**\n\n\n      fun foo() = java.lang.String.valueOf(1)\n\nThe quick fix allows you to specify the return type:\n\n\n      fun foo(): String = java.lang.String.valueOf(1)\n\nInspection ID: HasPlatformType",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-ktor/src/main/kotlin/com/asyncapi/kotlinasyncapi/ktor/AsyncApiPlugin.kt",
+          "language": "kotlin",
+          "line": 5,
+          "offset": 5,
+          "length": 14,
+          "code": {
+            "startLine": 3,
+            "length": 14,
+            "offset": 63,
+            "surroundingCode": "import io.ktor.server.application.createApplicationPlugin\n\nval AsyncApiPlugin = createApplicationPlugin(\n    name = \"AsyncApiPlugin\",\n    createConfiguration = ::AsyncApiConfiguration"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-ktor",
+        "inspectionName": "HasPlatformType"
+      },
+      "hash": "51c510f4a0f739f47a282d34389ff95752f11a7837b3c5c8ea80df9ff89588f2",
+      "problemType": "REGULAR"
+    }
+  ]
 }

@@ -1,4 +1,485 @@
 {
   "version": "3",
-  "listProblem": []
+  "listProblem": [
+    {
+      "tool": "Code Inspection",
+      "category": "General",
+      "categoryPath": [
+        {
+          "id": "General",
+          "name": "General"
+        }
+      ],
+      "type": "Kotlin sanity",
+      "tags": [
+        "kotlin",
+        "Sanity"
+      ],
+      "severity": "Critical",
+      "comment": "Unresolved reference kotlin.script.experimental.jvmhost.BasicJvmScriptingHost",
+      "detailsInfo": "Reports unresolved references in Kotlin code.\n\nInspection ID: QodanaKotlinSanity",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-spring-web/src/main/kotlin/com/asyncapi/kotlinasyncapi/springweb/AsyncApiAutoConfiguration.kt",
+          "language": "kotlin",
+          "line": 6,
+          "offset": 8,
+          "length": 56,
+          "code": {
+            "startLine": 4,
+            "length": 56,
+            "offset": 90,
+            "surroundingCode": "import kotlin.reflect.KClass\nimport kotlin.script.experimental.host.toScriptSource\nimport kotlin.script.experimental.jvmhost.BasicJvmScriptingHost\nimport com.asyncapi.kotlinasyncapi.annotation.Schema\nimport com.asyncapi.kotlinasyncapi.annotation.channel.Channel"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-spring-web",
+        "inspectionName": "QodanaKotlinSanity"
+      },
+      "hash": "1b008053688e47b16f401a59f0838522f5fb5965950ac740745e39cde19cfafb",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "General",
+      "categoryPath": [
+        {
+          "id": "General",
+          "name": "General"
+        }
+      ],
+      "type": "Kotlin sanity",
+      "tags": [
+        "kotlin",
+        "Sanity"
+      ],
+      "severity": "Critical",
+      "comment": "Unresolved reference kotlin.script.experimental.jvmhost.BasicJvmScriptingHost",
+      "detailsInfo": "Reports unresolved references in Kotlin code.\n\nInspection ID: QodanaKotlinSanity",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-maven-plugin/src/main/kotlin/com/asyncapi/kotlinasyncapi/mavenplugin/AsyncApiScriptRunner.kt",
+          "language": "kotlin",
+          "line": 10,
+          "offset": 8,
+          "length": 56,
+          "code": {
+            "startLine": 8,
+            "length": 56,
+            "offset": 117,
+            "surroundingCode": "import kotlin.script.experimental.api.implicitReceivers\nimport kotlin.script.experimental.host.toScriptSource\nimport kotlin.script.experimental.jvmhost.BasicJvmScriptingHost\n\ninternal interface AsyncApiScriptRunner {"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-maven-plugin",
+        "inspectionName": "QodanaKotlinSanity"
+      },
+      "hash": "2322a2a29318d1b7b79d4c7aeb8988daf8569ee89576ff17a828b90580c5c660",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "General",
+      "categoryPath": [
+        {
+          "id": "General",
+          "name": "General"
+        }
+      ],
+      "type": "Kotlin sanity",
+      "tags": [
+        "kotlin",
+        "Sanity"
+      ],
+      "severity": "Critical",
+      "comment": "Unresolved reference io.ktor.server.application.Application",
+      "detailsInfo": "Reports unresolved references in Kotlin code.\n\nInspection ID: QodanaKotlinSanity",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-ktor/src/main/kotlin/com/asyncapi/kotlinasyncapi/ktor/AsyncApiModule.kt",
+          "language": "kotlin",
+          "line": 5,
+          "offset": 8,
+          "length": 38,
+          "code": {
+            "startLine": 3,
+            "length": 38,
+            "offset": 74,
+            "surroundingCode": "import io.ktor.http.ContentType\nimport io.ktor.http.HttpStatusCode\nimport io.ktor.server.application.Application\nimport io.ktor.server.application.ApplicationEnvironment\nimport io.ktor.server.application.call"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-ktor",
+        "inspectionName": "QodanaKotlinSanity"
+      },
+      "hash": "25d99b7742b0aa1e995422d1dac2c5f9ff80cf77b52c60e95140f75b9f75c714",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "General",
+      "categoryPath": [
+        {
+          "id": "General",
+          "name": "General"
+        }
+      ],
+      "type": "Kotlin sanity",
+      "tags": [
+        "kotlin",
+        "Sanity"
+      ],
+      "severity": "Critical",
+      "comment": "Unresolved reference io.ktor.server.application.createApplicationPlugin",
+      "detailsInfo": "Reports unresolved references in Kotlin code.\n\nInspection ID: QodanaKotlinSanity",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-ktor/src/main/kotlin/com/asyncapi/kotlinasyncapi/ktor/AsyncApiPlugin.kt",
+          "language": "kotlin",
+          "line": 3,
+          "offset": 8,
+          "length": 50,
+          "code": {
+            "startLine": 1,
+            "length": 50,
+            "offset": 49,
+            "surroundingCode": "package com.asyncapi.kotlinasyncapi.ktor\n\nimport io.ktor.server.application.createApplicationPlugin\n\nval AsyncApiPlugin = createApplicationPlugin("
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-ktor",
+        "inspectionName": "QodanaKotlinSanity"
+      },
+      "hash": "2f66293741ca06236432c9c99c63b35a6c86914ac3124a59044ab4f9c9749730",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "General",
+      "categoryPath": [
+        {
+          "id": "General",
+          "name": "General"
+        }
+      ],
+      "type": "Kotlin sanity",
+      "tags": [
+        "kotlin",
+        "Sanity"
+      ],
+      "severity": "Critical",
+      "comment": "Unresolved reference io.swagger.v3.core.jackson.ModelResolver",
+      "detailsInfo": "Reports unresolved references in Kotlin code.\n\nInspection ID: QodanaKotlinSanity",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-context/src/main/kotlin/com/asyncapi/kotlinasyncapi/context/annotation/processor/ConverterUtils.kt",
+          "language": "kotlin",
+          "line": 5,
+          "offset": 8,
+          "length": 40,
+          "code": {
+            "startLine": 3,
+            "length": 40,
+            "offset": 123,
+            "surroundingCode": "import com.fasterxml.jackson.module.kotlin.registerKotlinModule\nimport io.swagger.v3.core.converter.ModelConverters\nimport io.swagger.v3.core.jackson.ModelResolver\n\ninternal val MODEL_RESOLVER = ModelConverters().also {"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-context",
+        "inspectionName": "QodanaKotlinSanity"
+      },
+      "hash": "43c7140791d396cfe9c9880eb95dddd622a860783ea08979c5078b601d1c19fa",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "General",
+      "categoryPath": [
+        {
+          "id": "General",
+          "name": "General"
+        }
+      ],
+      "type": "Kotlin sanity",
+      "tags": [
+        "kotlin",
+        "Sanity"
+      ],
+      "severity": "Critical",
+      "comment": "Unresolved reference io.ktor.http.HttpStatusCode",
+      "detailsInfo": "Reports unresolved references in Kotlin code.\n\nInspection ID: QodanaKotlinSanity",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-ktor/src/main/kotlin/com/asyncapi/kotlinasyncapi/ktor/AsyncApiModule.kt",
+          "language": "kotlin",
+          "line": 4,
+          "offset": 8,
+          "length": 27,
+          "code": {
+            "startLine": 2,
+            "length": 27,
+            "offset": 40,
+            "surroundingCode": "\nimport io.ktor.http.ContentType\nimport io.ktor.http.HttpStatusCode\nimport io.ktor.server.application.Application\nimport io.ktor.server.application.ApplicationEnvironment"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-ktor",
+        "inspectionName": "QodanaKotlinSanity"
+      },
+      "hash": "484806817417962aa457800686cf94be9ac1ee51856368876a6215a2f24ca94f",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "General",
+      "categoryPath": [
+        {
+          "id": "General",
+          "name": "General"
+        }
+      ],
+      "type": "Kotlin sanity",
+      "tags": [
+        "kotlin",
+        "Sanity"
+      ],
+      "severity": "Critical",
+      "comment": "Unresolved reference ModelResolver",
+      "detailsInfo": "Reports unresolved references in Kotlin code.\n\nInspection ID: QodanaKotlinSanity",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-context/src/main/kotlin/com/asyncapi/kotlinasyncapi/context/annotation/processor/ConverterUtils.kt",
+          "language": "kotlin",
+          "line": 8,
+          "offset": 31,
+          "length": 13,
+          "code": {
+            "startLine": 6,
+            "length": 13,
+            "offset": 86,
+            "surroundingCode": "\ninternal val MODEL_RESOLVER = ModelConverters().also {\n    (it.converters.first() as ModelResolver).objectMapper().registerKotlinModule()\n}\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-context",
+        "inspectionName": "QodanaKotlinSanity"
+      },
+      "hash": "4cc7db0541503c3137de6df7a1645aaa010d5645e78c9a0e839912d5208551bd",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "General",
+      "categoryPath": [
+        {
+          "id": "General",
+          "name": "General"
+        }
+      ],
+      "type": "Kotlin sanity",
+      "tags": [
+        "kotlin",
+        "Sanity"
+      ],
+      "severity": "Critical",
+      "comment": "Unresolved reference io.swagger.v3.core.converter.ModelConverters",
+      "detailsInfo": "Reports unresolved references in Kotlin code.\n\nInspection ID: QodanaKotlinSanity",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-context/src/main/kotlin/com/asyncapi/kotlinasyncapi/context/annotation/processor/ConverterUtils.kt",
+          "language": "kotlin",
+          "line": 4,
+          "offset": 8,
+          "length": 44,
+          "code": {
+            "startLine": 2,
+            "length": 44,
+            "offset": 72,
+            "surroundingCode": "\nimport com.fasterxml.jackson.module.kotlin.registerKotlinModule\nimport io.swagger.v3.core.converter.ModelConverters\nimport io.swagger.v3.core.jackson.ModelResolver\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-context",
+        "inspectionName": "QodanaKotlinSanity"
+      },
+      "hash": "518118173fb657eda904504a5cce49cd8b29500a33cf81fba2ac7c082de85a11",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "General",
+      "categoryPath": [
+        {
+          "id": "General",
+          "name": "General"
+        }
+      ],
+      "type": "Kotlin sanity",
+      "tags": [
+        "kotlin",
+        "Sanity"
+      ],
+      "severity": "Critical",
+      "comment": "Unresolved reference io.ktor.http.ContentType",
+      "detailsInfo": "Reports unresolved references in Kotlin code.\n\nInspection ID: QodanaKotlinSanity",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-ktor/src/main/kotlin/com/asyncapi/kotlinasyncapi/ktor/AsyncApiModule.kt",
+          "language": "kotlin",
+          "line": 3,
+          "offset": 8,
+          "length": 24,
+          "code": {
+            "startLine": 1,
+            "length": 24,
+            "offset": 49,
+            "surroundingCode": "package com.asyncapi.kotlinasyncapi.ktor\n\nimport io.ktor.http.ContentType\nimport io.ktor.http.HttpStatusCode\nimport io.ktor.server.application.Application"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-ktor",
+        "inspectionName": "QodanaKotlinSanity"
+      },
+      "hash": "754e69e66615975028a17e0fdca736c09a26c60ed68b91132d78874ce1d7f41f",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "General",
+      "categoryPath": [
+        {
+          "id": "General",
+          "name": "General"
+        }
+      ],
+      "type": "Kotlin sanity",
+      "tags": [
+        "kotlin",
+        "Sanity"
+      ],
+      "severity": "Critical",
+      "comment": "Unresolved reference Application",
+      "detailsInfo": "Reports unresolved references in Kotlin code.\n\nInspection ID: QodanaKotlinSanity",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-ktor/src/main/kotlin/com/asyncapi/kotlinasyncapi/ktor/AsyncApiModule.kt",
+          "language": "kotlin",
+          "line": 110,
+          "offset": 9,
+          "length": 11,
+          "code": {
+            "startLine": 108,
+            "length": 11,
+            "offset": 86,
+            "surroundingCode": "    val asyncApiSerializer: AsyncApiSerializer = DefaultAsyncApiSerializer()\n\n    fun Application.asyncApiModule() = routing {\n        route(configuration.path) {\n            get {"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-ktor",
+        "inspectionName": "QodanaKotlinSanity"
+      },
+      "hash": "a825aa92e659a4d9dca5557c8ff7156e0e7e3def1a81450c79b4ca52b4e91d6b",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "General",
+      "categoryPath": [
+        {
+          "id": "General",
+          "name": "General"
+        }
+      ],
+      "type": "Kotlin sanity",
+      "tags": [
+        "kotlin",
+        "Sanity"
+      ],
+      "severity": "Critical",
+      "comment": "Unresolved reference kotlin.script.experimental.jvmhost.BasicJvmScriptingHost",
+      "detailsInfo": "Reports unresolved references in Kotlin code.\n\nInspection ID: QodanaKotlinSanity",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-context/src/main/kotlin/com/asyncapi/kotlinasyncapi/context/service/AsyncApiExtension.kt",
+          "language": "kotlin",
+          "line": 10,
+          "offset": 8,
+          "length": 56,
+          "code": {
+            "startLine": 8,
+            "length": 56,
+            "offset": 148,
+            "surroundingCode": "import kotlin.script.experimental.jvm.updateClasspath\nimport kotlin.script.experimental.jvm.util.scriptCompilationClasspathFromContextOrNull\nimport kotlin.script.experimental.jvmhost.BasicJvmScriptingHost\n\ninterface AsyncApiExtension {"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-context",
+        "inspectionName": "QodanaKotlinSanity"
+      },
+      "hash": "b4cc26a26054a1f9940a45518cc56324d305682db513d4797a08b37af937a45f",
+      "problemType": "REGULAR"
+    },
+    {
+      "tool": "Code Inspection",
+      "category": "General",
+      "categoryPath": [
+        {
+          "id": "General",
+          "name": "General"
+        }
+      ],
+      "type": "Kotlin sanity",
+      "tags": [
+        "kotlin",
+        "Sanity"
+      ],
+      "severity": "Critical",
+      "comment": "Unresolved reference io.ktor.server.netty.Netty",
+      "detailsInfo": "Reports unresolved references in Kotlin code.\n\nInspection ID: QodanaKotlinSanity",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-examples/kotlin-asyncapi-ktor-example/src/main/kotlin/com/asyncapi/kotlinasyncapi/example/ktor/ExampleApplication.kt",
+          "language": "kotlin",
+          "line": 5,
+          "offset": 8,
+          "length": 26,
+          "code": {
+            "startLine": 3,
+            "length": 26,
+            "offset": 93,
+            "surroundingCode": "import io.ktor.server.application.install\nimport io.ktor.server.engine.embeddedServer\nimport io.ktor.server.netty.Netty\nimport com.asyncapi.kotlinasyncapi.ktor.AsyncApiPlugin\n"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-ktor-example",
+        "inspectionName": "QodanaKotlinSanity"
+      },
+      "hash": "e4e9ac40160f6a4ad93cbb299053fe5ee2dcbf49e090e4dd89afb901db4932ed",
+      "problemType": "REGULAR"
+    }
+  ]
 }
