@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "total": 2,
+  "total": 0,
   "tools inspection": {
-    "Code Inspection": 2
+    "Code Inspection": 0
   },
   "linter": "QDJVM",
   "attributes": {
@@ -11,7 +11,7 @@
     "vcs": {
       "sarifIdea": {
         "repositoryUri": "https://github.com/asyncapi/kotlin-asyncapi",
-        "revisionId": "69eb5c079949926d8dd56e42cc40a9098d56c23e",
+        "revisionId": "a73238d3a68d4f379fcde1a3b602793ab1b118d6",
         "branch": "master"
       }
     },
