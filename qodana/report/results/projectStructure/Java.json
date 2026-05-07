@@ -9,14 +9,6 @@
       "languageLevel": 5
     },
     {
-      "name": "kotlin-asyncapi-context",
-      "languageLevel": 8
-    },
-    {
-      "name": "kotlin-asyncapi-examples",
-      "languageLevel": 5
-    },
-    {
       "name": "kotlin-asyncapi-ktor",
       "languageLevel": 8
     },
@@ -26,6 +18,10 @@
     },
     {
       "name": "kotlin-asyncapi-annotation",
+      "languageLevel": 8
+    },
+    {
+      "name": "kotlin-asyncapi-context",
       "languageLevel": 8
     },
     {
@@ -43,6 +39,10 @@
     {
       "name": "kotlin-asyncapi-script",
       "languageLevel": 8
+    },
+    {
+      "name": "kotlin-asyncapi-examples",
+      "languageLevel": 5
     }
   ]
 }
