@@ -1002,6 +1002,13 @@
       "properties": {}
     },
     {
+      "name": "Maven: org.slf4j:slf4j-api:2.0.18",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar!/"
+      ],
+      "properties": {}
+    },
+    {
       "name": "Maven: net.bytebuddy:byte-buddy:1.10.9",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.10.9/byte-buddy-1.10.9.jar!/"
