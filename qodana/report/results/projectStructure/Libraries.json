@@ -288,23 +288,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-plugin-api:3.9.15",
+      "name": "Maven: org.apache.maven:maven-plugin-api:3.9.16",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-plugin-api/3.9.15/maven-plugin-api-3.9.15.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-plugin-api/3.9.16/maven-plugin-api-3.9.16.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-model:3.9.15",
+      "name": "Maven: org.apache.maven:maven-model:3.9.16",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model/3.9.15/maven-model-3.9.15.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model/3.9.16/maven-model-3.9.16.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-artifact:3.9.15",
+      "name": "Maven: org.apache.maven:maven-artifact:3.9.16",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-artifact/3.9.15/maven-artifact-3.9.15.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-artifact/3.9.16/maven-artifact-3.9.16.jar!/"
       ],
       "properties": {}
     },
@@ -323,9 +323,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.codehaus.plexus:plexus-classworlds:2.9.0",
+      "name": "Maven: org.codehaus.plexus:plexus-classworlds:2.11.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-classworlds/2.9.0/plexus-classworlds-2.9.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/codehaus/plexus/plexus-classworlds/2.11.0/plexus-classworlds-2.11.0.jar!/"
       ],
       "properties": {}
     },

@@ -1649,15 +1649,15 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-plugin-api:3.9.15",
+          "name": "Maven: org.apache.maven:maven-plugin-api:3.9.16",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-model:3.9.15",
+          "name": "Maven: org.apache.maven:maven-model:3.9.16",
           "type": "Library"
         },
         {
-          "name": "Maven: org.apache.maven:maven-artifact:3.9.15",
+          "name": "Maven: org.apache.maven:maven-artifact:3.9.16",
           "type": "Library"
         },
         {
@@ -1669,7 +1669,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.codehaus.plexus:plexus-classworlds:2.9.0",
+          "name": "Maven: org.codehaus.plexus:plexus-classworlds:2.11.0",
           "type": "Library"
         },
         {
