@@ -1016,23 +1016,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-web:7.0.7",
+      "name": "Maven: org.springframework:spring-web:7.0.8",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/7.0.7/spring-web-7.0.7.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/7.0.8/spring-web-7.0.8.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-beans:7.0.7",
+      "name": "Maven: org.springframework:spring-beans:7.0.8",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/7.0.7/spring-beans-7.0.7.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/7.0.8/spring-beans-7.0.8.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-core:7.0.7",
+      "name": "Maven: org.springframework:spring-core:7.0.8",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/7.0.7/spring-core-7.0.7.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/7.0.8/spring-core-7.0.8.jar!/"
       ],
       "properties": {}
     },
@@ -1044,37 +1044,37 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.micrometer:micrometer-observation:1.16.5",
+      "name": "Maven: io.micrometer:micrometer-observation:1.16.6",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/micrometer/micrometer-observation/1.16.5/micrometer-observation-1.16.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/micrometer/micrometer-observation/1.16.6/micrometer-observation-1.16.6.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.micrometer:micrometer-commons:1.16.5",
+      "name": "Maven: io.micrometer:micrometer-commons:1.16.6",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/micrometer/micrometer-commons/1.16.5/micrometer-commons-1.16.5.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/micrometer/micrometer-commons/1.16.6/micrometer-commons-1.16.6.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-context:7.0.7",
+      "name": "Maven: org.springframework:spring-context:7.0.8",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/7.0.7/spring-context-7.0.7.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/7.0.8/spring-context-7.0.8.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-aop:7.0.7",
+      "name": "Maven: org.springframework:spring-aop:7.0.8",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/7.0.7/spring-aop-7.0.7.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/7.0.8/spring-aop-7.0.8.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.springframework:spring-expression:7.0.7",
+      "name": "Maven: org.springframework:spring-expression:7.0.8",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/7.0.7/spring-expression-7.0.7.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/7.0.8/spring-expression-7.0.8.jar!/"
       ],
       "properties": {}
     },
@@ -1380,6 +1380,55 @@
       "properties": {}
     },
     {
+      "name": "Maven: org.springframework:spring-context:7.0.7",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/7.0.7/spring-context-7.0.7.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-web:7.0.7",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/7.0.7/spring-web-7.0.7.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-beans:7.0.7",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/7.0.7/spring-beans-7.0.7.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.micrometer:micrometer-observation:1.16.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/micrometer/micrometer-observation/1.16.5/micrometer-observation-1.16.5.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: io.micrometer:micrometer-commons:1.16.5",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/io/micrometer/micrometer-commons/1.16.5/micrometer-commons-1.16.5.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-aop:7.0.7",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/7.0.7/spring-aop-7.0.7.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-expression:7.0.7",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-expression/7.0.7/spring-expression-7.0.7.jar!/"
+      ],
+      "properties": {}
+    },
+    {
       "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.2",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.21.2/jackson-core-2.21.2.jar!/"
@@ -1453,6 +1502,13 @@
       "name": "Maven: net.bytebuddy:byte-buddy-agent:1.17.8",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.springframework:spring-core:7.0.7",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/7.0.7/spring-core-7.0.7.jar!/"
       ],
       "properties": {}
     },
