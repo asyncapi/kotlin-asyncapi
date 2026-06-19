@@ -11,11 +11,11 @@
     "vcs": {
       "sarifIdea": {
         "repositoryUri": "https://github.com/asyncapi/kotlin-asyncapi",
-        "revisionId": "e7c17dab4f46e097039e7e1bffcfab2f0f641f39",
+        "revisionId": "de408ae55b6947095089a7ddee4a7a20c88b11b6",
         "branch": "master"
       }
     },
     "repoUrl": "https://github.com/asyncapi/kotlin-asyncapi"
   },
-  "linterVersion": "261.24091"
+  "linterVersion": "261.25881"
 }
