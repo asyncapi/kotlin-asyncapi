@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.openfolder</groupId>
         <artifactId>kotlin-asyncapi-parent</artifactId>
-        <version>3.2.3</version>
+        <version>3.2.4-SNAPSHOT</version>
     </parent>
 
     <artifactId>kotlin-asyncapi-ktor</artifactId>
@@ -15,7 +15,7 @@
     <description>The Ktor plugin for the Kotlin AsyncAPI framework</description>
 
     <properties>
-        <ktor-server.version>3.5.0</ktor-server.version>
+        <ktor-server.version>3.4.3</ktor-server.version>
     </properties>
 
     <dependencies>
