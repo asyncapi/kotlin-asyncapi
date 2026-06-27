@@ -5,31 +5,23 @@
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-ktor",
-      "languageLevel": 8
-    },
-    {
-      "name": "kotlin-asyncapi-maven-plugin",
+      "name": "kotlin-asyncapi-parent",
       "languageLevel": 5
-    },
-    {
-      "name": "kotlin-asyncapi-annotation",
-      "languageLevel": 8
     },
     {
       "name": "kotlin-asyncapi-context",
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-spring-boot-example",
-      "languageLevel": 8
+      "name": "kotlin-asyncapi-examples",
+      "languageLevel": 5
     },
     {
       "name": "kotlin-asyncapi-spring-web",
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-ktor-example",
+      "name": "kotlin-asyncapi-annotation",
       "languageLevel": 8
     },
     {
@@ -37,12 +29,20 @@
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-parent",
-      "languageLevel": 5
+      "name": "kotlin-asyncapi-maven-plugin",
+      "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-examples",
-      "languageLevel": 5
+      "name": "kotlin-asyncapi-ktor",
+      "languageLevel": 8
+    },
+    {
+      "name": "kotlin-asyncapi-spring-boot-example",
+      "languageLevel": 8
+    },
+    {
+      "name": "kotlin-asyncapi-ktor-example",
+      "languageLevel": 8
     }
   ]
 }
