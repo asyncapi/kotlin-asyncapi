@@ -7,25 +7,20 @@
         "id" : {
           "type" : "integer",
           "format" : "int32",
-          "exampleSetFlag" : false,
           "types" : [ "integer" ]
         },
         "name" : {
           "type" : "string",
-          "exampleSetFlag" : false,
           "types" : [ "string" ]
         },
         "isTest" : {
           "type" : "boolean",
-          "exampleSetFlag" : false,
           "types" : [ "boolean" ]
         },
         "sub" : {
-          "$ref" : "#/components/schemas/TestSubSchema",
-          "exampleSetFlag" : false
+          "$ref" : "#/components/schemas/TestSubSchema"
         }
-      },
-      "exampleSetFlag" : false
+      }
     },
     "TestSubSchema" : {
       "required" : [ "exists" ],
@@ -33,11 +28,9 @@
       "properties" : {
         "exists" : {
           "type" : "boolean",
-          "exampleSetFlag" : false,
           "types" : [ "boolean" ]
         }
-      },
-      "exampleSetFlag" : false
+      }
     }
   }
 }

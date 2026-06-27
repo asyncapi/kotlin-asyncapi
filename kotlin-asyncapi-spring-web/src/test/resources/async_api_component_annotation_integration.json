@@ -19,20 +19,17 @@
         "properties": {
           "value": {
             "type": "string",
-            "exampleSetFlag": false,
             "types": [
               "string"
             ]
           },
           "optionalValue": {
             "type": "boolean",
-            "exampleSetFlag": false,
             "types": [
               "boolean"
             ]
           }
-        },
-        "exampleSetFlag": false
+        }
       }
     },
     "channels": {

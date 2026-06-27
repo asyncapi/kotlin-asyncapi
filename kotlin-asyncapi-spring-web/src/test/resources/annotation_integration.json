@@ -63,11 +63,9 @@
       "properties" : {
         "type" : {
           "type" : "string",
-          "exampleSetFlag" : false,
           "types" : [ "string" ]
         }
-      },
-      "exampleSetFlag" : false
+      }
     },
     "TestMessage" : {
       "required" : [ "id", "isTest", "name" ],
@@ -76,21 +74,17 @@
         "id" : {
           "type" : "integer",
           "format" : "int32",
-          "exampleSetFlag" : false,
           "types" : [ "integer" ]
         },
         "name" : {
           "type" : "string",
-          "exampleSetFlag" : false,
           "types" : [ "string" ]
         },
         "isTest" : {
           "type" : "boolean",
-          "exampleSetFlag" : false,
           "types" : [ "boolean" ]
         }
-      },
-      "exampleSetFlag" : false
+      }
     }
   }
 }
