@@ -43,23 +43,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-jvm:1.14.9",
+      "name": "Maven: io.mockk:mockk-jvm:1.14.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-jvm/1.14.9/mockk-jvm-1.14.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-jvm/1.14.11/mockk-jvm-1.14.11.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.9",
+      "name": "Maven: io.mockk:mockk-dsl-jvm:1.14.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-dsl-jvm/1.14.9/mockk-dsl-jvm-1.14.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-dsl-jvm/1.14.11/mockk-dsl-jvm-1.14.11.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-agent-jvm:1.14.9",
+      "name": "Maven: io.mockk:mockk-agent-jvm:1.14.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-jvm/1.14.9/mockk-agent-jvm-1.14.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-jvm/1.14.11/mockk-agent-jvm-1.14.11.jar!/"
       ],
       "properties": {}
     },
@@ -85,16 +85,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.9",
+      "name": "Maven: io.mockk:mockk-agent-api-jvm:1.14.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-api-jvm/1.14.9/mockk-agent-api-jvm-1.14.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-agent-api-jvm/1.14.11/mockk-agent-api-jvm-1.14.11.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.mockk:mockk-core-jvm:1.14.9",
+      "name": "Maven: io.mockk:mockk-core-jvm:1.14.11",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-core-jvm/1.14.9/mockk-core-jvm-1.14.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/mockk/mockk-core-jvm/1.14.11/mockk-core-jvm-1.14.11.jar!/"
       ],
       "properties": {}
     },
@@ -120,23 +120,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.21.3",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.21.3/jackson-databind-2.21.3.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.22.0/jackson-databind-2.22.0.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.21",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.22",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.22/jackson-annotations-2.22.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.21.3",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.21.3/jackson-core-2.21.3.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.22.0/jackson-core-2.22.0.jar!/"
       ],
       "properties": {}
     },
@@ -337,23 +337,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-core:3.9.15",
+      "name": "Maven: org.apache.maven:maven-core:3.9.16",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-core/3.9.15/maven-core-3.9.15.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-core/3.9.16/maven-core-3.9.16.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-settings:3.9.15",
+      "name": "Maven: org.apache.maven:maven-settings:3.9.16",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings/3.9.15/maven-settings-3.9.15.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings/3.9.16/maven-settings-3.9.16.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-settings-builder:3.9.15",
+      "name": "Maven: org.apache.maven:maven-settings-builder:3.9.16",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings-builder/3.9.15/maven-settings-builder-3.9.15.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-settings-builder/3.9.16/maven-settings-builder-3.9.16.jar!/"
       ],
       "properties": {}
     },
@@ -372,30 +372,30 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-builder-support:3.9.15",
+      "name": "Maven: org.apache.maven:maven-builder-support:3.9.16",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-builder-support/3.9.15/maven-builder-support-3.9.15.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-builder-support/3.9.16/maven-builder-support-3.9.16.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.15",
+      "name": "Maven: org.apache.maven:maven-repository-metadata:3.9.16",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-repository-metadata/3.9.15/maven-repository-metadata-3.9.15.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-repository-metadata/3.9.16/maven-repository-metadata-3.9.16.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-model-builder:3.9.15",
+      "name": "Maven: org.apache.maven:maven-model-builder:3.9.16",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model-builder/3.9.15/maven-model-builder-3.9.15.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-model-builder/3.9.16/maven-model-builder-3.9.16.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.15",
+      "name": "Maven: org.apache.maven:maven-resolver-provider:3.9.16",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-resolver-provider/3.9.15/maven-resolver-provider-3.9.15.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/maven-resolver-provider/3.9.16/maven-resolver-provider-3.9.16.jar!/"
       ],
       "properties": {}
     },
@@ -470,9 +470,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.google.guava:guava:33.5.0-jre",
+      "name": "Maven: com.google.guava:guava:33.6.0-jre",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/google/guava/guava/33.5.0-jre/guava-33.5.0-jre.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/google/guava/guava/33.6.0-jre/guava-33.6.0-jre.jar!/"
       ],
       "properties": {}
     },
@@ -505,9 +505,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.21.3",
+      "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.21.3/jackson-module-kotlin-2.21.3.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.22.0/jackson-module-kotlin-2.22.0.jar!/"
       ],
       "properties": {}
     },
@@ -519,9 +519,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.48",
+      "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.52",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-core-jakarta/2.2.48/swagger-core-jakarta-2.2.48.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-core-jakarta/2.2.52/swagger-core-jakarta-2.2.52.jar!/"
       ],
       "properties": {}
     },
@@ -533,30 +533,30 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.slf4j:slf4j-api:2.0.9",
+      "name": "Maven: org.slf4j:slf4j-api:2.0.17",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.48",
+      "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.52",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-annotations-jakarta/2.2.48/swagger-annotations-jakarta-2.2.48.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-annotations-jakarta/2.2.52/swagger-annotations-jakarta-2.2.52.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.48",
+      "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.52",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-models-jakarta/2.2.48/swagger-models-jakarta-2.2.48.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-models-jakarta/2.2.52/swagger-models-jakarta-2.2.52.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: org.yaml:snakeyaml:2.3",
+      "name": "Maven: org.yaml:snakeyaml:2.6",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/yaml/snakeyaml/2.6/snakeyaml-2.6.jar!/"
       ],
       "properties": {}
     },
@@ -582,16 +582,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.21.1",
+      "name": "Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.22.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.21.1/jackson-dataformat-yaml-2.21.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.22.0/jackson-dataformat-yaml-2.22.0.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.21.1",
+      "name": "Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.22.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.21.1/jackson-datatype-jsr310-2.21.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.22.0/jackson-datatype-jsr310-2.22.0.jar!/"
       ],
       "properties": {}
     },
@@ -620,13 +620,6 @@
       "name": "Maven: io.ktor:ktor-server-core-jvm:3.4.3",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-core-jvm/3.4.3/ktor-server-core-jvm-3.4.3.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.slf4j:slf4j-api:2.0.17",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar!/"
       ],
       "properties": {}
     },
@@ -1401,6 +1394,13 @@
       "properties": {}
     },
     {
+      "name": "Maven: com.fasterxml.jackson.core:jackson-annotations:2.21",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar!/"
+      ],
+      "properties": {}
+    },
+    {
       "name": "Maven: org.jetbrains.kotlin:kotlin-reflect:2.3.21",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/2.3.21/kotlin-reflect-2.3.21.jar!/"
@@ -1439,13 +1439,6 @@
       "name": "Maven: org.slf4j:jul-to-slf4j:2.0.18",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/org/slf4j/jul-to-slf4j/2.0.18/jul-to-slf4j-2.0.18.jar!/"
-      ],
-      "properties": {}
-    },
-    {
-      "name": "Maven: org.yaml:snakeyaml:2.6",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/yaml/snakeyaml/2.6/snakeyaml-2.6.jar!/"
       ],
       "properties": {}
     },
