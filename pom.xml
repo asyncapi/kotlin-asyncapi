@@ -59,7 +59,7 @@
         <jackson.version>2.22.0</jackson.version>
         <swagger.version>2.2.48</swagger.version>
         <classgraph.version>4.8.184</classgraph.version>
-        <mockk.version>1.14.9</mockk.version>
+        <mockk.version>1.14.11</mockk.version>
         <jsonassert.version>1.5.3</jsonassert.version>
         <junit-jupiter.version>6.1.1</junit-jupiter.version>
         <assertj.version>3.27.7</assertj.version>
