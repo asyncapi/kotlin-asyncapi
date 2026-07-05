@@ -19,7 +19,7 @@
     <properties>
         <java.version>17</java.version>
         <kotlin.version>2.2.21</kotlin.version>
-        <ktor.version>3.4.3</ktor.version>
+        <ktor.version>3.5.1</ktor.version>
         <logback.version>1.5.34</logback.version>
         <slf4j.version>2.0.18</slf4j.version>
         <main.class>com.asyncapi.kotlinasyncapi.example.ktor.ExampleApplicationKt</main.class>
