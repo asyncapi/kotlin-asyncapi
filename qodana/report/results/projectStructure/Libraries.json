@@ -120,9 +120,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.0",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.22.0/jackson-databind-2.22.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.22.1/jackson-databind-2.22.1.jar!/"
       ],
       "properties": {}
     },
@@ -134,9 +134,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.0",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.22.0/jackson-core-2.22.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.22.1/jackson-core-2.22.1.jar!/"
       ],
       "properties": {}
     },
@@ -239,9 +239,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.0",
+      "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.22.0/jackson-module-kotlin-2.22.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.22.1/jackson-module-kotlin-2.22.1.jar!/"
       ],
       "properties": {}
     },
@@ -1590,16 +1590,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: ch.qos.logback:logback-classic:1.5.37",
+      "name": "Maven: ch.qos.logback:logback-classic:1.5.38",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.5.37/logback-classic-1.5.37.jar!/"
+        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.5.38/logback-classic-1.5.38.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: ch.qos.logback:logback-core:1.5.37",
+      "name": "Maven: ch.qos.logback:logback-core:1.5.38",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.5.37/logback-core-1.5.37.jar!/"
+        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.5.38/logback-core-1.5.38.jar!/"
       ],
       "properties": {}
     },

@@ -47,7 +47,7 @@
           "type": "Own sources"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.1",
           "type": "Library"
         },
         {
@@ -55,7 +55,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.1",
           "type": "Library"
         },
         {
@@ -247,7 +247,7 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.1",
           "type": "Library"
         },
         {
@@ -255,11 +255,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.1",
           "type": "Library"
         },
         {
@@ -623,7 +623,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.1",
           "type": "Library"
         },
         {
@@ -631,7 +631,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.1",
           "type": "Library"
         },
         {
@@ -1083,7 +1083,7 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.1",
           "type": "Library"
         },
         {
@@ -1091,11 +1091,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.1",
           "type": "Library"
         },
         {
@@ -1495,11 +1495,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.1",
           "type": "Library"
         },
         {
@@ -1803,7 +1803,7 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.1",
           "type": "Library"
         },
         {
@@ -1811,11 +1811,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.1",
           "type": "Library"
         },
         {
@@ -2267,7 +2267,7 @@
           "type": "Module"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.1",
           "type": "Library"
         },
         {
@@ -2275,11 +2275,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.1",
           "type": "Library"
         },
         {
-          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.0",
+          "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.1",
           "type": "Library"
         },
         {
@@ -2463,11 +2463,11 @@
           "type": "Library"
         },
         {
-          "name": "Maven: ch.qos.logback:logback-classic:1.5.37",
+          "name": "Maven: ch.qos.logback:logback-classic:1.5.38",
           "type": "Library"
         },
         {
-          "name": "Maven: ch.qos.logback:logback-core:1.5.37",
+          "name": "Maven: ch.qos.logback:logback-core:1.5.38",
           "type": "Library"
         },
         {
