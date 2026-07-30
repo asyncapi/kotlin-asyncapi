@@ -473,7 +473,7 @@
           "shortName": "NewClassNamingConvention",
           "displayName": "Class naming convention",
           "enabled": false,
-          "description": "Reports classes whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** if the inspection is enabled for tests, and the specified length for the minimum class name is 8 (the default), the following test class\nproduces a warning because the length of its name is 6, which is less than 8: `public class MyTest{}`.\n\nA quick-fix that renames such classes is available only in the editor.\n\nConfigure the inspection:\n\n\nUse the list in the **Options** section to specify which classes should be checked. Deselect the checkboxes for the classes for which\nyou want to skip the check.\n\nFor each class type, specify the minimum length, maximum length, and the regular expression expected for class names using the\nprovided input fields. Specify **0** in the length fields to skip corresponding checks.\n\nRegular expressions should be specified in the standard `java.util.regex` format.\n\nInspection ID: NewClassNamingConvention"
+          "description": "Reports classes whose names are too short, too long, or do not follow the specified regular expression pattern.\n\nA quick-fix to rename such classes is available only in the editor.\n\n**Example:**\n\n\n      public class Yes{}\n\nThis example will be reported if the inspection is enabled for test classes with the default settings where a class name should have a minimum length of 8.\n\nUse the list in the **Options** section to specify the types of classes that should be checked.\n\n\nFor each class type, you can specify the minimum length, maximum length, and regular expression for acceptable class names.\nSpecify **0** in a length field to skip the corresponding check.\nRegular expressions use the standard `java.util.regex` format.\n\nInspection ID: NewClassNamingConvention"
         },
         {
           "shortName": "NonExceptionNameEndsWithException",
@@ -686,22 +686,22 @@
           "description": "Reports non-final fields in enumeration types. Non-final fields introduce global mutable state, which is generally considered undesirable.\n\n**Example:**\n\n\n      enum Enum {\n        FIRST(\"first\"),\n        SECOND(\"second\");\n\n        public String str;\n\n        Enum(String str) {\n            this.str = str;\n        }\n      }\n\nAfter the quick-fix is applied:\n\n\n      enum Enum {\n        FIRST(\"first\"),\n        SECOND(\"second\");\n\n        public final String str;\n\n        Enum(String str) {\n            this.str = str;\n        }\n      }\n\nUse the \\`Ignore fields that cannot be made 'final'\\` option to only warn on fields that can be made final using the quick-fix.\n\nInspection ID: NonFinalFieldInEnum"
         },
         {
-          "shortName": "Singleton",
-          "displayName": "Singleton",
-          "enabled": false,
-          "description": "Reports singleton classes.\n\nSingleton classes are declared in a way that only one instance of the class can ever be instantiated. Singleton classes complicate testing,\nand their presence may indicate a lack of object-oriented design.\n\n**Example:**\n\n\n      class Singleton {\n        private static final Singleton ourInstance = new Singleton();\n\n        private Singleton() {\n        }\n\n        public Singleton getInstance() {\n            return ourInstance;\n        }\n      }\n\nInspection ID: Singleton"
-        },
-        {
           "shortName": "NonFinalUtilityClass",
           "displayName": "Utility class is not 'final'",
           "enabled": false,
           "description": "Reports utility classes that aren't `final` or `abstract`.\n\nUtility classes have all fields and methods declared as `static`.\nMaking them `final` prevents them from being accidentally subclassed.\n\n**Example:**\n\n\n      public class UtilityClass {\n        public static void foo() {}\n      }\n\nAfter the quick-fix is applied:\n\n\n      public final class UtilityClass {\n        public static void foo() {}\n      }\n\nInspection ID: NonFinalUtilityClass"
         },
         {
+          "shortName": "Singleton",
+          "displayName": "Singleton",
+          "enabled": false,
+          "description": "Reports singleton classes.\n\nSingleton classes are declared in a way that only one instance of the class can ever be instantiated. Singleton classes complicate testing,\nand their presence may indicate a lack of object-oriented design.\n\n**Example:**\n\n\n      class Singleton {\n        private static final Singleton ourInstance = new Singleton();\n\n        private Singleton() {\n        }\n\n        public Singleton getInstance() {\n            return ourInstance;\n        }\n      }\n\nInspection ID: Singleton"
+        },
+        {
           "shortName": "ParameterCanBeLocal",
           "displayName": "Value passed as parameter never read",
           "enabled": false,
-          "description": "Reports redundant method parameters that can be replaced with local variables.\n\nIf all local usages of a parameter are preceded by assignments to that parameter, the\nparameter can be removed and its usages replaced with local variables.\nIt makes no sense to have such a parameter, as values that are passed to it are overwritten.\nUsually, the problem appears as a result of refactoring.\n\nExample:\n\n\n      void test(int p) {\n        p = 1;\n        System.out.print(p);\n      }\n\nAfter the quick-fix is applied:\n\n\n      void test() {\n        int p = 1;\n        System.out.print(p);\n      }\n\nInspection ID: ParameterCanBeLocal"
+          "description": "Reports method parameters that are redundant and can be replaced with a local variable.\n\nIf all usages of a parameter are preceded by an assignment to that parameter, the\nparameter can be replaced with a local variable.\nSuch a parameter is unnecessary, as values that are passed to it are overwritten.\nUsually, the problem appears as a result of refactoring.\n\nExample:\n\n\n      void test(int p) {\n        p = 1;\n        System.out.print(p);\n      }\n\nAfter the quick-fix is applied:\n\n\n      void test() {\n        int p = 1;\n        System.out.print(p);\n      }\n\nInspection ID: ParameterCanBeLocal"
         },
         {
           "shortName": "NoopMethodInAbstractClass",
@@ -731,7 +731,7 @@
           "shortName": "FieldCanBeLocal",
           "displayName": "Field can be local variable",
           "enabled": false,
-          "description": "Reports redundant class fields that can be replaced with local variables.\n\nIf all local usages of a field are preceded by assignments to that field, the\nfield can be removed, and its usages can be replaced with local variables.\n\nInspection ID: FieldCanBeLocal"
+          "description": "Reports `private` fields that are redundant and can be replaced with a local variable.\n\nIf all local usages of a field are preceded by an assignment to that field, the\nfield can be replaced with one or more local variables.\n\n**Example:**\n\n\n      class DeskLamp {\n        private boolean on = false;\n\n        boolean pressButton() {\n          on = true;\n          return on;\n        }\n      }\n\nAfter the quick-fix is applied:\n\n\n      class DeskLamp {\n        boolean pressButton() {\n          boolean on = true;\n          return on;\n        }\n      }\n\nInspection ID: FieldCanBeLocal"
         },
         {
           "shortName": "EmptyClass",
@@ -872,6 +872,12 @@
           "description": "Reports extension implementation being additionally registered as a service/component.\n\n\nWhile there can be multiple extension instances, the IntelliJ Platform ensures that only one instance of a service/component is loaded,\nthus registering the same class as both an extension and a service/component may cause issues.\n\nNew in 2023.2\n\nInspection ID: ExtensionRegisteredAsServiceOrComponent"
         },
         {
+          "shortName": "UnusedIntelliJThemeNamedColor",
+          "displayName": "Unused theme named color",
+          "enabled": false,
+          "description": "Reports unused theme colors in IntelliJ theme files (`*.theme.json`).\n\n\nNamed colors are defined in the `colors` section of the theme file.\nA color is considered unused if it is not referenced in the `ui` section or gradient definitions within the same file.\n\n\nSee [Exposing Theme Metadata](https://plugins.jetbrains.com/docs/intellij/themes-metadata.html) for more information.\n\nInspection ID: UnusedIntelliJThemeNamedColor"
+        },
+        {
           "shortName": "NonDefaultConstructor",
           "displayName": "Non-default constructors for service and extension class",
           "enabled": false,
@@ -941,7 +947,7 @@
           "shortName": "IncorrectCancellationExceptionHandling",
           "displayName": "Cancellation exception handled incorrectly",
           "enabled": false,
-          "description": "Reports `ProcessCanceledException` and `CancellationException` handled incorrectly.\n\n\n`ProcessCanceledException` and its inheritors must not be caught, swallowed, logged, or handled in any way.\nInstead, it must be rethrown so that the IntelliJ Platform infrastructure can handle it correctly.\n\n\n`CancellationException` must not be caught, swallowed, logged, or handled in any way in coroutine context.\nInstead, it must be rethrown so that the coroutines infrastructure can handle it correctly.\n\n\nInspection reports both explicit `ProcessCanceledException` (including inheritors) and `CancellationException`catching,\nas well as catching `RuntimeException`, `Exception` and `Throwable` covering cancellation exceptions.\n\n### Examples:\n\n#### `ProcessCanceledException`:\n\n\n    // bad:\n    try {\n      // ...\n    } catch (ProcessCanceledException e) { // exception should not be swallowed\n    }\n\n    // bad:\n    try {\n      // ...\n    } catch (ProcessCanceledException e) {\n      LOG.error(\"Error occurred\", e); // exception should not be logged\n      throw e;\n    }\n\n\n    // good:\n    try {\n      // ...\n    } catch (ProcessCanceledException e) {\n      // additional actions\n      throw e;\n    }\n\n#### `CancellationException`:\n\n\n    // bad:\n    cs.launch {\n      try {\n        // ...\n      } catch (e: CancellationException) { // exception should not be swallowed\n      }\n    }\n\n    // bad:\n    suspend fun suspendingFunction() {\n      try {\n        // ...\n      } catch (ProcessCanceledException e) {\n        LOG.error(\"Error occurred\", e); // exception should not be logged\n        throw e;\n      }\n    }\n\n\n    // good:\n    cs.launch {\n      try {\n        // ...\n      } catch (ProcessCanceledException e) {\n        // additional actions\n        throw e;\n      }\n    }\n\n\nSee [Background Processes Cancellation](https://plugins.jetbrains.com/docs/intellij/background-processes.html#cancellation) in IntelliJ Platform Plugin SDK docs for more details.\n\n\n*Note: The inspection is disabled in test sources.*\n\nInspection ID: IncorrectCancellationExceptionHandling\n\nNew in 2023.2"
+          "description": "Reports `ProcessCanceledException` and `CancellationException` handled incorrectly.\n\n\n`ProcessCanceledException` and its inheritors must not be caught, swallowed, logged\\*, or handled in any way.\nInstead, it must be rethrown so that the IntelliJ Platform infrastructure can handle it correctly.\n\n\n`CancellationException` must not be caught, swallowed, logged\\*, or handled in any way in coroutine context.\nInstead, it must be rethrown so that the coroutines infrastructure can handle it correctly.\n\n\n*\\*The inspection reports logging these exceptions in any execution context.*\n\n\nThe inspection reports both explicit `ProcessCanceledException` (including inheritors) and `CancellationException` catching,\nas well as catching `RuntimeException`, `Exception` and `Throwable` covering cancellation exceptions.\n\n### Examples:\n\n#### `ProcessCanceledException`:\n\n\n    // bad:\n    try {\n      // ...\n    } catch (ProcessCanceledException e) { // exception should not be swallowed\n    }\n\n    // bad:\n    try {\n      // ...\n    } catch (ProcessCanceledException e) {\n      LOG.error(\"Error occurred\", e); // exception should not be logged\n      throw e;\n    }\n\n\n    // good:\n    try {\n      // ...\n    } catch (ProcessCanceledException e) {\n      // additional actions\n      throw e;\n    }\n\n#### `CancellationException`:\n\n\n    // bad:\n    cs.launch {\n      try {\n        // ...\n      } catch (e: CancellationException) { // exception should not be swallowed\n      }\n    }\n\n    // bad:\n    suspend fun suspendingFunction() {\n      try {\n        // ...\n      } catch (ProcessCanceledException e) {\n        LOG.error(\"Error occurred\", e); // exception should not be logged\n        throw e;\n      }\n    }\n\n\n    // good:\n    cs.launch {\n      try {\n        // ...\n      } catch (ProcessCanceledException e) {\n        // additional actions\n        throw e;\n      }\n    }\n\n\nSee [Background Processes Cancellation](https://plugins.jetbrains.com/docs/intellij/background-processes.html#cancellation) in IntelliJ Platform Plugin SDK docs for more details.\n\n\n*Note: The inspection is disabled in test sources.*\n\nInspection ID: IncorrectCancellationExceptionHandling\n\nNew in 2023.2"
         },
         {
           "shortName": "PluginKeysAreProhibitedInPlatformRegistry",
@@ -1034,6 +1040,12 @@
           "description": "Reports assignments of application services to static final fields / immutable properties.\n\n#### Static final fields (Java) or static immutable properties with backing fields (Kotlin)\n\n\n**Note:** Hereinafter, static in Kotlin refers to members of non-anonymous objects or top-level declarations.\n\n\nSuch services' assignments contribute to global state and make it impossible to tear down an application and set up another one in tests,\ntherefore, repeated tests in the same process may fail.\nThe only exception is an explicit constructor call to store dummy/default instances.\n\n\nThe recommended way to avoid storing services is to retrieve a service locally.\nAlternatively, one can wrap it in `java.util.function.Supplier` (Java, Kotlin)\nor convert the property to a function (Kotlin).\n\nExample (Java):\n\n\n    // Bad:\n    private static final ManagingFS ourInstance = ApplicationManager.getApplication().getService(ManagingFS.class);\n\n\n    // Good:\n    private static final Supplier<ManagingFS> ourInstance = CachedSingletonsRegistry.lazy(() -> {\n      return ApplicationManager.getApplication().getService(ManagingFS.class);\n    });\n\n\n    // Exception:\n    private static final UniqueVFilePathBuilder DUMMY_BUILDER = new UniqueVFilePathBuilder()\n\n#### Retrieving a service instance through static immutable properties (Kotlin)\n\n\nWhile services' assignments to properties without backing fields don't cause the aforementioned problem,\nusing an explicit `getInstance()` method to retrieve a service is preferred over using a property:\n\n* It makes it clearer on the call site that it can involve loading the service, which might not be cheap.\n* Loading the service can throw an exception, and having an exception thrown by a method call is less surprising than if it was caused by property access.\n* (Over-)using properties may be error-prone in a way that it might be accidentally changed to a property with an initializer instead of the correct (but more verbose) property with a getter, and that change can easily be overlooked.\n* Using the method instead of a property keeps `MyApplicationService.getInstance()` calls consistent when used both in Kotlin, and Java.\n* Using the method keeps `MyApplicationService.getInstance()` consistent with `MyProjectService.getInstance(project)`, both on the declaration and call sites.\n\nFor better tooling performance, it is always advised to keep an explicit method return type.\n\nExample:\n\n\n    @Service\n    class MyApplicationService {\n      companion object {\n        @JvmStatic\n        val instance: MyApplicationService // bad\n           get() = service()\n      }\n    }\n\n\n    @Service\n    class MyApplicationService {\n      companion object {\n        @JvmStatic\n        fun getInstance(): MyApplicationService = service() // good\n      }\n    }\n\nNew in 2023.3\n\nInspection ID: ApplicationServiceAsStaticFinalFieldOrProperty"
         },
         {
+          "shortName": "SplitModeApiUsage",
+          "displayName": "Inappropriate Frontend/Backend API usage in module",
+          "enabled": false,
+          "description": "Reports inappropriate frontend/backend API usage in a module.\n\n\nThis inspection helps enforce split-mode architectural constraints by detecting APIs that are used\nin modules where they are not allowed.\n\n\nIt reports frontend-only APIs used from backend or shared modules, and backend-only APIs used from frontend\nor shared modules.\n\nInspection ID: SplitModeApiUsage"
+        },
+        {
           "shortName": "StaticInitializationInExtensions",
           "displayName": "Static initialization in extension point implementations",
           "enabled": false,
@@ -1044,6 +1056,12 @@
           "displayName": "Unspecified action place",
           "enabled": false,
           "description": "Reports passing unspecified `place` parameter for `ActionManager.createActionToolbar()` and `ActionManager.createActionPopupMenu()`.\n\n\nSpecifying proper `place` is required to distinguish Action's usage in `update()/actionPerformed()` via `AnActionEvent.getPlace()`.\n\n\nExamples:\n\n\n    // bad:\n    actionManager.createActionToolbar(\"\", group, false);\n    actionManager.createActionToolbar(\"unknown\", group, false);\n    actionManager.createActionPopupMenu(ActionPlaces.UNKNOWN, group);\n\n    // good:\n    actionManager.createActionToolbar(\"MyPlace\", group, false);\n    actionManager.createActionPopupMenu(ActionPlaces.EDITOR_TOOLBAR, group);\n\nInspection ID: UnspecifiedActionsPlace"
+        },
+        {
+          "shortName": "DebugOnlyTestExtension",
+          "displayName": "Debug-only JUnit test extension must not be committed",
+          "enabled": false,
+          "description": "Reports usages of JUnit 5 `@ExtendWith` with extensions that are intended for local debugging only and must not be committed:\n\n* `com.intellij.ide.starter.junit5.RemoteDevRun`\n* `com.intellij.ide.starter.extended.engine.junit5.UseInstaller`\n\n\nThese extensions change how the test boots the IDE (split mode / local installer) and are useful when reproducing\nan issue on a developer machine, but they should be removed before pushing the change.\n\nInspection ID: DebugOnlyTestExtension"
         },
         {
           "shortName": "ActionIsNotPreviewFriendly",
@@ -1098,6 +1116,12 @@
           "displayName": "Use Darcula aware JBColor",
           "enabled": false,
           "description": "Reports usages of `java.awt.Color`.\n\n\nThese are not aware of \"dark\" themes (e.g., bundled \"Darcula\") and might result in bad looking UI.\n\n\nQuick-fix replaces usages with `JBColor`, which defines \"dark\" color variant.\n\nExamples:\n\n\n    // bad:\n    Color darkGreen = new Color(12, 58, 27);\n    Color blue = Color.BLUE;\n\n    // good:\n    Color darkGreen = new JBColor(12, 58, 27);\n    Color blue = JBColor.BLUE;\n    Color green = new JBColor(new Color(12, 58, 27), new Color(27, 112, 39));\n\nInspection ID: UseJBColor"
+        },
+        {
+          "shortName": "UnsafeOpenServiceCast",
+          "displayName": "Unsafe cast of open service",
+          "enabled": false,
+          "description": "Reports code that casts a service declared with `open=\"true\"` to a more specific class than the service interface.\n\n\nWhen a service is marked as \"open\" in its `plugin.xml` registration, it can be overridden by other plugins\nwith a different implementation. Casting such a service to a specific implementation class is unsafe\nbecause the actual instance at runtime may be a different class, leading to `ClassCastException`.\n\n**Example:**\n\n\n      <!-- plugin.xml -->\n      <extensions defaultExtensionNs=\"com.intellij\">\n        <projectService serviceInterface=\"com.example.MyService\"\n                        serviceImplementation=\"com.example.MyServiceImpl\"\n                        open=\"true\" />\n      </extensions>\n\n\n      // Bad: Casting open service to specific implementation\n      MyServiceImpl impl = (MyServiceImpl) project.getService(MyService.class);\n\n\nInstead, use only the declared service interface:\n\n\n      // Good: Using the service interface\n      MyService service = project.getService(MyService.class);\n\nInspection ID: UnsafeOpenServiceCast"
         },
         {
           "shortName": "InstanceIElementTypeField",
@@ -1384,7 +1408,7 @@
           "shortName": "CustomComponentDestructuringMigration",
           "displayName": "Position-based destructuring should use positional syntax",
           "enabled": true,
-          "description": "Reports position-based destructuring declarations that use custom `componentN` functions and need to be migrated for name-based destructuring.\n\n\nWith new name-based destructuring enabled, parentheses `(x, y)` will be used for name-based destructuring,\nwhile square brackets `[x, y]` should be used for position-based destructuring.\n\nThe inspection warns when:\n\n* Destructuring a non-data-class (all components are custom)\n* Destructuring a data class with more entries than primary constructor parameters (extra components are custom)\n\n**Examples:**\n\n\n      val (x, y) = listOf(1, 2) // warning: uses custom componentN\n      for ((key, value) in mapOf(1 to \"one\")) { } // warning: uses custom componentN\n\n      data class Person(val name: String, val age: Int) {\n          operator fun component3(): String = name + age\n      }\n      val (name, age, rendered) = Person(\"John\", 30) // warning: component3 is custom\n\n\nThis inspection is part of the migration plan for name-based destructuring.\n\nInspection ID: CustomComponentDestructuringMigration"
+          "description": "Reports position-based destructuring declarations that use custom `componentN` functions and need to be migrated for name-based destructuring.\n\n\nWith new name-based destructuring enabled, parentheses `(x, y)` will be used for name-based destructuring,\nwhile square brackets `[x, y]` should be used for position-based destructuring.\n\nThe inspection warns when:\n\n* Destructuring a non-data-class (all components are custom)\n* Destructuring a data class with more entries than primary constructor parameters (extra components are custom)\n\n**Examples:**\n\n\n      val (x, y) = listOf(1, 2) // warning: uses custom componentN\n      for ((key, value) in mapOf(1 to \"one\")) { } // NO warning: key and value are Map.Entry properties\n\n      data class Person(val name: String, val age: Int) {\n          operator fun component3(): String = name + age\n      }\n      val (name, age, rendered) = Person(\"John\", 30) // warning: component3 is custom\n\n\nThis inspection is part of the migration plan for name-based destructuring.\n\nInspection ID: CustomComponentDestructuringMigration"
         },
         {
           "shortName": "ConvertFromMultiDollarToRegularString",
@@ -1771,7 +1795,7 @@
           "shortName": "UnnecessaryFullyQualifiedName",
           "displayName": "Unnecessary fully qualified name",
           "enabled": false,
-          "description": "Reports fully qualified class names that can be shortened.\n\nThe quick-fix shortens fully qualified names and adds import statements if necessary.\n\nExample:\n\n\n      class ListWrapper {\n        java.util.List<Integer> l;\n      }\n\nAfter the quick-fix is applied:\n\n\n      import java.util.List;\n      class ListWrapper {\n        List<Integer> l;\n      }\n\nConfigure the inspection:\n\n\nUse the **Ignore in Java 9 module statements** option to ignore fully qualified names inside the Java 9\n`provides` and `uses` module statements.\n\n\nIn [Settings \\| Editor \\| Code Style \\| Java \\| Imports](settings://preferences.sourceCode.Java?JavaDoc%20Inner),\nuse the following options to configure the inspection:\n\n* Use the **Insert imports for inner classes** option if references to inner classes should be qualified with the outer class.\n* Use the **Use fully qualified class names in JavaDoc** option to allow fully qualified names in Javadocs.\n\nInspection ID: UnnecessaryFullyQualifiedName"
+          "description": "Reports fully qualified class names that can be shortened.\n\nThe quick-fix shortens fully qualified names and adds import statements if necessary.\n\nExample:\n\n\n      class ListWrapper {\n        java.util.List<Integer> l;\n      }\n\nAfter the quick-fix is applied:\n\n\n      import java.util.List;\n      class ListWrapper {\n        List<Integer> l;\n      }\n\nConfigure the inspection:\n\n\nUse the **Ignore in Java 9 module statements** option to ignore fully qualified names inside the Java 9\n`provides` and `uses` module statements.\n\n\nIn [Settings \\| Editor \\| Code Style \\| Java \\| Imports](settings://preferences.sourceCode.JAVA?JavaDoc%20Inner),\nuse the following options to configure the inspection:\n\n* Use the **Insert imports for inner classes** option if references to inner classes should be qualified with the outer class.\n* Use the **Use fully qualified class names in JavaDoc** option to allow fully qualified names in Javadocs.\n\nInspection ID: UnnecessaryFullyQualifiedName"
         },
         {
           "shortName": "UnqualifiedInnerClassAccess",
@@ -1999,16 +2023,16 @@
           "description": "Reports equality expressions which are negated by a prefix expression.\n\nSuch expressions can be simplified using the `!=` operator.\n\nExample:\n\n\n      !(i == 1)\n\nAfter the quick-fix is applied:\n\n\n      i != 1\n\n\nInspection ID: NegatedEqualityExpression"
         },
         {
-          "shortName": "AssertionCanBeIf",
-          "displayName": "Assertion can be replaced with 'if' statement",
-          "enabled": false,
-          "description": "Reports `assert` statements and suggests replacing them with `if` statements that throw `java.lang.AssertionError`.\n\nExample:\n\n\n      assert param != null;\n\nAfter the quick-fix is applied:\n\n\n      if (param == null) throw new AssertionError();\n\nThis inspection depends on the Java feature 'Assertions', which is available since Java 1.4.\n\nInspection ID: AssertionCanBeIf"
-        },
-        {
           "shortName": "DoubleNegation",
           "displayName": "Double negation",
           "enabled": true,
           "description": "Reports double negations that can be simplified.\n\nExample:\n\n\n      if (!!functionCall()) {}\n\nAfter the quick-fix is applied:\n\n\n      if (functionCall()) {}\n\nExample:\n\n\n      if (!(a != b)) {}\n\nAfter the quick-fix is applied:\n\n\n      if (a == b) {}\n\n\nInspection ID: DoubleNegation"
+        },
+        {
+          "shortName": "AssertionCanBeIf",
+          "displayName": "Assertion can be replaced with 'if' statement",
+          "enabled": false,
+          "description": "Reports `assert` statements and suggests replacing them with `if` statements that throw `java.lang.AssertionError`.\n\nExample:\n\n\n      assert param != null;\n\nAfter the quick-fix is applied:\n\n\n      if (param == null) throw new AssertionError();\n\nThis inspection depends on the Java feature 'Assertions', which is available since Java 1.4.\n\nInspection ID: AssertionCanBeIf"
         },
         {
           "shortName": "BreakStatement",
@@ -2493,7 +2517,7 @@
         {
           "shortName": "SuspiciousImplicitCoroutineScopeReceiverAccess",
           "displayName": "Suspicious implicit 'CoroutineScope' receiver access",
-          "enabled": false,
+          "enabled": true,
           "description": "Reports potentially problematic implicit `CoroutineScope` receiver access from within a suspending context.\n\n\nWhen a suspend function or lambda captures an implicit `CoroutineScope` receiver from the outer context, it might lead to\nunexpected behavior.\n\n\nSuch code can be prone to violating the rules of Structured Concurrency,\neven though it might look deceptively well-structured.\n\n\nThis can lead to incorrect behaviors when handling errors,\ncancelling computations, or managing lifetimes.\n\n**A typical example:**\n\n\n    fun processFlow(flow: Flow<String>) {\n      runBlocking {\n        flow.collectLatest {\n          \n          // launched on this@runBlocking CoroutineScope\n          launch { \n            longProcessing(value)\n          }\n      \n        }\n      }\n    }\n      \n    suspend fun longProcessing(value: String) { ... }\n\n\nIn the example above, the `launch { ... }` call launches coroutines in the implicit\n`CoroutineScope` from the outer `runBlocking` call.\n\n\nBecause of this, `collectLatest` would not be able\nto cancel those coroutines when it needs to.\n\n\nThis inspection will detect that `launch` is called on a\n`CoroutineScope` which is captured from the outside of the current\nsuspending lambda (i.e. `collectLatest`'s body).\n\n\nFor more information about this particular problem, see [this GitHub Issue](https://github.com/Kotlin/kotlinx.coroutines/issues/3533).\n\n**Possible solutions:**\n\nTo fix this issue, you can:\n\n* Use `coroutineScope { ... }` builder to create a child scope that is tied to the suspend function's lifecycle\n* Rearrange the code so that the implicit `CoroutineScope` comes from the current syntactical context\n\n\nIn case you are sure that the code is correct, you can explicitly specify the receiver\nto make your intention clear. In the example above, that would be `this@runBlocking.launch { ... }`.\nNote, however, that in this case the semantics of the code **won't change**.\n\nInspection ID: SuspiciousImplicitCoroutineScopeReceiverAccess"
         },
         {
@@ -3400,7 +3424,7 @@
           "shortName": "CatchMayIgnoreException",
           "displayName": "Catch block may ignore exception",
           "enabled": true,
-          "description": "Reports `catch` blocks that are empty or may ignore an exception.\n\nWhile occasionally intended, empty `catch` blocks may complicate debugging.\nAlso, ignoring a `catch` parameter might be wrong.\nFinally, the static code analyzer reports if it detects that a `catch` block may silently ignore important VM\nexceptions like `NullPointerException`. Ignoring such an exception\n(without logging or rethrowing it) may hide a bug.\n\n\nThe inspection won't report any `catch` parameters named `ignore` or `ignored`.\nConversely, the inspection will warn you about any `catch` parameters named `ignore` or `ignored` that are actually in use.\nAdditionally, the inspection won't report `catch` parameters inside test sources named `expected` or `ok`.\n\n\nYou can use a quick-fix to change the exception name to `ignored`.\nFor empty **catch** blocks, an additional quick-fix to generate the **catch** body is suggested.\nYou can modify the \"Catch Statement Body\" template on the Code tab in\n[Settings \\| Editor \\| File and Code Templates](settings://fileTemplates).\n\n**Example:**\n\n\n      try {\n        throwingMethod();\n      } catch (IOException ex) {\n\n      }\n\nAfter the quick-fix is applied:\n\n\n      try {\n        System.out.println(System.in.read());\n      } catch (IOException ignored) {\n\n      }\n\nConfigure the inspection:\n\n* Use the **Do not warn when 'catch' block contains a comment** option to ignore `catch` blocks with comments.\n* Use the **Do not warn when 'catch' block is not empty** option to ignore `catch` blocks that contain statements or comments inside, while the variable itself is not used.\n* Use the **Do not warn when exception named 'ignore(d)' is not actually ignored** option to ignore variables named `ignored` if they are in use.\n\nInspection ID: CatchMayIgnoreException\n\nNew in 2018.1"
+          "description": "Reports `catch` blocks that are empty or may ignore an exception.\n\nWhile occasionally intended, empty `catch` blocks may complicate debugging.\nAlso, ignoring a `catch` parameter might be wrong.\nFinally, the static code analyzer reports if it detects that a `catch` block may silently ignore important VM\nexceptions like `NullPointerException`. Ignoring such an exception\n(without logging or rethrowing it) may hide a bug.\n\n\nThe inspection won't report any `catch` parameters named `ignore` or `ignored`.\nConversely, the inspection will warn you about any `catch` parameters named `ignore` or `ignored` that are actually in use.\nAdditionally, the inspection won't report `catch` parameters inside test sources named `expected` or `ok`.\n\n\nYou can use a quick-fix to change the exception name to `ignored`.\nFor empty **catch** blocks, an additional quick-fix to generate the **catch** body is suggested.\nYou can modify the \"Catch Statement Body\" template on the Code tab in\n[Settings \\| Editor \\| File and Code Templates](settings://fileTemplates).\n\n**Example:**\n\n\n      try {\n        throwingMethod();\n      } catch (IOException ex) {\n\n      }\n\nAfter the quick-fix is applied:\n\n\n      try {\n        System.out.println(System.in.read());\n      } catch (IOException ignored) {\n\n      }\n\nConfigure the inspection:\n\n* Use the **Ignore when 'catch' block contains a comment** option to not warn on `catch` blocks with comments.\n* Use the **Ignore when 'catch' block is not empty** option to ignore `catch` blocks that contain statements or comments inside, while the variable itself is not used.\n* Use the **Ignore when exception named 'ignore(d)' is not actually ignored** option to ignore variables named `ignored` if they are in use.\n\nInspection ID: CatchMayIgnoreException\n\nNew in 2018.1"
         },
         {
           "shortName": "ThrowCaughtLocally",
@@ -3555,12 +3579,6 @@
       ],
       "inspections": [
         {
-          "shortName": "DuplicatedCode",
-          "displayName": "Duplicated code fragment",
-          "enabled": false,
-          "description": "Reports duplicated blocks of code from the selected scope: the same file, same module, dependent modules or the entire project.\n\nThe inspection features quick-fixes that help you to set the size of detected duplicates, navigate to repetitive code fragments, and compare them in a tool window.When possible, the inspection provides a quick-fix to extract a method from the duplicated code.\n\nThe inspection options allow you to select the scope of the reported duplicated fragments and set the initial size for the duplicated language constructs."
-        },
-        {
           "shortName": "RedundantSuppression",
           "displayName": "Redundant suppression",
           "enabled": false,
@@ -3667,7 +3685,7 @@
           "shortName": "KotlinOptionsToCompilerOptions",
           "displayName": "Use of deprecated 'kotlinOptions' DSL",
           "enabled": true,
-          "description": "Reports usages of the deprecated `kotlinOptions` DSL in Gradle `.kts` build scripts.\n\n\nThe `kotlinOptions` DSL was deprecated in Kotlin 2.0.\nThe inspection helps migrate from `kotlinOptions` to `compilerOptions`.\nIt also changes the types of several\n[options that use the new types](https://kotl.in/types-for-kgp-compiler-options) instead of the `String` type.\n\n\nExample for the `KotlinCompile` task:\n\n\n    val compileKotlin: KotlinCompile by tasks\n    compileKotlin.kotlinOptions {\n        jvmTarget = \"1.8\"\n        freeCompilerArgs = listOf(\"-module-name\", \"my_module_name\")\n        apiVersion = \"1.9\"\n    }\n\n    //OR\n\n    tasks.withType {\n        kotlinOptions {\n            freeCompilerArgs += listOf(\"-module-name\", \"my_module_name\")\n        }\n    }\n\nThe inspection also adds imports for options with changed types:\n\n\n    import org.jetbrains.kotlin.gradle.dsl.JvmTarget\n    import org.jetbrains.kotlin.gradle.dsl.KotlinVersion\n\n    ...\n\n    val compileKotlin: KotlinCompile by tasks\n    compileKotlin.compilerOptions {\n        jvmTarget.set(JvmTarget.JVM_1_8)\n        freeCompilerArgs.set(listOf(\"-module-name\", \"my_module_name\"))\n        apiVersion.set(KotlinVersion.KOTLIN_1_9)\n    }\n\n\nExample for the `Kotlin2JsCompile` task:\n\n\n    val compileKotlin: Kotlin2JsCompile by tasks\n    compileKotlin.kotlinOptions {\n        moduleKind = \"commonjs\"\n        sourceMapEmbedSources = \"inlining\"\n        sourceMapNamesPolicy = \"fully-qualified-names\"\n        main = \"noCall\"\n    }\n\nAfter the inspection is applied:\n\n\n    import org.jetbrains.kotlin.gradle.dsl.JsMainFunctionExecutionMode\n    import org.jetbrains.kotlin.gradle.dsl.JsModuleKind\n    import org.jetbrains.kotlin.gradle.dsl.JsSourceMapEmbedMode\n    import org.jetbrains.kotlin.gradle.dsl.JsSourceMapNamesPolicy\n\n    ...\n\n    val compileKotlin: Kotlin2JsCompile by tasks\n    compileKotlin.compilerOptions {\n        moduleKind.set(JsModuleKind.MODULE_COMMONJS)\n        sourceMapEmbedSources.set(JsSourceMapEmbedMode.SOURCE_MAP_SOURCE_CONTENT_INLINING)\n        sourceMapNamesPolicy.set(JsSourceMapNamesPolicy.SOURCE_MAP_NAMES_POLICY_FQ_NAMES)\n        main.set(JsMainFunctionExecutionMode.NO_CALL)\n    }\n\nInspection ID: KotlinOptionsToCompilerOptions"
+          "description": "Reports usages of the deprecated `kotlinOptions` DSL in Gradle `.kts` build scripts.\n\n\nThe `kotlinOptions` DSL was deprecated in Kotlin 2.0.\nThe inspection helps migrate from `kotlinOptions` to `compilerOptions`.\nIt also changes the types of several\n[options that use the new types](https://kotl.in/types-for-kgp-compiler-options) instead of the `String` type.\n\n\nExample for the `KotlinCompile` task:\n\n\n    val compileKotlin: KotlinCompile by tasks\n    compileKotlin.kotlinOptions {\n        jvmTarget = \"1.8\"\n        freeCompilerArgs = listOf(\"-module-name\", \"my_module_name\")\n        apiVersion = \"1.9\"\n    }\n\n    //OR\n\n    tasks.withType<KotlinCompile> {\n        kotlinOptions {\n            freeCompilerArgs += listOf(\"-module-name\", \"my_module_name\")\n        }\n    }\n\nThe inspection also adds imports for options with changed types:\n\n\n    import org.jetbrains.kotlin.gradle.dsl.JvmTarget\n    import org.jetbrains.kotlin.gradle.dsl.KotlinVersion\n\n    ...\n\n    val compileKotlin: KotlinCompile by tasks\n    compileKotlin.compilerOptions {\n        jvmTarget.set(JvmTarget.JVM_1_8)\n        freeCompilerArgs.set(listOf(\"-module-name\", \"my_module_name\"))\n        apiVersion.set(KotlinVersion.KOTLIN_1_9)\n    }\n\n\nExample for the `Kotlin2JsCompile` task:\n\n\n    val compileKotlin: Kotlin2JsCompile by tasks\n    compileKotlin.kotlinOptions {\n        moduleKind = \"commonjs\"\n        sourceMapEmbedSources = \"inlining\"\n        sourceMapNamesPolicy = \"fully-qualified-names\"\n        main = \"noCall\"\n    }\n\nAfter the inspection is applied:\n\n\n    import org.jetbrains.kotlin.gradle.dsl.JsMainFunctionExecutionMode\n    import org.jetbrains.kotlin.gradle.dsl.JsModuleKind\n    import org.jetbrains.kotlin.gradle.dsl.JsSourceMapEmbedMode\n    import org.jetbrains.kotlin.gradle.dsl.JsSourceMapNamesPolicy\n\n    ...\n\n    val compileKotlin: Kotlin2JsCompile by tasks\n    compileKotlin.compilerOptions {\n        moduleKind.set(JsModuleKind.MODULE_COMMONJS)\n        sourceMapEmbedSources.set(JsSourceMapEmbedMode.SOURCE_MAP_SOURCE_CONTENT_INLINING)\n        sourceMapNamesPolicy.set(JsSourceMapNamesPolicy.SOURCE_MAP_NAMES_POLICY_FQ_NAMES)\n        main.set(JsMainFunctionExecutionMode.NO_CALL)\n    }\n\nInspection ID: KotlinOptionsToCompilerOptions"
         }
       ]
     },
@@ -3771,13 +3789,13 @@
           "shortName": "SingleClassImport",
           "displayName": "Single class import",
           "enabled": false,
-          "description": "Reports `import` statements that import single classes (as opposed to entire packages).\n\nSome coding standards prohibit such `import` statements.\n\n\nYou can configure IntelliJ IDEA to detect and fix such statements with its **Optimize Imports** command. Go to\n[Settings \\| Editor \\| Code Style \\| Java \\| Imports](settings://preferences.sourceCode.Java?Use%20single%20class%20import)\nand clear the **Use single class import** checkbox. Thus this inspection is mostly useful for\noffline reporting on code bases that you don't intend to change.\n\nInspection ID: SingleClassImport"
+          "description": "Reports `import` statements that import single classes (as opposed to entire packages).\n\nSome coding standards prohibit such `import` statements.\n\n\nYou can configure IntelliJ IDEA to detect and fix such statements with its **Optimize Imports** command. Go to\n[Settings \\| Editor \\| Code Style \\| Java \\| Imports](settings://preferences.sourceCode.JAVA?Use%20single%20class%20import)\nand clear the **Use single class import** checkbox. Thus this inspection is mostly useful for\noffline reporting on code bases that you don't intend to change.\n\nInspection ID: SingleClassImport"
         },
         {
           "shortName": "OnDemandImport",
           "displayName": "'*' import",
           "enabled": false,
-          "description": "Reports any `import` statements that cover entire packages ('\\* imports').\n\nSome coding standards prohibit such `import` statements.\n\n\nYou can configure IntelliJ IDEA to detect and fix such statements with its **Optimize Imports**\ncommand. Go to [Settings \\| Editor \\| Code Style \\| Java \\| Imports](settings://preferences.sourceCode.Java?Use%20single%20class%20import),\nmake sure that the **Use single class import** option is enabled, and specify values in the\n**Class count to use import with '\\*'** and **Names count to use static import with '\\*'** fields.\nThus this inspection is mostly useful for offline reporting on code bases that you don't\nintend to change.\n\nInspection ID: OnDemandImport"
+          "description": "Reports any `import` statements that cover entire packages ('\\* imports').\n\nSome coding standards prohibit such `import` statements.\n\n\nYou can configure IntelliJ IDEA to detect and fix such statements with its **Optimize Imports**\ncommand. Go to [Settings \\| Editor \\| Code Style \\| Java \\| Imports](settings://preferences.sourceCode.JAVA?Use%20single%20class%20import),\nmake sure that the **Use single class import** option is enabled, and specify values in the\n**Class count to use import with '\\*'** and **Names count to use static import with '\\*'** fields.\nThus this inspection is mostly useful for offline reporting on code bases that you don't\nintend to change.\n\nInspection ID: OnDemandImport"
         },
         {
           "shortName": "JavaLangImport",
@@ -4101,16 +4119,16 @@
           "description": "Reports method and constructor calls that implicitly use the platform default charset. Such calls can produce different results on systems that use a different default charset and may result in unexpected behaviour.\n\n**Example:**\n\n    void foo(byte[] bytes) {\n      String s = new String(bytes);\n    }\n\nYou can use a quick-fix that specifies the explicit UTF-8 charset if the corresponding overloaded method is available.\nAfter the quick-fix is applied:\n\n    void foo(byte[] bytes) {\n      String s = new String(bytes, StandardCharsets.UTF_8);\n    }\n\nInspection ID: ImplicitDefaultCharsetUsage"
         },
         {
-          "shortName": "StringTokenizer",
-          "displayName": "Use of 'StringTokenizer'",
-          "enabled": false,
-          "description": "Reports usages of the `StringTokenizer` class. Excessive use of `StringTokenizer` is incorrect in an internationalized environment.\n\nInspection ID: StringTokenizer"
-        },
-        {
           "shortName": "UnnecessaryUnicodeEscape",
           "displayName": "Unnecessary Unicode escape sequence",
           "enabled": false,
           "description": "Reports unnecessary Unicode escape sequences. A Unicode escape sequence is unnecessary when the file encoding can handle the character without escaping it. This inspection does not report Unicode control characters, except for line feed and horizonal tab.\n\n**Example:**\n\n\n      String s = \"\\u0078\";\n\nAfter the quick-fix is applied:\n\n\n      String s = \"x\";\n\nInspection ID: UnnecessaryUnicodeEscape"
+        },
+        {
+          "shortName": "StringTokenizer",
+          "displayName": "Use of 'StringTokenizer'",
+          "enabled": false,
+          "description": "Reports usages of the `StringTokenizer` class. Excessive use of `StringTokenizer` is incorrect in an internationalized environment.\n\nInspection ID: StringTokenizer"
         },
         {
           "shortName": "NumericToString",
@@ -4494,7 +4512,7 @@
           "shortName": "RedundantExplicitVariableType",
           "displayName": "Local variable type can be omitted",
           "enabled": false,
-          "description": "Reports redundant local variable types.\n\nThese types can be inferred from the context and thus replaced with `var`.\n\n**Example:**\n\n\n      void test(InputStream s) {\n        try (InputStream in = s) {}\n      }\n\nAfter the fix is applied:\n\n\n      void test(InputStream s) {\n        try (var in = s) {}\n      }\n\n\nThis inspection depends on the Java feature 'Local variable type inference', which is available since Java 10.\n\nInspection ID: RedundantExplicitVariableType"
+          "description": "Reports local variable types that can be inferred from context and replaced with `var`.\n\n**Example:**\n\n\n      void test(InputStream s) {\n        try (InputStream in = s) {}\n      }\n\nAfter the fix is applied:\n\n\n      void test(InputStream s) {\n        try (var in = s) {}\n      }\n\n\nUse the **Only report when the variable type is obvious from the initializer** checkbox\nto only report the types of variables initialized with a new expression, a type cast or a literal.\n\n**Example:**\n\n\n      int    codePointAt = \"hello\".codePointAt(1); // not reported\n      Random random      = new Random();           // reported\n      String s           = (String)object;         // reported\n\nThis inspection depends on the Java feature 'Local variable type inference', which is available since Java 10.\n\nInspection ID: RedundantExplicitVariableType"
         }
       ]
     },
@@ -4931,7 +4949,7 @@
           "shortName": "Convert2MethodRef",
           "displayName": "Lambda can be replaced with method reference",
           "enabled": false,
-          "description": "Reports lambdas that can be replaced with method references. While often it could be a matter of taste, method references are more clear and readable compared to lambdas.\n\nExample:\n\n\n      Runnable r = () -> System.out.println();\n\nAfter the quick-fix is applied:\n\n\n      Runnable r = System.out::println;\n\n\nThe inspection may suggest method references even if a lambda doesn't call any method, like replacing `obj -> obj != null`\nwith `Objects::nonNull`.\nUse the [Settings \\| Editor \\| Code Style \\| Java \\| Code Generation](settings://preferences.sourceCode.Java?Lambda%20Body)\nsettings to configure special method references.\n\nThis inspection depends on the following Java features:\n\n* Lambda expressions\n* Method references\n\nThese features are available since Java 8.\n\nInspection ID: Convert2MethodRef"
+          "description": "Reports lambdas that can be replaced with method references. While it is a matter of taste, method references are more clear and readable compared to lambdas.\n\nExample:\n\n\n      Runnable r = () -> System.out.println();\n\nAfter the quick-fix is applied:\n\n\n      Runnable r = System.out::println;\n\n\nThe inspection may suggest method references even if a lambda doesn't call any method, like replacing `obj -> obj != null`\nwith `Objects::nonNull`.\nUse the [Settings \\| Editor \\| Code Style \\| Java \\| Code Generation](settings://preferences.sourceCode.JAVA?Lambda%20Body)\nsettings to configure special method references.\n\nThis inspection depends on the following Java features:\n\n* Lambda expressions\n* Method references\n\nThese features are available since Java 8.\n\nInspection ID: Convert2MethodRef"
         },
         {
           "shortName": "UseHashCodeMethodInspection",
@@ -5088,6 +5106,12 @@
           "description": "Reports Java mutator methods calls (like `fill`, `reverse`, `shuffle`, `sort`) on an immutable Kotlin collection.\n\nThis can lead to `UnsupportedOperationException` at runtime.\n\n**Example:**\n\n\n      import java.util.Collections\n\n      fun test() {\n          val immutableList = listOf(1, 2)\n          Collections.reverse(immutableList)\n      }\n\nTo fix the problem make the list mutable.\n\nInspection ID: JavaCollectionsStaticMethodOnImmutableList"
         },
         {
+          "shortName": "KotlinInternalInJava",
+          "displayName": "Usage of Kotlin internal declarations from Java",
+          "enabled": true,
+          "description": "Reports usages of Kotlin `internal` declarations in Java code that is located in a different module.\n\n\nThe `internal` keyword is designed to restrict access to a class, function, or property from other modules.\nDue to JVM limitations, `internal` classes, functions, and properties can still be\naccessed from outside Kotlin, which may later lead to compatibility problems.\n\nInspection ID: KotlinInternalInJava"
+        },
+        {
           "shortName": "JavaDefaultMethodsNotOverriddenByDelegation",
           "displayName": "Java default methods are not overridden by delegation",
           "enabled": true,
@@ -5098,6 +5122,12 @@
           "displayName": "Inheritance of Kotlin sealed interface/class from Java",
           "enabled": true,
           "description": "Reports attempts to inherit from Kotlin sealed interfaces or classes in Java code.\n\n**Example:**\n\n\n    // Kotlin file: MathExpression.kt\n\n    sealed class MathExpression\n\n    data class Const(val number: Double) : MathExpression()\n    data class Sum(val e1: MathExpression, val e2: MathExpression) : MathExpression()\n\n\n    // Java file: NotANumber.java\n\n    public class NotANumber extends MathExpression {\n    }\n\nInspection ID: KotlinSealedInheritorsInJava"
+        },
+        {
+          "shortName": "KotlinJvmAnnotationInJava",
+          "displayName": "Kotlin JVM annotation in Java",
+          "enabled": true,
+          "description": "Reports useless Kotlin JVM annotations in Java code.\n\n**Example:**\n\n\n      import kotlin.jvm.Volatile;\n\n      public class Test {\n          @Volatile\n          public int i;\n      }\n\nInspection ID: KotlinJvmAnnotationInJava"
         }
       ]
     },
@@ -5399,6 +5429,12 @@
           "description": "Reports different Kotlin stdlib and compiler versions.\n\n**Example:**\n\n\n      dependencies {\n        classpath \"org.jetbrains.kotlin:kotlin-stdlib:0.0.1\"\n      }\n\nTo fix the problem change the kotlin stdlib version to match the kotlin compiler version.\n\nInspection ID: DifferentStdlibGradleVersion"
         },
         {
+          "shortName": "KaptKotlinCompilerPlugin",
+          "displayName": "Add Kotlin kapt compiler plugin to module build",
+          "enabled": true,
+          "description": "Adds the recommended `kapt` compiler plugin for Kotlin modules that use Java annotation processors.\n\nInspection ID: KaptKotlinCompilerPlugin"
+        },
+        {
           "shortName": "DifferentKotlinMavenVersion",
           "displayName": "Maven and IDE plugins versions are different",
           "enabled": true,
@@ -5415,6 +5451,27 @@
           "displayName": "Library and maven plugin versions are different",
           "enabled": false,
           "description": "Reports different Kotlin stdlib and compiler versions.\n\nUsing different versions of the Kotlin compiler and the standard library can lead to unpredictable\nruntime problems and should be avoided.\n\nInspection ID: DifferentMavenStdlibVersion"
+        }
+      ]
+    },
+    {
+      "name": "Kotlin",
+      "categoryPath": [
+        {
+          "id": "Lombok",
+          "name": "Lombok"
+        },
+        {
+          "id": "Lombok/Kotlin",
+          "name": "Kotlin"
+        }
+      ],
+      "inspections": [
+        {
+          "shortName": "LombokKotlinCompilerPlugin",
+          "displayName": "Add Kotlin Lombok compiler plugin to module build",
+          "enabled": false,
+          "description": "Adds the recommended `kotlin-lombok` compiler plugin for better Java-Kotlin interoperability with Lombok library.\n\nInspection ID: LombokKotlinCompilerPlugin"
         }
       ]
     },
@@ -5537,7 +5594,7 @@
         },
         {
           "shortName": "StringConcatenationArgumentToLogCall",
-          "displayName": "Non-constant string concatenation as argument to logging call",
+          "displayName": "String concatenation as argument to logging call",
           "enabled": true,
           "description": "Reports non-constant string concatenations that are used as arguments to **SLF4J** and **Log4j 2** logging methods. Non-constant concatenations are evaluated at runtime even when the logging message is not logged; this can negatively impact performance. It is recommended to use a parameterized log message instead, which will not be evaluated when logging is disabled.\n\n**Example:**\n\n\n      public class Vital {\n        private static final Logger LOG = LoggerFactory.getLogger(Vital.class);\n\n        public void saveTheWorld(int i, String s, boolean b) {\n          LOG.info(\"saveTheWorld(\" + i + \", \" + s + \", \"  + b + \")\");\n          // todo\n        }\n      }\n\nAfter the quick-fix is applied:\n\n\n      public class Vital {\n        private static final Logger LOG = LoggerFactory.getLogger(Vital.class);\n\n        public void saveTheWorld(int i, String s, boolean b) {\n          LOG.info(\"saveTheWorld({}, {}, {})\", i, s, b);\n          // todo\n        }\n      }\n\n\nConfigure the inspection:\n\n* Use the **Warn on** list to ignore certain higher logging levels. Higher logging levels may be enabled even in production, and the arguments will always be evaluated.\n\nInspection ID: StringConcatenationArgumentToLogCall"
         },
@@ -5546,6 +5603,50 @@
           "displayName": "Class with multiple loggers",
           "enabled": false,
           "description": "Reports classes that have multiple loggers declared. Ensuring that every class has a single dedicated logger is an important step in providing a unified logging implementation for an application.\n\nFor example:\n\n\n      public class Critical {\n        protected static final Logger LOG = Logger.getLogger(Critical.class);\n\n        protected static final Logger myLogger = Logger.getLogger(getClass());\n      }\n\n\nUse the table below to specify Logger class names.\nClasses which declare multiple fields that have the type of one of the specified classes will be reported by this inspection.\n\n\nInspection ID: ClassWithMultipleLoggers"
+        }
+      ]
+    },
+    {
+      "name": "Logging",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Logging",
+          "name": "Logging"
+        }
+      ],
+      "inspections": [
+        {
+          "shortName": "KotlinLoggerInitializedWithForeignClass",
+          "displayName": "Logger initialized with foreign class",
+          "enabled": false,
+          "description": "Reports `Logger` instances initialized with a class literal other than the class the `Logger` resides in.\n\n\nThis can happen when copy-pasting from another class.\nIt may result in logging events under an unexpected category and incorrect filtering.\n\n\nUse the inspection options to specify the logger factory classes and methods recognized by this inspection.\n\n**Example:**\n\n\n    class AnotherService\n    class MyService {\n        private val logger = LoggerFactory.getLogger(AnotherService::class.java)\n    }\n\nAfter the quick-fix is applied:\n\n\n    class MyService {\n        private val logger = LoggerFactory.getLogger(MyService::class.java)\n    }\n\nInspection ID: KotlinLoggerInitializedWithForeignClass"
+        }
+      ]
+    },
+    {
+      "name": "Logpoints",
+      "categoryPath": [
+        {
+          "id": "Logpoints",
+          "name": "Logpoints"
+        }
+      ],
+      "inspections": [
+        {
+          "shortName": "JavaPrintToLogpoint",
+          "displayName": "Print call can be replaced with a logpoint",
+          "enabled": false,
+          "description": "Logpoints is a debugger feature that enables printing expressions (`System.out.println`, `IO.println`) to the standard output **without** changing the source code. It has a few advantages over common `println` in source code:\n\n* Logpoints can be added, modified, and removed during execution, no need to hot-reload;\n* As a consequence, they can be used in library code, which cannot be manually changed;\n* Logpoints may not even compile, it wouldn't affect the program execution;\n* There is no risk of leaking printing calls into production, as logpoints are not part of the source code.\n\nThe inspection only works if there's an executable line after the `println` call, and this line is **not** a loop statement. This restriction is made because breakpoints work differently at these places, and the replacement is not equivalent.   \n**NOTE:** Logpoints only work in Debug mode. In Run, Run with Coverage, Profile modes, logpoint expressions won't appear in the output.\n\nInspection ID: JavaPrintToLogpoint"
+        },
+        {
+          "shortName": "KotlinPrintToLogpoint",
+          "displayName": "'println' call can be replaced with a logpoint",
+          "enabled": false,
+          "description": "Logpoints is a debugger feature that enables printing expressions (`kotlin.io.println`) to the standard output **without** changing the source code. It has a few advantages over common `println` in source code:\n\n* Logpoints can be added, modified, and removed during execution, no need to hot-reload;\n* As a consequence, they can be used in library code, which cannot be manually changed;\n* Logpoints may not even compile, it wouldn't affect the program execution;\n* There is no risk of leaking printing calls into production, as logpoints are not part of the source code.\n\nThe inspection only works if there's an executable line after the `println` call, and this line is **not** a loop statement. This restriction is made because breakpoints work differently at these places, and the replacement is not equivalent.   \n**NOTE:** Logpoints only work in Debug mode. In Run, Run with Coverage, Profile modes, logpoint expressions won't appear in the output.\n\nInspection ID: KotlinPrintToLogpoint"
         }
       ]
     },
@@ -5764,7 +5865,7 @@
       "inspections": [
         {
           "shortName": "ReturnOfInnerClass",
-          "displayName": "Return of instance of anonymous, local or inner class",
+          "displayName": "Return of anonymous, local or inner class instance",
           "enabled": false,
           "description": "Reports `return` statements that return an instance of an anonymous, local, or inner class. Such instances keep an implicit reference to the outer instance, which can prevent the outer instance from being garbage-collected. Any caller of a method returning such an instance might cause a memory leak by holding on to the instance returned.\n\n\nConfigure the inspection:\n\n* Use the **Ignore returns from non-public methods** option to ignore returns from `protected` or package-private methods. Returns from `private` methods are always ignored.\n\nInspection ID: ReturnOfInnerClass"
         },
@@ -5845,7 +5946,7 @@
           "shortName": "NewMethodNamingConvention",
           "displayName": "Method naming convention",
           "enabled": false,
-          "description": "Reports methods whose names are too short, too long, or do not follow the specified regular expression pattern.\n\nInstance methods that override library\nmethods and constructors are ignored by this inspection.\n\n**Example:** if the inspection is enabled for static methods, and the minimum specified method name length is 4 (the default),\nthe following static method produces a warning, because the length of its name is 3, which is less\nthan 4: `public static int max(int a, int b)`.\n\nA quick-fix that renames such methods is available only in the editor.\n\nConfigure the inspection:\n\nUse the list in the **Options** section to specify which methods should be checked. Deselect the checkboxes for the method types for which\nyou want to skip the check. Specify **0** in the length fields to skip the corresponding checks.\n\nRegular expressions should be specified in the standard `java.util.regex` format.\n\nInspection ID: NewMethodNamingConvention"
+          "description": "Reports methods whose names are too short, too long, or do not follow the specified regular expression pattern.\n\nA quick-fix to rename such methods is available only in the editor.\n\nInstance methods that override library\nmethods and constructors are ignored by this inspection.\n\n**Example:**\n\n\n      public static int n() {\n        return 0;\n      }\n\nThis example will be reported if the inspection is enabled for `static` methods with the default settings where a method name should have a minimum length of 4.\n\nUse the list in the **Options** section to specify the types of methods that should be checked.\n\n\nFor each method type, you can specify the minimum length, maximum length, and regular expression for acceptable method names.\nSpecify **0** in a length field to skip the corresponding check.\nRegular expressions use the standard `java.util.regex` format.\n\nInspection ID: NewMethodNamingConvention"
         },
         {
           "shortName": "NonBooleanMethodNameMayNotStartWithQuestion",
@@ -6018,6 +6119,27 @@
       ]
     },
     {
+      "name": "Migration",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Migration",
+          "name": "Migration"
+        }
+      ],
+      "inspections": [
+        {
+          "shortName": "KotlinDeprecation",
+          "displayName": "Usage of redundant or deprecated syntax or deprecated symbols",
+          "enabled": false,
+          "description": "Reports obsolete language features and unnecessarily verbose code constructs during the code cleanup operation (**Code \\| Code Cleanup** ).\n\n\nThe quick-fix automatically replaces usages of obsolete language features or unnecessarily verbose code constructs with compact and up-to-date syntax.\n\n\nIt also replaces deprecated symbols with their proposed substitutions.\n\nInspection ID: KotlinDeprecation"
+        }
+      ]
+    },
+    {
       "name": "Modularization issues",
       "categoryPath": [
         {
@@ -6055,6 +6177,12 @@
           "description": "Reports classes that:\n\n* do not depend on any other class in their module\n* are not a dependency for any other class in their module\n\nSuch classes are an indication of ad-hoc or incoherent modularisation strategies,\nand may often profitably be moved.\n\nAvailable only from **Code \\| Inspect Code** or\n**Code \\| Analyze Code \\| Run Inspection by Name** and isn't reported in the editor.\n\nInspection ID: ClassIndependentOfModule"
         },
         {
+          "shortName": "ClassOverriddenAtRuntime",
+          "displayName": "Class loaded from a different dependency at runtime",
+          "enabled": true,
+          "description": "Reports class references that will resolve to a **different class at runtime** than at compile time.   \n\n**Example:**\n\n```\n  MainModule\n  ├── DepModule\n  │   └── Av1.jar  ← my.example.A (will be used at runtime!)\n  └── Av2.jar      ← my.example.A (used at compile time)\n```\n\nThe IDE resolves `A` from `Av2`, but the JVM loads it from `Av1`. Calling a method that exists only in `Av2` causes `NoSuchMethodError`.   \n\n**Fix:** move `Av2` before `DepModule` so both compile and runtime use the same class.\n\nInspection ID: ClassOverriddenAtRuntime"
+        },
+        {
           "shortName": "ModuleWithTooFewClasses",
           "displayName": "Module with too few classes",
           "enabled": false,
@@ -6085,7 +6213,7 @@
           "shortName": "ParameterNamingConvention",
           "displayName": "Method parameter naming convention",
           "enabled": false,
-          "description": "Reports method parameters whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** `void fooBar(int X)`\nshould be reported if the inspection is enabled with the default settings in which a parameter name should start with a lowercase letter.\n\nConfigure the inspection:\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and a regular expression expected for\nmethod parameter names. Specify **0** in order not to check the length of names.\n\nRegular expressions should be specified in the standard `java.util.regex` format.\n\nInspection ID: ParameterNamingConvention"
+          "description": "Reports method parameters whose names are too short, too long, or do not follow the specified regular expression pattern.\n\nA quick-fix to rename such parameters is available only in the editor.\n\n**Example:**\n\n\n      void fooBar(int X) {}\n\nThis example will be reported if the inspection is enabled with the default settings where a parameter name should start with a lowercase letter.\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and regular expression for\nacceptable method parameter names. Specify **0** in a length field to skip the corresponding check.\nRegular expressions use the standard `java.util.regex` format.\n\nInspection ID: ParameterNamingConvention"
         },
         {
           "shortName": "DollarSignInName",
@@ -6115,7 +6243,7 @@
           "shortName": "PackageNamingConvention",
           "displayName": "Package naming convention",
           "enabled": false,
-          "description": "Reports packages whose names are either too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:**\n\n\n      package io;\n\n\nUse the options to specify the minimum and maximum length of the package name\nas well as a regular expression that matches valid package names\n(regular expressions are in standard `java.util.regex` format).\n\nInspection ID: PackageNamingConvention"
+          "description": "Reports packages whose names are either too short, too long, or do not follow the specified regular expression pattern.\n\nA quick-fix to rename such packages is available only in the editor.\n\n**Example:**\n\n\n      package io;\n\nThis example will be reported if the inspection is enabled with the default settings where a package name should have a minimum length of 3.\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and regular expression for\nacceptable package names.\nSpecify **0** in a length field to skip the corresponding check.\nRegular expressions use the standard `java.util.regex` format.\n\nInspection ID: PackageNamingConvention"
         },
         {
           "shortName": "QuestionableName",
@@ -6127,19 +6255,19 @@
           "shortName": "LocalVariableNamingConvention",
           "displayName": "Local variable naming convention",
           "enabled": false,
-          "description": "Reports local variables whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** `int X = 42;`\nshould be reported if the inspection is enabled with the default settings in which a variable name should start with a lowercase letter.\n\nConfigure the inspection:\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and a regular expression expected for local variable names.\nSpecify **0** in order not to check the length of names. Regular expressions should be specified in the standard **java.util.regex** format.\n\nUse checkboxes to ignore `for`-loop and `catch` section parameters.\n\nInspection ID: LocalVariableNamingConvention"
+          "description": "Reports local variables whose names are too short, too long, or do not follow the specified regular expression pattern.\n\nA quick-fix to rename such variables is available only in the editor.\n\n**Example:**\n\n\n      int X = 42;\n\nThis example will be reported if the inspection is enabled with the default settings where a variable name should start with a lowercase letter.\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and regular expression for acceptable local variable names.\nSpecify **0** in a length field to skip the corresponding check.\nRegular expressions use the standard **java.util.regex** format.\n\nUse the checkboxes to ignore `for`-loop parameters, `catch`-section parameters, and pattern variables.\n\nInspection ID: LocalVariableNamingConvention"
         },
         {
           "shortName": "LambdaParameterNamingConvention",
           "displayName": "Lambda parameter naming convention",
           "enabled": false,
-          "description": "Reports lambda parameters whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** `Function<String, String> id = X -> X;`\nshould be reported if the inspection is enabled with the default settings in which a parameter name should start with a lowercase letter.\n\nConfigure the inspection:\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and a regular expression expected for lambda parameter names.\nSpecify **0** in order not to check the length of names.\n\nRegular expressions should be specified in the standard `java.util.regex` format.\n\nInspection ID: LambdaParameterNamingConvention"
+          "description": "Reports lambda parameters whose names are too short, too long, or do not follow the specified regular expression pattern.\n\nA quick-fix to rename such parameters is available only in the editor.\n\n**Example:**\n\n\n      Function<String, String> id = X -> X;\n\nThis example will be reported if the inspection is enabled with the default settings where a parameter name should start with a lowercase letter.\n\n\nUse the fields in the **Options** section to specify the minimum length, maximum length, and regular expression for acceptable lambda parameter names.\nSpecify **0** in a length field to skip the corresponding check.\nRegular expressions use the standard `java.util.regex` format.\n\nInspection ID: LambdaParameterNamingConvention"
         },
         {
           "shortName": "FieldNamingConvention",
           "displayName": "Field naming convention",
           "enabled": false,
-          "description": "Reports fields whose names are too short, too long, or do not follow the specified regular expression pattern.\n\n**Example:** if the inspection is enabled for constants, and the minimum specified length for a field name is 5 (the default), the following constant\nproduces a warning because the length of its name is 3, which is less than 5: `public static final int MAX = 42;`.\n\nA quick-fix that renames such fields is available only in the editor.\n\nConfigure the inspection:\n\nUse the list in the **Options** section to specify which fields should be checked. Deselect the checkboxes for the fields for which\nyou want to skip the check.\n\nFor each field type, specify the minimum length, maximum length, and the regular expression expected for field names using the\nprovided input fields.\nSpecify **0** in the length fields to skip the corresponding checks.\n\nRegular expressions should be specified in the standard\n`java.util.regex` format.\n\nInspection ID: FieldNamingConvention"
+          "description": "Reports fields whose names are too short, too long, or do not follow the specified regular expression pattern.\n\nA quick-fix to rename such fields is available only in the editor.\n\n**Example:**\n\n\n      public static final int MAX = 42;\n\nThis example will be reported if the inspection is enabled for constants with the default settings where a field name should have a minimum length of 5.\n\nUse the list in the **Options** section to specify the types of fields that should be checked.\n\n\nFor each field type, you can specify the minimum length, maximum length, and regular expression for acceptable field names.\nSpecify **0** in a length field to skip the corresponding check.\nRegular expressions use the standard `java.util.regex` format.\n\nInspection ID: FieldNamingConvention"
         }
       ]
     },
@@ -6312,13 +6440,13 @@
       "inspections": [
         {
           "shortName": "NotNullFieldNotInitialized",
-          "displayName": "@NotNull field is not initialized",
+          "displayName": "Non-null field is not initialized",
           "enabled": false,
           "description": "Reports fields annotated as not-null that are not initialized in the constructor.\n\nExample:\n\n    public class MyClass {\n      private @NotNull String value;\n\n      public void setValue(@NotNull String value) {\n        this.value = value;\n      }\n\n      public @NotNull String getValue() {\n        return value;\n      }\n    }\n\n\nSuch fields may violate the not-null constraint. In the example above, the `setValue` parameter is annotated as not-null, but\n`getValue` may return null if the setter was not called.\n\nInspection ID: NotNullFieldNotInitialized"
         },
         {
           "shortName": "NullableProblems",
-          "displayName": "@NotNull/@Nullable problems",
+          "displayName": "Nullability problems",
           "enabled": false,
           "description": "Reports problems related to nullability annotations.\n\n**Examples:**\n\n* Overriding methods are not annotated:\n\n\n      abstract class A {\n        @NotNull abstract String m();\n      }\n      class B extends A {\n          String m() { return \"empty string\"; }\n      }\n          \n* Annotated primitive types: `@NotNull int myFoo;`\n* Both `@Nullable` and `@NotNull` are present on the same member: `@Nullable @NotNull String myFooString;`\n* Collection of nullable elements is assigned into a collection of non-null elements:\n\n\n      void testList(List<@Nullable String> nullableList) {\n         List<@NotNull String> list2 = nullableList;\n      }\n          \nUse the **Configure Annotations** button to specify nullability annotations and the checkboxes to fine-tune where the inspection should provide warnings.\n\nThis inspection only reports if the language level of the project or module is 5 or higher,\nand nullability annotations are available on the classpath.\n\nInspection ID: NullableProblems"
         },
@@ -6599,6 +6727,12 @@
           "description": "Detects the function calls that could work faster with an argument converted to `Set`.\n\n\nOperations like 'minus' or 'intersect' are more effective when their argument is a set.\nAn explicit conversion of an `Iterable<T>` or an `Array<T>`\ninto a `Set<T>` can often make code more effective.\n\n\nThe quick-fix adds an explicit conversion to the function call.\n\n**Example:**\n\n\n      fun <T> f(a: Iterable<T>, b: Iterable<T>): Int =\n          a.intersect(b).size\n\nAfter the quick-fix is applied:\n\n\n      fun <T> f(a: Iterable<T>, b: Iterable<T>): Int =\n          a.intersect(b.toSet()).size\n\nInspection ID: ConvertArgumentToSet"
         },
         {
+          "shortName": "DeprecatedCallableAddReplaceWith",
+          "displayName": "@Deprecated annotation without 'replaceWith' argument",
+          "enabled": true,
+          "description": "Reports deprecated functions and properties that do not have the `kotlin.ReplaceWith` argument in its `kotlin.deprecated` annotation and suggests to add one based on their body.\n\n\nKotlin provides the `ReplaceWith` argument to replace deprecated declarations automatically.\nIt is recommended to use the argument to fix deprecation issues in code.\n\n**Example:**\n\n\n      @Deprecated(\"Use refined() instead.\")\n      fun deprecated() = refined()\n\n      fun refined() = 42\n\nThe quick-fix adds the `ReplaceWith()` argument:\n\n\n      @Deprecated(\"Use refined() instead.\", ReplaceWith(\"refined()\"))\n      fun deprecated() = refined()\n\n      fun refined() = 42\n\nInspection ID: DeprecatedCallableAddReplaceWith"
+        },
+        {
           "shortName": "ReplacePrintlnWithLogging",
           "displayName": "Call to 'print()' or 'println()'",
           "enabled": false,
@@ -6639,6 +6773,12 @@
           "displayName": "Public API declaration with implicit return type",
           "enabled": false,
           "description": "Reports `public` and `protected` functions and properties that have an implicit return type.\nFor API stability reasons, it's recommended to specify such types explicitly.\n\n**Example:**\n\n\n      fun publicFunctionWhichAbusesTypeInference() =\n          otherFunctionWithNotObviousReturnType() ?: yetAnotherFunctionWithNotObviousReturnType()\n\nAfter the quick-fix is applied:\n\n\n      fun publicFunctionWhichAbusesTypeInference(): Api =\n          otherFunctionWithNotObviousReturnType() ?: yetAnotherFunctionWithNotObviousReturnType()\n\nInspection ID: PublicApiImplicitType"
+        },
+        {
+          "shortName": "UseNamedGetter",
+          "displayName": "Use named getter",
+          "enabled": true,
+          "description": "Reports calls to generated `componentN()` methods on Kotlin `data` classes from Java code.\n\n\nKotlin data classes automatically generate positional `component1()`, `component2()`, and similar methods\nfor destructuring. Calling them directly from Java is fragile: the mapping between index and property is not obvious,\nand the calls break silently if properties are reordered. Using the named property getter is clearer and refactoring-safe.\n\n**Example:**\n\n\n      String name = person.component1();\n      int age = person.component2();\n\nAfter the quick-fix is applied:\n\n\n      String name = person.getName();\n      int age = person.getAge();\n\nInspection ID: UseNamedGetter"
         },
         {
           "shortName": "ReplaceWithEnumMap",
@@ -6823,7 +6963,7 @@
           "shortName": "IncorrectLazyConstantUsage",
           "displayName": "LazyConstant should be used only in final fields",
           "enabled": true,
-          "description": "Reports fields of type `java.lang.LazyConstant` that are not `final`.\n\n\nPer [JEP 526: Lazy Constants](https://openjdk.org/jeps/526), lazy constants must be stored in a `final` field to enable constant-folding optimizations by the JVM.\n\nCorrect usage:\n\n\n      private final LazyConstant<Logger> logger = LazyConstant.of(() -> Logger.create(OrderController.class));\n\nIncorrect usage (will be reported):\n\n\n      private LazyConstant<String> x = LazyConstant.of(() -> \"expensive string\");\n\nThis inspection depends on the Java feature 'Lazy constants', which is available since Java 26-preview.\n\nInspection ID: IncorrectLazyConstantUsage\n\nNew in 2026.1"
+          "description": "Reports fields of type `java.lang.LazyConstant` that are not `final`.\n\nAlso reports fields initialized with `List.ofLazy()` or `Map.ofLazy()`\nthat are not `final`, as these collections internally use lazy constants.\n\n\nPer [JEP 526: Lazy Constants](https://openjdk.org/jeps/526), lazy constants must be stored in a `final` field to enable constant-folding optimizations by the JVM.\n\nCorrect usage:\n\n\n      private final LazyConstant<Logger> logger = LazyConstant.of(() -> Logger.create(OrderController.class));\n\nIncorrect usage (will be reported):\n\n\n      private LazyConstant<String> x = LazyConstant.of(() -> \"expensive string\");\n\nThis inspection depends on the Java feature 'Lazy constants', which is available since Java 26-preview.\n\nInspection ID: IncorrectLazyConstantUsage\n\nNew in 2026.1"
         },
         {
           "shortName": "TailRecursion",
@@ -7098,6 +7238,12 @@
           "description": "Reports extensions which are instantiated by the IntelliJ Platform, but are declared as Kotlin objects.\n\n\nExtensions lifecycle is managed by the IntelliJ Platform.\nUsing Kotlin objects for extension registration may cause creation of unnecessary extension instances and make plugin unloading\nimpossible.\n\nExample\n-------\n\nExtension registration:\n\n\n    <annotator language=\"myLang\" implementationClass=\"com.example.MyAnnotator\"/>\n\nExtension implementation:\n\n\n    // bad:\n    object MyAnnotator : Annotator {\n      ...\n    }\n\n    // good:\n    class MyAnnotator : Annotator {\n      ...\n    }\n\nNew in 2023.1\n\nInspection ID: KotlinObjectExtensionRegistration"
         },
         {
+          "shortName": "SplitModeImplicitModuleKind",
+          "displayName": "Implicit split mode module kind inspection",
+          "enabled": false,
+          "description": "Reports main plugin descriptors that implicitly become frontend-only or backend-only because of their dependencies.\n\n\nThis inspection highlights the root `<idea-plugin>` tag when the main plugin descriptor does not\nexplicitly declare frontend/backend targeting, but its effective module kind is inferred from dependencies.\n\nInspection ID: SplitModeImplicitModuleKind"
+        },
+        {
           "shortName": "PluginXmlExtensionRegistration",
           "displayName": "Plugin.xml extension registration",
           "enabled": false,
@@ -7114,6 +7260,24 @@
           "displayName": "Cannot access content module dependency",
           "enabled": false,
           "description": "Reports violations of content module visibility when declaring module dependencies.\n\n\nContent modules can specify their visibility as `private` (default, when missing), `internal`, or `public`.\n\n\nWhen declaring dependencies on other modules, the following rules must be followed:\n\n* Private modules can only be accessed within the same plugin.\n* Internal modules can only be accessed when declared within the same namespace (`content@namespace`).\n* Public modules can be accessed from anywhere.\n\nInspection ID: ContentModuleVisibility"
+        },
+        {
+          "shortName": "SplitModeMixedDependencies",
+          "displayName": "Split mode compatibility inspection",
+          "enabled": false,
+          "description": "Reports plugin descriptor dependency lists that mix frontend-only and backend-only dependencies.\n\n\nPlugin and content module descriptors must target one side of split mode at a time.\n\nThis inspection checks `<dependencies>` in both main plugin descriptors and content module descriptors and highlights all\nfrontend-only and backend-only dependencies when they are declared together.\n\nSuch violations will prevent the plugin or its module from loading both on the frontend and on the backend in split mode.\n\nInspection ID: SplitModeMixedDependencies"
+        },
+        {
+          "shortName": "SplitModeXmlApiUsage",
+          "displayName": "Inappropriate Frontend/Backend Extension registration in module",
+          "enabled": false,
+          "description": "Reports inappropriate frontend/backend extension registrations in a module.\n\n\nThis inspection checks resolved extension point names in plugin descriptors and reports registrations that are not\nallowed in the current frontend, backend, or shared module in split mode.\n\nInspection ID: SplitModeXmlApiUsage"
+        },
+        {
+          "shortName": "EmptyPluginXmlTag",
+          "displayName": "Empty plugin XML container tag",
+          "enabled": false,
+          "description": "Reports empty plugin XML container tags: `<extensionPoints>`, `<extensions>`, `<applicationListeners>`, `<projectListeners>`, and `<actions>`.\n\n\nEmpty tags have no effect and are usually leftovers. They can be safely removed.\n\nInspection ID: EmptyPluginXmlTag"
         },
         {
           "shortName": "PluginXmlPluginLogo",
@@ -7161,7 +7325,13 @@
           "shortName": "ContentModuleNamespace",
           "displayName": "Content module namespace validation",
           "enabled": false,
-          "description": "Validates namespace attributes in content module declarations within plugin.xml files.\n\n\nThe inspection reports the following issues:\n\n* **Missing namespace:** Content namespace is required when plugin content includes at least one module with non-private visibility\n* **Invalid namespace format:** Namespace must match the required pattern (`[a-zA-Z0-9]+([_-][a-zA-Z0-9]+)*`) and its length must be between 5 and 30 characters\n* **Inconsistent namespaces:** All content elements must define the same namespace\n\nInspection ID: ContentModuleNamespace"
+          "description": "Validates namespace attributes in content module declarations within plugin.xml files.\n\n\nThe inspection reports the following issues:\n\n* **Missing namespace:** Content namespace is required when plugin content includes at least one module with non-private visibility\n* **Invalid namespace format:** Namespace must match the required pattern (`[a-zA-Z0-9]+([_-][a-zA-Z0-9]+)*`) and its length must be between 5 and 30 characters\n\nInspection ID: ContentModuleNamespace"
+        },
+        {
+          "shortName": "AllContentModulesOptionalLoadingRule",
+          "displayName": "All content modules use optional loading rule",
+          "enabled": false,
+          "description": "Checks that at least one content module in a plugin descriptor specifies a non-optional loading rule.\n\n\nIf all content modules use the `optional` loading rule, every module may fail to load\ndue to missing dependencies -- leaving the plugin loaded in UI but providing no functionality.\nAt least one module should use `loading=\"required\"`, `loading=\"embedded\"`,\nor `required-if-available`.\n\nInspection ID: AllContentModulesOptionalLoadingRule"
         }
       ]
     },
@@ -7425,16 +7595,16 @@
           "description": "Reports calls to `StringBuffer` and `StringBuilder` constructors with `char` as the argument. In this case, `char` is silently cast to an integer and interpreted as the initial capacity of the buffer.\n\n**Example:**\n\n\n      new StringBuilder('(').append(\"1\").append(')');\n\nAfter the quick-fix is applied:\n\n\n      new StringBuilder(\"(\").append(\"1\").append(')');\n\nInspection ID: NewStringBufferWithCharArgument"
         },
         {
-          "shortName": "ClassGetClass",
-          "displayName": "Suspicious 'Class.getClass()' call",
-          "enabled": true,
-          "description": "Reports `getClass()` methods that are called on a `java.lang.Class` instance.\n\nThis is usually a mistake as the result is always equivalent to `Class.class`.\nIf it's a mistake, then it's better to remove the `getClass()` call and use the qualifier directly.\nIf the behavior is intended, then it's better to write `Class.class` explicitly to avoid confusion.\n\nExample:\n\n\n      void test(Class<?> clazz) {\n        String name = clazz.getClass().getName();\n      }\n\nAfter one of the possible quick-fixes is applied:\n\n\n      void test(Class<?> clazz) {\n        String name = clazz.getName();\n      }\n\nInspection ID: ClassGetClass\n\nNew in 2018.2"
-        },
-        {
           "shortName": "ResultOfObjectAllocationIgnored",
           "displayName": "Result of object allocation ignored",
           "enabled": false,
           "description": "Reports object instantiations where the allocated object is ignored and neither assigned to a variable nor used in another way.\n\n\nSuch expressions are legal in Java, but are often either unintended, or\nevidence of a very odd object initialization strategy.\n\n\nUse the options to specify the fully-qualified names of classes whose instantiations should be ignored by this inspection.\n\n\nInspection ID: ResultOfObjectAllocationIgnored"
+        },
+        {
+          "shortName": "ClassGetClass",
+          "displayName": "Suspicious 'Class.getClass()' call",
+          "enabled": true,
+          "description": "Reports `getClass()` methods that are called on a `java.lang.Class` instance.\n\nThis is usually a mistake as the result is always equivalent to `Class.class`.\nIf it's a mistake, then it's better to remove the `getClass()` call and use the qualifier directly.\nIf the behavior is intended, then it's better to write `Class.class` explicitly to avoid confusion.\n\nExample:\n\n\n      void test(Class<?> clazz) {\n        String name = clazz.getClass().getName();\n      }\n\nAfter one of the possible quick-fixes is applied:\n\n\n      void test(Class<?> clazz) {\n        String name = clazz.getName();\n      }\n\nInspection ID: ClassGetClass\n\nNew in 2018.2"
         },
         {
           "shortName": "MismatchedStringBuilderQueryUpdate",
@@ -7463,7 +7633,7 @@
         {
           "shortName": "StringConcatenationInMessageFormatCall",
           "displayName": "String concatenation as argument to 'MessageFormat.format()' call",
-          "enabled": false,
+          "enabled": true,
           "description": "Reports non-constant string concatenations used as an argument to a call to `MessageFormat.format()`.\n\n\nWhile occasionally intended, this is usually a misuse of the formatting method\nand may even cause unexpected exceptions if the variables used in the concatenated string contain\nspecial characters like `{`.\n\n\nAlso, sometimes this could be the result\nof mistakenly concatenating a string format argument by typing a `+` when a `,` was meant.\n\n**Example:**\n\n\n      String formatGreeting(String userName, int balance) {\n        return MessageFormat.format(\"Hello, \" + userName + \"! Your balance is {0}.\", balance);\n      }\n\n\nHere, the `userName` will be interpreted as a part of the format string, which may result\nin `IllegalArgumentException` (for example, if `userName` is `\"{\"`).\nThis call should be probably replaced with `MessageFormat.format(\"Hello, {0}! Your balance is {1}.\", userName, balance)`.\n\nInspection ID: StringConcatenationInMessageFormatCall"
         },
         {
@@ -7571,7 +7741,7 @@
         {
           "shortName": "StringConcatenationInFormatCall",
           "displayName": "String concatenation as argument to 'format()' call",
-          "enabled": false,
+          "enabled": true,
           "description": "Reports non-constant string concatenations used as a format string argument.\n\n\nWhile occasionally intended, this is usually a misuse of a formatting method\nand may even cause security issues if the variables used in the concatenated string\ncontain special characters like `%`.\n\n\nAlso, sometimes this could be the result\nof mistakenly concatenating a string format argument by typing a `+` when a `,` was meant.\n\n**Example:**\n\n\n      static String formatGreeting(String userName) {\n        return String.format(\"Hello, \" + userName);\n      }\n\n\nHere, the `userName` will be interpreted as a part of format string, which may result\nin `IllegalFormatException` (for example, if `userName` is `\"%\"`) or\nin using an enormous amount of memory (for example, if `userName` is `\"%2000000000%\"`).\nThe call should be probably replaced with `String.format(\"Hello, %s\", userName);`.\n\n\nThis inspection checks calls to formatting methods on\n`java.util.Formatter`,\n`java.lang.String`,\n`java.io.PrintWriter`,\nor `java.io.PrintStream`.\n\nInspection ID: StringConcatenationInFormatCall"
         },
         {
@@ -7953,16 +8123,16 @@
           "description": "Reports annotations used on record components that have no effect.\n\nThis can happen in two cases:\n\n* The reported annotation has the METHOD target, but the corresponding accessor is explicitly defined.\n* The reported annotation has the PARAMETER target, but the canonical constructor is explicitly defined.\n\nExample:\n\n\n    @Target(ElementType.METHOD)\n    @interface A { }\n      \n    // The annotation will not appear in bytecode at all,\n    // as it should be propagated to the accessor but accessor is explicitly defined \n    record R(@A int x) {\n      public int x() { return x; }\n    }\n\nThis inspection depends on the Java feature 'Records', which is available since Java 16.\n\nInspection ID: MeaninglessRecordAnnotationInspection\n\nNew in 2021.1"
         },
         {
-          "shortName": "SuspiciousDateFormat",
-          "displayName": "Suspicious date format pattern",
-          "enabled": true,
-          "description": "Reports date format patterns that are likely used by mistake.\n\nThe following patterns are reported:\n\n* Uppercase \"Y\", unless \"w\" appears nearby. It stands for \"Week year\" that is almost always the same as normal \"Year\" (lowercase \"y\" pattern), but may point to the next year at the end of December.\n* Uppercase \"M\" (month) close to \"H\", \"K\", \"h\", or \"k\" (hour). It's likely that a lowercase \"m\" (minute) was intended.\n* Lowercase \"m\" (minute) close to \"y\" (year) or \"d\" (day in month). It's likely that an uppercase \"M\" (month) was intended.\n* Uppercase \"D\" (day in year) close to \"M\", or \"L\" (month). It's likely that a lowercase \"d\" (day in month) was intended.\n* Uppercase \"S\" (milliseconds) close to \"m\" (minutes). It's likely that a lowercase \"s\" (seconds) was intended.\n\n\nExamples:  \n\n`new SimpleDateFormat(\"YYYY-MM-dd\")`: likely `\"yyyy-MM-dd\"` was intended.  \n\n`new SimpleDateFormat(\"yyyy-MM-DD\")`: likely `\"yyyy-MM-dd\"` was intended.  \n\n`new SimpleDateFormat(\"HH:MM\")`: likely `\"HH:mm\"` was intended.\n\nInspection ID: SuspiciousDateFormat\n\nNew in 2020.1"
-        },
-        {
           "shortName": "MagicConstant",
           "displayName": "Magic constant",
           "enabled": true,
           "description": "Reports expressions that can be replaced with \"magic\" constants.\n\nExample 1:\n\n\n      // Bare literal \"2\" is used, warning:\n      Font font = new Font(\"Arial\", 2)\n\nExample 2:\n\n\n      // Predefined constant is used, good:\n      Font font = new Font(\"Arial\", Font.ITALIC)\n\n\nWhen possible, the quick-fix inserts an appropriate predefined constant.\n\n\nThe behavior of this inspection is controlled by `org.intellij.lang.annotations.MagicConstant` annotation.\nSome standard Java library methods are pre-annotated, but you can use this annotation in your code as well.\n\nInspection ID: MagicConstant"
+        },
+        {
+          "shortName": "SuspiciousDateFormat",
+          "displayName": "Suspicious date format pattern",
+          "enabled": true,
+          "description": "Reports date format patterns that are likely used by mistake.\n\nThe following patterns are reported:\n\n* Uppercase \"Y\", unless \"w\" appears nearby. It stands for \"Week year\" that is almost always the same as normal \"Year\" (lowercase \"y\" pattern), but may point to the next year at the end of December.\n* Uppercase \"M\" (month) close to \"H\", \"K\", \"h\", or \"k\" (hour). It's likely that a lowercase \"m\" (minute) was intended.\n* Lowercase \"m\" (minute) close to \"y\" (year) or \"d\" (day in month). It's likely that an uppercase \"M\" (month) was intended.\n* Uppercase \"D\" (day in year) close to \"M\", or \"L\" (month). It's likely that a lowercase \"d\" (day in month) was intended.\n* Uppercase \"S\" (milliseconds) close to \"m\" (minutes). It's likely that a lowercase \"s\" (seconds) was intended.\n\n\nExamples:  \n\n`new SimpleDateFormat(\"YYYY-MM-dd\")`: likely `\"yyyy-MM-dd\"` was intended.  \n\n`new SimpleDateFormat(\"yyyy-MM-DD\")`: likely `\"yyyy-MM-dd\"` was intended.  \n\n`new SimpleDateFormat(\"HH:MM\")`: likely `\"HH:mm\"` was intended.\n\nInspection ID: SuspiciousDateFormat\n\nNew in 2020.1"
         },
         {
           "shortName": "MismatchedCollectionQueryUpdate",
@@ -8064,6 +8234,12 @@
           "description": "Reports `break` or `continue` usages inside of lambdas of loop-like functions.\n\n\n`break` and `continue` keywords always apply to the real loops (`for`,\n`while`, `do-while`). `break` and `continue` never apply to any function; for example,\n`break` and `continue` don't apply to `forEach`, `filter`, `map`.\n\n\nUsing `break` or `continue` inside a loop-like function (for example, `forEach`) may be confusing.\nThe inspection suggests adding a label to clarify to which statement `break` or `continue` applies to.\n\n\nSince Kotlin doesn't have a concept of loop-like functions, the inspection uses the heuristic. It assumes that functions that don't\nhave one of `callsInPlace(EXACTLY_ONCE)` or `callsInPlace(AT_LEAST_ONCE)` contracts are loop-like functions.\n\n**Example:**\n\n\n        for (file in files) {\n            file.readLines().forEach { line ->\n                if (line == commentMarkerLine) continue\n                println(line)\n            }\n        }\n\nThe quick-fix adds clarifying labels:\n\n\n        loop@ for (file in files) {\n            file.readLines().forEach { line ->\n                if (line == commentMarkerLine) continue@loop\n                println(line)\n            }\n        }\n\nInspection ID: AmbiguousNonLocalJump"
         },
         {
+          "shortName": "KotlinScriptTemplateNotRegistered",
+          "displayName": "Kotlin script definition is not set up",
+          "enabled": true,
+          "description": "Reports `@KotlinScript`-annotated classes that aren't fully set up to be used as a Kotlin script definition.\n\n\nA class annotated with `@KotlinScript` describes a script template --- files matching its pattern\n(for example `*.my.kts`) are expected to use its compilation configuration and dependencies.\nTwo things make a definition fully usable, and this inspection reports either being missing:\n\n1. **Registration in Kotlin scripting settings.** Without an entry in *Settings → Languages \\& Frameworks → Kotlin → Kotlin Scripting → \"Script definition classes to load\"* , your IDE will not recognize matching `.kts` files as scripts of this definition. The quick-fix *\"Register definition in Kotlin scripting settings\"* populates the FQN (and the owning module's classpath) into the settings.\n2. **Marker file at `META-INF/kotlin/script/templates/<fqn>.classname`** packed into the resulting JAR. Library-based discovery (`ScriptDefinitionsProvider`) scans dependency JARs for this empty marker file to find available templates; consumers of your library won't auto-discover this definition without it. The quick-fix *\"Create marker file for downstream auto-discovery\"* creates the file under the module's first resource root.\n\n\nApply whichever quick-fixes are relevant --- both for the typical library-author flow, or only registration when\nthe template is consumed locally and never published.\n\nInspection ID: KotlinScriptTemplateNotRegistered"
+        },
+        {
           "shortName": "UselessCallOnCollection",
           "displayName": "Redundant call on collection type",
           "enabled": true,
@@ -8136,6 +8312,18 @@
           "description": "Reports suspicious cases of `kotlin.jvm.javaClass` extension used as a callable reference.\n\n\nUsing `::javaClass` syntax does not result in a `Class<T>` instance,\nas someone might expect.\n\n\nInstead, it creates a property reference of type `KProperty0<Class<T>>`,\nwhich is almost never correct and can lead to unexpected behavior and hard-to-detect bugs.\n\n\nProvides a fix to use a direct `.javaClass` call or `::class.java` syntax instead.\n\n**Example 1: Expression receiver**\n\nWhen `::javaClass` is used on an expression, the quick-fix replaces it with a regular `.javaClass` call:\n\n\n      fun test(a: String) {\n          val classRef = a::javaClass  // KProperty0<Class<String>>\n          println(classRef)            // Prints \"property javaClass\", not \"class java.lang.String\"\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test(a: String) {\n          val classRef = a.javaClass  // Class<String>\n          println(classRef)           // Prints \"java.lang.String\"\n      }\n\n**Example 2: Type receiver**\n\nWhen `::javaClass` is used on a type, the quick-fix replaces it with `::class.java`:\n\n\n      fun test() {\n          val classRef = String::javaClass  // KProperty1<String, Class<String>>\n          println(classRef)                 // Prints \"property javaClass\", not \"class java.lang.String\"\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test() {\n          val classRef = String::class.java  // Class<Any>\n          println(classRef)                  // Prints \"class java.lang.String\"\n      }\n\nInspection ID: SuspiciousJavaClassCallableReference"
         },
         {
+          "shortName": "LazyWithoutDelegation",
+          "displayName": "'lazy' can be used with delegation",
+          "enabled": true,
+          "description": "Detects uses of `lazy { ... }` without delegation.\n\n**Example:**\n\n\n        private val x = lazy { \"hello\" }\n\n        fun test() {\n            printlin(x.value)\n        }\n\nA quick-fix is suggested if a lazy variable is only used by calling direct access to its value:\n\n\n      private val x by lazy { \"hello\" }\n\n      fun test() {\n            println(x)\n      }\n\nConstructions with explicit lazy type like\n\n\n        private val x: Lazy<String> = lazy { \"hello\" }\n\nare not reported, as they are assumed to be used intentionally.\n\nInspection ID: LazyWithoutDelegation"
+        },
+        {
+          "shortName": "KDocUnresolvedReference",
+          "displayName": "Unresolved link in KDoc",
+          "enabled": true,
+          "description": "Reports unresolved links in KDoc comments.\n\n**Example:**\n\n\n      /**\n       * [unresolvedLink]\n       */\n      fun foo() {}\n\nTo fix the problem, use a proper fully qualified or short name for the desired target declaration.\n\nInspection ID: KDocUnresolvedReference"
+        },
+        {
           "shortName": "KotlinThrowableNotThrown",
           "displayName": "Throwable not thrown",
           "enabled": true,
@@ -8169,7 +8357,7 @@
           "shortName": "AssignedValueIsNeverRead",
           "displayName": "Assigned value is never read",
           "enabled": true,
-          "description": "Reports assignments where a value is assigned but never used later in the code.\n\n**Example:**\n\n\n      fun foo(): Int = 42\n\n      fun example() {\n          var local = 0\n          print(local)\n          local = 42  // Assigned value is never read\n      }\n\n* After the quick fix, the assignment is deleted:\n\n\n      fun foo(): Int = 42\n\n      fun example() {\n          var local = 0\n          print(local)\n      }\n\n* If the right-hand side (RHS) expression may have side effects, the quick fix will also suggest keeping the RHS expression to preserve those side effects:\n\n\n      fun foo(): Int = 42\n\n      fun example() {\n          var local = 0\n          print(local)\n          foo()  // The function call is kept for its side effects\n      }\n\nInspection ID: AssignedValueIsNeverRead"
+          "description": "Reports assignments where a value is assigned but never used later in the code.\n\n**Example:**\n\n\n      fun foo(): Int = 42\n\n      fun example() {\n          var local = 0\n          print(local)\n          local = foo()  // Assigned value is never read\n      }\n\n* After the quick fix, the assignment is deleted:\n\n\n      fun foo(): Int = 42\n\n      fun example() {\n          var local = 0\n          print(local)\n      }\n\n* If the right-hand side (RHS) expression may have side effects, the quick fix will also suggest keeping the RHS expression to preserve those side effects:\n\n\n      fun foo(): Int = 42\n\n      fun example() {\n          var local = 0\n          print(local)\n          foo()  // The function call is kept for its side effects\n      }\n\nInspection ID: AssignedValueIsNeverRead"
         },
         {
           "shortName": "ArrayInDataClass",
@@ -8184,6 +8372,12 @@
           "description": "Reports lambda expressions that are neither invoked nor assigned.\n\n\nA lambda expression that is neither invoked nor assigned to a variable has no effect on program execution and is likely unintentional.\n\n**Example:**\n\n\n      fun foo() {\n        {} // Warning: Lambda expression is never invoked\n      }\n\nAfter the quick fix is applied:\n\n\n      fun foo() {\n        run {} // Lambda is now invoked via the 'run' function\n      }\n\nInspection ID: UnusedLambdaExpression"
         },
         {
+          "shortName": "DuplicateArgumentsInSetOfAndMapOfFunctions",
+          "displayName": "Duplicate arguments in 'setOf' and 'mapOf' functions",
+          "enabled": true,
+          "description": "Reports duplicate constant elements in set factory functions and duplicate constant keys in map factory functions.\n\n\nDuplicate entries in collection factory functions are often unintended and may indicate a bug or typo.\nIn set factory functions, duplicate elements are ignored because sets can contain only unique elements.\nIn map factory functions, entries with the same key overwrite earlier entries, and only the last value associated with the key is\nretained.\n\n\nThe inspection applies to the following map factory functions:\n\n* `mapOf()`\n* `mutableMapOf()`\n* `hashMapOf()`\n* `linkedMapOf()`\n* `sortedMapOf()`\n\n\nDuplicate map keys are detected for entries created using the `to` operator.\n\n\nThe inspection applies to the following set factory functions:\n\n* `setOf()`\n* `mutableSetOf()`\n* `hashSetOf()`\n* `linkedSetOf()`\n* `sortedSetOf()`\n\n\nThe inspection reports arguments whose values can be evaluated as compile-time constants, including constant literals and `const\nval` references.\n\n**Examples:**\n\n\n    val numbers = setOf(1, 1, 2)\n\n\nThe value `1` appears multiple times.\n\n\n    val mapping = mapOf(\n        1 to \"first\",\n        1 to \"second\",\n    )\n\n\nBoth entries use the same key.\n\n**Example with `const val`:**\n\n\n    const val ID = 42\n\n    val ids = setOf(ID, 42)\n\n\nBoth arguments evaluate to the same constant value.\n\nInspection ID: DuplicateArgumentsInSetOfAndMapOfFunctions"
+        },
+        {
           "shortName": "RecursivePropertyAccessor",
           "displayName": "Recursive property accessor",
           "enabled": true,
@@ -8191,9 +8385,9 @@
         },
         {
           "shortName": "SuspiciousCallOnCollectionToAddOrRemovePath",
-          "displayName": "Suspicious call on Collection to add or remove Java NIO Path",
+          "displayName": "Suspicious call to add or remove Iterable argument",
           "enabled": true,
-          "description": "Reports calls that add or remove a `java.nio.file.Path` to/from a Kotlin collection or sequence using\n`plus`/`minus`, either in operator form (`a + b`, `a - b`) or regular call form\n(`a.plus(b)`, `a.minus(b)`).\n\nSince `java.nio.file.Path` implements `Iterable<Path>`, such calls resolve to the unexpected overload of\nthe `plus` or `minus` function that takes a collection of elements (in this case, the individual elements\nof the `Path`). But the intent of the code is probably to add or remove the `Path` itself, not the\nindividual elements.\n\n**Examples:**\n\n\n    // Operator form\n    val paths = listOf(path) + somePath\n    val paths2 = setOf(path) - somePath\n\n    // Regular call form\n    val paths = listOf(path).plus(somePath)\n    val paths2 = setOf(path).minus(somePath)\n\n**Quick-fixes:**\n\n* Convert to `plusElement`/`minusElement` (changes the semantics to what was originally intended):\n\n\n      val paths = listOf(path).plusElement(somePath)\n      val paths2 = setOf(path).minusElement(somePath)\n          \n* Convert the `Path` argument to a collection to clarify intent without changing semantics:\n  * For `plus`: wrap the argument with `toList()` to preserve order.\n  * For `minus`: wrap the argument with `toSet()` for efficient removal.\n\n\n      val paths = listOf(path).plus(somePath.toList())\n      val paths2 = setOf(path).minus(somePath.toSet())\n          \nInspection ID: SuspiciousCallOnCollectionToAddOrRemovePath"
+          "description": "Reports usages of \\`plus\\`/\\`minus\\` where the argument type implements \\`Iterable\\`,\nand the receiver is a Kotlin \\`Collection\\` or \\`Sequence\\` of the same element type.\n\nIf the argument type implements \\`Iterable\\`, it is treated as a collection of elements rather than as a single element.\nThis may unintentionally add or remove multiple elements instead of the object itself.\n\nA common example is \\`java.nio.file.Path\\`, which implements \\`Iterable\\<Path\\>\\` (iterating over its name elements).\nAdding a \\`Path\\` to a \\`Collection\\<Path\\>\\` using \\`+\\` or \\`-\\` may therefore operate on its components rather than on the \\`Path\\` instance as a whole.\n\nThe inspection covers both operator syntax (\\`a + b\\`, \\`a - b\\`) and explicit calls (\\`a.plus(b)\\`, \\`a.minus(b)\\`).\n\n**Examples:**\n\n\n    // Operator form\n    val paths = listOf(path) + somePath\n    val paths2 = setOf(path) - somePath\n\n    // Regular call form\n    val paths = listOf(path).plus(somePath)\n    val paths2 = setOf(path).minus(somePath)\n\n    // Sequences\n    val seq = sequenceOf(path) + somePath\n\n    // Path + Path (both sides are iterable)\n    val combined = path1 + path2  // Returns List of segments, not a combined path\n\n**Quick-fixes:**\n\n* Convert to `plusElement`/`minusElement` (changes the semantics to what was originally intended):\n\n\n      val paths = listOf(path).plusElement(somePath)\n      val paths2 = setOf(path).minusElement(somePath)\n      val paths3 = sequenceOf(path).plusElement(somePath)\n          \n* Convert the `Path` argument to a collection to clarify intent without changing semantics:\n  * For `plus`: wrap the argument with `toList()` to preserve order.\n  * For `minus`: wrap the argument with `toSet()` for efficient removal.\n\n\n      val paths = listOf(path).plus(somePath.toList())\n      val paths2 = setOf(path).minus(somePath.toSet())\n          \nInspection ID: SuspiciousCallOnCollectionToAddOrRemovePath"
         },
         {
           "shortName": "SuspiciousEqualsCombination",
@@ -8232,6 +8426,12 @@
           "description": "Reports calls with an unused return value when the called function returns a lambda from an expression body.\n\n\nIf there is `=` between function header and body block,\ncode from the function will not be evaluated which can lead to incorrect behavior.\n\n**Remove = token from function declaration** can be used to amend the code automatically.\n\nExample:\n\n\n      fun printHello() = { println(\"Hello\") }\n\n      fun main() {\n          printHello() // This function doesn't print anything\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun printHello() { println(\"Hello\") }\n\n      fun main() {\n          printHello()\n      }\n\nInspection ID: UnusedLambdaExpressionBody"
         },
         {
+          "shortName": "CanSealedSubClassBeObject",
+          "displayName": "Sealed subclass without state and overridden equals",
+          "enabled": true,
+          "description": "Reports direct inheritors of `sealed` classes that have no state and overridden `equals()` method.\n\nIt's highly recommended to override `equals()` to provide comparison stability, or convert the `class` to an `object` to reach the same effect.\n\n**Example:**\n\n\n      sealed class Receiver {\n          class Everyone : Receiver()\n          class User(val id: Int) : Receiver()\n      }\n\nThe quick-fix converts a `class` into an `object`:\n\n\n      sealed class Receiver {\n          object Everyone : Receiver()\n          class User(val id: Int) : Receiver()\n      }\n\nInspection ID: CanSealedSubClassBeObject"
+        },
+        {
           "shortName": "ObjectInheritsException",
           "displayName": "Exception should not be an object",
           "enabled": true,
@@ -8242,6 +8442,12 @@
           "displayName": "Ambiguous unary operator use with number constant",
           "enabled": true,
           "description": "Reports an unary operator followed by a dot qualifier such as `-1.inc()`.\n\nCode like `-1.inc()` can be misleading because `-` has a lower precedence than `.inc()`.\nAs a result, `-1.inc()` evaluates to `-2` and not `0` as it might be expected.\n\n**Wrap unary operator and value with ()** quick-fix can be used to amend the code automatically.\n\nInspection ID: WrapUnaryOperator"
+        },
+        {
+          "shortName": "ConflictingExtensionProperty",
+          "displayName": "Extension property conflicting with synthetic one",
+          "enabled": true,
+          "description": "Reports extension properties that conflict with synthetic ones that have been automatically produced from Java `get` or `set` methods.\n\nSuch properties should be either removed or renamed to avoid breaking code by future changes in the compiler.\n\nThe quick-fix deletes an extention property.\n\n**Example:**\n\n\n      val File.name: String\n          get() = getName()\n\nThe quick-fix adds the `@Deprecated` annotation:\n\n\n      @Deprecated(\"Is replaced with automatic synthetic extension\", ReplaceWith(\"name\"), level = DeprecationLevel.HIDDEN)\n      val File.name: String\n          get() = getName()\n\nInspection ID: ConflictingExtensionProperty"
         },
         {
           "shortName": "SuspiciousVarProperty",
@@ -8266,6 +8472,12 @@
           "displayName": "Unused unary operator",
           "enabled": true,
           "description": "Reports unary operators for number types on unused expressions.\n\nUnary operators break previous expression if they are used without braces.\nAs a result, mathematical expressions spanning multi lines can be misleading.\n\nExample:\n\n\n      fun main() {\n          val result = 1 + 2 * 3\n                      + 3              // <== note that '+ 3' doesn't belong to the 'result' variable, it is unused\n          println(\"Result = $result\")  // The result is '7' and not '10' as it might be expected\n      }\n\nInspection ID: UnusedUnaryOperator"
+        },
+        {
+          "shortName": "KotlinMisorderedAssertEqualsArguments",
+          "displayName": "Misordered 'assertEquals()' arguments",
+          "enabled": true,
+          "description": "Reports Kotlin test assertions where the expected and actual values appear to be passed in the wrong order.\n\nFor example, the inspection reports `assertEquals(actualValue, \"expected\")` and suggests flipping the compared arguments.\n\nInspection ID: KotlinMisorderedAssertEqualsArguments"
         },
         {
           "shortName": "KotlinArrayToString",
@@ -8604,6 +8816,12 @@
           "description": "Reports duplicate property keys with different values, duplicate keys, or duplicate property values.\n\nExample:\n\n\n    property1=value;\n    property2=value;\n\nThe **Options** list allows selecting the area in which the inspection should search for duplicates.\n\nInspection ID: DuplicatePropertyInspection"
         },
         {
+          "shortName": "IncompleteProperty",
+          "displayName": "Property is incomplete",
+          "enabled": false,
+          "description": "Reports property keys that have no translations in part of resource bundle .properties files.\n\nInspection ID: IncompleteProperty"
+        },
+        {
           "shortName": "UnusedProperty",
           "displayName": "Unused property",
           "enabled": false,
@@ -8740,6 +8958,12 @@
           "description": "Reports redundant `return` keywords in expressions that appear as the last expression of an `if`\nor `when` branch when the entire `if`/`when` expression is itself returned.\n\nThese keywords add no value and only clutter the code.\n\nThe quick-fix removes the redundant `return` keyword, leaving only the expression.\n\nExample:\n\n\n    fun foo(flag: Boolean): String {\n      return if (flag) {\n        \"foo\"\n      } else {\n        return \"bar\"  // redundant 'return' keyword\n      }\n    }\n\nAfter the quick-fix is applied:\n\n\n    fun foo(flag: Boolean): String {\n      return if (flag) {\n        \"foo\"\n      } else {\n        \"bar\"\n      }\n    }\n\nInspection ID: RedundantReturnKeyword\n\nNew in 2025.3"
         },
         {
+          "shortName": "UnnecessaryOptInAnnotation",
+          "displayName": "Unnecessary '@OptIn' annotation",
+          "enabled": false,
+          "description": "Reports unnecessary opt-in annotations that can be safely removed.\n\n`@OptIn` annotation is required for the code using experimental APIs that can change\nany time in the future. This annotation becomes useless and possibly misleading if no such API is used\n(e.g., when the experimental API becomes stable and does not require opting in its usage anymore).\n\n\n**Remove annotation** quick-fix can be used to remove the unnecessary `@OptIn` annotation.\n\nExample:\n\n\n      @OptIn(ExperimentalApi::class)\n      fun foo(x: Bar) {\n          x.baz()\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun foo(x: Bar) {\n          x.baz()\n      }\n\nInspection ID: UnnecessaryOptInAnnotation"
+        },
+        {
           "shortName": "UnusedSymbol",
           "displayName": "Unused symbol",
           "enabled": false,
@@ -8816,6 +9040,12 @@
           "displayName": "Redundant explicit 'this'",
           "enabled": false,
           "description": "Reports an explicit `this` when it can be omitted.\n\n**Example:**\n\n\n      class C {\n          private val i = 1\n          fun f() = this.i\n      }\n\nThe quick-fix removes the redundant `this`:\n\n\n      class C {\n          private val i = 1\n          fun f() = i\n      }\n\nInspection ID: ExplicitThis"
+        },
+        {
+          "shortName": "NullChecksToSafeCall",
+          "displayName": "Null-checks can be replaced with safe-calls",
+          "enabled": false,
+          "description": "Reports chained null-checks that can be replaced with safe-calls.\n\n**Example:**\n\n\n      fun test(my: My?) {\n          if (my != null && my.foo() != null) {}\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test(my: My?) {\n          if (my?.foo() != null) {}\n      }\n\nInspection ID: NullChecksToSafeCall"
         },
         {
           "shortName": "FunctionWithLambdaExpressionBody",
@@ -8941,7 +9171,7 @@
           "shortName": "RedundantIf",
           "displayName": "Redundant 'if' statement",
           "enabled": false,
-          "description": "Reports `if` statements which can be simplified to a single statement.\n\n**Example:**\n\n\n      fun test(): Boolean {\n          if (foo()) {\n             return true\n          } else {\n             return false\n          }\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test(): Boolean {\n          return foo()\n      }\n\nInspection ID: RedundantIf"
+          "description": "Reports boolean `if` expressions and statements which can be simplified to a single expression.\n\n**Example:**\n\n\n      fun test(): Boolean {\n          if (foo()) {\n             return true\n          } else {\n             return false\n          }\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test(): Boolean {\n          return foo()\n      }\n\nThe inspection also simplifies branches where one branch is a boolean constant:\n\n\n      val filterModified = if (condition) {\n          someBooleanExpression\n      } else {\n          false\n      }\n\nAfter the quick-fix is applied:\n\n\n      val filterModified = condition && someBooleanExpression\n\nInspection ID: RedundantIf"
         },
         {
           "shortName": "RemoveExplicitTypeArguments",
@@ -9742,6 +9972,12 @@
           "description": "Detects properties with backing fields and suggests a refactoring introducing backing fields explicitly using a *field* keyword.\n\n**Example:**\n\n\n      private val _items = mutableListOf()\n      val items: List get() = _items\n\nAfter the quick-fix is applied:\n\n\n      val items: List\n        field = mutableListOf()\n\nInspection ID: ConvertToExplicitBackingFields"
         },
         {
+          "shortName": "ConvertToCollectionLiterals",
+          "displayName": "Collection literals can be used",
+          "enabled": false,
+          "description": "Reports calls to collection factory functions that can be replaced with collection literal syntax.\n\n\nWhen the `-Xcollection-literals` compiler flag is enabled, collection creation functions such as\n`listOf()`, `setOf()`, `arrayOf()`, and similar functions can be expressed\nusing the more concise collection literal syntax `[...]`.\n\nExample:\n\n\n    val list = listOf(\"a\", \"b\", \"c\")\n\nAfter applying the fix:\n\n\n    val list: List<String> = [\"a\", \"b\", \"c\"]\n\nThis inspection requires the `-Xcollection-literals` compiler flag to be enabled.\n\nInspection ID: ConvertToCollectionLiterals"
+        },
+        {
           "shortName": "ReplaceSizeZeroCheckWithIsEmpty",
           "displayName": "Size zero check can be replaced with 'isEmpty()'",
           "enabled": false,
@@ -9814,6 +10050,18 @@
           "description": "Reports `map` calls whose results are ignored and can be replaced with `forEach`.\n\nUsing `map` in this way is misleading because `map` is intended to transform a collection and return the result.\nWhen its return value is not used, the call creates unnecessary allocations and reduces code readability.\nIn such cases, `forEach` should be used instead, as it clearly expresses iteration with side effects.\n\nThe quick-fix replaces the `map` call with a `forEach` call.\n\nExample:\n\n\n    fun foo(list: List<String>) {\n      list.map { print(it) }      // reported\n\n      val x = list.map { it.length }  // not reported: the result is used\n    }\n\nAfter the quick-fix is applied:\n\n\n    fun foo(list: List<String>) {\n      list.forEach { print(it) }\n\n      val x = list.map { it.length }  // not reported: the result is used\n    }\n\nInspection ID: MapToForEach"
         },
         {
+          "shortName": "CollapseCollectionLiteralChainCall",
+          "displayName": "Type conversion on collection literal can be removed",
+          "enabled": false,
+          "description": "Flags chain expressions with collection literals that change the expression's type.\n\nA quick-fix replaces a collection literal with a function call.\n\n**Example:**\n\n\n        val mutableList = [\"a\", \"b\", \"c\"].toMutableList()\n\nAfter the quick-fix is applied:\n\n\n        val mutableList = mutableListOf(\"a\", \"b\", \"c\")\n\nInspection ID: CollapseCollectionLiteralChainCall"
+        },
+        {
+          "shortName": "ConvertReferenceToLambda",
+          "displayName": "Can be replaced with lambda",
+          "enabled": false,
+          "description": "Reports a function reference expression that can be replaced with a function literal (lambda).\n\n\nSometimes, passing a lambda looks more straightforward and more consistent with the rest of the code.\nAlso, the fix might be handy if you need to replace a simple call with something more complex.\n\n**Example:**\n\n\n      fun Int.isEven() = this % 2 == 0\n\n      fun example() {\n          val numbers = listOf(1, 2, 4, 7, 9, 10)\n          val evenNumbers = numbers.filter(Int::isEven)\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun Int.isEven() = this % 2 == 0\n\n      fun example() {\n          val numbers = listOf(1, 2, 4, 7, 9, 10)\n          val evenNumbers = numbers.filter { it.isEven() }\n      }\n\nInspection ID: ConvertReferenceToLambda"
+        },
+        {
           "shortName": "UnlabeledReturnInsideLambda",
           "displayName": "Unlabeled return inside lambda",
           "enabled": false,
@@ -9838,8 +10086,20 @@
           "description": "Reports cases when an equality check should be used instead of the elvis operator.\n\n**Example:**\n\n\n    fun check(a: Boolean? = null) {\n        if (a ?: false) throw IllegalStateException()\n    }\n\nAfter the quick-fix is applied:\n\n\n    fun check(a: Boolean? = null) {\n        if (a == true) throw IllegalStateException()\n    }\n\nInspection ID: NullableBooleanElvis"
         },
         {
+          "shortName": "ReplaceNegatedIsEmptyWithIsNotEmpty",
+          "displayName": "Negated call can be simplified",
+          "enabled": false,
+          "description": "Reports negation `isEmpty()` and `isNotEmpty()` for collections and `String`, or `isBlank()` and `isNotBlank()` for `String`.\n\nUsing corresponding functions makes your code simpler.\n\nThe quick-fix replaces the negation call with the corresponding call from the Standard Library.\n\n**Example:**\n\n\n      fun main() {\n          val list = listOf(1,2,3)\n          if (!list.isEmpty()) {\n              // do smth\n          }\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun main() {\n          val list = listOf(1,2,3)\n          if (list.isNotEmpty()) {\n              // do smth\n          }\n      }\n\nInspection ID: ReplaceNegatedIsEmptyWithIsNotEmpty"
+        },
+        {
+          "shortName": "ConvertSealedClassToSealedInterface",
+          "displayName": "Sealed class can be converted to sealed interface",
+          "enabled": false,
+          "description": "Reports sealed classes that have no properties and can be converted to sealed interfaces.\n\n\nSealed interfaces are often preferred over sealed classes when the type hierarchy\ndoesn't need to share state, as they allow implementing classes to extend other classes.\n\n**Example:**\n\n\n    sealed class Result<out T : Any>\n    class Success<T : Any>(val result: T) : Result<T>()\n    class Error(val throwable: Throwable) : Result<Nothing>()\n\nAfter the quick fix is applied:\n\n\n    sealed interface Result<out T : Any>\n    class Success<T : Any>(val result: T) : Result<T>\n    class Error(val throwable: Throwable) : Result<Nothing>\n\nInspection ID: ConvertSealedClassToSealedInterface"
+        },
+        {
           "shortName": "UseWithIndex",
-          "displayName": "Manually incremented index variable",
+          "displayName": "Manually incremented index variable can be replaced with use of 'withIndex()'",
           "enabled": false,
           "description": "Reports `for` loops with a manually incremented index variable.\n\n`for` loops with a manually incremented index variable can be simplified with the `withIndex()` function.\n\n**Use withIndex() instead of manual index increment** quick-fix can be used to amend the code automatically.\n\nExample:\n\n\n      fun foo(list: List<String>): Int? {\n          var index = 0\n          for (s in list) { // <== can be simplified\n              val x = s.length * index\n              index++\n              if (x > 0) return x\n          }\n          return null\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun foo(list: List<String>): Int? {\n          for ((index, s) in list.withIndex()) {\n              val x = s.length * index\n              if (x > 0) return x\n          }\n          return null\n      }\n\nInspection ID: UseWithIndex"
         },
@@ -9848,6 +10108,12 @@
           "displayName": "Implicit 'this'",
           "enabled": false,
           "description": "Reports usages of implicit **this** .\n\n**Example:**\n\n\n      class Foo {\n          fun s() = \"\"\n\n          fun test() {\n              s()\n          }\n      }\n\nThe quick fix specifies **this** explicitly:\n\n\n      class Foo {\n          fun s() = \"\"\n\n          fun test() {\n              this.s()\n          }\n      }\n\nInspection ID: ImplicitThis"
+        },
+        {
+          "shortName": "RevertExplicitBackingFields",
+          "displayName": "Replace explicit backing field with private property",
+          "enabled": false,
+          "description": "Detects explicit backing fields.\n\nA quick-fix replaces an explicit backing field with a private property and a getter.\n\n**Example:**\n\n\n      val items: Set<Int>\n        field = mutableSetOf<Int>()\n\nAfter the quick-fix is applied:\n\n\n      private val _items = mutableSetOf<Int>()\n      val items: Set<Int>\n        get() = _items\n\nInspection ID: RevertExplicitBackingFields"
         },
         {
           "shortName": "CanBeVal",
@@ -9866,6 +10132,12 @@
           "displayName": "'substring' call should be replaced with 'substringAfter'",
           "enabled": false,
           "description": "Reports calls like `s.substring(s.indexOf(x))` that can be replaced with `s.substringAfter(x)`.\n\nUsing `s.substringAfter(x)` makes your code simpler.\n\nThe quick-fix replaces the `substring` call with `substringAfter`.\n\n**Example:**\n\n\n      fun foo(s: String) {\n          s.substring(s.indexOf('x'))\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun foo(s: String) {\n          s.substringAfter('x')\n      }\n\nInspection ID: ReplaceSubstringWithSubstringAfter"
+        },
+        {
+          "shortName": "DoubleBang",
+          "displayName": "Not-null assertion can be replaced with 'error()'",
+          "enabled": false,
+          "description": "Reports not-null assertion (`!!`) calls that can be replaced with the elvis operator and `error(...)`.\n\nA not-null assertion can lead to an unexpected NPE (NullPointerException). Replacing it with `?: error(...)` makes the failure explicit and supports whole-file inspection cleanup.\n\n**Example:**\n\n\n    fun test(number: Int?) {\n        val x = number!!\n    }\n\nAfter the quick-fix is applied:\n\n\n    fun test(number: Int?) {\n        val x = number ?: error(\"Expression 'number' must not be null\")\n    }\n\nInspection ID: DoubleBang"
         },
         {
           "shortName": "NestedLambdaShadowedImplicitParameter",
@@ -9932,6 +10204,12 @@
           "displayName": "Multiple operators with different precedence",
           "enabled": false,
           "description": "Reports binary expressions that consist of different operators without parentheses.\n\nSuch expressions can be less readable due to different [precedence rules](https://kotlinlang.org/docs/reference/grammar.html#expressions) of operators.\n\nExample:\n\n```\n  fun foo(b: Boolean?, i: Int?) {\n      val x = b ?: i == null // evaluated as `(b ?: i) == null`\n      val y = i ?: 0 + 1 // evaluated as `i ?: (0 + 1)`\n  }\n```\n\nInspection ID: UnclearPrecedenceOfBinaryExpression"
+        },
+        {
+          "shortName": "ConvertCollectionLiteralToFunctionCall",
+          "displayName": "Collection literal can be replaced with a function call",
+          "enabled": false,
+          "description": "Detects collection literals.\n\nA quick-fix replaces collection literals with corresponding collection factory functions.\n\n**Example:**\n\n\n        val list: List<String> = [\"a\", \"b\", \"c\"]\n\nAfter the quick-fix is applied:\n\n\n        val list: List<String> = listOf(\"a\", \"b\", \"c\")\n\nInspection ID: ConvertCollectionLiteralToFunctionCall"
         },
         {
           "shortName": "ConvertToStringTemplate",
@@ -10006,6 +10284,12 @@
           "description": "Reports a `when` expression that can be simplified by introducing a subject argument.\n\n**Example:**\n\n\n      fun test(obj: Any): String {\n          return when {\n              obj is String -> \"string\"\n              obj is Int -> \"int\"\n              else -> \"unknown\"\n          }\n      }\n\nThe quick fix introduces a subject argument:\n\n\n      fun test(obj: Any): String {\n          return when (obj) {\n              is String -> \"string\"\n              is Int -> \"int\"\n              else -> \"unknown\"\n          }\n      }\n\nInspection ID: IntroduceWhenSubject"
         },
         {
+          "shortName": "DestructuringDeclaration",
+          "displayName": "Use destructuring declaration",
+          "enabled": false,
+          "description": "Reports declarations that can be destructured.\n\n**Example:**\n\n\n      data class My(val first: String, val second: Int, val third: Boolean)\n\n      fun foo(list: List<My>) {\n          list.forEach { my ->\n              println(my.second)\n              println(my.third)\n          }\n      }\n\nThe quick-fix destructures the declaration and introduces new variables with names from the corresponding class:\n\n\n      data class My(val first: String, val second: Int, val third: Boolean)\n\n      fun foo(list: List<My>) {\n          list.forEach { (_, second, third) ->\n              println(second)\n              println(third)\n          }\n      }\n\nInspection ID: DestructuringDeclaration"
+        },
+        {
           "shortName": "IfThenToElvis",
           "displayName": "If-Then foldable to '?:'",
           "enabled": false,
@@ -10018,10 +10302,22 @@
           "description": "Reports a Java method call that can be replaced with a Kotlin function, for example, `System.out.println()`.\n\nReplacing the code gets rid of the dependency to Java and makes the idiomatic Kotlin code.\n\nThe quick-fix replaces the Java method calls on the same Kotlin call.\n\n**Example:**\n\n\n      import java.util.Arrays\n\n      fun main() {\n          val a = Arrays.asList(1, 3, null)\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun main() {\n          val a = listOf(1, 3, null)\n      }\n\nInspection ID: ReplaceJavaStaticMethodWithKotlinAnalog"
         },
         {
+          "shortName": "ConvertCollectionLiteralToTypeOfExpression",
+          "displayName": "''{0}'' can be used",
+          "enabled": false,
+          "description": "Reports collection literals that can be replaced with an explicit `Type.of(...)` call.\n\nExample:\n\n\n    class MyCustomList<T> {\n        companion object { operator fun <T> of(vararg elements: T): MyCustomList<T> = TODO() }\n    }\n\n    val nums: MyCustomList<Int> = [1, 2, 3]\n\nAfter the fix is applied:\n\n\n    val nums = MyCustomList.of(1, 2, 3)\n\nInspection ID: ConvertCollectionLiteralToTypeOfExpression"
+        },
+        {
           "shortName": "MoveVariableDeclarationIntoWhen",
           "displayName": "Variable declaration could be moved into 'when'",
           "enabled": false,
           "description": "Reports variable declarations that can be moved inside a `when` expression.\n\n**Example:**\n\n\n    fun someCalc(x: Int) = x * 42\n\n    fun foo(x: Int): Int {\n      val a = someCalc(x)\n      return when (a) {\n        1 -> a\n        2 -> 2 * a\n        else -> 24\n      }\n    }\n\nAfter the quick-fix is applied:\n\n\n    fun foo(x: Int): Int {\n      return when (val a = someCalc(x)) {\n        1 -> a\n        2 -> 2 * a\n        else -> 24\n      }\n    }\n\nInspection ID: MoveVariableDeclarationIntoWhen"
+        },
+        {
+          "shortName": "ReplaceIfExpressionWithFirstOrNull",
+          "displayName": "'if' expression can be replaced with 'firstOrNull()'",
+          "enabled": false,
+          "description": "Reports `if` expressions that check whether a list, array, or string is not empty and then return the first element or `null`.\n\nUsing `firstOrNull()` makes the code shorter and more idiomatic.\n\nThe quick-fix replaces the whole `if` expression with `firstOrNull()`.\n\n**Example:**\n\n\n      fun firstChild(children: List<String>): String? {\n          return if (children.isNotEmpty()) {\n              children[0]\n          } else {\n              null\n          }\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun firstChild(children: List<String>): String? {\n          return children.firstOrNull()\n      }\n\nInspection ID: ReplaceIfExpressionWithFirstOrNull"
         },
         {
           "shortName": "RemoveEmptyParenthesesFromAnnotationEntry",
@@ -10040,6 +10336,12 @@
           "displayName": "Can be replaced with binary operator",
           "enabled": false,
           "description": "Reports function calls that can be replaced with binary operators, in particular comparison-related ones.\n\n**Example:**\n\n      fun test(): Boolean {\n          return 2.compareTo(1) > 0 // replaceable 'compareTo()'\n      }\n\nAfter the quick-fix is applied:\n\n      fun test(): Boolean {\n          return 2 > 1\n      }\n\nInspection ID: ReplaceCallWithBinaryOperator"
+        },
+        {
+          "shortName": "ConvertImplicitContextArgumentToExplicit",
+          "displayName": "Implicit context argument can be explicit",
+          "enabled": false,
+          "description": "Reports an implicit context argument that can be converted to an explicit named argument.\n\nContext parameters are resolved implicitly from in-scope context parameters and receivers.\n\n**Example:**\n\n\n      interface Logger { fun log(message: String) }\n\n      context(logger: Logger)\n      fun logWithTime(message: String) {\n          logger.log(\"${LocalDateTime.now()}: $message\")\n      }\n\n      fun saveUser(user: User, logger: Logger) {\n          context(logger) {\n              logWithTime(\"saving user ${user.id}\")\n          }\n      }\n\nThe quick-fix converts the implicit context argument to explicit:\n\n\n      fun saveUser(user: User, logger: Logger) {\n            logWithTime(\"saving user ${user.id}\", logger = logger)\n      }\n\nInspection ID: ConvertImplicitContextArgumentToExplicit"
         },
         {
           "shortName": "ConvertPairConstructorToToFunction",
@@ -10075,7 +10377,13 @@
           "shortName": "SortModifiers",
           "displayName": "Non-canonical modifier order",
           "enabled": false,
-          "description": "Reports modifiers that do not follow the order recommended by the [style guide](https://kotlinlang.org/docs/coding-conventions.html#modifiers-order).\n\n**Sort modifiers** quick-fix can be used to amend the code automatically.\n\nExamples:\n\n\n      private inline fun correctOrder(f: () -> Unit) {} // <== Ok\n\n      infix private fun Int.wrongOrder(expr: Int) {} // <== wrong order, quick-fix amends the modifiers to \"private infix\"\n\nInspection ID: SortModifiers"
+          "description": "Reports modifiers that do not follow the order recommended by the [style guide](https://kotlinlang.org/docs/coding-conventions.html#modifiers-order). If annotations and/or context parameters are present, proves that modifiers follow them and that annotations precede context parameters.\n\n**Sort modifiers** quick-fix can be used to amend the code automatically.\n\nExamples:\n\n\n      private inline fun correctOrder(f: () -> Unit) {} // <== Ok\n\n      infix private fun Int.wrongOrder(expr: Int) {} // <== wrong order, quick-fix amends the modifiers to \"private infix\"\n\n\n        @Deprecated(\"message\")\n        context(str: String)\n        private fun doThis() { } // <== Ok\n\n\n        context(str: String)\n        @Deprecated(\"message\")\n        fun doThis() { } // <== wrong order, quick-fix moves the annotation to the top\n\nInspection ID: SortModifiers"
+        },
+        {
+          "shortName": "NullableHashCode",
+          "displayName": "Nullable value 'hashCode()' can be simplified",
+          "enabled": false,
+          "description": "Reports `value?.hashCode() ?: 0` and suggests replacing it with `value.hashCode()`.\n\nSince Kotlin 1.3, the standard library provides `Any?.hashCode()`, which returns `0` for `null`\nand delegates to the receiver's `hashCode()` otherwise.\n\n\n    fun hash(value: String?): Int {\n        return value?.hashCode() ?: 0\n    }\n\nAfter the quick-fix:\n\n\n    fun hash(value: String?): Int {\n        return value.hashCode()\n    }\n\nInspection ID: NullableHashCode"
         },
         {
           "shortName": "ReplaceSubstringWithDropLast",
@@ -10132,6 +10440,12 @@
           "description": "Reports fully qualified names that can be replaced with an existing import alias.\n\n**Example:**\n\n\n    import foo.Foo as Bar\n    fun main() {\n        foo.Foo()\n    }\n\nAfter the quick-fix is applied:\n\n\n    import foo.Foo as Bar\n    fun main() {\n        Bar()\n    }\n\nInspection ID: ReplaceWithImportAlias"
         },
         {
+          "shortName": "ReplaceMapKeysCallChainWithKeys",
+          "displayName": "Replace 'map { it.key }.toSet()' with 'keys'",
+          "enabled": false,
+          "description": "Reports `map { it.key }.toSet()` call chains on map receivers that could be replaced with `keys`.\n\n\n**Note:** While this transformation is beneficial for readability and performance, as it avoids unnecessary intermediate collections,\nit may change call semantics because `keys` returns a read-only view of the map's `keys`,\nwhereas the original call chain creates a copy of the `keys`.\n\nThe quick-fix replaces the call chain with the map's `keys` property.\n\n**Example:**\n\n\n      fun test(steps: Map<String, Int>) {\n          steps.map { it.key }.toSet()\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test(steps: Map<String, Int>) {\n          steps.keys\n      }\n\nInspection ID: ReplaceMapKeysCallChainWithKeys"
+        },
+        {
           "shortName": "SimplifyBooleanWithConstants",
           "displayName": "Boolean expression can be simplified",
           "enabled": false,
@@ -10180,6 +10494,12 @@
           "description": "Reports `if`, `when`, and `try` statements that can be converted to expressions by lifting the `return` statement or an assignment out.\n\n**Example:**\n\n\n      fun foo(arg: Int): String {\n          when (arg) {\n              0 -> return \"Zero\"\n              1 -> return \"One\"\n              else -> return \"Multiple\"\n          }\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun foo(arg: Int): String {\n          return when (arg) {\n              0 -> \"Zero\"\n              1 -> \"One\"\n              else -> \"Multiple\"\n          }\n      }\n\nIf you would like this inspection to highlight more complex code with multi-statement branches, uncheck the option \"Report only if each branch is a single statement\".\n\nInspection ID: LiftReturnOrAssignment"
         },
         {
+          "shortName": "ConvertExplicitContextArgumentToImplicit",
+          "displayName": "Explicit context argument can be implicit",
+          "enabled": false,
+          "description": "Reports an explicit context argument that can be converted to an implicit one by wrapping the call in a `context(...) { }` block.\n\nContext parameters are implicit: their values are resolved from in-scope context parameters and implicit receivers. Wrapping the call in a `context` block adds the value to the context, making it available for implicit resolution.\n\n**Example:**\n\n\n      interface Logger { fun log(message: String) }\n\n      context(logger: Logger)\n      fun logWithTime(message: String) {\n          logger.log(\"${LocalDateTime.now()}: $message\")\n      }\n\n      fun saveUser(user: User, logger: Logger) {\n          logWithTime(\"saving user ${user.id}\", logger = logger)\n      }\n\nThe quick-fix wraps the call in a `context` block:\n\n\n      fun saveUser(user: User, logger: Logger) {\n          context(logger) {\n              logWithTime(\"saving user ${user.id}\")\n          }\n      }\n\nInspection ID: ConvertExplicitContextArgumentToImplicit"
+        },
+        {
           "shortName": "AddVarianceModifier",
           "displayName": "Type parameter can have 'in' or 'out' variance",
           "enabled": false,
@@ -10204,10 +10524,28 @@
           "description": "Reports calls to `readLine()` that can be replaced with `readln()` or `readlnOrNull()`.\n\n\nUsing corresponding functions makes your code simpler.\n\n\nThe quick-fix replaces `readLine()!!` with `readln()` and `readLine()` with `readlnOrNull()`.\n\n**Examples:**\n\n\n        val x = readLine()!!\n        val y = readLine()?.length\n\nAfter the quick-fix is applied:\n\n\n        val x = readln()\n        val y = readlnOrNull()?.length\n\nInspection ID: ReplaceReadLineWithReadln"
         },
         {
+          "shortName": "SimplifyNestedEachInScopeFunction",
+          "displayName": "Scope function with nested forEach can be simplified",
+          "enabled": false,
+          "description": "Reports `forEach` functions in the scope functions such as `also` or `apply` that can be simplified.\n\n**Convert forEach call to onEach** quick-fix can be used to amend the code automatically.\n\nExamples:\n\n\n      fun test(list: List<Int>) {\n          val x = list.also { it.forEach { it + 4 } }.toString()\n          val y = list.apply { forEach { println(it) } }\n      }\n\nAfter the quick-fix is applied:\n\n\n      fun test(list: List<Int>) {\n          val x = list.onEach { it + 4 }.toString()\n          val y = list.onEach { println(it) }\n      }\n\nInspection ID: SimplifyNestedEachInScopeFunction"
+        },
+        {
+          "shortName": "ConvertSealedInterfaceToSealedClass",
+          "displayName": "Sealed interface can be converted to sealed class",
+          "enabled": false,
+          "description": "Reports sealed interfaces that have no properties and can be converted to sealed classes.\n\n\nSealed classes may be preferred over sealed interfaces when you want to ensure\na single inheritance hierarchy or plan to add state (properties) in the future.\n\n**Example:**\n\n\n    sealed interface Result<out T : Any>\n    class Success<T : Any>(val result: T) : Result<T>\n    class Error(val throwable: Throwable) : Result<Nothing>\n\nAfter the quick fix is applied:\n\n\n    sealed class Result<out T : Any>\n    class Success<T : Any>(val result: T) : Result<T>()\n    class Error(val throwable: Throwable) : Result<Nothing>()\n\nInspection ID: ConvertSealedInterfaceToSealedClass"
+        },
+        {
           "shortName": "ReplaceMapIndexedWithListGenerator",
           "displayName": "Replace 'mapIndexed' with List generator",
           "enabled": false,
           "description": "Reports a `mapIndexed` call that can be replaced by `List` generator.\n\n**Example:**\n\n\n      val a = listOf(1, 2, 3).mapIndexed { i, _ ->\n          i + 42\n      }\n\nAfter the quick-fix is applied:\n\n\n      val a = List(listOf(1, 2, 3).size) { i ->\n              i + 42\n      }\n\nInspection ID: ReplaceMapIndexedWithListGenerator"
+        },
+        {
+          "shortName": "ConvertTypeOfToCollectionLiteral",
+          "displayName": "Collection literal can be used",
+          "enabled": false,
+          "description": "Reports calls to a companion object's `of` operator function that can be replaced with a collection literal.\n\nExample:\n\n\n    class MyCustomList<T> {\n        companion object { operator fun <T> of(vararg elements: T): MyCustomList<T> = TODO() }\n    }\n\n    val nums = MyCustomList.of(1, 2, 3)\n\nAfter the fix is applied:\n\n\n    val nums: MyCustomList<Int> = [1, 2, 3]\n\nInspection ID: ConvertTypeOfToCollectionLiteral"
         },
         {
           "shortName": "CascadeIf",
@@ -10232,12 +10570,6 @@
           "displayName": "Explicit 'get' or 'set' call",
           "enabled": false,
           "description": "Reports explicit calls to `get` or `set` functions which can be replaced by an indexing operator `[]`.\n\n\nKotlin allows custom implementations for the predefined set of operators on types.\nTo overload an operator, you can mark the corresponding function with the `operator` modifier:\n\n\n      operator fun get(index: Int) {}\n      operator fun set(index: Int, value: Int) {}\n        \nThe functions above correspond to the indexing operator.\n\n**Example:**\n\n      class Test {\n          operator fun get(i: Int): Int = 0\n      }\n\n      fun test() {\n          Test().get(0) // replaceable 'get()'\n      }\n\nAfter the quick-fix is applied:\n\n      class Test {\n          operator fun get(i: Int): Int = 0\n      }\n\n      fun test() {\n          Test()[0]\n      }\n\nInspection ID: ReplaceGetOrSet"
-        },
-        {
-          "shortName": "Destructure",
-          "displayName": "Use destructuring declaration",
-          "enabled": false,
-          "description": "Reports declarations that can be destructured.\n\n**Example:**\n\n\n      data class My(val first: String, val second: Int, val third: Boolean)\n\n      fun foo(list: List<My>) {\n          list.forEach { my ->\n              println(my.second)\n              println(my.third)\n          }\n      }\n\nThe quick-fix destructures the declaration and introduces new variables with names from the corresponding class:\n\n\n      data class My(val first: String, val second: Int, val third: Boolean)\n\n      fun foo(list: List<My>) {\n          list.forEach { (_, second, third) ->\n              println(second)\n              println(third)\n          }\n      }\n\nInspection ID: Destructure"
         },
         {
           "shortName": "ConvertTryFinallyToUseCall",
@@ -11214,7 +11546,7 @@
           "shortName": "SimplifyStreamApiCallChains",
           "displayName": "Stream API call chain can be simplified",
           "enabled": false,
-          "description": "Reports stream API call chains that can be simplified. Simplification will often avoid some temporary object creation during collection traversal.\n\n\nThe inspection replaces the following call chains:\n\n* `collection.stream().forEach()` → `collection.forEach()`\n* `collection.stream().collect(toList/toSet/toCollection())` → `new CollectionType<>(collection)`\n* `collection.stream().toArray()` → `collection.toArray()`\n* `Arrays.asList().stream()` → `Arrays.stream()` or `Stream.of()`\n* `IntStream.range(0, array.length).mapToObj(idx -> array[idx])` → `Arrays.stream(array)`\n* `IntStream.range(0, list.size()).mapToObj(idx -> list.get(idx))` → `list.stream()`\n* `Collections.singleton().stream()` → `Stream.of()`\n* `Collections.emptyList().stream()` → `Stream.empty()`\n* `stream.filter().findFirst().isPresent()` → `stream.anyMatch()`\n* `stream.collect(counting())` → `stream.count()`\n* `stream.collect(maxBy())` → `stream.max()`\n* `stream.collect(mapping())` → `stream.map().collect()`\n* `stream.collect(reducing())` → `stream.reduce()`\n* `stream.collect(summingInt())` → `stream.mapToInt().sum()`\n* `stream.mapToObj(x -> x)` → `stream.boxed()`\n* `stream.map(x -> {...; return x;})` → `stream.peek(x -> ...)`\n* `!stream.anyMatch()` → `stream.noneMatch()`\n* `!stream.anyMatch(x -> !(...))` → `stream.allMatch()`\n* `stream.map().anyMatch(Boolean::booleanValue)` → `stream.anyMatch()`\n* `IntStream.range(expr1, expr2).mapToObj(x -> array[x])` → `Arrays.stream(array, expr1, expr2)`\n* `Collection.nCopies(count, ...)` → `Stream.generate().limit(count)`\n* `stream.sorted(comparator).findFirst()` → `Stream.min(comparator)`\n* `optional.orElseGet(() -> { throw new ...; })` → `optional.orElseThrow()`\n\n\nNote that the replacement semantics may have minor differences in some cases. For example,\n`Collections.synchronizedList(...).stream().forEach()` is not synchronized while\n`Collections.synchronizedList(...).forEach()` is synchronized.\nAlso, `collect(Collectors.maxBy())` returns an empty `Optional` if the resulting element is\n`null` while `Stream.max()` throws `NullPointerException` in this case.\n\nThis inspection depends on the Java feature 'Stream and Optional API', which is available since Java 8.\n\nInspection ID: SimplifyStreamApiCallChains"
+          "description": "Reports stream API call chains that can be simplified. Simplification will often avoid some temporary object creation during collection traversal.\n\n\nThe inspection replaces the following call chains:\n\n* `collection.stream().forEach()` → `collection.forEach()`\n* `collection.stream().collect(toList/toSet/toCollection())` → `new CollectionType<>(collection)`\n* `collection.stream().toArray()` → `collection.toArray()`\n* `Arrays.asList().stream()` → `Arrays.stream()` or `Stream.of()`\n* `IntStream.range(0, array.length).mapToObj(idx -> array[idx])` → `Arrays.stream(array)`\n* `IntStream.range(0, list.size()).mapToObj(idx -> list.get(idx))` → `list.stream()`\n* `Collections.singleton().stream()` → `Stream.of()`\n* `Collections.emptyList().stream()` → `Stream.empty()`\n* `stream.filter().findFirst().isPresent()` → `stream.anyMatch()`\n* `stream.collect(counting())` → `stream.count()`\n* `stream.collect(maxBy())` → `stream.max()`\n* `stream.collect(mapping())` → `stream.map().collect()`\n* `stream.collect(reducing())` → `stream.reduce()`\n* `stream.collect(summingInt())` → `stream.mapToInt().sum()`\n* `stream.mapToObj(x -> x)` → `stream.boxed()`\n* `stream.map(x -> {...; return x;})` → `stream.peek(x -> ...)`\n* `!stream.anyMatch()` → `stream.noneMatch()`\n* `!stream.anyMatch(x -> !(...))` → `stream.allMatch()`\n* `stream.map().anyMatch(Boolean::booleanValue)` → `stream.anyMatch()`\n* `IntStream.range(expr1, expr2).mapToObj(x -> array[x])` → `Arrays.stream(array, expr1, expr2)`\n* `Collection.nCopies(count, ...)` → `Stream.generate().limit(count)`\n* `stream.sorted(comparator).findFirst()` → `Stream.min(comparator)`\n* `optional.orElseGet(() -> { throw new ...; })` → `optional.orElseThrow()`\n* `stream.filter(x -> x.getValue() > 0).map(X::getValue)` → `stream.map(X::getValue).filter(x -> x > 0)`\n\n\nNote that the replacement semantics may have minor differences in some cases. For example,\n`Collections.synchronizedList(...).stream().forEach()` is not synchronized while\n`Collections.synchronizedList(...).forEach()` is synchronized.\nAlso, `collect(Collectors.maxBy())` returns an empty `Optional` if the resulting element is\n`null` while `Stream.max()` throws `NullPointerException` in this case.\n\nThis inspection depends on the Java feature 'Stream and Optional API', which is available since Java 8.\n\nInspection ID: SimplifyStreamApiCallChains"
         },
         {
           "shortName": "RedundantCollectionOperation",

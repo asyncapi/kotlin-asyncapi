@@ -1,4 +1,48 @@
 {
   "version": "3",
-  "listProblem": []
+  "listProblem": [
+    {
+      "tool": "Code Inspection",
+      "category": "Probable bugs",
+      "categoryPath": [
+        {
+          "id": "Kotlin",
+          "name": "Kotlin"
+        },
+        {
+          "id": "Kotlin/Probable bugs",
+          "name": "Probable bugs"
+        }
+      ],
+      "type": "Kotlin script definition is not set up",
+      "tags": [
+        "kotlin"
+      ],
+      "severity": "High",
+      "comment": "Script definition is not registered in settings and has no marker file for JAR auto-discovery.",
+      "detailsInfo": "Reports `@KotlinScript`-annotated classes that aren't fully set up to be used as a Kotlin script definition.\n\n\nA class annotated with `@KotlinScript` describes a script template --- files matching its pattern\n(for example `*.my.kts`) are expected to use its compilation configuration and dependencies.\nTwo things make a definition fully usable, and this inspection reports either being missing:\n\n1. **Registration in Kotlin scripting settings.** Without an entry in *Settings → Languages \\& Frameworks → Kotlin → Kotlin Scripting → \"Script definition classes to load\"* , your IDE will not recognize matching `.kts` files as scripts of this definition. The quick-fix *\"Register definition in Kotlin scripting settings\"* populates the FQN (and the owning module's classpath) into the settings.\n2. **Marker file at `META-INF/kotlin/script/templates/<fqn>.classname`** packed into the resulting JAR. Library-based discovery (`ScriptDefinitionsProvider`) scans dependency JARs for this empty marker file to find available templates; consumers of your library won't auto-discover this definition without it. The quick-fix *\"Create marker file for downstream auto-discovery\"* creates the file under the module's first resource root.\n\n\nApply whichever quick-fixes are relevant --- both for the typical library-author flow, or only registration when\nthe template is consumed locally and never published.\n\nInspection ID: KotlinScriptTemplateNotRegistered",
+      "sources": [
+        {
+          "type": "file",
+          "path": "kotlin-asyncapi-script/src/main/kotlin/com/asyncapi/kotlinasyncapi/script/AsyncApiScript.kt",
+          "language": "kotlin",
+          "line": 20,
+          "offset": 16,
+          "length": 14,
+          "code": {
+            "startLine": 18,
+            "length": 14,
+            "offset": 94,
+            "surroundingCode": "    compilationConfiguration = AsyncApiScriptCompilationConfiguration::class\n)\nabstract class AsyncApiScript\n\ninternal object AsyncApiScriptCompilationConfiguration : ScriptCompilationConfiguration({"
+          }
+        }
+      ],
+      "attributes": {
+        "module": "kotlin-asyncapi-script",
+        "inspectionName": "KotlinScriptTemplateNotRegistered"
+      },
+      "hash": "2f701952dcb381dc7ab3f6c8ef8337ff0a69e43eee452679d9a041dce7627530",
+      "problemType": "REGULAR"
+    }
+  ]
 }
