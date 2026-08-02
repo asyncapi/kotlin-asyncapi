@@ -21,7 +21,19 @@
       "languageLevel": 8
     },
     {
+      "name": "kotlin-asyncapi-spring-web",
+      "languageLevel": 8
+    },
+    {
       "name": "kotlin-asyncapi-annotation",
+      "languageLevel": 8
+    },
+    {
+      "name": "kotlin-asyncapi-examples",
+      "languageLevel": 5
+    },
+    {
+      "name": "kotlin-asyncapi-core",
       "languageLevel": 8
     },
     {
@@ -29,20 +41,8 @@
       "languageLevel": 8
     },
     {
-      "name": "kotlin-asyncapi-spring-web",
-      "languageLevel": 8
-    },
-    {
       "name": "kotlin-asyncapi-ktor-example",
       "languageLevel": 8
-    },
-    {
-      "name": "kotlin-asyncapi-core",
-      "languageLevel": 8
-    },
-    {
-      "name": "kotlin-asyncapi-examples",
-      "languageLevel": 5
     }
   ]
 }
