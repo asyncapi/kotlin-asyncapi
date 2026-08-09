@@ -1590,16 +1590,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: ch.qos.logback:logback-classic:1.6.0",
+      "name": "Maven: ch.qos.logback:logback-classic:1.6.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.6.0/logback-classic-1.6.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.6.1/logback-classic-1.6.1.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: ch.qos.logback:logback-core:1.6.0",
+      "name": "Maven: ch.qos.logback:logback-core:1.6.1",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.6.0/logback-core-1.6.0.jar!/"
+        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.6.1/logback-core-1.6.1.jar!/"
       ],
       "properties": {}
     },
