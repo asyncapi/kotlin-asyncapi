@@ -330,9 +330,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.github.classgraph:classgraph:4.8.191",
+      "name": "Maven: io.github.classgraph:classgraph:4.8.194",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/github/classgraph/classgraph/4.8.191/classgraph-4.8.191.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/github/classgraph/classgraph/4.8.194/classgraph-4.8.194.jar!/"
       ],
       "properties": {}
     },
