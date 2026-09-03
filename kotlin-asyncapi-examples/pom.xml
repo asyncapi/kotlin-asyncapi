@@ -16,7 +16,7 @@
 	<description>Example applications for Kotlin AsyncAPI</description>
 
 	<properties>
-		<kotlin-asyncapi-maven-plugin.version>3.2.1-SNAPSHOT</kotlin-asyncapi-maven-plugin.version>
+		<kotlin-asyncapi-maven-plugin.version>3.2.5-SNAPSHOT</kotlin-asyncapi-maven-plugin.version>
 	</properties>
 
 	<modules>
