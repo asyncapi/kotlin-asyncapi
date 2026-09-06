@@ -253,9 +253,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.54",
+      "name": "Maven: io.swagger.core.v3:swagger-core-jakarta:2.2.55",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-core-jakarta/2.2.54/swagger-core-jakarta-2.2.54.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-core-jakarta/2.2.55/swagger-core-jakarta-2.2.55.jar!/"
       ],
       "properties": {}
     },
@@ -267,23 +267,23 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.slf4j:slf4j-api:2.0.17",
+      "name": "Maven: org.slf4j:slf4j-api:2.0.18",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.54",
+      "name": "Maven: io.swagger.core.v3:swagger-annotations-jakarta:2.2.55",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-annotations-jakarta/2.2.54/swagger-annotations-jakarta-2.2.54.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-annotations-jakarta/2.2.55/swagger-annotations-jakarta-2.2.55.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.54",
+      "name": "Maven: io.swagger.core.v3:swagger-models-jakarta:2.2.55",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-models-jakarta/2.2.54/swagger-models-jakarta-2.2.54.jar!/"
+        "jar://$MAVEN_REPOSITORY$/io/swagger/core/v3/swagger-models-jakarta/2.2.55/swagger-models-jakarta-2.2.55.jar!/"
       ],
       "properties": {}
     },
@@ -883,13 +883,6 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.slf4j:slf4j-api:2.0.18",
-      "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar!/"
-      ],
-      "properties": {}
-    },
-    {
       "name": "Maven: net.bytebuddy:byte-buddy:1.18.10",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.18.10/byte-buddy-1.18.10.jar!/"
@@ -1159,6 +1152,13 @@
       "name": "Maven: io.ktor:ktor-server-core-jvm:3.4.3",
       "roots": [
         "jar://$MAVEN_REPOSITORY$/io/ktor/ktor-server-core-jvm/3.4.3/ktor-server-core-jvm-3.4.3.jar!/"
+      ],
+      "properties": {}
+    },
+    {
+      "name": "Maven: org.slf4j:slf4j-api:2.0.17",
+      "roots": [
+        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar!/"
       ],
       "properties": {}
     },
@@ -1632,16 +1632,16 @@
       "properties": {}
     },
     {
-      "name": "Maven: ch.qos.logback:logback-classic:1.6.1",
+      "name": "Maven: ch.qos.logback:logback-classic:1.6.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.6.1/logback-classic-1.6.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-classic/1.6.3/logback-classic-1.6.3.jar!/"
       ],
       "properties": {}
     },
     {
-      "name": "Maven: ch.qos.logback:logback-core:1.6.1",
+      "name": "Maven: ch.qos.logback:logback-core:1.6.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.6.1/logback-core-1.6.1.jar!/"
+        "jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.6.3/logback-core-1.6.3.jar!/"
       ],
       "properties": {}
     },
