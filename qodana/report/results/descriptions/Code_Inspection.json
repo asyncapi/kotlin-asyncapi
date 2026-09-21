@@ -10932,16 +10932,16 @@
           "description": "Reports classes that refer to their subclasses in static initializers or static fields.\n\nSuch references can cause JVM-level deadlocks in multithreaded environment, when one thread tries to load the superclass\nand another thread tries to load the subclass at the same time.\n\n**Example:**\n\n\n      class Parent {\n        static final Child field = new Child();\n      }\n      class Child extends Parent { }\n\nInspection ID: StaticInitializerReferencesSubClass"
         },
         {
-          "shortName": "WaitCalledOnCondition",
-          "displayName": "'wait()' called on 'java.util.concurrent.locks.Condition' object",
-          "enabled": false,
-          "description": "Reports calls to `wait()` made on a `java.util.concurrent.locks.Condition` object. This is probably a programming error, and some variant of the `await()` method was intended instead.\n\n**Example:**\n\n\n      void acquire(Condition released) throws InterruptedException {\n        while (acquired) {\n          released.wait();\n        }\n      }\n\nGood code would look like this:\n\n\n      void acquire(Condition released) throws InterruptedException {\n        while (acquired) {\n          released.await();\n        }\n      }\n\nInspection ID: WaitCalledOnCondition"
-        },
-        {
           "shortName": "NonSynchronizedMethodOverridesSynchronizedMethod",
           "displayName": "Unsynchronized method overrides 'synchronized' method",
           "enabled": false,
           "description": "Reports non-`synchronized` methods overriding `synchronized` methods.\n\n\nThe overridden method will not be automatically synchronized if the superclass method\nis declared as `synchronized`. This may result in unexpected race conditions when using the subclass.\n\n**Example:**\n\n\n      class Super {\n        synchronized void process() {}\n      }\n      class Sub extends Super {\n        // Unsynchronized method 'process()' overrides synchronized method\n        void process() {}\n      }  \n\nInspection ID: NonSynchronizedMethodOverridesSynchronizedMethod"
+        },
+        {
+          "shortName": "WaitCalledOnCondition",
+          "displayName": "'wait()' called on 'java.util.concurrent.locks.Condition' object",
+          "enabled": false,
+          "description": "Reports calls to `wait()` made on a `java.util.concurrent.locks.Condition` object. This is probably a programming error, and some variant of the `await()` method was intended instead.\n\n**Example:**\n\n\n      void acquire(Condition released) throws InterruptedException {\n        while (acquired) {\n          released.wait();\n        }\n      }\n\nGood code would look like this:\n\n\n      void acquire(Condition released) throws InterruptedException {\n        while (acquired) {\n          released.await();\n        }\n      }\n\nInspection ID: WaitCalledOnCondition"
         },
         {
           "shortName": "WaitNotifyNotInSynchronizedContext",
