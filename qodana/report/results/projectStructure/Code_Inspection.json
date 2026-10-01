@@ -39,7 +39,7 @@
       ],
       "orderEntries": [
         {
-          "name": "corretto-26",
+          "name": "openjdk-27",
           "type": "SDK"
         },
         {
@@ -427,7 +427,7 @@
       ],
       "orderEntries": [
         {
-          "name": "corretto-26",
+          "name": "openjdk-27",
           "type": "SDK"
         },
         {
@@ -746,7 +746,7 @@
       ],
       "orderEntries": [
         {
-          "name": "corretto-26",
+          "name": "openjdk-27",
           "type": "SDK"
         },
         {
@@ -862,7 +862,7 @@
       ],
       "orderEntries": [
         {
-          "name": "corretto-26",
+          "name": "openjdk-27",
           "type": "SDK"
         },
         {
@@ -994,7 +994,7 @@
       ],
       "orderEntries": [
         {
-          "name": "corretto-26",
+          "name": "openjdk-27",
           "type": "SDK"
         },
         {
@@ -1446,7 +1446,7 @@
       ],
       "orderEntries": [
         {
-          "name": "corretto-26",
+          "name": "openjdk-27",
           "type": "SDK"
         },
         {
@@ -1894,7 +1894,7 @@
       ],
       "orderEntries": [
         {
-          "name": "corretto-26",
+          "name": "openjdk-27",
           "type": "SDK"
         },
         {
@@ -1989,7 +1989,7 @@
       ],
       "orderEntries": [
         {
-          "name": "corretto-26",
+          "name": "openjdk-27",
           "type": "SDK"
         },
         {
@@ -2105,7 +2105,7 @@
       ],
       "orderEntries": [
         {
-          "name": "corretto-26",
+          "name": "openjdk-27",
           "type": "SDK"
         },
         {
@@ -2277,7 +2277,7 @@
       ],
       "orderEntries": [
         {
-          "name": "corretto-26",
+          "name": "openjdk-27",
           "type": "SDK"
         },
         {
@@ -2549,7 +2549,7 @@
       ],
       "orderEntries": [
         {
-          "name": "corretto-26",
+          "name": "openjdk-27",
           "type": "SDK"
         },
         {
@@ -2793,7 +2793,7 @@
           "type": "Library"
         },
         {
-          "name": "Maven: org.slf4j:slf4j-api:2.0.19",
+          "name": "Maven: org.slf4j:slf4j-api:2.0.20",
           "type": "Library"
         },
         {

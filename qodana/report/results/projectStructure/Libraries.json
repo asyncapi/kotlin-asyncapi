@@ -1772,9 +1772,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.slf4j:slf4j-api:2.0.19",
+      "name": "Maven: org.slf4j:slf4j-api:2.0.20",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.19/slf4j-api-2.0.19.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/2.0.20/slf4j-api-2.0.20.jar!/"
       ],
       "properties": {}
     },
