@@ -1100,9 +1100,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.15.2",
+      "name": "Maven: org.apache.maven.plugin-tools:maven-plugin-annotations:3.16.0",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/org/apache/maven/plugin-tools/maven-plugin-annotations/3.15.2/maven-plugin-annotations-3.15.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/org/apache/maven/plugin-tools/maven-plugin-annotations/3.16.0/maven-plugin-annotations-3.16.0.jar!/"
       ],
       "properties": {}
     },
