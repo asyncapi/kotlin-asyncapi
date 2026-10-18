@@ -1,9 +1,9 @@
 {
   "libraries": [
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.2",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-databind:2.22.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.22.2/jackson-databind-2.22.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar!/"
       ],
       "properties": {}
     },
@@ -15,9 +15,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.2",
+      "name": "Maven: com.fasterxml.jackson.core:jackson-core:2.22.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.22.2/jackson-core-2.22.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar!/"
       ],
       "properties": {}
     },
@@ -239,9 +239,9 @@
       "properties": {}
     },
     {
-      "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.2",
+      "name": "Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.22.3",
       "roots": [
-        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.22.2/jackson-module-kotlin-2.22.2.jar!/"
+        "jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-kotlin/2.22.3/jackson-module-kotlin-2.22.3.jar!/"
       ],
       "properties": {}
     },

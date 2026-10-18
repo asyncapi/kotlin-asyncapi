@@ -33,15 +33,15 @@
       "languageLevel": 5
     },
     {
+      "name": "kotlin-asyncapi-core",
+      "languageLevel": 8
+    },
+    {
       "name": "kotlin-asyncapi-context",
       "languageLevel": 8
     },
     {
       "name": "kotlin-asyncapi-ktor-example",
-      "languageLevel": 8
-    },
-    {
-      "name": "kotlin-asyncapi-core",
       "languageLevel": 8
     }
   ]
